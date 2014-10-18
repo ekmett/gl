@@ -1,0 +1,5 @@
+dist/
+Graphics/OpenGL/Extension/
+Graphics/OpenGL/Internal/
+Graphics/OpenGL/Profile/
+gl.xml
