@@ -14,6 +14,7 @@ module Graphics.OpenGL.Basic (
 
 import Control.Applicative
 import Control.Monad
+import Control.Monad.Trans
 import Foreign.C.String
 import Graphics.OpenGL.Internal.Scope
 import Graphics.OpenGL.Types
@@ -30,5 +31,5 @@ initGL :: GLLoader -> IO Scope
 initGL = initScope
 
 -- | Run the given sequence of OpenGL commands with the given scope.
-runGL :: Scope -> OpenGL a -> IO a
+runGL :: MonadIO m => Scope -> OpenGL m a -> m a
 runGL = flip runReaderT

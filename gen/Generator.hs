@@ -72,14 +72,14 @@ ffiCommandName
 	. map (filter isAlphaNum)
 	. map (replace "()" "V")
 	. split " -> "
-	. replace "OpenGL (" "IO ("
-	. replace "OpenGL GL" "IO GL"
+	. replace "OpenGL m (" "IO ("
+	. replace "OpenGL m GL" "IO GL"
 
 ffiCommandSignature :: String -> String
 ffiCommandSignature cmd = printf "FunPtr (%s) -> %s" x x
 	where x
-		= replace "OpenGL (" "IO ("
-		$ replace "OpenGL GL" "IO GL" cmd
+		= replace "OpenGL m (" "IO ("
+		$ replace "OpenGL m GL" "IO GL" cmd
 
 extensionModuleName :: String -> String
 extensionModuleName name =
@@ -258,7 +258,7 @@ entries registry = do
 	forM_ (registryCommands registry) $ \f -> do
 		modify $ M.insert
 			(F $ commandName f)
-			(C (commandSignature "OpenGL" f) S.empty)
+			(C (commandSignature "OpenGL m" f) S.empty)
 
 	forM_ (registryEnums registry) $ \e -> do
 		modify $ M.insert
@@ -392,8 +392,8 @@ funMapFst (FunMap m _ _) = m
 funMapMax :: FunMap -> Int
 funMapMax (FunMap m _ _) = M.size m
 
-funBody :: FunMap -> String -> String -> String
-funBody fm n v = strip body
+funBody :: FunMap -> String -> String -> Body
+funBody fm n v = Function n ("MonadIO m => " ++ v) $ strip body
 	where
 	numArgs = subtract 2 . length $ split " -> " v
 	params = join " " $ map (\x -> "v" ++ show x) [0..numArgs]
@@ -433,9 +433,9 @@ mkScope fm entr = Module "Graphics.OpenGL.Internal.Scope" export body
 				"newtype Scope = Scope (V.Vector (IO ()))"
 			, Code $
 				"type GLLoader = CString -> IO (Ptr ())\n" ++
-				"type OpenGL = ReaderT Scope IO"
+				"type OpenGL m = ReaderT Scope m"
 			, Function
-				"funGL" "Int -> ReaderT Scope IO a" $
+				"funGL" "MonadIO m => Int -> ReaderT Scope m a" $
 				"n = do\n" ++
 				"\tScope scope <- ask\n" ++
 				"\treturn . unsafeCoerce $ V.unsafeIndex scope n"
@@ -476,7 +476,7 @@ mkShared fm entr = Module "Graphics.OpenGL.Internal.Shared" [] body
 		body = imp ++ (concat . map bodyF $ nub entr)
 		bodyF (False, _, _) = []
 		bodyF (_, E n, v) = [Function n "GLenum" ("= " ++ v)]
-		bodyF (_, F n, v) = [Function n v $ funBody fm n v]
+		bodyF (_, F n, v) = [funBody fm n v]
 
 mkModule :: FunMap -> String -> [(Bool, Entry, String)] -> Module
 mkModule fm m entr = Module m export body
@@ -503,7 +503,7 @@ mkModule fm m entr = Module m export body
 			shared ++ ib ++ concatMap bodyF entr
 		bodyF (True, _, _) = []
 		bodyF (_, E n, v) = [Function n "GLenum" ("= " ++ v)]
-		bodyF (_, F n, v) = [Function n v $ funBody fm n v]
+		bodyF (_, F n, v) = [funBody fm n v]
 
 generateSource :: Registry -> IO ()
 generateSource registry = do
