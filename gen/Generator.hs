@@ -397,6 +397,9 @@ funMapFst (FunMap m _ _ _) = m
 funMapMax :: FunMap -> Int
 funMapMax (FunMap m _ _ _) = M.size m
 
+funExt :: FunMap -> M.Map String (Int, String)
+funExt (FunMap _ _ _ m) = m
+
 funExtInfoByModule :: String -> FunMap -> Maybe (Int, String)
 funExtInfoByModule s (FunMap _ _ _ m) = M.lookup s m
 
@@ -549,6 +552,29 @@ mkModule fm m entr = Module m export body
 		bodyF (_, E n, v) = [Function n "GLenum" ("= " ++ v)]
 		bodyF (_, F n, v) = [funBody fm n v]
 
+mkExtensionGather :: FunMap -> [Module]
+mkExtensionGather fm = (flip map) extensionGroups $
+	\x -> Module (printf "Graphics.OpenGL.Extension.%s" $ sanePrefix x)
+		[Section (printf "%s Extensions" x) $ map ("module "++) $ extInGroup x]
+		[Import $ extInGroup x]
+	where
+	extInGroup grp
+		= map fst
+		. sort
+		. filter (\x -> grp == (head . tail . split "_" . snd $ snd x))
+		. M.toList $ funExt fm
+
+	extensionGroups
+		= sort
+		. nub
+		. map (head . tail . split "_" . snd . snd)
+		. M.toList $ funExt fm
+
+mkExtensionGroupGather :: [Module] -> Module
+mkExtensionGroupGather ms = Module "Graphics.OpenGL.Extension"
+	[Section "Extensions" $ map (("module "++) . moduleName) ms]
+	[Import $ map moduleName ms]
+
 generateSource :: Registry -> IO ()
 generateSource registry = do
 	let s = execState (entries registry) M.empty
@@ -559,3 +585,6 @@ generateSource registry = do
 	saveModule $ mkShared fm fm'
 	saveModule $ mkScope fm fm'
 	mapM_ (saveModule . uncurry (mkModule fm)) $ M.toList m
+	let exts = mkExtensionGather fm
+	mapM_ saveModule $ exts
+	saveModule $ mkExtensionGroupGather exts

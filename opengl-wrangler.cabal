@@ -19,12 +19,12 @@ library
     Graphics.OpenGL
     Graphics.OpenGL.Basic
     Graphics.OpenGL.Types
-    --Graphics.OpenGL.Extension
-    --Graphics.OpenGL.Extension.ThreeDFX
+    Graphics.OpenGL.Extension
+    Graphics.OpenGL.Extension.ThreeDFX
     Graphics.OpenGL.Extension.ThreeDFX.Multisample
     Graphics.OpenGL.Extension.ThreeDFX.Tbuffer
     Graphics.OpenGL.Extension.ThreeDFX.TextureCompressionFXT1
-    --Graphics.OpenGL.Extension.AMD
+    Graphics.OpenGL.Extension.AMD
     Graphics.OpenGL.Extension.AMD.BlendMinmaxFactor
     Graphics.OpenGL.Extension.AMD.Compressed3DCTexture
     Graphics.OpenGL.Extension.AMD.CompressedATCTexture
@@ -55,9 +55,9 @@ library
     Graphics.OpenGL.Extension.AMD.VertexShaderLayer
     Graphics.OpenGL.Extension.AMD.VertexShaderTessellator
     Graphics.OpenGL.Extension.AMD.VertexShaderViewportIndex
-    --Graphics.OpenGL.Extension.ANDROID
+    Graphics.OpenGL.Extension.ANDROID
     Graphics.OpenGL.Extension.ANDROID.ExtensionPackEs31a
-    --Graphics.OpenGL.Extension.ANGLE
+    Graphics.OpenGL.Extension.ANGLE
     Graphics.OpenGL.Extension.ANGLE.DepthTexture
     Graphics.OpenGL.Extension.ANGLE.FramebufferBlit
     Graphics.OpenGL.Extension.ANGLE.FramebufferMultisample
@@ -68,7 +68,7 @@ library
     Graphics.OpenGL.Extension.ANGLE.TextureCompressionDxt5
     Graphics.OpenGL.Extension.ANGLE.TextureUsage
     Graphics.OpenGL.Extension.ANGLE.TranslatedShaderSource
-    --Graphics.OpenGL.Extension.APPLE
+    Graphics.OpenGL.Extension.APPLE
     Graphics.OpenGL.Extension.APPLE.AuxDepthStencil
     Graphics.OpenGL.Extension.APPLE.ClientStorage
     Graphics.OpenGL.Extension.APPLE.ClipDistance
@@ -94,7 +94,7 @@ library
     Graphics.OpenGL.Extension.APPLE.VertexArrayRange
     Graphics.OpenGL.Extension.APPLE.VertexProgramEvaluators
     Graphics.OpenGL.Extension.APPLE.Ycbcr422
-    --Graphics.OpenGL.Extension.ARB
+    Graphics.OpenGL.Extension.ARB
     Graphics.OpenGL.Extension.ARB.ES2Compatibility
     Graphics.OpenGL.Extension.ARB.ES31Compatibility
     Graphics.OpenGL.Extension.ARB.ES3Compatibility
@@ -249,13 +249,13 @@ library
     Graphics.OpenGL.Extension.ARB.VertexType2101010Rev
     Graphics.OpenGL.Extension.ARB.ViewportArray
     Graphics.OpenGL.Extension.ARB.WindowPos
-    --Graphics.OpenGL.Extension.ARM
+    Graphics.OpenGL.Extension.ARM
     Graphics.OpenGL.Extension.ARM.MaliProgramBinary
     Graphics.OpenGL.Extension.ARM.MaliShaderBinary
     Graphics.OpenGL.Extension.ARM.Rgba8
     Graphics.OpenGL.Extension.ARM.ShaderFramebufferFetch
     Graphics.OpenGL.Extension.ARM.ShaderFramebufferFetchDepthStencil
-    --Graphics.OpenGL.Extension.ATI
+    Graphics.OpenGL.Extension.ATI
     Graphics.OpenGL.Extension.ATI.DrawBuffers
     Graphics.OpenGL.Extension.ATI.ElementArray
     Graphics.OpenGL.Extension.ATI.EnvmapBumpmap
@@ -272,10 +272,10 @@ library
     Graphics.OpenGL.Extension.ATI.VertexArrayObject
     Graphics.OpenGL.Extension.ATI.VertexAttribArrayObject
     Graphics.OpenGL.Extension.ATI.VertexStreams
-    --Graphics.OpenGL.Extension.DMP
+    Graphics.OpenGL.Extension.DMP
     Graphics.OpenGL.Extension.DMP.ProgramBinary
     Graphics.OpenGL.Extension.DMP.ShaderBinary
-    --Graphics.OpenGL.Extension.EXT
+    Graphics.OpenGL.Extension.EXT
     Graphics.OpenGL.Extension.EXT.FourTwoTwoPixels
     Graphics.OpenGL.Extension.EXT.Abgr
     Graphics.OpenGL.Extension.EXT.Bgra
@@ -415,24 +415,24 @@ library
     Graphics.OpenGL.Extension.EXT.VertexShader
     Graphics.OpenGL.Extension.EXT.VertexWeighting
     Graphics.OpenGL.Extension.EXT.X11SyncObject
-    --Graphics.OpenGL.Extension.FJ
+    Graphics.OpenGL.Extension.FJ
     Graphics.OpenGL.Extension.FJ.ShaderBinaryGCCSO
-    --Graphics.OpenGL.Extension.GREMEDY
+    Graphics.OpenGL.Extension.GREMEDY
     Graphics.OpenGL.Extension.GREMEDY.FrameTerminator
     Graphics.OpenGL.Extension.GREMEDY.StringMarker
-    --Graphics.OpenGL.Extension.HP
+    Graphics.OpenGL.Extension.HP
     Graphics.OpenGL.Extension.HP.ConvolutionBorderModes
     Graphics.OpenGL.Extension.HP.ImageTransform
     Graphics.OpenGL.Extension.HP.OcclusionTest
     Graphics.OpenGL.Extension.HP.TextureLighting
-    --Graphics.OpenGL.Extension.IBM
+    Graphics.OpenGL.Extension.IBM
     Graphics.OpenGL.Extension.IBM.CullVertex
     Graphics.OpenGL.Extension.IBM.MultimodeDrawArrays
     Graphics.OpenGL.Extension.IBM.RasterposClip
     Graphics.OpenGL.Extension.IBM.StaticData
     Graphics.OpenGL.Extension.IBM.TextureMirroredRepeat
     Graphics.OpenGL.Extension.IBM.VertexArrayLists
-    --Graphics.OpenGL.Extension.IMG
+    Graphics.OpenGL.Extension.IMG
     Graphics.OpenGL.Extension.IMG.MultisampledRenderToTexture
     Graphics.OpenGL.Extension.IMG.ProgramBinary
     Graphics.OpenGL.Extension.IMG.ReadFormat
@@ -441,16 +441,16 @@ library
     Graphics.OpenGL.Extension.IMG.TextureCompressionPvrtc2
     Graphics.OpenGL.Extension.IMG.TextureEnvEnhancedFixedFunction
     Graphics.OpenGL.Extension.IMG.UserClipPlane
-    --Graphics.OpenGL.Extension.INGR
+    Graphics.OpenGL.Extension.INGR
     Graphics.OpenGL.Extension.INGR.BlendFuncSeparate
     Graphics.OpenGL.Extension.INGR.ColorClamp
     Graphics.OpenGL.Extension.INGR.InterlaceRead
-    --Graphics.OpenGL.Extension.INTEL
+    Graphics.OpenGL.Extension.INTEL
     Graphics.OpenGL.Extension.INTEL.FragmentShaderOrdering
     Graphics.OpenGL.Extension.INTEL.MapTexture
     Graphics.OpenGL.Extension.INTEL.ParallelArrays
     Graphics.OpenGL.Extension.INTEL.PerformanceQuery
-    --Graphics.OpenGL.Extension.KHR
+    Graphics.OpenGL.Extension.KHR
     Graphics.OpenGL.Extension.KHR.BlendEquationAdvanced
     Graphics.OpenGL.Extension.KHR.BlendEquationAdvancedCoherent
     Graphics.OpenGL.Extension.KHR.ContextFlushControl
@@ -459,17 +459,17 @@ library
     Graphics.OpenGL.Extension.KHR.Robustness
     Graphics.OpenGL.Extension.KHR.TextureCompressionAstcHdr
     Graphics.OpenGL.Extension.KHR.TextureCompressionAstcLdr
-    --Graphics.OpenGL.Extension.MESAX
+    Graphics.OpenGL.Extension.MESAX
     Graphics.OpenGL.Extension.MESAX.TextureStack
-    --Graphics.OpenGL.Extension.MESA
+    Graphics.OpenGL.Extension.MESA
     Graphics.OpenGL.Extension.MESA.PackInvert
     Graphics.OpenGL.Extension.MESA.ResizeBuffers
     Graphics.OpenGL.Extension.MESA.WindowPos
     Graphics.OpenGL.Extension.MESA.YcbcrTexture
-    --Graphics.OpenGL.Extension.NVX
+    Graphics.OpenGL.Extension.NVX
     Graphics.OpenGL.Extension.NVX.ConditionalRender
     Graphics.OpenGL.Extension.NVX.GpuMemoryInfo
-    --Graphics.OpenGL.Extension.NV
+    Graphics.OpenGL.Extension.NV
     Graphics.OpenGL.Extension.NV.BindlessMultiDrawIndirect
     Graphics.OpenGL.Extension.NV.BindlessMultiDrawIndirectCount
     Graphics.OpenGL.Extension.NV.BindlessTexture
@@ -583,7 +583,7 @@ library
     Graphics.OpenGL.Extension.NV.VertexProgram3
     Graphics.OpenGL.Extension.NV.VertexProgram4
     Graphics.OpenGL.Extension.NV.VideoCapture
-    --Graphics.OpenGL.Extension.OES
+    Graphics.OpenGL.Extension.OES
     Graphics.OpenGL.Extension.OES.EGLImage
     Graphics.OpenGL.Extension.OES.EGLImageExternal
     Graphics.OpenGL.Extension.OES.BlendEquationSeparate
@@ -640,14 +640,14 @@ library
     Graphics.OpenGL.Extension.OES.VertexArrayObject
     Graphics.OpenGL.Extension.OES.VertexHalfFloat
     Graphics.OpenGL.Extension.OES.VertexType1010102
-    --Graphics.OpenGL.Extension.OML
+    Graphics.OpenGL.Extension.OML
     Graphics.OpenGL.Extension.OML.Interlace
     Graphics.OpenGL.Extension.OML.Resample
     Graphics.OpenGL.Extension.OML.Subsample
-    --Graphics.OpenGL.Extension.PGI
+    Graphics.OpenGL.Extension.PGI
     Graphics.OpenGL.Extension.PGI.MiscHints
     Graphics.OpenGL.Extension.PGI.VertexHints
-    --Graphics.OpenGL.Extension.QCOM
+    Graphics.OpenGL.Extension.QCOM
     Graphics.OpenGL.Extension.QCOM.AlphaTest
     Graphics.OpenGL.Extension.QCOM.BinningControl
     Graphics.OpenGL.Extension.QCOM.DriverControl
@@ -656,11 +656,11 @@ library
     Graphics.OpenGL.Extension.QCOM.PerfmonGlobalMode
     Graphics.OpenGL.Extension.QCOM.TiledRendering
     Graphics.OpenGL.Extension.QCOM.WriteonlyRendering
-    --Graphics.OpenGL.Extension.REND
+    Graphics.OpenGL.Extension.REND
     Graphics.OpenGL.Extension.REND.ScreenCoordinates
-    --Graphics.OpenGL.Extension.S3
+    Graphics.OpenGL.Extension.S3
     Graphics.OpenGL.Extension.S3.S3tc
-    --Graphics.OpenGL.Extension.SGIS
+    Graphics.OpenGL.Extension.SGIS
     Graphics.OpenGL.Extension.SGIS.DetailTexture
     Graphics.OpenGL.Extension.SGIS.FogFunction
     Graphics.OpenGL.Extension.SGIS.GenerateMipmap
@@ -676,7 +676,7 @@ library
     Graphics.OpenGL.Extension.SGIS.TextureFilter4
     Graphics.OpenGL.Extension.SGIS.TextureLod
     Graphics.OpenGL.Extension.SGIS.TextureSelect
-    --Graphics.OpenGL.Extension.SGIX
+    Graphics.OpenGL.Extension.SGIX
     Graphics.OpenGL.Extension.SGIX.Async
     Graphics.OpenGL.Extension.SGIX.AsyncHistogram
     Graphics.OpenGL.Extension.SGIX.AsyncPixel
@@ -715,22 +715,22 @@ library
     Graphics.OpenGL.Extension.SGIX.Ycrcb
     Graphics.OpenGL.Extension.SGIX.YcrcbSubsample
     Graphics.OpenGL.Extension.SGIX.Ycrcba
-    --Graphics.OpenGL.Extension.SGI
+    Graphics.OpenGL.Extension.SGI
     Graphics.OpenGL.Extension.SGI.ColorMatrix
     Graphics.OpenGL.Extension.SGI.ColorTable
     Graphics.OpenGL.Extension.SGI.TextureColorTable
-    --Graphics.OpenGL.Extension.SUNX
+    Graphics.OpenGL.Extension.SUNX
     Graphics.OpenGL.Extension.SUNX.ConstantData
-    --Graphics.OpenGL.Extension.SUN
+    Graphics.OpenGL.Extension.SUN
     Graphics.OpenGL.Extension.SUN.ConvolutionBorderModes
     Graphics.OpenGL.Extension.SUN.GlobalAlpha
     Graphics.OpenGL.Extension.SUN.MeshArray
     Graphics.OpenGL.Extension.SUN.SliceAccum
     Graphics.OpenGL.Extension.SUN.TriangleList
     Graphics.OpenGL.Extension.SUN.Vertex
-    --Graphics.OpenGL.Extension.VIV
+    Graphics.OpenGL.Extension.VIV
     Graphics.OpenGL.Extension.VIV.ShaderBinary
-    --Graphics.OpenGL.Extension.WIN
+    Graphics.OpenGL.Extension.WIN
     Graphics.OpenGL.Extension.WIN.PhongShading
     Graphics.OpenGL.Extension.WIN.SpecularFog
     Graphics.OpenGL.Profile.Compatibility32
