@@ -10,6 +10,8 @@ module Graphics.OpenGL.Basic (
 
 	-- * Convenience Functions
 	, runGL
+	, ifM
+	, unlessM
 ) where
 
 import Control.Applicative
@@ -21,7 +23,7 @@ import Graphics.OpenGL.Types
 
 type OpenGL m = ReaderT Scope m
 
--- | Load the OpenGL functions and query available extensions
+-- | Load the OpenGL functions and query available extensions.
 --
 -- A valid OpenGL context must be made current before calling this function.
 -- The given function is used to load the OpenGL functions, which is typically
@@ -35,3 +37,11 @@ initGL = initScope
 -- | Run the given sequence of OpenGL commands with the given scope.
 runGL :: MonadIO m => Scope -> OpenGL m a -> m a
 runGL = flip runReaderT
+
+-- | Run the monadic action if the condition is met.
+ifM :: Monad m => m Bool -> m () -> m ()
+ifM c m = do { c' <- c; when c' m }
+
+-- | Run the monadic action if the condition is not met.
+unlessM :: Monad m => m Bool -> m () -> m ()
+unlessM c m = do { c' <- c; when (not c') m }

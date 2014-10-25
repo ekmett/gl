@@ -359,13 +359,16 @@ data FunMap = FunMap
 	(M.Map Int String)
 	(M.Map String Int)
 	(M.Map Int String)
+	(M.Map String (Int, String)) -- module name -> extension id / name
 	deriving (Eq, Show)
 
-funMap :: [(Bool, Entry, String)] -> FunMap
-funMap entr = FunMap
+funMap :: Registry -> [(Bool, Entry, String)] -> FunMap
+funMap registry entr = FunMap
 	(M.fromList map')
 	(M.fromList $ map swap map')
 	(M.fromList map'')
+	(M.fromList $
+		map (\(i, x) -> (extensionModuleName x, (i, x))) $ zip [0..] exts)
 	where
 		isFunction k = case k of
 			(_, F _, _) -> True
@@ -377,20 +380,28 @@ funMap entr = FunMap
 		map'' = zip [0..] . map (\(_, F n, s) -> s) . nub $
 			filter isFunction entr
 
+		exts = map extensionName $ registryExtensions registry
+
 funMapByInt :: Int -> FunMap -> String
-funMapByInt i (FunMap m _ _) = M.findWithDefault undefined i m
+funMapByInt i (FunMap m _ _ _) = M.findWithDefault undefined i m
 
 funMapByFunction :: String -> FunMap -> Int
-funMapByFunction s (FunMap _ m _) = M.findWithDefault undefined s m
+funMapByFunction s (FunMap _ m _ _) = M.findWithDefault undefined s m
 
 funMapSignature :: Int -> FunMap -> String
-funMapSignature i (FunMap _ _ m) = M.findWithDefault undefined i m
+funMapSignature i (FunMap _ _ m _) = M.findWithDefault undefined i m
 
 funMapFst :: FunMap -> M.Map Int String
-funMapFst (FunMap m _ _) = m
+funMapFst (FunMap m _ _ _) = m
 
 funMapMax :: FunMap -> Int
-funMapMax (FunMap m _ _) = M.size m
+funMapMax (FunMap m _ _ _) = M.size m
+
+funExtInfoByModule :: String -> FunMap -> Maybe (Int, String)
+funExtInfoByModule s (FunMap _ _ _ m) = M.lookup s m
+
+funMapExtSize :: FunMap -> Int
+funMapExtSize (FunMap _ _ _ m) = M.size m
 
 funBody :: FunMap -> String -> String -> Body
 funBody fm n v =
@@ -406,6 +417,9 @@ funBody fm n v =
 mkScope :: FunMap -> [(Bool, Entry, String)] -> Module
 mkScope fm entr = Module "Graphics.OpenGL.Internal.Scope" export body
 	where
+		numExtensions :: Int
+		numExtensions = funMapExtSize fm
+
 		numFunctions :: Int
 		numFunctions = funMapMax fm
 
@@ -414,6 +428,7 @@ mkScope fm entr = Module "Graphics.OpenGL.Internal.Scope" export body
 				[ "module Control.Monad.Reader"
 				, "Scope"
 				, "GLLoader"
+				, "extGL"
 				, "funGL"
 				, "initScope"
 				]
@@ -421,8 +436,10 @@ mkScope fm entr = Module "Graphics.OpenGL.Internal.Scope" export body
 
 		body =
 			[ Import
-				[ "Control.Monad.Reader"
+				[ "Control.Applicative"
+				, "Control.Monad.Reader"
 				, "qualified Data.Vector as V"
+				, "qualified Data.Vector.Unboxed as VU"
 				, "Foreign.C.String"
 				, "Foreign.C.Types"
 				, "Foreign.Ptr"
@@ -430,18 +447,27 @@ mkScope fm entr = Module "Graphics.OpenGL.Internal.Scope" export body
 				, "Unsafe.Coerce"
 				]
 			, Code $
-				"newtype Scope = Scope (V.Vector (IO ()))"
+				"data Scope = Scope (V.Vector (IO ())) (VU.Vector Bool)"
 			, Code $
-				"type GLLoader = CString -> IO (Ptr ())\n"
+				"type GLLoader = CString -> IO (Ptr ())"
+			, Function
+				"extGL" "(MonadIO m, MonadReader Scope m) => Int -> m Bool" $
+				"n = do\n" ++
+				"\tScope _ es <- ask\n" ++
+				"\treturn $ VU.unsafeIndex es n"
 			, Function
 				"funGL" "(MonadIO m, MonadReader Scope m) => Int -> m a" $
 				"n = do\n" ++
-				"\tScope scope <- ask\n" ++
-				"\treturn . unsafeCoerce $ V.unsafeIndex scope n"
+				"\tScope fs _ <- ask\n" ++
+				"\treturn . unsafeCoerce $ V.unsafeIndex fs n"
 			, Function "initScope" "GLLoader -> IO Scope" $
 				printf
-					"loader = V.generateM %d (load loader) >>= return . Scope"
+					( "loader = Scope\n"
+					++"\t<$> V.generateM %d (load loader)\n"
+					++"\t<*> VU.replicateM %d (return False)"
+					)
 					numFunctions
+					numExtensions
 			, Function "load'"
 				"GLLoader -> String -> (FunPtr a -> a) -> IO (IO ())" $
 				"f s ffi = withCString s f >>= return . unsafeCoerce . ffi . castPtrToFunPtr\n" ++
@@ -491,7 +517,16 @@ mkModule fm m entr = Module m export body
 				]]
 			False -> []
 
-		export = [Section m $ ie ++ map (\(s, e, _) -> entryName e) entr]
+		export = case funExtInfoByModule m fm of
+			Just (i, en) ->
+				[ Section "Extension Support" $
+					[ "gl_" ++ (join "_" . tail $ split "_" en)
+					]
+				, Section en $ ie ++ map (\(s, e, _) -> entryName e) entr
+				]
+			Nothing ->
+				[ Section m $ ie ++ map (\(s, e, _) -> entryName e) entr
+				]
 
 		body =
 			[ Import
@@ -499,7 +534,17 @@ mkModule fm m entr = Module m export body
 				, "Graphics.OpenGL.Basic"
 				]
 			] ++
-			shared ++ ib ++ concatMap bodyF entr
+			shared ++ ib ++ extCheck ++ concatMap bodyF entr
+
+		extCheck = case funExtInfoByModule m fm of
+			Just (i, en) ->
+				[ Function
+					("gl_" ++ (join "_" . tail $ split "_" en))
+					"(MonadIO m, MonadReader Scope m) => m Bool"
+					("= extGL " ++ show i)
+				]
+			Nothing -> []
+
 		bodyF (True, _, _) = []
 		bodyF (_, E n, v) = [Function n "GLenum" ("= " ++ v)]
 		bodyF (_, F n, v) = [funBody fm n v]
@@ -509,7 +554,7 @@ generateSource registry = do
 	let s = execState (entries registry) M.empty
 	let m = execState (modules registry s) M.empty
 	let fm' = concatMap snd $ M.toList m
-	let fm = funMap fm'
+	let fm = funMap registry fm'
 
 	saveModule $ mkShared fm fm'
 	saveModule $ mkScope fm fm'
