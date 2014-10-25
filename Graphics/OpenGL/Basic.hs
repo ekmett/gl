@@ -1,14 +1,14 @@
 module Graphics.OpenGL.Basic (
 	  module Graphics.OpenGL.Types
 
-	, OpenGL
 	, Scope
+	, OpenGL
 	, GLLoader
 
-	-- OpenGL Initialization
+	-- * OpenGL Initialization
 	, initGL
 
-	-- Convenience Functions
+	-- * Convenience Functions
 	, runGL
 ) where
 
@@ -18,6 +18,8 @@ import Control.Monad.Trans
 import Foreign.C.String
 import Graphics.OpenGL.Internal.Scope
 import Graphics.OpenGL.Types
+
+type OpenGL m = ReaderT Scope m
 
 -- | Load the OpenGL functions and query available extensions
 --

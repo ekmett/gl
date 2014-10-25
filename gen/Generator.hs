@@ -414,7 +414,6 @@ mkScope fm entr = Module "Graphics.OpenGL.Internal.Scope" export body
 				[ "module Control.Monad.Reader"
 				, "Scope"
 				, "GLLoader"
-				, "OpenGL"
 				, "funGL"
 				, "initScope"
 				]
@@ -433,8 +432,7 @@ mkScope fm entr = Module "Graphics.OpenGL.Internal.Scope" export body
 			, Code $
 				"newtype Scope = Scope (V.Vector (IO ()))"
 			, Code $
-				"type GLLoader = CString -> IO (Ptr ())\n" ++
-				"type OpenGL m = ReaderT Scope m"
+				"type GLLoader = CString -> IO (Ptr ())\n"
 			, Function
 				"funGL" "(MonadIO m, MonadReader Scope m) => Int -> m a" $
 				"n = do\n" ++
