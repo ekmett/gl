@@ -72,14 +72,14 @@ ffiCommandName
 	. map (filter isAlphaNum)
 	. map (replace "()" "V")
 	. split " -> "
-	. replace "OpenGL m (" "IO ("
-	. replace "OpenGL m GL" "IO GL"
+	. replace "m (" "IO ("
+	. replace "m GL" "IO GL"
 
 ffiCommandSignature :: String -> String
 ffiCommandSignature cmd = printf "FunPtr (%s) -> %s" x x
 	where x
-		= replace "OpenGL m (" "IO ("
-		$ replace "OpenGL m GL" "IO GL" cmd
+		= replace "m (" "IO ("
+		$ replace "m GL" "IO GL" cmd
 
 extensionModuleName :: String -> String
 extensionModuleName name =
@@ -258,7 +258,7 @@ entries registry = do
 	forM_ (registryCommands registry) $ \f -> do
 		modify $ M.insert
 			(F $ commandName f)
-			(C (commandSignature "OpenGL m" f) S.empty)
+			(C (commandSignature "m" f) S.empty)
 
 	forM_ (registryEnums registry) $ \e -> do
 		modify $ M.insert
@@ -393,7 +393,8 @@ funMapMax :: FunMap -> Int
 funMapMax (FunMap m _ _) = M.size m
 
 funBody :: FunMap -> String -> String -> Body
-funBody fm n v = Function n ("MonadIO m => " ++ v) $ strip body
+funBody fm n v =
+	Function n ("(MonadIO m, MonadReader Scope m) => " ++ v) $ strip body
 	where
 	numArgs = subtract 2 . length $ split " -> " v
 	params = join " " $ map (\x -> "v" ++ show x) [0..numArgs]
@@ -435,7 +436,7 @@ mkScope fm entr = Module "Graphics.OpenGL.Internal.Scope" export body
 				"type GLLoader = CString -> IO (Ptr ())\n" ++
 				"type OpenGL m = ReaderT Scope m"
 			, Function
-				"funGL" "MonadIO m => Int -> ReaderT Scope m a" $
+				"funGL" "(MonadIO m, MonadReader Scope m) => Int -> m a" $
 				"n = do\n" ++
 				"\tScope scope <- ask\n" ++
 				"\treturn . unsafeCoerce $ V.unsafeIndex scope n"
