@@ -29,7 +29,7 @@ type OpenGL m = ReaderT Scope m
 -- The given function is used to load the OpenGL functions, which is typically
 -- provided by your windowing utility.
 --
--- The scope is _only_ valid for the context it was initialized in. Any
+-- The scope is /only/ valid for the context it was initialized in. Any
 -- attempt to use it with other contexts is undefined behaviour.
 initGL :: GLLoader -> IO Scope
 initGL = initScope
