@@ -1,11 +1,19 @@
 module Graphics.OpenGL.Types (
 	  module Foreign.Ptr
 
+	-- * Types
+	-- ** Function Types
 	, GLDEBUGPROC
 	, GLDEBUGPROCAMD
 	, GLDEBUGPROCARB
 	, GLDEBUGPROCKHR
 
+	, mkGLDEBUGPROC
+	, mkGLDEBUGPROCAMD
+	, mkGLDEBUGPROCARB
+	, mkGLDEBUGPROCKHR
+
+	-- ** Common Types
 	, GLbitfield
 	, GLboolean
 	, GLbyte
@@ -82,6 +90,18 @@ type GLDEBUGPROCKHR =
 	     -> Ptr GLchar
 	     -> Ptr ()
 	     -> IO ())
+
+foreign import ccall "wrapper"
+	mkGLDEBUGPROC :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROC
+
+foreign import ccall "wrapper"
+	mkGLDEBUGPROCAMD :: (GLuint -> GLenum -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCAMD
+
+foreign import ccall "wrapper"
+	mkGLDEBUGPROCARB :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCARB
+
+foreign import ccall "wrapper"
+	mkGLDEBUGPROCKHR :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCKHR
 
 type GLbitfield = CUInt
 type GLboolean = CUChar
