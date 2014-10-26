@@ -518,6 +518,7 @@ library
     Graphics.OpenGL.Extension.NV.GpuShader5
     Graphics.OpenGL.Extension.NV.HalfFloat
     Graphics.OpenGL.Extension.NV.InstancedArrays
+    Graphics.OpenGL.Extension.NV.InternalformatSampleQuery
     Graphics.OpenGL.Extension.NV.LightMaxExponent
     Graphics.OpenGL.Extension.NV.MultisampleCoverage
     Graphics.OpenGL.Extension.NV.MultisampleFilterHint
