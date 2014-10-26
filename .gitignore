@@ -1,4 +1,5 @@
 dist/
+Graphics/OpenGL/Extension.hs
 Graphics/OpenGL/Extension/
 Graphics/OpenGL/Internal/
 Graphics/OpenGL/Profile/
