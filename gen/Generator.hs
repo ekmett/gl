@@ -441,11 +441,14 @@ mkScope fm entr = Module "Graphics.OpenGL.Internal.Scope" export body
 			[ Import
 				[ "Control.Applicative"
 				, "Control.Monad.Reader"
+				, "Data.Maybe"
 				, "qualified Data.Vector as V"
 				, "qualified Data.Vector.Unboxed as VU"
 				, "Foreign.C.String"
 				, "Foreign.C.Types"
+				, "Foreign.Marshal.Alloc"
 				, "Foreign.Ptr"
+				, "Foreign.Storable"
 				, "Graphics.OpenGL.Types"
 				, "Unsafe.Coerce"
 				]
@@ -462,19 +465,44 @@ mkScope fm entr = Module "Graphics.OpenGL.Internal.Scope" export body
 				"funGL" "(MonadIO m, MonadReader Scope m) => Int -> m a" $
 				"n = do\n" ++
 				"\tScope fs _ <- ask\n" ++
-				"\treturn . unsafeCoerce $ V.unsafeIndex fs n"
+				"\tfunGL' fs n"
+			, Function
+				"funGL'" "MonadIO m => V.Vector (IO ()) -> Int -> m a"
+				"fs n = return . unsafeCoerce $ V.unsafeIndex fs n"
 			, Function "initScope" "GLLoader -> IO Scope" $
 				printf
-					( "loader = Scope\n"
-					++"\t<$> V.generateM %d (load loader)\n"
-					++"\t<*> VU.replicateM %d (return False)"
+					( "loader = do\n"
+					++"\tfs <- V.generateM %d (load loader)\n"
+					++"\tes <- loadExtensions fs\n"
+					++"\treturn $ Scope fs es"
 					)
 					numFunctions
-					numExtensions
 			, Function "load'"
 				"GLLoader -> String -> (FunPtr a -> a) -> IO (IO ())" $
 				"f s ffi = withCString s f >>= return . unsafeCoerce . ffi . castPtrToFunPtr\n" ++
 				"{-# NOINLINE load' #-}"
+			, Function "loadExtensions"
+				"V.Vector (IO ()) -> IO (VU.Vector Bool)" $ printf
+				("fs = do\n" ++
+				"\tglGetString <- funGL' fs %d :: IO (GLenum -> IO (Ptr GLubyte))\n" ++
+				"\tglGetStringi <- funGL' fs %d :: IO (GLenum -> GLuint -> IO (Ptr GLubyte))\n" ++
+				"\tglGetIntegerv <- funGL' fs %d :: IO (GLenum -> Ptr GLint -> IO ())\n" ++
+				"\tnumExtensions <- alloca $ \\p -> glGetIntegerv 0x821D p >> peek p\n" ++
+				"\tsupported <- forM [0..(fromIntegral numExtensions)-1] $ \\n ->\n" ++
+				"\t\tmapExtension <$> (peekCString . castPtr =<< glGetStringi 0x1F03 n)\n" ++
+				"\treturn $\n" ++
+				"\t\tVU.unsafeUpd (VU.replicate %d False) . zip (map fromJust $ filter isJust supported) $ repeat True")
+					(funMapByFunction "glGetString" fm)
+					(funMapByFunction "glGetStringi" fm)
+					(funMapByFunction "glGetIntegerv" fm)
+					numExtensions
+			, Function "mapExtension"
+				"String -> Maybe Int" $
+					("ext = case ext of\n"++) .
+					(++"\n\t_ -> Nothing") .
+					join "\n" $ map (\(i, n) ->
+						printf "\t\"%s\" -> Just %d" n i)
+						(sort . map snd $ M.toList $ funExt fm)
 			, Function "load" "GLLoader -> Int -> IO (IO ())" $
 				"f n = case n of\n" ++
 				concatMap
