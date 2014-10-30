@@ -2,6 +2,7 @@ module Graphics.OpenGL.Basic (
 	  module Graphics.OpenGL.Types
 
 	, Scope
+	, HasScope(..)
 	, OpenGL
 	, GLLoader
 
@@ -35,7 +36,7 @@ initGL :: GLLoader -> IO Scope
 initGL = initScope
 
 -- | Run the given sequence of OpenGL commands with the given scope.
-runGL :: MonadIO m => Scope -> OpenGL m a -> m a
+runGL :: e -> ReaderT e m a -> m a
 runGL = flip runReaderT
 
 -- | Run the monadic action if the condition is met.

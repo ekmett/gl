@@ -408,7 +408,7 @@ funMapExtSize (FunMap _ _ _ m) = M.size m
 
 funBody :: FunMap -> String -> String -> Body
 funBody fm n v =
-	Function n ("(MonadIO m, MonadReader Scope m) => " ++ v) $ strip body
+	Function n ("(MonadIO m, MonadReader e m, HasScope e) => " ++ v) $ strip body
 	where
 	numArgs = subtract 2 . length $ split " -> " v
 	params = join " " $ map (\x -> "v" ++ show x) [0..numArgs]
@@ -430,6 +430,7 @@ mkScope fm entr = Module "Graphics.OpenGL.Internal.Scope" export body
 			[ Section "Scope"
 				[ "module Control.Monad.Reader"
 				, "Scope"
+				, "HasScope(..)"
 				, "GLLoader"
 				, "extGL"
 				, "funGL"
@@ -455,16 +456,22 @@ mkScope fm entr = Module "Graphics.OpenGL.Internal.Scope" export body
 			, Code $
 				"data Scope = Scope (V.Vector (IO ())) (VU.Vector Bool)"
 			, Code $
+				"class HasScope e where\n" ++
+				"\tscope :: e -> Scope"
+			, Code $
+				"instance HasScope Scope where\n" ++
+				"\tscope = id"
+			, Code $
 				"type GLLoader = CString -> IO (Ptr ())"
 			, Function
-				"extGL" "(MonadIO m, MonadReader Scope m) => Int -> m Bool" $
+				"extGL" "(MonadIO m, MonadReader e m, HasScope e) => Int -> m Bool" $
 				"n = do\n" ++
-				"\tScope _ es <- ask\n" ++
+				"\tScope _ es <- asks scope\n" ++
 				"\treturn $ VU.unsafeIndex es n"
 			, Function
-				"funGL" "(MonadIO m, MonadReader Scope m) => Int -> m a" $
+				"funGL" "(MonadIO m, MonadReader e m, HasScope e) => Int -> m a" $
 				"n = do\n" ++
-				"\tScope fs _ <- ask\n" ++
+				"\tScope fs _ <- asks scope\n" ++
 				"\tfunGL' fs n"
 			, Function
 				"funGL'" "MonadIO m => V.Vector (IO ()) -> Int -> m a"
@@ -571,7 +578,7 @@ mkModule fm m entr = Module m export body
 			Just (i, en) ->
 				[ Function
 					("gl_" ++ (join "_" . tail $ split "_" en))
-					"(MonadIO m, MonadReader Scope m) => m Bool"
+					"(MonadIO m, MonadReader e m, HasScope e) => m Bool"
 					("= extGL " ++ show i)
 				]
 			Nothing -> []
