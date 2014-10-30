@@ -464,7 +464,7 @@ mkScope fm entr = Module "Graphics.OpenGL.Internal.Scope" export body
 			, Code $
 				"type GLLoader = CString -> IO (Ptr ())"
 			, Function
-				"extGL" "(MonadIO m, MonadReader e m, HasScope e) => Int -> m Bool" $
+				"extGL" "(Monad m, MonadReader e m, HasScope e) => Int -> m Bool" $
 				"n = do\n" ++
 				"\tScope _ es <- asks scope\n" ++
 				"\treturn $ VU.unsafeIndex es n"
@@ -578,7 +578,7 @@ mkModule fm m entr = Module m export body
 			Just (i, en) ->
 				[ Function
 					("gl_" ++ (join "_" . tail $ split "_" en))
-					"(MonadIO m, MonadReader e m, HasScope e) => m Bool"
+					"(Monad m, MonadReader e m, HasScope e) => m Bool"
 					("= extGL " ++ show i)
 				]
 			Nothing -> []
