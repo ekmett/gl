@@ -23,7 +23,7 @@ data Category = C String (S.Set String)
 	deriving (Eq, Ord, Show)
 
 saneEnum :: String -> String
-saneEnum = ("gl_"++) . join "_" . tail . split "_"
+saneEnum = ("GL_"++) . join "_" . tail . split "_"
 
 saneModule :: String -> String
 saneModule "422Pixels" = "FourTwoTwoPixels"
@@ -538,13 +538,13 @@ mkShared fm entr = Module "Graphics.OpenGL.Internal.Shared" [] body
 
 		body = imp ++ (concat . map bodyF $ nub entr)
 		bodyF (False, _, _) = []
-		bodyF (_, E n, v) = [Function n "GLenum" ("= " ++ v)]
+		bodyF (_, E n, v) = [Pattern n "GLenum" ("= " ++ v)]
 		bodyF (_, F n, v) = [funBody fm n v]
 
 mkModule :: FunMap -> String -> [(Bool, Entry, String)] -> Module
 mkModule fm m entr = Module m export body
 	where
-		entryName (E n) = n
+		entryName (E n) = "pattern " ++ n
 		entryName (F n) = n
 
 		(ie, ib) = implicitPrelude m
@@ -584,7 +584,7 @@ mkModule fm m entr = Module m export body
 			Nothing -> []
 
 		bodyF (True, _, _) = []
-		bodyF (_, E n, v) = [Function n "GLenum" ("= " ++ v)]
+		bodyF (_, E n, v) = [Pattern n "GLenum" ("= " ++ v)]
 		bodyF (_, F n, v) = [funBody fm n v]
 
 mkExtensionGather :: FunMap -> [Module]

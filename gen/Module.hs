@@ -28,6 +28,7 @@ data Export = Section {
 
 data Body = Import [String]
           | Function String String String
+          | Pattern String String String
           | Code String
           deriving (Eq, Show)
 
@@ -39,6 +40,7 @@ renderModule m =
 		(join "\n\n" . map renderBody $ moduleBody m)
 	where str =
 		"-- This file was automatically generated.\n" ++
+                "{-# LANGUAGE ScopedTypeVariables, PatternSynonyms #-}\n" ++
 		"module %s%s where\n" ++
 		"\n" ++
 		"%s"
@@ -67,6 +69,8 @@ renderBody body = case body of
 	Import m -> join "\n" $ map (printf "import %s") m
 	Function name signature body -> printf "%s :: %s\n%s %s"
 		name signature name body
+        Pattern name signature body -> printf "pattern %s %s :: %s"
+                name body signature
 	Code code -> code
 
 saveModule :: Module -> IO ()
