@@ -28,7 +28,7 @@ flag UseGlXGetProcAddress
       Use glXGetProcAddress instead of dlsym on non-Windows/-Darwin platforms.
 
 library
-  hs-source-dirs: src dist/build/autogen
+  hs-source-dirs: src
   c-sources: cbits/gl.c
   ghc-options: -Wall -O2
 
