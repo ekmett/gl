@@ -396,13 +396,10 @@ mkFFI fm = Module "Graphics.GL.Raw.Internal.FFI" export body where
   export = [ Section "Invokers" (nub $ invokerName <$> Foldable.toList (funSignatures fm)) ]
   body = 
     [ Import
-      [ "Foreign.C.String"
+      [ "Control.Monad.IO.Class"
       , "Foreign.C.Types"
-      , "Foreign.Marshal.Alloc"
       , "Foreign.Ptr"
-      , "Foreign.Storable"
       , "Graphics.GL.Raw.Types"
-      , "Unsafe.Coerce"
       ]
     ] ++ nub (Foldable.concatMap invokers (funSignatures fm))
 
@@ -410,7 +407,7 @@ invokers :: Signature -> [Body]
 invokers v =
   [ Code $ printf "foreign import ccall \"dynamic\" %s :: FunPtr (%s) -> %s" nd v' v'
   , Function ni (printf "MonadIO m => FunPtr (%s) -> %s" v' v) $
-      printf "%s = liftIO (%s %s)" params nd params
+      printf "fp %s = liftIO (%s fp %s)" params nd params
   ] where
   numArgs = subtract 2 . length $ split " -> " v
   params = join " " $ map (\x -> "v" ++ show x) [0..numArgs]
@@ -423,7 +420,7 @@ mkShared fm entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
   where
     imp =
       [ Import
-        [ "Graphics.GL.Raw.Internal.Types"
+        [ "Graphics.GL.Raw.Types"
         , "Graphics.GL.Raw.Internal.FFI"
         ]
       ]
@@ -460,9 +457,10 @@ mkModule fm m entr = Module m export body
 
     body =
       [ Import
-        [ "Graphics.GL.Raw.Internal.Proc"
+        [ "Data.Set"
+        , "Graphics.GL.Raw.Internal.Proc"
         , "Graphics.GL.Raw.Internal.FFI"
-        , "Data.Set"
+        , "Graphics.GL.Raw.Types"
         ]
       ] ++
       shared ++ ib ++ extCheck ++ concatMap bodyF entr
@@ -472,7 +470,7 @@ mkModule fm m entr = Module m export body
         [ Function
           ("gl_" ++ (join "_" . tail $ split "_" en))
           "Bool"
-          ("= Data.Set.elem extensions " ++ show en)
+          ("= member " ++ show en ++ " extensions")
         ]
       Nothing -> []
 
@@ -509,10 +507,10 @@ generateSource :: Registry -> IO ()
 generateSource registry = do
   let s = execState (entries registry) Map.empty
   let m = execState (modules registry s) Map.empty
-  let fm' = concatMap snd $ Map.toList m
+  let fm' = Foldable.concat m
   let fm = funMap registry fm'
-  saveModule $ mkShared fm fm'
   saveModule $ mkFFI fm
+  saveModule $ mkShared fm fm'
   mapM_ (saveModule . uncurry (mkModule fm)) $ Map.toList m
   let exts = mkExtensionGather fm
   mapM_ saveModule $ exts

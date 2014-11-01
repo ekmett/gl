@@ -26,9 +26,14 @@ module Graphics.GL.Raw.Internal.Proc
   ) where
 
 import Control.Monad
+import Data.Functor
+import Data.Set as Set
 import Foreign.C.String
+import Foreign.Marshal.Alloc
 import Foreign.Marshal.Error
 import Foreign.Ptr
+import Foreign.Storable
+import Graphics.GL.Raw.Internal.FFI (ffienumuintIOPtrubyte, ffienumPtrintIOV)
 import System.IO.Unsafe
 
 --------------------------------------------------------------------------------
@@ -72,19 +77,9 @@ extensionSuffixes = [
 
 extensions :: Set String
 extensions = unsafePerformIO $ do
-  glGetString   <- ffienumIOPtrubyte (getProcAddress "glGetString")
-  glGetStringi  <- ffienumuintIOPtrubyte (getProcAddress "glGetStringi")
-  glGetIntegerv <- ffienumPtrintIOV (getProcAddress "glGetIntegerv")
+  glGetStringi  <- ffienumuintIOPtrubyte <$> getProcAddress "glGetStringi"
+  glGetIntegerv <- ffienumPtrintIOV <$> getProcAddress "glGetIntegerv"
   numExtensions <- alloca $ \p -> glGetIntegerv 0x821D p >> peek p
   supported <- forM [0..(fromIntegral numExtensions)-1] $ \n -> peekCString . castPtr =<< glGetStringi 0x1F03 n
   return $ Set.fromList supported
 {-# NOINLINE extensions #-}
-
-foreign import ccall "dynamic"
-  ffienumIOPtrubyte :: FunPtr (GLenum -> IO (Ptr GLubyte)) -> GLenum -> IO (Ptr GLubyte)
- 
-foreign import ccall "dynamic"
-  ffienumuintenumPtrintIOV :: FunPtr (GLenum -> GLuint -> GLenum -> Ptr GLint -> IO ()) -> GLenum -> GLuint -> GLenum -> Ptr GLint -> IO ()
-
-foreign import ccall "dynamic"
-  ffienumPtrintIOV :: FunPtr (GLenum -> Ptr GLint -> IO ()) -> GLenum -> Ptr GLint -> IO ()

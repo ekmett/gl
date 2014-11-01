@@ -69,10 +69,14 @@ renderBody body = case body of
   Pattern name signature body -> printf "pattern %s %s :: %s" name body signature
   Code code -> code
 
+buildDir :: FilePath
+buildDir = "dist/build/autogen"
+
 saveModule :: Module -> IO ()
 saveModule m = do
-  createDirectoryIfMissing True $ "gen" </> folderPath
+  -- putStrLn $ "Saving " ++ moduleName m ++ " to " ++ filePath ++ " in " ++ folderPath
+  createDirectoryIfMissing True folderPath
   writeFile filePath $ renderModule m
   where
-    filePath = (++".hs") . replace "." [pathSeparator] $ moduleName m
+    filePath = (buildDir </>) . (++".hs") . replace "." [pathSeparator] $ moduleName m
     folderPath = (join [pathSeparator] . init $ split [pathSeparator] filePath)

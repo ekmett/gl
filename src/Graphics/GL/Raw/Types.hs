@@ -1,48 +1,49 @@
-module Graphics.OpenGL.Types (
-	-- * Types
-	-- ** Function Types
-	  GLDEBUGPROC
-	, GLDEBUGPROCAMD
-	, GLDEBUGPROCARB
-	, GLDEBUGPROCKHR
+{-# LANGUAGE CPP #-}
+module Graphics.GL.Raw.Types (
+  -- * Types
+  -- ** Function Types
+    GLDEBUGPROC
+  , GLDEBUGPROCAMD
+  , GLDEBUGPROCARB
+  , GLDEBUGPROCKHR
 
-	, mkGLDEBUGPROC
-	, mkGLDEBUGPROCAMD
-	, mkGLDEBUGPROCARB
-	, mkGLDEBUGPROCKHR
+  , mkGLDEBUGPROC
+  , mkGLDEBUGPROCAMD
+  , mkGLDEBUGPROCARB
+  , mkGLDEBUGPROCKHR
 
-	-- ** Common Types
-	, GLbitfield
-	, GLboolean
-	, GLbyte
-	, GLchar
-	, GLcharARB
-	, GLclampd
-	, GLclampf
-	, GLclampx
-	, GLdouble
-	, GLeglImageOES
-	, GLenum
-	, GLfixed
-	, GLfloat
-	, GLhalfNV
-	, GLhandleARB
-	, GLint
-	, GLint64
-	, GLint64EXT
-	, GLintptr
-	, GLintptrARB
-	, GLshort
-	, GLsizei
-	, GLsizeiptr
-	, GLsizeiptrARB
-	, GLsync
-	, GLubyte
-	, GLuint
-	, GLuint64
-	, GLuint64EXT
-	, GLushort
-	, GLvdpauSurfaceNV
+  -- ** Common Types
+  , GLbitfield
+  , GLboolean
+  , GLbyte
+  , GLchar
+  , GLcharARB
+  , GLclampd
+  , GLclampf
+  , GLclampx
+  , GLdouble
+  , GLeglImageOES
+  , GLenum
+  , GLfixed
+  , GLfloat
+  , GLhalfNV
+  , GLhandleARB
+  , GLint
+  , GLint64
+  , GLint64EXT
+  , GLintptr
+  , GLintptrARB
+  , GLshort
+  , GLsizei
+  , GLsizeiptr
+  , GLsizeiptrARB
+  , GLsync
+  , GLubyte
+  , GLuint
+  , GLuint64
+  , GLuint64EXT
+  , GLushort
+  , GLvdpauSurfaceNV
 ) where
 
 import Data.Int
@@ -51,55 +52,55 @@ import Foreign.C.Types
 import Foreign.Ptr
 
 type GLDEBUGPROC =
-	FunPtr (GLenum
-	     -> GLenum
-	     -> GLuint
-	     -> GLenum
-	     -> GLsizei
-	     -> Ptr GLchar
-	     -> Ptr ()
-	     -> IO ())
+  FunPtr (GLenum
+       -> GLenum
+       -> GLuint
+       -> GLenum
+       -> GLsizei
+       -> Ptr GLchar
+       -> Ptr ()
+       -> IO ())
 
 type GLDEBUGPROCAMD =
-	FunPtr (GLuint
-	     -> GLenum
-	     -> GLenum
-	     -> GLsizei
-	     -> Ptr GLchar
-	     -> Ptr ()
-	     -> IO ())
+  FunPtr (GLuint
+       -> GLenum
+       -> GLenum
+       -> GLsizei
+       -> Ptr GLchar
+       -> Ptr ()
+       -> IO ())
 
 type GLDEBUGPROCARB =
-	FunPtr (GLenum
-	     -> GLenum
-	     -> GLuint
-	     -> GLenum
-	     -> GLsizei
-	     -> Ptr GLchar
-	     -> Ptr ()
-	     -> IO ())
+  FunPtr (GLenum
+       -> GLenum
+       -> GLuint
+       -> GLenum
+       -> GLsizei
+       -> Ptr GLchar
+       -> Ptr ()
+       -> IO ())
 
 type GLDEBUGPROCKHR =
-	FunPtr (GLenum
-	     -> GLenum
-	     -> GLuint
-	     -> GLenum
-	     -> GLsizei
-	     -> Ptr GLchar
-	     -> Ptr ()
-	     -> IO ())
+  FunPtr (GLenum
+       -> GLenum
+       -> GLuint
+       -> GLenum
+       -> GLsizei
+       -> Ptr GLchar
+       -> Ptr ()
+       -> IO ())
 
 foreign import ccall "wrapper"
-	mkGLDEBUGPROC :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROC
+  mkGLDEBUGPROC :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROC
 
 foreign import ccall "wrapper"
-	mkGLDEBUGPROCAMD :: (GLuint -> GLenum -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCAMD
+  mkGLDEBUGPROCAMD :: (GLuint -> GLenum -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCAMD
 
 foreign import ccall "wrapper"
-	mkGLDEBUGPROCARB :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCARB
+  mkGLDEBUGPROCARB :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCARB
 
 foreign import ccall "wrapper"
-	mkGLDEBUGPROCKHR :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCKHR
+  mkGLDEBUGPROCKHR :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCKHR
 
 type GLbitfield = CUInt
 type GLboolean = CUChar
