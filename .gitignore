@@ -1,9 +1,4 @@
 dist/
-Graphics/OpenGL/Extension.hs
-Graphics/OpenGL/Extension/
-Graphics/OpenGL/Internal/
-Graphics/OpenGL/Profile/
-gl.xml
 .hsenv/
 docs
 wiki
