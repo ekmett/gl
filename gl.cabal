@@ -6,8 +6,8 @@ license:       BSD3
 license-file:  LICENSE
 author:        Edward A. Kmett, Gabríel Arthúr Pétursson, Sven Panne
 maintainer:    ekmett@gmail.com
-copyright:     Copyright © 2014 Edward A. Kmett
-               Copyright © 2014 Gabríel Arthúr Pétursson
+copyright:     Copyright © 2014 Edward A. Kmett,
+               Copyright © 2014 Gabríel Arthúr Pétursson,
                Copyright © 2013 Sven Panne
 category:      Graphics
 build-type:    Custom
