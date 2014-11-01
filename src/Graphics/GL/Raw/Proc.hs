@@ -20,7 +20,8 @@
 module Graphics.GL.Raw.Proc
   ( getProcAddress
   , getProcAddressWithSuffixes
-  , Invoker, getExtensionEntry, FunPtr, unsafePerformIO
+  , Invoker
+  , getExtensionEntry
   , extensions
   ) where
 
