@@ -12,7 +12,11 @@ copyright:     Copyright © 2014 Edward A. Kmett
 category:      Graphics
 build-type:    Custom
 cabal-version: >=1.18
-extra-source-files: gl.xml Generator.hs Module.hs Parser.hs Registry.hs Utils.hs
+extra-source-files:
+  gl.xml
+  CHANGELOG.markdown README.markdown
+  Generator.hs Module.hs Parser.hs Registry.hs Utils.hs
+
 
 source-repository head
   type:     git
