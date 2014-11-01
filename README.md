@@ -7,7 +7,7 @@ Get the latest OpenGL Registry.
 
 Build and run the generator.
 
-	cabal configure -fgenerator
+	cabal configure -fgen
 	cabal build gl-gen
 	./dist/build/gl-gen/gl-gen
 
