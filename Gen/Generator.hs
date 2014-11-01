@@ -441,12 +441,9 @@ mkModule fm m entr = Module m export body
     entryName (F n) = n
 
     (ie, ib) = implicitPrelude m
-    hasShared = not . null $ filter (\(s, _, _) -> s) entr
-    shared = case hasShared of
-      True -> [Import
-        [ "Graphics.GL.Raw.Internal.Shared"
-        ]]
-      False -> []
+    hasUnshared = any (\(s, _, _) -> not s) entr
+    hasUnsharedFunctions = any (\(s, e, _) -> not s && case e of F _ -> True; _ -> False) entr
+    hasExt = Map.member m (funExtensions fm)
 
     export = case Map.lookup m (funExtensions fm) of
       Just en ->
@@ -459,18 +456,27 @@ mkModule fm m entr = Module m export body
         [ Section m $ ie ++ map (\(s, e, _) -> entryName e) entr
         ]
 
+    needsTypes (True, _, _) = False
+    needsTypes (_ , E _, _) = True
+    needsTypes (_ , F _, t) = isInfixOf "GL" t
+
     body =
-      [ Import
-        [ "Control.Monad.IO.Class"
-        , "Data.Set"
-        , "Foreign.Ptr"
-        , "Graphics.GL.Raw.Internal.Proc"
-        , "Graphics.GL.Raw.Internal.FFI"
-        , "Graphics.GL.Raw.Types"
-        , "System.IO.Unsafe"
+      [ Import $ sort $ concat 
+        [ [ "Graphics.GL.Raw.Internal.Shared" | any (\(s, _, _) -> s) entr ]
+        , [ "Graphics.GL.Raw.Types"           | any needsTypes entr ]
+        , [ "Data.Set"                        | hasExt ]
+        , [ "Graphics.GL.Raw.Internal.Proc"   | hasExt || hasUnsharedFunctions ]
+        , guard hasUnsharedFunctions >> 
+          [ "Control.Monad.IO.Class"
+          , "Foreign.Ptr"
+          , "Graphics.GL.Raw.Internal.FFI"
+          , "System.IO.Unsafe"
+          ]
         ]
       ] ++
-      shared ++ ib ++ extCheck ++ concatMap bodyF entr
+      ib ++
+      extCheck ++
+      concatMap bodyF entr
 
     extCheck = case Map.lookup m (funExtensions fm) of
       Just en ->
