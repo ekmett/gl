@@ -17,7 +17,7 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.GL.Raw.Proc
+module Graphics.GL.Raw.Internal.Proc
   ( getProcAddress
   , getProcAddressWithSuffixes
   , Invoker
