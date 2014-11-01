@@ -1,4 +1,13 @@
 {-# LANGUAGE CPP #-}
+-----------------------------------------------------------------------------
+-- |
+-- Copyright   :  (C) 2014 Edward Kmett and Gabríel Arthúr Pétursson
+-- License     :  BSD-style (see the file LICENSE)
+-- Maintainer  :  Edward Kmett <ekmett@gmail.com>
+-- Stability   :  experimental
+-- Portability :  portable
+--
+----------------------------------------------------------------------------
 module Graphics.GL.Raw.Types (
   -- * Types
   -- ** Function Types

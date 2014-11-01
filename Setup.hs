@@ -1,4 +1,17 @@
 {-# OPTIONS_GHC -Wall #-}
+-----------------------------------------------------------------------------
+-- |
+-- Copyright   :  (C) 2014 Edward Kmett and Gabríel Arthúr Pétursson
+-- License     :  BSD-style (see the file LICENSE)
+-- Maintainer  :  Edward Kmett <ekmett@gmail.com>
+-- Stability   :  experimental
+-- Portability :  portable
+--
+--
+-- Loaded by cabal to configure the project.
+--
+-- Local hooks are provided to generate the API on build, producing haddocks and to enable @cabal sdist@
+----------------------------------------------------------------------------
 import Distribution.Simple
 import Distribution.Simple.LocalBuildInfo
 import Distribution.PackageDescription

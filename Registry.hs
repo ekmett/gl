@@ -1,3 +1,12 @@
+-----------------------------------------------------------------------------
+-- |
+-- Copyright   :  (C) 2014 Edward Kmett and Gabríel Arthúr Pétursson
+-- License     :  BSD-style (see the file LICENSE)
+-- Maintainer  :  Edward Kmett <ekmett@gmail.com>
+-- Stability   :  experimental
+-- Portability :  portable
+--
+----------------------------------------------------------------------------
 module Registry
   ( Registry(..)
   , Command(..)
