@@ -14,7 +14,7 @@ build-type:    Custom
 cabal-version: >=1.18
 extra-source-files:
   gl.xml
-  CHANGELOG.markdown README.markdown
+  CHANGELOG.markdown README.markdown TODO.markdown
   Generator.hs Module.hs Parser.hs Registry.hs Utils.hs
 
 
