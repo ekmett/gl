@@ -3,7 +3,7 @@ gl
 
 [![Build Status](https://secure.travis-ci.org/ekmett/gl.png?branch=master)](http://travis-ci.org/ekmett/gl)
 
-This package supplies low level bindings to all of the OpenGL specification.
+This package supplies low level bindings to all of the OpenGL specification for Haskell.
 
 Contact Information
 -------------------
