@@ -8,8 +8,8 @@ Get the latest OpenGL Registry.
 Build and run the generator.
 
 	cabal configure -fgenerator
-	cabal build opengl-wrangler-gen
-	./dist/build/opengl-wrangler-gen/opengl-wrangler-gen
+	cabal build gl-gen
+	./dist/build/gl-gen/gl-gen
 
 Build and install the library.
 

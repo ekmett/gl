@@ -1,9 +1,7 @@
 module Graphics.OpenGL.Types (
-	  module Foreign.Ptr
-
 	-- * Types
 	-- ** Function Types
-	, GLDEBUGPROC
+	  GLDEBUGPROC
 	, GLDEBUGPROCAMD
 	, GLDEBUGPROCARB
 	, GLDEBUGPROCKHR
