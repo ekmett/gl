@@ -75,10 +75,10 @@ renderBody body = case body of
   Pattern name signature body -> printf "pattern %s %s :: %s" name body signature
   Code code -> code
 
-saveModule :: Bool -> FilePath -> Module -> IO ()
-saveModule r fp m = do
+saveModule :: FilePath -> Module -> IO ()
+saveModule fp m = do
   createDirectoryIfMissing True folderPath
   writeFile filePath $ renderModule m
   where
-    filePath = (fp </>) . (++ if r then ".hs" else ".auto") . replace "." [pathSeparator] $ moduleName m
+    filePath = fp </> replace "." [pathSeparator] (moduleName m) <.> "hs"
     folderPath = (join [pathSeparator] . init $ split [pathSeparator] filePath)

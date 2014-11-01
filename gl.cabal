@@ -1,7 +1,7 @@
 name:          gl
 version:       0.1
-synopsis:      Complete OpenGL bindings
-description:   Complete OpenGL bindings
+synopsis:      Complete OpenGL raw bindings
+description:   Complete OpenGL raw bindings
 license:       BSD3
 license-file:  LICENSE
 author:        Edward A. Kmett, Gabríel Arthúr Pétursson, Sven Panne
@@ -28,7 +28,7 @@ flag UseGlXGetProcAddress
       Use glXGetProcAddress instead of dlsym on non-Windows/-Darwin platforms.
 
 library
-  hs-source-dirs: src sdist
+  hs-source-dirs: src dist/build/autogen
   c-sources: cbits/gl.c
   ghc-options: -Wall -O2
 

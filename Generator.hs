@@ -518,15 +518,15 @@ mkExtensionGroupGather ms = Module "Graphics.GL.Raw.Extension"
   [Section "Extensions" $ map (("module "++) . moduleName) ms]
   [Import $ map moduleName ms]
 
-generateSource :: Bool -> FilePath -> Registry -> IO ()
-generateSource r fp registry = do
+generateSource :: FilePath -> Registry -> IO ()
+generateSource fp registry = do
   let s = execState (entries registry) Map.empty
   let m = execState (modules registry s) Map.empty
   let fm' = Foldable.concat m
   let fm = funMap registry fm'
-  saveModule r fp $ mkFFI fm
-  saveModule r fp $ mkShared fm fm'
-  forM_ (Map.toList m) $ saveModule r fp . uncurry (mkModule fm)
+  saveModule fp $ mkFFI fm
+  saveModule fp $ mkShared fm fm'
+  forM_ (Map.toList m) $ saveModule fp . uncurry (mkModule fm)
   let exts = mkExtensionGather fm
-  forM_ exts $ saveModule r fp
-  saveModule r fp $ mkExtensionGroupGather exts
+  forM_ exts $ saveModule fp
+  saveModule fp $ mkExtensionGroupGather exts
