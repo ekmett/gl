@@ -17,6 +17,7 @@ generateAPI l = do
 main :: IO ()
 main = defaultMainWithHooks simpleUserHooks
   { buildHook = \p l h f -> generateAPI l >> buildHook simpleUserHooks p l h f
+  , haddockHook = \p l h f -> generateAPI l >> haddockHook simpleUserHooks p l h f
   , sDistHook = \p ml h f -> case ml of
      Nothing -> fail "No local buildinfo available. configure first"
      Just l -> do
