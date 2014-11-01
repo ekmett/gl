@@ -385,7 +385,7 @@ funMapSignature i (FunMap m _) = Map.findWithDefault undefined i m
 funBody :: FunMap -> Name -> Signature -> [Body]
 funBody fm n v =
   [ Function n ("MonadIO m => " ++ v) $ strip $ printf "= %s %s" (invokerName v) np
-  , Function np ("FunPtr(" ++ v' ++ ")") $ strip $ "= getProcAddress " ++ show n
+  , Function np ("FunPtr(" ++ v' ++ ")") $ strip $ printf "= unsafePerformIO (getProcAddress %s)" (show n)
   , Code $ printf "{-# NOINLINE %s #-}" np
   ] where
   np = n ++ "FunPtr"
@@ -420,8 +420,12 @@ mkShared fm entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
   where
     imp =
       [ Import
-        [ "Graphics.GL.Raw.Types"
+        [ "Control.Monad.IO.Class"
+        , "Foreign.Ptr"
+        , "Graphics.GL.Raw.Types"
         , "Graphics.GL.Raw.Internal.FFI"
+        , "Graphics.GL.Raw.Internal.Proc"
+        , "System.IO.Unsafe"
         ]
       ]
 
@@ -457,10 +461,13 @@ mkModule fm m entr = Module m export body
 
     body =
       [ Import
-        [ "Data.Set"
+        [ "Control.Monad.IO.Class"
+        , "Data.Set"
+        , "Foreign.Ptr"
         , "Graphics.GL.Raw.Internal.Proc"
         , "Graphics.GL.Raw.Internal.FFI"
         , "Graphics.GL.Raw.Types"
+        , "System.IO.Unsafe"
         ]
       ] ++
       shared ++ ib ++ extCheck ++ concatMap bodyF entr
