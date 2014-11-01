@@ -1,25 +1,22 @@
 {-# OPTIONS_GHC -Wall #-}
 import Distribution.Simple
-import System.Directory (canonicalizePath)
+import Distribution.Simple.LocalBuildInfo
 import System.FilePath
 import Generator (generateSource)
 import Parser (parseFile)
 import Registry (deshenaniganize)
 
--- ugly. There must be a safer way to get the absolute path of the dist dir
-getDistDir :: IO FilePath
-getDistDir = canonicalizePath "dist" 
-
-generateAPI :: IO ()
-generateAPI = do
+generateAPI :: LocalBuildInfo -> IO ()
+generateAPI l = do
   registry <- parseFile "gl.xml"
-  dd <- getDistDir
   putStr "Generating API..."
-  generateSource (dd </> "build" </> "autogen") (deshenaniganize registry)
+  generateSource (buildDir l </> "autogen") (deshenaniganize registry)
   putStrLn "done"
 
 main :: IO ()
 main = defaultMainWithHooks simpleUserHooks
-  { buildHook = \p l h f -> generateAPI >> buildHook simpleUserHooks p l h f
-  , sDistHook = \p l h f -> generateAPI >> sDistHook simpleUserHooks p l h f
+  { buildHook = \p l h f -> generateAPI l >> buildHook simpleUserHooks p l h f
+  , sDistHook = \p ml h f -> case ml of
+     Nothing -> fail "No local buildinfo available. configure first"
+     Just l -> generateAPI l >> sDistHook simpleUserHooks p ml h f
   }
