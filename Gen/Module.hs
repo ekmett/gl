@@ -43,24 +43,30 @@ renderModule m =
     "module %s%s where\n\n%s")
      (moduleName m) (renderExports $ moduleExport m) (join "\n\n" . map renderBody $ moduleBody m)
 
+
 renderExports :: [Export] -> String
 renderExports [] = ""
 renderExports exports =
     printf " (\n%s)"
   . join "\n" . map (uncurry renderExport)
-  $ zip (True : repeat False) exports
+  . zip (True : repeat False)
+  $ filter nonEmpty exports
   where
     renderExport :: Bool -> Export -> String
     renderExport first (Section heading export) =
-      printf "\t-- * %s\n\t%s %s"
+      printf "  -- * %s\n  %s %s"
         heading
         (if first then " " else ",")
-        ((++"\n") . join "\n\t, " $ export)
+        ((++"\n") . join "\n  , " $ export)
     renderExport first (Subsection heading export) =
-      printf "\t-- ** %s\n\t%s %s"
+      printf "  -- ** %s\n  %s %s"
         heading
         (if first then " " else ",")
-        ((++"\n") . join "\n\t, " $ export)
+        ((++"\n") . join "\n  , " $ export)
+    nonEmpty :: Export -> Bool
+    nonEmpty (Section _ []) = False
+    nonEmpty (Subsection _ []) = False
+    nonEmpty _ = True
 
 renderBody :: Body -> String
 renderBody body = case body of
