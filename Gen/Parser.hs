@@ -1,10 +1,10 @@
 {-# LANGUAGE Arrows #-}
-module Parser
+module Gen.Parser
   ( parseFile
   ) where
 
 import Control.Applicative
-import Registry
+import Gen.Registry
 import Text.XML.HXT.Core
 
 to :: ArrowXml a => String -> a XmlTree XmlTree

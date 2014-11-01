@@ -1,9 +1,10 @@
-module Generator (generateSource) where
+module Gen.Generator (generateSource) where
 
 import Control.Arrow
 import Control.Monad hiding (join)
 import Control.Monad.Trans.State hiding (join)
 import Data.Char
+import qualified Data.Foldable as Foldable
 import Data.Functor
 import Data.List
 import qualified Data.Map as Map
@@ -12,9 +13,9 @@ import qualified Data.Set as Set
 import Data.Set (Set)
 import Data.String.Utils
 import Data.Tuple
-import Module
-import Parser
-import Registry
+import Gen.Module
+import Gen.Parser
+import Gen.Registry
 import Text.Printf
 
 data Entry
@@ -77,23 +78,21 @@ commandSignature monad command =
         Just "struct _cl_event" -> "()"
         Just x -> x
 
-invokerName :: Command -> String
-invokerName
+commonName :: Signature -> Name
+commonName
   = join ""
   . split "GL"
   . join ""
   . map (filter isAlphaNum)
   . map (replace "()" "V")
   . split " -> "
-  . commandSignature True "IO"
+  . ioish
 
--- the raw dynamic ffi signature
-dynamicCommandSignature :: Bool -> Command -> Signature
-dynamicCommandSignature monadic cmd = (printf "FunPtr (%s) -> %s" >>= id) (commandSignature monadic "IO" cmd)
+dynamicName :: Signature -> Name
+dynamicName xs = "dyn" ++ commonName xs
 
-invokerCommandSignature :: Bool -> Command -> Signature
-invokerCommandSignature False cmd = printf "FunPtr (%s) -> %s" (commandSignature True "!!!" cmd) (commandSignature True "!!!" cmd)
-invokerCommandSignature True cmd = printf "MonadIO m => FunPtr (%s) -> %s" (commandSignature True "IO" cmd) (commandSignature True "m" cmd)
+invokerName :: Signature -> Name
+invokerName xs = "ffi" ++ commonName xs
 
 extensionModuleName :: ExtensionName -> ModuleName
 extensionModuleName name =
@@ -272,7 +271,7 @@ entries registry = do
   forM_ (registryCommands registry) $ \f ->
     modify $ Map.insert
       (F $ commandName f)
-      (C (commandSignature True "m" f) Set.empty)
+      (C (commandSignature (Just "m") f) Set.empty)
 
   forM_ (registryEnums registry) $ \e ->
     modify $ Map.insert
@@ -369,33 +368,32 @@ modules registry entr = do
       ]
 
 data FunMap = FunMap
-  { funSignatures :: Map Name Signature -- signature by method name
+  { funSignatures   :: Map Name Signature           -- signatures by method name
   , funExtensions :: Map ModuleName ExtensionName -- module name to extension name
   } deriving (Eq, Show)
 
+ioish = replace "m (" "IO (" . replace "m GL" "IO GL"
+
 funMap :: Registry -> [(Bool, Entry, String)] -> FunMap
 funMap registry entries = FunMap
-  (Map.fromList [ n | (_, F n, _) <- entries ])
+  (Map.fromList [ (n, s) | (_, F n, s) <- entries ])
   (Map.fromList $ map ((extensionModuleName&&&id).extensionName) $ registryExtensions registry)
 
 funMapSignature :: String -> FunMap -> String
 funMapSignature i (FunMap m _) = Map.findWithDefault undefined i m
 
-funBody :: FunMap -> String -> String -> [Body]
+funBody :: FunMap -> Name -> Signature -> [Body]
 funBody fm n v =
-  [ Function n ("MonadIO m => " ++ v) $ strip $ printf "= %s %sFunPtr" ( ) n
-      (funMapByFunction n fm)
-      params
-  , Function np ("FunPtr(" ++ v'  ++ ")") $ strip $ printf "= %s %s"
-      invokerName
-  , Code $ printf "{-# NOINLINE " ++ np ++ "#-}" np
+  [ Function n ("MonadIO m => " ++ v) $ strip $ printf "= %s %s" (invokerName v) np
+  , Function np ("FunPtr(" ++ v' ++ ")") $ strip $ "= getProcAddress " ++ show n
+  , Code $ printf "{-# NOINLINE %s #-}" np
   ] where
   np = n ++ "FunPtr"
-  v' = replace "m (" "IO (" $ replace "m GL" "IO GL" v
+  v' = ioish v
 
 mkFFI :: FunMap -> Module
 mkFFI fm = Module "Graphics.GL.Raw.Internal.FFI" export body where
-  export = [ Section "Invokers" (nub $ ffiCommandName <$> Map.keys fm) ]
+  export = [ Section "Invokers" (nub $ invokerName <$> Foldable.toList (funSignatures fm)) ]
   body = 
     [ Import
       [ "Foreign.C.String"
@@ -406,22 +404,20 @@ mkFFI fm = Module "Graphics.GL.Raw.Internal.FFI" export body where
       , "Graphics.GL.Raw.Types"
       , "Unsafe.Coerce"
       ]
-    ] ++ nub (
-      map (\(n, f) -> Code $ printf "foreign import ccall \"dynamic\" %s :: %s"
-            (ffiCommandName $ funMapSignature n fm)
-            (ffiCommandSignature $ funMapSignature n fm)
-          ) (Map.toList $ funMapSignatures fm)
-    )
+    ] ++ nub (Foldable.concatMap invokers (funSignatures fm))
 
-ffi :: String -> String -> [Body]
-ffi n args =
-  [ 
-
+invokers :: Signature -> [Body]
+invokers v =
+  [ Code $ printf "foreign import ccall \"dynamic\" %s :: FunPtr (%s) -> %s" nd v' v'
+  , Function ni (printf "MonadIO m => FunPtr (%s) -> %s" v' v) $
+      printf "%s = liftIO (%s %s)" params nd params
   ] where
   numArgs = subtract 2 . length $ split " -> " v
   params = join " " $ map (\x -> "v" ++ show x) [0..numArgs]
-    -- TODO: m variants
-
+  v' = ioish v
+  nd = dynamicName v
+  ni = invokerName v
+  
 mkShared :: FunMap -> [(Bool, Entry, String)] -> Module
 mkShared fm entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
   where
@@ -435,7 +431,7 @@ mkShared fm entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
     body = imp ++ (concat . map bodyF $ nub entr)
     bodyF (False, _, _) = []
     bodyF (_, E n, v) = [Pattern n "GLenum" ("= " ++ v)]
-    bodyF (_, F n, v) = [funBody fm n v]
+    bodyF (_, F n, v) = funBody fm n v
 
 mkModule :: FunMap -> String -> [(Bool, Entry, String)] -> Module
 mkModule fm m entr = Module m export body
@@ -482,7 +478,7 @@ mkModule fm m entr = Module m export body
 
     bodyF (True, _, _) = []
     bodyF (_, E n, v) = [Pattern n "GLenum" ("= " ++ v)]
-    bodyF (_, F n, v) = [funBody fm n v]
+    bodyF (_, F n, v) = funBody fm n v
 
 mkExtensionGather :: FunMap -> [Module]
 mkExtensionGather fm = flip map extensionGroups $
@@ -493,14 +489,16 @@ mkExtensionGather fm = flip map extensionGroups $
   extInGroup grp
     = map fst
     . sort
-    . filter (\x -> grp == (head . tail . split "_" . snd $ snd x))
-    . Map.toList $ funExtensions fm
+    . filter (\x -> grp == (head . tail . split "_" $ snd x))
+    . Map.toList
+    $ funExtensions fm
 
   extensionGroups
     = sort
     . nub
-    . map (head . tail . split "_" . snd . snd)
-    . Map.toList $ funExtensions fm
+    . map (head . tail . split "_" . snd)
+    . Map.toList
+    $ funExtensions fm
 
 mkExtensionGroupGather :: [Module] -> Module
 mkExtensionGroupGather ms = Module "Graphics.GL.Raw.Extension"

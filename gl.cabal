@@ -10,7 +10,7 @@ copyright:     Copyright © 2014 Edward A. Kmett
                Copyright © 2014 Gabríel Arthúr Pétursson
                Copyright © 2013 Sven Panne
 category:      Graphics
-build-type:    Simple
+build-type:    Custom
 cabal-version: >=1.18
 extra-source-files: gl.xml
 

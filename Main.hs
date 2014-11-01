@@ -2,9 +2,9 @@ module Main
   ( main
   ) where
 
-import Generator
-import Parser
-import Registry
+import Gen.Generator
+import Gen.Parser
+import Gen.Registry
 
 main :: IO ()
 main = do
