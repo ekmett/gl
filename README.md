@@ -1,17 +1,15 @@
-Building
-========
+gl
+==
 
-Get the latest OpenGL Registry.
+[![Build Status](https://secure.travis-ci.org/ekmett/gl.png?branch=master)](http://travis-ci.org/ekmett/gl)
 
-	wget https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/api/gl.xml
+This package supplies low level bindings to all of the OpenGL specification.
 
-Build and run the generator.
+Contact Information
+-------------------
 
-	cabal configure -fgen
-	cabal build gl-gen
-	./dist/build/gl-gen/gl-gen
+Contributions and bug reports are welcome!
 
-Build and install the library.
+Please feel free to contact me through github or on the #haskell IRC channel on irc.freenode.net.
 
-	cabal build
-	cabal install
+-Edward Kmett
