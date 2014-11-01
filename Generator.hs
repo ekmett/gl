@@ -395,7 +395,7 @@ funMapSignature i (FunMap m _) = Map.findWithDefault undefined i m
 funBody :: FunMap -> Name -> Signature -> [Body]
 funBody fm n v =
   [ Function n ("MonadIO m => " ++ v) $ strip $ printf "= %s %s" (invokerName v) np
-  , Function np ("FunPtr(" ++ v' ++ ")") $ strip $ printf "= unsafePerformIO (getProcAddress %s)" (show n)
+  , Function np ("FunPtr (" ++ v' ++ ")") $ strip $ printf "= unsafePerformIO (getProcAddress %s)" (show n)
   , Code $ printf "{-# NOINLINE %s #-}" np
   ] where
   np = n ++ "FunPtr"
