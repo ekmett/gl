@@ -1,7 +1,7 @@
 import Distribution.Simple
-import Gen.Generator
-import Gen.Parser
-import Gen.Registry
+import Generator
+import Parser
+import Registry
 
 generateAPI :: IO ()
 generateAPI = do

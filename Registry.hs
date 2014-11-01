@@ -1,4 +1,4 @@
-module Gen.Registry
+module Registry
   ( Registry(..)
   , Command(..)
   , Enumeratee(..)

@@ -1,4 +1,4 @@
-module Gen.Module
+module Module
   ( Module(..)
   , Export(..)
   , Body(..)
