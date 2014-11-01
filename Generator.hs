@@ -1,8 +1,8 @@
 module Generator (generateSource) where
 
 import Control.Arrow
-import Control.Monad hiding (join)
-import Control.Monad.Trans.State hiding (join)
+import Control.Monad
+import Control.Monad.Trans.State
 import Data.Char
 import qualified Data.Foldable as Foldable
 import Data.Functor
@@ -11,14 +11,13 @@ import qualified Data.Map as Map
 import Data.Map (Map)
 import qualified Data.Set as Set
 import Data.Set (Set)
-import Data.String.Utils
 import Data.Tuple
 import System.FilePath 
 import Text.Printf
 import Module
 import Parser
 import Registry
-
+import Utils
 
 data Entry
   = F String
@@ -36,7 +35,7 @@ data Category = C SectionName (Set ExportItem)
   deriving (Eq, Ord, Show)
 
 saneEnum :: Name -> Name
-saneEnum = ("GL_"++) . join "_" . tail . split "_"
+saneEnum = ("GL_"++) . joinOn "_" . tail . splitOn "_"
 
 saneModule :: Name -> Name
 saneModule "422Pixels" = "FourTwoTwoPixels"
@@ -54,7 +53,7 @@ wrap Nothing s = s
 
 commandSignature :: Maybe Name -> Command -> Signature
 commandSignature monad command =
-  join " -> " $
+  joinOn " -> " $
     (parameterSignature $ commandParameters command) ++
     [returnSignature $ commandType command]
   where
@@ -82,12 +81,12 @@ commandSignature monad command =
 
 commonName :: Signature -> Name
 commonName
-  = join ""
-  . split "GL"
-  . join ""
+  = joinOn ""
+  . splitOn "GL"
+  . joinOn ""
   . map (filter isAlphaNum)
   . map (replace "()" "V")
-  . split " -> "
+  . splitOn " -> "
   . ioish
 
 dynamicName :: Signature -> Name
@@ -99,13 +98,13 @@ invokerName xs = "ffi" ++ commonName xs
 extensionModuleName :: ExtensionName -> ModuleName
 extensionModuleName name =
   printf "Graphics.GL.Raw.Extension.%s.%s"
-    (sanePrefix prefix) (saneModule $ camelCase (join "_" rest))
+    (sanePrefix prefix) (saneModule $ camelCase (joinOn "_" rest))
   where
-    (gl:prefix:rest) = split "_" name
+    (gl:prefix:rest) = splitOn "_" name
 
     camelCase :: String -> String
     camelCase str = concat . map (\(x:xs) -> toUpper x : xs) $
-      split "_" str
+      splitOn "_" str
 
 profileModuleName :: String -> String -> (ModuleName, Maybe ModuleName)
 profileModuleName feature profile =
@@ -291,7 +290,7 @@ entries registry = do
       let name = fst . profileModuleName feature $ requireProfile req
       requires name req
 
-      when (startswith "Graphics.GL.Raw.Profile.Standard" name) $
+      when (isPrefixOf "Graphics.GL.Raw.Profile.Standard" name) $
         requires "Graphics.GL.Raw.Profile.Core32" req
 
     forM_ (featureRemoves fe) $ \rm -> do
@@ -411,8 +410,8 @@ invokers v =
   , Function ni (printf "MonadIO m => FunPtr (%s) -> %s" v' v) $
       printf "fp %s = liftIO (%s fp %s)" params nd params
   ] where
-  numArgs = subtract 2 . length $ split " -> " v
-  params = join " " $ map (\x -> "v" ++ show x) [0..numArgs]
+  numArgs = subtract 2 . length $ splitOn " -> " v
+  params = joinOn " " $ map (\x -> "v" ++ show x) [0..numArgs]
   v' = ioish v
   nd = dynamicName v
   ni = invokerName v
@@ -450,7 +449,7 @@ mkModule fm m entr = Module m export body
     export = case Map.lookup m (funExtensions fm) of
       Just en ->
         [ Section "Extension Support" $
-          [ "gl_" ++ (join "_" . tail $ split "_" en)
+          [ "gl_" ++ (joinOn "_" . tail $ splitOn "_" en)
           ]
         , Section en $ ie ++ map (\(s, e, _) -> entryName e) entr
         ]
@@ -483,7 +482,7 @@ mkModule fm m entr = Module m export body
     extCheck = case Map.lookup m (funExtensions fm) of
       Just en ->
         [ Function
-          ("gl_" ++ (join "_" . tail $ split "_" en))
+          ("gl_" ++ (joinOn "_" . tail $ splitOn "_" en))
           "Bool"
           ("= member " ++ show en ++ " extensions")
         ]
@@ -502,14 +501,14 @@ mkExtensionGather fm = flip map extensionGroups $
   extInGroup grp
     = map fst
     . sort
-    . filter (\x -> grp == (head . tail . split "_" $ snd x))
+    . filter (\x -> grp == (head . tail . splitOn "_" $ snd x))
     . Map.toList
     $ funExtensions fm
 
   extensionGroups
     = sort
     . nub
-    . map (head . tail . split "_" . snd)
+    . map (head . tail . splitOn "_" . snd)
     . Map.toList
     $ funExtensions fm
 

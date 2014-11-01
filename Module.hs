@@ -6,7 +6,7 @@ module Module
   , saveModule
   ) where
 
-import Data.String.Utils
+import Utils
 import System.Directory
 import System.FilePath
 import System.IO
@@ -41,14 +41,14 @@ renderModule m =
     ("-- This file was automatically generated.\n" ++
     "{-# LANGUAGE ScopedTypeVariables, PatternSynonyms #-}\n" ++
     "module %s%s where\n\n%s")
-     (moduleName m) (renderExports $ moduleExport m) (join "\n\n" . map renderBody $ moduleBody m)
+     (moduleName m) (renderExports $ moduleExport m) (joinOn "\n\n" . map renderBody $ moduleBody m)
 
 
 renderExports :: [Export] -> String
 renderExports [] = ""
 renderExports exports =
     printf " (\n%s)"
-  . join "\n" . map (uncurry renderExport)
+  . joinOn "\n" . map (uncurry renderExport)
   . zip (True : repeat False)
   $ filter nonEmpty exports
   where
@@ -57,12 +57,12 @@ renderExports exports =
       printf "  -- * %s\n  %s %s"
         heading
         (if first then " " else ",")
-        ((++"\n") . join "\n  , " $ export)
+        ((++"\n") . joinOn "\n  , " $ export)
     renderExport first (Subsection heading export) =
       printf "  -- ** %s\n  %s %s"
         heading
         (if first then " " else ",")
-        ((++"\n") . join "\n  , " $ export)
+        ((++"\n") . joinOn "\n  , " $ export)
     nonEmpty :: Export -> Bool
     nonEmpty (Section _ []) = False
     nonEmpty (Subsection _ []) = False
@@ -70,7 +70,7 @@ renderExports exports =
 
 renderBody :: Body -> String
 renderBody body = case body of
-  Import m -> join "\n" $ map (printf "import %s") m
+  Import m -> joinOn "\n" $ map (printf "import %s") m
   Function name signature body -> printf "%s :: %s\n%s %s" name signature name body
   Pattern name signature body -> printf "pattern %s %s :: %s" name body signature
   Code code -> code
@@ -81,4 +81,4 @@ saveModule fp m = do
   writeFile filePath $ renderModule m
   where
     filePath = fp </> replace "." [pathSeparator] (moduleName m) <.> "hs"
-    folderPath = (join [pathSeparator] . init $ split [pathSeparator] filePath)
+    folderPath = (joinOn [pathSeparator] . init $ splitOn [pathSeparator] filePath)
