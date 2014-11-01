@@ -119,7 +119,7 @@ hs_gl_getProcAddress(const char *name)
 
   if (gpa) {
     /* Fine, we seem to have some kind of glXGetProcAddress(), so use it. */
-    return ((PFNGLXGETPROCADDRESSARB)gpa)(name);
+    return ((PFNGLXGETPROCADDRESSARB)gpa)((const GLubyte *)name);
   } else if (handle) {
     /* Fallback to dlsym() if we have no glXGetProcAddress(), although we then
        ignore the fact that OpenGL entry points could be context dependent. */
