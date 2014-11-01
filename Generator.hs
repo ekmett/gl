@@ -1,4 +1,4 @@
-module Gen.Generator (generateSource) where
+module Generator (generateSource) where
 
 import Control.Arrow
 import Control.Monad hiding (join)
@@ -13,10 +13,12 @@ import qualified Data.Set as Set
 import Data.Set (Set)
 import Data.String.Utils
 import Data.Tuple
-import Gen.Module
-import Gen.Parser
-import Gen.Registry
+import System.FilePath 
 import Text.Printf
+import Module
+import Parser
+import Registry
+
 
 data Entry
   = F String
@@ -516,15 +518,15 @@ mkExtensionGroupGather ms = Module "Graphics.GL.Raw.Extension"
   [Section "Extensions" $ map (("module "++) . moduleName) ms]
   [Import $ map moduleName ms]
 
-generateSource :: Registry -> IO ()
-generateSource registry = do
+generateSource :: Bool -> FilePath -> Registry -> IO ()
+generateSource r fp registry = do
   let s = execState (entries registry) Map.empty
   let m = execState (modules registry s) Map.empty
   let fm' = Foldable.concat m
   let fm = funMap registry fm'
-  saveModule $ mkFFI fm
-  saveModule $ mkShared fm fm'
-  mapM_ (saveModule . uncurry (mkModule fm)) $ Map.toList m
+  saveModule r fp $ mkFFI fm
+  saveModule r fp $ mkShared fm fm'
+  forM_ (Map.toList m) $ saveModule r fp . uncurry (mkModule fm)
   let exts = mkExtensionGather fm
-  mapM_ saveModule $ exts
-  saveModule $ mkExtensionGroupGather exts
+  forM_ exts $ saveModule r fp
+  saveModule r fp $ mkExtensionGroupGather exts
