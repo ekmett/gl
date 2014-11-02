@@ -53,7 +53,7 @@ sanePrefix "3DFX" = "ThreeDFX"
 sanePrefix x = x
 
 wrap :: Maybe String -> String -> String
-wrap (Just w) s 
+wrap (Just w) s
   | any isSpace s = printf "%s (%s)" w s
   | otherwise = printf "%s %s" w s
 wrap Nothing s = s
@@ -369,7 +369,7 @@ modules registry entr = do
       ]
 
 data FunMap = FunMap
-  { funSignatures   :: Map Name Signature           -- signatures by method name
+  { funSignatures :: Map Name Signature           -- signatures by method name
   , funExtensions :: Map ModuleName ExtensionName -- module name to extension name
   } deriving (Eq, Show)
 
@@ -413,7 +413,7 @@ invokers v =
   v' = ioish v
   nd = dynamicName v
   ni = invokerName v
-  
+
 mkShared :: [(Bool, Entry, String)] -> Module
 mkShared entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
   where
@@ -430,7 +430,7 @@ mkShared entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
 
     body = imp ++ concatMap bodyF (nub entr)
     bodyF (False, _, _) = []
-    bodyF (_, E n, v) = [Pattern n "GLenum" ("= " ++ v)]
+    bodyF (_, E n, v) = [Pattern n Nothing ("= " ++ v)]
     bodyF (_, F n, v) = funBody n v
 
 mkModule :: FunMap -> String -> [(Bool, Entry, String)] -> Module
@@ -445,7 +445,7 @@ mkModule fm m entr = Module m export body
 
     export = case Map.lookup m (funExtensions fm) of
       Just en ->
-        [ Section "Extension Support" 
+        [ Section "Extension Support"
           [ "gl_" ++ (intercalate "_" . tail $ splitOn "_" en)
           ]
         , Section en $ ie ++ map (\(_, e, _) -> entryName e) entr
@@ -455,16 +455,16 @@ mkModule fm m entr = Module m export body
         ]
 
     needsTypes (True, _, _) = False
-    needsTypes (_ , E _, _) = True
+    needsTypes (_ , E _, _) = False
     needsTypes (_ , F _, t) = "GL" `isInfixOf` t
 
     body =
-      [ Import $ sort $ concat 
+      [ Import $ sort $ concat
         [ [ "Graphics.GL.Raw.Internal.Shared" | any (\(s, _, _) -> s) entr ]
         , [ "Graphics.GL.Raw.Types"           | any needsTypes entr ]
         , [ "Data.Set"                        | hasExt ]
         , [ "Graphics.GL.Raw.Internal.Proc"   | hasExt || hasUnsharedFunctions ]
-        , guard hasUnsharedFunctions >> 
+        , guard hasUnsharedFunctions >>
           [ "Control.Monad.IO.Class"
           , "Foreign.Ptr"
           , "Graphics.GL.Raw.Internal.FFI"
@@ -486,7 +486,7 @@ mkModule fm m entr = Module m export body
       Nothing -> []
 
     bodyF (True, _, _) = []
-    bodyF (_, E n, v) = [Pattern n "GLenum" ("= " ++ v)]
+    bodyF (_, E n, v) = [Pattern n Nothing ("= " ++ v)]
     bodyF (_, F n, v) = funBody n v
 
 mkExtensionGather :: FunMap -> [Module]

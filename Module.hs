@@ -38,10 +38,10 @@ data Export
     , sectionExport :: [String]
     } deriving (Eq, Show)
 
-data Body 
+data Body
   = Import [String]
   | Function String String String
-  | Pattern String String String
+  | Pattern String (Maybe String) String
   | Code String
   deriving (Eq, Show)
 
@@ -82,7 +82,8 @@ renderBody :: Body -> String
 renderBody body = case body of
   Import m -> intercalate "\n" $ map (printf "import %s") m
   Function name signature b -> printf "%s :: %s\n%s %s" name signature name b
-  Pattern name signature b -> printf "pattern %s %s :: %s" name b signature
+  Pattern name (Just signature) b -> printf "pattern %s %s :: %s" name b signature
+  Pattern name Nothing b -> printf "pattern %s %s" name b
   Code code -> code
 
 saveModule :: FilePath -> Module -> IO ()
