@@ -19,9 +19,7 @@
 
 module Graphics.GL.Raw.Internal.Proc
   ( getProcAddress
-  , getProcAddressWithSuffixes
   , Invoker
-  , getExtensionEntry
   , extensions
   ) where
 
@@ -47,33 +45,9 @@ getProcAddress extensionEntry =
 foreign import ccall unsafe "hs_gl_getProcAddress"
    hs_gl_getProcAddress :: CString -> IO (FunPtr a)
 
--- | Retrieve an OpenGL extension entry by name, trying a list of name suffixes
--- in the given order. Returns 'nullFunPtr' when no extension entry with the
--- given name plus any of the suffixes was found.
-getProcAddressWithSuffixes :: String -> [String] -> IO (FunPtr a)
-getProcAddressWithSuffixes extensionEntry = foldM gpa nullFunPtr
-   where gpa p s | p == nullFunPtr = getProcAddress (extensionEntry ++ s)
-                 | otherwise       = return p
-
 --------------------------------------------------------------------------------
 
 type Invoker a = FunPtr a -> a
-
-getExtensionEntry :: String -> String -> IO (FunPtr a)
-getExtensionEntry extensionNameString extensionEntry =
-   throwIfNullFunPtr ("unknown OpenGL extension entry " ++ extensionEntry ++
-                      ", check for " ++ extensionNameString) $
-      getProcAddressWithSuffixes extensionEntry extensionSuffixes
-
-throwIfNullFunPtr :: String -> IO (FunPtr a) -> IO (FunPtr a)
-throwIfNullFunPtr = throwIf (== nullFunPtr) . const
-
--- non-ARB extension suffixes are in descending order of number of extensions
-extensionSuffixes :: [String]
-extensionSuffixes = [
-   "", "ARB", "EXT", "NV", "SGIX", "SGIS", "ATI", "APPLE", "SUN", "OES", "IBM",
-   "MESA", "HP", "SGI", "OML", "AMD", "3DFX", "WIN", "PGI", "INTEL", "INGR",
-   "GREMEDY", "SUNX", "S3", "REND", "MESAX" ]
 
 extensions :: Set String
 extensions = unsafePerformIO $ do
