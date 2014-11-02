@@ -56,13 +56,13 @@ type Invoker a = FunPtr a -> a
 extensions :: Set String
 extensions = unsafePerformIO $ do
   -- glGetStringi is only present in OpenGL 3.0 and OpenGL ES 3.0, and newer.
-  glGetStringi' <- getProcAddress "glGetStringi"
-  if glGetStringi' == nullFunPtr then do
+  glGetStringiFunPtr <- getProcAddress "glGetStringi"
+  if glGetStringiFunPtr == nullFunPtr then do
     glGetString <- ffienumIOPtrubyte <$> getProcAddress "glGetString"
     supported <- glGetString 0x1F03 >>= peekCString . castPtr
-    return . Set.fromList $ splitOn " " supported
+    return $ Set.fromList (words supported)
   else do
-    glGetStringi  <- ffienumuintIOPtrubyte <$> return glGetStringi'
+    let glGetStringi = ffienumuintIOPtrubyte glGetStringiFunPtr
     glGetIntegerv <- ffienumPtrintIOV <$> getProcAddress "glGetIntegerv"
     numExtensions <- alloca $ \p -> glGetIntegerv 0x821D p >> peek p
     supported <- forM [0..fromIntegral numExtensions-1] $ glGetStringi 0x1F03 >=> peekCString . castPtr
