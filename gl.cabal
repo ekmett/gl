@@ -17,7 +17,6 @@ extra-source-files:
   CHANGELOG.markdown README.markdown TODO.markdown
   Generator.hs Module.hs Parser.hs Registry.hs Utils.hs
 
-
 source-repository head
   type:     git
   location: https://github.com/ekmett/gl
