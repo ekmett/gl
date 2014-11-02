@@ -25,13 +25,17 @@ module Graphics.GL.Raw.Internal.Proc
 
 import Control.Monad
 import Data.Functor
+import Data.List.Split (splitOn)
 import Data.Set as Set
 import Foreign.C.String
 import Foreign.Marshal.Alloc
-import Foreign.Marshal.Error
 import Foreign.Ptr
 import Foreign.Storable
-import Graphics.GL.Raw.Internal.FFI (ffienumuintIOPtrubyte, ffienumPtrintIOV)
+import Graphics.GL.Raw.Internal.FFI
+  ( ffienumIOPtrubyte
+  , ffienumuintIOPtrubyte
+  , ffienumPtrintIOV
+  )
 import System.IO.Unsafe
 
 --------------------------------------------------------------------------------
@@ -40,10 +44,10 @@ import System.IO.Unsafe
 -- extension entry with the given name was found.
 getProcAddress :: String -> IO (FunPtr a)
 getProcAddress extensionEntry =
-   withCString extensionEntry hs_gl_getProcAddress
+  withCString extensionEntry hs_gl_getProcAddress
 
 foreign import ccall unsafe "hs_gl_getProcAddress"
-   hs_gl_getProcAddress :: CString -> IO (FunPtr a)
+  hs_gl_getProcAddress :: CString -> IO (FunPtr a)
 
 --------------------------------------------------------------------------------
 
@@ -51,9 +55,16 @@ type Invoker a = FunPtr a -> a
 
 extensions :: Set String
 extensions = unsafePerformIO $ do
-  glGetStringi  <- ffienumuintIOPtrubyte <$> getProcAddress "glGetStringi"
-  glGetIntegerv <- ffienumPtrintIOV <$> getProcAddress "glGetIntegerv"
-  numExtensions <- alloca $ \p -> glGetIntegerv 0x821D p >> peek p
-  supported <- forM [0..fromIntegral numExtensions-1] $ glGetStringi 0x1F03 >=> peekCString . castPtr
-  return $ Set.fromList supported
+  -- glGetStringi is only present in OpenGL 3.0 and OpenGL ES 3.0, and newer.
+  glGetStringi' <- getProcAddress "glGetStringi"
+  if glGetStringi' == nullFunPtr then do
+    glGetString <- ffienumIOPtrubyte <$> getProcAddress "glGetString"
+    supported <- glGetString 0x1F03 >>= peekCString . castPtr
+    return . Set.fromList $ splitOn " " supported
+  else do
+    glGetStringi  <- ffienumuintIOPtrubyte <$> return glGetStringi'
+    glGetIntegerv <- ffienumPtrintIOV <$> getProcAddress "glGetIntegerv"
+    numExtensions <- alloca $ \p -> glGetIntegerv 0x821D p >> peek p
+    supported <- forM [0..fromIntegral numExtensions-1] $ glGetStringi 0x1F03 >=> peekCString . castPtr
+    return $ Set.fromList supported
 {-# NOINLINE extensions #-}
