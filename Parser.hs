@@ -1,4 +1,5 @@
 {-# LANGUAGE Arrows #-}
+{-# OPTIONS_GHC -Wall #-}
 -----------------------------------------------------------------------------
 -- |
 -- Copyright   :  (C) 2014 Edward Kmett and Gabríel Arthúr Pétursson
@@ -12,7 +13,6 @@ module Parser
   ( parseFile
   ) where
 
-import Control.Applicative
 import Registry
 import Text.XML.HXT.Core
 
@@ -85,6 +85,7 @@ parseType = proc x -> do
     , typePointer = pointer
     }
 
+parse :: IOSLA (XIOState ()) XmlTree Registry
 parse = proc x -> do
   registry <- to "registry" -< x
   groups <- listA $ parseGroup <<< to "groups" -< registry
