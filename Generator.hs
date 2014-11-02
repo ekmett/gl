@@ -60,12 +60,10 @@ wrap Nothing s = s
 
 commandSignature :: Maybe Name -> Command -> Signature
 commandSignature monad command =
-  intercalate " -> " $
-    (parameterSignature $ commandParameters command) ++
-    [returnSignature $ commandType command]
+  intercalate " -> " $ parameterSignature (commandParameters command) ++ [returnSignature $ commandType command]
   where
     parameterSignature :: [(Type, String)] -> [String]
-    parameterSignature params = map (typeSignature . fst) params
+    parameterSignature = map (typeSignature . fst)
 
     returnSignature :: Type -> String
     returnSignature t = wrap monad . wrap (ptr t) $
@@ -90,8 +88,7 @@ commonName :: Signature -> Name
 commonName
   = concat
   . splitOn "GL"
-  . concat
-  . map (filter isAlphaNum . replace "()" "V")
+  . concatMap (filter isAlphaNum . replace "()" "V")
   . splitOn " -> "
   . ioish
 
