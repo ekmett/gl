@@ -1,3 +1,4 @@
+{-# OPTIONS_GHC -Wall #-}
 -----------------------------------------------------------------------------
 -- |
 -- Copyright   :  (C) 2014 Edward Kmett and Gabríel Arthúr Pétursson
@@ -100,10 +101,10 @@ clean44feature feature
 
 clean44require :: Require -> Require
 clean44require require = require
-  { requireEnums = filter (\e -> not $ e `elem` removeEnums) $
+  { requireEnums = filter (`notElem` removed) $
     requireEnums require
   } where
-  removeEnums =
+  removed =
     [ "GL_MAP_READ_BIT"
     , "GL_MAP_WRITE_BIT"
     , "GL_STENCIL_INDEX"
@@ -119,10 +120,10 @@ clean45feature feature
 
 clean45require :: Require -> Require
 clean45require require = require
-  { requireEnums = filter (\e -> not $ e `elem` removeEnums) $
+  { requireEnums = filter (`notElem` removed) $
     requireEnums require
   } where
-  removeEnums =
+  removed =
     [ "GL_BACK"
     , "GL_LOWER_LEFT"
     , "GL_NONE"
