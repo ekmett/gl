@@ -80,6 +80,6 @@ extensions = unsafePerformIO $ do
   glGetStringi  <- ffienumuintIOPtrubyte <$> getProcAddress "glGetStringi"
   glGetIntegerv <- ffienumPtrintIOV <$> getProcAddress "glGetIntegerv"
   numExtensions <- alloca $ \p -> glGetIntegerv 0x821D p >> peek p
-  supported <- forM [0..(fromIntegral numExtensions)-1] $ \n -> peekCString . castPtr =<< glGetStringi 0x1F03 n
+  supported <- forM [0..fromIntegral numExtensions-1] $ glGetStringi 0x1F03 >=> peekCString . castPtr
   return $ Set.fromList supported
 {-# NOINLINE extensions #-}
