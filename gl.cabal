@@ -66,7 +66,6 @@ library
     else
       cc-options: "-DUSE_DLSYM"
     if os(darwin)
-      cpp-options: "-DHANDLE_IS_POINTER"
       frameworks: OpenGL
     else
       if os(ios)
