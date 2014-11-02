@@ -116,7 +116,7 @@ foreign import ccall "wrapper"
 type GLbitfield       = Word32
 type GLboolean        = Word8
 type GLbyte           = Int8
-type GLchar           = Word8
+type GLchar           = CChar
 type GLcharARB        = Word8
 type GLclampd         = Double
 type GLclampf         = Float
