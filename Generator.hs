@@ -42,7 +42,7 @@ data Category = C SectionName (Set ExportItem)
   deriving (Eq, Ord, Show)
 
 saneEnum :: Name -> Name
-saneEnum = ("GL_"++) . joinOn "_" . tail . splitOn "_"
+saneEnum = ("GL_"++) . intercalate "_" . tail . splitOn "_"
 
 saneModule :: Name -> Name
 saneModule "422Pixels" = "FourTwoTwoPixels"
@@ -60,7 +60,7 @@ wrap Nothing s = s
 
 commandSignature :: Maybe Name -> Command -> Signature
 commandSignature monad command =
-  joinOn " -> " $
+  intercalate " -> " $
     (parameterSignature $ commandParameters command) ++
     [returnSignature $ commandType command]
   where
@@ -88,9 +88,9 @@ commandSignature monad command =
 
 commonName :: Signature -> Name
 commonName
-  = joinOn ""
+  = intercalate ""
   . splitOn "GL"
-  . joinOn ""
+  . intercalate ""
   . map (filter isAlphaNum)
   . map (replace "()" "V")
   . splitOn " -> "
@@ -105,7 +105,7 @@ invokerName xs = "ffi" ++ commonName xs
 extensionModuleName :: ExtensionName -> ModuleName
 extensionModuleName name =
   printf "Graphics.GL.Raw.Extension.%s.%s"
-    (sanePrefix prefix) (saneModule $ camelCase (joinOn "_" rest))
+    (sanePrefix prefix) (saneModule $ camelCase (intercalate "_" rest))
   where
     (_:prefix:rest) = splitOn "_" name
 
@@ -418,7 +418,7 @@ invokers v =
   ] where
   parts = splitOn " -> " v
   numArgs = subtract 2 $ length parts
-  params = joinOn " " $ map (\x -> "v" ++ show x) [0..numArgs]
+  params = intercalate " " $ map (\x -> "v" ++ show x) [0..numArgs]
   v' = ioish v
   nd = dynamicName v
   ni = invokerName v
@@ -455,7 +455,7 @@ mkModule fm m entr = Module m export body
     export = case Map.lookup m (funExtensions fm) of
       Just en ->
         [ Section "Extension Support" $
-          [ "gl_" ++ (joinOn "_" . tail $ splitOn "_" en)
+          [ "gl_" ++ (intercalate "_" . tail $ splitOn "_" en)
           ]
         , Section en $ ie ++ map (\(_, e, _) -> entryName e) entr
         ]
@@ -488,7 +488,7 @@ mkModule fm m entr = Module m export body
     extCheck = case Map.lookup m (funExtensions fm) of
       Just en ->
         [ Function
-          ("gl_" ++ (joinOn "_" . tail $ splitOn "_" en))
+          ("gl_" ++ (intercalate "_" . tail $ splitOn "_" en))
           "Bool"
           ("= member " ++ show en ++ " extensions")
         ]

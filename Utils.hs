@@ -9,17 +9,14 @@
 --
 -- Simple string munging utilities
 ----------------------------------------------------------------------------
-module Utils (joinOn, splitOn, strip, replace) where
+module Utils (splitOn, strip, replace) where
 
 import Data.Char (isSpace)
-import Data.List (intersperse)
+import Data.List (intercalate)
 import Data.List.Split (splitOn)
-
-joinOn :: [a] -> [[a]] -> [a]
-joinOn x = concat . intersperse x
 
 strip :: String -> String
 strip = dropWhile isSpace . reverse . dropWhile isSpace . reverse
 
 replace :: Eq a => [a] -> [a] -> [a] -> [a]
-replace a b = joinOn b . splitOn a
+replace a b = intercalate b . splitOn a
