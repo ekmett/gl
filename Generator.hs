@@ -1,3 +1,4 @@
+{-# OPTIONS_GHC -Wall #-}
 -----------------------------------------------------------------------------
 -- |
 -- Copyright   :  (C) 2014 Edward Kmett and Gabríel Arthúr Pétursson
@@ -20,11 +21,8 @@ import qualified Data.Map as Map
 import Data.Map (Map)
 import qualified Data.Set as Set
 import Data.Set (Set)
-import Data.Tuple
-import System.FilePath 
 import Text.Printf
 import Module
-import Parser
 import Registry
 import Utils
 
@@ -109,7 +107,7 @@ extensionModuleName name =
   printf "Graphics.GL.Raw.Extension.%s.%s"
     (sanePrefix prefix) (saneModule $ camelCase (joinOn "_" rest))
   where
-    (gl:prefix:rest) = splitOn "_" name
+    (_:prefix:rest) = splitOn "_" name
 
     camelCase :: String -> String
     camelCase str = concat . map (\(x:xs) -> toUpper x : xs) $
@@ -382,18 +380,16 @@ data FunMap = FunMap
   , funExtensions :: Map ModuleName ExtensionName -- module name to extension name
   } deriving (Eq, Show)
 
+ioish :: Signature -> Signature
 ioish = replace "m (" "IO (" . replace "m GL" "IO GL"
 
 funMap :: Registry -> [(Bool, Entry, String)] -> FunMap
-funMap registry entries = FunMap
-  (Map.fromList [ (n, s) | (_, F n, s) <- entries ])
+funMap registry es = FunMap
+  (Map.fromList [ (n, s) | (_, F n, s) <- es ])
   (Map.fromList $ map ((extensionModuleName&&&id).extensionName) $ registryExtensions registry)
 
-funMapSignature :: String -> FunMap -> String
-funMapSignature i (FunMap m _) = Map.findWithDefault undefined i m
-
-funBody :: FunMap -> Name -> Signature -> [Body]
-funBody fm n v =
+funBody :: Name -> Signature -> [Body]
+funBody n v =
   [ Function n ("MonadIO m => " ++ v) $ strip $ printf "= %s %s" (invokerName v) np
   , Function np ("FunPtr (" ++ v' ++ ")") $ strip $ printf "= unsafePerformIO (getProcAddress %s)" (show n)
   , Code $ printf "{-# NOINLINE %s #-}" np
@@ -412,7 +408,7 @@ mkFFI fm = Module "Graphics.GL.Raw.Internal.FFI" export body where
       , "Graphics.GL.Raw.Types"
       , "Numeric.Half"
       ]
-    ] ++ nub (Foldable.concatMap invokers (funSignatures fm))
+    ] ++ nub (Foldable.concatMap invokers $ funSignatures fm)
 
 invokers :: Signature -> [Body]
 invokers v =
@@ -427,8 +423,8 @@ invokers v =
   nd = dynamicName v
   ni = invokerName v
   
-mkShared :: FunMap -> [(Bool, Entry, String)] -> Module
-mkShared fm entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
+mkShared :: [(Bool, Entry, String)] -> Module
+mkShared entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
   where
     imp =
       [ Import
@@ -444,7 +440,7 @@ mkShared fm entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
     body = imp ++ (concat . map bodyF $ nub entr)
     bodyF (False, _, _) = []
     bodyF (_, E n, v) = [Pattern n "GLenum" ("= " ++ v)]
-    bodyF (_, F n, v) = funBody fm n v
+    bodyF (_, F n, v) = funBody n v
 
 mkModule :: FunMap -> String -> [(Bool, Entry, String)] -> Module
 mkModule fm m entr = Module m export body
@@ -453,7 +449,6 @@ mkModule fm m entr = Module m export body
     entryName (F n) = n
 
     (ie, ib) = implicitPrelude m
-    hasUnshared = any (\(s, _, _) -> not s) entr
     hasUnsharedFunctions = any (\(s, e, _) -> not s && case e of F _ -> True; _ -> False) entr
     hasExt = Map.member m (funExtensions fm)
 
@@ -462,10 +457,10 @@ mkModule fm m entr = Module m export body
         [ Section "Extension Support" $
           [ "gl_" ++ (joinOn "_" . tail $ splitOn "_" en)
           ]
-        , Section en $ ie ++ map (\(s, e, _) -> entryName e) entr
+        , Section en $ ie ++ map (\(_, e, _) -> entryName e) entr
         ]
       Nothing ->
-        [ Section m $ ie ++ map (\(s, e, _) -> entryName e) entr
+        [ Section m $ ie ++ map (\(_, e, _) -> entryName e) entr
         ]
 
     needsTypes (True, _, _) = False
@@ -501,7 +496,7 @@ mkModule fm m entr = Module m export body
 
     bodyF (True, _, _) = []
     bodyF (_, E n, v) = [Pattern n "GLenum" ("= " ++ v)]
-    bodyF (_, F n, v) = funBody fm n v
+    bodyF (_, F n, v) = funBody n v
 
 mkExtensionGather :: FunMap -> [Module]
 mkExtensionGather fm = flip map extensionGroups $
@@ -535,7 +530,7 @@ generateSource fp registry = do
   let fm' = Foldable.concat m
   let fm = funMap registry fm'
   saveModule fp $ mkFFI fm
-  saveModule fp $ mkShared fm fm'
+  saveModule fp $ mkShared fm'
   forM_ (Map.toList m) $ saveModule fp . uncurry (mkModule fm)
   let exts = mkExtensionGather fm
   forM_ exts $ saveModule fp
