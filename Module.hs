@@ -1,3 +1,4 @@
+{-# OPTIONS_GHC -Wall #-}
 -----------------------------------------------------------------------------
 -- |
 -- Copyright   :  (C) 2014 Edward Kmett and Gabríel Arthúr Pétursson
@@ -18,7 +19,6 @@ module Module
 import Utils
 import System.Directory
 import System.FilePath
-import System.IO
 import Text.Printf
 
 data Module = Module
@@ -80,8 +80,8 @@ renderExports exports =
 renderBody :: Body -> String
 renderBody body = case body of
   Import m -> joinOn "\n" $ map (printf "import %s") m
-  Function name signature body -> printf "%s :: %s\n%s %s" name signature name body
-  Pattern name signature body -> printf "pattern %s %s :: %s" name body signature
+  Function name signature b -> printf "%s :: %s\n%s %s" name signature name b
+  Pattern name signature b -> printf "pattern %s %s :: %s" name b signature
   Code code -> code
 
 saveModule :: FilePath -> Module -> IO ()
