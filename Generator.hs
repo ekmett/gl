@@ -88,11 +88,10 @@ commandSignature monad command =
 
 commonName :: Signature -> Name
 commonName
-  = intercalate ""
+  = concat
   . splitOn "GL"
-  . intercalate ""
-  . map (filter isAlphaNum)
-  . map (replace "()" "V")
+  . concat
+  . map (filter isAlphaNum . replace "()" "V")
   . splitOn " -> "
   . ioish
 
@@ -110,14 +109,11 @@ extensionModuleName name =
     (_:prefix:rest) = splitOn "_" name
 
     camelCase :: String -> String
-    camelCase str = concat . map (\(x:xs) -> toUpper x : xs) $
-      splitOn "_" str
+    camelCase str = concatMap (\(x:xs) -> toUpper x : xs) $ splitOn "_" str
 
 profileModuleName :: String -> String -> (ModuleName, Maybe ModuleName)
 profileModuleName feature profile =
-  ( printf "Graphics.GL.Raw.Profile.%s" $ fst submodule
-  , printf "Graphics.GL.Raw.Profile.%s" `liftM` snd submodule
-  )
+  (printf "Graphics.GL.Raw.Profile.%s" *** liftM (printf "Graphics.GL.Raw.Profile.%s")) submodule
   where
     submodule = case (feature, profile) of
       ("GL_VERSION_1_0", _) -> ("Standard10", Nothing)
