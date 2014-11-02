@@ -141,7 +141,7 @@ type GLuint           = Word32
 type GLuint64         = Word64
 type GLuint64EXT      = Word64
 type GLushort         = Word16
-type GLvdpauSurfaceNV = GLintptr
+type GLvdpauSurfaceNV = CPtrdiff
 
 #if __APPLE__
 type GLhandleARB = Ptr ()
