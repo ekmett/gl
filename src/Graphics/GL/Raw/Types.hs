@@ -112,39 +112,39 @@ foreign import ccall "wrapper"
 foreign import ccall "wrapper"
   mkGLDEBUGPROCKHR :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCKHR
 
-type GLbitfield = CUInt
-type GLboolean = CUChar
-type GLbyte = CSChar
-type GLchar = CChar
-type GLcharARB = CChar
-type GLclampd = CDouble
-type GLclampf = CFloat
-type GLclampx = CInt
-type GLdouble = CDouble
-type GLeglImageOES = Ptr ()
-type GLenum = CUInt
-type GLfixed = GLint
-type GLfloat = CFloat
-type GLhalfNV = Half
-type GLint = CInt
-type GLint64 = Int64
-type GLint64EXT = Int64
-type GLintptr = CPtrdiff
-type GLintptrARB = CPtrdiff
-type GLshort = CShort
-type GLsizei = CInt
-type GLsizeiptr = CPtrdiff
-type GLsizeiptrARB = CPtrdiff
-type GLsync = Ptr ()
-type GLubyte = CUChar
-type GLuint = CUInt
-type GLuint64 = Word64
-type GLuint64EXT = Word64
-type GLushort = CUShort
+type GLbitfield       = Word32
+type GLboolean        = Word8
+type GLbyte           = Int8
+type GLchar           = Word8
+type GLcharARB        = Word8
+type GLclampd         = Double
+type GLclampf         = Float
+type GLclampx         = Int32
+type GLdouble         = Double
+type GLeglImageOES    = Ptr ()
+type GLenum           = Word32
+type GLfixed          = GLint
+type GLfloat          = Float
+type GLhalfNV         = Half
+type GLint            = Int32
+type GLint64          = Int64
+type GLint64EXT       = Int64
+type GLintptr         = CPtrdiff
+type GLintptrARB      = CPtrdiff
+type GLshort          = Int16
+type GLsizei          = Int32
+type GLsizeiptr       = CPtrdiff
+type GLsizeiptrARB    = CPtrdiff
+type GLsync           = Ptr ()
+type GLubyte          = Word8
+type GLuint           = Word32
+type GLuint64         = Word64
+type GLuint64EXT      = Word64
+type GLushort         = Word16
 type GLvdpauSurfaceNV = GLintptr
 
 #if __APPLE__
 type GLhandleARB = Ptr ()
 #else
-type GLhandleARB = CUInt
+type GLhandleARB = Word32
 #endif
