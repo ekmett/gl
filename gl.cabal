@@ -17,7 +17,6 @@ extra-source-files:
   CHANGELOG.markdown README.markdown TODO.markdown
   Generator.hs Module.hs Parser.hs Registry.hs Utils.hs
 
-
 source-repository head
   type:     git
   location: https://github.com/ekmett/gl
@@ -39,6 +38,7 @@ library
   build-depends:
       base == 4.*
     , containers == 0.5.*
+    , fixed >= 0.2 && < 0.3
     , half >= 0.1.1 && < 0.3
     , transformers >= 0.2 && < 0.5
     , vector == 0.10.*
