@@ -398,6 +398,7 @@ mkFFI fm = Module "Graphics.GL.Raw.Internal.FFI" export body where
     , "Foreign.C.Types"
     , "Foreign.Ptr"
     , "Graphics.GL.Raw.Types"
+    , "Numeric.Fixed"
     , "Numeric.Half"
     ] : nub (Foldable.concatMap invokers $ funSignatures fm)
 

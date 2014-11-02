@@ -39,7 +39,8 @@ library
   build-depends:
       base == 4.*
     , containers == 0.5.*
-    , half >= 0.1 && < 0.2
+    , fixed >= 0.1 && < 0.2
+    , half >= 0.2 && < 0.3
     , transformers >= 0.2 && < 0.5
     , vector == 0.10.*
 

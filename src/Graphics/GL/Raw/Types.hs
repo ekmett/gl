@@ -59,6 +59,7 @@ import Data.Int
 import Data.Word
 import Foreign.C.Types
 import Foreign.Ptr
+import Numeric.Fixed
 import Numeric.Half
 
 type GLDEBUGPROC =
@@ -123,7 +124,7 @@ type GLclampx         = Int32
 type GLdouble         = Double
 type GLeglImageOES    = Ptr ()
 type GLenum           = Word32
-type GLfixed          = GLint
+type GLfixed          = Fixed
 type GLfloat          = Float
 type GLhalfNV         = Half
 type GLint            = Int32
