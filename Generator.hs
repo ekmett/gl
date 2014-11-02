@@ -410,6 +410,7 @@ mkFFI fm = Module "Graphics.GL.Raw.Internal.FFI" export body where
       , "Foreign.C.Types"
       , "Foreign.Ptr"
       , "Graphics.GL.Raw.Types"
+      , "Numeric.Half"
       ]
     ] ++ nub (Foldable.concatMap invokers (funSignatures fm))
 
@@ -419,7 +420,8 @@ invokers v =
   , Function ni (printf "MonadIO m => FunPtr (%s) -> %s" v' v) $
       printf "fp %s = liftIO (%s fp %s)" params nd params
   ] where
-  numArgs = subtract 2 . length $ splitOn " -> " v
+  parts = splitOn " -> " v
+  numArgs = subtract 2 $ length parts
   params = joinOn " " $ map (\x -> "v" ++ show x) [0..numArgs]
   v' = ioish v
   nd = dynamicName v
@@ -476,6 +478,7 @@ mkModule fm m entr = Module m export body
         , [ "Graphics.GL.Raw.Types"           | any needsTypes entr ]
         , [ "Data.Set"                        | hasExt ]
         , [ "Graphics.GL.Raw.Internal.Proc"   | hasExt || hasUnsharedFunctions ]
+        , [ "Numeric.Half"                    | any (\(s, _, x) -> not s && isInfixOf "GLhalfNV" x) entr ]
         , guard hasUnsharedFunctions >> 
           [ "Control.Monad.IO.Class"
           , "Foreign.Ptr"

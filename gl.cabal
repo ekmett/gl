@@ -1,5 +1,5 @@
 name:          gl
-version:       0.1
+version:       0.2
 synopsis:      Complete OpenGL raw bindings
 description:   Complete OpenGL raw bindings
 license:       BSD3
@@ -39,6 +39,7 @@ library
   build-depends:
       base == 4.*
     , containers == 0.5.*
+    , half >= 0.1 && < 0.2
     , transformers >= 0.2 && < 0.5
     , vector == 0.10.*
 

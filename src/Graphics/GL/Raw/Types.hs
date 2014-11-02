@@ -59,6 +59,7 @@ import Data.Int
 import Data.Word
 import Foreign.C.Types
 import Foreign.Ptr
+import Numeric.Half
 
 type GLDEBUGPROC =
   FunPtr (GLenum
@@ -124,7 +125,7 @@ type GLeglImageOES = Ptr ()
 type GLenum = CUInt
 type GLfixed = GLint
 type GLfloat = CFloat
-type GLhalfNV = CUShort
+type GLhalfNV = Half
 type GLint = CInt
 type GLint64 = Int64
 type GLint64EXT = Int64
