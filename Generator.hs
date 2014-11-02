@@ -116,7 +116,7 @@ extensionModuleName name =
 profileModuleName :: String -> String -> (ModuleName, Maybe ModuleName)
 profileModuleName feature profile =
   ( printf "Graphics.GL.Raw.Profile.%s" $ fst submodule
-  , snd submodule >>= return . printf "Graphics.GL.Raw.Profile.%s"
+  , printf "Graphics.GL.Raw.Profile.%s" `liftM` snd submodule
   )
   where
     submodule = case (feature, profile) of
@@ -297,7 +297,7 @@ entries registry = do
       let name = fst . profileModuleName feature $ requireProfile req
       requires name req
 
-      when (isPrefixOf "Graphics.GL.Raw.Profile.Standard" name) $
+      when ("Graphics.GL.Raw.Profile.Standard" `isPrefixOf` name) $
         requires "Graphics.GL.Raw.Profile.Core32" req
 
     forM_ (featureRemoves fe) $ \rm -> do
@@ -400,15 +400,13 @@ funBody n v =
 mkFFI :: FunMap -> Module
 mkFFI fm = Module "Graphics.GL.Raw.Internal.FFI" export body where
   export = [ Section "Invokers" (nub $ invokerName <$> Foldable.toList (funSignatures fm)) ]
-  body = 
-    [ Import
-      [ "Control.Monad.IO.Class"
-      , "Foreign.C.Types"
-      , "Foreign.Ptr"
-      , "Graphics.GL.Raw.Types"
-      , "Numeric.Half"
-      ]
-    ] ++ nub (Foldable.concatMap invokers $ funSignatures fm)
+  body = Import
+    [ "Control.Monad.IO.Class"
+    , "Foreign.C.Types"
+    , "Foreign.Ptr"
+    , "Graphics.GL.Raw.Types"
+    , "Numeric.Half"
+    ] : nub (Foldable.concatMap invokers $ funSignatures fm)
 
 invokers :: Signature -> [Body]
 invokers v =
@@ -418,7 +416,7 @@ invokers v =
   ] where
   parts = splitOn " -> " v
   numArgs = subtract 2 $ length parts
-  params = intercalate " " $ map (\x -> "v" ++ show x) [0..numArgs]
+  params = unwords $ map (\x -> "v" ++ show x) [0..numArgs]
   v' = ioish v
   nd = dynamicName v
   ni = invokerName v
@@ -437,7 +435,7 @@ mkShared entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
         ]
       ]
 
-    body = imp ++ (concat . map bodyF $ nub entr)
+    body = imp ++ concatMap bodyF (nub entr)
     bodyF (False, _, _) = []
     bodyF (_, E n, v) = [Pattern n "GLenum" ("= " ++ v)]
     bodyF (_, F n, v) = funBody n v
@@ -454,7 +452,7 @@ mkModule fm m entr = Module m export body
 
     export = case Map.lookup m (funExtensions fm) of
       Just en ->
-        [ Section "Extension Support" $
+        [ Section "Extension Support" 
           [ "gl_" ++ (intercalate "_" . tail $ splitOn "_" en)
           ]
         , Section en $ ie ++ map (\(_, e, _) -> entryName e) entr
@@ -465,7 +463,7 @@ mkModule fm m entr = Module m export body
 
     needsTypes (True, _, _) = False
     needsTypes (_ , E _, _) = True
-    needsTypes (_ , F _, t) = isInfixOf "GL" t
+    needsTypes (_ , F _, t) = "GL" `isInfixOf` t
 
     body =
       [ Import $ sort $ concat 

@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 {-# LANGUAGE Arrows #-}
 {-# OPTIONS_GHC -Wall #-}
 -----------------------------------------------------------------------------
@@ -15,6 +16,10 @@ module Parser
 
 import Registry
 import Text.XML.HXT.Core
+
+#ifdef HLINT
+{-# ANN module "HLint: ignore Reduce duplication" #-}
+#endif
 
 to :: ArrowXml a => String -> a XmlTree XmlTree
 to name = hasName name <<< isElem <<< getChildren

@@ -58,8 +58,8 @@ renderExports :: [Export] -> String
 renderExports [] = ""
 renderExports exports =
     printf " (\n%s)"
-  . intercalate "\n" . map (uncurry renderExport)
-  . zip (True : repeat False)
+  . intercalate "\n"
+  . zipWith renderExport (True : repeat False)
   $ filter nonEmpty exports
   where
     renderExport :: Bool -> Export -> String
@@ -91,4 +91,4 @@ saveModule fp m = do
   writeFile filePath $ renderModule m
   where
     filePath = fp </> replace "." [pathSeparator] (moduleName m) <.> "hs"
-    folderPath = (intercalate [pathSeparator] . init $ splitOn [pathSeparator] filePath)
+    folderPath = intercalate [pathSeparator] . init $ splitOn [pathSeparator] filePath
