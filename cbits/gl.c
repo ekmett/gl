@@ -7,7 +7,7 @@
  * Stability   :  stable
  * Portability :  portable
  *
- * C support for Graphics.GL.Raw.Proc
+ * C support for "Graphics.GL.Raw.Proc"
  * -------------------------------------------------------------------------- */
 
 #if defined(USE_WGLGETPROCADDRESS)
