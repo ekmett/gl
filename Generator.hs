@@ -59,7 +59,8 @@ wrap (Just w) s
 wrap Nothing s = s
 
 commandDescription :: Command -> String
-commandDescription (Command cmdName cmdType cmdParameters) = printf "-- | Usage: @%s %s@" cmdName (unwords (snd <$> cmdParameters))
+commandDescription (Command cmdName _cmdType cmdParameters) =
+  "-- | Usage: @" ++ unwords (("'" ++ cmdName ++ "'") : map snd cmdParameters) ++ "@"
 
 commandSignature :: Maybe Name -> Command -> Signature
 commandSignature monad command =
