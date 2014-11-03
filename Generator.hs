@@ -58,6 +58,10 @@ wrap (Just w) s
   | otherwise = printf "%s %s" w s
 wrap Nothing s = s
 
+commandDescription :: Command -> String
+commandDescription (Command cmdName _cmdType cmdParameters) =
+  "-- | Usage: @" ++ unwords (("'" ++ cmdName ++ "'") : map snd cmdParameters) ++ "@"
+
 commandSignature :: Maybe Name -> Command -> Signature
 commandSignature monad command =
   intercalate " -> " $ parameterSignature (commandParameters command) ++ [returnSignature $ commandType command]
@@ -391,8 +395,9 @@ modules registry entr = do
       ]
 
 data FunMap = FunMap
-  { funSignatures :: Map Name Signature           -- signatures by method name
-  , funExtensions :: Map ModuleName ExtensionName -- module name to extension name
+  { funSignatures   :: Map Name Signature           -- signatures by method name
+  , funDescriptions :: Map Name String              -- descriptions by method name
+  , funExtensions   :: Map ModuleName ExtensionName -- module name to extension name
   } deriving (Eq, Show)
 
 ioish :: Signature -> Signature
@@ -401,11 +406,14 @@ ioish = replace "m (" "IO (" . replace "m GL" "IO GL"
 funMap :: Registry -> [(Bool, Entry, String)] -> FunMap
 funMap registry es = FunMap
   (Map.fromList [ (n, s) | (_, F n, s) <- es ])
+  (Map.fromList [ (commandName cmd, commandDescription cmd) | cmd <- registryCommands registry ])
   (Map.fromList $ map ((extensionModuleName&&&id).extensionName) $ registryExtensions registry)
 
-funBody :: Name -> Signature -> [Body]
-funBody n v =
-  [ Function n ("MonadIO m => " ++ v) $ strip $ printf "= %s %s" (invokerName v) np
+
+funBody :: FunMap -> Name -> Signature -> [Body]
+funBody fm n v =
+  [ Code $ funDescriptions fm Map.! n
+  , Function n ("MonadIO m => " ++ v) $ strip $ printf "= %s %s" (invokerName v) np
   , Function np ("FunPtr (" ++ v' ++ ")") $ strip $ printf "= unsafePerformIO (getProcAddress %s)" (show n)
   , Code $ printf "{-# NOINLINE %s #-}" np
   ] where
@@ -437,8 +445,8 @@ invokers v =
   nd = dynamicName v
   ni = invokerName v
 
-mkShared :: [(Bool, Entry, String)] -> Module
-mkShared entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
+mkShared :: FunMap -> [(Bool, Entry, String)] -> Module
+mkShared fm entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
   where
     imp =
       [ Import
@@ -454,7 +462,7 @@ mkShared entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
     body = imp ++ concatMap bodyF (nub entr)
     bodyF (False, _, _) = []
     bodyF (_, E n, v) = [Pattern n Nothing ("= " ++ v)]
-    bodyF (_, F n, v) = funBody n v
+    bodyF (_, F n, v) = funBody fm n v
 
 mkModule :: FunMap -> String -> [(Bool, Entry, String)] -> Module
 mkModule fm m entr = Module m export body
@@ -510,7 +518,7 @@ mkModule fm m entr = Module m export body
 
     bodyF (True, _, _) = []
     bodyF (_, E n, v) = [Pattern n Nothing ("= " ++ v)]
-    bodyF (_, F n, v) = funBody n v
+    bodyF (_, F n, v) = funBody fm n v
 
 mkExtensionGather :: FunMap -> [Module]
 mkExtensionGather fm = flip map extensionGroups $
@@ -544,7 +552,7 @@ generateSource fp registry = do
   let fm' = Foldable.concat m
   let fm = funMap registry fm'
   saveModule fp $ mkFFI fm
-  saveModule fp $ mkShared fm'
+  saveModule fp $ mkShared fm fm'
   forM_ (Map.toList m) $ saveModule fp . uncurry (mkModule fm)
   let exts = mkExtensionGather fm
   forM_ exts $ saveModule fp
