@@ -13,7 +13,7 @@ category:      Graphics
 build-type:    Custom
 cabal-version: >=1.18
 extra-source-files:
-  gl.xml
+  gl.xml man.txt extensions.txt
   CHANGELOG.markdown README.markdown TODO.markdown
   Generator.hs Module.hs Parser.hs Registry.hs Utils.hs
 

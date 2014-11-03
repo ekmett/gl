@@ -12,20 +12,22 @@
 --
 -- Local hooks are provided to generate the API on build, producing haddocks and to enable @cabal sdist@
 ----------------------------------------------------------------------------
+import Data.Functor
 import Distribution.Simple
 import Distribution.Simple.LocalBuildInfo
 import Distribution.PackageDescription
 import System.FilePath
 import Generator (generateSource)
-import Parser (parseFile, parseManual)
+import Parser (parseFile)
 import Registry (deshenaniganize)
 
 generateAPI :: LocalBuildInfo -> IO ()
 generateAPI l = do
   registry <- parseFile "gl.xml"
-  man <- parseManual "gl.txt"
+  man <- lines <$> readFile "man.txt"
+  extensions <- lines <$> readFile "extensions.txt"
   putStr "Generating API..."
-  generateSource (buildDir l </> "autogen") (deshenaniganize registry) man
+  generateSource (buildDir l </> "autogen") (deshenaniganize registry) man extensions
   putStrLn "done"
 
 main :: IO ()

@@ -12,10 +12,8 @@
 ----------------------------------------------------------------------------
 module Parser
   ( parseFile
-  , parseManual
   ) where
 
-import Data.Functor
 import Registry
 import Text.XML.HXT.Core
 
@@ -120,6 +118,3 @@ parse = proc x -> do
 
 parseFile :: String -> IO Registry
 parseFile file = return . head =<< runX (readDocument [withRemoveWS yes] file >>> parse)
-
-parseManual :: FilePath -> IO [String]
-parseManual file = lines <$> readFile file

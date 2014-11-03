@@ -480,8 +480,8 @@ mkShared fm entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
     bodyF (_, E n, v) = [Pattern n Nothing ("= " ++ v)]
     bodyF (_, F n, v) = funBody fm n v
 
-mkModule :: FunMap -> String -> [(Bool, Entry, String)] -> Module
-mkModule fm m entr = Module m export body
+mkModule :: FunMap -> Set String -> String -> [(Bool, Entry, String)] -> Module
+mkModule fm re m entr = Module m export body
   where
     entryName (E n) = "pattern " ++ n
     entryName (F n) = n
@@ -523,13 +523,18 @@ mkModule fm m entr = Module m export body
       extCheck ++
       concatMap bodyF entr
 
+    tryLink e en 
+      | Set.member e re = "<https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/" ++ e ++ ".txt "++ en ++ ">"
+      | otherwise = en
+
     extCheck = case Map.lookup m (funExtensions fm) of
-      Just en ->
-        [ Function
-          ("gl_" ++ (intercalate "_" . tail $ splitOn "_" en))
-          "Bool"
-          ("= member " ++ show en ++ " extensions")
-        ]
+      Just en 
+        | parts@(vendor:rest) <- tail (splitOn "_" en)
+        , e <- vendor ++ "/" ++ intercalate "_" rest ->
+          [ Code $ "-- | Checks that the " ++ tryLink e en ++ " extension is available."
+          , Function ("gl_" ++ intercalate "_" parts) "Bool" ("= member " ++ show en ++ " extensions")
+          ]
+        | otherwise -> error $ "malformed extension: " ++ en
       Nothing -> []
 
     bodyF (True, _, _) = []
@@ -561,15 +566,16 @@ mkExtensionGroupGather ms = Module "Graphics.GL.Raw.Extension"
   [Section "Extensions" $ map (("module "++) . moduleName) ms]
   [Import $ map moduleName ms]
 
-generateSource :: FilePath -> Registry -> [String] -> IO ()
-generateSource fp registry man = do
+generateSource :: FilePath -> Registry -> [String] -> [String] -> IO ()
+generateSource fp registry man extensions = do
   let s = execState (entries registry) Map.empty
   let m = execState (modules registry s) Map.empty
+  let re = Set.fromList extensions
   let fm' = Foldable.concat m
   let fm = funMap registry fm' man
   saveModule fp $ mkFFI fm
   saveModule fp $ mkShared fm fm'
-  forM_ (Map.toList m) $ saveModule fp . uncurry (mkModule fm)
+  forM_ (Map.toList m) $ \(k,v) -> saveModule fp $ mkModule fm re k v
   let exts = mkExtensionGather fm
   forM_ exts $ saveModule fp
   saveModule fp $ mkExtensionGroupGather exts
