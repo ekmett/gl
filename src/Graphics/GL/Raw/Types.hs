@@ -101,15 +101,23 @@ type GLDEBUGPROCKHR =
        -> Ptr ()
        -> IO ())
 
+-- | The storage associated with the resulting 'FunPtr' has to be released with
+-- 'freeHaskellFunPtr' when it is no longer required.
 foreign import ccall "wrapper"
   mkGLDEBUGPROC :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROC
 
+-- | The storage associated with the resulting 'FunPtr' has to be released with
+-- 'freeHaskellFunPtr' when it is no longer required.
 foreign import ccall "wrapper"
   mkGLDEBUGPROCAMD :: (GLuint -> GLenum -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCAMD
 
+-- | The storage associated with the resulting 'FunPtr' has to be released with
+-- 'freeHaskellFunPtr' when it is no longer required.
 foreign import ccall "wrapper"
   mkGLDEBUGPROCARB :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCARB
 
+-- | The storage associated with the resulting 'FunPtr' has to be released with
+-- 'freeHaskellFunPtr' when it is no longer required.
 foreign import ccall "wrapper"
   mkGLDEBUGPROCKHR :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCKHR
 
