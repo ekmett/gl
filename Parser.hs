@@ -34,7 +34,9 @@ parseCommand = proc x -> do
   typ <- parseType <<< to "proto" -< command
   params <- listA $ to "param" >>>
     parseType &&& (getText <<< getChildren <<< to "name") -< command
-  returnA -< Command name typ params
+  veceq   <- (arr Just <<< getAttrValue0 "name" <<< to "vecequiv") `orElse` constA Nothing -< command
+  alias   <- (arr Just <<< getAttrValue0 "name" <<< to "alias")    `orElse` constA Nothing -< command
+  returnA -< Command name typ params veceq alias
 
 parseEnum :: ArrowXml a => a XmlTree Enumeratee
 parseEnum = proc x -> do

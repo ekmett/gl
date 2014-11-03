@@ -37,6 +37,8 @@ data Command = Command
   { commandName :: String
   , commandType :: Type
   , commandParameters :: [(Type, String)]
+  , commandVectorEquivalent :: Maybe String
+  , commandAlias            :: Maybe String
   } deriving (Eq, Show)
 
 data Enumeratee = Enumeratee

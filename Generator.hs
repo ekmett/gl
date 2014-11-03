@@ -59,8 +59,10 @@ wrap (Just w) s
 wrap Nothing s = s
 
 commandDescription :: Command -> String
-commandDescription (Command cmdName _cmdType cmdParameters) =
-  "-- | Usage: @" ++ unwords (("'" ++ cmdName ++ "'") : map snd cmdParameters) ++ "@"
+commandDescription (Command cmdName _cmdType cmdParameters vecEquiv alias) = concat $
+  [ "-- | Usage: @" ++ unwords (("'" ++ cmdName ++ "'") : map snd cmdParameters) ++ "@\n" ] ++
+  [ "--\n-- This command is an alias for '" ++ a ++ "'\n" | Just a <- [alias] ] ++
+  [ "--\n-- The vector equivalent of this command is '" ++ v ++ "'\n" | Just v <- [vecEquiv] ]
 
 commandSignature :: Maybe Name -> Command -> Signature
 commandSignature monad command =
