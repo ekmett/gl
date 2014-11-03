@@ -87,7 +87,7 @@ data Require = Require
 
 data Type = Type
   { typeName :: Maybe String
-  , typePointer :: Bool
+  , typePointer :: Int
   } deriving (Eq, Show)
 
 lookupCommand :: Registry -> String -> Command

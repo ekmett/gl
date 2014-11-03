@@ -97,7 +97,7 @@ parseType = proc x -> do
   pointer <- (getText <<< getChildren) >. elem '*' . concat -< x
   returnA -< Type
     { typeName = ptype
-    , typePointer = pointer
+    , typePointer = fromEnum pointer
     }
 
 parse :: IOSLA (XIOState ()) XmlTree Registry

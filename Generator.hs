@@ -100,7 +100,7 @@ commandSignature monad command =
         Just x -> x
 
     ptr :: Type -> Maybe String
-    ptr t = "Ptr" <$ guard (typePointer t)
+    ptr t = "Ptr" <$ guard (typePointer t == 1)
 
     typeSignature :: Type -> String
     typeSignature t = wrap (ptr t) $
