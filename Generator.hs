@@ -58,20 +58,21 @@ wrap (Just w) s
   | otherwise = printf "%s %s" w s
 wrap Nothing s = s
 
-commandDescription :: Map String [String] -> Command -> String
-commandDescription fm (Command cmdName _cmdType cmdParameters vecEquiv alias) = concat $
+commandDescription :: Map String [String] -> Command -> Set String -> String
+commandDescription fm (Command cmdName _cmdType cmdParameters vecEquiv alias) man = concat $
   [ "-- | Usage: @" ++ unwords (("'" ++ cmdName ++ "'") : map parameterName cmdParameters) ++ "@\n" ] ++
   [ case Map.lookup grp fm of
-      Just xs -> printf "--\n-- The parameter @%s@ is a @%s@, one of: %s\n"
+      Just xs -> printf "--\n-- The parameter @%s@ is a @%s@, one of: %s.\n"
          (parameterName param) grp $ intercalate ", " (map link xs)
-      Nothing -> printf "--\n-- The parameter @%s@ is a @%s@\n" (parameterName param) grp
+      Nothing -> printf "--\n-- The parameter @%s@ is a @%s@.\n" (parameterName param) grp
   | param <- cmdParameters, Just grp <- [parameterGroup param] 
   ] ++
-  [ "--\n-- The length of @" ++ parameterName param ++ "@ should be " ++ describeLength x ++ "\n"
+  [ "--\n-- The length of @" ++ parameterName param ++ "@ should be " ++ describeLength x ++ ".\n"
   | param <- cmdParameters, Just x <- [parameterLen param]
   ] ++
-  [ "--\n-- This command is an alias for " ++ link a ++ "\n" | Just a <- [alias] ] ++
-  [ "--\n-- The vector equivalent of this command is " ++ link v ++ "\n" | Just v <- [vecEquiv] ]
+  [ "--\n-- This command is an alias for " ++ link a ++ ".\n" | Just a <- [alias] ] ++
+  [ "--\n-- The vector equivalent of this command is " ++ link v ++ ".\n" | Just v <- [vecEquiv] ] ++
+  [ "--\n-- Manual page: <https://www.opengl.org/sdk/docs/man/html/" ++ cmdName ++ ".xhtml>\n" | Set.member cmdName man ]
   where
     link x = "'" ++ x ++ "'" -- TODO: look up canonical module
     describeLength x = "@" ++ x ++ "@"
@@ -417,12 +418,13 @@ data FunMap = FunMap
 ioish :: Signature -> Signature
 ioish = replace "m (" "IO (" . replace "m GL" "IO GL"
 
-funMap :: Registry -> [(Bool, Entry, String)] -> FunMap
-funMap registry es = FunMap
+funMap :: Registry -> [(Bool, Entry, String)] -> [String] -> FunMap
+funMap registry es man = FunMap
   (Map.fromList [ (n, s) | (_, F n, s) <- es ])
-  (Map.fromList [ (commandName cmd, commandDescription rgs cmd) | cmd <- registryCommands registry ])
+  (Map.fromList [ (commandName cmd, commandDescription rgs cmd manset) | cmd <- registryCommands registry ])
   (Map.fromList $ map ((extensionModuleName&&&id).extensionName) $ registryExtensions registry)
   where rgs = Map.fromList [ (n, s) | Group n s <- registryGroups registry ]
+        manset = Set.fromList man
 
 funBody :: FunMap -> Name -> Signature -> [Body]
 funBody fm n v =
@@ -559,12 +561,12 @@ mkExtensionGroupGather ms = Module "Graphics.GL.Raw.Extension"
   [Section "Extensions" $ map (("module "++) . moduleName) ms]
   [Import $ map moduleName ms]
 
-generateSource :: FilePath -> Registry -> IO ()
-generateSource fp registry = do
+generateSource :: FilePath -> Registry -> [String] -> IO ()
+generateSource fp registry man = do
   let s = execState (entries registry) Map.empty
   let m = execState (modules registry s) Map.empty
   let fm' = Foldable.concat m
-  let fm = funMap registry fm'
+  let fm = funMap registry fm' man
   saveModule fp $ mkFFI fm
   saveModule fp $ mkShared fm fm'
   forM_ (Map.toList m) $ saveModule fp . uncurry (mkModule fm)

@@ -17,14 +17,15 @@ import Distribution.Simple.LocalBuildInfo
 import Distribution.PackageDescription
 import System.FilePath
 import Generator (generateSource)
-import Parser (parseFile)
+import Parser (parseFile, parseManual)
 import Registry (deshenaniganize)
 
 generateAPI :: LocalBuildInfo -> IO ()
 generateAPI l = do
   registry <- parseFile "gl.xml"
+  man <- parseManual "gl.txt"
   putStr "Generating API..."
-  generateSource (buildDir l </> "autogen") (deshenaniganize registry)
+  generateSource (buildDir l </> "autogen") (deshenaniganize registry) man
   putStrLn "done"
 
 main :: IO ()
