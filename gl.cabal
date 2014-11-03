@@ -41,7 +41,6 @@ library
     , fixed >= 0.2.1 && < 0.3
     , half >= 0.2 && < 0.3
     , transformers >= 0.2 && < 0.5
-    , vector == 0.10.*
 
   -- for Setup.hs
   build-depends:
