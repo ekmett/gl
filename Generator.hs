@@ -183,8 +183,8 @@ profileModuleName feature profile =
       ("GL_VERSION_4_5", "compatibility") -> ("Compatibility45", Nothing)
       ("GL_VERSION_4_5", _) -> ("Core45", Nothing)
 
-      ("GL_VERSION_ES_CM_1_0", "common") -> ("EmbeddedCommon10", Nothing)
-      ("GL_VERSION_ES_CM_1_0", _) -> ("EmbeddedLite10", Nothing)
+      ("GL_VERSION_ES_CM_1_0", "common") -> ("EmbeddedCommon11", Nothing)
+      ("GL_VERSION_ES_CM_1_0", _) -> ("EmbeddedLite11", Nothing)
 
       ("GL_ES_VERSION_2_0", _) -> ("Embedded20", Nothing)
       ("GL_ES_VERSION_3_0", _) -> ("Embedded30", Nothing)
@@ -246,8 +246,8 @@ implicitPrelude m = case m of
   "Graphics.GL.Raw.Profile.Core45" -> mk [
       "Graphics.GL.Raw.Profile.Core44"
     ]
-  "Graphics.GL.Raw.Profile.EmbeddedCommon10" -> mk [
-      "Graphics.GL.Raw.Profile.EmbeddedLite10"
+  "Graphics.GL.Raw.Profile.EmbeddedCommon11" -> mk [
+      "Graphics.GL.Raw.Profile.EmbeddedLite11"
     ]
   "Graphics.GL.Raw.Profile.Embedded30" -> mk [
       "Graphics.GL.Raw.Profile.Embedded20"
@@ -540,7 +540,10 @@ mkModule fm re m entr = Module m export body
         | parts@(vendor:rest) <- tail (splitOn "_" en)
         , e <- vendor ++ "/" ++ intercalate "_" rest ->
           [ Code $ "-- | Checks that the " ++ tryLink e en ++ " extension is available."
-          , Function ("gl_" ++ intercalate "_" parts) "Bool" ("= member " ++ show en ++ " extensions")
+          , Function ("gl_" ++ intercalate "_" parts) "Bool"
+            (printf "= member %s extensions\n{-# NOINLINE %s #-}"
+              (show en)
+              ("gl_" ++ intercalate "_" parts))
           ]
         | otherwise -> error $ "malformed extension: " ++ en
       Nothing -> []
