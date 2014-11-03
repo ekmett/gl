@@ -67,9 +67,14 @@ commandDescription fm (Command cmdName _cmdType cmdParameters vecEquiv alias) = 
       Nothing -> printf "--\n-- The parameter @%s@ is a @%s@" (parameterName param) grp
   | param <- cmdParameters, Just grp <- [parameterGroup param] 
   ] ++
+  [ "--\n-- The length of @" ++ parameterName param ++ "@ should be " ++ describeLength x
+  | param <- cmdParameters, Just x <- [parameterLen param]
+  ] ++
   [ "--\n-- This command is an alias for " ++ link a ++ "\n" | Just a <- [alias] ] ++
   [ "--\n-- The vector equivalent of this command is " ++ link v ++ "\n" | Just v <- [vecEquiv] ]
-  where link x = "'" ++ x ++ "'" -- TODO: look up canonical module
+  where
+    link x = "'" ++ x ++ "'" -- TODO: look up canonical module
+    describeLength x = "@" ++ x ++ "@"
 
 commandSignature :: Maybe Name -> Command -> Signature
 commandSignature monad command =
