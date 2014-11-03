@@ -255,6 +255,28 @@ implicitPrelude m = case m of
   "Graphics.GL.Raw.Profile.Standard31" -> mk [
       "Graphics.GL.Raw.Profile.Standard30"
     ]
+  "Graphics.GL.Raw.Extension.ANDROID.ExtensionPackEs31a" -> mk [
+      "Graphics.GL.Raw.Extension.KHR.Debug"
+    , "Graphics.GL.Raw.Extension.KHR.TextureCompressionAstcLdr"
+    , "Graphics.GL.Raw.Extension.KHR.BlendEquationAdvanced"
+    , "Graphics.GL.Raw.Extension.OES.SampleShading"
+    , "Graphics.GL.Raw.Extension.OES.SampleVariables"
+    , "Graphics.GL.Raw.Extension.OES.ShaderImageAtomic"
+    , "Graphics.GL.Raw.Extension.OES.ShaderMultisampleInterpolation"
+    , "Graphics.GL.Raw.Extension.OES.TextureStencil8"
+    , "Graphics.GL.Raw.Extension.OES.TextureStorageMultisample2dArray"
+    , "Graphics.GL.Raw.Extension.EXT.CopyImage"
+    , "Graphics.GL.Raw.Extension.EXT.DrawBuffersIndexed"
+    , "Graphics.GL.Raw.Extension.EXT.GeometryShader"
+    , "Graphics.GL.Raw.Extension.EXT.GpuShader5"
+    , "Graphics.GL.Raw.Extension.EXT.PrimitiveBoundingBox"
+    , "Graphics.GL.Raw.Extension.EXT.ShaderIoBlocks"
+    , "Graphics.GL.Raw.Extension.EXT.TessellationShader"
+    , "Graphics.GL.Raw.Extension.EXT.TextureBorderClamp"
+    , "Graphics.GL.Raw.Extension.EXT.TextureBuffer"
+    , "Graphics.GL.Raw.Extension.EXT.TextureCubeMapArray"
+    , "Graphics.GL.Raw.Extension.EXT.TextureSRGBDecode"
+    ]
   _ -> ([], [])
   where
     mk names = (map ("module "++) names, [Import names])
