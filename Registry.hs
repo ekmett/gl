@@ -11,6 +11,7 @@
 module Registry
   ( Registry(..)
   , Command(..)
+  , Parameter(..)
   , Enumeratee(..)
   , Extension(..)
   , Feature(..)
@@ -33,12 +34,19 @@ data Registry = Registry
   , registryGroups :: [Group]
   } deriving (Eq, Show)
 
+data Parameter = Parameter
+  { parameterName :: String
+  , parameterType :: Type
+  , parameterGroup :: Maybe String
+  , parameterLen :: Maybe String
+  } deriving (Eq, Show)
+
 data Command = Command
   { commandName :: String
   , commandType :: Type
-  , commandParameters :: [(Type, String)]
+  , commandParameters :: [Parameter]
   , commandVectorEquivalent :: Maybe String
-  , commandAlias            :: Maybe String
+  , commandAlias :: Maybe String
   } deriving (Eq, Show)
 
 data Enumeratee = Enumeratee

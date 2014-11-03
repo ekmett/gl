@@ -58,18 +58,25 @@ wrap (Just w) s
   | otherwise = printf "%s %s" w s
 wrap Nothing s = s
 
-commandDescription :: Command -> String
-commandDescription (Command cmdName _cmdType cmdParameters vecEquiv alias) = concat $
-  [ "-- | Usage: @" ++ unwords (("'" ++ cmdName ++ "'") : map snd cmdParameters) ++ "@\n" ] ++
-  [ "--\n-- This command is an alias for '" ++ a ++ "'\n" | Just a <- [alias] ] ++
-  [ "--\n-- The vector equivalent of this command is '" ++ v ++ "'\n" | Just v <- [vecEquiv] ]
+commandDescription :: Map String [String] -> Command -> String
+commandDescription fm (Command cmdName _cmdType cmdParameters vecEquiv alias) = concat $
+  [ "-- | Usage: @" ++ unwords (("'" ++ cmdName ++ "'") : map parameterName cmdParameters) ++ "@\n" ] ++
+  [ case Map.lookup grp fm of
+      Just xs -> printf "--\n-- The parameter @%s@ is a @%s@, one of: %s\n"
+         (parameterName param) grp $ intercalate ", " (map link xs)
+      Nothing -> printf "--\n-- The parameter @%s@ is a @%s@" (parameterName param) grp
+  | param <- cmdParameters, Just grp <- [parameterGroup param] 
+  ] ++
+  [ "--\n-- This command is an alias for " ++ link a ++ "\n" | Just a <- [alias] ] ++
+  [ "--\n-- The vector equivalent of this command is " ++ link v ++ "\n" | Just v <- [vecEquiv] ]
+  where link x = "'" ++ x ++ "'" -- TODO: look up canonical module
 
 commandSignature :: Maybe Name -> Command -> Signature
 commandSignature monad command =
   intercalate " -> " $ parameterSignature (commandParameters command) ++ [returnSignature $ commandType command]
   where
-    parameterSignature :: [(Type, String)] -> [String]
-    parameterSignature = map (typeSignature . fst)
+    parameterSignature :: [Parameter] -> [String]
+    parameterSignature = map (typeSignature . parameterType)
 
     returnSignature :: Type -> String
     returnSignature t = wrap monad . wrap (ptr t) $
@@ -408,9 +415,9 @@ ioish = replace "m (" "IO (" . replace "m GL" "IO GL"
 funMap :: Registry -> [(Bool, Entry, String)] -> FunMap
 funMap registry es = FunMap
   (Map.fromList [ (n, s) | (_, F n, s) <- es ])
-  (Map.fromList [ (commandName cmd, commandDescription cmd) | cmd <- registryCommands registry ])
+  (Map.fromList [ (commandName cmd, commandDescription rgs cmd) | cmd <- registryCommands registry ])
   (Map.fromList $ map ((extensionModuleName&&&id).extensionName) $ registryExtensions registry)
-
+  where rgs = Map.fromList [ (n, s) | Group n s <- registryGroups registry ]
 
 funBody :: FunMap -> Name -> Signature -> [Body]
 funBody fm n v =

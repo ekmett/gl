@@ -25,18 +25,26 @@ to :: ArrowXml a => String -> a XmlTree XmlTree
 to name = hasName name <<< isElem <<< getChildren
 
 perhaps :: ArrowIf a => a b c -> a b (Maybe c)
-perhaps x = (arr Just <<< x) `orElse` arr (const Nothing)
+perhaps x = (arr Just <<< x) `orElse` constA Nothing
 
 parseCommand :: ArrowXml a => a XmlTree Command
 parseCommand = proc x -> do
   command <- to "command" -< x
   name <- getText <<< getChildren <<< to "name" <<< to "proto" -< command
   typ <- parseType <<< to "proto" -< command
-  params <- listA $ to "param" >>>
-    parseType &&& (getText <<< getChildren <<< to "name") -< command
-  veceq   <- (arr Just <<< getAttrValue0 "name" <<< to "vecequiv") `orElse` constA Nothing -< command
-  alias   <- (arr Just <<< getAttrValue0 "name" <<< to "alias")    `orElse` constA Nothing -< command
+  params <- listA parseParameter -< command
+  veceq   <- perhaps (getAttrValue0 "name" <<< to "vecequiv") -< command
+  alias   <- perhaps (getAttrValue0 "name" <<< to "alias") -< command
   returnA -< Command name typ params veceq alias
+
+parseParameter :: ArrowXml a => a XmlTree Parameter
+parseParameter = proc x -> do
+  param <- to "param" -< x
+  typ   <- parseType -< param
+  name  <- getText <<< getChildren <<< to "name" -< param
+  grp   <- perhaps (getAttrValue0 "group") -< param
+  len   <- perhaps (getAttrValue0 "len") -< param
+  returnA -< Parameter name typ grp len
 
 parseEnum :: ArrowXml a => a XmlTree Enumeratee
 parseEnum = proc x -> do
