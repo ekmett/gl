@@ -194,29 +194,31 @@
 <a name="line-185"></a>
 <a name="line-186"></a><span class='hs-comment'>-- | Usage: @'glMinSampleShading' value@</span>
 <a name="line-187"></a><span class='hs-comment'>--</span>
-<a name="line-188"></a><span class='hs-comment'>-- The parameter @value@ is a @ColorF@</span>
-<a name="line-189"></a>
-<a name="line-190"></a>
-<a name="line-191"></a><a name="glMinSampleShading"></a><span class='hs-definition'>glMinSampleShading</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-192"></a><span class='hs-definition'>glMinSampleShading</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifloatIOV</span> <span class='hs-varid'>glMinSampleShadingFunPtr</span>
-<a name="line-193"></a>
-<a name="line-194"></a><a name="glMinSampleShadingFunPtr"></a><span class='hs-definition'>glMinSampleShadingFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-195"></a><span class='hs-definition'>glMinSampleShadingFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMinSampleShading"</span><span class='hs-layout'>)</span>
-<a name="line-196"></a>
-<a name="line-197"></a><span class='hs-comment'>{-# NOINLINE glMinSampleShadingFunPtr #-}</span>
+<a name="line-188"></a><span class='hs-comment'>-- The parameter @value@ is a @ColorF@.</span>
+<a name="line-189"></a><span class='hs-comment'>--</span>
+<a name="line-190"></a><span class='hs-comment'>-- Manual page: &lt;https://www.opengl.org/sdk/docs/man/html/glMinSampleShading.xhtml&gt;</span>
+<a name="line-191"></a>
+<a name="line-192"></a>
+<a name="line-193"></a><a name="glMinSampleShading"></a><span class='hs-definition'>glMinSampleShading</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-194"></a><span class='hs-definition'>glMinSampleShading</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifloatIOV</span> <span class='hs-varid'>glMinSampleShadingFunPtr</span>
+<a name="line-195"></a>
+<a name="line-196"></a><a name="glMinSampleShadingFunPtr"></a><span class='hs-definition'>glMinSampleShadingFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-197"></a><span class='hs-definition'>glMinSampleShadingFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMinSampleShading"</span><span class='hs-layout'>)</span>
 <a name="line-198"></a>
-<a name="line-199"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_SAMPLER_CUBE_MAP_ARRAY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x900E</span>
+<a name="line-199"></a><span class='hs-comment'>{-# NOINLINE glMinSampleShadingFunPtr #-}</span>
 <a name="line-200"></a>
-<a name="line-201"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MIN_SAMPLE_SHADING_VALUE</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C37</span>
+<a name="line-201"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_SAMPLER_CUBE_MAP_ARRAY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x900E</span>
 <a name="line-202"></a>
-<a name="line-203"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROXY_TEXTURE_CUBE_MAP_ARRAY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x900B</span>
+<a name="line-203"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MIN_SAMPLE_SHADING_VALUE</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C37</span>
 <a name="line-204"></a>
-<a name="line-205"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLER_CUBE_MAP_ARRAY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x900C</span>
+<a name="line-205"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROXY_TEXTURE_CUBE_MAP_ARRAY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x900B</span>
 <a name="line-206"></a>
-<a name="line-207"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x900D</span>
+<a name="line-207"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLER_CUBE_MAP_ARRAY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x900C</span>
 <a name="line-208"></a>
-<a name="line-209"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_SHADING</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C36</span>
+<a name="line-209"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x900D</span>
 <a name="line-210"></a>
-<a name="line-211"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x900F</span>
+<a name="line-211"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_SHADING</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C36</span>
+<a name="line-212"></a>
+<a name="line-213"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x900F</span>
 </pre></body>
 </html>

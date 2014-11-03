@@ -97,72 +97,74 @@
 <a name="line-88"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Types</span>
 <a name="line-89"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-90"></a>
-<a name="line-91"></a><a name="gl_ARB_vertex_shader"></a><span class='hs-definition'>gl_ARB_vertex_shader</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-92"></a><span class='hs-definition'>gl_ARB_vertex_shader</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_vertex_shader"</span> <span class='hs-varid'>extensions</span>
-<a name="line-93"></a>
-<a name="line-94"></a><span class='hs-comment'>-- | Usage: @'glBindAttribLocationARB' programObj index name@</span>
-<a name="line-95"></a><span class='hs-comment'>--</span>
-<a name="line-96"></a><span class='hs-comment'>-- The parameter @programObj@ is a @handleARB@</span>
+<a name="line-91"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/vertex_shader.txt GL_ARB_vertex_shader&gt; extension is available.</span>
+<a name="line-92"></a>
+<a name="line-93"></a><a name="gl_ARB_vertex_shader"></a><span class='hs-definition'>gl_ARB_vertex_shader</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-94"></a><span class='hs-definition'>gl_ARB_vertex_shader</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_vertex_shader"</span> <span class='hs-varid'>extensions</span>
+<a name="line-95"></a>
+<a name="line-96"></a><span class='hs-comment'>-- | Usage: @'glBindAttribLocationARB' programObj index name@</span>
 <a name="line-97"></a><span class='hs-comment'>--</span>
-<a name="line-98"></a><span class='hs-comment'>-- This command is an alias for 'glBindAttribLocation'</span>
-<a name="line-99"></a>
-<a name="line-100"></a>
-<a name="line-101"></a><a name="glBindAttribLocationARB"></a><span class='hs-definition'>glBindAttribLocationARB</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLhandleARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLcharARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-102"></a><span class='hs-definition'>glBindAttribLocationARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffihandleARBuintPtrcharARBIOV</span> <span class='hs-varid'>glBindAttribLocationARBFunPtr</span>
-<a name="line-103"></a>
-<a name="line-104"></a><a name="glBindAttribLocationARBFunPtr"></a><span class='hs-definition'>glBindAttribLocationARBFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLhandleARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLcharARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-105"></a><span class='hs-definition'>glBindAttribLocationARBFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindAttribLocationARB"</span><span class='hs-layout'>)</span>
-<a name="line-106"></a>
-<a name="line-107"></a><span class='hs-comment'>{-# NOINLINE glBindAttribLocationARBFunPtr #-}</span>
+<a name="line-98"></a><span class='hs-comment'>-- The parameter @programObj@ is a @handleARB@.</span>
+<a name="line-99"></a><span class='hs-comment'>--</span>
+<a name="line-100"></a><span class='hs-comment'>-- This command is an alias for 'glBindAttribLocation'.</span>
+<a name="line-101"></a>
+<a name="line-102"></a>
+<a name="line-103"></a><a name="glBindAttribLocationARB"></a><span class='hs-definition'>glBindAttribLocationARB</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLhandleARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLcharARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-104"></a><span class='hs-definition'>glBindAttribLocationARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffihandleARBuintPtrcharARBIOV</span> <span class='hs-varid'>glBindAttribLocationARBFunPtr</span>
+<a name="line-105"></a>
+<a name="line-106"></a><a name="glBindAttribLocationARBFunPtr"></a><span class='hs-definition'>glBindAttribLocationARBFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLhandleARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLcharARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-107"></a><span class='hs-definition'>glBindAttribLocationARBFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindAttribLocationARB"</span><span class='hs-layout'>)</span>
 <a name="line-108"></a>
-<a name="line-109"></a><span class='hs-comment'>-- | Usage: @'glGetActiveAttribARB' programObj index maxLength length size type name@</span>
-<a name="line-110"></a><span class='hs-comment'>--</span>
-<a name="line-111"></a><span class='hs-comment'>-- The parameter @programObj@ is a @handleARB@</span>
+<a name="line-109"></a><span class='hs-comment'>{-# NOINLINE glBindAttribLocationARBFunPtr #-}</span>
+<a name="line-110"></a>
+<a name="line-111"></a><span class='hs-comment'>-- | Usage: @'glGetActiveAttribARB' programObj index maxLength length size type name@</span>
 <a name="line-112"></a><span class='hs-comment'>--</span>
-<a name="line-113"></a><span class='hs-comment'>-- The length of @length@ should be @1@</span>
+<a name="line-113"></a><span class='hs-comment'>-- The parameter @programObj@ is a @handleARB@.</span>
 <a name="line-114"></a><span class='hs-comment'>--</span>
-<a name="line-115"></a><span class='hs-comment'>-- The length of @size@ should be @1@</span>
+<a name="line-115"></a><span class='hs-comment'>-- The length of @length@ should be @1@.</span>
 <a name="line-116"></a><span class='hs-comment'>--</span>
-<a name="line-117"></a><span class='hs-comment'>-- The length of @type@ should be @1@</span>
+<a name="line-117"></a><span class='hs-comment'>-- The length of @size@ should be @1@.</span>
 <a name="line-118"></a><span class='hs-comment'>--</span>
-<a name="line-119"></a><span class='hs-comment'>-- The length of @name@ should be @maxLength@</span>
+<a name="line-119"></a><span class='hs-comment'>-- The length of @type@ should be @1@.</span>
 <a name="line-120"></a><span class='hs-comment'>--</span>
-<a name="line-121"></a><span class='hs-comment'>-- This command is an alias for 'glGetActiveAttrib'</span>
-<a name="line-122"></a>
-<a name="line-123"></a>
-<a name="line-124"></a><a name="glGetActiveAttribARB"></a><span class='hs-definition'>glGetActiveAttribARB</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLhandleARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLcharARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-125"></a><span class='hs-definition'>glGetActiveAttribARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffihandleARBuintsizeiPtrsizeiPtrintPtrenumPtrcharARBIOV</span> <span class='hs-varid'>glGetActiveAttribARBFunPtr</span>
-<a name="line-126"></a>
-<a name="line-127"></a><a name="glGetActiveAttribARBFunPtr"></a><span class='hs-definition'>glGetActiveAttribARBFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLhandleARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLcharARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-128"></a><span class='hs-definition'>glGetActiveAttribARBFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetActiveAttribARB"</span><span class='hs-layout'>)</span>
-<a name="line-129"></a>
-<a name="line-130"></a><span class='hs-comment'>{-# NOINLINE glGetActiveAttribARBFunPtr #-}</span>
+<a name="line-121"></a><span class='hs-comment'>-- The length of @name@ should be @maxLength@.</span>
+<a name="line-122"></a><span class='hs-comment'>--</span>
+<a name="line-123"></a><span class='hs-comment'>-- This command is an alias for 'glGetActiveAttrib'.</span>
+<a name="line-124"></a>
+<a name="line-125"></a>
+<a name="line-126"></a><a name="glGetActiveAttribARB"></a><span class='hs-definition'>glGetActiveAttribARB</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLhandleARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLcharARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-127"></a><span class='hs-definition'>glGetActiveAttribARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffihandleARBuintsizeiPtrsizeiPtrintPtrenumPtrcharARBIOV</span> <span class='hs-varid'>glGetActiveAttribARBFunPtr</span>
+<a name="line-128"></a>
+<a name="line-129"></a><a name="glGetActiveAttribARBFunPtr"></a><span class='hs-definition'>glGetActiveAttribARBFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLhandleARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLcharARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-130"></a><span class='hs-definition'>glGetActiveAttribARBFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetActiveAttribARB"</span><span class='hs-layout'>)</span>
 <a name="line-131"></a>
-<a name="line-132"></a><span class='hs-comment'>-- | Usage: @'glGetAttribLocationARB' programObj name@</span>
-<a name="line-133"></a><span class='hs-comment'>--</span>
-<a name="line-134"></a><span class='hs-comment'>-- The parameter @programObj@ is a @handleARB@</span>
+<a name="line-132"></a><span class='hs-comment'>{-# NOINLINE glGetActiveAttribARBFunPtr #-}</span>
+<a name="line-133"></a>
+<a name="line-134"></a><span class='hs-comment'>-- | Usage: @'glGetAttribLocationARB' programObj name@</span>
 <a name="line-135"></a><span class='hs-comment'>--</span>
-<a name="line-136"></a><span class='hs-comment'>-- This command is an alias for 'glGetAttribLocation'</span>
-<a name="line-137"></a>
-<a name="line-138"></a>
-<a name="line-139"></a><a name="glGetAttribLocationARB"></a><span class='hs-definition'>glGetAttribLocationARB</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLhandleARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLcharARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLint</span>
-<a name="line-140"></a><span class='hs-definition'>glGetAttribLocationARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffihandleARBPtrcharARBIOint</span> <span class='hs-varid'>glGetAttribLocationARBFunPtr</span>
-<a name="line-141"></a>
-<a name="line-142"></a><a name="glGetAttribLocationARBFunPtr"></a><span class='hs-definition'>glGetAttribLocationARBFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLhandleARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLcharARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLint</span><span class='hs-layout'>)</span>
-<a name="line-143"></a><span class='hs-definition'>glGetAttribLocationARBFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetAttribLocationARB"</span><span class='hs-layout'>)</span>
-<a name="line-144"></a>
-<a name="line-145"></a><span class='hs-comment'>{-# NOINLINE glGetAttribLocationARBFunPtr #-}</span>
+<a name="line-136"></a><span class='hs-comment'>-- The parameter @programObj@ is a @handleARB@.</span>
+<a name="line-137"></a><span class='hs-comment'>--</span>
+<a name="line-138"></a><span class='hs-comment'>-- This command is an alias for 'glGetAttribLocation'.</span>
+<a name="line-139"></a>
+<a name="line-140"></a>
+<a name="line-141"></a><a name="glGetAttribLocationARB"></a><span class='hs-definition'>glGetAttribLocationARB</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLhandleARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLcharARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLint</span>
+<a name="line-142"></a><span class='hs-definition'>glGetAttribLocationARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffihandleARBPtrcharARBIOint</span> <span class='hs-varid'>glGetAttribLocationARBFunPtr</span>
+<a name="line-143"></a>
+<a name="line-144"></a><a name="glGetAttribLocationARBFunPtr"></a><span class='hs-definition'>glGetAttribLocationARBFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLhandleARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLcharARB</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLint</span><span class='hs-layout'>)</span>
+<a name="line-145"></a><span class='hs-definition'>glGetAttribLocationARBFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetAttribLocationARB"</span><span class='hs-layout'>)</span>
 <a name="line-146"></a>
-<a name="line-147"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B4D</span>
+<a name="line-147"></a><span class='hs-comment'>{-# NOINLINE glGetAttribLocationARBFunPtr #-}</span>
 <a name="line-148"></a>
-<a name="line-149"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_VARYING_FLOATS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B4B</span>
+<a name="line-149"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B4D</span>
 <a name="line-150"></a>
-<a name="line-151"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_VERTEX_UNIFORM_COMPONENTS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B4A</span>
+<a name="line-151"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_VARYING_FLOATS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B4B</span>
 <a name="line-152"></a>
-<a name="line-153"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_OBJECT_ACTIVE_ATTRIBUTES_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B89</span>
+<a name="line-153"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_VERTEX_UNIFORM_COMPONENTS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B4A</span>
 <a name="line-154"></a>
-<a name="line-155"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_OBJECT_ACTIVE_ATTRIBUTE_MAX_LENGTH_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B8A</span>
+<a name="line-155"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_OBJECT_ACTIVE_ATTRIBUTES_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B89</span>
 <a name="line-156"></a>
-<a name="line-157"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VERTEX_SHADER_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B31</span>
+<a name="line-157"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_OBJECT_ACTIVE_ATTRIBUTE_MAX_LENGTH_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B8A</span>
+<a name="line-158"></a>
+<a name="line-159"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VERTEX_SHADER_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B31</span>
 </pre></body>
 </html>

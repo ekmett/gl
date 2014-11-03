@@ -48,342 +48,344 @@
 <a name="line-39"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Types</span>
 <a name="line-40"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-41"></a>
-<a name="line-42"></a><a name="gl_EXT_secondary_color"></a><span class='hs-definition'>gl_EXT_secondary_color</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-43"></a><span class='hs-definition'>gl_EXT_secondary_color</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_EXT_secondary_color"</span> <span class='hs-varid'>extensions</span>
-<a name="line-44"></a>
-<a name="line-45"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3bEXT' red green blue@</span>
-<a name="line-46"></a><span class='hs-comment'>--</span>
-<a name="line-47"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorB@</span>
+<a name="line-42"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/secondary_color.txt GL_EXT_secondary_color&gt; extension is available.</span>
+<a name="line-43"></a>
+<a name="line-44"></a><a name="gl_EXT_secondary_color"></a><span class='hs-definition'>gl_EXT_secondary_color</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-45"></a><span class='hs-definition'>gl_EXT_secondary_color</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_EXT_secondary_color"</span> <span class='hs-varid'>extensions</span>
+<a name="line-46"></a>
+<a name="line-47"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3bEXT' red green blue@</span>
 <a name="line-48"></a><span class='hs-comment'>--</span>
-<a name="line-49"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorB@</span>
+<a name="line-49"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorB@.</span>
 <a name="line-50"></a><span class='hs-comment'>--</span>
-<a name="line-51"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorB@</span>
+<a name="line-51"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorB@.</span>
 <a name="line-52"></a><span class='hs-comment'>--</span>
-<a name="line-53"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3b'</span>
+<a name="line-53"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorB@.</span>
 <a name="line-54"></a><span class='hs-comment'>--</span>
-<a name="line-55"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3bvEXT'</span>
-<a name="line-56"></a>
-<a name="line-57"></a>
-<a name="line-58"></a><a name="glSecondaryColor3bEXT"></a><span class='hs-definition'>glSecondaryColor3bEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-59"></a><span class='hs-definition'>glSecondaryColor3bEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibytebytebyteIOV</span> <span class='hs-varid'>glSecondaryColor3bEXTFunPtr</span>
-<a name="line-60"></a>
-<a name="line-61"></a><a name="glSecondaryColor3bEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3bEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-62"></a><span class='hs-definition'>glSecondaryColor3bEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3bEXT"</span><span class='hs-layout'>)</span>
-<a name="line-63"></a>
-<a name="line-64"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3bEXTFunPtr #-}</span>
+<a name="line-55"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3b'.</span>
+<a name="line-56"></a><span class='hs-comment'>--</span>
+<a name="line-57"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3bvEXT'.</span>
+<a name="line-58"></a>
+<a name="line-59"></a>
+<a name="line-60"></a><a name="glSecondaryColor3bEXT"></a><span class='hs-definition'>glSecondaryColor3bEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-61"></a><span class='hs-definition'>glSecondaryColor3bEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibytebytebyteIOV</span> <span class='hs-varid'>glSecondaryColor3bEXTFunPtr</span>
+<a name="line-62"></a>
+<a name="line-63"></a><a name="glSecondaryColor3bEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3bEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-64"></a><span class='hs-definition'>glSecondaryColor3bEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3bEXT"</span><span class='hs-layout'>)</span>
 <a name="line-65"></a>
-<a name="line-66"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3bvEXT' v@</span>
-<a name="line-67"></a><span class='hs-comment'>--</span>
-<a name="line-68"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorB@</span>
+<a name="line-66"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3bEXTFunPtr #-}</span>
+<a name="line-67"></a>
+<a name="line-68"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3bvEXT' v@</span>
 <a name="line-69"></a><span class='hs-comment'>--</span>
-<a name="line-70"></a><span class='hs-comment'>-- The length of @v@ should be @3@</span>
+<a name="line-70"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorB@.</span>
 <a name="line-71"></a><span class='hs-comment'>--</span>
-<a name="line-72"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3bv'</span>
-<a name="line-73"></a>
-<a name="line-74"></a>
-<a name="line-75"></a><a name="glSecondaryColor3bvEXT"></a><span class='hs-definition'>glSecondaryColor3bvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-76"></a><span class='hs-definition'>glSecondaryColor3bvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glSecondaryColor3bvEXTFunPtr</span>
-<a name="line-77"></a>
-<a name="line-78"></a><a name="glSecondaryColor3bvEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3bvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-79"></a><span class='hs-definition'>glSecondaryColor3bvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3bvEXT"</span><span class='hs-layout'>)</span>
-<a name="line-80"></a>
-<a name="line-81"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3bvEXTFunPtr #-}</span>
+<a name="line-72"></a><span class='hs-comment'>-- The length of @v@ should be @3@.</span>
+<a name="line-73"></a><span class='hs-comment'>--</span>
+<a name="line-74"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3bv'.</span>
+<a name="line-75"></a>
+<a name="line-76"></a>
+<a name="line-77"></a><a name="glSecondaryColor3bvEXT"></a><span class='hs-definition'>glSecondaryColor3bvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-78"></a><span class='hs-definition'>glSecondaryColor3bvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glSecondaryColor3bvEXTFunPtr</span>
+<a name="line-79"></a>
+<a name="line-80"></a><a name="glSecondaryColor3bvEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3bvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-81"></a><span class='hs-definition'>glSecondaryColor3bvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3bvEXT"</span><span class='hs-layout'>)</span>
 <a name="line-82"></a>
-<a name="line-83"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3dEXT' red green blue@</span>
-<a name="line-84"></a><span class='hs-comment'>--</span>
-<a name="line-85"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorD@</span>
+<a name="line-83"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3bvEXTFunPtr #-}</span>
+<a name="line-84"></a>
+<a name="line-85"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3dEXT' red green blue@</span>
 <a name="line-86"></a><span class='hs-comment'>--</span>
-<a name="line-87"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorD@</span>
+<a name="line-87"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorD@.</span>
 <a name="line-88"></a><span class='hs-comment'>--</span>
-<a name="line-89"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorD@</span>
+<a name="line-89"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorD@.</span>
 <a name="line-90"></a><span class='hs-comment'>--</span>
-<a name="line-91"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3d'</span>
+<a name="line-91"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorD@.</span>
 <a name="line-92"></a><span class='hs-comment'>--</span>
-<a name="line-93"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3dvEXT'</span>
-<a name="line-94"></a>
-<a name="line-95"></a>
-<a name="line-96"></a><a name="glSecondaryColor3dEXT"></a><span class='hs-definition'>glSecondaryColor3dEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-97"></a><span class='hs-definition'>glSecondaryColor3dEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffidoubledoubledoubleIOV</span> <span class='hs-varid'>glSecondaryColor3dEXTFunPtr</span>
-<a name="line-98"></a>
-<a name="line-99"></a><a name="glSecondaryColor3dEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3dEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-100"></a><span class='hs-definition'>glSecondaryColor3dEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3dEXT"</span><span class='hs-layout'>)</span>
-<a name="line-101"></a>
-<a name="line-102"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3dEXTFunPtr #-}</span>
+<a name="line-93"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3d'.</span>
+<a name="line-94"></a><span class='hs-comment'>--</span>
+<a name="line-95"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3dvEXT'.</span>
+<a name="line-96"></a>
+<a name="line-97"></a>
+<a name="line-98"></a><a name="glSecondaryColor3dEXT"></a><span class='hs-definition'>glSecondaryColor3dEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-99"></a><span class='hs-definition'>glSecondaryColor3dEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffidoubledoubledoubleIOV</span> <span class='hs-varid'>glSecondaryColor3dEXTFunPtr</span>
+<a name="line-100"></a>
+<a name="line-101"></a><a name="glSecondaryColor3dEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3dEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-102"></a><span class='hs-definition'>glSecondaryColor3dEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3dEXT"</span><span class='hs-layout'>)</span>
 <a name="line-103"></a>
-<a name="line-104"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3dvEXT' v@</span>
-<a name="line-105"></a><span class='hs-comment'>--</span>
-<a name="line-106"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorD@</span>
+<a name="line-104"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3dEXTFunPtr #-}</span>
+<a name="line-105"></a>
+<a name="line-106"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3dvEXT' v@</span>
 <a name="line-107"></a><span class='hs-comment'>--</span>
-<a name="line-108"></a><span class='hs-comment'>-- The length of @v@ should be @3@</span>
+<a name="line-108"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorD@.</span>
 <a name="line-109"></a><span class='hs-comment'>--</span>
-<a name="line-110"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3dv'</span>
-<a name="line-111"></a>
-<a name="line-112"></a>
-<a name="line-113"></a><a name="glSecondaryColor3dvEXT"></a><span class='hs-definition'>glSecondaryColor3dvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-114"></a><span class='hs-definition'>glSecondaryColor3dvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrdoubleIOV</span> <span class='hs-varid'>glSecondaryColor3dvEXTFunPtr</span>
-<a name="line-115"></a>
-<a name="line-116"></a><a name="glSecondaryColor3dvEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3dvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-117"></a><span class='hs-definition'>glSecondaryColor3dvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3dvEXT"</span><span class='hs-layout'>)</span>
-<a name="line-118"></a>
-<a name="line-119"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3dvEXTFunPtr #-}</span>
+<a name="line-110"></a><span class='hs-comment'>-- The length of @v@ should be @3@.</span>
+<a name="line-111"></a><span class='hs-comment'>--</span>
+<a name="line-112"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3dv'.</span>
+<a name="line-113"></a>
+<a name="line-114"></a>
+<a name="line-115"></a><a name="glSecondaryColor3dvEXT"></a><span class='hs-definition'>glSecondaryColor3dvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-116"></a><span class='hs-definition'>glSecondaryColor3dvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrdoubleIOV</span> <span class='hs-varid'>glSecondaryColor3dvEXTFunPtr</span>
+<a name="line-117"></a>
+<a name="line-118"></a><a name="glSecondaryColor3dvEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3dvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-119"></a><span class='hs-definition'>glSecondaryColor3dvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3dvEXT"</span><span class='hs-layout'>)</span>
 <a name="line-120"></a>
-<a name="line-121"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3fEXT' red green blue@</span>
-<a name="line-122"></a><span class='hs-comment'>--</span>
-<a name="line-123"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorF@</span>
+<a name="line-121"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3dvEXTFunPtr #-}</span>
+<a name="line-122"></a>
+<a name="line-123"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3fEXT' red green blue@</span>
 <a name="line-124"></a><span class='hs-comment'>--</span>
-<a name="line-125"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorF@</span>
+<a name="line-125"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorF@.</span>
 <a name="line-126"></a><span class='hs-comment'>--</span>
-<a name="line-127"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorF@</span>
+<a name="line-127"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorF@.</span>
 <a name="line-128"></a><span class='hs-comment'>--</span>
-<a name="line-129"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3f'</span>
+<a name="line-129"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorF@.</span>
 <a name="line-130"></a><span class='hs-comment'>--</span>
-<a name="line-131"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3fvEXT'</span>
-<a name="line-132"></a>
-<a name="line-133"></a>
-<a name="line-134"></a><a name="glSecondaryColor3fEXT"></a><span class='hs-definition'>glSecondaryColor3fEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-135"></a><span class='hs-definition'>glSecondaryColor3fEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifloatfloatfloatIOV</span> <span class='hs-varid'>glSecondaryColor3fEXTFunPtr</span>
-<a name="line-136"></a>
-<a name="line-137"></a><a name="glSecondaryColor3fEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3fEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-138"></a><span class='hs-definition'>glSecondaryColor3fEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3fEXT"</span><span class='hs-layout'>)</span>
-<a name="line-139"></a>
-<a name="line-140"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3fEXTFunPtr #-}</span>
+<a name="line-131"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3f'.</span>
+<a name="line-132"></a><span class='hs-comment'>--</span>
+<a name="line-133"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3fvEXT'.</span>
+<a name="line-134"></a>
+<a name="line-135"></a>
+<a name="line-136"></a><a name="glSecondaryColor3fEXT"></a><span class='hs-definition'>glSecondaryColor3fEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-137"></a><span class='hs-definition'>glSecondaryColor3fEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifloatfloatfloatIOV</span> <span class='hs-varid'>glSecondaryColor3fEXTFunPtr</span>
+<a name="line-138"></a>
+<a name="line-139"></a><a name="glSecondaryColor3fEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3fEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-140"></a><span class='hs-definition'>glSecondaryColor3fEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3fEXT"</span><span class='hs-layout'>)</span>
 <a name="line-141"></a>
-<a name="line-142"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3fvEXT' v@</span>
-<a name="line-143"></a><span class='hs-comment'>--</span>
-<a name="line-144"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorF@</span>
+<a name="line-142"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3fEXTFunPtr #-}</span>
+<a name="line-143"></a>
+<a name="line-144"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3fvEXT' v@</span>
 <a name="line-145"></a><span class='hs-comment'>--</span>
-<a name="line-146"></a><span class='hs-comment'>-- The length of @v@ should be @3@</span>
+<a name="line-146"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorF@.</span>
 <a name="line-147"></a><span class='hs-comment'>--</span>
-<a name="line-148"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3fv'</span>
-<a name="line-149"></a>
-<a name="line-150"></a>
-<a name="line-151"></a><a name="glSecondaryColor3fvEXT"></a><span class='hs-definition'>glSecondaryColor3fvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-152"></a><span class='hs-definition'>glSecondaryColor3fvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrfloatIOV</span> <span class='hs-varid'>glSecondaryColor3fvEXTFunPtr</span>
-<a name="line-153"></a>
-<a name="line-154"></a><a name="glSecondaryColor3fvEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3fvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-155"></a><span class='hs-definition'>glSecondaryColor3fvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3fvEXT"</span><span class='hs-layout'>)</span>
-<a name="line-156"></a>
-<a name="line-157"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3fvEXTFunPtr #-}</span>
+<a name="line-148"></a><span class='hs-comment'>-- The length of @v@ should be @3@.</span>
+<a name="line-149"></a><span class='hs-comment'>--</span>
+<a name="line-150"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3fv'.</span>
+<a name="line-151"></a>
+<a name="line-152"></a>
+<a name="line-153"></a><a name="glSecondaryColor3fvEXT"></a><span class='hs-definition'>glSecondaryColor3fvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-154"></a><span class='hs-definition'>glSecondaryColor3fvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrfloatIOV</span> <span class='hs-varid'>glSecondaryColor3fvEXTFunPtr</span>
+<a name="line-155"></a>
+<a name="line-156"></a><a name="glSecondaryColor3fvEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3fvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-157"></a><span class='hs-definition'>glSecondaryColor3fvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3fvEXT"</span><span class='hs-layout'>)</span>
 <a name="line-158"></a>
-<a name="line-159"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3iEXT' red green blue@</span>
-<a name="line-160"></a><span class='hs-comment'>--</span>
-<a name="line-161"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorI@</span>
+<a name="line-159"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3fvEXTFunPtr #-}</span>
+<a name="line-160"></a>
+<a name="line-161"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3iEXT' red green blue@</span>
 <a name="line-162"></a><span class='hs-comment'>--</span>
-<a name="line-163"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorI@</span>
+<a name="line-163"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorI@.</span>
 <a name="line-164"></a><span class='hs-comment'>--</span>
-<a name="line-165"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorI@</span>
+<a name="line-165"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorI@.</span>
 <a name="line-166"></a><span class='hs-comment'>--</span>
-<a name="line-167"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3i'</span>
+<a name="line-167"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorI@.</span>
 <a name="line-168"></a><span class='hs-comment'>--</span>
-<a name="line-169"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3ivEXT'</span>
-<a name="line-170"></a>
-<a name="line-171"></a>
-<a name="line-172"></a><a name="glSecondaryColor3iEXT"></a><span class='hs-definition'>glSecondaryColor3iEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-173"></a><span class='hs-definition'>glSecondaryColor3iEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintintintIOV</span> <span class='hs-varid'>glSecondaryColor3iEXTFunPtr</span>
-<a name="line-174"></a>
-<a name="line-175"></a><a name="glSecondaryColor3iEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3iEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-176"></a><span class='hs-definition'>glSecondaryColor3iEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3iEXT"</span><span class='hs-layout'>)</span>
-<a name="line-177"></a>
-<a name="line-178"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3iEXTFunPtr #-}</span>
+<a name="line-169"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3i'.</span>
+<a name="line-170"></a><span class='hs-comment'>--</span>
+<a name="line-171"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3ivEXT'.</span>
+<a name="line-172"></a>
+<a name="line-173"></a>
+<a name="line-174"></a><a name="glSecondaryColor3iEXT"></a><span class='hs-definition'>glSecondaryColor3iEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-175"></a><span class='hs-definition'>glSecondaryColor3iEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintintintIOV</span> <span class='hs-varid'>glSecondaryColor3iEXTFunPtr</span>
+<a name="line-176"></a>
+<a name="line-177"></a><a name="glSecondaryColor3iEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3iEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-178"></a><span class='hs-definition'>glSecondaryColor3iEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3iEXT"</span><span class='hs-layout'>)</span>
 <a name="line-179"></a>
-<a name="line-180"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3ivEXT' v@</span>
-<a name="line-181"></a><span class='hs-comment'>--</span>
-<a name="line-182"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorI@</span>
+<a name="line-180"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3iEXTFunPtr #-}</span>
+<a name="line-181"></a>
+<a name="line-182"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3ivEXT' v@</span>
 <a name="line-183"></a><span class='hs-comment'>--</span>
-<a name="line-184"></a><span class='hs-comment'>-- The length of @v@ should be @3@</span>
+<a name="line-184"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorI@.</span>
 <a name="line-185"></a><span class='hs-comment'>--</span>
-<a name="line-186"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3iv'</span>
-<a name="line-187"></a>
-<a name="line-188"></a>
-<a name="line-189"></a><a name="glSecondaryColor3ivEXT"></a><span class='hs-definition'>glSecondaryColor3ivEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-190"></a><span class='hs-definition'>glSecondaryColor3ivEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrintIOV</span> <span class='hs-varid'>glSecondaryColor3ivEXTFunPtr</span>
-<a name="line-191"></a>
-<a name="line-192"></a><a name="glSecondaryColor3ivEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3ivEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-193"></a><span class='hs-definition'>glSecondaryColor3ivEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3ivEXT"</span><span class='hs-layout'>)</span>
-<a name="line-194"></a>
-<a name="line-195"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3ivEXTFunPtr #-}</span>
+<a name="line-186"></a><span class='hs-comment'>-- The length of @v@ should be @3@.</span>
+<a name="line-187"></a><span class='hs-comment'>--</span>
+<a name="line-188"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3iv'.</span>
+<a name="line-189"></a>
+<a name="line-190"></a>
+<a name="line-191"></a><a name="glSecondaryColor3ivEXT"></a><span class='hs-definition'>glSecondaryColor3ivEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-192"></a><span class='hs-definition'>glSecondaryColor3ivEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrintIOV</span> <span class='hs-varid'>glSecondaryColor3ivEXTFunPtr</span>
+<a name="line-193"></a>
+<a name="line-194"></a><a name="glSecondaryColor3ivEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3ivEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-195"></a><span class='hs-definition'>glSecondaryColor3ivEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3ivEXT"</span><span class='hs-layout'>)</span>
 <a name="line-196"></a>
-<a name="line-197"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3sEXT' red green blue@</span>
-<a name="line-198"></a><span class='hs-comment'>--</span>
-<a name="line-199"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorS@</span>
+<a name="line-197"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3ivEXTFunPtr #-}</span>
+<a name="line-198"></a>
+<a name="line-199"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3sEXT' red green blue@</span>
 <a name="line-200"></a><span class='hs-comment'>--</span>
-<a name="line-201"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorS@</span>
+<a name="line-201"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorS@.</span>
 <a name="line-202"></a><span class='hs-comment'>--</span>
-<a name="line-203"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorS@</span>
+<a name="line-203"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorS@.</span>
 <a name="line-204"></a><span class='hs-comment'>--</span>
-<a name="line-205"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3s'</span>
+<a name="line-205"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorS@.</span>
 <a name="line-206"></a><span class='hs-comment'>--</span>
-<a name="line-207"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3svEXT'</span>
-<a name="line-208"></a>
-<a name="line-209"></a>
-<a name="line-210"></a><a name="glSecondaryColor3sEXT"></a><span class='hs-definition'>glSecondaryColor3sEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-211"></a><span class='hs-definition'>glSecondaryColor3sEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffishortshortshortIOV</span> <span class='hs-varid'>glSecondaryColor3sEXTFunPtr</span>
-<a name="line-212"></a>
-<a name="line-213"></a><a name="glSecondaryColor3sEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3sEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-214"></a><span class='hs-definition'>glSecondaryColor3sEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3sEXT"</span><span class='hs-layout'>)</span>
-<a name="line-215"></a>
-<a name="line-216"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3sEXTFunPtr #-}</span>
+<a name="line-207"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3s'.</span>
+<a name="line-208"></a><span class='hs-comment'>--</span>
+<a name="line-209"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3svEXT'.</span>
+<a name="line-210"></a>
+<a name="line-211"></a>
+<a name="line-212"></a><a name="glSecondaryColor3sEXT"></a><span class='hs-definition'>glSecondaryColor3sEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-213"></a><span class='hs-definition'>glSecondaryColor3sEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffishortshortshortIOV</span> <span class='hs-varid'>glSecondaryColor3sEXTFunPtr</span>
+<a name="line-214"></a>
+<a name="line-215"></a><a name="glSecondaryColor3sEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3sEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-216"></a><span class='hs-definition'>glSecondaryColor3sEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3sEXT"</span><span class='hs-layout'>)</span>
 <a name="line-217"></a>
-<a name="line-218"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3svEXT' v@</span>
-<a name="line-219"></a><span class='hs-comment'>--</span>
-<a name="line-220"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorS@</span>
+<a name="line-218"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3sEXTFunPtr #-}</span>
+<a name="line-219"></a>
+<a name="line-220"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3svEXT' v@</span>
 <a name="line-221"></a><span class='hs-comment'>--</span>
-<a name="line-222"></a><span class='hs-comment'>-- The length of @v@ should be @3@</span>
+<a name="line-222"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorS@.</span>
 <a name="line-223"></a><span class='hs-comment'>--</span>
-<a name="line-224"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3sv'</span>
-<a name="line-225"></a>
-<a name="line-226"></a>
-<a name="line-227"></a><a name="glSecondaryColor3svEXT"></a><span class='hs-definition'>glSecondaryColor3svEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-228"></a><span class='hs-definition'>glSecondaryColor3svEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrshortIOV</span> <span class='hs-varid'>glSecondaryColor3svEXTFunPtr</span>
-<a name="line-229"></a>
-<a name="line-230"></a><a name="glSecondaryColor3svEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3svEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-231"></a><span class='hs-definition'>glSecondaryColor3svEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3svEXT"</span><span class='hs-layout'>)</span>
-<a name="line-232"></a>
-<a name="line-233"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3svEXTFunPtr #-}</span>
+<a name="line-224"></a><span class='hs-comment'>-- The length of @v@ should be @3@.</span>
+<a name="line-225"></a><span class='hs-comment'>--</span>
+<a name="line-226"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3sv'.</span>
+<a name="line-227"></a>
+<a name="line-228"></a>
+<a name="line-229"></a><a name="glSecondaryColor3svEXT"></a><span class='hs-definition'>glSecondaryColor3svEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-230"></a><span class='hs-definition'>glSecondaryColor3svEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrshortIOV</span> <span class='hs-varid'>glSecondaryColor3svEXTFunPtr</span>
+<a name="line-231"></a>
+<a name="line-232"></a><a name="glSecondaryColor3svEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3svEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLshort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-233"></a><span class='hs-definition'>glSecondaryColor3svEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3svEXT"</span><span class='hs-layout'>)</span>
 <a name="line-234"></a>
-<a name="line-235"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3ubEXT' red green blue@</span>
-<a name="line-236"></a><span class='hs-comment'>--</span>
-<a name="line-237"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorUB@</span>
+<a name="line-235"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3svEXTFunPtr #-}</span>
+<a name="line-236"></a>
+<a name="line-237"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3ubEXT' red green blue@</span>
 <a name="line-238"></a><span class='hs-comment'>--</span>
-<a name="line-239"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorUB@</span>
+<a name="line-239"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorUB@.</span>
 <a name="line-240"></a><span class='hs-comment'>--</span>
-<a name="line-241"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorUB@</span>
+<a name="line-241"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorUB@.</span>
 <a name="line-242"></a><span class='hs-comment'>--</span>
-<a name="line-243"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3ub'</span>
+<a name="line-243"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorUB@.</span>
 <a name="line-244"></a><span class='hs-comment'>--</span>
-<a name="line-245"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3ubvEXT'</span>
-<a name="line-246"></a>
-<a name="line-247"></a>
-<a name="line-248"></a><a name="glSecondaryColor3ubEXT"></a><span class='hs-definition'>glSecondaryColor3ubEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-249"></a><span class='hs-definition'>glSecondaryColor3ubEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiubyteubyteubyteIOV</span> <span class='hs-varid'>glSecondaryColor3ubEXTFunPtr</span>
-<a name="line-250"></a>
-<a name="line-251"></a><a name="glSecondaryColor3ubEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3ubEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-252"></a><span class='hs-definition'>glSecondaryColor3ubEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3ubEXT"</span><span class='hs-layout'>)</span>
-<a name="line-253"></a>
-<a name="line-254"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3ubEXTFunPtr #-}</span>
+<a name="line-245"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3ub'.</span>
+<a name="line-246"></a><span class='hs-comment'>--</span>
+<a name="line-247"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3ubvEXT'.</span>
+<a name="line-248"></a>
+<a name="line-249"></a>
+<a name="line-250"></a><a name="glSecondaryColor3ubEXT"></a><span class='hs-definition'>glSecondaryColor3ubEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-251"></a><span class='hs-definition'>glSecondaryColor3ubEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiubyteubyteubyteIOV</span> <span class='hs-varid'>glSecondaryColor3ubEXTFunPtr</span>
+<a name="line-252"></a>
+<a name="line-253"></a><a name="glSecondaryColor3ubEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3ubEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-254"></a><span class='hs-definition'>glSecondaryColor3ubEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3ubEXT"</span><span class='hs-layout'>)</span>
 <a name="line-255"></a>
-<a name="line-256"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3ubvEXT' v@</span>
-<a name="line-257"></a><span class='hs-comment'>--</span>
-<a name="line-258"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorUB@</span>
+<a name="line-256"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3ubEXTFunPtr #-}</span>
+<a name="line-257"></a>
+<a name="line-258"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3ubvEXT' v@</span>
 <a name="line-259"></a><span class='hs-comment'>--</span>
-<a name="line-260"></a><span class='hs-comment'>-- The length of @v@ should be @3@</span>
+<a name="line-260"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorUB@.</span>
 <a name="line-261"></a><span class='hs-comment'>--</span>
-<a name="line-262"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3ubv'</span>
-<a name="line-263"></a>
-<a name="line-264"></a>
-<a name="line-265"></a><a name="glSecondaryColor3ubvEXT"></a><span class='hs-definition'>glSecondaryColor3ubvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-266"></a><span class='hs-definition'>glSecondaryColor3ubvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrubyteIOV</span> <span class='hs-varid'>glSecondaryColor3ubvEXTFunPtr</span>
-<a name="line-267"></a>
-<a name="line-268"></a><a name="glSecondaryColor3ubvEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3ubvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-269"></a><span class='hs-definition'>glSecondaryColor3ubvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3ubvEXT"</span><span class='hs-layout'>)</span>
-<a name="line-270"></a>
-<a name="line-271"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3ubvEXTFunPtr #-}</span>
+<a name="line-262"></a><span class='hs-comment'>-- The length of @v@ should be @3@.</span>
+<a name="line-263"></a><span class='hs-comment'>--</span>
+<a name="line-264"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3ubv'.</span>
+<a name="line-265"></a>
+<a name="line-266"></a>
+<a name="line-267"></a><a name="glSecondaryColor3ubvEXT"></a><span class='hs-definition'>glSecondaryColor3ubvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-268"></a><span class='hs-definition'>glSecondaryColor3ubvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrubyteIOV</span> <span class='hs-varid'>glSecondaryColor3ubvEXTFunPtr</span>
+<a name="line-269"></a>
+<a name="line-270"></a><a name="glSecondaryColor3ubvEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3ubvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLubyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-271"></a><span class='hs-definition'>glSecondaryColor3ubvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3ubvEXT"</span><span class='hs-layout'>)</span>
 <a name="line-272"></a>
-<a name="line-273"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3uiEXT' red green blue@</span>
-<a name="line-274"></a><span class='hs-comment'>--</span>
-<a name="line-275"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorUI@</span>
+<a name="line-273"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3ubvEXTFunPtr #-}</span>
+<a name="line-274"></a>
+<a name="line-275"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3uiEXT' red green blue@</span>
 <a name="line-276"></a><span class='hs-comment'>--</span>
-<a name="line-277"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorUI@</span>
+<a name="line-277"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorUI@.</span>
 <a name="line-278"></a><span class='hs-comment'>--</span>
-<a name="line-279"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorUI@</span>
+<a name="line-279"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorUI@.</span>
 <a name="line-280"></a><span class='hs-comment'>--</span>
-<a name="line-281"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3ui'</span>
+<a name="line-281"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorUI@.</span>
 <a name="line-282"></a><span class='hs-comment'>--</span>
-<a name="line-283"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3uivEXT'</span>
-<a name="line-284"></a>
-<a name="line-285"></a>
-<a name="line-286"></a><a name="glSecondaryColor3uiEXT"></a><span class='hs-definition'>glSecondaryColor3uiEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-287"></a><span class='hs-definition'>glSecondaryColor3uiEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintuintIOV</span> <span class='hs-varid'>glSecondaryColor3uiEXTFunPtr</span>
-<a name="line-288"></a>
-<a name="line-289"></a><a name="glSecondaryColor3uiEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3uiEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-290"></a><span class='hs-definition'>glSecondaryColor3uiEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3uiEXT"</span><span class='hs-layout'>)</span>
-<a name="line-291"></a>
-<a name="line-292"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3uiEXTFunPtr #-}</span>
+<a name="line-283"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3ui'.</span>
+<a name="line-284"></a><span class='hs-comment'>--</span>
+<a name="line-285"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3uivEXT'.</span>
+<a name="line-286"></a>
+<a name="line-287"></a>
+<a name="line-288"></a><a name="glSecondaryColor3uiEXT"></a><span class='hs-definition'>glSecondaryColor3uiEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-289"></a><span class='hs-definition'>glSecondaryColor3uiEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintuintIOV</span> <span class='hs-varid'>glSecondaryColor3uiEXTFunPtr</span>
+<a name="line-290"></a>
+<a name="line-291"></a><a name="glSecondaryColor3uiEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3uiEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-292"></a><span class='hs-definition'>glSecondaryColor3uiEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3uiEXT"</span><span class='hs-layout'>)</span>
 <a name="line-293"></a>
-<a name="line-294"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3uivEXT' v@</span>
-<a name="line-295"></a><span class='hs-comment'>--</span>
-<a name="line-296"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorUI@</span>
+<a name="line-294"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3uiEXTFunPtr #-}</span>
+<a name="line-295"></a>
+<a name="line-296"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3uivEXT' v@</span>
 <a name="line-297"></a><span class='hs-comment'>--</span>
-<a name="line-298"></a><span class='hs-comment'>-- The length of @v@ should be @3@</span>
+<a name="line-298"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorUI@.</span>
 <a name="line-299"></a><span class='hs-comment'>--</span>
-<a name="line-300"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3uiv'</span>
-<a name="line-301"></a>
-<a name="line-302"></a>
-<a name="line-303"></a><a name="glSecondaryColor3uivEXT"></a><span class='hs-definition'>glSecondaryColor3uivEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-304"></a><span class='hs-definition'>glSecondaryColor3uivEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtruintIOV</span> <span class='hs-varid'>glSecondaryColor3uivEXTFunPtr</span>
-<a name="line-305"></a>
-<a name="line-306"></a><a name="glSecondaryColor3uivEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3uivEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-307"></a><span class='hs-definition'>glSecondaryColor3uivEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3uivEXT"</span><span class='hs-layout'>)</span>
-<a name="line-308"></a>
-<a name="line-309"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3uivEXTFunPtr #-}</span>
+<a name="line-300"></a><span class='hs-comment'>-- The length of @v@ should be @3@.</span>
+<a name="line-301"></a><span class='hs-comment'>--</span>
+<a name="line-302"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3uiv'.</span>
+<a name="line-303"></a>
+<a name="line-304"></a>
+<a name="line-305"></a><a name="glSecondaryColor3uivEXT"></a><span class='hs-definition'>glSecondaryColor3uivEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-306"></a><span class='hs-definition'>glSecondaryColor3uivEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtruintIOV</span> <span class='hs-varid'>glSecondaryColor3uivEXTFunPtr</span>
+<a name="line-307"></a>
+<a name="line-308"></a><a name="glSecondaryColor3uivEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3uivEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-309"></a><span class='hs-definition'>glSecondaryColor3uivEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3uivEXT"</span><span class='hs-layout'>)</span>
 <a name="line-310"></a>
-<a name="line-311"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3usEXT' red green blue@</span>
-<a name="line-312"></a><span class='hs-comment'>--</span>
-<a name="line-313"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorUS@</span>
+<a name="line-311"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3uivEXTFunPtr #-}</span>
+<a name="line-312"></a>
+<a name="line-313"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3usEXT' red green blue@</span>
 <a name="line-314"></a><span class='hs-comment'>--</span>
-<a name="line-315"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorUS@</span>
+<a name="line-315"></a><span class='hs-comment'>-- The parameter @red@ is a @ColorUS@.</span>
 <a name="line-316"></a><span class='hs-comment'>--</span>
-<a name="line-317"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorUS@</span>
+<a name="line-317"></a><span class='hs-comment'>-- The parameter @green@ is a @ColorUS@.</span>
 <a name="line-318"></a><span class='hs-comment'>--</span>
-<a name="line-319"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3us'</span>
+<a name="line-319"></a><span class='hs-comment'>-- The parameter @blue@ is a @ColorUS@.</span>
 <a name="line-320"></a><span class='hs-comment'>--</span>
-<a name="line-321"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3usvEXT'</span>
-<a name="line-322"></a>
-<a name="line-323"></a>
-<a name="line-324"></a><a name="glSecondaryColor3usEXT"></a><span class='hs-definition'>glSecondaryColor3usEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-325"></a><span class='hs-definition'>glSecondaryColor3usEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiushortushortushortIOV</span> <span class='hs-varid'>glSecondaryColor3usEXTFunPtr</span>
-<a name="line-326"></a>
-<a name="line-327"></a><a name="glSecondaryColor3usEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3usEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-328"></a><span class='hs-definition'>glSecondaryColor3usEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3usEXT"</span><span class='hs-layout'>)</span>
-<a name="line-329"></a>
-<a name="line-330"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3usEXTFunPtr #-}</span>
+<a name="line-321"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3us'.</span>
+<a name="line-322"></a><span class='hs-comment'>--</span>
+<a name="line-323"></a><span class='hs-comment'>-- The vector equivalent of this command is 'glSecondaryColor3usvEXT'.</span>
+<a name="line-324"></a>
+<a name="line-325"></a>
+<a name="line-326"></a><a name="glSecondaryColor3usEXT"></a><span class='hs-definition'>glSecondaryColor3usEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-327"></a><span class='hs-definition'>glSecondaryColor3usEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiushortushortushortIOV</span> <span class='hs-varid'>glSecondaryColor3usEXTFunPtr</span>
+<a name="line-328"></a>
+<a name="line-329"></a><a name="glSecondaryColor3usEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3usEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-330"></a><span class='hs-definition'>glSecondaryColor3usEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3usEXT"</span><span class='hs-layout'>)</span>
 <a name="line-331"></a>
-<a name="line-332"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3usvEXT' v@</span>
-<a name="line-333"></a><span class='hs-comment'>--</span>
-<a name="line-334"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorUS@</span>
+<a name="line-332"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3usEXTFunPtr #-}</span>
+<a name="line-333"></a>
+<a name="line-334"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColor3usvEXT' v@</span>
 <a name="line-335"></a><span class='hs-comment'>--</span>
-<a name="line-336"></a><span class='hs-comment'>-- The length of @v@ should be @3@</span>
+<a name="line-336"></a><span class='hs-comment'>-- The parameter @v@ is a @ColorUS@.</span>
 <a name="line-337"></a><span class='hs-comment'>--</span>
-<a name="line-338"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3usv'</span>
-<a name="line-339"></a>
-<a name="line-340"></a>
-<a name="line-341"></a><a name="glSecondaryColor3usvEXT"></a><span class='hs-definition'>glSecondaryColor3usvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-342"></a><span class='hs-definition'>glSecondaryColor3usvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrushortIOV</span> <span class='hs-varid'>glSecondaryColor3usvEXTFunPtr</span>
-<a name="line-343"></a>
-<a name="line-344"></a><a name="glSecondaryColor3usvEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3usvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-345"></a><span class='hs-definition'>glSecondaryColor3usvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3usvEXT"</span><span class='hs-layout'>)</span>
-<a name="line-346"></a>
-<a name="line-347"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3usvEXTFunPtr #-}</span>
+<a name="line-338"></a><span class='hs-comment'>-- The length of @v@ should be @3@.</span>
+<a name="line-339"></a><span class='hs-comment'>--</span>
+<a name="line-340"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColor3usv'.</span>
+<a name="line-341"></a>
+<a name="line-342"></a>
+<a name="line-343"></a><a name="glSecondaryColor3usvEXT"></a><span class='hs-definition'>glSecondaryColor3usvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-344"></a><span class='hs-definition'>glSecondaryColor3usvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrushortIOV</span> <span class='hs-varid'>glSecondaryColor3usvEXTFunPtr</span>
+<a name="line-345"></a>
+<a name="line-346"></a><a name="glSecondaryColor3usvEXTFunPtr"></a><span class='hs-definition'>glSecondaryColor3usvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLushort</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-347"></a><span class='hs-definition'>glSecondaryColor3usvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColor3usvEXT"</span><span class='hs-layout'>)</span>
 <a name="line-348"></a>
-<a name="line-349"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColorPointerEXT' size type stride pointer@</span>
-<a name="line-350"></a><span class='hs-comment'>--</span>
-<a name="line-351"></a><span class='hs-comment'>-- The parameter @type@ is a @ColorPointerType@, one of: 'GL_BYTE', 'GL_DOUBLE', 'GL_FLOAT', 'GL_INT', 'GL_SHORT', 'GL_UNSIGNED_BYTE', 'GL_UNSIGNED_INT', 'GL_UNSIGNED_SHORT'</span>
+<a name="line-349"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColor3usvEXTFunPtr #-}</span>
+<a name="line-350"></a>
+<a name="line-351"></a><span class='hs-comment'>-- | Usage: @'glSecondaryColorPointerEXT' size type stride pointer@</span>
 <a name="line-352"></a><span class='hs-comment'>--</span>
-<a name="line-353"></a><span class='hs-comment'>-- The length of @pointer@ should be @COMPSIZE(size,type,stride)@</span>
+<a name="line-353"></a><span class='hs-comment'>-- The parameter @type@ is a @ColorPointerType@, one of: 'GL_BYTE', 'GL_DOUBLE', 'GL_FLOAT', 'GL_INT', 'GL_SHORT', 'GL_UNSIGNED_BYTE', 'GL_UNSIGNED_INT', 'GL_UNSIGNED_SHORT'.</span>
 <a name="line-354"></a><span class='hs-comment'>--</span>
-<a name="line-355"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColorPointer'</span>
-<a name="line-356"></a>
-<a name="line-357"></a>
-<a name="line-358"></a><a name="glSecondaryColorPointerEXT"></a><span class='hs-definition'>glSecondaryColorPointerEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-359"></a><span class='hs-definition'>glSecondaryColorPointerEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintenumsizeiPtrVIOV</span> <span class='hs-varid'>glSecondaryColorPointerEXTFunPtr</span>
-<a name="line-360"></a>
-<a name="line-361"></a><a name="glSecondaryColorPointerEXTFunPtr"></a><span class='hs-definition'>glSecondaryColorPointerEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-362"></a><span class='hs-definition'>glSecondaryColorPointerEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColorPointerEXT"</span><span class='hs-layout'>)</span>
-<a name="line-363"></a>
-<a name="line-364"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColorPointerEXTFunPtr #-}</span>
+<a name="line-355"></a><span class='hs-comment'>-- The length of @pointer@ should be @COMPSIZE(size,type,stride)@.</span>
+<a name="line-356"></a><span class='hs-comment'>--</span>
+<a name="line-357"></a><span class='hs-comment'>-- This command is an alias for 'glSecondaryColorPointer'.</span>
+<a name="line-358"></a>
+<a name="line-359"></a>
+<a name="line-360"></a><a name="glSecondaryColorPointerEXT"></a><span class='hs-definition'>glSecondaryColorPointerEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-361"></a><span class='hs-definition'>glSecondaryColorPointerEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintenumsizeiPtrVIOV</span> <span class='hs-varid'>glSecondaryColorPointerEXTFunPtr</span>
+<a name="line-362"></a>
+<a name="line-363"></a><a name="glSecondaryColorPointerEXTFunPtr"></a><span class='hs-definition'>glSecondaryColorPointerEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-364"></a><span class='hs-definition'>glSecondaryColorPointerEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSecondaryColorPointerEXT"</span><span class='hs-layout'>)</span>
 <a name="line-365"></a>
-<a name="line-366"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_SUM_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8458</span>
+<a name="line-366"></a><span class='hs-comment'>{-# NOINLINE glSecondaryColorPointerEXTFunPtr #-}</span>
 <a name="line-367"></a>
-<a name="line-368"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CURRENT_SECONDARY_COLOR_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8459</span>
+<a name="line-368"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_SUM_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8458</span>
 <a name="line-369"></a>
-<a name="line-370"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SECONDARY_COLOR_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x845E</span>
+<a name="line-370"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CURRENT_SECONDARY_COLOR_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8459</span>
 <a name="line-371"></a>
-<a name="line-372"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SECONDARY_COLOR_ARRAY_POINTER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x845D</span>
+<a name="line-372"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SECONDARY_COLOR_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x845E</span>
 <a name="line-373"></a>
-<a name="line-374"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SECONDARY_COLOR_ARRAY_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x845A</span>
+<a name="line-374"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SECONDARY_COLOR_ARRAY_POINTER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x845D</span>
 <a name="line-375"></a>
-<a name="line-376"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SECONDARY_COLOR_ARRAY_STRIDE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x845C</span>
+<a name="line-376"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SECONDARY_COLOR_ARRAY_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x845A</span>
 <a name="line-377"></a>
-<a name="line-378"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SECONDARY_COLOR_ARRAY_TYPE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x845B</span>
+<a name="line-378"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SECONDARY_COLOR_ARRAY_STRIDE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x845C</span>
+<a name="line-379"></a>
+<a name="line-380"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SECONDARY_COLOR_ARRAY_TYPE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x845B</span>
 </pre></body>
 </html>

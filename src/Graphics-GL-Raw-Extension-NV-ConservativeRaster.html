@@ -29,26 +29,28 @@
 <a name="line-20"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Types</span>
 <a name="line-21"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-22"></a>
-<a name="line-23"></a><a name="gl_NV_conservative_raster"></a><span class='hs-definition'>gl_NV_conservative_raster</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-24"></a><span class='hs-definition'>gl_NV_conservative_raster</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_NV_conservative_raster"</span> <span class='hs-varid'>extensions</span>
-<a name="line-25"></a>
-<a name="line-26"></a><span class='hs-comment'>-- | Usage: @'glSubpixelPrecisionBiasNV' xbits ybits@</span>
+<a name="line-23"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/conservative_raster.txt GL_NV_conservative_raster&gt; extension is available.</span>
+<a name="line-24"></a>
+<a name="line-25"></a><a name="gl_NV_conservative_raster"></a><span class='hs-definition'>gl_NV_conservative_raster</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-26"></a><span class='hs-definition'>gl_NV_conservative_raster</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_NV_conservative_raster"</span> <span class='hs-varid'>extensions</span>
 <a name="line-27"></a>
-<a name="line-28"></a>
-<a name="line-29"></a><a name="glSubpixelPrecisionBiasNV"></a><span class='hs-definition'>glSubpixelPrecisionBiasNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-30"></a><span class='hs-definition'>glSubpixelPrecisionBiasNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintIOV</span> <span class='hs-varid'>glSubpixelPrecisionBiasNVFunPtr</span>
-<a name="line-31"></a>
-<a name="line-32"></a><a name="glSubpixelPrecisionBiasNVFunPtr"></a><span class='hs-definition'>glSubpixelPrecisionBiasNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-33"></a><span class='hs-definition'>glSubpixelPrecisionBiasNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSubpixelPrecisionBiasNV"</span><span class='hs-layout'>)</span>
-<a name="line-34"></a>
-<a name="line-35"></a><span class='hs-comment'>{-# NOINLINE glSubpixelPrecisionBiasNVFunPtr #-}</span>
+<a name="line-28"></a><span class='hs-comment'>-- | Usage: @'glSubpixelPrecisionBiasNV' xbits ybits@</span>
+<a name="line-29"></a>
+<a name="line-30"></a>
+<a name="line-31"></a><a name="glSubpixelPrecisionBiasNV"></a><span class='hs-definition'>glSubpixelPrecisionBiasNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-32"></a><span class='hs-definition'>glSubpixelPrecisionBiasNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintIOV</span> <span class='hs-varid'>glSubpixelPrecisionBiasNVFunPtr</span>
+<a name="line-33"></a>
+<a name="line-34"></a><a name="glSubpixelPrecisionBiasNVFunPtr"></a><span class='hs-definition'>glSubpixelPrecisionBiasNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-35"></a><span class='hs-definition'>glSubpixelPrecisionBiasNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSubpixelPrecisionBiasNV"</span><span class='hs-layout'>)</span>
 <a name="line-36"></a>
-<a name="line-37"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CONSERVATIVE_RASTERIZATION_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9346</span>
+<a name="line-37"></a><span class='hs-comment'>{-# NOINLINE glSubpixelPrecisionBiasNVFunPtr #-}</span>
 <a name="line-38"></a>
-<a name="line-39"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_SUBPIXEL_PRECISION_BIAS_BITS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9349</span>
+<a name="line-39"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CONSERVATIVE_RASTERIZATION_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9346</span>
 <a name="line-40"></a>
-<a name="line-41"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SUBPIXEL_PRECISION_BIAS_X_BITS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9347</span>
+<a name="line-41"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_SUBPIXEL_PRECISION_BIAS_BITS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9349</span>
 <a name="line-42"></a>
-<a name="line-43"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SUBPIXEL_PRECISION_BIAS_Y_BITS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9348</span>
+<a name="line-43"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SUBPIXEL_PRECISION_BIAS_X_BITS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9347</span>
+<a name="line-44"></a>
+<a name="line-45"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SUBPIXEL_PRECISION_BIAS_Y_BITS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9348</span>
 </pre></body>
 </html>

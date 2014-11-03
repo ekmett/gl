@@ -24,17 +24,19 @@
 <a name="line-15"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Data</span><span class='hs-varop'>.</span><span class='hs-conid'>Set</span>
 <a name="line-16"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Internal</span><span class='hs-varop'>.</span><span class='hs-conid'>Proc</span>
 <a name="line-17"></a>
-<a name="line-18"></a><a name="gl_ARB_depth_texture"></a><span class='hs-definition'>gl_ARB_depth_texture</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-19"></a><span class='hs-definition'>gl_ARB_depth_texture</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_depth_texture"</span> <span class='hs-varid'>extensions</span>
-<a name="line-20"></a>
-<a name="line-21"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DEPTH_COMPONENT16_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x81A5</span>
+<a name="line-18"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/depth_texture.txt GL_ARB_depth_texture&gt; extension is available.</span>
+<a name="line-19"></a>
+<a name="line-20"></a><a name="gl_ARB_depth_texture"></a><span class='hs-definition'>gl_ARB_depth_texture</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-21"></a><span class='hs-definition'>gl_ARB_depth_texture</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_depth_texture"</span> <span class='hs-varid'>extensions</span>
 <a name="line-22"></a>
-<a name="line-23"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DEPTH_COMPONENT24_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x81A6</span>
+<a name="line-23"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DEPTH_COMPONENT16_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x81A5</span>
 <a name="line-24"></a>
-<a name="line-25"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DEPTH_COMPONENT32_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x81A7</span>
+<a name="line-25"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DEPTH_COMPONENT24_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x81A6</span>
 <a name="line-26"></a>
-<a name="line-27"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DEPTH_TEXTURE_MODE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x884B</span>
+<a name="line-27"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DEPTH_COMPONENT32_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x81A7</span>
 <a name="line-28"></a>
-<a name="line-29"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_DEPTH_SIZE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x884A</span>
+<a name="line-29"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DEPTH_TEXTURE_MODE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x884B</span>
+<a name="line-30"></a>
+<a name="line-31"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_DEPTH_SIZE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x884A</span>
 </pre></body>
 </html>

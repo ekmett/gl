@@ -26,22 +26,24 @@
 <a name="line-17"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Internal</span><span class='hs-varop'>.</span><span class='hs-conid'>Proc</span>
 <a name="line-18"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-19"></a>
-<a name="line-20"></a><a name="gl_SUNX_constant_data"></a><span class='hs-definition'>gl_SUNX_constant_data</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-21"></a><span class='hs-definition'>gl_SUNX_constant_data</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_SUNX_constant_data"</span> <span class='hs-varid'>extensions</span>
-<a name="line-22"></a>
-<a name="line-23"></a><span class='hs-comment'>-- | Usage: @'glFinishTextureSUNX'@</span>
+<a name="line-20"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SUNX/constant_data.txt GL_SUNX_constant_data&gt; extension is available.</span>
+<a name="line-21"></a>
+<a name="line-22"></a><a name="gl_SUNX_constant_data"></a><span class='hs-definition'>gl_SUNX_constant_data</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-23"></a><span class='hs-definition'>gl_SUNX_constant_data</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_SUNX_constant_data"</span> <span class='hs-varid'>extensions</span>
 <a name="line-24"></a>
-<a name="line-25"></a>
-<a name="line-26"></a><a name="glFinishTextureSUNX"></a><span class='hs-definition'>glFinishTextureSUNX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-27"></a><span class='hs-definition'>glFinishTextureSUNX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiIOV</span> <span class='hs-varid'>glFinishTextureSUNXFunPtr</span>
-<a name="line-28"></a>
-<a name="line-29"></a><a name="glFinishTextureSUNXFunPtr"></a><span class='hs-definition'>glFinishTextureSUNXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-30"></a><span class='hs-definition'>glFinishTextureSUNXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFinishTextureSUNX"</span><span class='hs-layout'>)</span>
-<a name="line-31"></a>
-<a name="line-32"></a><span class='hs-comment'>{-# NOINLINE glFinishTextureSUNXFunPtr #-}</span>
+<a name="line-25"></a><span class='hs-comment'>-- | Usage: @'glFinishTextureSUNX'@</span>
+<a name="line-26"></a>
+<a name="line-27"></a>
+<a name="line-28"></a><a name="glFinishTextureSUNX"></a><span class='hs-definition'>glFinishTextureSUNX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-29"></a><span class='hs-definition'>glFinishTextureSUNX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiIOV</span> <span class='hs-varid'>glFinishTextureSUNXFunPtr</span>
+<a name="line-30"></a>
+<a name="line-31"></a><a name="glFinishTextureSUNXFunPtr"></a><span class='hs-definition'>glFinishTextureSUNXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-32"></a><span class='hs-definition'>glFinishTextureSUNXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFinishTextureSUNX"</span><span class='hs-layout'>)</span>
 <a name="line-33"></a>
-<a name="line-34"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_CONSTANT_DATA_SUNX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x81D6</span>
+<a name="line-34"></a><span class='hs-comment'>{-# NOINLINE glFinishTextureSUNXFunPtr #-}</span>
 <a name="line-35"></a>
-<a name="line-36"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNPACK_CONSTANT_DATA_SUNX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x81D5</span>
+<a name="line-36"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_CONSTANT_DATA_SUNX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x81D6</span>
+<a name="line-37"></a>
+<a name="line-38"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNPACK_CONSTANT_DATA_SUNX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x81D5</span>
 </pre></body>
 </html>

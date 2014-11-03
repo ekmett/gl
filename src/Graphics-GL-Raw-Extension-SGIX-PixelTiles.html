@@ -27,23 +27,25 @@
 <a name="line-18"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Data</span><span class='hs-varop'>.</span><span class='hs-conid'>Set</span>
 <a name="line-19"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Internal</span><span class='hs-varop'>.</span><span class='hs-conid'>Proc</span>
 <a name="line-20"></a>
-<a name="line-21"></a><a name="gl_SGIX_pixel_tiles"></a><span class='hs-definition'>gl_SGIX_pixel_tiles</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-22"></a><span class='hs-definition'>gl_SGIX_pixel_tiles</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_SGIX_pixel_tiles"</span> <span class='hs-varid'>extensions</span>
-<a name="line-23"></a>
-<a name="line-24"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_BEST_ALIGNMENT_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x813E</span>
+<a name="line-21"></a><span class='hs-comment'>-- | Checks that the GL_SGIX_pixel_tiles extension is available.</span>
+<a name="line-22"></a>
+<a name="line-23"></a><a name="gl_SGIX_pixel_tiles"></a><span class='hs-definition'>gl_SGIX_pixel_tiles</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-24"></a><span class='hs-definition'>gl_SGIX_pixel_tiles</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_SGIX_pixel_tiles"</span> <span class='hs-varid'>extensions</span>
 <a name="line-25"></a>
-<a name="line-26"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_CACHE_INCREMENT_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x813F</span>
+<a name="line-26"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_BEST_ALIGNMENT_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x813E</span>
 <a name="line-27"></a>
-<a name="line-28"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_CACHE_SIZE_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8145</span>
+<a name="line-28"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_CACHE_INCREMENT_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x813F</span>
 <a name="line-29"></a>
-<a name="line-30"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_GRID_DEPTH_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8144</span>
+<a name="line-30"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_CACHE_SIZE_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8145</span>
 <a name="line-31"></a>
-<a name="line-32"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_GRID_HEIGHT_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8143</span>
+<a name="line-32"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_GRID_DEPTH_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8144</span>
 <a name="line-33"></a>
-<a name="line-34"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_GRID_WIDTH_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8142</span>
+<a name="line-34"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_GRID_HEIGHT_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8143</span>
 <a name="line-35"></a>
-<a name="line-36"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_HEIGHT_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8141</span>
+<a name="line-36"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_GRID_WIDTH_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8142</span>
 <a name="line-37"></a>
-<a name="line-38"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_WIDTH_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8140</span>
+<a name="line-38"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_HEIGHT_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8141</span>
+<a name="line-39"></a>
+<a name="line-40"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_TILE_WIDTH_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8140</span>
 </pre></body>
 </html>

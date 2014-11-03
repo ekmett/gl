@@ -30,32 +30,34 @@
 <a name="line-21"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Types</span>
 <a name="line-22"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-23"></a>
-<a name="line-24"></a><a name="gl_ARB_texture_buffer_object"></a><span class='hs-definition'>gl_ARB_texture_buffer_object</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-25"></a><span class='hs-definition'>gl_ARB_texture_buffer_object</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_texture_buffer_object"</span> <span class='hs-varid'>extensions</span>
-<a name="line-26"></a>
-<a name="line-27"></a><span class='hs-comment'>-- | Usage: @'glTexBufferARB' target internalformat buffer@</span>
-<a name="line-28"></a><span class='hs-comment'>--</span>
-<a name="line-29"></a><span class='hs-comment'>-- The parameter @target@ is a @TextureTarget@, one of: 'GL_DETAIL_TEXTURE_2D_SGIS', 'GL_PROXY_TEXTURE_1D', 'GL_PROXY_TEXTURE_1D_EXT', 'GL_PROXY_TEXTURE_2D', 'GL_PROXY_TEXTURE_2D_EXT', 'GL_PROXY_TEXTURE_3D', 'GL_PROXY_TEXTURE_3D_EXT', 'GL_PROXY_TEXTURE_4D_SGIS', 'GL_TEXTURE_1D', 'GL_TEXTURE_2D', 'GL_TEXTURE_3D', 'GL_TEXTURE_3D_EXT', 'GL_TEXTURE_3D_OES', 'GL_TEXTURE_4D_SGIS', 'GL_TEXTURE_BASE_LEVEL', 'GL_TEXTURE_BASE_LEVEL_SGIS', 'GL_TEXTURE_MAX_LEVEL', 'GL_TEXTURE_MAX_LEVEL_SGIS', 'GL_TEXTURE_MAX_LOD', 'GL_TEXTURE_MAX_LOD_SGIS', 'GL_TEXTURE_MIN_LOD', 'GL_TEXTURE_MIN_LOD_SGIS'</span>
+<a name="line-24"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/texture_buffer_object.txt GL_ARB_texture_buffer_object&gt; extension is available.</span>
+<a name="line-25"></a>
+<a name="line-26"></a><a name="gl_ARB_texture_buffer_object"></a><span class='hs-definition'>gl_ARB_texture_buffer_object</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-27"></a><span class='hs-definition'>gl_ARB_texture_buffer_object</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_texture_buffer_object"</span> <span class='hs-varid'>extensions</span>
+<a name="line-28"></a>
+<a name="line-29"></a><span class='hs-comment'>-- | Usage: @'glTexBufferARB' target internalformat buffer@</span>
 <a name="line-30"></a><span class='hs-comment'>--</span>
-<a name="line-31"></a><span class='hs-comment'>-- This command is an alias for 'glTexBuffer'</span>
-<a name="line-32"></a>
-<a name="line-33"></a>
-<a name="line-34"></a><a name="glTexBufferARB"></a><span class='hs-definition'>glTexBufferARB</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-35"></a><span class='hs-definition'>glTexBufferARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumuintIOV</span> <span class='hs-varid'>glTexBufferARBFunPtr</span>
-<a name="line-36"></a>
-<a name="line-37"></a><a name="glTexBufferARBFunPtr"></a><span class='hs-definition'>glTexBufferARBFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-38"></a><span class='hs-definition'>glTexBufferARBFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexBufferARB"</span><span class='hs-layout'>)</span>
-<a name="line-39"></a>
-<a name="line-40"></a><span class='hs-comment'>{-# NOINLINE glTexBufferARBFunPtr #-}</span>
+<a name="line-31"></a><span class='hs-comment'>-- The parameter @target@ is a @TextureTarget@, one of: 'GL_DETAIL_TEXTURE_2D_SGIS', 'GL_PROXY_TEXTURE_1D', 'GL_PROXY_TEXTURE_1D_EXT', 'GL_PROXY_TEXTURE_2D', 'GL_PROXY_TEXTURE_2D_EXT', 'GL_PROXY_TEXTURE_3D', 'GL_PROXY_TEXTURE_3D_EXT', 'GL_PROXY_TEXTURE_4D_SGIS', 'GL_TEXTURE_1D', 'GL_TEXTURE_2D', 'GL_TEXTURE_3D', 'GL_TEXTURE_3D_EXT', 'GL_TEXTURE_3D_OES', 'GL_TEXTURE_4D_SGIS', 'GL_TEXTURE_BASE_LEVEL', 'GL_TEXTURE_BASE_LEVEL_SGIS', 'GL_TEXTURE_MAX_LEVEL', 'GL_TEXTURE_MAX_LEVEL_SGIS', 'GL_TEXTURE_MAX_LOD', 'GL_TEXTURE_MAX_LOD_SGIS', 'GL_TEXTURE_MIN_LOD', 'GL_TEXTURE_MIN_LOD_SGIS'.</span>
+<a name="line-32"></a><span class='hs-comment'>--</span>
+<a name="line-33"></a><span class='hs-comment'>-- This command is an alias for 'glTexBuffer'.</span>
+<a name="line-34"></a>
+<a name="line-35"></a>
+<a name="line-36"></a><a name="glTexBufferARB"></a><span class='hs-definition'>glTexBufferARB</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-37"></a><span class='hs-definition'>glTexBufferARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumuintIOV</span> <span class='hs-varid'>glTexBufferARBFunPtr</span>
+<a name="line-38"></a>
+<a name="line-39"></a><a name="glTexBufferARBFunPtr"></a><span class='hs-definition'>glTexBufferARBFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-40"></a><span class='hs-definition'>glTexBufferARBFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexBufferARB"</span><span class='hs-layout'>)</span>
 <a name="line-41"></a>
-<a name="line-42"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_TEXTURE_BUFFER_SIZE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C2B</span>
+<a name="line-42"></a><span class='hs-comment'>{-# NOINLINE glTexBufferARBFunPtr #-}</span>
 <a name="line-43"></a>
-<a name="line-44"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_BINDING_BUFFER_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C2C</span>
+<a name="line-44"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_TEXTURE_BUFFER_SIZE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C2B</span>
 <a name="line-45"></a>
-<a name="line-46"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_BUFFER_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C2A</span>
+<a name="line-46"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_BINDING_BUFFER_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C2C</span>
 <a name="line-47"></a>
-<a name="line-48"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_BUFFER_DATA_STORE_BINDING_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C2D</span>
+<a name="line-48"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_BUFFER_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C2A</span>
 <a name="line-49"></a>
-<a name="line-50"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_BUFFER_FORMAT_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C2E</span>
+<a name="line-50"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_BUFFER_DATA_STORE_BINDING_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C2D</span>
+<a name="line-51"></a>
+<a name="line-52"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_BUFFER_FORMAT_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C2E</span>
 </pre></body>
 </html>

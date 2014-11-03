@@ -31,119 +31,121 @@
 <a name="line-22"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Types</span>
 <a name="line-23"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-24"></a>
-<a name="line-25"></a><a name="gl_SGIX_list_priority"></a><span class='hs-definition'>gl_SGIX_list_priority</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-26"></a><span class='hs-definition'>gl_SGIX_list_priority</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_SGIX_list_priority"</span> <span class='hs-varid'>extensions</span>
-<a name="line-27"></a>
-<a name="line-28"></a><span class='hs-comment'>-- | Usage: @'glGetListParameterfvSGIX' list pname params@</span>
-<a name="line-29"></a><span class='hs-comment'>--</span>
-<a name="line-30"></a><span class='hs-comment'>-- The parameter @list@ is a @List@</span>
+<a name="line-25"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIX/list_priority.txt GL_SGIX_list_priority&gt; extension is available.</span>
+<a name="line-26"></a>
+<a name="line-27"></a><a name="gl_SGIX_list_priority"></a><span class='hs-definition'>gl_SGIX_list_priority</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-28"></a><span class='hs-definition'>gl_SGIX_list_priority</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_SGIX_list_priority"</span> <span class='hs-varid'>extensions</span>
+<a name="line-29"></a>
+<a name="line-30"></a><span class='hs-comment'>-- | Usage: @'glGetListParameterfvSGIX' list pname params@</span>
 <a name="line-31"></a><span class='hs-comment'>--</span>
-<a name="line-32"></a><span class='hs-comment'>-- The parameter @pname@ is a @ListParameterName@, one of: 'GL_LIST_PRIORITY_SGIX'</span>
+<a name="line-32"></a><span class='hs-comment'>-- The parameter @list@ is a @List@.</span>
 <a name="line-33"></a><span class='hs-comment'>--</span>
-<a name="line-34"></a><span class='hs-comment'>-- The parameter @params@ is a @CheckedFloat32@</span>
+<a name="line-34"></a><span class='hs-comment'>-- The parameter @pname@ is a @ListParameterName@, one of: 'GL_LIST_PRIORITY_SGIX'.</span>
 <a name="line-35"></a><span class='hs-comment'>--</span>
-<a name="line-36"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@</span>
-<a name="line-37"></a>
-<a name="line-38"></a>
-<a name="line-39"></a><a name="glGetListParameterfvSGIX"></a><span class='hs-definition'>glGetListParameterfvSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-40"></a><span class='hs-definition'>glGetListParameterfvSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumPtrfloatIOV</span> <span class='hs-varid'>glGetListParameterfvSGIXFunPtr</span>
-<a name="line-41"></a>
-<a name="line-42"></a><a name="glGetListParameterfvSGIXFunPtr"></a><span class='hs-definition'>glGetListParameterfvSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-43"></a><span class='hs-definition'>glGetListParameterfvSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetListParameterfvSGIX"</span><span class='hs-layout'>)</span>
-<a name="line-44"></a>
-<a name="line-45"></a><span class='hs-comment'>{-# NOINLINE glGetListParameterfvSGIXFunPtr #-}</span>
+<a name="line-36"></a><span class='hs-comment'>-- The parameter @params@ is a @CheckedFloat32@.</span>
+<a name="line-37"></a><span class='hs-comment'>--</span>
+<a name="line-38"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-39"></a>
+<a name="line-40"></a>
+<a name="line-41"></a><a name="glGetListParameterfvSGIX"></a><span class='hs-definition'>glGetListParameterfvSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-42"></a><span class='hs-definition'>glGetListParameterfvSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumPtrfloatIOV</span> <span class='hs-varid'>glGetListParameterfvSGIXFunPtr</span>
+<a name="line-43"></a>
+<a name="line-44"></a><a name="glGetListParameterfvSGIXFunPtr"></a><span class='hs-definition'>glGetListParameterfvSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-45"></a><span class='hs-definition'>glGetListParameterfvSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetListParameterfvSGIX"</span><span class='hs-layout'>)</span>
 <a name="line-46"></a>
-<a name="line-47"></a><span class='hs-comment'>-- | Usage: @'glGetListParameterivSGIX' list pname params@</span>
-<a name="line-48"></a><span class='hs-comment'>--</span>
-<a name="line-49"></a><span class='hs-comment'>-- The parameter @list@ is a @List@</span>
+<a name="line-47"></a><span class='hs-comment'>{-# NOINLINE glGetListParameterfvSGIXFunPtr #-}</span>
+<a name="line-48"></a>
+<a name="line-49"></a><span class='hs-comment'>-- | Usage: @'glGetListParameterivSGIX' list pname params@</span>
 <a name="line-50"></a><span class='hs-comment'>--</span>
-<a name="line-51"></a><span class='hs-comment'>-- The parameter @pname@ is a @ListParameterName@, one of: 'GL_LIST_PRIORITY_SGIX'</span>
+<a name="line-51"></a><span class='hs-comment'>-- The parameter @list@ is a @List@.</span>
 <a name="line-52"></a><span class='hs-comment'>--</span>
-<a name="line-53"></a><span class='hs-comment'>-- The parameter @params@ is a @CheckedInt32@</span>
+<a name="line-53"></a><span class='hs-comment'>-- The parameter @pname@ is a @ListParameterName@, one of: 'GL_LIST_PRIORITY_SGIX'.</span>
 <a name="line-54"></a><span class='hs-comment'>--</span>
-<a name="line-55"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@</span>
-<a name="line-56"></a>
-<a name="line-57"></a>
-<a name="line-58"></a><a name="glGetListParameterivSGIX"></a><span class='hs-definition'>glGetListParameterivSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-59"></a><span class='hs-definition'>glGetListParameterivSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumPtrintIOV</span> <span class='hs-varid'>glGetListParameterivSGIXFunPtr</span>
-<a name="line-60"></a>
-<a name="line-61"></a><a name="glGetListParameterivSGIXFunPtr"></a><span class='hs-definition'>glGetListParameterivSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-62"></a><span class='hs-definition'>glGetListParameterivSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetListParameterivSGIX"</span><span class='hs-layout'>)</span>
-<a name="line-63"></a>
-<a name="line-64"></a><span class='hs-comment'>{-# NOINLINE glGetListParameterivSGIXFunPtr #-}</span>
+<a name="line-55"></a><span class='hs-comment'>-- The parameter @params@ is a @CheckedInt32@.</span>
+<a name="line-56"></a><span class='hs-comment'>--</span>
+<a name="line-57"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-58"></a>
+<a name="line-59"></a>
+<a name="line-60"></a><a name="glGetListParameterivSGIX"></a><span class='hs-definition'>glGetListParameterivSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-61"></a><span class='hs-definition'>glGetListParameterivSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumPtrintIOV</span> <span class='hs-varid'>glGetListParameterivSGIXFunPtr</span>
+<a name="line-62"></a>
+<a name="line-63"></a><a name="glGetListParameterivSGIXFunPtr"></a><span class='hs-definition'>glGetListParameterivSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-64"></a><span class='hs-definition'>glGetListParameterivSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetListParameterivSGIX"</span><span class='hs-layout'>)</span>
 <a name="line-65"></a>
-<a name="line-66"></a><span class='hs-comment'>-- | Usage: @'glListParameterfSGIX' list pname param@</span>
-<a name="line-67"></a><span class='hs-comment'>--</span>
-<a name="line-68"></a><span class='hs-comment'>-- The parameter @list@ is a @List@</span>
+<a name="line-66"></a><span class='hs-comment'>{-# NOINLINE glGetListParameterivSGIXFunPtr #-}</span>
+<a name="line-67"></a>
+<a name="line-68"></a><span class='hs-comment'>-- | Usage: @'glListParameterfSGIX' list pname param@</span>
 <a name="line-69"></a><span class='hs-comment'>--</span>
-<a name="line-70"></a><span class='hs-comment'>-- The parameter @pname@ is a @ListParameterName@, one of: 'GL_LIST_PRIORITY_SGIX'</span>
+<a name="line-70"></a><span class='hs-comment'>-- The parameter @list@ is a @List@.</span>
 <a name="line-71"></a><span class='hs-comment'>--</span>
-<a name="line-72"></a><span class='hs-comment'>-- The parameter @param@ is a @CheckedFloat32@</span>
-<a name="line-73"></a>
-<a name="line-74"></a>
-<a name="line-75"></a><a name="glListParameterfSGIX"></a><span class='hs-definition'>glListParameterfSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-76"></a><span class='hs-definition'>glListParameterfSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumfloatIOV</span> <span class='hs-varid'>glListParameterfSGIXFunPtr</span>
-<a name="line-77"></a>
-<a name="line-78"></a><a name="glListParameterfSGIXFunPtr"></a><span class='hs-definition'>glListParameterfSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-79"></a><span class='hs-definition'>glListParameterfSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glListParameterfSGIX"</span><span class='hs-layout'>)</span>
-<a name="line-80"></a>
-<a name="line-81"></a><span class='hs-comment'>{-# NOINLINE glListParameterfSGIXFunPtr #-}</span>
+<a name="line-72"></a><span class='hs-comment'>-- The parameter @pname@ is a @ListParameterName@, one of: 'GL_LIST_PRIORITY_SGIX'.</span>
+<a name="line-73"></a><span class='hs-comment'>--</span>
+<a name="line-74"></a><span class='hs-comment'>-- The parameter @param@ is a @CheckedFloat32@.</span>
+<a name="line-75"></a>
+<a name="line-76"></a>
+<a name="line-77"></a><a name="glListParameterfSGIX"></a><span class='hs-definition'>glListParameterfSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-78"></a><span class='hs-definition'>glListParameterfSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumfloatIOV</span> <span class='hs-varid'>glListParameterfSGIXFunPtr</span>
+<a name="line-79"></a>
+<a name="line-80"></a><a name="glListParameterfSGIXFunPtr"></a><span class='hs-definition'>glListParameterfSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-81"></a><span class='hs-definition'>glListParameterfSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glListParameterfSGIX"</span><span class='hs-layout'>)</span>
 <a name="line-82"></a>
-<a name="line-83"></a><span class='hs-comment'>-- | Usage: @'glListParameterfvSGIX' list pname params@</span>
-<a name="line-84"></a><span class='hs-comment'>--</span>
-<a name="line-85"></a><span class='hs-comment'>-- The parameter @list@ is a @List@</span>
+<a name="line-83"></a><span class='hs-comment'>{-# NOINLINE glListParameterfSGIXFunPtr #-}</span>
+<a name="line-84"></a>
+<a name="line-85"></a><span class='hs-comment'>-- | Usage: @'glListParameterfvSGIX' list pname params@</span>
 <a name="line-86"></a><span class='hs-comment'>--</span>
-<a name="line-87"></a><span class='hs-comment'>-- The parameter @pname@ is a @ListParameterName@, one of: 'GL_LIST_PRIORITY_SGIX'</span>
+<a name="line-87"></a><span class='hs-comment'>-- The parameter @list@ is a @List@.</span>
 <a name="line-88"></a><span class='hs-comment'>--</span>
-<a name="line-89"></a><span class='hs-comment'>-- The parameter @params@ is a @CheckedFloat32@</span>
+<a name="line-89"></a><span class='hs-comment'>-- The parameter @pname@ is a @ListParameterName@, one of: 'GL_LIST_PRIORITY_SGIX'.</span>
 <a name="line-90"></a><span class='hs-comment'>--</span>
-<a name="line-91"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@</span>
-<a name="line-92"></a>
-<a name="line-93"></a>
-<a name="line-94"></a><a name="glListParameterfvSGIX"></a><span class='hs-definition'>glListParameterfvSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-95"></a><span class='hs-definition'>glListParameterfvSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumPtrfloatIOV</span> <span class='hs-varid'>glListParameterfvSGIXFunPtr</span>
-<a name="line-96"></a>
-<a name="line-97"></a><a name="glListParameterfvSGIXFunPtr"></a><span class='hs-definition'>glListParameterfvSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-98"></a><span class='hs-definition'>glListParameterfvSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glListParameterfvSGIX"</span><span class='hs-layout'>)</span>
-<a name="line-99"></a>
-<a name="line-100"></a><span class='hs-comment'>{-# NOINLINE glListParameterfvSGIXFunPtr #-}</span>
+<a name="line-91"></a><span class='hs-comment'>-- The parameter @params@ is a @CheckedFloat32@.</span>
+<a name="line-92"></a><span class='hs-comment'>--</span>
+<a name="line-93"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-94"></a>
+<a name="line-95"></a>
+<a name="line-96"></a><a name="glListParameterfvSGIX"></a><span class='hs-definition'>glListParameterfvSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-97"></a><span class='hs-definition'>glListParameterfvSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumPtrfloatIOV</span> <span class='hs-varid'>glListParameterfvSGIXFunPtr</span>
+<a name="line-98"></a>
+<a name="line-99"></a><a name="glListParameterfvSGIXFunPtr"></a><span class='hs-definition'>glListParameterfvSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-100"></a><span class='hs-definition'>glListParameterfvSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glListParameterfvSGIX"</span><span class='hs-layout'>)</span>
 <a name="line-101"></a>
-<a name="line-102"></a><span class='hs-comment'>-- | Usage: @'glListParameteriSGIX' list pname param@</span>
-<a name="line-103"></a><span class='hs-comment'>--</span>
-<a name="line-104"></a><span class='hs-comment'>-- The parameter @list@ is a @List@</span>
+<a name="line-102"></a><span class='hs-comment'>{-# NOINLINE glListParameterfvSGIXFunPtr #-}</span>
+<a name="line-103"></a>
+<a name="line-104"></a><span class='hs-comment'>-- | Usage: @'glListParameteriSGIX' list pname param@</span>
 <a name="line-105"></a><span class='hs-comment'>--</span>
-<a name="line-106"></a><span class='hs-comment'>-- The parameter @pname@ is a @ListParameterName@, one of: 'GL_LIST_PRIORITY_SGIX'</span>
+<a name="line-106"></a><span class='hs-comment'>-- The parameter @list@ is a @List@.</span>
 <a name="line-107"></a><span class='hs-comment'>--</span>
-<a name="line-108"></a><span class='hs-comment'>-- The parameter @param@ is a @CheckedInt32@</span>
-<a name="line-109"></a>
-<a name="line-110"></a>
-<a name="line-111"></a><a name="glListParameteriSGIX"></a><span class='hs-definition'>glListParameteriSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-112"></a><span class='hs-definition'>glListParameteriSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumintIOV</span> <span class='hs-varid'>glListParameteriSGIXFunPtr</span>
-<a name="line-113"></a>
-<a name="line-114"></a><a name="glListParameteriSGIXFunPtr"></a><span class='hs-definition'>glListParameteriSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-115"></a><span class='hs-definition'>glListParameteriSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glListParameteriSGIX"</span><span class='hs-layout'>)</span>
-<a name="line-116"></a>
-<a name="line-117"></a><span class='hs-comment'>{-# NOINLINE glListParameteriSGIXFunPtr #-}</span>
+<a name="line-108"></a><span class='hs-comment'>-- The parameter @pname@ is a @ListParameterName@, one of: 'GL_LIST_PRIORITY_SGIX'.</span>
+<a name="line-109"></a><span class='hs-comment'>--</span>
+<a name="line-110"></a><span class='hs-comment'>-- The parameter @param@ is a @CheckedInt32@.</span>
+<a name="line-111"></a>
+<a name="line-112"></a>
+<a name="line-113"></a><a name="glListParameteriSGIX"></a><span class='hs-definition'>glListParameteriSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-114"></a><span class='hs-definition'>glListParameteriSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumintIOV</span> <span class='hs-varid'>glListParameteriSGIXFunPtr</span>
+<a name="line-115"></a>
+<a name="line-116"></a><a name="glListParameteriSGIXFunPtr"></a><span class='hs-definition'>glListParameteriSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-117"></a><span class='hs-definition'>glListParameteriSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glListParameteriSGIX"</span><span class='hs-layout'>)</span>
 <a name="line-118"></a>
-<a name="line-119"></a><span class='hs-comment'>-- | Usage: @'glListParameterivSGIX' list pname params@</span>
-<a name="line-120"></a><span class='hs-comment'>--</span>
-<a name="line-121"></a><span class='hs-comment'>-- The parameter @list@ is a @List@</span>
+<a name="line-119"></a><span class='hs-comment'>{-# NOINLINE glListParameteriSGIXFunPtr #-}</span>
+<a name="line-120"></a>
+<a name="line-121"></a><span class='hs-comment'>-- | Usage: @'glListParameterivSGIX' list pname params@</span>
 <a name="line-122"></a><span class='hs-comment'>--</span>
-<a name="line-123"></a><span class='hs-comment'>-- The parameter @pname@ is a @ListParameterName@, one of: 'GL_LIST_PRIORITY_SGIX'</span>
+<a name="line-123"></a><span class='hs-comment'>-- The parameter @list@ is a @List@.</span>
 <a name="line-124"></a><span class='hs-comment'>--</span>
-<a name="line-125"></a><span class='hs-comment'>-- The parameter @params@ is a @CheckedInt32@</span>
+<a name="line-125"></a><span class='hs-comment'>-- The parameter @pname@ is a @ListParameterName@, one of: 'GL_LIST_PRIORITY_SGIX'.</span>
 <a name="line-126"></a><span class='hs-comment'>--</span>
-<a name="line-127"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@</span>
-<a name="line-128"></a>
-<a name="line-129"></a>
-<a name="line-130"></a><a name="glListParameterivSGIX"></a><span class='hs-definition'>glListParameterivSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-131"></a><span class='hs-definition'>glListParameterivSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumPtrintIOV</span> <span class='hs-varid'>glListParameterivSGIXFunPtr</span>
-<a name="line-132"></a>
-<a name="line-133"></a><a name="glListParameterivSGIXFunPtr"></a><span class='hs-definition'>glListParameterivSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-134"></a><span class='hs-definition'>glListParameterivSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glListParameterivSGIX"</span><span class='hs-layout'>)</span>
-<a name="line-135"></a>
-<a name="line-136"></a><span class='hs-comment'>{-# NOINLINE glListParameterivSGIXFunPtr #-}</span>
+<a name="line-127"></a><span class='hs-comment'>-- The parameter @params@ is a @CheckedInt32@.</span>
+<a name="line-128"></a><span class='hs-comment'>--</span>
+<a name="line-129"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-130"></a>
+<a name="line-131"></a>
+<a name="line-132"></a><a name="glListParameterivSGIX"></a><span class='hs-definition'>glListParameterivSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-133"></a><span class='hs-definition'>glListParameterivSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumPtrintIOV</span> <span class='hs-varid'>glListParameterivSGIXFunPtr</span>
+<a name="line-134"></a>
+<a name="line-135"></a><a name="glListParameterivSGIXFunPtr"></a><span class='hs-definition'>glListParameterivSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-136"></a><span class='hs-definition'>glListParameterivSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glListParameterivSGIX"</span><span class='hs-layout'>)</span>
 <a name="line-137"></a>
-<a name="line-138"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LIST_PRIORITY_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8182</span>
+<a name="line-138"></a><span class='hs-comment'>{-# NOINLINE glListParameterivSGIXFunPtr #-}</span>
+<a name="line-139"></a>
+<a name="line-140"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LIST_PRIORITY_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8182</span>
 </pre></body>
 </html>

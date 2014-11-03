@@ -39,47 +39,49 @@
 <a name="line-30"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Data</span><span class='hs-varop'>.</span><span class='hs-conid'>Set</span>
 <a name="line-31"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Internal</span><span class='hs-varop'>.</span><span class='hs-conid'>Proc</span>
 <a name="line-32"></a>
-<a name="line-33"></a><a name="gl_ARB_texture_float"></a><span class='hs-definition'>gl_ARB_texture_float</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-34"></a><span class='hs-definition'>gl_ARB_texture_float</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_texture_float"</span> <span class='hs-varid'>extensions</span>
-<a name="line-35"></a>
-<a name="line-36"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALPHA16F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881C</span>
+<a name="line-33"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/texture_float.txt GL_ARB_texture_float&gt; extension is available.</span>
+<a name="line-34"></a>
+<a name="line-35"></a><a name="gl_ARB_texture_float"></a><span class='hs-definition'>gl_ARB_texture_float</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-36"></a><span class='hs-definition'>gl_ARB_texture_float</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_texture_float"</span> <span class='hs-varid'>extensions</span>
 <a name="line-37"></a>
-<a name="line-38"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALPHA32F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8816</span>
+<a name="line-38"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALPHA16F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881C</span>
 <a name="line-39"></a>
-<a name="line-40"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INTENSITY16F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881D</span>
+<a name="line-40"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALPHA32F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8816</span>
 <a name="line-41"></a>
-<a name="line-42"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INTENSITY32F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8817</span>
+<a name="line-42"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INTENSITY16F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881D</span>
 <a name="line-43"></a>
-<a name="line-44"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE16F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881E</span>
+<a name="line-44"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INTENSITY32F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8817</span>
 <a name="line-45"></a>
-<a name="line-46"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE32F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8818</span>
+<a name="line-46"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE16F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881E</span>
 <a name="line-47"></a>
-<a name="line-48"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE_ALPHA16F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881F</span>
+<a name="line-48"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE32F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8818</span>
 <a name="line-49"></a>
-<a name="line-50"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE_ALPHA32F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8819</span>
+<a name="line-50"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE_ALPHA16F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881F</span>
 <a name="line-51"></a>
-<a name="line-52"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RGB16F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881B</span>
+<a name="line-52"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE_ALPHA32F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8819</span>
 <a name="line-53"></a>
-<a name="line-54"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RGB32F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8815</span>
+<a name="line-54"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RGB16F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881B</span>
 <a name="line-55"></a>
-<a name="line-56"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RGBA16F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881A</span>
+<a name="line-56"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RGB32F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8815</span>
 <a name="line-57"></a>
-<a name="line-58"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RGBA32F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8814</span>
+<a name="line-58"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RGBA16F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881A</span>
 <a name="line-59"></a>
-<a name="line-60"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_ALPHA_TYPE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C13</span>
+<a name="line-60"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RGBA32F_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8814</span>
 <a name="line-61"></a>
-<a name="line-62"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_BLUE_TYPE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C12</span>
+<a name="line-62"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_ALPHA_TYPE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C13</span>
 <a name="line-63"></a>
-<a name="line-64"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_DEPTH_TYPE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C16</span>
+<a name="line-64"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_BLUE_TYPE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C12</span>
 <a name="line-65"></a>
-<a name="line-66"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_GREEN_TYPE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C11</span>
+<a name="line-66"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_DEPTH_TYPE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C16</span>
 <a name="line-67"></a>
-<a name="line-68"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_INTENSITY_TYPE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C15</span>
+<a name="line-68"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_GREEN_TYPE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C11</span>
 <a name="line-69"></a>
-<a name="line-70"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_LUMINANCE_TYPE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C14</span>
+<a name="line-70"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_INTENSITY_TYPE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C15</span>
 <a name="line-71"></a>
-<a name="line-72"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_RED_TYPE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C10</span>
+<a name="line-72"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_LUMINANCE_TYPE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C14</span>
 <a name="line-73"></a>
-<a name="line-74"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_NORMALIZED_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C17</span>
+<a name="line-74"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_RED_TYPE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C10</span>
+<a name="line-75"></a>
+<a name="line-76"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_NORMALIZED_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C17</span>
 </pre></body>
 </html>

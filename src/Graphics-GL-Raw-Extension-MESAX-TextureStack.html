@@ -25,19 +25,21 @@
 <a name="line-16"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Data</span><span class='hs-varop'>.</span><span class='hs-conid'>Set</span>
 <a name="line-17"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Internal</span><span class='hs-varop'>.</span><span class='hs-conid'>Proc</span>
 <a name="line-18"></a>
-<a name="line-19"></a><a name="gl_MESAX_texture_stack"></a><span class='hs-definition'>gl_MESAX_texture_stack</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-20"></a><span class='hs-definition'>gl_MESAX_texture_stack</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_MESAX_texture_stack"</span> <span class='hs-varid'>extensions</span>
-<a name="line-21"></a>
-<a name="line-22"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROXY_TEXTURE_1D_STACK_MESAX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x875B</span>
+<a name="line-19"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/MESAX/texture_stack.txt GL_MESAX_texture_stack&gt; extension is available.</span>
+<a name="line-20"></a>
+<a name="line-21"></a><a name="gl_MESAX_texture_stack"></a><span class='hs-definition'>gl_MESAX_texture_stack</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-22"></a><span class='hs-definition'>gl_MESAX_texture_stack</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_MESAX_texture_stack"</span> <span class='hs-varid'>extensions</span>
 <a name="line-23"></a>
-<a name="line-24"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROXY_TEXTURE_2D_STACK_MESAX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x875C</span>
+<a name="line-24"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROXY_TEXTURE_1D_STACK_MESAX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x875B</span>
 <a name="line-25"></a>
-<a name="line-26"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_1D_STACK_BINDING_MESAX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x875D</span>
+<a name="line-26"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROXY_TEXTURE_2D_STACK_MESAX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x875C</span>
 <a name="line-27"></a>
-<a name="line-28"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_1D_STACK_MESAX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8759</span>
+<a name="line-28"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_1D_STACK_BINDING_MESAX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x875D</span>
 <a name="line-29"></a>
-<a name="line-30"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_2D_STACK_BINDING_MESAX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x875E</span>
+<a name="line-30"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_1D_STACK_MESAX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8759</span>
 <a name="line-31"></a>
-<a name="line-32"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_2D_STACK_MESAX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x875A</span>
+<a name="line-32"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_2D_STACK_BINDING_MESAX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x875E</span>
+<a name="line-33"></a>
+<a name="line-34"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_2D_STACK_MESAX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x875A</span>
 </pre></body>
 </html>

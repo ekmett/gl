@@ -24,17 +24,19 @@
 <a name="line-15"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Data</span><span class='hs-varop'>.</span><span class='hs-conid'>Set</span>
 <a name="line-16"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Internal</span><span class='hs-varop'>.</span><span class='hs-conid'>Proc</span>
 <a name="line-17"></a>
-<a name="line-18"></a><a name="gl_EXT_texture_swizzle"></a><span class='hs-definition'>gl_EXT_texture_swizzle</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-19"></a><span class='hs-definition'>gl_EXT_texture_swizzle</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_EXT_texture_swizzle"</span> <span class='hs-varid'>extensions</span>
-<a name="line-20"></a>
-<a name="line-21"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_SWIZZLE_A_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8E45</span>
+<a name="line-18"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/texture_swizzle.txt GL_EXT_texture_swizzle&gt; extension is available.</span>
+<a name="line-19"></a>
+<a name="line-20"></a><a name="gl_EXT_texture_swizzle"></a><span class='hs-definition'>gl_EXT_texture_swizzle</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-21"></a><span class='hs-definition'>gl_EXT_texture_swizzle</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_EXT_texture_swizzle"</span> <span class='hs-varid'>extensions</span>
 <a name="line-22"></a>
-<a name="line-23"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_SWIZZLE_B_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8E44</span>
+<a name="line-23"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_SWIZZLE_A_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8E45</span>
 <a name="line-24"></a>
-<a name="line-25"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_SWIZZLE_G_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8E43</span>
+<a name="line-25"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_SWIZZLE_B_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8E44</span>
 <a name="line-26"></a>
-<a name="line-27"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_SWIZZLE_RGBA_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8E46</span>
+<a name="line-27"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_SWIZZLE_G_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8E43</span>
 <a name="line-28"></a>
-<a name="line-29"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_SWIZZLE_R_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8E42</span>
+<a name="line-29"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_SWIZZLE_RGBA_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8E46</span>
+<a name="line-30"></a>
+<a name="line-31"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_SWIZZLE_R_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8E42</span>
 </pre></body>
 </html>

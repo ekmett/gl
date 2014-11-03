@@ -28,24 +28,26 @@
 <a name="line-19"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Types</span>
 <a name="line-20"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-21"></a>
-<a name="line-22"></a><a name="gl_QCOM_alpha_test"></a><span class='hs-definition'>gl_QCOM_alpha_test</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-23"></a><span class='hs-definition'>gl_QCOM_alpha_test</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_QCOM_alpha_test"</span> <span class='hs-varid'>extensions</span>
-<a name="line-24"></a>
-<a name="line-25"></a><span class='hs-comment'>-- | Usage: @'glAlphaFuncQCOM' func ref@</span>
+<a name="line-22"></a><span class='hs-comment'>-- | Checks that the GL_QCOM_alpha_test extension is available.</span>
+<a name="line-23"></a>
+<a name="line-24"></a><a name="gl_QCOM_alpha_test"></a><span class='hs-definition'>gl_QCOM_alpha_test</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-25"></a><span class='hs-definition'>gl_QCOM_alpha_test</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_QCOM_alpha_test"</span> <span class='hs-varid'>extensions</span>
 <a name="line-26"></a>
-<a name="line-27"></a>
-<a name="line-28"></a><a name="glAlphaFuncQCOM"></a><span class='hs-definition'>glAlphaFuncQCOM</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLclampf</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-29"></a><span class='hs-definition'>glAlphaFuncQCOM</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumclampfIOV</span> <span class='hs-varid'>glAlphaFuncQCOMFunPtr</span>
-<a name="line-30"></a>
-<a name="line-31"></a><a name="glAlphaFuncQCOMFunPtr"></a><span class='hs-definition'>glAlphaFuncQCOMFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLclampf</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-32"></a><span class='hs-definition'>glAlphaFuncQCOMFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glAlphaFuncQCOM"</span><span class='hs-layout'>)</span>
-<a name="line-33"></a>
-<a name="line-34"></a><span class='hs-comment'>{-# NOINLINE glAlphaFuncQCOMFunPtr #-}</span>
+<a name="line-27"></a><span class='hs-comment'>-- | Usage: @'glAlphaFuncQCOM' func ref@</span>
+<a name="line-28"></a>
+<a name="line-29"></a>
+<a name="line-30"></a><a name="glAlphaFuncQCOM"></a><span class='hs-definition'>glAlphaFuncQCOM</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLclampf</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-31"></a><span class='hs-definition'>glAlphaFuncQCOM</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumclampfIOV</span> <span class='hs-varid'>glAlphaFuncQCOMFunPtr</span>
+<a name="line-32"></a>
+<a name="line-33"></a><a name="glAlphaFuncQCOMFunPtr"></a><span class='hs-definition'>glAlphaFuncQCOMFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLclampf</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-34"></a><span class='hs-definition'>glAlphaFuncQCOMFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glAlphaFuncQCOM"</span><span class='hs-layout'>)</span>
 <a name="line-35"></a>
-<a name="line-36"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALPHA_TEST_FUNC_QCOM</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x0BC1</span>
+<a name="line-36"></a><span class='hs-comment'>{-# NOINLINE glAlphaFuncQCOMFunPtr #-}</span>
 <a name="line-37"></a>
-<a name="line-38"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALPHA_TEST_QCOM</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x0BC0</span>
+<a name="line-38"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALPHA_TEST_FUNC_QCOM</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x0BC1</span>
 <a name="line-39"></a>
-<a name="line-40"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALPHA_TEST_REF_QCOM</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x0BC2</span>
+<a name="line-40"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALPHA_TEST_QCOM</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x0BC0</span>
+<a name="line-41"></a>
+<a name="line-42"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALPHA_TEST_REF_QCOM</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x0BC2</span>
 </pre></body>
 </html>

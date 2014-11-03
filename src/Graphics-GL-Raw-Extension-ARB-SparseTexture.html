@@ -36,40 +36,42 @@
 <a name="line-27"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Types</span>
 <a name="line-28"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-29"></a>
-<a name="line-30"></a><a name="gl_ARB_sparse_texture"></a><span class='hs-definition'>gl_ARB_sparse_texture</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-31"></a><span class='hs-definition'>gl_ARB_sparse_texture</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_sparse_texture"</span> <span class='hs-varid'>extensions</span>
-<a name="line-32"></a>
-<a name="line-33"></a><span class='hs-comment'>-- | Usage: @'glTexPageCommitmentARB' target level xoffset yoffset zoffset width height depth resident@</span>
+<a name="line-30"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/sparse_texture.txt GL_ARB_sparse_texture&gt; extension is available.</span>
+<a name="line-31"></a>
+<a name="line-32"></a><a name="gl_ARB_sparse_texture"></a><span class='hs-definition'>gl_ARB_sparse_texture</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-33"></a><span class='hs-definition'>gl_ARB_sparse_texture</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_sparse_texture"</span> <span class='hs-varid'>extensions</span>
 <a name="line-34"></a>
-<a name="line-35"></a>
-<a name="line-36"></a><a name="glTexPageCommitmentARB"></a><span class='hs-definition'>glTexPageCommitmentARB</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-37"></a><span class='hs-definition'>glTexPageCommitmentARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintintintintsizeisizeisizeibooleanIOV</span> <span class='hs-varid'>glTexPageCommitmentARBFunPtr</span>
-<a name="line-38"></a>
-<a name="line-39"></a><a name="glTexPageCommitmentARBFunPtr"></a><span class='hs-definition'>glTexPageCommitmentARBFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-40"></a><span class='hs-definition'>glTexPageCommitmentARBFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexPageCommitmentARB"</span><span class='hs-layout'>)</span>
-<a name="line-41"></a>
-<a name="line-42"></a><span class='hs-comment'>{-# NOINLINE glTexPageCommitmentARBFunPtr #-}</span>
+<a name="line-35"></a><span class='hs-comment'>-- | Usage: @'glTexPageCommitmentARB' target level xoffset yoffset zoffset width height depth resident@</span>
+<a name="line-36"></a>
+<a name="line-37"></a>
+<a name="line-38"></a><a name="glTexPageCommitmentARB"></a><span class='hs-definition'>glTexPageCommitmentARB</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-39"></a><span class='hs-definition'>glTexPageCommitmentARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintintintintsizeisizeisizeibooleanIOV</span> <span class='hs-varid'>glTexPageCommitmentARBFunPtr</span>
+<a name="line-40"></a>
+<a name="line-41"></a><a name="glTexPageCommitmentARBFunPtr"></a><span class='hs-definition'>glTexPageCommitmentARBFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-42"></a><span class='hs-definition'>glTexPageCommitmentARBFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexPageCommitmentARB"</span><span class='hs-layout'>)</span>
 <a name="line-43"></a>
-<a name="line-44"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_SPARSE_3D_TEXTURE_SIZE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9199</span>
+<a name="line-44"></a><span class='hs-comment'>{-# NOINLINE glTexPageCommitmentARBFunPtr #-}</span>
 <a name="line-45"></a>
-<a name="line-46"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x919A</span>
+<a name="line-46"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_SPARSE_3D_TEXTURE_SIZE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9199</span>
 <a name="line-47"></a>
-<a name="line-48"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_SPARSE_TEXTURE_SIZE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9198</span>
+<a name="line-48"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x919A</span>
 <a name="line-49"></a>
-<a name="line-50"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_SPARSE_LEVELS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x91AA</span>
+<a name="line-50"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_SPARSE_TEXTURE_SIZE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9198</span>
 <a name="line-51"></a>
-<a name="line-52"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_VIRTUAL_PAGE_SIZES_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x91A8</span>
+<a name="line-52"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_SPARSE_LEVELS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x91AA</span>
 <a name="line-53"></a>
-<a name="line-54"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x91A9</span>
+<a name="line-54"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_VIRTUAL_PAGE_SIZES_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x91A8</span>
 <a name="line-55"></a>
-<a name="line-56"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_SPARSE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x91A6</span>
+<a name="line-56"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x91A9</span>
 <a name="line-57"></a>
-<a name="line-58"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VIRTUAL_PAGE_SIZE_INDEX_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x91A7</span>
+<a name="line-58"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_SPARSE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x91A6</span>
 <a name="line-59"></a>
-<a name="line-60"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VIRTUAL_PAGE_SIZE_X_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9195</span>
+<a name="line-60"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VIRTUAL_PAGE_SIZE_INDEX_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x91A7</span>
 <a name="line-61"></a>
-<a name="line-62"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VIRTUAL_PAGE_SIZE_Y_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9196</span>
+<a name="line-62"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VIRTUAL_PAGE_SIZE_X_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9195</span>
 <a name="line-63"></a>
-<a name="line-64"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VIRTUAL_PAGE_SIZE_Z_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9197</span>
+<a name="line-64"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VIRTUAL_PAGE_SIZE_Y_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9196</span>
+<a name="line-65"></a>
+<a name="line-66"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VIRTUAL_PAGE_SIZE_Z_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9197</span>
 </pre></body>
 </html>

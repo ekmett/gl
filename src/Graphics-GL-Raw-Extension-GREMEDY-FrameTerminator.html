@@ -24,18 +24,20 @@
 <a name="line-15"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Internal</span><span class='hs-varop'>.</span><span class='hs-conid'>Proc</span>
 <a name="line-16"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-17"></a>
-<a name="line-18"></a><a name="gl_GREMEDY_frame_terminator"></a><span class='hs-definition'>gl_GREMEDY_frame_terminator</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-19"></a><span class='hs-definition'>gl_GREMEDY_frame_terminator</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_GREMEDY_frame_terminator"</span> <span class='hs-varid'>extensions</span>
-<a name="line-20"></a>
-<a name="line-21"></a><span class='hs-comment'>-- | Usage: @'glFrameTerminatorGREMEDY'@</span>
+<a name="line-18"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/GREMEDY/frame_terminator.txt GL_GREMEDY_frame_terminator&gt; extension is available.</span>
+<a name="line-19"></a>
+<a name="line-20"></a><a name="gl_GREMEDY_frame_terminator"></a><span class='hs-definition'>gl_GREMEDY_frame_terminator</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-21"></a><span class='hs-definition'>gl_GREMEDY_frame_terminator</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_GREMEDY_frame_terminator"</span> <span class='hs-varid'>extensions</span>
 <a name="line-22"></a>
-<a name="line-23"></a>
-<a name="line-24"></a><a name="glFrameTerminatorGREMEDY"></a><span class='hs-definition'>glFrameTerminatorGREMEDY</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-25"></a><span class='hs-definition'>glFrameTerminatorGREMEDY</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiIOV</span> <span class='hs-varid'>glFrameTerminatorGREMEDYFunPtr</span>
-<a name="line-26"></a>
-<a name="line-27"></a><a name="glFrameTerminatorGREMEDYFunPtr"></a><span class='hs-definition'>glFrameTerminatorGREMEDYFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-28"></a><span class='hs-definition'>glFrameTerminatorGREMEDYFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFrameTerminatorGREMEDY"</span><span class='hs-layout'>)</span>
-<a name="line-29"></a>
-<a name="line-30"></a><span class='hs-comment'>{-# NOINLINE glFrameTerminatorGREMEDYFunPtr #-}</span>
+<a name="line-23"></a><span class='hs-comment'>-- | Usage: @'glFrameTerminatorGREMEDY'@</span>
+<a name="line-24"></a>
+<a name="line-25"></a>
+<a name="line-26"></a><a name="glFrameTerminatorGREMEDY"></a><span class='hs-definition'>glFrameTerminatorGREMEDY</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-27"></a><span class='hs-definition'>glFrameTerminatorGREMEDY</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiIOV</span> <span class='hs-varid'>glFrameTerminatorGREMEDYFunPtr</span>
+<a name="line-28"></a>
+<a name="line-29"></a><a name="glFrameTerminatorGREMEDYFunPtr"></a><span class='hs-definition'>glFrameTerminatorGREMEDYFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-30"></a><span class='hs-definition'>glFrameTerminatorGREMEDYFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFrameTerminatorGREMEDY"</span><span class='hs-layout'>)</span>
+<a name="line-31"></a>
+<a name="line-32"></a><span class='hs-comment'>{-# NOINLINE glFrameTerminatorGREMEDYFunPtr #-}</span>
 </pre></body>
 </html>

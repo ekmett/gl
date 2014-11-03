@@ -161,19 +161,21 @@
 <a name="line-152"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Internal</span><span class='hs-varop'>.</span><span class='hs-conid'>Proc</span>
 <a name="line-153"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Internal</span><span class='hs-varop'>.</span><span class='hs-conid'>Shared</span>
 <a name="line-154"></a>
-<a name="line-155"></a><a name="gl_ARB_vertex_program"></a><span class='hs-definition'>gl_ARB_vertex_program</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-156"></a><span class='hs-definition'>gl_ARB_vertex_program</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_vertex_program"</span> <span class='hs-varid'>extensions</span>
-<a name="line-157"></a>
-<a name="line-158"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_SUM_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8458</span>
+<a name="line-155"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/vertex_program.txt GL_ARB_vertex_program&gt; extension is available.</span>
+<a name="line-156"></a>
+<a name="line-157"></a><a name="gl_ARB_vertex_program"></a><span class='hs-definition'>gl_ARB_vertex_program</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-158"></a><span class='hs-definition'>gl_ARB_vertex_program</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_vertex_program"</span> <span class='hs-varid'>extensions</span>
 <a name="line-159"></a>
-<a name="line-160"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_ADDRESS_REGISTERS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x88B1</span>
+<a name="line-160"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_SUM_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8458</span>
 <a name="line-161"></a>
-<a name="line-162"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_NATIVE_ADDRESS_REGISTERS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x88B3</span>
+<a name="line-162"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_ADDRESS_REGISTERS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x88B1</span>
 <a name="line-163"></a>
-<a name="line-164"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_ADDRESS_REGISTERS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x88B0</span>
+<a name="line-164"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_NATIVE_ADDRESS_REGISTERS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x88B3</span>
 <a name="line-165"></a>
-<a name="line-166"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_NATIVE_ADDRESS_REGISTERS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x88B2</span>
+<a name="line-166"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_ADDRESS_REGISTERS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x88B0</span>
 <a name="line-167"></a>
-<a name="line-168"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VERTEX_PROGRAM_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8620</span>
+<a name="line-168"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_NATIVE_ADDRESS_REGISTERS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x88B2</span>
+<a name="line-169"></a>
+<a name="line-170"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VERTEX_PROGRAM_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8620</span>
 </pre></body>
 </html>

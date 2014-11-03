@@ -32,54 +32,56 @@
 <a name="line-23"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Types</span>
 <a name="line-24"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-25"></a>
-<a name="line-26"></a><a name="gl_EXT_multiview_draw_buffers"></a><span class='hs-definition'>gl_EXT_multiview_draw_buffers</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-27"></a><span class='hs-definition'>gl_EXT_multiview_draw_buffers</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_EXT_multiview_draw_buffers"</span> <span class='hs-varid'>extensions</span>
-<a name="line-28"></a>
-<a name="line-29"></a><span class='hs-comment'>-- | Usage: @'glDrawBuffersIndexedEXT' n location indices@</span>
-<a name="line-30"></a><span class='hs-comment'>--</span>
-<a name="line-31"></a><span class='hs-comment'>-- The length of @location@ should be @n@</span>
+<a name="line-26"></a><span class='hs-comment'>-- | Checks that the GL_EXT_multiview_draw_buffers extension is available.</span>
+<a name="line-27"></a>
+<a name="line-28"></a><a name="gl_EXT_multiview_draw_buffers"></a><span class='hs-definition'>gl_EXT_multiview_draw_buffers</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-29"></a><span class='hs-definition'>gl_EXT_multiview_draw_buffers</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_EXT_multiview_draw_buffers"</span> <span class='hs-varid'>extensions</span>
+<a name="line-30"></a>
+<a name="line-31"></a><span class='hs-comment'>-- | Usage: @'glDrawBuffersIndexedEXT' n location indices@</span>
 <a name="line-32"></a><span class='hs-comment'>--</span>
-<a name="line-33"></a><span class='hs-comment'>-- The length of @indices@ should be @n@</span>
-<a name="line-34"></a>
-<a name="line-35"></a>
-<a name="line-36"></a><a name="glDrawBuffersIndexedEXT"></a><span class='hs-definition'>glDrawBuffersIndexedEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-37"></a><span class='hs-definition'>glDrawBuffersIndexedEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintPtrenumPtrintIOV</span> <span class='hs-varid'>glDrawBuffersIndexedEXTFunPtr</span>
-<a name="line-38"></a>
-<a name="line-39"></a><a name="glDrawBuffersIndexedEXTFunPtr"></a><span class='hs-definition'>glDrawBuffersIndexedEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-40"></a><span class='hs-definition'>glDrawBuffersIndexedEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDrawBuffersIndexedEXT"</span><span class='hs-layout'>)</span>
-<a name="line-41"></a>
-<a name="line-42"></a><span class='hs-comment'>{-# NOINLINE glDrawBuffersIndexedEXTFunPtr #-}</span>
+<a name="line-33"></a><span class='hs-comment'>-- The length of @location@ should be @n@.</span>
+<a name="line-34"></a><span class='hs-comment'>--</span>
+<a name="line-35"></a><span class='hs-comment'>-- The length of @indices@ should be @n@.</span>
+<a name="line-36"></a>
+<a name="line-37"></a>
+<a name="line-38"></a><a name="glDrawBuffersIndexedEXT"></a><span class='hs-definition'>glDrawBuffersIndexedEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-39"></a><span class='hs-definition'>glDrawBuffersIndexedEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintPtrenumPtrintIOV</span> <span class='hs-varid'>glDrawBuffersIndexedEXTFunPtr</span>
+<a name="line-40"></a>
+<a name="line-41"></a><a name="glDrawBuffersIndexedEXTFunPtr"></a><span class='hs-definition'>glDrawBuffersIndexedEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-42"></a><span class='hs-definition'>glDrawBuffersIndexedEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDrawBuffersIndexedEXT"</span><span class='hs-layout'>)</span>
 <a name="line-43"></a>
-<a name="line-44"></a><span class='hs-comment'>-- | Usage: @'glGetIntegeri_vEXT' target index data@</span>
+<a name="line-44"></a><span class='hs-comment'>{-# NOINLINE glDrawBuffersIndexedEXTFunPtr #-}</span>
 <a name="line-45"></a>
-<a name="line-46"></a>
-<a name="line-47"></a><a name="glGetIntegeri_vEXT"></a><span class='hs-definition'>glGetIntegeri_vEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-48"></a><span class='hs-definition'>glGetIntegeri_vEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintPtrintIOV</span> <span class='hs-varid'>glGetIntegeri_vEXTFunPtr</span>
-<a name="line-49"></a>
-<a name="line-50"></a><a name="glGetIntegeri_vEXTFunPtr"></a><span class='hs-definition'>glGetIntegeri_vEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-51"></a><span class='hs-definition'>glGetIntegeri_vEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetIntegeri_vEXT"</span><span class='hs-layout'>)</span>
-<a name="line-52"></a>
-<a name="line-53"></a><span class='hs-comment'>{-# NOINLINE glGetIntegeri_vEXTFunPtr #-}</span>
+<a name="line-46"></a><span class='hs-comment'>-- | Usage: @'glGetIntegeri_vEXT' target index data@</span>
+<a name="line-47"></a>
+<a name="line-48"></a>
+<a name="line-49"></a><a name="glGetIntegeri_vEXT"></a><span class='hs-definition'>glGetIntegeri_vEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-50"></a><span class='hs-definition'>glGetIntegeri_vEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintPtrintIOV</span> <span class='hs-varid'>glGetIntegeri_vEXTFunPtr</span>
+<a name="line-51"></a>
+<a name="line-52"></a><a name="glGetIntegeri_vEXTFunPtr"></a><span class='hs-definition'>glGetIntegeri_vEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-53"></a><span class='hs-definition'>glGetIntegeri_vEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetIntegeri_vEXT"</span><span class='hs-layout'>)</span>
 <a name="line-54"></a>
-<a name="line-55"></a><span class='hs-comment'>-- | Usage: @'glReadBufferIndexedEXT' src index@</span>
+<a name="line-55"></a><span class='hs-comment'>{-# NOINLINE glGetIntegeri_vEXTFunPtr #-}</span>
 <a name="line-56"></a>
-<a name="line-57"></a>
-<a name="line-58"></a><a name="glReadBufferIndexedEXT"></a><span class='hs-definition'>glReadBufferIndexedEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-59"></a><span class='hs-definition'>glReadBufferIndexedEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintIOV</span> <span class='hs-varid'>glReadBufferIndexedEXTFunPtr</span>
-<a name="line-60"></a>
-<a name="line-61"></a><a name="glReadBufferIndexedEXTFunPtr"></a><span class='hs-definition'>glReadBufferIndexedEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-62"></a><span class='hs-definition'>glReadBufferIndexedEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glReadBufferIndexedEXT"</span><span class='hs-layout'>)</span>
-<a name="line-63"></a>
-<a name="line-64"></a><span class='hs-comment'>{-# NOINLINE glReadBufferIndexedEXTFunPtr #-}</span>
+<a name="line-57"></a><span class='hs-comment'>-- | Usage: @'glReadBufferIndexedEXT' src index@</span>
+<a name="line-58"></a>
+<a name="line-59"></a>
+<a name="line-60"></a><a name="glReadBufferIndexedEXT"></a><span class='hs-definition'>glReadBufferIndexedEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-61"></a><span class='hs-definition'>glReadBufferIndexedEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintIOV</span> <span class='hs-varid'>glReadBufferIndexedEXTFunPtr</span>
+<a name="line-62"></a>
+<a name="line-63"></a><a name="glReadBufferIndexedEXTFunPtr"></a><span class='hs-definition'>glReadBufferIndexedEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-64"></a><span class='hs-definition'>glReadBufferIndexedEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glReadBufferIndexedEXT"</span><span class='hs-layout'>)</span>
 <a name="line-65"></a>
-<a name="line-66"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_ATTACHMENT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x90F0</span>
+<a name="line-66"></a><span class='hs-comment'>{-# NOINLINE glReadBufferIndexedEXTFunPtr #-}</span>
 <a name="line-67"></a>
-<a name="line-68"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DRAW_BUFFER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x0C01</span>
+<a name="line-68"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_ATTACHMENT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x90F0</span>
 <a name="line-69"></a>
-<a name="line-70"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_MULTIVIEW_BUFFERS_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x90F2</span>
+<a name="line-70"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DRAW_BUFFER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x0C01</span>
 <a name="line-71"></a>
-<a name="line-72"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MULTIVIEW_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x90F1</span>
+<a name="line-72"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_MULTIVIEW_BUFFERS_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x90F2</span>
 <a name="line-73"></a>
-<a name="line-74"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_READ_BUFFER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x0C02</span>
+<a name="line-74"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MULTIVIEW_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x90F1</span>
+<a name="line-75"></a>
+<a name="line-76"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_READ_BUFFER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x0C02</span>
 </pre></body>
 </html>

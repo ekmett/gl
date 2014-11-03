@@ -30,51 +30,53 @@
 <a name="line-21"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Types</span>
 <a name="line-22"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-23"></a>
-<a name="line-24"></a><a name="gl_ARB_point_parameters"></a><span class='hs-definition'>gl_ARB_point_parameters</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-25"></a><span class='hs-definition'>gl_ARB_point_parameters</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_point_parameters"</span> <span class='hs-varid'>extensions</span>
-<a name="line-26"></a>
-<a name="line-27"></a><span class='hs-comment'>-- | Usage: @'glPointParameterfARB' pname param@</span>
-<a name="line-28"></a><span class='hs-comment'>--</span>
-<a name="line-29"></a><span class='hs-comment'>-- The parameter @pname@ is a @PointParameterNameARB@</span>
+<a name="line-24"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/point_parameters.txt GL_ARB_point_parameters&gt; extension is available.</span>
+<a name="line-25"></a>
+<a name="line-26"></a><a name="gl_ARB_point_parameters"></a><span class='hs-definition'>gl_ARB_point_parameters</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-27"></a><span class='hs-definition'>gl_ARB_point_parameters</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_point_parameters"</span> <span class='hs-varid'>extensions</span>
+<a name="line-28"></a>
+<a name="line-29"></a><span class='hs-comment'>-- | Usage: @'glPointParameterfARB' pname param@</span>
 <a name="line-30"></a><span class='hs-comment'>--</span>
-<a name="line-31"></a><span class='hs-comment'>-- The parameter @param@ is a @CheckedFloat32@</span>
+<a name="line-31"></a><span class='hs-comment'>-- The parameter @pname@ is a @PointParameterNameARB@.</span>
 <a name="line-32"></a><span class='hs-comment'>--</span>
-<a name="line-33"></a><span class='hs-comment'>-- This command is an alias for 'glPointParameterf'</span>
-<a name="line-34"></a>
-<a name="line-35"></a>
-<a name="line-36"></a><a name="glPointParameterfARB"></a><span class='hs-definition'>glPointParameterfARB</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-37"></a><span class='hs-definition'>glPointParameterfARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumfloatIOV</span> <span class='hs-varid'>glPointParameterfARBFunPtr</span>
-<a name="line-38"></a>
-<a name="line-39"></a><a name="glPointParameterfARBFunPtr"></a><span class='hs-definition'>glPointParameterfARBFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-40"></a><span class='hs-definition'>glPointParameterfARBFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glPointParameterfARB"</span><span class='hs-layout'>)</span>
-<a name="line-41"></a>
-<a name="line-42"></a><span class='hs-comment'>{-# NOINLINE glPointParameterfARBFunPtr #-}</span>
+<a name="line-33"></a><span class='hs-comment'>-- The parameter @param@ is a @CheckedFloat32@.</span>
+<a name="line-34"></a><span class='hs-comment'>--</span>
+<a name="line-35"></a><span class='hs-comment'>-- This command is an alias for 'glPointParameterf'.</span>
+<a name="line-36"></a>
+<a name="line-37"></a>
+<a name="line-38"></a><a name="glPointParameterfARB"></a><span class='hs-definition'>glPointParameterfARB</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-39"></a><span class='hs-definition'>glPointParameterfARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumfloatIOV</span> <span class='hs-varid'>glPointParameterfARBFunPtr</span>
+<a name="line-40"></a>
+<a name="line-41"></a><a name="glPointParameterfARBFunPtr"></a><span class='hs-definition'>glPointParameterfARBFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-42"></a><span class='hs-definition'>glPointParameterfARBFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glPointParameterfARB"</span><span class='hs-layout'>)</span>
 <a name="line-43"></a>
-<a name="line-44"></a><span class='hs-comment'>-- | Usage: @'glPointParameterfvARB' pname params@</span>
-<a name="line-45"></a><span class='hs-comment'>--</span>
-<a name="line-46"></a><span class='hs-comment'>-- The parameter @pname@ is a @PointParameterNameARB@</span>
+<a name="line-44"></a><span class='hs-comment'>{-# NOINLINE glPointParameterfARBFunPtr #-}</span>
+<a name="line-45"></a>
+<a name="line-46"></a><span class='hs-comment'>-- | Usage: @'glPointParameterfvARB' pname params@</span>
 <a name="line-47"></a><span class='hs-comment'>--</span>
-<a name="line-48"></a><span class='hs-comment'>-- The parameter @params@ is a @CheckedFloat32@</span>
+<a name="line-48"></a><span class='hs-comment'>-- The parameter @pname@ is a @PointParameterNameARB@.</span>
 <a name="line-49"></a><span class='hs-comment'>--</span>
-<a name="line-50"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@</span>
+<a name="line-50"></a><span class='hs-comment'>-- The parameter @params@ is a @CheckedFloat32@.</span>
 <a name="line-51"></a><span class='hs-comment'>--</span>
-<a name="line-52"></a><span class='hs-comment'>-- This command is an alias for 'glPointParameterfv'</span>
-<a name="line-53"></a>
-<a name="line-54"></a>
-<a name="line-55"></a><a name="glPointParameterfvARB"></a><span class='hs-definition'>glPointParameterfvARB</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-56"></a><span class='hs-definition'>glPointParameterfvARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrfloatIOV</span> <span class='hs-varid'>glPointParameterfvARBFunPtr</span>
-<a name="line-57"></a>
-<a name="line-58"></a><a name="glPointParameterfvARBFunPtr"></a><span class='hs-definition'>glPointParameterfvARBFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-59"></a><span class='hs-definition'>glPointParameterfvARBFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glPointParameterfvARB"</span><span class='hs-layout'>)</span>
-<a name="line-60"></a>
-<a name="line-61"></a><span class='hs-comment'>{-# NOINLINE glPointParameterfvARBFunPtr #-}</span>
+<a name="line-52"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-53"></a><span class='hs-comment'>--</span>
+<a name="line-54"></a><span class='hs-comment'>-- This command is an alias for 'glPointParameterfv'.</span>
+<a name="line-55"></a>
+<a name="line-56"></a>
+<a name="line-57"></a><a name="glPointParameterfvARB"></a><span class='hs-definition'>glPointParameterfvARB</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-58"></a><span class='hs-definition'>glPointParameterfvARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrfloatIOV</span> <span class='hs-varid'>glPointParameterfvARBFunPtr</span>
+<a name="line-59"></a>
+<a name="line-60"></a><a name="glPointParameterfvARBFunPtr"></a><span class='hs-definition'>glPointParameterfvARBFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-61"></a><span class='hs-definition'>glPointParameterfvARBFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glPointParameterfvARB"</span><span class='hs-layout'>)</span>
 <a name="line-62"></a>
-<a name="line-63"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_POINT_DISTANCE_ATTENUATION_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8129</span>
+<a name="line-63"></a><span class='hs-comment'>{-# NOINLINE glPointParameterfvARBFunPtr #-}</span>
 <a name="line-64"></a>
-<a name="line-65"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_POINT_FADE_THRESHOLD_SIZE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8128</span>
+<a name="line-65"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_POINT_DISTANCE_ATTENUATION_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8129</span>
 <a name="line-66"></a>
-<a name="line-67"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_POINT_SIZE_MAX_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8127</span>
+<a name="line-67"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_POINT_FADE_THRESHOLD_SIZE_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8128</span>
 <a name="line-68"></a>
-<a name="line-69"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_POINT_SIZE_MIN_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8126</span>
+<a name="line-69"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_POINT_SIZE_MAX_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8127</span>
+<a name="line-70"></a>
+<a name="line-71"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_POINT_SIZE_MIN_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8126</span>
 </pre></body>
 </html>

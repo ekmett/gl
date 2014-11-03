@@ -36,121 +36,123 @@
 <a name="line-27"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Types</span>
 <a name="line-28"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-29"></a>
-<a name="line-30"></a><a name="gl_NV_non_square_matrices"></a><span class='hs-definition'>gl_NV_non_square_matrices</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-31"></a><span class='hs-definition'>gl_NV_non_square_matrices</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_NV_non_square_matrices"</span> <span class='hs-varid'>extensions</span>
-<a name="line-32"></a>
-<a name="line-33"></a><span class='hs-comment'>-- | Usage: @'glUniformMatrix2x3fvNV' location count transpose value@</span>
-<a name="line-34"></a><span class='hs-comment'>--</span>
-<a name="line-35"></a><span class='hs-comment'>-- The parameter @transpose@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'</span>
+<a name="line-30"></a><span class='hs-comment'>-- | Checks that the GL_NV_non_square_matrices extension is available.</span>
+<a name="line-31"></a>
+<a name="line-32"></a><a name="gl_NV_non_square_matrices"></a><span class='hs-definition'>gl_NV_non_square_matrices</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-33"></a><span class='hs-definition'>gl_NV_non_square_matrices</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_NV_non_square_matrices"</span> <span class='hs-varid'>extensions</span>
+<a name="line-34"></a>
+<a name="line-35"></a><span class='hs-comment'>-- | Usage: @'glUniformMatrix2x3fvNV' location count transpose value@</span>
 <a name="line-36"></a><span class='hs-comment'>--</span>
-<a name="line-37"></a><span class='hs-comment'>-- The length of @value@ should be @count*6@</span>
+<a name="line-37"></a><span class='hs-comment'>-- The parameter @transpose@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'.</span>
 <a name="line-38"></a><span class='hs-comment'>--</span>
-<a name="line-39"></a><span class='hs-comment'>-- This command is an alias for 'glUniformMatrix2x3fv'</span>
-<a name="line-40"></a>
-<a name="line-41"></a>
-<a name="line-42"></a><a name="glUniformMatrix2x3fvNV"></a><span class='hs-definition'>glUniformMatrix2x3fvNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-43"></a><span class='hs-definition'>glUniformMatrix2x3fvNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintsizeibooleanPtrfloatIOV</span> <span class='hs-varid'>glUniformMatrix2x3fvNVFunPtr</span>
-<a name="line-44"></a>
-<a name="line-45"></a><a name="glUniformMatrix2x3fvNVFunPtr"></a><span class='hs-definition'>glUniformMatrix2x3fvNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-46"></a><span class='hs-definition'>glUniformMatrix2x3fvNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glUniformMatrix2x3fvNV"</span><span class='hs-layout'>)</span>
-<a name="line-47"></a>
-<a name="line-48"></a><span class='hs-comment'>{-# NOINLINE glUniformMatrix2x3fvNVFunPtr #-}</span>
+<a name="line-39"></a><span class='hs-comment'>-- The length of @value@ should be @count*6@.</span>
+<a name="line-40"></a><span class='hs-comment'>--</span>
+<a name="line-41"></a><span class='hs-comment'>-- This command is an alias for 'glUniformMatrix2x3fv'.</span>
+<a name="line-42"></a>
+<a name="line-43"></a>
+<a name="line-44"></a><a name="glUniformMatrix2x3fvNV"></a><span class='hs-definition'>glUniformMatrix2x3fvNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-45"></a><span class='hs-definition'>glUniformMatrix2x3fvNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintsizeibooleanPtrfloatIOV</span> <span class='hs-varid'>glUniformMatrix2x3fvNVFunPtr</span>
+<a name="line-46"></a>
+<a name="line-47"></a><a name="glUniformMatrix2x3fvNVFunPtr"></a><span class='hs-definition'>glUniformMatrix2x3fvNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-48"></a><span class='hs-definition'>glUniformMatrix2x3fvNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glUniformMatrix2x3fvNV"</span><span class='hs-layout'>)</span>
 <a name="line-49"></a>
-<a name="line-50"></a><span class='hs-comment'>-- | Usage: @'glUniformMatrix2x4fvNV' location count transpose value@</span>
-<a name="line-51"></a><span class='hs-comment'>--</span>
-<a name="line-52"></a><span class='hs-comment'>-- The parameter @transpose@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'</span>
+<a name="line-50"></a><span class='hs-comment'>{-# NOINLINE glUniformMatrix2x3fvNVFunPtr #-}</span>
+<a name="line-51"></a>
+<a name="line-52"></a><span class='hs-comment'>-- | Usage: @'glUniformMatrix2x4fvNV' location count transpose value@</span>
 <a name="line-53"></a><span class='hs-comment'>--</span>
-<a name="line-54"></a><span class='hs-comment'>-- The length of @value@ should be @count*8@</span>
+<a name="line-54"></a><span class='hs-comment'>-- The parameter @transpose@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'.</span>
 <a name="line-55"></a><span class='hs-comment'>--</span>
-<a name="line-56"></a><span class='hs-comment'>-- This command is an alias for 'glUniformMatrix2x4fv'</span>
-<a name="line-57"></a>
-<a name="line-58"></a>
-<a name="line-59"></a><a name="glUniformMatrix2x4fvNV"></a><span class='hs-definition'>glUniformMatrix2x4fvNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-60"></a><span class='hs-definition'>glUniformMatrix2x4fvNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintsizeibooleanPtrfloatIOV</span> <span class='hs-varid'>glUniformMatrix2x4fvNVFunPtr</span>
-<a name="line-61"></a>
-<a name="line-62"></a><a name="glUniformMatrix2x4fvNVFunPtr"></a><span class='hs-definition'>glUniformMatrix2x4fvNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-63"></a><span class='hs-definition'>glUniformMatrix2x4fvNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glUniformMatrix2x4fvNV"</span><span class='hs-layout'>)</span>
-<a name="line-64"></a>
-<a name="line-65"></a><span class='hs-comment'>{-# NOINLINE glUniformMatrix2x4fvNVFunPtr #-}</span>
+<a name="line-56"></a><span class='hs-comment'>-- The length of @value@ should be @count*8@.</span>
+<a name="line-57"></a><span class='hs-comment'>--</span>
+<a name="line-58"></a><span class='hs-comment'>-- This command is an alias for 'glUniformMatrix2x4fv'.</span>
+<a name="line-59"></a>
+<a name="line-60"></a>
+<a name="line-61"></a><a name="glUniformMatrix2x4fvNV"></a><span class='hs-definition'>glUniformMatrix2x4fvNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-62"></a><span class='hs-definition'>glUniformMatrix2x4fvNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintsizeibooleanPtrfloatIOV</span> <span class='hs-varid'>glUniformMatrix2x4fvNVFunPtr</span>
+<a name="line-63"></a>
+<a name="line-64"></a><a name="glUniformMatrix2x4fvNVFunPtr"></a><span class='hs-definition'>glUniformMatrix2x4fvNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-65"></a><span class='hs-definition'>glUniformMatrix2x4fvNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glUniformMatrix2x4fvNV"</span><span class='hs-layout'>)</span>
 <a name="line-66"></a>
-<a name="line-67"></a><span class='hs-comment'>-- | Usage: @'glUniformMatrix3x2fvNV' location count transpose value@</span>
-<a name="line-68"></a><span class='hs-comment'>--</span>
-<a name="line-69"></a><span class='hs-comment'>-- The parameter @transpose@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'</span>
+<a name="line-67"></a><span class='hs-comment'>{-# NOINLINE glUniformMatrix2x4fvNVFunPtr #-}</span>
+<a name="line-68"></a>
+<a name="line-69"></a><span class='hs-comment'>-- | Usage: @'glUniformMatrix3x2fvNV' location count transpose value@</span>
 <a name="line-70"></a><span class='hs-comment'>--</span>
-<a name="line-71"></a><span class='hs-comment'>-- The length of @value@ should be @count*6@</span>
+<a name="line-71"></a><span class='hs-comment'>-- The parameter @transpose@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'.</span>
 <a name="line-72"></a><span class='hs-comment'>--</span>
-<a name="line-73"></a><span class='hs-comment'>-- This command is an alias for 'glUniformMatrix3x2fv'</span>
-<a name="line-74"></a>
-<a name="line-75"></a>
-<a name="line-76"></a><a name="glUniformMatrix3x2fvNV"></a><span class='hs-definition'>glUniformMatrix3x2fvNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-77"></a><span class='hs-definition'>glUniformMatrix3x2fvNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintsizeibooleanPtrfloatIOV</span> <span class='hs-varid'>glUniformMatrix3x2fvNVFunPtr</span>
-<a name="line-78"></a>
-<a name="line-79"></a><a name="glUniformMatrix3x2fvNVFunPtr"></a><span class='hs-definition'>glUniformMatrix3x2fvNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-80"></a><span class='hs-definition'>glUniformMatrix3x2fvNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glUniformMatrix3x2fvNV"</span><span class='hs-layout'>)</span>
-<a name="line-81"></a>
-<a name="line-82"></a><span class='hs-comment'>{-# NOINLINE glUniformMatrix3x2fvNVFunPtr #-}</span>
+<a name="line-73"></a><span class='hs-comment'>-- The length of @value@ should be @count*6@.</span>
+<a name="line-74"></a><span class='hs-comment'>--</span>
+<a name="line-75"></a><span class='hs-comment'>-- This command is an alias for 'glUniformMatrix3x2fv'.</span>
+<a name="line-76"></a>
+<a name="line-77"></a>
+<a name="line-78"></a><a name="glUniformMatrix3x2fvNV"></a><span class='hs-definition'>glUniformMatrix3x2fvNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-79"></a><span class='hs-definition'>glUniformMatrix3x2fvNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintsizeibooleanPtrfloatIOV</span> <span class='hs-varid'>glUniformMatrix3x2fvNVFunPtr</span>
+<a name="line-80"></a>
+<a name="line-81"></a><a name="glUniformMatrix3x2fvNVFunPtr"></a><span class='hs-definition'>glUniformMatrix3x2fvNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-82"></a><span class='hs-definition'>glUniformMatrix3x2fvNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glUniformMatrix3x2fvNV"</span><span class='hs-layout'>)</span>
 <a name="line-83"></a>
-<a name="line-84"></a><span class='hs-comment'>-- | Usage: @'glUniformMatrix3x4fvNV' location count transpose value@</span>
-<a name="line-85"></a><span class='hs-comment'>--</span>
-<a name="line-86"></a><span class='hs-comment'>-- The parameter @transpose@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'</span>
+<a name="line-84"></a><span class='hs-comment'>{-# NOINLINE glUniformMatrix3x2fvNVFunPtr #-}</span>
+<a name="line-85"></a>
+<a name="line-86"></a><span class='hs-comment'>-- | Usage: @'glUniformMatrix3x4fvNV' location count transpose value@</span>
 <a name="line-87"></a><span class='hs-comment'>--</span>
-<a name="line-88"></a><span class='hs-comment'>-- The length of @value@ should be @count*12@</span>
+<a name="line-88"></a><span class='hs-comment'>-- The parameter @transpose@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'.</span>
 <a name="line-89"></a><span class='hs-comment'>--</span>
-<a name="line-90"></a><span class='hs-comment'>-- This command is an alias for 'glUniformMatrix3x4fv'</span>
-<a name="line-91"></a>
-<a name="line-92"></a>
-<a name="line-93"></a><a name="glUniformMatrix3x4fvNV"></a><span class='hs-definition'>glUniformMatrix3x4fvNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-94"></a><span class='hs-definition'>glUniformMatrix3x4fvNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintsizeibooleanPtrfloatIOV</span> <span class='hs-varid'>glUniformMatrix3x4fvNVFunPtr</span>
-<a name="line-95"></a>
-<a name="line-96"></a><a name="glUniformMatrix3x4fvNVFunPtr"></a><span class='hs-definition'>glUniformMatrix3x4fvNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-97"></a><span class='hs-definition'>glUniformMatrix3x4fvNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glUniformMatrix3x4fvNV"</span><span class='hs-layout'>)</span>
-<a name="line-98"></a>
-<a name="line-99"></a><span class='hs-comment'>{-# NOINLINE glUniformMatrix3x4fvNVFunPtr #-}</span>
+<a name="line-90"></a><span class='hs-comment'>-- The length of @value@ should be @count*12@.</span>
+<a name="line-91"></a><span class='hs-comment'>--</span>
+<a name="line-92"></a><span class='hs-comment'>-- This command is an alias for 'glUniformMatrix3x4fv'.</span>
+<a name="line-93"></a>
+<a name="line-94"></a>
+<a name="line-95"></a><a name="glUniformMatrix3x4fvNV"></a><span class='hs-definition'>glUniformMatrix3x4fvNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-96"></a><span class='hs-definition'>glUniformMatrix3x4fvNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintsizeibooleanPtrfloatIOV</span> <span class='hs-varid'>glUniformMatrix3x4fvNVFunPtr</span>
+<a name="line-97"></a>
+<a name="line-98"></a><a name="glUniformMatrix3x4fvNVFunPtr"></a><span class='hs-definition'>glUniformMatrix3x4fvNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-99"></a><span class='hs-definition'>glUniformMatrix3x4fvNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glUniformMatrix3x4fvNV"</span><span class='hs-layout'>)</span>
 <a name="line-100"></a>
-<a name="line-101"></a><span class='hs-comment'>-- | Usage: @'glUniformMatrix4x2fvNV' location count transpose value@</span>
-<a name="line-102"></a><span class='hs-comment'>--</span>
-<a name="line-103"></a><span class='hs-comment'>-- The parameter @transpose@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'</span>
+<a name="line-101"></a><span class='hs-comment'>{-# NOINLINE glUniformMatrix3x4fvNVFunPtr #-}</span>
+<a name="line-102"></a>
+<a name="line-103"></a><span class='hs-comment'>-- | Usage: @'glUniformMatrix4x2fvNV' location count transpose value@</span>
 <a name="line-104"></a><span class='hs-comment'>--</span>
-<a name="line-105"></a><span class='hs-comment'>-- The length of @value@ should be @count*8@</span>
+<a name="line-105"></a><span class='hs-comment'>-- The parameter @transpose@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'.</span>
 <a name="line-106"></a><span class='hs-comment'>--</span>
-<a name="line-107"></a><span class='hs-comment'>-- This command is an alias for 'glUniformMatrix4x2fv'</span>
-<a name="line-108"></a>
-<a name="line-109"></a>
-<a name="line-110"></a><a name="glUniformMatrix4x2fvNV"></a><span class='hs-definition'>glUniformMatrix4x2fvNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-111"></a><span class='hs-definition'>glUniformMatrix4x2fvNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintsizeibooleanPtrfloatIOV</span> <span class='hs-varid'>glUniformMatrix4x2fvNVFunPtr</span>
-<a name="line-112"></a>
-<a name="line-113"></a><a name="glUniformMatrix4x2fvNVFunPtr"></a><span class='hs-definition'>glUniformMatrix4x2fvNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-114"></a><span class='hs-definition'>glUniformMatrix4x2fvNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glUniformMatrix4x2fvNV"</span><span class='hs-layout'>)</span>
-<a name="line-115"></a>
-<a name="line-116"></a><span class='hs-comment'>{-# NOINLINE glUniformMatrix4x2fvNVFunPtr #-}</span>
+<a name="line-107"></a><span class='hs-comment'>-- The length of @value@ should be @count*8@.</span>
+<a name="line-108"></a><span class='hs-comment'>--</span>
+<a name="line-109"></a><span class='hs-comment'>-- This command is an alias for 'glUniformMatrix4x2fv'.</span>
+<a name="line-110"></a>
+<a name="line-111"></a>
+<a name="line-112"></a><a name="glUniformMatrix4x2fvNV"></a><span class='hs-definition'>glUniformMatrix4x2fvNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-113"></a><span class='hs-definition'>glUniformMatrix4x2fvNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintsizeibooleanPtrfloatIOV</span> <span class='hs-varid'>glUniformMatrix4x2fvNVFunPtr</span>
+<a name="line-114"></a>
+<a name="line-115"></a><a name="glUniformMatrix4x2fvNVFunPtr"></a><span class='hs-definition'>glUniformMatrix4x2fvNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-116"></a><span class='hs-definition'>glUniformMatrix4x2fvNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glUniformMatrix4x2fvNV"</span><span class='hs-layout'>)</span>
 <a name="line-117"></a>
-<a name="line-118"></a><span class='hs-comment'>-- | Usage: @'glUniformMatrix4x3fvNV' location count transpose value@</span>
-<a name="line-119"></a><span class='hs-comment'>--</span>
-<a name="line-120"></a><span class='hs-comment'>-- The parameter @transpose@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'</span>
+<a name="line-118"></a><span class='hs-comment'>{-# NOINLINE glUniformMatrix4x2fvNVFunPtr #-}</span>
+<a name="line-119"></a>
+<a name="line-120"></a><span class='hs-comment'>-- | Usage: @'glUniformMatrix4x3fvNV' location count transpose value@</span>
 <a name="line-121"></a><span class='hs-comment'>--</span>
-<a name="line-122"></a><span class='hs-comment'>-- The length of @value@ should be @count*12@</span>
+<a name="line-122"></a><span class='hs-comment'>-- The parameter @transpose@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'.</span>
 <a name="line-123"></a><span class='hs-comment'>--</span>
-<a name="line-124"></a><span class='hs-comment'>-- This command is an alias for 'glUniformMatrix4x3fv'</span>
-<a name="line-125"></a>
-<a name="line-126"></a>
-<a name="line-127"></a><a name="glUniformMatrix4x3fvNV"></a><span class='hs-definition'>glUniformMatrix4x3fvNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-128"></a><span class='hs-definition'>glUniformMatrix4x3fvNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintsizeibooleanPtrfloatIOV</span> <span class='hs-varid'>glUniformMatrix4x3fvNVFunPtr</span>
-<a name="line-129"></a>
-<a name="line-130"></a><a name="glUniformMatrix4x3fvNVFunPtr"></a><span class='hs-definition'>glUniformMatrix4x3fvNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-131"></a><span class='hs-definition'>glUniformMatrix4x3fvNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glUniformMatrix4x3fvNV"</span><span class='hs-layout'>)</span>
-<a name="line-132"></a>
-<a name="line-133"></a><span class='hs-comment'>{-# NOINLINE glUniformMatrix4x3fvNVFunPtr #-}</span>
+<a name="line-124"></a><span class='hs-comment'>-- The length of @value@ should be @count*12@.</span>
+<a name="line-125"></a><span class='hs-comment'>--</span>
+<a name="line-126"></a><span class='hs-comment'>-- This command is an alias for 'glUniformMatrix4x3fv'.</span>
+<a name="line-127"></a>
+<a name="line-128"></a>
+<a name="line-129"></a><a name="glUniformMatrix4x3fvNV"></a><span class='hs-definition'>glUniformMatrix4x3fvNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-130"></a><span class='hs-definition'>glUniformMatrix4x3fvNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiintsizeibooleanPtrfloatIOV</span> <span class='hs-varid'>glUniformMatrix4x3fvNVFunPtr</span>
+<a name="line-131"></a>
+<a name="line-132"></a><a name="glUniformMatrix4x3fvNVFunPtr"></a><span class='hs-definition'>glUniformMatrix4x3fvNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-133"></a><span class='hs-definition'>glUniformMatrix4x3fvNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glUniformMatrix4x3fvNV"</span><span class='hs-layout'>)</span>
 <a name="line-134"></a>
-<a name="line-135"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FLOAT_MAT2x3_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B65</span>
+<a name="line-135"></a><span class='hs-comment'>{-# NOINLINE glUniformMatrix4x3fvNVFunPtr #-}</span>
 <a name="line-136"></a>
-<a name="line-137"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FLOAT_MAT2x4_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B66</span>
+<a name="line-137"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FLOAT_MAT2x3_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B65</span>
 <a name="line-138"></a>
-<a name="line-139"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FLOAT_MAT3x2_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B67</span>
+<a name="line-139"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FLOAT_MAT2x4_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B66</span>
 <a name="line-140"></a>
-<a name="line-141"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FLOAT_MAT3x4_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B68</span>
+<a name="line-141"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FLOAT_MAT3x2_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B67</span>
 <a name="line-142"></a>
-<a name="line-143"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FLOAT_MAT4x2_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B69</span>
+<a name="line-143"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FLOAT_MAT3x4_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B68</span>
 <a name="line-144"></a>
-<a name="line-145"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FLOAT_MAT4x3_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B6A</span>
+<a name="line-145"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FLOAT_MAT4x2_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B69</span>
+<a name="line-146"></a>
+<a name="line-147"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FLOAT_MAT4x3_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8B6A</span>
 </pre></body>
 </html>

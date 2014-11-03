@@ -26,29 +26,31 @@
 <a name="line-17"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Types</span>
 <a name="line-18"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-19"></a>
-<a name="line-20"></a><a name="gl_ATI_map_object_buffer"></a><span class='hs-definition'>gl_ATI_map_object_buffer</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-21"></a><span class='hs-definition'>gl_ATI_map_object_buffer</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ATI_map_object_buffer"</span> <span class='hs-varid'>extensions</span>
-<a name="line-22"></a>
-<a name="line-23"></a><span class='hs-comment'>-- | Usage: @'glMapObjectBufferATI' buffer@</span>
+<a name="line-20"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ATI/map_object_buffer.txt GL_ATI_map_object_buffer&gt; extension is available.</span>
+<a name="line-21"></a>
+<a name="line-22"></a><a name="gl_ATI_map_object_buffer"></a><span class='hs-definition'>gl_ATI_map_object_buffer</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-23"></a><span class='hs-definition'>gl_ATI_map_object_buffer</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ATI_map_object_buffer"</span> <span class='hs-varid'>extensions</span>
 <a name="line-24"></a>
-<a name="line-25"></a>
-<a name="line-26"></a><a name="glMapObjectBufferATI"></a><span class='hs-definition'>glMapObjectBufferATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-27"></a><span class='hs-definition'>glMapObjectBufferATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOPtrV</span> <span class='hs-varid'>glMapObjectBufferATIFunPtr</span>
-<a name="line-28"></a>
-<a name="line-29"></a><a name="glMapObjectBufferATIFunPtr"></a><span class='hs-definition'>glMapObjectBufferATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span>
-<a name="line-30"></a><span class='hs-definition'>glMapObjectBufferATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMapObjectBufferATI"</span><span class='hs-layout'>)</span>
-<a name="line-31"></a>
-<a name="line-32"></a><span class='hs-comment'>{-# NOINLINE glMapObjectBufferATIFunPtr #-}</span>
+<a name="line-25"></a><span class='hs-comment'>-- | Usage: @'glMapObjectBufferATI' buffer@</span>
+<a name="line-26"></a>
+<a name="line-27"></a>
+<a name="line-28"></a><a name="glMapObjectBufferATI"></a><span class='hs-definition'>glMapObjectBufferATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-29"></a><span class='hs-definition'>glMapObjectBufferATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOPtrV</span> <span class='hs-varid'>glMapObjectBufferATIFunPtr</span>
+<a name="line-30"></a>
+<a name="line-31"></a><a name="glMapObjectBufferATIFunPtr"></a><span class='hs-definition'>glMapObjectBufferATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span>
+<a name="line-32"></a><span class='hs-definition'>glMapObjectBufferATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMapObjectBufferATI"</span><span class='hs-layout'>)</span>
 <a name="line-33"></a>
-<a name="line-34"></a><span class='hs-comment'>-- | Usage: @'glUnmapObjectBufferATI' buffer@</span>
+<a name="line-34"></a><span class='hs-comment'>{-# NOINLINE glMapObjectBufferATIFunPtr #-}</span>
 <a name="line-35"></a>
-<a name="line-36"></a>
-<a name="line-37"></a><a name="glUnmapObjectBufferATI"></a><span class='hs-definition'>glUnmapObjectBufferATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-38"></a><span class='hs-definition'>glUnmapObjectBufferATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOV</span> <span class='hs-varid'>glUnmapObjectBufferATIFunPtr</span>
-<a name="line-39"></a>
-<a name="line-40"></a><a name="glUnmapObjectBufferATIFunPtr"></a><span class='hs-definition'>glUnmapObjectBufferATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-41"></a><span class='hs-definition'>glUnmapObjectBufferATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glUnmapObjectBufferATI"</span><span class='hs-layout'>)</span>
-<a name="line-42"></a>
-<a name="line-43"></a><span class='hs-comment'>{-# NOINLINE glUnmapObjectBufferATIFunPtr #-}</span>
+<a name="line-36"></a><span class='hs-comment'>-- | Usage: @'glUnmapObjectBufferATI' buffer@</span>
+<a name="line-37"></a>
+<a name="line-38"></a>
+<a name="line-39"></a><a name="glUnmapObjectBufferATI"></a><span class='hs-definition'>glUnmapObjectBufferATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-40"></a><span class='hs-definition'>glUnmapObjectBufferATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOV</span> <span class='hs-varid'>glUnmapObjectBufferATIFunPtr</span>
+<a name="line-41"></a>
+<a name="line-42"></a><a name="glUnmapObjectBufferATIFunPtr"></a><span class='hs-definition'>glUnmapObjectBufferATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-43"></a><span class='hs-definition'>glUnmapObjectBufferATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glUnmapObjectBufferATI"</span><span class='hs-layout'>)</span>
+<a name="line-44"></a>
+<a name="line-45"></a><span class='hs-comment'>{-# NOINLINE glUnmapObjectBufferATIFunPtr #-}</span>
 </pre></body>
 </html>

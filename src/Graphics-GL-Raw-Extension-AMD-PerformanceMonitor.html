@@ -42,174 +42,176 @@
 <a name="line-33"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Types</span>
 <a name="line-34"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-35"></a>
-<a name="line-36"></a><a name="gl_AMD_performance_monitor"></a><span class='hs-definition'>gl_AMD_performance_monitor</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
-<a name="line-37"></a><span class='hs-definition'>gl_AMD_performance_monitor</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_AMD_performance_monitor"</span> <span class='hs-varid'>extensions</span>
-<a name="line-38"></a>
-<a name="line-39"></a><span class='hs-comment'>-- | Usage: @'glBeginPerfMonitorAMD' monitor@</span>
+<a name="line-36"></a><span class='hs-comment'>-- | Checks that the &lt;https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/AMD/performance_monitor.txt GL_AMD_performance_monitor&gt; extension is available.</span>
+<a name="line-37"></a>
+<a name="line-38"></a><a name="gl_AMD_performance_monitor"></a><span class='hs-definition'>gl_AMD_performance_monitor</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
+<a name="line-39"></a><span class='hs-definition'>gl_AMD_performance_monitor</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_AMD_performance_monitor"</span> <span class='hs-varid'>extensions</span>
 <a name="line-40"></a>
-<a name="line-41"></a>
-<a name="line-42"></a><a name="glBeginPerfMonitorAMD"></a><span class='hs-definition'>glBeginPerfMonitorAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-43"></a><span class='hs-definition'>glBeginPerfMonitorAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOV</span> <span class='hs-varid'>glBeginPerfMonitorAMDFunPtr</span>
-<a name="line-44"></a>
-<a name="line-45"></a><a name="glBeginPerfMonitorAMDFunPtr"></a><span class='hs-definition'>glBeginPerfMonitorAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-46"></a><span class='hs-definition'>glBeginPerfMonitorAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBeginPerfMonitorAMD"</span><span class='hs-layout'>)</span>
-<a name="line-47"></a>
-<a name="line-48"></a><span class='hs-comment'>{-# NOINLINE glBeginPerfMonitorAMDFunPtr #-}</span>
+<a name="line-41"></a><span class='hs-comment'>-- | Usage: @'glBeginPerfMonitorAMD' monitor@</span>
+<a name="line-42"></a>
+<a name="line-43"></a>
+<a name="line-44"></a><a name="glBeginPerfMonitorAMD"></a><span class='hs-definition'>glBeginPerfMonitorAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-45"></a><span class='hs-definition'>glBeginPerfMonitorAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOV</span> <span class='hs-varid'>glBeginPerfMonitorAMDFunPtr</span>
+<a name="line-46"></a>
+<a name="line-47"></a><a name="glBeginPerfMonitorAMDFunPtr"></a><span class='hs-definition'>glBeginPerfMonitorAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-48"></a><span class='hs-definition'>glBeginPerfMonitorAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBeginPerfMonitorAMD"</span><span class='hs-layout'>)</span>
 <a name="line-49"></a>
-<a name="line-50"></a><span class='hs-comment'>-- | Usage: @'glDeletePerfMonitorsAMD' n monitors@</span>
-<a name="line-51"></a><span class='hs-comment'>--</span>
-<a name="line-52"></a><span class='hs-comment'>-- The length of @monitors@ should be @n@</span>
-<a name="line-53"></a>
-<a name="line-54"></a>
-<a name="line-55"></a><a name="glDeletePerfMonitorsAMD"></a><span class='hs-definition'>glDeletePerfMonitorsAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-56"></a><span class='hs-definition'>glDeletePerfMonitorsAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glDeletePerfMonitorsAMDFunPtr</span>
-<a name="line-57"></a>
-<a name="line-58"></a><a name="glDeletePerfMonitorsAMDFunPtr"></a><span class='hs-definition'>glDeletePerfMonitorsAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-59"></a><span class='hs-definition'>glDeletePerfMonitorsAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeletePerfMonitorsAMD"</span><span class='hs-layout'>)</span>
-<a name="line-60"></a>
-<a name="line-61"></a><span class='hs-comment'>{-# NOINLINE glDeletePerfMonitorsAMDFunPtr #-}</span>
+<a name="line-50"></a><span class='hs-comment'>{-# NOINLINE glBeginPerfMonitorAMDFunPtr #-}</span>
+<a name="line-51"></a>
+<a name="line-52"></a><span class='hs-comment'>-- | Usage: @'glDeletePerfMonitorsAMD' n monitors@</span>
+<a name="line-53"></a><span class='hs-comment'>--</span>
+<a name="line-54"></a><span class='hs-comment'>-- The length of @monitors@ should be @n@.</span>
+<a name="line-55"></a>
+<a name="line-56"></a>
+<a name="line-57"></a><a name="glDeletePerfMonitorsAMD"></a><span class='hs-definition'>glDeletePerfMonitorsAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-58"></a><span class='hs-definition'>glDeletePerfMonitorsAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glDeletePerfMonitorsAMDFunPtr</span>
+<a name="line-59"></a>
+<a name="line-60"></a><a name="glDeletePerfMonitorsAMDFunPtr"></a><span class='hs-definition'>glDeletePerfMonitorsAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-61"></a><span class='hs-definition'>glDeletePerfMonitorsAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeletePerfMonitorsAMD"</span><span class='hs-layout'>)</span>
 <a name="line-62"></a>
-<a name="line-63"></a><span class='hs-comment'>-- | Usage: @'glEndPerfMonitorAMD' monitor@</span>
+<a name="line-63"></a><span class='hs-comment'>{-# NOINLINE glDeletePerfMonitorsAMDFunPtr #-}</span>
 <a name="line-64"></a>
-<a name="line-65"></a>
-<a name="line-66"></a><a name="glEndPerfMonitorAMD"></a><span class='hs-definition'>glEndPerfMonitorAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-67"></a><span class='hs-definition'>glEndPerfMonitorAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOV</span> <span class='hs-varid'>glEndPerfMonitorAMDFunPtr</span>
-<a name="line-68"></a>
-<a name="line-69"></a><a name="glEndPerfMonitorAMDFunPtr"></a><span class='hs-definition'>glEndPerfMonitorAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-70"></a><span class='hs-definition'>glEndPerfMonitorAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glEndPerfMonitorAMD"</span><span class='hs-layout'>)</span>
-<a name="line-71"></a>
-<a name="line-72"></a><span class='hs-comment'>{-# NOINLINE glEndPerfMonitorAMDFunPtr #-}</span>
+<a name="line-65"></a><span class='hs-comment'>-- | Usage: @'glEndPerfMonitorAMD' monitor@</span>
+<a name="line-66"></a>
+<a name="line-67"></a>
+<a name="line-68"></a><a name="glEndPerfMonitorAMD"></a><span class='hs-definition'>glEndPerfMonitorAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-69"></a><span class='hs-definition'>glEndPerfMonitorAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOV</span> <span class='hs-varid'>glEndPerfMonitorAMDFunPtr</span>
+<a name="line-70"></a>
+<a name="line-71"></a><a name="glEndPerfMonitorAMDFunPtr"></a><span class='hs-definition'>glEndPerfMonitorAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-72"></a><span class='hs-definition'>glEndPerfMonitorAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glEndPerfMonitorAMD"</span><span class='hs-layout'>)</span>
 <a name="line-73"></a>
-<a name="line-74"></a><span class='hs-comment'>-- | Usage: @'glGenPerfMonitorsAMD' n monitors@</span>
-<a name="line-75"></a><span class='hs-comment'>--</span>
-<a name="line-76"></a><span class='hs-comment'>-- The length of @monitors@ should be @n@</span>
-<a name="line-77"></a>
-<a name="line-78"></a>
-<a name="line-79"></a><a name="glGenPerfMonitorsAMD"></a><span class='hs-definition'>glGenPerfMonitorsAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-80"></a><span class='hs-definition'>glGenPerfMonitorsAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glGenPerfMonitorsAMDFunPtr</span>
-<a name="line-81"></a>
-<a name="line-82"></a><a name="glGenPerfMonitorsAMDFunPtr"></a><span class='hs-definition'>glGenPerfMonitorsAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-83"></a><span class='hs-definition'>glGenPerfMonitorsAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGenPerfMonitorsAMD"</span><span class='hs-layout'>)</span>
-<a name="line-84"></a>
-<a name="line-85"></a><span class='hs-comment'>{-# NOINLINE glGenPerfMonitorsAMDFunPtr #-}</span>
+<a name="line-74"></a><span class='hs-comment'>{-# NOINLINE glEndPerfMonitorAMDFunPtr #-}</span>
+<a name="line-75"></a>
+<a name="line-76"></a><span class='hs-comment'>-- | Usage: @'glGenPerfMonitorsAMD' n monitors@</span>
+<a name="line-77"></a><span class='hs-comment'>--</span>
+<a name="line-78"></a><span class='hs-comment'>-- The length of @monitors@ should be @n@.</span>
+<a name="line-79"></a>
+<a name="line-80"></a>
+<a name="line-81"></a><a name="glGenPerfMonitorsAMD"></a><span class='hs-definition'>glGenPerfMonitorsAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-82"></a><span class='hs-definition'>glGenPerfMonitorsAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glGenPerfMonitorsAMDFunPtr</span>
+<a name="line-83"></a>
+<a name="line-84"></a><a name="glGenPerfMonitorsAMDFunPtr"></a><span class='hs-definition'>glGenPerfMonitorsAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-85"></a><span class='hs-definition'>glGenPerfMonitorsAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGenPerfMonitorsAMD"</span><span class='hs-layout'>)</span>
 <a name="line-86"></a>
-<a name="line-87"></a><span class='hs-comment'>-- | Usage: @'glGetPerfMonitorCounterDataAMD' monitor pname dataSize data bytesWritten@</span>
-<a name="line-88"></a><span class='hs-comment'>--</span>
-<a name="line-89"></a><span class='hs-comment'>-- The length of @data@ should be @dataSize@</span>
+<a name="line-87"></a><span class='hs-comment'>{-# NOINLINE glGenPerfMonitorsAMDFunPtr #-}</span>
+<a name="line-88"></a>
+<a name="line-89"></a><span class='hs-comment'>-- | Usage: @'glGetPerfMonitorCounterDataAMD' monitor pname dataSize data bytesWritten@</span>
 <a name="line-90"></a><span class='hs-comment'>--</span>
-<a name="line-91"></a><span class='hs-comment'>-- The length of @bytesWritten@ should be @1@</span>
-<a name="line-92"></a>
-<a name="line-93"></a>
-<a name="line-94"></a><a name="glGetPerfMonitorCounterDataAMD"></a><span class='hs-definition'>glGetPerfMonitorCounterDataAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-95"></a><span class='hs-definition'>glGetPerfMonitorCounterDataAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumsizeiPtruintPtrintIOV</span> <span class='hs-varid'>glGetPerfMonitorCounterDataAMDFunPtr</span>
-<a name="line-96"></a>
-<a name="line-97"></a><a name="glGetPerfMonitorCounterDataAMDFunPtr"></a><span class='hs-definition'>glGetPerfMonitorCounterDataAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-98"></a><span class='hs-definition'>glGetPerfMonitorCounterDataAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetPerfMonitorCounterDataAMD"</span><span class='hs-layout'>)</span>
-<a name="line-99"></a>
-<a name="line-100"></a><span class='hs-comment'>{-# NOINLINE glGetPerfMonitorCounterDataAMDFunPtr #-}</span>
+<a name="line-91"></a><span class='hs-comment'>-- The length of @data@ should be @dataSize@.</span>
+<a name="line-92"></a><span class='hs-comment'>--</span>
+<a name="line-93"></a><span class='hs-comment'>-- The length of @bytesWritten@ should be @1@.</span>
+<a name="line-94"></a>
+<a name="line-95"></a>
+<a name="line-96"></a><a name="glGetPerfMonitorCounterDataAMD"></a><span class='hs-definition'>glGetPerfMonitorCounterDataAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-97"></a><span class='hs-definition'>glGetPerfMonitorCounterDataAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumsizeiPtruintPtrintIOV</span> <span class='hs-varid'>glGetPerfMonitorCounterDataAMDFunPtr</span>
+<a name="line-98"></a>
+<a name="line-99"></a><a name="glGetPerfMonitorCounterDataAMDFunPtr"></a><span class='hs-definition'>glGetPerfMonitorCounterDataAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-100"></a><span class='hs-definition'>glGetPerfMonitorCounterDataAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetPerfMonitorCounterDataAMD"</span><span class='hs-layout'>)</span>
 <a name="line-101"></a>
-<a name="line-102"></a><span class='hs-comment'>-- | Usage: @'glGetPerfMonitorCounterInfoAMD' group counter pname data@</span>
-<a name="line-103"></a><span class='hs-comment'>--</span>
-<a name="line-104"></a><span class='hs-comment'>-- The length of @data@ should be @COMPSIZE(pname)@</span>
-<a name="line-105"></a>
-<a name="line-106"></a>
-<a name="line-107"></a><a name="glGetPerfMonitorCounterInfoAMD"></a><span class='hs-definition'>glGetPerfMonitorCounterInfoAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-108"></a><span class='hs-definition'>glGetPerfMonitorCounterInfoAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintenumPtrVIOV</span> <span class='hs-varid'>glGetPerfMonitorCounterInfoAMDFunPtr</span>
-<a name="line-109"></a>
-<a name="line-110"></a><a name="glGetPerfMonitorCounterInfoAMDFunPtr"></a><span class='hs-definition'>glGetPerfMonitorCounterInfoAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-111"></a><span class='hs-definition'>glGetPerfMonitorCounterInfoAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetPerfMonitorCounterInfoAMD"</span><span class='hs-layout'>)</span>
-<a name="line-112"></a>
-<a name="line-113"></a><span class='hs-comment'>{-# NOINLINE glGetPerfMonitorCounterInfoAMDFunPtr #-}</span>
+<a name="line-102"></a><span class='hs-comment'>{-# NOINLINE glGetPerfMonitorCounterDataAMDFunPtr #-}</span>
+<a name="line-103"></a>
+<a name="line-104"></a><span class='hs-comment'>-- | Usage: @'glGetPerfMonitorCounterInfoAMD' group counter pname data@</span>
+<a name="line-105"></a><span class='hs-comment'>--</span>
+<a name="line-106"></a><span class='hs-comment'>-- The length of @data@ should be @COMPSIZE(pname)@.</span>
+<a name="line-107"></a>
+<a name="line-108"></a>
+<a name="line-109"></a><a name="glGetPerfMonitorCounterInfoAMD"></a><span class='hs-definition'>glGetPerfMonitorCounterInfoAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-110"></a><span class='hs-definition'>glGetPerfMonitorCounterInfoAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintenumPtrVIOV</span> <span class='hs-varid'>glGetPerfMonitorCounterInfoAMDFunPtr</span>
+<a name="line-111"></a>
+<a name="line-112"></a><a name="glGetPerfMonitorCounterInfoAMDFunPtr"></a><span class='hs-definition'>glGetPerfMonitorCounterInfoAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-113"></a><span class='hs-definition'>glGetPerfMonitorCounterInfoAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetPerfMonitorCounterInfoAMD"</span><span class='hs-layout'>)</span>
 <a name="line-114"></a>
-<a name="line-115"></a><span class='hs-comment'>-- | Usage: @'glGetPerfMonitorCounterStringAMD' group counter bufSize length counterString@</span>
-<a name="line-116"></a><span class='hs-comment'>--</span>
-<a name="line-117"></a><span class='hs-comment'>-- The length of @length@ should be @1@</span>
+<a name="line-115"></a><span class='hs-comment'>{-# NOINLINE glGetPerfMonitorCounterInfoAMDFunPtr #-}</span>
+<a name="line-116"></a>
+<a name="line-117"></a><span class='hs-comment'>-- | Usage: @'glGetPerfMonitorCounterStringAMD' group counter bufSize length counterString@</span>
 <a name="line-118"></a><span class='hs-comment'>--</span>
-<a name="line-119"></a><span class='hs-comment'>-- The length of @counterString@ should be @bufSize@</span>
-<a name="line-120"></a>
-<a name="line-121"></a>
-<a name="line-122"></a><a name="glGetPerfMonitorCounterStringAMD"></a><span class='hs-definition'>glGetPerfMonitorCounterStringAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-123"></a><span class='hs-definition'>glGetPerfMonitorCounterStringAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintsizeiPtrsizeiPtrcharIOV</span> <span class='hs-varid'>glGetPerfMonitorCounterStringAMDFunPtr</span>
-<a name="line-124"></a>
-<a name="line-125"></a><a name="glGetPerfMonitorCounterStringAMDFunPtr"></a><span class='hs-definition'>glGetPerfMonitorCounterStringAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-126"></a><span class='hs-definition'>glGetPerfMonitorCounterStringAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetPerfMonitorCounterStringAMD"</span><span class='hs-layout'>)</span>
-<a name="line-127"></a>
-<a name="line-128"></a><span class='hs-comment'>{-# NOINLINE glGetPerfMonitorCounterStringAMDFunPtr #-}</span>
+<a name="line-119"></a><span class='hs-comment'>-- The length of @length@ should be @1@.</span>
+<a name="line-120"></a><span class='hs-comment'>--</span>
+<a name="line-121"></a><span class='hs-comment'>-- The length of @counterString@ should be @bufSize@.</span>
+<a name="line-122"></a>
+<a name="line-123"></a>
+<a name="line-124"></a><a name="glGetPerfMonitorCounterStringAMD"></a><span class='hs-definition'>glGetPerfMonitorCounterStringAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-125"></a><span class='hs-definition'>glGetPerfMonitorCounterStringAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintsizeiPtrsizeiPtrcharIOV</span> <span class='hs-varid'>glGetPerfMonitorCounterStringAMDFunPtr</span>
+<a name="line-126"></a>
+<a name="line-127"></a><a name="glGetPerfMonitorCounterStringAMDFunPtr"></a><span class='hs-definition'>glGetPerfMonitorCounterStringAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-128"></a><span class='hs-definition'>glGetPerfMonitorCounterStringAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetPerfMonitorCounterStringAMD"</span><span class='hs-layout'>)</span>
 <a name="line-129"></a>
-<a name="line-130"></a><span class='hs-comment'>-- | Usage: @'glGetPerfMonitorCountersAMD' group numCounters maxActiveCounters counterSize counters@</span>
-<a name="line-131"></a><span class='hs-comment'>--</span>
-<a name="line-132"></a><span class='hs-comment'>-- The length of @numCounters@ should be @1@</span>
+<a name="line-130"></a><span class='hs-comment'>{-# NOINLINE glGetPerfMonitorCounterStringAMDFunPtr #-}</span>
+<a name="line-131"></a>
+<a name="line-132"></a><span class='hs-comment'>-- | Usage: @'glGetPerfMonitorCountersAMD' group numCounters maxActiveCounters counterSize counters@</span>
 <a name="line-133"></a><span class='hs-comment'>--</span>
-<a name="line-134"></a><span class='hs-comment'>-- The length of @maxActiveCounters@ should be @1@</span>
+<a name="line-134"></a><span class='hs-comment'>-- The length of @numCounters@ should be @1@.</span>
 <a name="line-135"></a><span class='hs-comment'>--</span>
-<a name="line-136"></a><span class='hs-comment'>-- The length of @counters@ should be @counterSize@</span>
-<a name="line-137"></a>
-<a name="line-138"></a>
-<a name="line-139"></a><a name="glGetPerfMonitorCountersAMD"></a><span class='hs-definition'>glGetPerfMonitorCountersAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-140"></a><span class='hs-definition'>glGetPerfMonitorCountersAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrintPtrintsizeiPtruintIOV</span> <span class='hs-varid'>glGetPerfMonitorCountersAMDFunPtr</span>
-<a name="line-141"></a>
-<a name="line-142"></a><a name="glGetPerfMonitorCountersAMDFunPtr"></a><span class='hs-definition'>glGetPerfMonitorCountersAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-143"></a><span class='hs-definition'>glGetPerfMonitorCountersAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetPerfMonitorCountersAMD"</span><span class='hs-layout'>)</span>
-<a name="line-144"></a>
-<a name="line-145"></a><span class='hs-comment'>{-# NOINLINE glGetPerfMonitorCountersAMDFunPtr #-}</span>
+<a name="line-136"></a><span class='hs-comment'>-- The length of @maxActiveCounters@ should be @1@.</span>
+<a name="line-137"></a><span class='hs-comment'>--</span>
+<a name="line-138"></a><span class='hs-comment'>-- The length of @counters@ should be @counterSize@.</span>
+<a name="line-139"></a>
+<a name="line-140"></a>
+<a name="line-141"></a><a name="glGetPerfMonitorCountersAMD"></a><span class='hs-definition'>glGetPerfMonitorCountersAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-142"></a><span class='hs-definition'>glGetPerfMonitorCountersAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrintPtrintsizeiPtruintIOV</span> <span class='hs-varid'>glGetPerfMonitorCountersAMDFunPtr</span>
+<a name="line-143"></a>
+<a name="line-144"></a><a name="glGetPerfMonitorCountersAMDFunPtr"></a><span class='hs-definition'>glGetPerfMonitorCountersAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-145"></a><span class='hs-definition'>glGetPerfMonitorCountersAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetPerfMonitorCountersAMD"</span><span class='hs-layout'>)</span>
 <a name="line-146"></a>
-<a name="line-147"></a><span class='hs-comment'>-- | Usage: @'glGetPerfMonitorGroupStringAMD' group bufSize length groupString@</span>
-<a name="line-148"></a><span class='hs-comment'>--</span>
-<a name="line-149"></a><span class='hs-comment'>-- The length of @length@ should be @1@</span>
+<a name="line-147"></a><span class='hs-comment'>{-# NOINLINE glGetPerfMonitorCountersAMDFunPtr #-}</span>
+<a name="line-148"></a>
+<a name="line-149"></a><span class='hs-comment'>-- | Usage: @'glGetPerfMonitorGroupStringAMD' group bufSize length groupString@</span>
 <a name="line-150"></a><span class='hs-comment'>--</span>
-<a name="line-151"></a><span class='hs-comment'>-- The length of @groupString@ should be @bufSize@</span>
-<a name="line-152"></a>
-<a name="line-153"></a>
-<a name="line-154"></a><a name="glGetPerfMonitorGroupStringAMD"></a><span class='hs-definition'>glGetPerfMonitorGroupStringAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-155"></a><span class='hs-definition'>glGetPerfMonitorGroupStringAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintsizeiPtrsizeiPtrcharIOV</span> <span class='hs-varid'>glGetPerfMonitorGroupStringAMDFunPtr</span>
-<a name="line-156"></a>
-<a name="line-157"></a><a name="glGetPerfMonitorGroupStringAMDFunPtr"></a><span class='hs-definition'>glGetPerfMonitorGroupStringAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-158"></a><span class='hs-definition'>glGetPerfMonitorGroupStringAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetPerfMonitorGroupStringAMD"</span><span class='hs-layout'>)</span>
-<a name="line-159"></a>
-<a name="line-160"></a><span class='hs-comment'>{-# NOINLINE glGetPerfMonitorGroupStringAMDFunPtr #-}</span>
+<a name="line-151"></a><span class='hs-comment'>-- The length of @length@ should be @1@.</span>
+<a name="line-152"></a><span class='hs-comment'>--</span>
+<a name="line-153"></a><span class='hs-comment'>-- The length of @groupString@ should be @bufSize@.</span>
+<a name="line-154"></a>
+<a name="line-155"></a>
+<a name="line-156"></a><a name="glGetPerfMonitorGroupStringAMD"></a><span class='hs-definition'>glGetPerfMonitorGroupStringAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-157"></a><span class='hs-definition'>glGetPerfMonitorGroupStringAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintsizeiPtrsizeiPtrcharIOV</span> <span class='hs-varid'>glGetPerfMonitorGroupStringAMDFunPtr</span>
+<a name="line-158"></a>
+<a name="line-159"></a><a name="glGetPerfMonitorGroupStringAMDFunPtr"></a><span class='hs-definition'>glGetPerfMonitorGroupStringAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-160"></a><span class='hs-definition'>glGetPerfMonitorGroupStringAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetPerfMonitorGroupStringAMD"</span><span class='hs-layout'>)</span>
 <a name="line-161"></a>
-<a name="line-162"></a><span class='hs-comment'>-- | Usage: @'glGetPerfMonitorGroupsAMD' numGroups groupsSize groups@</span>
-<a name="line-163"></a><span class='hs-comment'>--</span>
-<a name="line-164"></a><span class='hs-comment'>-- The length of @numGroups@ should be @1@</span>
+<a name="line-162"></a><span class='hs-comment'>{-# NOINLINE glGetPerfMonitorGroupStringAMDFunPtr #-}</span>
+<a name="line-163"></a>
+<a name="line-164"></a><span class='hs-comment'>-- | Usage: @'glGetPerfMonitorGroupsAMD' numGroups groupsSize groups@</span>
 <a name="line-165"></a><span class='hs-comment'>--</span>
-<a name="line-166"></a><span class='hs-comment'>-- The length of @groups@ should be @groupsSize@</span>
-<a name="line-167"></a>
-<a name="line-168"></a>
-<a name="line-169"></a><a name="glGetPerfMonitorGroupsAMD"></a><span class='hs-definition'>glGetPerfMonitorGroupsAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-170"></a><span class='hs-definition'>glGetPerfMonitorGroupsAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrintsizeiPtruintIOV</span> <span class='hs-varid'>glGetPerfMonitorGroupsAMDFunPtr</span>
-<a name="line-171"></a>
-<a name="line-172"></a><a name="glGetPerfMonitorGroupsAMDFunPtr"></a><span class='hs-definition'>glGetPerfMonitorGroupsAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-173"></a><span class='hs-definition'>glGetPerfMonitorGroupsAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetPerfMonitorGroupsAMD"</span><span class='hs-layout'>)</span>
-<a name="line-174"></a>
-<a name="line-175"></a><span class='hs-comment'>{-# NOINLINE glGetPerfMonitorGroupsAMDFunPtr #-}</span>
+<a name="line-166"></a><span class='hs-comment'>-- The length of @numGroups@ should be @1@.</span>
+<a name="line-167"></a><span class='hs-comment'>--</span>
+<a name="line-168"></a><span class='hs-comment'>-- The length of @groups@ should be @groupsSize@.</span>
+<a name="line-169"></a>
+<a name="line-170"></a>
+<a name="line-171"></a><a name="glGetPerfMonitorGroupsAMD"></a><span class='hs-definition'>glGetPerfMonitorGroupsAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-172"></a><span class='hs-definition'>glGetPerfMonitorGroupsAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrintsizeiPtruintIOV</span> <span class='hs-varid'>glGetPerfMonitorGroupsAMDFunPtr</span>
+<a name="line-173"></a>
+<a name="line-174"></a><a name="glGetPerfMonitorGroupsAMDFunPtr"></a><span class='hs-definition'>glGetPerfMonitorGroupsAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-175"></a><span class='hs-definition'>glGetPerfMonitorGroupsAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetPerfMonitorGroupsAMD"</span><span class='hs-layout'>)</span>
 <a name="line-176"></a>
-<a name="line-177"></a><span class='hs-comment'>-- | Usage: @'glSelectPerfMonitorCountersAMD' monitor enable group numCounters counterList@</span>
-<a name="line-178"></a><span class='hs-comment'>--</span>
-<a name="line-179"></a><span class='hs-comment'>-- The parameter @enable@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'</span>
+<a name="line-177"></a><span class='hs-comment'>{-# NOINLINE glGetPerfMonitorGroupsAMDFunPtr #-}</span>
+<a name="line-178"></a>
+<a name="line-179"></a><span class='hs-comment'>-- | Usage: @'glSelectPerfMonitorCountersAMD' monitor enable group numCounters counterList@</span>
 <a name="line-180"></a><span class='hs-comment'>--</span>
-<a name="line-181"></a><span class='hs-comment'>-- The length of @counterList@ should be @numCounters@</span>
-<a name="line-182"></a>
-<a name="line-183"></a>
-<a name="line-184"></a><a name="glSelectPerfMonitorCountersAMD"></a><span class='hs-definition'>glSelectPerfMonitorCountersAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-185"></a><span class='hs-definition'>glSelectPerfMonitorCountersAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintbooleanuintintPtruintIOV</span> <span class='hs-varid'>glSelectPerfMonitorCountersAMDFunPtr</span>
-<a name="line-186"></a>
-<a name="line-187"></a><a name="glSelectPerfMonitorCountersAMDFunPtr"></a><span class='hs-definition'>glSelectPerfMonitorCountersAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-188"></a><span class='hs-definition'>glSelectPerfMonitorCountersAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSelectPerfMonitorCountersAMD"</span><span class='hs-layout'>)</span>
-<a name="line-189"></a>
-<a name="line-190"></a><span class='hs-comment'>{-# NOINLINE glSelectPerfMonitorCountersAMDFunPtr #-}</span>
+<a name="line-181"></a><span class='hs-comment'>-- The parameter @enable@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'.</span>
+<a name="line-182"></a><span class='hs-comment'>--</span>
+<a name="line-183"></a><span class='hs-comment'>-- The length of @counterList@ should be @numCounters@.</span>
+<a name="line-184"></a>
+<a name="line-185"></a>
+<a name="line-186"></a><a name="glSelectPerfMonitorCountersAMD"></a><span class='hs-definition'>glSelectPerfMonitorCountersAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-187"></a><span class='hs-definition'>glSelectPerfMonitorCountersAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintbooleanuintintPtruintIOV</span> <span class='hs-varid'>glSelectPerfMonitorCountersAMDFunPtr</span>
+<a name="line-188"></a>
+<a name="line-189"></a><a name="glSelectPerfMonitorCountersAMDFunPtr"></a><span class='hs-definition'>glSelectPerfMonitorCountersAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-190"></a><span class='hs-definition'>glSelectPerfMonitorCountersAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSelectPerfMonitorCountersAMD"</span><span class='hs-layout'>)</span>
 <a name="line-191"></a>
-<a name="line-192"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COUNTER_RANGE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8BC1</span>
+<a name="line-192"></a><span class='hs-comment'>{-# NOINLINE glSelectPerfMonitorCountersAMDFunPtr #-}</span>
 <a name="line-193"></a>
-<a name="line-194"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COUNTER_TYPE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8BC0</span>
+<a name="line-194"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COUNTER_RANGE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8BC1</span>
 <a name="line-195"></a>
-<a name="line-196"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PERCENTAGE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8BC3</span>
+<a name="line-196"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COUNTER_TYPE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8BC0</span>
 <a name="line-197"></a>
-<a name="line-198"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PERFMON_RESULT_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8BC6</span>
+<a name="line-198"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PERCENTAGE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8BC3</span>
 <a name="line-199"></a>
-<a name="line-200"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PERFMON_RESULT_AVAILABLE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8BC4</span>
+<a name="line-200"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PERFMON_RESULT_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8BC6</span>
 <a name="line-201"></a>
-<a name="line-202"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PERFMON_RESULT_SIZE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8BC5</span>
+<a name="line-202"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PERFMON_RESULT_AVAILABLE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8BC4</span>
 <a name="line-203"></a>
-<a name="line-204"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT64_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8BC2</span>
+<a name="line-204"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PERFMON_RESULT_SIZE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8BC5</span>
+<a name="line-205"></a>
+<a name="line-206"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT64_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8BC2</span>
 </pre></body>
 </html>

@@ -1123,54 +1123,56 @@
 <a name="line-1114"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
 <a name="line-1115"></a>
 <a name="line-1116"></a><span class='hs-comment'>-- | Usage: @'glFramebufferTexture' target attachment texture level@</span>
-<a name="line-1117"></a>
-<a name="line-1118"></a>
-<a name="line-1119"></a><a name="glFramebufferTexture"></a><span class='hs-definition'>glFramebufferTexture</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-1120"></a><span class='hs-definition'>glFramebufferTexture</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumuintintIOV</span> <span class='hs-varid'>glFramebufferTextureFunPtr</span>
-<a name="line-1121"></a>
-<a name="line-1122"></a><a name="glFramebufferTextureFunPtr"></a><span class='hs-definition'>glFramebufferTextureFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-1123"></a><span class='hs-definition'>glFramebufferTextureFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFramebufferTexture"</span><span class='hs-layout'>)</span>
-<a name="line-1124"></a>
-<a name="line-1125"></a><span class='hs-comment'>{-# NOINLINE glFramebufferTextureFunPtr #-}</span>
+<a name="line-1117"></a><span class='hs-comment'>--</span>
+<a name="line-1118"></a><span class='hs-comment'>-- Manual page: &lt;https://www.opengl.org/sdk/docs/man/html/glFramebufferTexture.xhtml&gt;</span>
+<a name="line-1119"></a>
+<a name="line-1120"></a>
+<a name="line-1121"></a><a name="glFramebufferTexture"></a><span class='hs-definition'>glFramebufferTexture</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-1122"></a><span class='hs-definition'>glFramebufferTexture</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumuintintIOV</span> <span class='hs-varid'>glFramebufferTextureFunPtr</span>
+<a name="line-1123"></a>
+<a name="line-1124"></a><a name="glFramebufferTextureFunPtr"></a><span class='hs-definition'>glFramebufferTextureFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-1125"></a><span class='hs-definition'>glFramebufferTextureFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFramebufferTexture"</span><span class='hs-layout'>)</span>
 <a name="line-1126"></a>
-<a name="line-1127"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CONTEXT_COMPATIBILITY_PROFILE_BIT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000002</span>
+<a name="line-1127"></a><span class='hs-comment'>{-# NOINLINE glFramebufferTextureFunPtr #-}</span>
 <a name="line-1128"></a>
-<a name="line-1129"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CONTEXT_CORE_PROFILE_BIT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000001</span>
+<a name="line-1129"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CONTEXT_COMPATIBILITY_PROFILE_BIT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000002</span>
 <a name="line-1130"></a>
-<a name="line-1131"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CONTEXT_PROFILE_MASK</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9126</span>
+<a name="line-1131"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CONTEXT_CORE_PROFILE_BIT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000001</span>
 <a name="line-1132"></a>
-<a name="line-1133"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_ATTACHMENT_LAYERED</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8DA7</span>
+<a name="line-1133"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CONTEXT_PROFILE_MASK</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9126</span>
 <a name="line-1134"></a>
-<a name="line-1135"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8DA8</span>
+<a name="line-1135"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_ATTACHMENT_LAYERED</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8DA7</span>
 <a name="line-1136"></a>
-<a name="line-1137"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GEOMETRY_INPUT_TYPE</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8917</span>
+<a name="line-1137"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8DA8</span>
 <a name="line-1138"></a>
-<a name="line-1139"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GEOMETRY_OUTPUT_TYPE</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8918</span>
+<a name="line-1139"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GEOMETRY_INPUT_TYPE</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8917</span>
 <a name="line-1140"></a>
-<a name="line-1141"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GEOMETRY_SHADER</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8DD9</span>
+<a name="line-1141"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GEOMETRY_OUTPUT_TYPE</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8918</span>
 <a name="line-1142"></a>
-<a name="line-1143"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GEOMETRY_VERTICES_OUT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8916</span>
+<a name="line-1143"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GEOMETRY_SHADER</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8DD9</span>
 <a name="line-1144"></a>
-<a name="line-1145"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LINES_ADJACENCY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x000A</span>
+<a name="line-1145"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GEOMETRY_VERTICES_OUT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8916</span>
 <a name="line-1146"></a>
-<a name="line-1147"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LINE_STRIP_ADJACENCY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x000B</span>
+<a name="line-1147"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LINES_ADJACENCY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x000A</span>
 <a name="line-1148"></a>
-<a name="line-1149"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_GEOMETRY_INPUT_COMPONENTS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9123</span>
+<a name="line-1149"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LINE_STRIP_ADJACENCY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x000B</span>
 <a name="line-1150"></a>
-<a name="line-1151"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_GEOMETRY_OUTPUT_COMPONENTS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9124</span>
+<a name="line-1151"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_GEOMETRY_INPUT_COMPONENTS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9123</span>
 <a name="line-1152"></a>
-<a name="line-1153"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_GEOMETRY_OUTPUT_VERTICES</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8DE0</span>
+<a name="line-1153"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_GEOMETRY_OUTPUT_COMPONENTS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9124</span>
 <a name="line-1154"></a>
-<a name="line-1155"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C29</span>
+<a name="line-1155"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_GEOMETRY_OUTPUT_VERTICES</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8DE0</span>
 <a name="line-1156"></a>
-<a name="line-1157"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8DE1</span>
+<a name="line-1157"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C29</span>
 <a name="line-1158"></a>
-<a name="line-1159"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_GEOMETRY_UNIFORM_COMPONENTS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8DDF</span>
+<a name="line-1159"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8DE1</span>
 <a name="line-1160"></a>
-<a name="line-1161"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_POINT_SIZE</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8642</span>
+<a name="line-1161"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_GEOMETRY_UNIFORM_COMPONENTS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8DDF</span>
 <a name="line-1162"></a>
-<a name="line-1163"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRIANGLES_ADJACENCY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x000C</span>
+<a name="line-1163"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_POINT_SIZE</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8642</span>
 <a name="line-1164"></a>
-<a name="line-1165"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRIANGLE_STRIP_ADJACENCY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x000D</span>
+<a name="line-1165"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRIANGLES_ADJACENCY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x000C</span>
+<a name="line-1166"></a>
+<a name="line-1167"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRIANGLE_STRIP_ADJACENCY</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x000D</span>
 </pre></body>
 </html>
