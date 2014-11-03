@@ -64,7 +64,7 @@ link :: Map Name Category -> Name -> String
 link cs n = case Map.lookup n cs of
   Just (C _ ss) -> case compare (Set.size ss) 1 of
     GT -> "'Graphics.GL.Raw.Internal.Shared." ++ n ++ "'"
-    EQ -> Set.findMin ss ++ "." ++ n ++ "'" 
+    EQ -> "'" ++ Set.findMin ss ++ "." ++ n ++ "'"
     LT -> "@" ++ n ++ "@"
   _ -> "@" ++ n ++ "@"
 
