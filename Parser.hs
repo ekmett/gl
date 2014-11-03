@@ -94,10 +94,10 @@ parseRequire = proc x -> do
 parseType :: ArrowXml a => a XmlTree Type
 parseType = proc x -> do
   ptype <- perhaps $ getText <<< getChildren <<< to "ptype" -< x
-  pointer <- (getText <<< getChildren) >. elem '*' . concat -< x
+  pointer <- (getText <<< getChildren) >. length . filter (== '*') . concat -< x
   returnA -< Type
     { typeName = ptype
-    , typePointer = fromEnum pointer
+    , typePointer = pointer
     }
 
 parse :: IOSLA (XIOState ()) XmlTree Registry

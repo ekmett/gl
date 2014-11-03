@@ -53,11 +53,12 @@ sanePrefix :: Name -> Name
 sanePrefix "3DFX" = "ThreeDFX"
 sanePrefix x = x
 
-wrap :: Maybe String -> String -> String
-wrap (Just w) s
-  | any isSpace s = printf "%s (%s)" w s
-  | otherwise = printf "%s %s" w s
-wrap Nothing s = s
+wrap :: Int -> Maybe String -> String -> String
+wrap 0 _ s = s
+wrap c w'@(Just w) s
+  | any isSpace s = wrap (c-1) w' $ printf "%s (%s)" w s
+  | otherwise = wrap (c-1) w' $ printf "%s %s" w s
+wrap _ Nothing s = s
 
 link :: Map Name Category -> Name -> String
 link cs n = case Map.lookup n cs of
@@ -93,17 +94,14 @@ commandSignature monad command =
     parameterSignature = map (typeSignature . parameterType)
 
     returnSignature :: Type -> String
-    returnSignature t = wrap monad . wrap (ptr t) $
+    returnSignature t = wrap 1 monad . wrap (typePointer t) (Just "Ptr") $
       case typeName t of
         Nothing -> "()"
         Just "GLvoid" -> "()"
         Just x -> x
 
-    ptr :: Type -> Maybe String
-    ptr t = "Ptr" <$ guard (typePointer t == 1)
-
     typeSignature :: Type -> String
-    typeSignature t = wrap (ptr t) $
+    typeSignature t = wrap (typePointer t) (Just "Ptr") $
       case typeName t of
         Nothing -> "()"
         Just "GLvoid" -> "()"
