@@ -575,10 +575,6 @@ mkExtensionGroupGather ms = Module "Graphics.GL.Raw.Extension"
   [Section "Extensions" $ map (("module "++) . moduleName) ms]
   [Import $ map moduleName ms]
 
-entryName :: Entry -> String
-entryName (F s) = s
-entryName (E s) = s
-
 generateSource :: FilePath -> Registry -> [String] -> [String] -> IO ()
 generateSource fp registry man extensions = do
   let s = execState (entries registry) Map.empty
@@ -593,3 +589,7 @@ generateSource fp registry man extensions = do
   let exts = mkExtensionGather fm
   forM_ exts $ saveModule fp
   saveModule fp $ mkExtensionGroupGather exts
+  where
+    entryName :: Entry -> String
+    entryName (F s) = s
+    entryName (E s) = s
