@@ -38,117 +38,118 @@
 <a name="line-29"></a>
 <a name="line-30"></a><a name="gl_APPLE_fence"></a><span class='hs-definition'>gl_APPLE_fence</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-31"></a><span class='hs-definition'>gl_APPLE_fence</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_APPLE_fence"</span> <span class='hs-varid'>extensions</span>
-<a name="line-32"></a>
-<a name="line-33"></a><span class='hs-comment'>-- | Usage: @'glDeleteFencesAPPLE' n fences@</span>
-<a name="line-34"></a><span class='hs-comment'>--</span>
-<a name="line-35"></a><span class='hs-comment'>-- The parameter @fences@ is a @FenceNV@.</span>
-<a name="line-36"></a><span class='hs-comment'>--</span>
-<a name="line-37"></a><span class='hs-comment'>-- The length of @fences@ should be @n@.</span>
-<a name="line-38"></a>
+<a name="line-32"></a><span class='hs-comment'>{-# NOINLINE gl_APPLE_fence #-}</span>
+<a name="line-33"></a>
+<a name="line-34"></a><span class='hs-comment'>-- | Usage: @'glDeleteFencesAPPLE' n fences@</span>
+<a name="line-35"></a><span class='hs-comment'>--</span>
+<a name="line-36"></a><span class='hs-comment'>-- The parameter @fences@ is a @FenceNV@.</span>
+<a name="line-37"></a><span class='hs-comment'>--</span>
+<a name="line-38"></a><span class='hs-comment'>-- The length of @fences@ should be @n@.</span>
 <a name="line-39"></a>
-<a name="line-40"></a><a name="glDeleteFencesAPPLE"></a><span class='hs-definition'>glDeleteFencesAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-41"></a><span class='hs-definition'>glDeleteFencesAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glDeleteFencesAPPLEFunPtr</span>
-<a name="line-42"></a>
-<a name="line-43"></a><a name="glDeleteFencesAPPLEFunPtr"></a><span class='hs-definition'>glDeleteFencesAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-44"></a><span class='hs-definition'>glDeleteFencesAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeleteFencesAPPLE"</span><span class='hs-layout'>)</span>
-<a name="line-45"></a>
-<a name="line-46"></a><span class='hs-comment'>{-# NOINLINE glDeleteFencesAPPLEFunPtr #-}</span>
-<a name="line-47"></a>
-<a name="line-48"></a><span class='hs-comment'>-- | Usage: @'glFinishFenceAPPLE' fence@</span>
-<a name="line-49"></a><span class='hs-comment'>--</span>
-<a name="line-50"></a><span class='hs-comment'>-- The parameter @fence@ is a @FenceNV@.</span>
-<a name="line-51"></a>
+<a name="line-40"></a>
+<a name="line-41"></a><a name="glDeleteFencesAPPLE"></a><span class='hs-definition'>glDeleteFencesAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-42"></a><span class='hs-definition'>glDeleteFencesAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glDeleteFencesAPPLEFunPtr</span>
+<a name="line-43"></a>
+<a name="line-44"></a><a name="glDeleteFencesAPPLEFunPtr"></a><span class='hs-definition'>glDeleteFencesAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-45"></a><span class='hs-definition'>glDeleteFencesAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeleteFencesAPPLE"</span><span class='hs-layout'>)</span>
+<a name="line-46"></a>
+<a name="line-47"></a><span class='hs-comment'>{-# NOINLINE glDeleteFencesAPPLEFunPtr #-}</span>
+<a name="line-48"></a>
+<a name="line-49"></a><span class='hs-comment'>-- | Usage: @'glFinishFenceAPPLE' fence@</span>
+<a name="line-50"></a><span class='hs-comment'>--</span>
+<a name="line-51"></a><span class='hs-comment'>-- The parameter @fence@ is a @FenceNV@.</span>
 <a name="line-52"></a>
-<a name="line-53"></a><a name="glFinishFenceAPPLE"></a><span class='hs-definition'>glFinishFenceAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-54"></a><span class='hs-definition'>glFinishFenceAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOV</span> <span class='hs-varid'>glFinishFenceAPPLEFunPtr</span>
-<a name="line-55"></a>
-<a name="line-56"></a><a name="glFinishFenceAPPLEFunPtr"></a><span class='hs-definition'>glFinishFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-57"></a><span class='hs-definition'>glFinishFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFinishFenceAPPLE"</span><span class='hs-layout'>)</span>
-<a name="line-58"></a>
-<a name="line-59"></a><span class='hs-comment'>{-# NOINLINE glFinishFenceAPPLEFunPtr #-}</span>
-<a name="line-60"></a>
-<a name="line-61"></a><span class='hs-comment'>-- | Usage: @'glFinishObjectAPPLE' object name@</span>
-<a name="line-62"></a><span class='hs-comment'>--</span>
-<a name="line-63"></a><span class='hs-comment'>-- The parameter @object@ is a @ObjectTypeAPPLE@.</span>
-<a name="line-64"></a>
+<a name="line-53"></a>
+<a name="line-54"></a><a name="glFinishFenceAPPLE"></a><span class='hs-definition'>glFinishFenceAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-55"></a><span class='hs-definition'>glFinishFenceAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOV</span> <span class='hs-varid'>glFinishFenceAPPLEFunPtr</span>
+<a name="line-56"></a>
+<a name="line-57"></a><a name="glFinishFenceAPPLEFunPtr"></a><span class='hs-definition'>glFinishFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-58"></a><span class='hs-definition'>glFinishFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFinishFenceAPPLE"</span><span class='hs-layout'>)</span>
+<a name="line-59"></a>
+<a name="line-60"></a><span class='hs-comment'>{-# NOINLINE glFinishFenceAPPLEFunPtr #-}</span>
+<a name="line-61"></a>
+<a name="line-62"></a><span class='hs-comment'>-- | Usage: @'glFinishObjectAPPLE' object name@</span>
+<a name="line-63"></a><span class='hs-comment'>--</span>
+<a name="line-64"></a><span class='hs-comment'>-- The parameter @object@ is a @ObjectTypeAPPLE@.</span>
 <a name="line-65"></a>
-<a name="line-66"></a><a name="glFinishObjectAPPLE"></a><span class='hs-definition'>glFinishObjectAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-67"></a><span class='hs-definition'>glFinishObjectAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintIOV</span> <span class='hs-varid'>glFinishObjectAPPLEFunPtr</span>
-<a name="line-68"></a>
-<a name="line-69"></a><a name="glFinishObjectAPPLEFunPtr"></a><span class='hs-definition'>glFinishObjectAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-70"></a><span class='hs-definition'>glFinishObjectAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFinishObjectAPPLE"</span><span class='hs-layout'>)</span>
-<a name="line-71"></a>
-<a name="line-72"></a><span class='hs-comment'>{-# NOINLINE glFinishObjectAPPLEFunPtr #-}</span>
-<a name="line-73"></a>
-<a name="line-74"></a><span class='hs-comment'>-- | Usage: @'glGenFencesAPPLE' n fences@</span>
-<a name="line-75"></a><span class='hs-comment'>--</span>
-<a name="line-76"></a><span class='hs-comment'>-- The parameter @fences@ is a @FenceNV@.</span>
-<a name="line-77"></a><span class='hs-comment'>--</span>
-<a name="line-78"></a><span class='hs-comment'>-- The length of @fences@ should be @n@.</span>
-<a name="line-79"></a>
+<a name="line-66"></a>
+<a name="line-67"></a><a name="glFinishObjectAPPLE"></a><span class='hs-definition'>glFinishObjectAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-68"></a><span class='hs-definition'>glFinishObjectAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintIOV</span> <span class='hs-varid'>glFinishObjectAPPLEFunPtr</span>
+<a name="line-69"></a>
+<a name="line-70"></a><a name="glFinishObjectAPPLEFunPtr"></a><span class='hs-definition'>glFinishObjectAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-71"></a><span class='hs-definition'>glFinishObjectAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFinishObjectAPPLE"</span><span class='hs-layout'>)</span>
+<a name="line-72"></a>
+<a name="line-73"></a><span class='hs-comment'>{-# NOINLINE glFinishObjectAPPLEFunPtr #-}</span>
+<a name="line-74"></a>
+<a name="line-75"></a><span class='hs-comment'>-- | Usage: @'glGenFencesAPPLE' n fences@</span>
+<a name="line-76"></a><span class='hs-comment'>--</span>
+<a name="line-77"></a><span class='hs-comment'>-- The parameter @fences@ is a @FenceNV@.</span>
+<a name="line-78"></a><span class='hs-comment'>--</span>
+<a name="line-79"></a><span class='hs-comment'>-- The length of @fences@ should be @n@.</span>
 <a name="line-80"></a>
-<a name="line-81"></a><a name="glGenFencesAPPLE"></a><span class='hs-definition'>glGenFencesAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-82"></a><span class='hs-definition'>glGenFencesAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glGenFencesAPPLEFunPtr</span>
-<a name="line-83"></a>
-<a name="line-84"></a><a name="glGenFencesAPPLEFunPtr"></a><span class='hs-definition'>glGenFencesAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-85"></a><span class='hs-definition'>glGenFencesAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGenFencesAPPLE"</span><span class='hs-layout'>)</span>
-<a name="line-86"></a>
-<a name="line-87"></a><span class='hs-comment'>{-# NOINLINE glGenFencesAPPLEFunPtr #-}</span>
-<a name="line-88"></a>
-<a name="line-89"></a><span class='hs-comment'>-- | Usage: @'glIsFenceAPPLE' fence@</span>
-<a name="line-90"></a><span class='hs-comment'>--</span>
-<a name="line-91"></a><span class='hs-comment'>-- The parameter @fence@ is a @FenceNV@.</span>
-<a name="line-92"></a>
+<a name="line-81"></a>
+<a name="line-82"></a><a name="glGenFencesAPPLE"></a><span class='hs-definition'>glGenFencesAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-83"></a><span class='hs-definition'>glGenFencesAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glGenFencesAPPLEFunPtr</span>
+<a name="line-84"></a>
+<a name="line-85"></a><a name="glGenFencesAPPLEFunPtr"></a><span class='hs-definition'>glGenFencesAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-86"></a><span class='hs-definition'>glGenFencesAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGenFencesAPPLE"</span><span class='hs-layout'>)</span>
+<a name="line-87"></a>
+<a name="line-88"></a><span class='hs-comment'>{-# NOINLINE glGenFencesAPPLEFunPtr #-}</span>
+<a name="line-89"></a>
+<a name="line-90"></a><span class='hs-comment'>-- | Usage: @'glIsFenceAPPLE' fence@</span>
+<a name="line-91"></a><span class='hs-comment'>--</span>
+<a name="line-92"></a><span class='hs-comment'>-- The parameter @fence@ is a @FenceNV@.</span>
 <a name="line-93"></a>
-<a name="line-94"></a><a name="glIsFenceAPPLE"></a><span class='hs-definition'>glIsFenceAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLboolean</span>
-<a name="line-95"></a><span class='hs-definition'>glIsFenceAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOboolean</span> <span class='hs-varid'>glIsFenceAPPLEFunPtr</span>
-<a name="line-96"></a>
-<a name="line-97"></a><a name="glIsFenceAPPLEFunPtr"></a><span class='hs-definition'>glIsFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLboolean</span><span class='hs-layout'>)</span>
-<a name="line-98"></a><span class='hs-definition'>glIsFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glIsFenceAPPLE"</span><span class='hs-layout'>)</span>
-<a name="line-99"></a>
-<a name="line-100"></a><span class='hs-comment'>{-# NOINLINE glIsFenceAPPLEFunPtr #-}</span>
-<a name="line-101"></a>
-<a name="line-102"></a><span class='hs-comment'>-- | Usage: @'glSetFenceAPPLE' fence@</span>
-<a name="line-103"></a><span class='hs-comment'>--</span>
-<a name="line-104"></a><span class='hs-comment'>-- The parameter @fence@ is a @FenceNV@.</span>
-<a name="line-105"></a>
+<a name="line-94"></a>
+<a name="line-95"></a><a name="glIsFenceAPPLE"></a><span class='hs-definition'>glIsFenceAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLboolean</span>
+<a name="line-96"></a><span class='hs-definition'>glIsFenceAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOboolean</span> <span class='hs-varid'>glIsFenceAPPLEFunPtr</span>
+<a name="line-97"></a>
+<a name="line-98"></a><a name="glIsFenceAPPLEFunPtr"></a><span class='hs-definition'>glIsFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLboolean</span><span class='hs-layout'>)</span>
+<a name="line-99"></a><span class='hs-definition'>glIsFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glIsFenceAPPLE"</span><span class='hs-layout'>)</span>
+<a name="line-100"></a>
+<a name="line-101"></a><span class='hs-comment'>{-# NOINLINE glIsFenceAPPLEFunPtr #-}</span>
+<a name="line-102"></a>
+<a name="line-103"></a><span class='hs-comment'>-- | Usage: @'glSetFenceAPPLE' fence@</span>
+<a name="line-104"></a><span class='hs-comment'>--</span>
+<a name="line-105"></a><span class='hs-comment'>-- The parameter @fence@ is a @FenceNV@.</span>
 <a name="line-106"></a>
-<a name="line-107"></a><a name="glSetFenceAPPLE"></a><span class='hs-definition'>glSetFenceAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-108"></a><span class='hs-definition'>glSetFenceAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOV</span> <span class='hs-varid'>glSetFenceAPPLEFunPtr</span>
-<a name="line-109"></a>
-<a name="line-110"></a><a name="glSetFenceAPPLEFunPtr"></a><span class='hs-definition'>glSetFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-111"></a><span class='hs-definition'>glSetFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSetFenceAPPLE"</span><span class='hs-layout'>)</span>
-<a name="line-112"></a>
-<a name="line-113"></a><span class='hs-comment'>{-# NOINLINE glSetFenceAPPLEFunPtr #-}</span>
-<a name="line-114"></a>
-<a name="line-115"></a><span class='hs-comment'>-- | Usage: @'glTestFenceAPPLE' fence@</span>
-<a name="line-116"></a><span class='hs-comment'>--</span>
-<a name="line-117"></a><span class='hs-comment'>-- The parameter @fence@ is a @FenceNV@.</span>
-<a name="line-118"></a>
+<a name="line-107"></a>
+<a name="line-108"></a><a name="glSetFenceAPPLE"></a><span class='hs-definition'>glSetFenceAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-109"></a><span class='hs-definition'>glSetFenceAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOV</span> <span class='hs-varid'>glSetFenceAPPLEFunPtr</span>
+<a name="line-110"></a>
+<a name="line-111"></a><a name="glSetFenceAPPLEFunPtr"></a><span class='hs-definition'>glSetFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-112"></a><span class='hs-definition'>glSetFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSetFenceAPPLE"</span><span class='hs-layout'>)</span>
+<a name="line-113"></a>
+<a name="line-114"></a><span class='hs-comment'>{-# NOINLINE glSetFenceAPPLEFunPtr #-}</span>
+<a name="line-115"></a>
+<a name="line-116"></a><span class='hs-comment'>-- | Usage: @'glTestFenceAPPLE' fence@</span>
+<a name="line-117"></a><span class='hs-comment'>--</span>
+<a name="line-118"></a><span class='hs-comment'>-- The parameter @fence@ is a @FenceNV@.</span>
 <a name="line-119"></a>
-<a name="line-120"></a><a name="glTestFenceAPPLE"></a><span class='hs-definition'>glTestFenceAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLboolean</span>
-<a name="line-121"></a><span class='hs-definition'>glTestFenceAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOboolean</span> <span class='hs-varid'>glTestFenceAPPLEFunPtr</span>
-<a name="line-122"></a>
-<a name="line-123"></a><a name="glTestFenceAPPLEFunPtr"></a><span class='hs-definition'>glTestFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLboolean</span><span class='hs-layout'>)</span>
-<a name="line-124"></a><span class='hs-definition'>glTestFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTestFenceAPPLE"</span><span class='hs-layout'>)</span>
-<a name="line-125"></a>
-<a name="line-126"></a><span class='hs-comment'>{-# NOINLINE glTestFenceAPPLEFunPtr #-}</span>
-<a name="line-127"></a>
-<a name="line-128"></a><span class='hs-comment'>-- | Usage: @'glTestObjectAPPLE' object name@</span>
-<a name="line-129"></a><span class='hs-comment'>--</span>
-<a name="line-130"></a><span class='hs-comment'>-- The parameter @object@ is a @ObjectTypeAPPLE@.</span>
-<a name="line-131"></a>
+<a name="line-120"></a>
+<a name="line-121"></a><a name="glTestFenceAPPLE"></a><span class='hs-definition'>glTestFenceAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLboolean</span>
+<a name="line-122"></a><span class='hs-definition'>glTestFenceAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOboolean</span> <span class='hs-varid'>glTestFenceAPPLEFunPtr</span>
+<a name="line-123"></a>
+<a name="line-124"></a><a name="glTestFenceAPPLEFunPtr"></a><span class='hs-definition'>glTestFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLboolean</span><span class='hs-layout'>)</span>
+<a name="line-125"></a><span class='hs-definition'>glTestFenceAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTestFenceAPPLE"</span><span class='hs-layout'>)</span>
+<a name="line-126"></a>
+<a name="line-127"></a><span class='hs-comment'>{-# NOINLINE glTestFenceAPPLEFunPtr #-}</span>
+<a name="line-128"></a>
+<a name="line-129"></a><span class='hs-comment'>-- | Usage: @'glTestObjectAPPLE' object name@</span>
+<a name="line-130"></a><span class='hs-comment'>--</span>
+<a name="line-131"></a><span class='hs-comment'>-- The parameter @object@ is a @ObjectTypeAPPLE@.</span>
 <a name="line-132"></a>
-<a name="line-133"></a><a name="glTestObjectAPPLE"></a><span class='hs-definition'>glTestObjectAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLboolean</span>
-<a name="line-134"></a><span class='hs-definition'>glTestObjectAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintIOboolean</span> <span class='hs-varid'>glTestObjectAPPLEFunPtr</span>
-<a name="line-135"></a>
-<a name="line-136"></a><a name="glTestObjectAPPLEFunPtr"></a><span class='hs-definition'>glTestObjectAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLboolean</span><span class='hs-layout'>)</span>
-<a name="line-137"></a><span class='hs-definition'>glTestObjectAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTestObjectAPPLE"</span><span class='hs-layout'>)</span>
-<a name="line-138"></a>
-<a name="line-139"></a><span class='hs-comment'>{-# NOINLINE glTestObjectAPPLEFunPtr #-}</span>
-<a name="line-140"></a>
-<a name="line-141"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DRAW_PIXELS_APPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8A0A</span>
-<a name="line-142"></a>
-<a name="line-143"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FENCE_APPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8A0B</span>
+<a name="line-133"></a>
+<a name="line-134"></a><a name="glTestObjectAPPLE"></a><span class='hs-definition'>glTestObjectAPPLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLboolean</span>
+<a name="line-135"></a><span class='hs-definition'>glTestObjectAPPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintIOboolean</span> <span class='hs-varid'>glTestObjectAPPLEFunPtr</span>
+<a name="line-136"></a>
+<a name="line-137"></a><a name="glTestObjectAPPLEFunPtr"></a><span class='hs-definition'>glTestObjectAPPLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLboolean</span><span class='hs-layout'>)</span>
+<a name="line-138"></a><span class='hs-definition'>glTestObjectAPPLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTestObjectAPPLE"</span><span class='hs-layout'>)</span>
+<a name="line-139"></a>
+<a name="line-140"></a><span class='hs-comment'>{-# NOINLINE glTestObjectAPPLEFunPtr #-}</span>
+<a name="line-141"></a>
+<a name="line-142"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DRAW_PIXELS_APPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8A0A</span>
+<a name="line-143"></a>
+<a name="line-144"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FENCE_APPLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8A0B</span>
 </pre></body>
 </html>

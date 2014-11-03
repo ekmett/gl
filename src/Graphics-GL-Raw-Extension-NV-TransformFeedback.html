@@ -71,237 +71,238 @@
 <a name="line-62"></a>
 <a name="line-63"></a><a name="gl_NV_transform_feedback"></a><span class='hs-definition'>gl_NV_transform_feedback</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-64"></a><span class='hs-definition'>gl_NV_transform_feedback</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_NV_transform_feedback"</span> <span class='hs-varid'>extensions</span>
-<a name="line-65"></a>
-<a name="line-66"></a><span class='hs-comment'>-- | Usage: @'glActiveVaryingNV' program name@</span>
-<a name="line-67"></a><span class='hs-comment'>--</span>
-<a name="line-68"></a><span class='hs-comment'>-- The length of @name@ should be @COMPSIZE(name)@.</span>
-<a name="line-69"></a>
+<a name="line-65"></a><span class='hs-comment'>{-# NOINLINE gl_NV_transform_feedback #-}</span>
+<a name="line-66"></a>
+<a name="line-67"></a><span class='hs-comment'>-- | Usage: @'glActiveVaryingNV' program name@</span>
+<a name="line-68"></a><span class='hs-comment'>--</span>
+<a name="line-69"></a><span class='hs-comment'>-- The length of @name@ should be @COMPSIZE(name)@.</span>
 <a name="line-70"></a>
-<a name="line-71"></a><a name="glActiveVaryingNV"></a><span class='hs-definition'>glActiveVaryingNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-72"></a><span class='hs-definition'>glActiveVaryingNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrcharIOV</span> <span class='hs-varid'>glActiveVaryingNVFunPtr</span>
-<a name="line-73"></a>
-<a name="line-74"></a><a name="glActiveVaryingNVFunPtr"></a><span class='hs-definition'>glActiveVaryingNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-75"></a><span class='hs-definition'>glActiveVaryingNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glActiveVaryingNV"</span><span class='hs-layout'>)</span>
-<a name="line-76"></a>
-<a name="line-77"></a><span class='hs-comment'>{-# NOINLINE glActiveVaryingNVFunPtr #-}</span>
-<a name="line-78"></a>
-<a name="line-79"></a><span class='hs-comment'>-- | Usage: @'glBeginTransformFeedbackNV' primitiveMode@</span>
-<a name="line-80"></a><span class='hs-comment'>--</span>
-<a name="line-81"></a><span class='hs-comment'>-- This command is an alias for 'glBeginTransformFeedback'.</span>
-<a name="line-82"></a>
+<a name="line-71"></a>
+<a name="line-72"></a><a name="glActiveVaryingNV"></a><span class='hs-definition'>glActiveVaryingNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-73"></a><span class='hs-definition'>glActiveVaryingNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrcharIOV</span> <span class='hs-varid'>glActiveVaryingNVFunPtr</span>
+<a name="line-74"></a>
+<a name="line-75"></a><a name="glActiveVaryingNVFunPtr"></a><span class='hs-definition'>glActiveVaryingNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-76"></a><span class='hs-definition'>glActiveVaryingNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glActiveVaryingNV"</span><span class='hs-layout'>)</span>
+<a name="line-77"></a>
+<a name="line-78"></a><span class='hs-comment'>{-# NOINLINE glActiveVaryingNVFunPtr #-}</span>
+<a name="line-79"></a>
+<a name="line-80"></a><span class='hs-comment'>-- | Usage: @'glBeginTransformFeedbackNV' primitiveMode@</span>
+<a name="line-81"></a><span class='hs-comment'>--</span>
+<a name="line-82"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glBeginTransformFeedback'.</span>
 <a name="line-83"></a>
-<a name="line-84"></a><a name="glBeginTransformFeedbackNV"></a><span class='hs-definition'>glBeginTransformFeedbackNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-85"></a><span class='hs-definition'>glBeginTransformFeedbackNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOV</span> <span class='hs-varid'>glBeginTransformFeedbackNVFunPtr</span>
-<a name="line-86"></a>
-<a name="line-87"></a><a name="glBeginTransformFeedbackNVFunPtr"></a><span class='hs-definition'>glBeginTransformFeedbackNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-88"></a><span class='hs-definition'>glBeginTransformFeedbackNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBeginTransformFeedbackNV"</span><span class='hs-layout'>)</span>
-<a name="line-89"></a>
-<a name="line-90"></a><span class='hs-comment'>{-# NOINLINE glBeginTransformFeedbackNVFunPtr #-}</span>
-<a name="line-91"></a>
-<a name="line-92"></a><span class='hs-comment'>-- | Usage: @'glBindBufferBaseNV' target index buffer@</span>
-<a name="line-93"></a><span class='hs-comment'>--</span>
-<a name="line-94"></a><span class='hs-comment'>-- This command is an alias for 'glBindBufferBase'.</span>
-<a name="line-95"></a>
+<a name="line-84"></a>
+<a name="line-85"></a><a name="glBeginTransformFeedbackNV"></a><span class='hs-definition'>glBeginTransformFeedbackNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-86"></a><span class='hs-definition'>glBeginTransformFeedbackNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOV</span> <span class='hs-varid'>glBeginTransformFeedbackNVFunPtr</span>
+<a name="line-87"></a>
+<a name="line-88"></a><a name="glBeginTransformFeedbackNVFunPtr"></a><span class='hs-definition'>glBeginTransformFeedbackNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-89"></a><span class='hs-definition'>glBeginTransformFeedbackNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBeginTransformFeedbackNV"</span><span class='hs-layout'>)</span>
+<a name="line-90"></a>
+<a name="line-91"></a><span class='hs-comment'>{-# NOINLINE glBeginTransformFeedbackNVFunPtr #-}</span>
+<a name="line-92"></a>
+<a name="line-93"></a><span class='hs-comment'>-- | Usage: @'glBindBufferBaseNV' target index buffer@</span>
+<a name="line-94"></a><span class='hs-comment'>--</span>
+<a name="line-95"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glBindBufferBase'.</span>
 <a name="line-96"></a>
-<a name="line-97"></a><a name="glBindBufferBaseNV"></a><span class='hs-definition'>glBindBufferBaseNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-98"></a><span class='hs-definition'>glBindBufferBaseNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintIOV</span> <span class='hs-varid'>glBindBufferBaseNVFunPtr</span>
-<a name="line-99"></a>
-<a name="line-100"></a><a name="glBindBufferBaseNVFunPtr"></a><span class='hs-definition'>glBindBufferBaseNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-101"></a><span class='hs-definition'>glBindBufferBaseNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindBufferBaseNV"</span><span class='hs-layout'>)</span>
-<a name="line-102"></a>
-<a name="line-103"></a><span class='hs-comment'>{-# NOINLINE glBindBufferBaseNVFunPtr #-}</span>
-<a name="line-104"></a>
-<a name="line-105"></a><span class='hs-comment'>-- | Usage: @'glBindBufferOffsetNV' target index buffer offset@</span>
-<a name="line-106"></a><span class='hs-comment'>--</span>
-<a name="line-107"></a><span class='hs-comment'>-- The parameter @offset@ is a @BufferOffset@.</span>
-<a name="line-108"></a><span class='hs-comment'>--</span>
-<a name="line-109"></a><span class='hs-comment'>-- This command is an alias for 'glBindBufferOffsetEXT'.</span>
-<a name="line-110"></a>
+<a name="line-97"></a>
+<a name="line-98"></a><a name="glBindBufferBaseNV"></a><span class='hs-definition'>glBindBufferBaseNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-99"></a><span class='hs-definition'>glBindBufferBaseNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintIOV</span> <span class='hs-varid'>glBindBufferBaseNVFunPtr</span>
+<a name="line-100"></a>
+<a name="line-101"></a><a name="glBindBufferBaseNVFunPtr"></a><span class='hs-definition'>glBindBufferBaseNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-102"></a><span class='hs-definition'>glBindBufferBaseNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindBufferBaseNV"</span><span class='hs-layout'>)</span>
+<a name="line-103"></a>
+<a name="line-104"></a><span class='hs-comment'>{-# NOINLINE glBindBufferBaseNVFunPtr #-}</span>
+<a name="line-105"></a>
+<a name="line-106"></a><span class='hs-comment'>-- | Usage: @'glBindBufferOffsetNV' target index buffer offset@</span>
+<a name="line-107"></a><span class='hs-comment'>--</span>
+<a name="line-108"></a><span class='hs-comment'>-- The parameter @offset@ is a @BufferOffset@.</span>
+<a name="line-109"></a><span class='hs-comment'>--</span>
+<a name="line-110"></a><span class='hs-comment'>-- This command is an alias for Graphics.GL.Raw.Extension.EXT.TransformFeedback.glBindBufferOffsetEXT'.</span>
 <a name="line-111"></a>
-<a name="line-112"></a><a name="glBindBufferOffsetNV"></a><span class='hs-definition'>glBindBufferOffsetNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLintptr</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-113"></a><span class='hs-definition'>glBindBufferOffsetNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintintptrIOV</span> <span class='hs-varid'>glBindBufferOffsetNVFunPtr</span>
-<a name="line-114"></a>
-<a name="line-115"></a><a name="glBindBufferOffsetNVFunPtr"></a><span class='hs-definition'>glBindBufferOffsetNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLintptr</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-116"></a><span class='hs-definition'>glBindBufferOffsetNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindBufferOffsetNV"</span><span class='hs-layout'>)</span>
-<a name="line-117"></a>
-<a name="line-118"></a><span class='hs-comment'>{-# NOINLINE glBindBufferOffsetNVFunPtr #-}</span>
-<a name="line-119"></a>
-<a name="line-120"></a><span class='hs-comment'>-- | Usage: @'glBindBufferRangeNV' target index buffer offset size@</span>
-<a name="line-121"></a><span class='hs-comment'>--</span>
-<a name="line-122"></a><span class='hs-comment'>-- The parameter @offset@ is a @BufferOffset@.</span>
-<a name="line-123"></a><span class='hs-comment'>--</span>
-<a name="line-124"></a><span class='hs-comment'>-- The parameter @size@ is a @BufferSize@.</span>
-<a name="line-125"></a><span class='hs-comment'>--</span>
-<a name="line-126"></a><span class='hs-comment'>-- This command is an alias for 'glBindBufferRange'.</span>
-<a name="line-127"></a>
+<a name="line-112"></a>
+<a name="line-113"></a><a name="glBindBufferOffsetNV"></a><span class='hs-definition'>glBindBufferOffsetNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLintptr</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-114"></a><span class='hs-definition'>glBindBufferOffsetNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintintptrIOV</span> <span class='hs-varid'>glBindBufferOffsetNVFunPtr</span>
+<a name="line-115"></a>
+<a name="line-116"></a><a name="glBindBufferOffsetNVFunPtr"></a><span class='hs-definition'>glBindBufferOffsetNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLintptr</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-117"></a><span class='hs-definition'>glBindBufferOffsetNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindBufferOffsetNV"</span><span class='hs-layout'>)</span>
+<a name="line-118"></a>
+<a name="line-119"></a><span class='hs-comment'>{-# NOINLINE glBindBufferOffsetNVFunPtr #-}</span>
+<a name="line-120"></a>
+<a name="line-121"></a><span class='hs-comment'>-- | Usage: @'glBindBufferRangeNV' target index buffer offset size@</span>
+<a name="line-122"></a><span class='hs-comment'>--</span>
+<a name="line-123"></a><span class='hs-comment'>-- The parameter @offset@ is a @BufferOffset@.</span>
+<a name="line-124"></a><span class='hs-comment'>--</span>
+<a name="line-125"></a><span class='hs-comment'>-- The parameter @size@ is a @BufferSize@.</span>
+<a name="line-126"></a><span class='hs-comment'>--</span>
+<a name="line-127"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glBindBufferRange'.</span>
 <a name="line-128"></a>
-<a name="line-129"></a><a name="glBindBufferRangeNV"></a><span class='hs-definition'>glBindBufferRangeNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLintptr</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizeiptr</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-130"></a><span class='hs-definition'>glBindBufferRangeNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintintptrsizeiptrIOV</span> <span class='hs-varid'>glBindBufferRangeNVFunPtr</span>
-<a name="line-131"></a>
-<a name="line-132"></a><a name="glBindBufferRangeNVFunPtr"></a><span class='hs-definition'>glBindBufferRangeNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLintptr</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizeiptr</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-133"></a><span class='hs-definition'>glBindBufferRangeNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindBufferRangeNV"</span><span class='hs-layout'>)</span>
-<a name="line-134"></a>
-<a name="line-135"></a><span class='hs-comment'>{-# NOINLINE glBindBufferRangeNVFunPtr #-}</span>
-<a name="line-136"></a>
-<a name="line-137"></a><span class='hs-comment'>-- | Usage: @'glEndTransformFeedbackNV'@</span>
-<a name="line-138"></a><span class='hs-comment'>--</span>
-<a name="line-139"></a><span class='hs-comment'>-- This command is an alias for 'glEndTransformFeedback'.</span>
-<a name="line-140"></a>
+<a name="line-129"></a>
+<a name="line-130"></a><a name="glBindBufferRangeNV"></a><span class='hs-definition'>glBindBufferRangeNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLintptr</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizeiptr</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-131"></a><span class='hs-definition'>glBindBufferRangeNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintintptrsizeiptrIOV</span> <span class='hs-varid'>glBindBufferRangeNVFunPtr</span>
+<a name="line-132"></a>
+<a name="line-133"></a><a name="glBindBufferRangeNVFunPtr"></a><span class='hs-definition'>glBindBufferRangeNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLintptr</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizeiptr</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-134"></a><span class='hs-definition'>glBindBufferRangeNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindBufferRangeNV"</span><span class='hs-layout'>)</span>
+<a name="line-135"></a>
+<a name="line-136"></a><span class='hs-comment'>{-# NOINLINE glBindBufferRangeNVFunPtr #-}</span>
+<a name="line-137"></a>
+<a name="line-138"></a><span class='hs-comment'>-- | Usage: @'glEndTransformFeedbackNV'@</span>
+<a name="line-139"></a><span class='hs-comment'>--</span>
+<a name="line-140"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glEndTransformFeedback'.</span>
 <a name="line-141"></a>
-<a name="line-142"></a><a name="glEndTransformFeedbackNV"></a><span class='hs-definition'>glEndTransformFeedbackNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-143"></a><span class='hs-definition'>glEndTransformFeedbackNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiIOV</span> <span class='hs-varid'>glEndTransformFeedbackNVFunPtr</span>
-<a name="line-144"></a>
-<a name="line-145"></a><a name="glEndTransformFeedbackNVFunPtr"></a><span class='hs-definition'>glEndTransformFeedbackNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-146"></a><span class='hs-definition'>glEndTransformFeedbackNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glEndTransformFeedbackNV"</span><span class='hs-layout'>)</span>
-<a name="line-147"></a>
-<a name="line-148"></a><span class='hs-comment'>{-# NOINLINE glEndTransformFeedbackNVFunPtr #-}</span>
-<a name="line-149"></a>
-<a name="line-150"></a><span class='hs-comment'>-- | Usage: @'glGetActiveVaryingNV' program index bufSize length size type name@</span>
-<a name="line-151"></a><span class='hs-comment'>--</span>
-<a name="line-152"></a><span class='hs-comment'>-- The length of @length@ should be @1@.</span>
-<a name="line-153"></a><span class='hs-comment'>--</span>
-<a name="line-154"></a><span class='hs-comment'>-- The length of @size@ should be @1@.</span>
-<a name="line-155"></a><span class='hs-comment'>--</span>
-<a name="line-156"></a><span class='hs-comment'>-- The length of @type@ should be @1@.</span>
-<a name="line-157"></a><span class='hs-comment'>--</span>
-<a name="line-158"></a><span class='hs-comment'>-- The length of @name@ should be @COMPSIZE(program,index,bufSize)@.</span>
-<a name="line-159"></a>
+<a name="line-142"></a>
+<a name="line-143"></a><a name="glEndTransformFeedbackNV"></a><span class='hs-definition'>glEndTransformFeedbackNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-144"></a><span class='hs-definition'>glEndTransformFeedbackNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiIOV</span> <span class='hs-varid'>glEndTransformFeedbackNVFunPtr</span>
+<a name="line-145"></a>
+<a name="line-146"></a><a name="glEndTransformFeedbackNVFunPtr"></a><span class='hs-definition'>glEndTransformFeedbackNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-147"></a><span class='hs-definition'>glEndTransformFeedbackNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glEndTransformFeedbackNV"</span><span class='hs-layout'>)</span>
+<a name="line-148"></a>
+<a name="line-149"></a><span class='hs-comment'>{-# NOINLINE glEndTransformFeedbackNVFunPtr #-}</span>
+<a name="line-150"></a>
+<a name="line-151"></a><span class='hs-comment'>-- | Usage: @'glGetActiveVaryingNV' program index bufSize length size type name@</span>
+<a name="line-152"></a><span class='hs-comment'>--</span>
+<a name="line-153"></a><span class='hs-comment'>-- The length of @length@ should be @1@.</span>
+<a name="line-154"></a><span class='hs-comment'>--</span>
+<a name="line-155"></a><span class='hs-comment'>-- The length of @size@ should be @1@.</span>
+<a name="line-156"></a><span class='hs-comment'>--</span>
+<a name="line-157"></a><span class='hs-comment'>-- The length of @type@ should be @1@.</span>
+<a name="line-158"></a><span class='hs-comment'>--</span>
+<a name="line-159"></a><span class='hs-comment'>-- The length of @name@ should be @COMPSIZE(program,index,bufSize)@.</span>
 <a name="line-160"></a>
-<a name="line-161"></a><a name="glGetActiveVaryingNV"></a><span class='hs-definition'>glGetActiveVaryingNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-162"></a><span class='hs-definition'>glGetActiveVaryingNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintsizeiPtrsizeiPtrsizeiPtrenumPtrcharIOV</span> <span class='hs-varid'>glGetActiveVaryingNVFunPtr</span>
-<a name="line-163"></a>
-<a name="line-164"></a><a name="glGetActiveVaryingNVFunPtr"></a><span class='hs-definition'>glGetActiveVaryingNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-165"></a><span class='hs-definition'>glGetActiveVaryingNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetActiveVaryingNV"</span><span class='hs-layout'>)</span>
-<a name="line-166"></a>
-<a name="line-167"></a><span class='hs-comment'>{-# NOINLINE glGetActiveVaryingNVFunPtr #-}</span>
-<a name="line-168"></a>
-<a name="line-169"></a><span class='hs-comment'>-- | Usage: @'glGetTransformFeedbackVaryingNV' program index location@</span>
-<a name="line-170"></a><span class='hs-comment'>--</span>
-<a name="line-171"></a><span class='hs-comment'>-- The length of @location@ should be @1@.</span>
-<a name="line-172"></a>
+<a name="line-161"></a>
+<a name="line-162"></a><a name="glGetActiveVaryingNV"></a><span class='hs-definition'>glGetActiveVaryingNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-163"></a><span class='hs-definition'>glGetActiveVaryingNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintsizeiPtrsizeiPtrsizeiPtrenumPtrcharIOV</span> <span class='hs-varid'>glGetActiveVaryingNVFunPtr</span>
+<a name="line-164"></a>
+<a name="line-165"></a><a name="glGetActiveVaryingNVFunPtr"></a><span class='hs-definition'>glGetActiveVaryingNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-166"></a><span class='hs-definition'>glGetActiveVaryingNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetActiveVaryingNV"</span><span class='hs-layout'>)</span>
+<a name="line-167"></a>
+<a name="line-168"></a><span class='hs-comment'>{-# NOINLINE glGetActiveVaryingNVFunPtr #-}</span>
+<a name="line-169"></a>
+<a name="line-170"></a><span class='hs-comment'>-- | Usage: @'glGetTransformFeedbackVaryingNV' program index location@</span>
+<a name="line-171"></a><span class='hs-comment'>--</span>
+<a name="line-172"></a><span class='hs-comment'>-- The length of @location@ should be @1@.</span>
 <a name="line-173"></a>
-<a name="line-174"></a><a name="glGetTransformFeedbackVaryingNV"></a><span class='hs-definition'>glGetTransformFeedbackVaryingNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-175"></a><span class='hs-definition'>glGetTransformFeedbackVaryingNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintPtrintIOV</span> <span class='hs-varid'>glGetTransformFeedbackVaryingNVFunPtr</span>
-<a name="line-176"></a>
-<a name="line-177"></a><a name="glGetTransformFeedbackVaryingNVFunPtr"></a><span class='hs-definition'>glGetTransformFeedbackVaryingNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-178"></a><span class='hs-definition'>glGetTransformFeedbackVaryingNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetTransformFeedbackVaryingNV"</span><span class='hs-layout'>)</span>
-<a name="line-179"></a>
-<a name="line-180"></a><span class='hs-comment'>{-# NOINLINE glGetTransformFeedbackVaryingNVFunPtr #-}</span>
-<a name="line-181"></a>
-<a name="line-182"></a><span class='hs-comment'>-- | Usage: @'glGetVaryingLocationNV' program name@</span>
-<a name="line-183"></a><span class='hs-comment'>--</span>
-<a name="line-184"></a><span class='hs-comment'>-- The length of @name@ should be @COMPSIZE(name)@.</span>
-<a name="line-185"></a>
+<a name="line-174"></a>
+<a name="line-175"></a><a name="glGetTransformFeedbackVaryingNV"></a><span class='hs-definition'>glGetTransformFeedbackVaryingNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-176"></a><span class='hs-definition'>glGetTransformFeedbackVaryingNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintPtrintIOV</span> <span class='hs-varid'>glGetTransformFeedbackVaryingNVFunPtr</span>
+<a name="line-177"></a>
+<a name="line-178"></a><a name="glGetTransformFeedbackVaryingNVFunPtr"></a><span class='hs-definition'>glGetTransformFeedbackVaryingNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-179"></a><span class='hs-definition'>glGetTransformFeedbackVaryingNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetTransformFeedbackVaryingNV"</span><span class='hs-layout'>)</span>
+<a name="line-180"></a>
+<a name="line-181"></a><span class='hs-comment'>{-# NOINLINE glGetTransformFeedbackVaryingNVFunPtr #-}</span>
+<a name="line-182"></a>
+<a name="line-183"></a><span class='hs-comment'>-- | Usage: @'glGetVaryingLocationNV' program name@</span>
+<a name="line-184"></a><span class='hs-comment'>--</span>
+<a name="line-185"></a><span class='hs-comment'>-- The length of @name@ should be @COMPSIZE(name)@.</span>
 <a name="line-186"></a>
-<a name="line-187"></a><a name="glGetVaryingLocationNV"></a><span class='hs-definition'>glGetVaryingLocationNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLint</span>
-<a name="line-188"></a><span class='hs-definition'>glGetVaryingLocationNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrcharIOint</span> <span class='hs-varid'>glGetVaryingLocationNVFunPtr</span>
-<a name="line-189"></a>
-<a name="line-190"></a><a name="glGetVaryingLocationNVFunPtr"></a><span class='hs-definition'>glGetVaryingLocationNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLint</span><span class='hs-layout'>)</span>
-<a name="line-191"></a><span class='hs-definition'>glGetVaryingLocationNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetVaryingLocationNV"</span><span class='hs-layout'>)</span>
-<a name="line-192"></a>
-<a name="line-193"></a><span class='hs-comment'>{-# NOINLINE glGetVaryingLocationNVFunPtr #-}</span>
-<a name="line-194"></a>
-<a name="line-195"></a><span class='hs-comment'>-- | Usage: @'glTransformFeedbackAttribsNV' count attribs bufferMode@</span>
-<a name="line-196"></a><span class='hs-comment'>--</span>
-<a name="line-197"></a><span class='hs-comment'>-- The length of @attribs@ should be @COMPSIZE(count)@.</span>
-<a name="line-198"></a>
+<a name="line-187"></a>
+<a name="line-188"></a><a name="glGetVaryingLocationNV"></a><span class='hs-definition'>glGetVaryingLocationNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLint</span>
+<a name="line-189"></a><span class='hs-definition'>glGetVaryingLocationNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrcharIOint</span> <span class='hs-varid'>glGetVaryingLocationNVFunPtr</span>
+<a name="line-190"></a>
+<a name="line-191"></a><a name="glGetVaryingLocationNVFunPtr"></a><span class='hs-definition'>glGetVaryingLocationNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLint</span><span class='hs-layout'>)</span>
+<a name="line-192"></a><span class='hs-definition'>glGetVaryingLocationNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetVaryingLocationNV"</span><span class='hs-layout'>)</span>
+<a name="line-193"></a>
+<a name="line-194"></a><span class='hs-comment'>{-# NOINLINE glGetVaryingLocationNVFunPtr #-}</span>
+<a name="line-195"></a>
+<a name="line-196"></a><span class='hs-comment'>-- | Usage: @'glTransformFeedbackAttribsNV' count attribs bufferMode@</span>
+<a name="line-197"></a><span class='hs-comment'>--</span>
+<a name="line-198"></a><span class='hs-comment'>-- The length of @attribs@ should be @COMPSIZE(count)@.</span>
 <a name="line-199"></a>
-<a name="line-200"></a><a name="glTransformFeedbackAttribsNV"></a><span class='hs-definition'>glTransformFeedbackAttribsNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-201"></a><span class='hs-definition'>glTransformFeedbackAttribsNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtrintenumIOV</span> <span class='hs-varid'>glTransformFeedbackAttribsNVFunPtr</span>
-<a name="line-202"></a>
-<a name="line-203"></a><a name="glTransformFeedbackAttribsNVFunPtr"></a><span class='hs-definition'>glTransformFeedbackAttribsNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-204"></a><span class='hs-definition'>glTransformFeedbackAttribsNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTransformFeedbackAttribsNV"</span><span class='hs-layout'>)</span>
-<a name="line-205"></a>
-<a name="line-206"></a><span class='hs-comment'>{-# NOINLINE glTransformFeedbackAttribsNVFunPtr #-}</span>
-<a name="line-207"></a>
-<a name="line-208"></a><span class='hs-comment'>-- | Usage: @'glTransformFeedbackStreamAttribsNV' count attribs nbuffers bufstreams bufferMode@</span>
-<a name="line-209"></a><span class='hs-comment'>--</span>
-<a name="line-210"></a><span class='hs-comment'>-- The length of @attribs@ should be @count@.</span>
-<a name="line-211"></a><span class='hs-comment'>--</span>
-<a name="line-212"></a><span class='hs-comment'>-- The length of @bufstreams@ should be @nbuffers@.</span>
-<a name="line-213"></a>
+<a name="line-200"></a>
+<a name="line-201"></a><a name="glTransformFeedbackAttribsNV"></a><span class='hs-definition'>glTransformFeedbackAttribsNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-202"></a><span class='hs-definition'>glTransformFeedbackAttribsNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtrintenumIOV</span> <span class='hs-varid'>glTransformFeedbackAttribsNVFunPtr</span>
+<a name="line-203"></a>
+<a name="line-204"></a><a name="glTransformFeedbackAttribsNVFunPtr"></a><span class='hs-definition'>glTransformFeedbackAttribsNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-205"></a><span class='hs-definition'>glTransformFeedbackAttribsNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTransformFeedbackAttribsNV"</span><span class='hs-layout'>)</span>
+<a name="line-206"></a>
+<a name="line-207"></a><span class='hs-comment'>{-# NOINLINE glTransformFeedbackAttribsNVFunPtr #-}</span>
+<a name="line-208"></a>
+<a name="line-209"></a><span class='hs-comment'>-- | Usage: @'glTransformFeedbackStreamAttribsNV' count attribs nbuffers bufstreams bufferMode@</span>
+<a name="line-210"></a><span class='hs-comment'>--</span>
+<a name="line-211"></a><span class='hs-comment'>-- The length of @attribs@ should be @count@.</span>
+<a name="line-212"></a><span class='hs-comment'>--</span>
+<a name="line-213"></a><span class='hs-comment'>-- The length of @bufstreams@ should be @nbuffers@.</span>
 <a name="line-214"></a>
-<a name="line-215"></a><a name="glTransformFeedbackStreamAttribsNV"></a><span class='hs-definition'>glTransformFeedbackStreamAttribsNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-216"></a><span class='hs-definition'>glTransformFeedbackStreamAttribsNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtrintsizeiPtrintenumIOV</span> <span class='hs-varid'>glTransformFeedbackStreamAttribsNVFunPtr</span>
-<a name="line-217"></a>
-<a name="line-218"></a><a name="glTransformFeedbackStreamAttribsNVFunPtr"></a><span class='hs-definition'>glTransformFeedbackStreamAttribsNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-219"></a><span class='hs-definition'>glTransformFeedbackStreamAttribsNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTransformFeedbackStreamAttribsNV"</span><span class='hs-layout'>)</span>
-<a name="line-220"></a>
-<a name="line-221"></a><span class='hs-comment'>{-# NOINLINE glTransformFeedbackStreamAttribsNVFunPtr #-}</span>
-<a name="line-222"></a>
-<a name="line-223"></a><span class='hs-comment'>-- | Usage: @'glTransformFeedbackVaryingsNV' program count locations bufferMode@</span>
-<a name="line-224"></a><span class='hs-comment'>--</span>
-<a name="line-225"></a><span class='hs-comment'>-- The length of @locations@ should be @count@.</span>
-<a name="line-226"></a>
+<a name="line-215"></a>
+<a name="line-216"></a><a name="glTransformFeedbackStreamAttribsNV"></a><span class='hs-definition'>glTransformFeedbackStreamAttribsNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-217"></a><span class='hs-definition'>glTransformFeedbackStreamAttribsNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtrintsizeiPtrintenumIOV</span> <span class='hs-varid'>glTransformFeedbackStreamAttribsNVFunPtr</span>
+<a name="line-218"></a>
+<a name="line-219"></a><a name="glTransformFeedbackStreamAttribsNVFunPtr"></a><span class='hs-definition'>glTransformFeedbackStreamAttribsNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-220"></a><span class='hs-definition'>glTransformFeedbackStreamAttribsNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTransformFeedbackStreamAttribsNV"</span><span class='hs-layout'>)</span>
+<a name="line-221"></a>
+<a name="line-222"></a><span class='hs-comment'>{-# NOINLINE glTransformFeedbackStreamAttribsNVFunPtr #-}</span>
+<a name="line-223"></a>
+<a name="line-224"></a><span class='hs-comment'>-- | Usage: @'glTransformFeedbackVaryingsNV' program count locations bufferMode@</span>
+<a name="line-225"></a><span class='hs-comment'>--</span>
+<a name="line-226"></a><span class='hs-comment'>-- The length of @locations@ should be @count@.</span>
 <a name="line-227"></a>
-<a name="line-228"></a><a name="glTransformFeedbackVaryingsNV"></a><span class='hs-definition'>glTransformFeedbackVaryingsNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-229"></a><span class='hs-definition'>glTransformFeedbackVaryingsNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintsizeiPtrintenumIOV</span> <span class='hs-varid'>glTransformFeedbackVaryingsNVFunPtr</span>
-<a name="line-230"></a>
-<a name="line-231"></a><a name="glTransformFeedbackVaryingsNVFunPtr"></a><span class='hs-definition'>glTransformFeedbackVaryingsNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-232"></a><span class='hs-definition'>glTransformFeedbackVaryingsNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTransformFeedbackVaryingsNV"</span><span class='hs-layout'>)</span>
-<a name="line-233"></a>
-<a name="line-234"></a><span class='hs-comment'>{-# NOINLINE glTransformFeedbackVaryingsNVFunPtr #-}</span>
-<a name="line-235"></a>
-<a name="line-236"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ACTIVE_VARYINGS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C81</span>
-<a name="line-237"></a>
-<a name="line-238"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ACTIVE_VARYING_MAX_LENGTH_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C82</span>
-<a name="line-239"></a>
-<a name="line-240"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BACK_PRIMARY_COLOR_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C77</span>
-<a name="line-241"></a>
-<a name="line-242"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BACK_SECONDARY_COLOR_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C78</span>
-<a name="line-243"></a>
-<a name="line-244"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CLIP_DISTANCE_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C7A</span>
-<a name="line-245"></a>
-<a name="line-246"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GENERIC_ATTRIB_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C7D</span>
-<a name="line-247"></a>
-<a name="line-248"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INTERLEAVED_ATTRIBS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C8C</span>
-<a name="line-249"></a>
-<a name="line-250"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LAYER_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8DAA</span>
-<a name="line-251"></a>
-<a name="line-252"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C8A</span>
-<a name="line-253"></a>
-<a name="line-254"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C8B</span>
-<a name="line-255"></a>
-<a name="line-256"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C80</span>
-<a name="line-257"></a>
-<a name="line-258"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NEXT_BUFFER_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-comment'>-</span><span class='hs-num'>2</span>
-<a name="line-259"></a>
-<a name="line-260"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PRIMITIVES_GENERATED_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C87</span>
-<a name="line-261"></a>
-<a name="line-262"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PRIMITIVE_ID_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C7C</span>
-<a name="line-263"></a>
-<a name="line-264"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RASTERIZER_DISCARD_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C89</span>
-<a name="line-265"></a>
-<a name="line-266"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SEPARATE_ATTRIBS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C8D</span>
-<a name="line-267"></a>
-<a name="line-268"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SKIP_COMPONENTS1_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-comment'>-</span><span class='hs-num'>6</span>
-<a name="line-269"></a>
-<a name="line-270"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SKIP_COMPONENTS2_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-comment'>-</span><span class='hs-num'>5</span>
-<a name="line-271"></a>
-<a name="line-272"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SKIP_COMPONENTS3_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-comment'>-</span><span class='hs-num'>4</span>
-<a name="line-273"></a>
-<a name="line-274"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SKIP_COMPONENTS4_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-comment'>-</span><span class='hs-num'>3</span>
-<a name="line-275"></a>
-<a name="line-276"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_COORD_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C79</span>
-<a name="line-277"></a>
-<a name="line-278"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_ATTRIBS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C7E</span>
-<a name="line-279"></a>
-<a name="line-280"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_BUFFER_BINDING_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C8F</span>
-<a name="line-281"></a>
-<a name="line-282"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_BUFFER_MODE_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C7F</span>
-<a name="line-283"></a>
-<a name="line-284"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_BUFFER_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C8E</span>
-<a name="line-285"></a>
-<a name="line-286"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_BUFFER_SIZE_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C85</span>
-<a name="line-287"></a>
-<a name="line-288"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_BUFFER_START_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C84</span>
-<a name="line-289"></a>
-<a name="line-290"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C88</span>
-<a name="line-291"></a>
-<a name="line-292"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_RECORD_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C86</span>
-<a name="line-293"></a>
-<a name="line-294"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_VARYINGS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C83</span>
-<a name="line-295"></a>
-<a name="line-296"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VERTEX_ID_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C7B</span>
+<a name="line-228"></a>
+<a name="line-229"></a><a name="glTransformFeedbackVaryingsNV"></a><span class='hs-definition'>glTransformFeedbackVaryingsNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-230"></a><span class='hs-definition'>glTransformFeedbackVaryingsNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintsizeiPtrintenumIOV</span> <span class='hs-varid'>glTransformFeedbackVaryingsNVFunPtr</span>
+<a name="line-231"></a>
+<a name="line-232"></a><a name="glTransformFeedbackVaryingsNVFunPtr"></a><span class='hs-definition'>glTransformFeedbackVaryingsNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-233"></a><span class='hs-definition'>glTransformFeedbackVaryingsNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTransformFeedbackVaryingsNV"</span><span class='hs-layout'>)</span>
+<a name="line-234"></a>
+<a name="line-235"></a><span class='hs-comment'>{-# NOINLINE glTransformFeedbackVaryingsNVFunPtr #-}</span>
+<a name="line-236"></a>
+<a name="line-237"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ACTIVE_VARYINGS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C81</span>
+<a name="line-238"></a>
+<a name="line-239"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ACTIVE_VARYING_MAX_LENGTH_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C82</span>
+<a name="line-240"></a>
+<a name="line-241"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BACK_PRIMARY_COLOR_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C77</span>
+<a name="line-242"></a>
+<a name="line-243"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BACK_SECONDARY_COLOR_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C78</span>
+<a name="line-244"></a>
+<a name="line-245"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CLIP_DISTANCE_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C7A</span>
+<a name="line-246"></a>
+<a name="line-247"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GENERIC_ATTRIB_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C7D</span>
+<a name="line-248"></a>
+<a name="line-249"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INTERLEAVED_ATTRIBS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C8C</span>
+<a name="line-250"></a>
+<a name="line-251"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LAYER_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8DAA</span>
+<a name="line-252"></a>
+<a name="line-253"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C8A</span>
+<a name="line-254"></a>
+<a name="line-255"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C8B</span>
+<a name="line-256"></a>
+<a name="line-257"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C80</span>
+<a name="line-258"></a>
+<a name="line-259"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NEXT_BUFFER_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-comment'>-</span><span class='hs-num'>2</span>
+<a name="line-260"></a>
+<a name="line-261"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PRIMITIVES_GENERATED_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C87</span>
+<a name="line-262"></a>
+<a name="line-263"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PRIMITIVE_ID_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C7C</span>
+<a name="line-264"></a>
+<a name="line-265"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RASTERIZER_DISCARD_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C89</span>
+<a name="line-266"></a>
+<a name="line-267"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SEPARATE_ATTRIBS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C8D</span>
+<a name="line-268"></a>
+<a name="line-269"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SKIP_COMPONENTS1_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-comment'>-</span><span class='hs-num'>6</span>
+<a name="line-270"></a>
+<a name="line-271"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SKIP_COMPONENTS2_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-comment'>-</span><span class='hs-num'>5</span>
+<a name="line-272"></a>
+<a name="line-273"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SKIP_COMPONENTS3_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-comment'>-</span><span class='hs-num'>4</span>
+<a name="line-274"></a>
+<a name="line-275"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SKIP_COMPONENTS4_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-comment'>-</span><span class='hs-num'>3</span>
+<a name="line-276"></a>
+<a name="line-277"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_COORD_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C79</span>
+<a name="line-278"></a>
+<a name="line-279"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_ATTRIBS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C7E</span>
+<a name="line-280"></a>
+<a name="line-281"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_BUFFER_BINDING_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C8F</span>
+<a name="line-282"></a>
+<a name="line-283"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_BUFFER_MODE_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C7F</span>
+<a name="line-284"></a>
+<a name="line-285"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_BUFFER_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C8E</span>
+<a name="line-286"></a>
+<a name="line-287"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_BUFFER_SIZE_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C85</span>
+<a name="line-288"></a>
+<a name="line-289"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_BUFFER_START_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C84</span>
+<a name="line-290"></a>
+<a name="line-291"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C88</span>
+<a name="line-292"></a>
+<a name="line-293"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_RECORD_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C86</span>
+<a name="line-294"></a>
+<a name="line-295"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_VARYINGS_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C83</span>
+<a name="line-296"></a>
+<a name="line-297"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VERTEX_ID_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8C7B</span>
 </pre></body>
 </html>

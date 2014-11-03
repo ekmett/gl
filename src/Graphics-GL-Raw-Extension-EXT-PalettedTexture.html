@@ -39,101 +39,102 @@
 <a name="line-30"></a>
 <a name="line-31"></a><a name="gl_EXT_paletted_texture"></a><span class='hs-definition'>gl_EXT_paletted_texture</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-32"></a><span class='hs-definition'>gl_EXT_paletted_texture</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_EXT_paletted_texture"</span> <span class='hs-varid'>extensions</span>
-<a name="line-33"></a>
-<a name="line-34"></a><span class='hs-comment'>-- | Usage: @'glColorTableEXT' target internalFormat width format type table@</span>
-<a name="line-35"></a><span class='hs-comment'>--</span>
-<a name="line-36"></a><span class='hs-comment'>-- The parameter @target@ is a @ColorTableTarget@.</span>
-<a name="line-37"></a><span class='hs-comment'>--</span>
-<a name="line-38"></a><span class='hs-comment'>-- The parameter @internalFormat@ is a @PixelInternalFormat@.</span>
-<a name="line-39"></a><span class='hs-comment'>--</span>
-<a name="line-40"></a><span class='hs-comment'>-- The parameter @format@ is a @PixelFormat@, one of: 'GL_ABGR_EXT', 'GL_ALPHA', 'GL_BLUE', 'GL_CMYKA_EXT', 'GL_CMYK_EXT', 'GL_COLOR_INDEX', 'GL_DEPTH_COMPONENT', 'GL_GREEN', 'GL_LUMINANCE', 'GL_LUMINANCE_ALPHA', 'GL_RED', 'GL_RED_EXT', 'GL_RGB', 'GL_RGBA', 'GL_STENCIL_INDEX', 'GL_UNSIGNED_INT', 'GL_UNSIGNED_SHORT', 'GL_YCRCB_422_SGIX', 'GL_YCRCB_444_SGIX'.</span>
-<a name="line-41"></a><span class='hs-comment'>--</span>
-<a name="line-42"></a><span class='hs-comment'>-- The parameter @type@ is a @PixelType@, one of: 'GL_BITMAP', 'GL_BYTE', 'GL_FLOAT', 'GL_INT', 'GL_SHORT', 'GL_UNSIGNED_BYTE', 'GL_UNSIGNED_BYTE_3_3_2', 'GL_UNSIGNED_BYTE_3_3_2_EXT', 'GL_UNSIGNED_INT', 'GL_UNSIGNED_INT_10_10_10_2', 'GL_UNSIGNED_INT_10_10_10_2_EXT', 'GL_UNSIGNED_INT_8_8_8_8', 'GL_UNSIGNED_INT_8_8_8_8_EXT', 'GL_UNSIGNED_SHORT', 'GL_UNSIGNED_SHORT_4_4_4_4', 'GL_UNSIGNED_SHORT_4_4_4_4_EXT', 'GL_UNSIGNED_SHORT_5_5_5_1', 'GL_UNSIGNED_SHORT_5_5_5_1_EXT'.</span>
-<a name="line-43"></a><span class='hs-comment'>--</span>
-<a name="line-44"></a><span class='hs-comment'>-- The length of @table@ should be @COMPSIZE(format,type,width)@.</span>
-<a name="line-45"></a><span class='hs-comment'>--</span>
-<a name="line-46"></a><span class='hs-comment'>-- This command is an alias for 'glColorTable'.</span>
-<a name="line-47"></a>
+<a name="line-33"></a><span class='hs-comment'>{-# NOINLINE gl_EXT_paletted_texture #-}</span>
+<a name="line-34"></a>
+<a name="line-35"></a><span class='hs-comment'>-- | Usage: @'glColorTableEXT' target internalFormat width format type table@</span>
+<a name="line-36"></a><span class='hs-comment'>--</span>
+<a name="line-37"></a><span class='hs-comment'>-- The parameter @target@ is a @ColorTableTarget@.</span>
+<a name="line-38"></a><span class='hs-comment'>--</span>
+<a name="line-39"></a><span class='hs-comment'>-- The parameter @internalFormat@ is a @PixelInternalFormat@.</span>
+<a name="line-40"></a><span class='hs-comment'>--</span>
+<a name="line-41"></a><span class='hs-comment'>-- The parameter @format@ is a @PixelFormat@, one of: Graphics.GL.Raw.Extension.EXT.Abgr.GL_ABGR_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_ALPHA', 'Graphics.GL.Raw.Internal.Shared.GL_BLUE', Graphics.GL.Raw.Extension.EXT.Cmyka.GL_CMYKA_EXT', Graphics.GL.Raw.Extension.EXT.Cmyka.GL_CMYK_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_COLOR_INDEX', 'Graphics.GL.Raw.Internal.Shared.GL_DEPTH_COMPONENT', 'Graphics.GL.Raw.Internal.Shared.GL_GREEN', 'Graphics.GL.Raw.Internal.Shared.GL_LUMINANCE', 'Graphics.GL.Raw.Internal.Shared.GL_LUMINANCE_ALPHA', 'Graphics.GL.Raw.Internal.Shared.GL_RED', Graphics.GL.Raw.Extension.EXT.TextureRg.GL_RED_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_RGB', 'Graphics.GL.Raw.Internal.Shared.GL_RGBA', 'Graphics.GL.Raw.Internal.Shared.GL_STENCIL_INDEX', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_INT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_SHORT', Graphics.GL.Raw.Extension.SGIX.Ycrcb.GL_YCRCB_422_SGIX', Graphics.GL.Raw.Extension.SGIX.Ycrcb.GL_YCRCB_444_SGIX'.</span>
+<a name="line-42"></a><span class='hs-comment'>--</span>
+<a name="line-43"></a><span class='hs-comment'>-- The parameter @type@ is a @PixelType@, one of: 'Graphics.GL.Raw.Internal.Shared.GL_BITMAP', 'Graphics.GL.Raw.Internal.Shared.GL_BYTE', 'Graphics.GL.Raw.Internal.Shared.GL_FLOAT', 'Graphics.GL.Raw.Internal.Shared.GL_INT', 'Graphics.GL.Raw.Internal.Shared.GL_SHORT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_BYTE', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_BYTE_3_3_2', Graphics.GL.Raw.Extension.EXT.PackedPixels.GL_UNSIGNED_BYTE_3_3_2_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_INT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_INT_10_10_10_2', Graphics.GL.Raw.Extension.EXT.PackedPixels.GL_UNSIGNED_INT_10_10_10_2_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_INT_8_8_8_8', Graphics.GL.Raw.Extension.EXT.PackedPixels.GL_UNSIGNED_INT_8_8_8_8_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_SHORT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_SHORT_4_4_4_4', Graphics.GL.Raw.Extension.EXT.PackedPixels.GL_UNSIGNED_SHORT_4_4_4_4_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_SHORT_5_5_5_1', Graphics.GL.Raw.Extension.EXT.PackedPixels.GL_UNSIGNED_SHORT_5_5_5_1_EXT'.</span>
+<a name="line-44"></a><span class='hs-comment'>--</span>
+<a name="line-45"></a><span class='hs-comment'>-- The length of @table@ should be @COMPSIZE(format,type,width)@.</span>
+<a name="line-46"></a><span class='hs-comment'>--</span>
+<a name="line-47"></a><span class='hs-comment'>-- This command is an alias for Graphics.GL.Raw.Extension.ARB.Imaging.glColorTable'.</span>
 <a name="line-48"></a>
-<a name="line-49"></a><a name="glColorTableEXT"></a><span class='hs-definition'>glColorTableEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-50"></a><span class='hs-definition'>glColorTableEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumsizeienumenumPtrVIOV</span> <span class='hs-varid'>glColorTableEXTFunPtr</span>
-<a name="line-51"></a>
-<a name="line-52"></a><a name="glColorTableEXTFunPtr"></a><span class='hs-definition'>glColorTableEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-53"></a><span class='hs-definition'>glColorTableEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glColorTableEXT"</span><span class='hs-layout'>)</span>
-<a name="line-54"></a>
-<a name="line-55"></a><span class='hs-comment'>{-# NOINLINE glColorTableEXTFunPtr #-}</span>
-<a name="line-56"></a>
-<a name="line-57"></a><span class='hs-comment'>-- | Usage: @'glGetColorTableEXT' target format type data@</span>
-<a name="line-58"></a><span class='hs-comment'>--</span>
-<a name="line-59"></a><span class='hs-comment'>-- The parameter @target@ is a @ColorTableTarget@.</span>
-<a name="line-60"></a><span class='hs-comment'>--</span>
-<a name="line-61"></a><span class='hs-comment'>-- The parameter @format@ is a @PixelFormat@, one of: 'GL_ABGR_EXT', 'GL_ALPHA', 'GL_BLUE', 'GL_CMYKA_EXT', 'GL_CMYK_EXT', 'GL_COLOR_INDEX', 'GL_DEPTH_COMPONENT', 'GL_GREEN', 'GL_LUMINANCE', 'GL_LUMINANCE_ALPHA', 'GL_RED', 'GL_RED_EXT', 'GL_RGB', 'GL_RGBA', 'GL_STENCIL_INDEX', 'GL_UNSIGNED_INT', 'GL_UNSIGNED_SHORT', 'GL_YCRCB_422_SGIX', 'GL_YCRCB_444_SGIX'.</span>
-<a name="line-62"></a><span class='hs-comment'>--</span>
-<a name="line-63"></a><span class='hs-comment'>-- The parameter @type@ is a @PixelType@, one of: 'GL_BITMAP', 'GL_BYTE', 'GL_FLOAT', 'GL_INT', 'GL_SHORT', 'GL_UNSIGNED_BYTE', 'GL_UNSIGNED_BYTE_3_3_2', 'GL_UNSIGNED_BYTE_3_3_2_EXT', 'GL_UNSIGNED_INT', 'GL_UNSIGNED_INT_10_10_10_2', 'GL_UNSIGNED_INT_10_10_10_2_EXT', 'GL_UNSIGNED_INT_8_8_8_8', 'GL_UNSIGNED_INT_8_8_8_8_EXT', 'GL_UNSIGNED_SHORT', 'GL_UNSIGNED_SHORT_4_4_4_4', 'GL_UNSIGNED_SHORT_4_4_4_4_EXT', 'GL_UNSIGNED_SHORT_5_5_5_1', 'GL_UNSIGNED_SHORT_5_5_5_1_EXT'.</span>
-<a name="line-64"></a><span class='hs-comment'>--</span>
-<a name="line-65"></a><span class='hs-comment'>-- The length of @data@ should be @COMPSIZE(target,format,type)@.</span>
-<a name="line-66"></a><span class='hs-comment'>--</span>
-<a name="line-67"></a><span class='hs-comment'>-- This command is an alias for 'glGetColorTable'.</span>
-<a name="line-68"></a>
+<a name="line-49"></a>
+<a name="line-50"></a><a name="glColorTableEXT"></a><span class='hs-definition'>glColorTableEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-51"></a><span class='hs-definition'>glColorTableEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumsizeienumenumPtrVIOV</span> <span class='hs-varid'>glColorTableEXTFunPtr</span>
+<a name="line-52"></a>
+<a name="line-53"></a><a name="glColorTableEXTFunPtr"></a><span class='hs-definition'>glColorTableEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-54"></a><span class='hs-definition'>glColorTableEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glColorTableEXT"</span><span class='hs-layout'>)</span>
+<a name="line-55"></a>
+<a name="line-56"></a><span class='hs-comment'>{-# NOINLINE glColorTableEXTFunPtr #-}</span>
+<a name="line-57"></a>
+<a name="line-58"></a><span class='hs-comment'>-- | Usage: @'glGetColorTableEXT' target format type data@</span>
+<a name="line-59"></a><span class='hs-comment'>--</span>
+<a name="line-60"></a><span class='hs-comment'>-- The parameter @target@ is a @ColorTableTarget@.</span>
+<a name="line-61"></a><span class='hs-comment'>--</span>
+<a name="line-62"></a><span class='hs-comment'>-- The parameter @format@ is a @PixelFormat@, one of: Graphics.GL.Raw.Extension.EXT.Abgr.GL_ABGR_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_ALPHA', 'Graphics.GL.Raw.Internal.Shared.GL_BLUE', Graphics.GL.Raw.Extension.EXT.Cmyka.GL_CMYKA_EXT', Graphics.GL.Raw.Extension.EXT.Cmyka.GL_CMYK_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_COLOR_INDEX', 'Graphics.GL.Raw.Internal.Shared.GL_DEPTH_COMPONENT', 'Graphics.GL.Raw.Internal.Shared.GL_GREEN', 'Graphics.GL.Raw.Internal.Shared.GL_LUMINANCE', 'Graphics.GL.Raw.Internal.Shared.GL_LUMINANCE_ALPHA', 'Graphics.GL.Raw.Internal.Shared.GL_RED', Graphics.GL.Raw.Extension.EXT.TextureRg.GL_RED_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_RGB', 'Graphics.GL.Raw.Internal.Shared.GL_RGBA', 'Graphics.GL.Raw.Internal.Shared.GL_STENCIL_INDEX', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_INT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_SHORT', Graphics.GL.Raw.Extension.SGIX.Ycrcb.GL_YCRCB_422_SGIX', Graphics.GL.Raw.Extension.SGIX.Ycrcb.GL_YCRCB_444_SGIX'.</span>
+<a name="line-63"></a><span class='hs-comment'>--</span>
+<a name="line-64"></a><span class='hs-comment'>-- The parameter @type@ is a @PixelType@, one of: 'Graphics.GL.Raw.Internal.Shared.GL_BITMAP', 'Graphics.GL.Raw.Internal.Shared.GL_BYTE', 'Graphics.GL.Raw.Internal.Shared.GL_FLOAT', 'Graphics.GL.Raw.Internal.Shared.GL_INT', 'Graphics.GL.Raw.Internal.Shared.GL_SHORT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_BYTE', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_BYTE_3_3_2', Graphics.GL.Raw.Extension.EXT.PackedPixels.GL_UNSIGNED_BYTE_3_3_2_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_INT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_INT_10_10_10_2', Graphics.GL.Raw.Extension.EXT.PackedPixels.GL_UNSIGNED_INT_10_10_10_2_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_INT_8_8_8_8', Graphics.GL.Raw.Extension.EXT.PackedPixels.GL_UNSIGNED_INT_8_8_8_8_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_SHORT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_SHORT_4_4_4_4', Graphics.GL.Raw.Extension.EXT.PackedPixels.GL_UNSIGNED_SHORT_4_4_4_4_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_UNSIGNED_SHORT_5_5_5_1', Graphics.GL.Raw.Extension.EXT.PackedPixels.GL_UNSIGNED_SHORT_5_5_5_1_EXT'.</span>
+<a name="line-65"></a><span class='hs-comment'>--</span>
+<a name="line-66"></a><span class='hs-comment'>-- The length of @data@ should be @COMPSIZE(target,format,type)@.</span>
+<a name="line-67"></a><span class='hs-comment'>--</span>
+<a name="line-68"></a><span class='hs-comment'>-- This command is an alias for Graphics.GL.Raw.Extension.ARB.Imaging.glGetColorTable'.</span>
 <a name="line-69"></a>
-<a name="line-70"></a><a name="glGetColorTableEXT"></a><span class='hs-definition'>glGetColorTableEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-71"></a><span class='hs-definition'>glGetColorTableEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumenumPtrVIOV</span> <span class='hs-varid'>glGetColorTableEXTFunPtr</span>
-<a name="line-72"></a>
-<a name="line-73"></a><a name="glGetColorTableEXTFunPtr"></a><span class='hs-definition'>glGetColorTableEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-74"></a><span class='hs-definition'>glGetColorTableEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetColorTableEXT"</span><span class='hs-layout'>)</span>
-<a name="line-75"></a>
-<a name="line-76"></a><span class='hs-comment'>{-# NOINLINE glGetColorTableEXTFunPtr #-}</span>
-<a name="line-77"></a>
-<a name="line-78"></a><span class='hs-comment'>-- | Usage: @'glGetColorTableParameterfvEXT' target pname params@</span>
-<a name="line-79"></a><span class='hs-comment'>--</span>
-<a name="line-80"></a><span class='hs-comment'>-- The parameter @target@ is a @ColorTableTarget@.</span>
-<a name="line-81"></a><span class='hs-comment'>--</span>
-<a name="line-82"></a><span class='hs-comment'>-- The parameter @pname@ is a @GetColorTableParameterPName@.</span>
-<a name="line-83"></a><span class='hs-comment'>--</span>
-<a name="line-84"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
-<a name="line-85"></a><span class='hs-comment'>--</span>
-<a name="line-86"></a><span class='hs-comment'>-- This command is an alias for 'glGetColorTableParameterfv'.</span>
-<a name="line-87"></a>
+<a name="line-70"></a>
+<a name="line-71"></a><a name="glGetColorTableEXT"></a><span class='hs-definition'>glGetColorTableEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-72"></a><span class='hs-definition'>glGetColorTableEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumenumPtrVIOV</span> <span class='hs-varid'>glGetColorTableEXTFunPtr</span>
+<a name="line-73"></a>
+<a name="line-74"></a><a name="glGetColorTableEXTFunPtr"></a><span class='hs-definition'>glGetColorTableEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-75"></a><span class='hs-definition'>glGetColorTableEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetColorTableEXT"</span><span class='hs-layout'>)</span>
+<a name="line-76"></a>
+<a name="line-77"></a><span class='hs-comment'>{-# NOINLINE glGetColorTableEXTFunPtr #-}</span>
+<a name="line-78"></a>
+<a name="line-79"></a><span class='hs-comment'>-- | Usage: @'glGetColorTableParameterfvEXT' target pname params@</span>
+<a name="line-80"></a><span class='hs-comment'>--</span>
+<a name="line-81"></a><span class='hs-comment'>-- The parameter @target@ is a @ColorTableTarget@.</span>
+<a name="line-82"></a><span class='hs-comment'>--</span>
+<a name="line-83"></a><span class='hs-comment'>-- The parameter @pname@ is a @GetColorTableParameterPName@.</span>
+<a name="line-84"></a><span class='hs-comment'>--</span>
+<a name="line-85"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-86"></a><span class='hs-comment'>--</span>
+<a name="line-87"></a><span class='hs-comment'>-- This command is an alias for Graphics.GL.Raw.Extension.ARB.Imaging.glGetColorTableParameterfv'.</span>
 <a name="line-88"></a>
-<a name="line-89"></a><a name="glGetColorTableParameterfvEXT"></a><span class='hs-definition'>glGetColorTableParameterfvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-90"></a><span class='hs-definition'>glGetColorTableParameterfvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumPtrfloatIOV</span> <span class='hs-varid'>glGetColorTableParameterfvEXTFunPtr</span>
-<a name="line-91"></a>
-<a name="line-92"></a><a name="glGetColorTableParameterfvEXTFunPtr"></a><span class='hs-definition'>glGetColorTableParameterfvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-93"></a><span class='hs-definition'>glGetColorTableParameterfvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetColorTableParameterfvEXT"</span><span class='hs-layout'>)</span>
-<a name="line-94"></a>
-<a name="line-95"></a><span class='hs-comment'>{-# NOINLINE glGetColorTableParameterfvEXTFunPtr #-}</span>
-<a name="line-96"></a>
-<a name="line-97"></a><span class='hs-comment'>-- | Usage: @'glGetColorTableParameterivEXT' target pname params@</span>
-<a name="line-98"></a><span class='hs-comment'>--</span>
-<a name="line-99"></a><span class='hs-comment'>-- The parameter @target@ is a @ColorTableTarget@.</span>
-<a name="line-100"></a><span class='hs-comment'>--</span>
-<a name="line-101"></a><span class='hs-comment'>-- The parameter @pname@ is a @GetColorTableParameterPName@.</span>
-<a name="line-102"></a><span class='hs-comment'>--</span>
-<a name="line-103"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
-<a name="line-104"></a><span class='hs-comment'>--</span>
-<a name="line-105"></a><span class='hs-comment'>-- This command is an alias for 'glGetColorTableParameteriv'.</span>
-<a name="line-106"></a>
+<a name="line-89"></a>
+<a name="line-90"></a><a name="glGetColorTableParameterfvEXT"></a><span class='hs-definition'>glGetColorTableParameterfvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-91"></a><span class='hs-definition'>glGetColorTableParameterfvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumPtrfloatIOV</span> <span class='hs-varid'>glGetColorTableParameterfvEXTFunPtr</span>
+<a name="line-92"></a>
+<a name="line-93"></a><a name="glGetColorTableParameterfvEXTFunPtr"></a><span class='hs-definition'>glGetColorTableParameterfvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-94"></a><span class='hs-definition'>glGetColorTableParameterfvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetColorTableParameterfvEXT"</span><span class='hs-layout'>)</span>
+<a name="line-95"></a>
+<a name="line-96"></a><span class='hs-comment'>{-# NOINLINE glGetColorTableParameterfvEXTFunPtr #-}</span>
+<a name="line-97"></a>
+<a name="line-98"></a><span class='hs-comment'>-- | Usage: @'glGetColorTableParameterivEXT' target pname params@</span>
+<a name="line-99"></a><span class='hs-comment'>--</span>
+<a name="line-100"></a><span class='hs-comment'>-- The parameter @target@ is a @ColorTableTarget@.</span>
+<a name="line-101"></a><span class='hs-comment'>--</span>
+<a name="line-102"></a><span class='hs-comment'>-- The parameter @pname@ is a @GetColorTableParameterPName@.</span>
+<a name="line-103"></a><span class='hs-comment'>--</span>
+<a name="line-104"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-105"></a><span class='hs-comment'>--</span>
+<a name="line-106"></a><span class='hs-comment'>-- This command is an alias for Graphics.GL.Raw.Extension.ARB.Imaging.glGetColorTableParameteriv'.</span>
 <a name="line-107"></a>
-<a name="line-108"></a><a name="glGetColorTableParameterivEXT"></a><span class='hs-definition'>glGetColorTableParameterivEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-109"></a><span class='hs-definition'>glGetColorTableParameterivEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumPtrintIOV</span> <span class='hs-varid'>glGetColorTableParameterivEXTFunPtr</span>
-<a name="line-110"></a>
-<a name="line-111"></a><a name="glGetColorTableParameterivEXTFunPtr"></a><span class='hs-definition'>glGetColorTableParameterivEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-112"></a><span class='hs-definition'>glGetColorTableParameterivEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetColorTableParameterivEXT"</span><span class='hs-layout'>)</span>
-<a name="line-113"></a>
-<a name="line-114"></a><span class='hs-comment'>{-# NOINLINE glGetColorTableParameterivEXTFunPtr #-}</span>
-<a name="line-115"></a>
-<a name="line-116"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_INDEX12_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80E6</span>
-<a name="line-117"></a>
-<a name="line-118"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_INDEX16_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80E7</span>
-<a name="line-119"></a>
-<a name="line-120"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_INDEX1_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80E2</span>
-<a name="line-121"></a>
-<a name="line-122"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_INDEX2_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80E3</span>
-<a name="line-123"></a>
-<a name="line-124"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_INDEX4_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80E4</span>
-<a name="line-125"></a>
-<a name="line-126"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_INDEX8_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80E5</span>
-<a name="line-127"></a>
-<a name="line-128"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_INDEX_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80ED</span>
+<a name="line-108"></a>
+<a name="line-109"></a><a name="glGetColorTableParameterivEXT"></a><span class='hs-definition'>glGetColorTableParameterivEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-110"></a><span class='hs-definition'>glGetColorTableParameterivEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumPtrintIOV</span> <span class='hs-varid'>glGetColorTableParameterivEXTFunPtr</span>
+<a name="line-111"></a>
+<a name="line-112"></a><a name="glGetColorTableParameterivEXTFunPtr"></a><span class='hs-definition'>glGetColorTableParameterivEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-113"></a><span class='hs-definition'>glGetColorTableParameterivEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetColorTableParameterivEXT"</span><span class='hs-layout'>)</span>
+<a name="line-114"></a>
+<a name="line-115"></a><span class='hs-comment'>{-# NOINLINE glGetColorTableParameterivEXTFunPtr #-}</span>
+<a name="line-116"></a>
+<a name="line-117"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_INDEX12_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80E6</span>
+<a name="line-118"></a>
+<a name="line-119"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_INDEX16_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80E7</span>
+<a name="line-120"></a>
+<a name="line-121"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_INDEX1_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80E2</span>
+<a name="line-122"></a>
+<a name="line-123"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_INDEX2_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80E3</span>
+<a name="line-124"></a>
+<a name="line-125"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_INDEX4_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80E4</span>
+<a name="line-126"></a>
+<a name="line-127"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_INDEX8_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80E5</span>
+<a name="line-128"></a>
+<a name="line-129"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_INDEX_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80ED</span>
 </pre></body>
 </html>

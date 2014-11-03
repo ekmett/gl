@@ -46,69 +46,70 @@
 <a name="line-37"></a>
 <a name="line-38"></a><a name="gl_SGIS_multisample"></a><span class='hs-definition'>gl_SGIS_multisample</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-39"></a><span class='hs-definition'>gl_SGIS_multisample</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_SGIS_multisample"</span> <span class='hs-varid'>extensions</span>
-<a name="line-40"></a>
-<a name="line-41"></a><span class='hs-comment'>-- | Usage: @'glSampleMaskSGIS' value invert@</span>
-<a name="line-42"></a><span class='hs-comment'>--</span>
-<a name="line-43"></a><span class='hs-comment'>-- The parameter @value@ is a @ClampedFloat32@.</span>
-<a name="line-44"></a><span class='hs-comment'>--</span>
-<a name="line-45"></a><span class='hs-comment'>-- The parameter @invert@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'.</span>
-<a name="line-46"></a><span class='hs-comment'>--</span>
-<a name="line-47"></a><span class='hs-comment'>-- This command is an alias for 'glSampleMaskEXT'.</span>
-<a name="line-48"></a>
+<a name="line-40"></a><span class='hs-comment'>{-# NOINLINE gl_SGIS_multisample #-}</span>
+<a name="line-41"></a>
+<a name="line-42"></a><span class='hs-comment'>-- | Usage: @'glSampleMaskSGIS' value invert@</span>
+<a name="line-43"></a><span class='hs-comment'>--</span>
+<a name="line-44"></a><span class='hs-comment'>-- The parameter @value@ is a @ClampedFloat32@.</span>
+<a name="line-45"></a><span class='hs-comment'>--</span>
+<a name="line-46"></a><span class='hs-comment'>-- The parameter @invert@ is a @Boolean@, one of: 'Graphics.GL.Raw.Internal.Shared.GL_FALSE', 'Graphics.GL.Raw.Internal.Shared.GL_TRUE'.</span>
+<a name="line-47"></a><span class='hs-comment'>--</span>
+<a name="line-48"></a><span class='hs-comment'>-- This command is an alias for Graphics.GL.Raw.Extension.EXT.Multisample.glSampleMaskEXT'.</span>
 <a name="line-49"></a>
-<a name="line-50"></a><a name="glSampleMaskSGIS"></a><span class='hs-definition'>glSampleMaskSGIS</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLclampf</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-51"></a><span class='hs-definition'>glSampleMaskSGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>fficlampfbooleanIOV</span> <span class='hs-varid'>glSampleMaskSGISFunPtr</span>
-<a name="line-52"></a>
-<a name="line-53"></a><a name="glSampleMaskSGISFunPtr"></a><span class='hs-definition'>glSampleMaskSGISFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLclampf</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-54"></a><span class='hs-definition'>glSampleMaskSGISFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSampleMaskSGIS"</span><span class='hs-layout'>)</span>
-<a name="line-55"></a>
-<a name="line-56"></a><span class='hs-comment'>{-# NOINLINE glSampleMaskSGISFunPtr #-}</span>
-<a name="line-57"></a>
-<a name="line-58"></a><span class='hs-comment'>-- | Usage: @'glSamplePatternSGIS' pattern@</span>
-<a name="line-59"></a><span class='hs-comment'>--</span>
-<a name="line-60"></a><span class='hs-comment'>-- The parameter @pattern@ is a @SamplePatternSGIS@, one of: 'GL_1PASS_EXT', 'GL_1PASS_SGIS', 'GL_2PASS_0_EXT', 'GL_2PASS_0_SGIS', 'GL_2PASS_1_EXT', 'GL_2PASS_1_SGIS', 'GL_4PASS_0_EXT', 'GL_4PASS_0_SGIS', 'GL_4PASS_1_EXT', 'GL_4PASS_1_SGIS', 'GL_4PASS_2_EXT', 'GL_4PASS_2_SGIS', 'GL_4PASS_3_EXT', 'GL_4PASS_3_SGIS'.</span>
-<a name="line-61"></a><span class='hs-comment'>--</span>
-<a name="line-62"></a><span class='hs-comment'>-- This command is an alias for 'glSamplePatternEXT'.</span>
-<a name="line-63"></a>
+<a name="line-50"></a>
+<a name="line-51"></a><a name="glSampleMaskSGIS"></a><span class='hs-definition'>glSampleMaskSGIS</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLclampf</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-52"></a><span class='hs-definition'>glSampleMaskSGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>fficlampfbooleanIOV</span> <span class='hs-varid'>glSampleMaskSGISFunPtr</span>
+<a name="line-53"></a>
+<a name="line-54"></a><a name="glSampleMaskSGISFunPtr"></a><span class='hs-definition'>glSampleMaskSGISFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLclampf</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-55"></a><span class='hs-definition'>glSampleMaskSGISFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSampleMaskSGIS"</span><span class='hs-layout'>)</span>
+<a name="line-56"></a>
+<a name="line-57"></a><span class='hs-comment'>{-# NOINLINE glSampleMaskSGISFunPtr #-}</span>
+<a name="line-58"></a>
+<a name="line-59"></a><span class='hs-comment'>-- | Usage: @'glSamplePatternSGIS' pattern@</span>
+<a name="line-60"></a><span class='hs-comment'>--</span>
+<a name="line-61"></a><span class='hs-comment'>-- The parameter @pattern@ is a @SamplePatternSGIS@, one of: Graphics.GL.Raw.Extension.EXT.Multisample.GL_1PASS_EXT', Graphics.GL.Raw.Extension.SGIS.Multisample.GL_1PASS_SGIS', Graphics.GL.Raw.Extension.EXT.Multisample.GL_2PASS_0_EXT', Graphics.GL.Raw.Extension.SGIS.Multisample.GL_2PASS_0_SGIS', Graphics.GL.Raw.Extension.EXT.Multisample.GL_2PASS_1_EXT', Graphics.GL.Raw.Extension.SGIS.Multisample.GL_2PASS_1_SGIS', Graphics.GL.Raw.Extension.EXT.Multisample.GL_4PASS_0_EXT', Graphics.GL.Raw.Extension.SGIS.Multisample.GL_4PASS_0_SGIS', Graphics.GL.Raw.Extension.EXT.Multisample.GL_4PASS_1_EXT', Graphics.GL.Raw.Extension.SGIS.Multisample.GL_4PASS_1_SGIS', Graphics.GL.Raw.Extension.EXT.Multisample.GL_4PASS_2_EXT', Graphics.GL.Raw.Extension.SGIS.Multisample.GL_4PASS_2_SGIS', Graphics.GL.Raw.Extension.EXT.Multisample.GL_4PASS_3_EXT', Graphics.GL.Raw.Extension.SGIS.Multisample.GL_4PASS_3_SGIS'.</span>
+<a name="line-62"></a><span class='hs-comment'>--</span>
+<a name="line-63"></a><span class='hs-comment'>-- This command is an alias for Graphics.GL.Raw.Extension.EXT.Multisample.glSamplePatternEXT'.</span>
 <a name="line-64"></a>
-<a name="line-65"></a><a name="glSamplePatternSGIS"></a><span class='hs-definition'>glSamplePatternSGIS</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-66"></a><span class='hs-definition'>glSamplePatternSGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOV</span> <span class='hs-varid'>glSamplePatternSGISFunPtr</span>
-<a name="line-67"></a>
-<a name="line-68"></a><a name="glSamplePatternSGISFunPtr"></a><span class='hs-definition'>glSamplePatternSGISFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-69"></a><span class='hs-definition'>glSamplePatternSGISFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSamplePatternSGIS"</span><span class='hs-layout'>)</span>
-<a name="line-70"></a>
-<a name="line-71"></a><span class='hs-comment'>{-# NOINLINE glSamplePatternSGISFunPtr #-}</span>
-<a name="line-72"></a>
-<a name="line-73"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_1PASS_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A1</span>
-<a name="line-74"></a>
-<a name="line-75"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_2PASS_0_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A2</span>
-<a name="line-76"></a>
-<a name="line-77"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_2PASS_1_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A3</span>
-<a name="line-78"></a>
-<a name="line-79"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_4PASS_0_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A4</span>
-<a name="line-80"></a>
-<a name="line-81"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_4PASS_1_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A5</span>
-<a name="line-82"></a>
-<a name="line-83"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_4PASS_2_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A6</span>
-<a name="line-84"></a>
-<a name="line-85"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_4PASS_3_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A7</span>
-<a name="line-86"></a>
-<a name="line-87"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MULTISAMPLE_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x809D</span>
-<a name="line-88"></a>
-<a name="line-89"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLES_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A9</span>
-<a name="line-90"></a>
-<a name="line-91"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_ALPHA_TO_MASK_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x809E</span>
-<a name="line-92"></a>
-<a name="line-93"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_ALPHA_TO_ONE_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x809F</span>
-<a name="line-94"></a>
-<a name="line-95"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_BUFFERS_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A8</span>
-<a name="line-96"></a>
-<a name="line-97"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_MASK_INVERT_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80AB</span>
-<a name="line-98"></a>
-<a name="line-99"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_MASK_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A0</span>
-<a name="line-100"></a>
-<a name="line-101"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_MASK_VALUE_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80AA</span>
-<a name="line-102"></a>
-<a name="line-103"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_PATTERN_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80AC</span>
+<a name="line-65"></a>
+<a name="line-66"></a><a name="glSamplePatternSGIS"></a><span class='hs-definition'>glSamplePatternSGIS</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-67"></a><span class='hs-definition'>glSamplePatternSGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOV</span> <span class='hs-varid'>glSamplePatternSGISFunPtr</span>
+<a name="line-68"></a>
+<a name="line-69"></a><a name="glSamplePatternSGISFunPtr"></a><span class='hs-definition'>glSamplePatternSGISFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-70"></a><span class='hs-definition'>glSamplePatternSGISFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSamplePatternSGIS"</span><span class='hs-layout'>)</span>
+<a name="line-71"></a>
+<a name="line-72"></a><span class='hs-comment'>{-# NOINLINE glSamplePatternSGISFunPtr #-}</span>
+<a name="line-73"></a>
+<a name="line-74"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_1PASS_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A1</span>
+<a name="line-75"></a>
+<a name="line-76"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_2PASS_0_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A2</span>
+<a name="line-77"></a>
+<a name="line-78"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_2PASS_1_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A3</span>
+<a name="line-79"></a>
+<a name="line-80"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_4PASS_0_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A4</span>
+<a name="line-81"></a>
+<a name="line-82"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_4PASS_1_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A5</span>
+<a name="line-83"></a>
+<a name="line-84"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_4PASS_2_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A6</span>
+<a name="line-85"></a>
+<a name="line-86"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_4PASS_3_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A7</span>
+<a name="line-87"></a>
+<a name="line-88"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MULTISAMPLE_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x809D</span>
+<a name="line-89"></a>
+<a name="line-90"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLES_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A9</span>
+<a name="line-91"></a>
+<a name="line-92"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_ALPHA_TO_MASK_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x809E</span>
+<a name="line-93"></a>
+<a name="line-94"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_ALPHA_TO_ONE_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x809F</span>
+<a name="line-95"></a>
+<a name="line-96"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_BUFFERS_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A8</span>
+<a name="line-97"></a>
+<a name="line-98"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_MASK_INVERT_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80AB</span>
+<a name="line-99"></a>
+<a name="line-100"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_MASK_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80A0</span>
+<a name="line-101"></a>
+<a name="line-102"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_MASK_VALUE_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80AA</span>
+<a name="line-103"></a>
+<a name="line-104"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLE_PATTERN_SGIS</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x80AC</span>
 </pre></body>
 </html>

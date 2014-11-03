@@ -30,20 +30,21 @@
 <a name="line-21"></a>
 <a name="line-22"></a><a name="gl_ANGLE_translated_shader_source"></a><span class='hs-definition'>gl_ANGLE_translated_shader_source</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-23"></a><span class='hs-definition'>gl_ANGLE_translated_shader_source</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ANGLE_translated_shader_source"</span> <span class='hs-varid'>extensions</span>
-<a name="line-24"></a>
-<a name="line-25"></a><span class='hs-comment'>-- | Usage: @'glGetTranslatedShaderSourceANGLE' shader bufsize length source@</span>
-<a name="line-26"></a><span class='hs-comment'>--</span>
-<a name="line-27"></a><span class='hs-comment'>-- The length of @length@ should be @1@.</span>
-<a name="line-28"></a>
+<a name="line-24"></a><span class='hs-comment'>{-# NOINLINE gl_ANGLE_translated_shader_source #-}</span>
+<a name="line-25"></a>
+<a name="line-26"></a><span class='hs-comment'>-- | Usage: @'glGetTranslatedShaderSourceANGLE' shader bufsize length source@</span>
+<a name="line-27"></a><span class='hs-comment'>--</span>
+<a name="line-28"></a><span class='hs-comment'>-- The length of @length@ should be @1@.</span>
 <a name="line-29"></a>
-<a name="line-30"></a><a name="glGetTranslatedShaderSourceANGLE"></a><span class='hs-definition'>glGetTranslatedShaderSourceANGLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-31"></a><span class='hs-definition'>glGetTranslatedShaderSourceANGLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintsizeiPtrsizeiPtrcharIOV</span> <span class='hs-varid'>glGetTranslatedShaderSourceANGLEFunPtr</span>
-<a name="line-32"></a>
-<a name="line-33"></a><a name="glGetTranslatedShaderSourceANGLEFunPtr"></a><span class='hs-definition'>glGetTranslatedShaderSourceANGLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-34"></a><span class='hs-definition'>glGetTranslatedShaderSourceANGLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetTranslatedShaderSourceANGLE"</span><span class='hs-layout'>)</span>
-<a name="line-35"></a>
-<a name="line-36"></a><span class='hs-comment'>{-# NOINLINE glGetTranslatedShaderSourceANGLEFunPtr #-}</span>
-<a name="line-37"></a>
-<a name="line-38"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSLATED_SHADER_SOURCE_LENGTH_ANGLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x93A0</span>
+<a name="line-30"></a>
+<a name="line-31"></a><a name="glGetTranslatedShaderSourceANGLE"></a><span class='hs-definition'>glGetTranslatedShaderSourceANGLE</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-32"></a><span class='hs-definition'>glGetTranslatedShaderSourceANGLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintsizeiPtrsizeiPtrcharIOV</span> <span class='hs-varid'>glGetTranslatedShaderSourceANGLEFunPtr</span>
+<a name="line-33"></a>
+<a name="line-34"></a><a name="glGetTranslatedShaderSourceANGLEFunPtr"></a><span class='hs-definition'>glGetTranslatedShaderSourceANGLEFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLchar</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-35"></a><span class='hs-definition'>glGetTranslatedShaderSourceANGLEFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetTranslatedShaderSourceANGLE"</span><span class='hs-layout'>)</span>
+<a name="line-36"></a>
+<a name="line-37"></a><span class='hs-comment'>{-# NOINLINE glGetTranslatedShaderSourceANGLEFunPtr #-}</span>
+<a name="line-38"></a>
+<a name="line-39"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSLATED_SHADER_SOURCE_LENGTH_ANGLE</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x93A0</span>
 </pre></body>
 </html>

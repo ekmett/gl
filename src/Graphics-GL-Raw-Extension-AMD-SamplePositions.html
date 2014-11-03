@@ -30,20 +30,21 @@
 <a name="line-21"></a>
 <a name="line-22"></a><a name="gl_AMD_sample_positions"></a><span class='hs-definition'>gl_AMD_sample_positions</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-23"></a><span class='hs-definition'>gl_AMD_sample_positions</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_AMD_sample_positions"</span> <span class='hs-varid'>extensions</span>
-<a name="line-24"></a>
-<a name="line-25"></a><span class='hs-comment'>-- | Usage: @'glSetMultisamplefvAMD' pname index val@</span>
-<a name="line-26"></a><span class='hs-comment'>--</span>
-<a name="line-27"></a><span class='hs-comment'>-- The length of @val@ should be @2@.</span>
-<a name="line-28"></a>
+<a name="line-24"></a><span class='hs-comment'>{-# NOINLINE gl_AMD_sample_positions #-}</span>
+<a name="line-25"></a>
+<a name="line-26"></a><span class='hs-comment'>-- | Usage: @'glSetMultisamplefvAMD' pname index val@</span>
+<a name="line-27"></a><span class='hs-comment'>--</span>
+<a name="line-28"></a><span class='hs-comment'>-- The length of @val@ should be @2@.</span>
 <a name="line-29"></a>
-<a name="line-30"></a><a name="glSetMultisamplefvAMD"></a><span class='hs-definition'>glSetMultisamplefvAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-31"></a><span class='hs-definition'>glSetMultisamplefvAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintPtrfloatIOV</span> <span class='hs-varid'>glSetMultisamplefvAMDFunPtr</span>
-<a name="line-32"></a>
-<a name="line-33"></a><a name="glSetMultisamplefvAMDFunPtr"></a><span class='hs-definition'>glSetMultisamplefvAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-34"></a><span class='hs-definition'>glSetMultisamplefvAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSetMultisamplefvAMD"</span><span class='hs-layout'>)</span>
-<a name="line-35"></a>
-<a name="line-36"></a><span class='hs-comment'>{-# NOINLINE glSetMultisamplefvAMDFunPtr #-}</span>
-<a name="line-37"></a>
-<a name="line-38"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SUBSAMPLE_DISTANCE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x883F</span>
+<a name="line-30"></a>
+<a name="line-31"></a><a name="glSetMultisamplefvAMD"></a><span class='hs-definition'>glSetMultisamplefvAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-32"></a><span class='hs-definition'>glSetMultisamplefvAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintPtrfloatIOV</span> <span class='hs-varid'>glSetMultisamplefvAMDFunPtr</span>
+<a name="line-33"></a>
+<a name="line-34"></a><a name="glSetMultisamplefvAMDFunPtr"></a><span class='hs-definition'>glSetMultisamplefvAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-35"></a><span class='hs-definition'>glSetMultisamplefvAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSetMultisamplefvAMD"</span><span class='hs-layout'>)</span>
+<a name="line-36"></a>
+<a name="line-37"></a><span class='hs-comment'>{-# NOINLINE glSetMultisamplefvAMDFunPtr #-}</span>
+<a name="line-38"></a>
+<a name="line-39"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SUBSAMPLE_DISTANCE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x883F</span>
 </pre></body>
 </html>

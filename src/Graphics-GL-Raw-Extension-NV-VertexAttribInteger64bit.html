@@ -50,234 +50,235 @@
 <a name="line-41"></a>
 <a name="line-42"></a><a name="gl_NV_vertex_attrib_integer_64bit"></a><span class='hs-definition'>gl_NV_vertex_attrib_integer_64bit</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-43"></a><span class='hs-definition'>gl_NV_vertex_attrib_integer_64bit</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_NV_vertex_attrib_integer_64bit"</span> <span class='hs-varid'>extensions</span>
-<a name="line-44"></a>
-<a name="line-45"></a><span class='hs-comment'>-- | Usage: @'glGetVertexAttribLi64vNV' index pname params@</span>
-<a name="line-46"></a><span class='hs-comment'>--</span>
-<a name="line-47"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
-<a name="line-48"></a>
+<a name="line-44"></a><span class='hs-comment'>{-# NOINLINE gl_NV_vertex_attrib_integer_64bit #-}</span>
+<a name="line-45"></a>
+<a name="line-46"></a><span class='hs-comment'>-- | Usage: @'glGetVertexAttribLi64vNV' index pname params@</span>
+<a name="line-47"></a><span class='hs-comment'>--</span>
+<a name="line-48"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
 <a name="line-49"></a>
-<a name="line-50"></a><a name="glGetVertexAttribLi64vNV"></a><span class='hs-definition'>glGetVertexAttribLi64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-51"></a><span class='hs-definition'>glGetVertexAttribLi64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumPtrint64EXTIOV</span> <span class='hs-varid'>glGetVertexAttribLi64vNVFunPtr</span>
-<a name="line-52"></a>
-<a name="line-53"></a><a name="glGetVertexAttribLi64vNVFunPtr"></a><span class='hs-definition'>glGetVertexAttribLi64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-54"></a><span class='hs-definition'>glGetVertexAttribLi64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetVertexAttribLi64vNV"</span><span class='hs-layout'>)</span>
-<a name="line-55"></a>
-<a name="line-56"></a><span class='hs-comment'>{-# NOINLINE glGetVertexAttribLi64vNVFunPtr #-}</span>
-<a name="line-57"></a>
-<a name="line-58"></a><span class='hs-comment'>-- | Usage: @'glGetVertexAttribLui64vNV' index pname params@</span>
-<a name="line-59"></a><span class='hs-comment'>--</span>
-<a name="line-60"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
-<a name="line-61"></a>
+<a name="line-50"></a>
+<a name="line-51"></a><a name="glGetVertexAttribLi64vNV"></a><span class='hs-definition'>glGetVertexAttribLi64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-52"></a><span class='hs-definition'>glGetVertexAttribLi64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumPtrint64EXTIOV</span> <span class='hs-varid'>glGetVertexAttribLi64vNVFunPtr</span>
+<a name="line-53"></a>
+<a name="line-54"></a><a name="glGetVertexAttribLi64vNVFunPtr"></a><span class='hs-definition'>glGetVertexAttribLi64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-55"></a><span class='hs-definition'>glGetVertexAttribLi64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetVertexAttribLi64vNV"</span><span class='hs-layout'>)</span>
+<a name="line-56"></a>
+<a name="line-57"></a><span class='hs-comment'>{-# NOINLINE glGetVertexAttribLi64vNVFunPtr #-}</span>
+<a name="line-58"></a>
+<a name="line-59"></a><span class='hs-comment'>-- | Usage: @'glGetVertexAttribLui64vNV' index pname params@</span>
+<a name="line-60"></a><span class='hs-comment'>--</span>
+<a name="line-61"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
 <a name="line-62"></a>
-<a name="line-63"></a><a name="glGetVertexAttribLui64vNV"></a><span class='hs-definition'>glGetVertexAttribLui64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-64"></a><span class='hs-definition'>glGetVertexAttribLui64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumPtruint64EXTIOV</span> <span class='hs-varid'>glGetVertexAttribLui64vNVFunPtr</span>
-<a name="line-65"></a>
-<a name="line-66"></a><a name="glGetVertexAttribLui64vNVFunPtr"></a><span class='hs-definition'>glGetVertexAttribLui64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-67"></a><span class='hs-definition'>glGetVertexAttribLui64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetVertexAttribLui64vNV"</span><span class='hs-layout'>)</span>
-<a name="line-68"></a>
-<a name="line-69"></a><span class='hs-comment'>{-# NOINLINE glGetVertexAttribLui64vNVFunPtr #-}</span>
-<a name="line-70"></a>
-<a name="line-71"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL1i64NV' index x@</span>
-<a name="line-72"></a>
+<a name="line-63"></a>
+<a name="line-64"></a><a name="glGetVertexAttribLui64vNV"></a><span class='hs-definition'>glGetVertexAttribLui64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-65"></a><span class='hs-definition'>glGetVertexAttribLui64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumPtruint64EXTIOV</span> <span class='hs-varid'>glGetVertexAttribLui64vNVFunPtr</span>
+<a name="line-66"></a>
+<a name="line-67"></a><a name="glGetVertexAttribLui64vNVFunPtr"></a><span class='hs-definition'>glGetVertexAttribLui64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-68"></a><span class='hs-definition'>glGetVertexAttribLui64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetVertexAttribLui64vNV"</span><span class='hs-layout'>)</span>
+<a name="line-69"></a>
+<a name="line-70"></a><span class='hs-comment'>{-# NOINLINE glGetVertexAttribLui64vNVFunPtr #-}</span>
+<a name="line-71"></a>
+<a name="line-72"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL1i64NV' index x@</span>
 <a name="line-73"></a>
-<a name="line-74"></a><a name="glVertexAttribL1i64NV"></a><span class='hs-definition'>glVertexAttribL1i64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-75"></a><span class='hs-definition'>glVertexAttribL1i64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL1i64NVFunPtr</span>
-<a name="line-76"></a>
-<a name="line-77"></a><a name="glVertexAttribL1i64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL1i64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-78"></a><span class='hs-definition'>glVertexAttribL1i64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL1i64NV"</span><span class='hs-layout'>)</span>
-<a name="line-79"></a>
-<a name="line-80"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL1i64NVFunPtr #-}</span>
-<a name="line-81"></a>
-<a name="line-82"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL1i64vNV' index v@</span>
-<a name="line-83"></a><span class='hs-comment'>--</span>
-<a name="line-84"></a><span class='hs-comment'>-- The length of @v@ should be @1@.</span>
-<a name="line-85"></a>
+<a name="line-74"></a>
+<a name="line-75"></a><a name="glVertexAttribL1i64NV"></a><span class='hs-definition'>glVertexAttribL1i64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-76"></a><span class='hs-definition'>glVertexAttribL1i64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL1i64NVFunPtr</span>
+<a name="line-77"></a>
+<a name="line-78"></a><a name="glVertexAttribL1i64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL1i64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-79"></a><span class='hs-definition'>glVertexAttribL1i64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL1i64NV"</span><span class='hs-layout'>)</span>
+<a name="line-80"></a>
+<a name="line-81"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL1i64NVFunPtr #-}</span>
+<a name="line-82"></a>
+<a name="line-83"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL1i64vNV' index v@</span>
+<a name="line-84"></a><span class='hs-comment'>--</span>
+<a name="line-85"></a><span class='hs-comment'>-- The length of @v@ should be @1@.</span>
 <a name="line-86"></a>
-<a name="line-87"></a><a name="glVertexAttribL1i64vNV"></a><span class='hs-definition'>glVertexAttribL1i64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-88"></a><span class='hs-definition'>glVertexAttribL1i64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL1i64vNVFunPtr</span>
-<a name="line-89"></a>
-<a name="line-90"></a><a name="glVertexAttribL1i64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL1i64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-91"></a><span class='hs-definition'>glVertexAttribL1i64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL1i64vNV"</span><span class='hs-layout'>)</span>
-<a name="line-92"></a>
-<a name="line-93"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL1i64vNVFunPtr #-}</span>
-<a name="line-94"></a>
-<a name="line-95"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL1ui64NV' index x@</span>
-<a name="line-96"></a>
+<a name="line-87"></a>
+<a name="line-88"></a><a name="glVertexAttribL1i64vNV"></a><span class='hs-definition'>glVertexAttribL1i64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-89"></a><span class='hs-definition'>glVertexAttribL1i64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL1i64vNVFunPtr</span>
+<a name="line-90"></a>
+<a name="line-91"></a><a name="glVertexAttribL1i64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL1i64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-92"></a><span class='hs-definition'>glVertexAttribL1i64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL1i64vNV"</span><span class='hs-layout'>)</span>
+<a name="line-93"></a>
+<a name="line-94"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL1i64vNVFunPtr #-}</span>
+<a name="line-95"></a>
+<a name="line-96"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL1ui64NV' index x@</span>
 <a name="line-97"></a>
-<a name="line-98"></a><a name="glVertexAttribL1ui64NV"></a><span class='hs-definition'>glVertexAttribL1ui64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-99"></a><span class='hs-definition'>glVertexAttribL1ui64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL1ui64NVFunPtr</span>
-<a name="line-100"></a>
-<a name="line-101"></a><a name="glVertexAttribL1ui64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL1ui64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-102"></a><span class='hs-definition'>glVertexAttribL1ui64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL1ui64NV"</span><span class='hs-layout'>)</span>
-<a name="line-103"></a>
-<a name="line-104"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL1ui64NVFunPtr #-}</span>
-<a name="line-105"></a>
-<a name="line-106"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL1ui64vNV' index v@</span>
-<a name="line-107"></a><span class='hs-comment'>--</span>
-<a name="line-108"></a><span class='hs-comment'>-- The length of @v@ should be @1@.</span>
-<a name="line-109"></a>
+<a name="line-98"></a>
+<a name="line-99"></a><a name="glVertexAttribL1ui64NV"></a><span class='hs-definition'>glVertexAttribL1ui64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-100"></a><span class='hs-definition'>glVertexAttribL1ui64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL1ui64NVFunPtr</span>
+<a name="line-101"></a>
+<a name="line-102"></a><a name="glVertexAttribL1ui64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL1ui64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-103"></a><span class='hs-definition'>glVertexAttribL1ui64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL1ui64NV"</span><span class='hs-layout'>)</span>
+<a name="line-104"></a>
+<a name="line-105"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL1ui64NVFunPtr #-}</span>
+<a name="line-106"></a>
+<a name="line-107"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL1ui64vNV' index v@</span>
+<a name="line-108"></a><span class='hs-comment'>--</span>
+<a name="line-109"></a><span class='hs-comment'>-- The length of @v@ should be @1@.</span>
 <a name="line-110"></a>
-<a name="line-111"></a><a name="glVertexAttribL1ui64vNV"></a><span class='hs-definition'>glVertexAttribL1ui64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-112"></a><span class='hs-definition'>glVertexAttribL1ui64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtruint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL1ui64vNVFunPtr</span>
-<a name="line-113"></a>
-<a name="line-114"></a><a name="glVertexAttribL1ui64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL1ui64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-115"></a><span class='hs-definition'>glVertexAttribL1ui64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL1ui64vNV"</span><span class='hs-layout'>)</span>
-<a name="line-116"></a>
-<a name="line-117"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL1ui64vNVFunPtr #-}</span>
-<a name="line-118"></a>
-<a name="line-119"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL2i64NV' index x y@</span>
-<a name="line-120"></a>
+<a name="line-111"></a>
+<a name="line-112"></a><a name="glVertexAttribL1ui64vNV"></a><span class='hs-definition'>glVertexAttribL1ui64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-113"></a><span class='hs-definition'>glVertexAttribL1ui64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtruint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL1ui64vNVFunPtr</span>
+<a name="line-114"></a>
+<a name="line-115"></a><a name="glVertexAttribL1ui64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL1ui64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-116"></a><span class='hs-definition'>glVertexAttribL1ui64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL1ui64vNV"</span><span class='hs-layout'>)</span>
+<a name="line-117"></a>
+<a name="line-118"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL1ui64vNVFunPtr #-}</span>
+<a name="line-119"></a>
+<a name="line-120"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL2i64NV' index x y@</span>
 <a name="line-121"></a>
-<a name="line-122"></a><a name="glVertexAttribL2i64NV"></a><span class='hs-definition'>glVertexAttribL2i64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-123"></a><span class='hs-definition'>glVertexAttribL2i64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintint64EXTint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL2i64NVFunPtr</span>
-<a name="line-124"></a>
-<a name="line-125"></a><a name="glVertexAttribL2i64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL2i64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-126"></a><span class='hs-definition'>glVertexAttribL2i64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL2i64NV"</span><span class='hs-layout'>)</span>
-<a name="line-127"></a>
-<a name="line-128"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL2i64NVFunPtr #-}</span>
-<a name="line-129"></a>
-<a name="line-130"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL2i64vNV' index v@</span>
-<a name="line-131"></a><span class='hs-comment'>--</span>
-<a name="line-132"></a><span class='hs-comment'>-- The length of @v@ should be @2@.</span>
-<a name="line-133"></a>
+<a name="line-122"></a>
+<a name="line-123"></a><a name="glVertexAttribL2i64NV"></a><span class='hs-definition'>glVertexAttribL2i64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-124"></a><span class='hs-definition'>glVertexAttribL2i64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintint64EXTint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL2i64NVFunPtr</span>
+<a name="line-125"></a>
+<a name="line-126"></a><a name="glVertexAttribL2i64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL2i64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-127"></a><span class='hs-definition'>glVertexAttribL2i64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL2i64NV"</span><span class='hs-layout'>)</span>
+<a name="line-128"></a>
+<a name="line-129"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL2i64NVFunPtr #-}</span>
+<a name="line-130"></a>
+<a name="line-131"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL2i64vNV' index v@</span>
+<a name="line-132"></a><span class='hs-comment'>--</span>
+<a name="line-133"></a><span class='hs-comment'>-- The length of @v@ should be @2@.</span>
 <a name="line-134"></a>
-<a name="line-135"></a><a name="glVertexAttribL2i64vNV"></a><span class='hs-definition'>glVertexAttribL2i64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-136"></a><span class='hs-definition'>glVertexAttribL2i64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL2i64vNVFunPtr</span>
-<a name="line-137"></a>
-<a name="line-138"></a><a name="glVertexAttribL2i64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL2i64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-139"></a><span class='hs-definition'>glVertexAttribL2i64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL2i64vNV"</span><span class='hs-layout'>)</span>
-<a name="line-140"></a>
-<a name="line-141"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL2i64vNVFunPtr #-}</span>
-<a name="line-142"></a>
-<a name="line-143"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL2ui64NV' index x y@</span>
-<a name="line-144"></a>
+<a name="line-135"></a>
+<a name="line-136"></a><a name="glVertexAttribL2i64vNV"></a><span class='hs-definition'>glVertexAttribL2i64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-137"></a><span class='hs-definition'>glVertexAttribL2i64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL2i64vNVFunPtr</span>
+<a name="line-138"></a>
+<a name="line-139"></a><a name="glVertexAttribL2i64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL2i64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-140"></a><span class='hs-definition'>glVertexAttribL2i64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL2i64vNV"</span><span class='hs-layout'>)</span>
+<a name="line-141"></a>
+<a name="line-142"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL2i64vNVFunPtr #-}</span>
+<a name="line-143"></a>
+<a name="line-144"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL2ui64NV' index x y@</span>
 <a name="line-145"></a>
-<a name="line-146"></a><a name="glVertexAttribL2ui64NV"></a><span class='hs-definition'>glVertexAttribL2ui64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-147"></a><span class='hs-definition'>glVertexAttribL2ui64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuint64EXTuint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL2ui64NVFunPtr</span>
-<a name="line-148"></a>
-<a name="line-149"></a><a name="glVertexAttribL2ui64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL2ui64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-150"></a><span class='hs-definition'>glVertexAttribL2ui64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL2ui64NV"</span><span class='hs-layout'>)</span>
-<a name="line-151"></a>
-<a name="line-152"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL2ui64NVFunPtr #-}</span>
-<a name="line-153"></a>
-<a name="line-154"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL2ui64vNV' index v@</span>
-<a name="line-155"></a><span class='hs-comment'>--</span>
-<a name="line-156"></a><span class='hs-comment'>-- The length of @v@ should be @2@.</span>
-<a name="line-157"></a>
+<a name="line-146"></a>
+<a name="line-147"></a><a name="glVertexAttribL2ui64NV"></a><span class='hs-definition'>glVertexAttribL2ui64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-148"></a><span class='hs-definition'>glVertexAttribL2ui64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuint64EXTuint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL2ui64NVFunPtr</span>
+<a name="line-149"></a>
+<a name="line-150"></a><a name="glVertexAttribL2ui64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL2ui64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-151"></a><span class='hs-definition'>glVertexAttribL2ui64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL2ui64NV"</span><span class='hs-layout'>)</span>
+<a name="line-152"></a>
+<a name="line-153"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL2ui64NVFunPtr #-}</span>
+<a name="line-154"></a>
+<a name="line-155"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL2ui64vNV' index v@</span>
+<a name="line-156"></a><span class='hs-comment'>--</span>
+<a name="line-157"></a><span class='hs-comment'>-- The length of @v@ should be @2@.</span>
 <a name="line-158"></a>
-<a name="line-159"></a><a name="glVertexAttribL2ui64vNV"></a><span class='hs-definition'>glVertexAttribL2ui64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-160"></a><span class='hs-definition'>glVertexAttribL2ui64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtruint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL2ui64vNVFunPtr</span>
-<a name="line-161"></a>
-<a name="line-162"></a><a name="glVertexAttribL2ui64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL2ui64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-163"></a><span class='hs-definition'>glVertexAttribL2ui64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL2ui64vNV"</span><span class='hs-layout'>)</span>
-<a name="line-164"></a>
-<a name="line-165"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL2ui64vNVFunPtr #-}</span>
-<a name="line-166"></a>
-<a name="line-167"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL3i64NV' index x y z@</span>
-<a name="line-168"></a>
+<a name="line-159"></a>
+<a name="line-160"></a><a name="glVertexAttribL2ui64vNV"></a><span class='hs-definition'>glVertexAttribL2ui64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-161"></a><span class='hs-definition'>glVertexAttribL2ui64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtruint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL2ui64vNVFunPtr</span>
+<a name="line-162"></a>
+<a name="line-163"></a><a name="glVertexAttribL2ui64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL2ui64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-164"></a><span class='hs-definition'>glVertexAttribL2ui64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL2ui64vNV"</span><span class='hs-layout'>)</span>
+<a name="line-165"></a>
+<a name="line-166"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL2ui64vNVFunPtr #-}</span>
+<a name="line-167"></a>
+<a name="line-168"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL3i64NV' index x y z@</span>
 <a name="line-169"></a>
-<a name="line-170"></a><a name="glVertexAttribL3i64NV"></a><span class='hs-definition'>glVertexAttribL3i64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-171"></a><span class='hs-definition'>glVertexAttribL3i64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintint64EXTint64EXTint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL3i64NVFunPtr</span>
-<a name="line-172"></a>
-<a name="line-173"></a><a name="glVertexAttribL3i64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL3i64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-174"></a><span class='hs-definition'>glVertexAttribL3i64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL3i64NV"</span><span class='hs-layout'>)</span>
-<a name="line-175"></a>
-<a name="line-176"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL3i64NVFunPtr #-}</span>
-<a name="line-177"></a>
-<a name="line-178"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL3i64vNV' index v@</span>
-<a name="line-179"></a><span class='hs-comment'>--</span>
-<a name="line-180"></a><span class='hs-comment'>-- The length of @v@ should be @3@.</span>
-<a name="line-181"></a>
+<a name="line-170"></a>
+<a name="line-171"></a><a name="glVertexAttribL3i64NV"></a><span class='hs-definition'>glVertexAttribL3i64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-172"></a><span class='hs-definition'>glVertexAttribL3i64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintint64EXTint64EXTint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL3i64NVFunPtr</span>
+<a name="line-173"></a>
+<a name="line-174"></a><a name="glVertexAttribL3i64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL3i64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-175"></a><span class='hs-definition'>glVertexAttribL3i64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL3i64NV"</span><span class='hs-layout'>)</span>
+<a name="line-176"></a>
+<a name="line-177"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL3i64NVFunPtr #-}</span>
+<a name="line-178"></a>
+<a name="line-179"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL3i64vNV' index v@</span>
+<a name="line-180"></a><span class='hs-comment'>--</span>
+<a name="line-181"></a><span class='hs-comment'>-- The length of @v@ should be @3@.</span>
 <a name="line-182"></a>
-<a name="line-183"></a><a name="glVertexAttribL3i64vNV"></a><span class='hs-definition'>glVertexAttribL3i64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-184"></a><span class='hs-definition'>glVertexAttribL3i64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL3i64vNVFunPtr</span>
-<a name="line-185"></a>
-<a name="line-186"></a><a name="glVertexAttribL3i64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL3i64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-187"></a><span class='hs-definition'>glVertexAttribL3i64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL3i64vNV"</span><span class='hs-layout'>)</span>
-<a name="line-188"></a>
-<a name="line-189"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL3i64vNVFunPtr #-}</span>
-<a name="line-190"></a>
-<a name="line-191"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL3ui64NV' index x y z@</span>
-<a name="line-192"></a>
+<a name="line-183"></a>
+<a name="line-184"></a><a name="glVertexAttribL3i64vNV"></a><span class='hs-definition'>glVertexAttribL3i64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-185"></a><span class='hs-definition'>glVertexAttribL3i64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL3i64vNVFunPtr</span>
+<a name="line-186"></a>
+<a name="line-187"></a><a name="glVertexAttribL3i64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL3i64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-188"></a><span class='hs-definition'>glVertexAttribL3i64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL3i64vNV"</span><span class='hs-layout'>)</span>
+<a name="line-189"></a>
+<a name="line-190"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL3i64vNVFunPtr #-}</span>
+<a name="line-191"></a>
+<a name="line-192"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL3ui64NV' index x y z@</span>
 <a name="line-193"></a>
-<a name="line-194"></a><a name="glVertexAttribL3ui64NV"></a><span class='hs-definition'>glVertexAttribL3ui64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-195"></a><span class='hs-definition'>glVertexAttribL3ui64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuint64EXTuint64EXTuint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL3ui64NVFunPtr</span>
-<a name="line-196"></a>
-<a name="line-197"></a><a name="glVertexAttribL3ui64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL3ui64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-198"></a><span class='hs-definition'>glVertexAttribL3ui64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL3ui64NV"</span><span class='hs-layout'>)</span>
-<a name="line-199"></a>
-<a name="line-200"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL3ui64NVFunPtr #-}</span>
-<a name="line-201"></a>
-<a name="line-202"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL3ui64vNV' index v@</span>
-<a name="line-203"></a><span class='hs-comment'>--</span>
-<a name="line-204"></a><span class='hs-comment'>-- The length of @v@ should be @3@.</span>
-<a name="line-205"></a>
+<a name="line-194"></a>
+<a name="line-195"></a><a name="glVertexAttribL3ui64NV"></a><span class='hs-definition'>glVertexAttribL3ui64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-196"></a><span class='hs-definition'>glVertexAttribL3ui64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuint64EXTuint64EXTuint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL3ui64NVFunPtr</span>
+<a name="line-197"></a>
+<a name="line-198"></a><a name="glVertexAttribL3ui64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL3ui64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-199"></a><span class='hs-definition'>glVertexAttribL3ui64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL3ui64NV"</span><span class='hs-layout'>)</span>
+<a name="line-200"></a>
+<a name="line-201"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL3ui64NVFunPtr #-}</span>
+<a name="line-202"></a>
+<a name="line-203"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL3ui64vNV' index v@</span>
+<a name="line-204"></a><span class='hs-comment'>--</span>
+<a name="line-205"></a><span class='hs-comment'>-- The length of @v@ should be @3@.</span>
 <a name="line-206"></a>
-<a name="line-207"></a><a name="glVertexAttribL3ui64vNV"></a><span class='hs-definition'>glVertexAttribL3ui64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-208"></a><span class='hs-definition'>glVertexAttribL3ui64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtruint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL3ui64vNVFunPtr</span>
-<a name="line-209"></a>
-<a name="line-210"></a><a name="glVertexAttribL3ui64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL3ui64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-211"></a><span class='hs-definition'>glVertexAttribL3ui64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL3ui64vNV"</span><span class='hs-layout'>)</span>
-<a name="line-212"></a>
-<a name="line-213"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL3ui64vNVFunPtr #-}</span>
-<a name="line-214"></a>
-<a name="line-215"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL4i64NV' index x y z w@</span>
-<a name="line-216"></a>
+<a name="line-207"></a>
+<a name="line-208"></a><a name="glVertexAttribL3ui64vNV"></a><span class='hs-definition'>glVertexAttribL3ui64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-209"></a><span class='hs-definition'>glVertexAttribL3ui64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtruint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL3ui64vNVFunPtr</span>
+<a name="line-210"></a>
+<a name="line-211"></a><a name="glVertexAttribL3ui64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL3ui64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-212"></a><span class='hs-definition'>glVertexAttribL3ui64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL3ui64vNV"</span><span class='hs-layout'>)</span>
+<a name="line-213"></a>
+<a name="line-214"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL3ui64vNVFunPtr #-}</span>
+<a name="line-215"></a>
+<a name="line-216"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL4i64NV' index x y z w@</span>
 <a name="line-217"></a>
-<a name="line-218"></a><a name="glVertexAttribL4i64NV"></a><span class='hs-definition'>glVertexAttribL4i64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-219"></a><span class='hs-definition'>glVertexAttribL4i64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintint64EXTint64EXTint64EXTint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL4i64NVFunPtr</span>
-<a name="line-220"></a>
-<a name="line-221"></a><a name="glVertexAttribL4i64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL4i64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-222"></a><span class='hs-definition'>glVertexAttribL4i64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL4i64NV"</span><span class='hs-layout'>)</span>
-<a name="line-223"></a>
-<a name="line-224"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL4i64NVFunPtr #-}</span>
-<a name="line-225"></a>
-<a name="line-226"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL4i64vNV' index v@</span>
-<a name="line-227"></a><span class='hs-comment'>--</span>
-<a name="line-228"></a><span class='hs-comment'>-- The length of @v@ should be @4@.</span>
-<a name="line-229"></a>
+<a name="line-218"></a>
+<a name="line-219"></a><a name="glVertexAttribL4i64NV"></a><span class='hs-definition'>glVertexAttribL4i64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-220"></a><span class='hs-definition'>glVertexAttribL4i64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintint64EXTint64EXTint64EXTint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL4i64NVFunPtr</span>
+<a name="line-221"></a>
+<a name="line-222"></a><a name="glVertexAttribL4i64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL4i64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-223"></a><span class='hs-definition'>glVertexAttribL4i64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL4i64NV"</span><span class='hs-layout'>)</span>
+<a name="line-224"></a>
+<a name="line-225"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL4i64NVFunPtr #-}</span>
+<a name="line-226"></a>
+<a name="line-227"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL4i64vNV' index v@</span>
+<a name="line-228"></a><span class='hs-comment'>--</span>
+<a name="line-229"></a><span class='hs-comment'>-- The length of @v@ should be @4@.</span>
 <a name="line-230"></a>
-<a name="line-231"></a><a name="glVertexAttribL4i64vNV"></a><span class='hs-definition'>glVertexAttribL4i64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-232"></a><span class='hs-definition'>glVertexAttribL4i64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL4i64vNVFunPtr</span>
-<a name="line-233"></a>
-<a name="line-234"></a><a name="glVertexAttribL4i64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL4i64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-235"></a><span class='hs-definition'>glVertexAttribL4i64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL4i64vNV"</span><span class='hs-layout'>)</span>
-<a name="line-236"></a>
-<a name="line-237"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL4i64vNVFunPtr #-}</span>
-<a name="line-238"></a>
-<a name="line-239"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL4ui64NV' index x y z w@</span>
-<a name="line-240"></a>
+<a name="line-231"></a>
+<a name="line-232"></a><a name="glVertexAttribL4i64vNV"></a><span class='hs-definition'>glVertexAttribL4i64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-233"></a><span class='hs-definition'>glVertexAttribL4i64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL4i64vNVFunPtr</span>
+<a name="line-234"></a>
+<a name="line-235"></a><a name="glVertexAttribL4i64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL4i64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-236"></a><span class='hs-definition'>glVertexAttribL4i64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL4i64vNV"</span><span class='hs-layout'>)</span>
+<a name="line-237"></a>
+<a name="line-238"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL4i64vNVFunPtr #-}</span>
+<a name="line-239"></a>
+<a name="line-240"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL4ui64NV' index x y z w@</span>
 <a name="line-241"></a>
-<a name="line-242"></a><a name="glVertexAttribL4ui64NV"></a><span class='hs-definition'>glVertexAttribL4ui64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-243"></a><span class='hs-definition'>glVertexAttribL4ui64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuint64EXTuint64EXTuint64EXTuint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL4ui64NVFunPtr</span>
-<a name="line-244"></a>
-<a name="line-245"></a><a name="glVertexAttribL4ui64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL4ui64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-246"></a><span class='hs-definition'>glVertexAttribL4ui64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL4ui64NV"</span><span class='hs-layout'>)</span>
-<a name="line-247"></a>
-<a name="line-248"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL4ui64NVFunPtr #-}</span>
-<a name="line-249"></a>
-<a name="line-250"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL4ui64vNV' index v@</span>
-<a name="line-251"></a><span class='hs-comment'>--</span>
-<a name="line-252"></a><span class='hs-comment'>-- The length of @v@ should be @4@.</span>
-<a name="line-253"></a>
+<a name="line-242"></a>
+<a name="line-243"></a><a name="glVertexAttribL4ui64NV"></a><span class='hs-definition'>glVertexAttribL4ui64NV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-244"></a><span class='hs-definition'>glVertexAttribL4ui64NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuint64EXTuint64EXTuint64EXTuint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL4ui64NVFunPtr</span>
+<a name="line-245"></a>
+<a name="line-246"></a><a name="glVertexAttribL4ui64NVFunPtr"></a><span class='hs-definition'>glVertexAttribL4ui64NVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-247"></a><span class='hs-definition'>glVertexAttribL4ui64NVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL4ui64NV"</span><span class='hs-layout'>)</span>
+<a name="line-248"></a>
+<a name="line-249"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL4ui64NVFunPtr #-}</span>
+<a name="line-250"></a>
+<a name="line-251"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL4ui64vNV' index v@</span>
+<a name="line-252"></a><span class='hs-comment'>--</span>
+<a name="line-253"></a><span class='hs-comment'>-- The length of @v@ should be @4@.</span>
 <a name="line-254"></a>
-<a name="line-255"></a><a name="glVertexAttribL4ui64vNV"></a><span class='hs-definition'>glVertexAttribL4ui64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-256"></a><span class='hs-definition'>glVertexAttribL4ui64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtruint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL4ui64vNVFunPtr</span>
-<a name="line-257"></a>
-<a name="line-258"></a><a name="glVertexAttribL4ui64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL4ui64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-259"></a><span class='hs-definition'>glVertexAttribL4ui64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL4ui64vNV"</span><span class='hs-layout'>)</span>
-<a name="line-260"></a>
-<a name="line-261"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL4ui64vNVFunPtr #-}</span>
-<a name="line-262"></a>
-<a name="line-263"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribLFormatNV' index size type stride@</span>
-<a name="line-264"></a>
+<a name="line-255"></a>
+<a name="line-256"></a><a name="glVertexAttribL4ui64vNV"></a><span class='hs-definition'>glVertexAttribL4ui64vNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-257"></a><span class='hs-definition'>glVertexAttribL4ui64vNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtruint64EXTIOV</span> <span class='hs-varid'>glVertexAttribL4ui64vNVFunPtr</span>
+<a name="line-258"></a>
+<a name="line-259"></a><a name="glVertexAttribL4ui64vNVFunPtr"></a><span class='hs-definition'>glVertexAttribL4ui64vNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint64EXT</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-260"></a><span class='hs-definition'>glVertexAttribL4ui64vNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL4ui64vNV"</span><span class='hs-layout'>)</span>
+<a name="line-261"></a>
+<a name="line-262"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL4ui64vNVFunPtr #-}</span>
+<a name="line-263"></a>
+<a name="line-264"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribLFormatNV' index size type stride@</span>
 <a name="line-265"></a>
-<a name="line-266"></a><a name="glVertexAttribLFormatNV"></a><span class='hs-definition'>glVertexAttribLFormatNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-267"></a><span class='hs-definition'>glVertexAttribLFormatNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintintenumsizeiIOV</span> <span class='hs-varid'>glVertexAttribLFormatNVFunPtr</span>
-<a name="line-268"></a>
-<a name="line-269"></a><a name="glVertexAttribLFormatNVFunPtr"></a><span class='hs-definition'>glVertexAttribLFormatNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-270"></a><span class='hs-definition'>glVertexAttribLFormatNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribLFormatNV"</span><span class='hs-layout'>)</span>
-<a name="line-271"></a>
-<a name="line-272"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribLFormatNVFunPtr #-}</span>
+<a name="line-266"></a>
+<a name="line-267"></a><a name="glVertexAttribLFormatNV"></a><span class='hs-definition'>glVertexAttribLFormatNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-268"></a><span class='hs-definition'>glVertexAttribLFormatNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintintenumsizeiIOV</span> <span class='hs-varid'>glVertexAttribLFormatNVFunPtr</span>
+<a name="line-269"></a>
+<a name="line-270"></a><a name="glVertexAttribLFormatNVFunPtr"></a><span class='hs-definition'>glVertexAttribLFormatNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-271"></a><span class='hs-definition'>glVertexAttribLFormatNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribLFormatNV"</span><span class='hs-layout'>)</span>
+<a name="line-272"></a>
+<a name="line-273"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribLFormatNVFunPtr #-}</span>
 </pre></body>
 </html>

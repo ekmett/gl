@@ -86,129 +86,130 @@
 <a name="line-77"></a>
 <a name="line-78"></a><a name="gl_EXT_shader_image_load_store"></a><span class='hs-definition'>gl_EXT_shader_image_load_store</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-79"></a><span class='hs-definition'>gl_EXT_shader_image_load_store</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_EXT_shader_image_load_store"</span> <span class='hs-varid'>extensions</span>
-<a name="line-80"></a>
-<a name="line-81"></a><span class='hs-comment'>-- | Usage: @'glBindImageTextureEXT' index texture level layered layer access format@</span>
-<a name="line-82"></a><span class='hs-comment'>--</span>
-<a name="line-83"></a><span class='hs-comment'>-- The parameter @layered@ is a @Boolean@, one of: 'GL_FALSE', 'GL_TRUE'.</span>
-<a name="line-84"></a>
+<a name="line-80"></a><span class='hs-comment'>{-# NOINLINE gl_EXT_shader_image_load_store #-}</span>
+<a name="line-81"></a>
+<a name="line-82"></a><span class='hs-comment'>-- | Usage: @'glBindImageTextureEXT' index texture level layered layer access format@</span>
+<a name="line-83"></a><span class='hs-comment'>--</span>
+<a name="line-84"></a><span class='hs-comment'>-- The parameter @layered@ is a @Boolean@, one of: 'Graphics.GL.Raw.Internal.Shared.GL_FALSE', 'Graphics.GL.Raw.Internal.Shared.GL_TRUE'.</span>
 <a name="line-85"></a>
-<a name="line-86"></a><a name="glBindImageTextureEXT"></a><span class='hs-definition'>glBindImageTextureEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-87"></a><span class='hs-definition'>glBindImageTextureEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintintbooleanintenumintIOV</span> <span class='hs-varid'>glBindImageTextureEXTFunPtr</span>
-<a name="line-88"></a>
-<a name="line-89"></a><a name="glBindImageTextureEXTFunPtr"></a><span class='hs-definition'>glBindImageTextureEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-90"></a><span class='hs-definition'>glBindImageTextureEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindImageTextureEXT"</span><span class='hs-layout'>)</span>
-<a name="line-91"></a>
-<a name="line-92"></a><span class='hs-comment'>{-# NOINLINE glBindImageTextureEXTFunPtr #-}</span>
-<a name="line-93"></a>
-<a name="line-94"></a><span class='hs-comment'>-- | Usage: @'glMemoryBarrierEXT' barriers@</span>
-<a name="line-95"></a><span class='hs-comment'>--</span>
-<a name="line-96"></a><span class='hs-comment'>-- This command is an alias for 'glMemoryBarrier'.</span>
-<a name="line-97"></a>
+<a name="line-86"></a>
+<a name="line-87"></a><a name="glBindImageTextureEXT"></a><span class='hs-definition'>glBindImageTextureEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-88"></a><span class='hs-definition'>glBindImageTextureEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintintbooleanintenumintIOV</span> <span class='hs-varid'>glBindImageTextureEXTFunPtr</span>
+<a name="line-89"></a>
+<a name="line-90"></a><a name="glBindImageTextureEXTFunPtr"></a><span class='hs-definition'>glBindImageTextureEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-91"></a><span class='hs-definition'>glBindImageTextureEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindImageTextureEXT"</span><span class='hs-layout'>)</span>
+<a name="line-92"></a>
+<a name="line-93"></a><span class='hs-comment'>{-# NOINLINE glBindImageTextureEXTFunPtr #-}</span>
+<a name="line-94"></a>
+<a name="line-95"></a><span class='hs-comment'>-- | Usage: @'glMemoryBarrierEXT' barriers@</span>
+<a name="line-96"></a><span class='hs-comment'>--</span>
+<a name="line-97"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glMemoryBarrier'.</span>
 <a name="line-98"></a>
-<a name="line-99"></a><a name="glMemoryBarrierEXT"></a><span class='hs-definition'>glMemoryBarrierEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbitfield</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-100"></a><span class='hs-definition'>glMemoryBarrierEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibitfieldIOV</span> <span class='hs-varid'>glMemoryBarrierEXTFunPtr</span>
-<a name="line-101"></a>
-<a name="line-102"></a><a name="glMemoryBarrierEXTFunPtr"></a><span class='hs-definition'>glMemoryBarrierEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbitfield</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-103"></a><span class='hs-definition'>glMemoryBarrierEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMemoryBarrierEXT"</span><span class='hs-layout'>)</span>
-<a name="line-104"></a>
-<a name="line-105"></a><span class='hs-comment'>{-# NOINLINE glMemoryBarrierEXTFunPtr #-}</span>
-<a name="line-106"></a>
-<a name="line-107"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALL_BARRIER_BITS_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0xFFFFFFFF</span>
-<a name="line-108"></a>
-<a name="line-109"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ATOMIC_COUNTER_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00001000</span>
-<a name="line-110"></a>
-<a name="line-111"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BUFFER_UPDATE_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000200</span>
-<a name="line-112"></a>
-<a name="line-113"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COMMAND_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000040</span>
-<a name="line-114"></a>
-<a name="line-115"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ELEMENT_ARRAY_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000002</span>
-<a name="line-116"></a>
-<a name="line-117"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000400</span>
-<a name="line-118"></a>
-<a name="line-119"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_1D_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9052</span>
-<a name="line-120"></a>
-<a name="line-121"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_1D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x904C</span>
-<a name="line-122"></a>
-<a name="line-123"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_2D_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9053</span>
-<a name="line-124"></a>
-<a name="line-125"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_2D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x904D</span>
-<a name="line-126"></a>
-<a name="line-127"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_2D_MULTISAMPLE_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9056</span>
-<a name="line-128"></a>
-<a name="line-129"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_2D_MULTISAMPLE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9055</span>
-<a name="line-130"></a>
-<a name="line-131"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_2D_RECT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x904F</span>
-<a name="line-132"></a>
-<a name="line-133"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_3D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x904E</span>
-<a name="line-134"></a>
-<a name="line-135"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_BINDING_ACCESS_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F3E</span>
-<a name="line-136"></a>
-<a name="line-137"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_BINDING_FORMAT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x906E</span>
-<a name="line-138"></a>
-<a name="line-139"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_BINDING_LAYERED_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F3C</span>
-<a name="line-140"></a>
-<a name="line-141"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_BINDING_LAYER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F3D</span>
-<a name="line-142"></a>
-<a name="line-143"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_BINDING_LEVEL_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F3B</span>
-<a name="line-144"></a>
-<a name="line-145"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_BINDING_NAME_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F3A</span>
-<a name="line-146"></a>
-<a name="line-147"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_CUBE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9050</span>
-<a name="line-148"></a>
-<a name="line-149"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_1D_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x905D</span>
-<a name="line-150"></a>
-<a name="line-151"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_1D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9057</span>
-<a name="line-152"></a>
-<a name="line-153"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_2D_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x905E</span>
-<a name="line-154"></a>
-<a name="line-155"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_2D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9058</span>
-<a name="line-156"></a>
-<a name="line-157"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_2D_MULTISAMPLE_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9061</span>
-<a name="line-158"></a>
-<a name="line-159"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_2D_MULTISAMPLE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9060</span>
-<a name="line-160"></a>
-<a name="line-161"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_2D_RECT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x905A</span>
-<a name="line-162"></a>
-<a name="line-163"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_3D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9059</span>
-<a name="line-164"></a>
-<a name="line-165"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_CUBE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x905B</span>
-<a name="line-166"></a>
-<a name="line-167"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F39</span>
-<a name="line-168"></a>
-<a name="line-169"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_IMAGE_SAMPLES_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x906D</span>
-<a name="line-170"></a>
-<a name="line-171"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_IMAGE_UNITS_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F38</span>
-<a name="line-172"></a>
-<a name="line-173"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_BUFFER_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000080</span>
-<a name="line-174"></a>
-<a name="line-175"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SHADER_IMAGE_ACCESS_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000020</span>
-<a name="line-176"></a>
-<a name="line-177"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_FETCH_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000008</span>
-<a name="line-178"></a>
-<a name="line-179"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_UPDATE_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000100</span>
-<a name="line-180"></a>
-<a name="line-181"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000800</span>
-<a name="line-182"></a>
-<a name="line-183"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNIFORM_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000004</span>
-<a name="line-184"></a>
-<a name="line-185"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_1D_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9068</span>
-<a name="line-186"></a>
-<a name="line-187"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_1D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9062</span>
-<a name="line-188"></a>
-<a name="line-189"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_2D_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9069</span>
-<a name="line-190"></a>
-<a name="line-191"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_2D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9063</span>
-<a name="line-192"></a>
-<a name="line-193"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x906C</span>
-<a name="line-194"></a>
-<a name="line-195"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x906B</span>
-<a name="line-196"></a>
-<a name="line-197"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_2D_RECT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9065</span>
-<a name="line-198"></a>
-<a name="line-199"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_3D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9064</span>
-<a name="line-200"></a>
-<a name="line-201"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_CUBE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9066</span>
-<a name="line-202"></a>
-<a name="line-203"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000001</span>
+<a name="line-99"></a>
+<a name="line-100"></a><a name="glMemoryBarrierEXT"></a><span class='hs-definition'>glMemoryBarrierEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbitfield</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-101"></a><span class='hs-definition'>glMemoryBarrierEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibitfieldIOV</span> <span class='hs-varid'>glMemoryBarrierEXTFunPtr</span>
+<a name="line-102"></a>
+<a name="line-103"></a><a name="glMemoryBarrierEXTFunPtr"></a><span class='hs-definition'>glMemoryBarrierEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbitfield</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-104"></a><span class='hs-definition'>glMemoryBarrierEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMemoryBarrierEXT"</span><span class='hs-layout'>)</span>
+<a name="line-105"></a>
+<a name="line-106"></a><span class='hs-comment'>{-# NOINLINE glMemoryBarrierEXTFunPtr #-}</span>
+<a name="line-107"></a>
+<a name="line-108"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALL_BARRIER_BITS_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0xFFFFFFFF</span>
+<a name="line-109"></a>
+<a name="line-110"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ATOMIC_COUNTER_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00001000</span>
+<a name="line-111"></a>
+<a name="line-112"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BUFFER_UPDATE_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000200</span>
+<a name="line-113"></a>
+<a name="line-114"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COMMAND_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000040</span>
+<a name="line-115"></a>
+<a name="line-116"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ELEMENT_ARRAY_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000002</span>
+<a name="line-117"></a>
+<a name="line-118"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000400</span>
+<a name="line-119"></a>
+<a name="line-120"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_1D_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9052</span>
+<a name="line-121"></a>
+<a name="line-122"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_1D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x904C</span>
+<a name="line-123"></a>
+<a name="line-124"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_2D_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9053</span>
+<a name="line-125"></a>
+<a name="line-126"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_2D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x904D</span>
+<a name="line-127"></a>
+<a name="line-128"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_2D_MULTISAMPLE_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9056</span>
+<a name="line-129"></a>
+<a name="line-130"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_2D_MULTISAMPLE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9055</span>
+<a name="line-131"></a>
+<a name="line-132"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_2D_RECT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x904F</span>
+<a name="line-133"></a>
+<a name="line-134"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_3D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x904E</span>
+<a name="line-135"></a>
+<a name="line-136"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_BINDING_ACCESS_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F3E</span>
+<a name="line-137"></a>
+<a name="line-138"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_BINDING_FORMAT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x906E</span>
+<a name="line-139"></a>
+<a name="line-140"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_BINDING_LAYERED_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F3C</span>
+<a name="line-141"></a>
+<a name="line-142"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_BINDING_LAYER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F3D</span>
+<a name="line-143"></a>
+<a name="line-144"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_BINDING_LEVEL_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F3B</span>
+<a name="line-145"></a>
+<a name="line-146"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_BINDING_NAME_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F3A</span>
+<a name="line-147"></a>
+<a name="line-148"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_IMAGE_CUBE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9050</span>
+<a name="line-149"></a>
+<a name="line-150"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_1D_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x905D</span>
+<a name="line-151"></a>
+<a name="line-152"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_1D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9057</span>
+<a name="line-153"></a>
+<a name="line-154"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_2D_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x905E</span>
+<a name="line-155"></a>
+<a name="line-156"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_2D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9058</span>
+<a name="line-157"></a>
+<a name="line-158"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_2D_MULTISAMPLE_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9061</span>
+<a name="line-159"></a>
+<a name="line-160"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_2D_MULTISAMPLE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9060</span>
+<a name="line-161"></a>
+<a name="line-162"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_2D_RECT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x905A</span>
+<a name="line-163"></a>
+<a name="line-164"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_3D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9059</span>
+<a name="line-165"></a>
+<a name="line-166"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_IMAGE_CUBE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x905B</span>
+<a name="line-167"></a>
+<a name="line-168"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F39</span>
+<a name="line-169"></a>
+<a name="line-170"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_IMAGE_SAMPLES_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x906D</span>
+<a name="line-171"></a>
+<a name="line-172"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_IMAGE_UNITS_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F38</span>
+<a name="line-173"></a>
+<a name="line-174"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PIXEL_BUFFER_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000080</span>
+<a name="line-175"></a>
+<a name="line-176"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SHADER_IMAGE_ACCESS_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000020</span>
+<a name="line-177"></a>
+<a name="line-178"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_FETCH_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000008</span>
+<a name="line-179"></a>
+<a name="line-180"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_UPDATE_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000100</span>
+<a name="line-181"></a>
+<a name="line-182"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TRANSFORM_FEEDBACK_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000800</span>
+<a name="line-183"></a>
+<a name="line-184"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNIFORM_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000004</span>
+<a name="line-185"></a>
+<a name="line-186"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_1D_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9068</span>
+<a name="line-187"></a>
+<a name="line-188"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_1D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9062</span>
+<a name="line-189"></a>
+<a name="line-190"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_2D_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9069</span>
+<a name="line-191"></a>
+<a name="line-192"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_2D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9063</span>
+<a name="line-193"></a>
+<a name="line-194"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x906C</span>
+<a name="line-195"></a>
+<a name="line-196"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x906B</span>
+<a name="line-197"></a>
+<a name="line-198"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_2D_RECT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9065</span>
+<a name="line-199"></a>
+<a name="line-200"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_3D_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9064</span>
+<a name="line-201"></a>
+<a name="line-202"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_IMAGE_CUBE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9066</span>
+<a name="line-203"></a>
+<a name="line-204"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000001</span>
 </pre></body>
 </html>

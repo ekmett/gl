@@ -97,334 +97,335 @@
 <a name="line-88"></a>
 <a name="line-89"></a><a name="gl_EXT_framebuffer_object"></a><span class='hs-definition'>gl_EXT_framebuffer_object</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-90"></a><span class='hs-definition'>gl_EXT_framebuffer_object</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_EXT_framebuffer_object"</span> <span class='hs-varid'>extensions</span>
-<a name="line-91"></a>
-<a name="line-92"></a><span class='hs-comment'>-- | Usage: @'glBindFramebufferEXT' target framebuffer@</span>
-<a name="line-93"></a><span class='hs-comment'>--</span>
-<a name="line-94"></a><span class='hs-comment'>-- The parameter @target@ is a @FramebufferTarget@.</span>
-<a name="line-95"></a>
+<a name="line-91"></a><span class='hs-comment'>{-# NOINLINE gl_EXT_framebuffer_object #-}</span>
+<a name="line-92"></a>
+<a name="line-93"></a><span class='hs-comment'>-- | Usage: @'glBindFramebufferEXT' target framebuffer@</span>
+<a name="line-94"></a><span class='hs-comment'>--</span>
+<a name="line-95"></a><span class='hs-comment'>-- The parameter @target@ is a @FramebufferTarget@.</span>
 <a name="line-96"></a>
-<a name="line-97"></a><a name="glBindFramebufferEXT"></a><span class='hs-definition'>glBindFramebufferEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-98"></a><span class='hs-definition'>glBindFramebufferEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintIOV</span> <span class='hs-varid'>glBindFramebufferEXTFunPtr</span>
-<a name="line-99"></a>
-<a name="line-100"></a><a name="glBindFramebufferEXTFunPtr"></a><span class='hs-definition'>glBindFramebufferEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-101"></a><span class='hs-definition'>glBindFramebufferEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindFramebufferEXT"</span><span class='hs-layout'>)</span>
-<a name="line-102"></a>
-<a name="line-103"></a><span class='hs-comment'>{-# NOINLINE glBindFramebufferEXTFunPtr #-}</span>
-<a name="line-104"></a>
-<a name="line-105"></a><span class='hs-comment'>-- | Usage: @'glBindRenderbufferEXT' target renderbuffer@</span>
-<a name="line-106"></a><span class='hs-comment'>--</span>
-<a name="line-107"></a><span class='hs-comment'>-- The parameter @target@ is a @RenderbufferTarget@.</span>
-<a name="line-108"></a>
+<a name="line-97"></a>
+<a name="line-98"></a><a name="glBindFramebufferEXT"></a><span class='hs-definition'>glBindFramebufferEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-99"></a><span class='hs-definition'>glBindFramebufferEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintIOV</span> <span class='hs-varid'>glBindFramebufferEXTFunPtr</span>
+<a name="line-100"></a>
+<a name="line-101"></a><a name="glBindFramebufferEXTFunPtr"></a><span class='hs-definition'>glBindFramebufferEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-102"></a><span class='hs-definition'>glBindFramebufferEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindFramebufferEXT"</span><span class='hs-layout'>)</span>
+<a name="line-103"></a>
+<a name="line-104"></a><span class='hs-comment'>{-# NOINLINE glBindFramebufferEXTFunPtr #-}</span>
+<a name="line-105"></a>
+<a name="line-106"></a><span class='hs-comment'>-- | Usage: @'glBindRenderbufferEXT' target renderbuffer@</span>
+<a name="line-107"></a><span class='hs-comment'>--</span>
+<a name="line-108"></a><span class='hs-comment'>-- The parameter @target@ is a @RenderbufferTarget@.</span>
 <a name="line-109"></a>
-<a name="line-110"></a><a name="glBindRenderbufferEXT"></a><span class='hs-definition'>glBindRenderbufferEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-111"></a><span class='hs-definition'>glBindRenderbufferEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintIOV</span> <span class='hs-varid'>glBindRenderbufferEXTFunPtr</span>
-<a name="line-112"></a>
-<a name="line-113"></a><a name="glBindRenderbufferEXTFunPtr"></a><span class='hs-definition'>glBindRenderbufferEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-114"></a><span class='hs-definition'>glBindRenderbufferEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindRenderbufferEXT"</span><span class='hs-layout'>)</span>
-<a name="line-115"></a>
-<a name="line-116"></a><span class='hs-comment'>{-# NOINLINE glBindRenderbufferEXTFunPtr #-}</span>
-<a name="line-117"></a>
-<a name="line-118"></a><span class='hs-comment'>-- | Usage: @'glCheckFramebufferStatusEXT' target@</span>
-<a name="line-119"></a><span class='hs-comment'>--</span>
-<a name="line-120"></a><span class='hs-comment'>-- The parameter @target@ is a @FramebufferTarget@.</span>
-<a name="line-121"></a><span class='hs-comment'>--</span>
-<a name="line-122"></a><span class='hs-comment'>-- This command is an alias for 'glCheckFramebufferStatus'.</span>
-<a name="line-123"></a>
+<a name="line-110"></a>
+<a name="line-111"></a><a name="glBindRenderbufferEXT"></a><span class='hs-definition'>glBindRenderbufferEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-112"></a><span class='hs-definition'>glBindRenderbufferEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintIOV</span> <span class='hs-varid'>glBindRenderbufferEXTFunPtr</span>
+<a name="line-113"></a>
+<a name="line-114"></a><a name="glBindRenderbufferEXTFunPtr"></a><span class='hs-definition'>glBindRenderbufferEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-115"></a><span class='hs-definition'>glBindRenderbufferEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindRenderbufferEXT"</span><span class='hs-layout'>)</span>
+<a name="line-116"></a>
+<a name="line-117"></a><span class='hs-comment'>{-# NOINLINE glBindRenderbufferEXTFunPtr #-}</span>
+<a name="line-118"></a>
+<a name="line-119"></a><span class='hs-comment'>-- | Usage: @'glCheckFramebufferStatusEXT' target@</span>
+<a name="line-120"></a><span class='hs-comment'>--</span>
+<a name="line-121"></a><span class='hs-comment'>-- The parameter @target@ is a @FramebufferTarget@.</span>
+<a name="line-122"></a><span class='hs-comment'>--</span>
+<a name="line-123"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glCheckFramebufferStatus'.</span>
 <a name="line-124"></a>
-<a name="line-125"></a><a name="glCheckFramebufferStatusEXT"></a><span class='hs-definition'>glCheckFramebufferStatusEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLenum</span>
-<a name="line-126"></a><span class='hs-definition'>glCheckFramebufferStatusEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOenum</span> <span class='hs-varid'>glCheckFramebufferStatusEXTFunPtr</span>
-<a name="line-127"></a>
-<a name="line-128"></a><a name="glCheckFramebufferStatusEXTFunPtr"></a><span class='hs-definition'>glCheckFramebufferStatusEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLenum</span><span class='hs-layout'>)</span>
-<a name="line-129"></a><span class='hs-definition'>glCheckFramebufferStatusEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glCheckFramebufferStatusEXT"</span><span class='hs-layout'>)</span>
-<a name="line-130"></a>
-<a name="line-131"></a><span class='hs-comment'>{-# NOINLINE glCheckFramebufferStatusEXTFunPtr #-}</span>
-<a name="line-132"></a>
-<a name="line-133"></a><span class='hs-comment'>-- | Usage: @'glDeleteFramebuffersEXT' n framebuffers@</span>
-<a name="line-134"></a><span class='hs-comment'>--</span>
-<a name="line-135"></a><span class='hs-comment'>-- The length of @framebuffers@ should be @n@.</span>
-<a name="line-136"></a><span class='hs-comment'>--</span>
-<a name="line-137"></a><span class='hs-comment'>-- This command is an alias for 'glDeleteFramebuffers'.</span>
-<a name="line-138"></a>
+<a name="line-125"></a>
+<a name="line-126"></a><a name="glCheckFramebufferStatusEXT"></a><span class='hs-definition'>glCheckFramebufferStatusEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLenum</span>
+<a name="line-127"></a><span class='hs-definition'>glCheckFramebufferStatusEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOenum</span> <span class='hs-varid'>glCheckFramebufferStatusEXTFunPtr</span>
+<a name="line-128"></a>
+<a name="line-129"></a><a name="glCheckFramebufferStatusEXTFunPtr"></a><span class='hs-definition'>glCheckFramebufferStatusEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLenum</span><span class='hs-layout'>)</span>
+<a name="line-130"></a><span class='hs-definition'>glCheckFramebufferStatusEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glCheckFramebufferStatusEXT"</span><span class='hs-layout'>)</span>
+<a name="line-131"></a>
+<a name="line-132"></a><span class='hs-comment'>{-# NOINLINE glCheckFramebufferStatusEXTFunPtr #-}</span>
+<a name="line-133"></a>
+<a name="line-134"></a><span class='hs-comment'>-- | Usage: @'glDeleteFramebuffersEXT' n framebuffers@</span>
+<a name="line-135"></a><span class='hs-comment'>--</span>
+<a name="line-136"></a><span class='hs-comment'>-- The length of @framebuffers@ should be @n@.</span>
+<a name="line-137"></a><span class='hs-comment'>--</span>
+<a name="line-138"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glDeleteFramebuffers'.</span>
 <a name="line-139"></a>
-<a name="line-140"></a><a name="glDeleteFramebuffersEXT"></a><span class='hs-definition'>glDeleteFramebuffersEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-141"></a><span class='hs-definition'>glDeleteFramebuffersEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glDeleteFramebuffersEXTFunPtr</span>
-<a name="line-142"></a>
-<a name="line-143"></a><a name="glDeleteFramebuffersEXTFunPtr"></a><span class='hs-definition'>glDeleteFramebuffersEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-144"></a><span class='hs-definition'>glDeleteFramebuffersEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeleteFramebuffersEXT"</span><span class='hs-layout'>)</span>
-<a name="line-145"></a>
-<a name="line-146"></a><span class='hs-comment'>{-# NOINLINE glDeleteFramebuffersEXTFunPtr #-}</span>
-<a name="line-147"></a>
-<a name="line-148"></a><span class='hs-comment'>-- | Usage: @'glDeleteRenderbuffersEXT' n renderbuffers@</span>
-<a name="line-149"></a><span class='hs-comment'>--</span>
-<a name="line-150"></a><span class='hs-comment'>-- The length of @renderbuffers@ should be @n@.</span>
-<a name="line-151"></a><span class='hs-comment'>--</span>
-<a name="line-152"></a><span class='hs-comment'>-- This command is an alias for 'glDeleteRenderbuffers'.</span>
-<a name="line-153"></a>
+<a name="line-140"></a>
+<a name="line-141"></a><a name="glDeleteFramebuffersEXT"></a><span class='hs-definition'>glDeleteFramebuffersEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-142"></a><span class='hs-definition'>glDeleteFramebuffersEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glDeleteFramebuffersEXTFunPtr</span>
+<a name="line-143"></a>
+<a name="line-144"></a><a name="glDeleteFramebuffersEXTFunPtr"></a><span class='hs-definition'>glDeleteFramebuffersEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-145"></a><span class='hs-definition'>glDeleteFramebuffersEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeleteFramebuffersEXT"</span><span class='hs-layout'>)</span>
+<a name="line-146"></a>
+<a name="line-147"></a><span class='hs-comment'>{-# NOINLINE glDeleteFramebuffersEXTFunPtr #-}</span>
+<a name="line-148"></a>
+<a name="line-149"></a><span class='hs-comment'>-- | Usage: @'glDeleteRenderbuffersEXT' n renderbuffers@</span>
+<a name="line-150"></a><span class='hs-comment'>--</span>
+<a name="line-151"></a><span class='hs-comment'>-- The length of @renderbuffers@ should be @n@.</span>
+<a name="line-152"></a><span class='hs-comment'>--</span>
+<a name="line-153"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glDeleteRenderbuffers'.</span>
 <a name="line-154"></a>
-<a name="line-155"></a><a name="glDeleteRenderbuffersEXT"></a><span class='hs-definition'>glDeleteRenderbuffersEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-156"></a><span class='hs-definition'>glDeleteRenderbuffersEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glDeleteRenderbuffersEXTFunPtr</span>
-<a name="line-157"></a>
-<a name="line-158"></a><a name="glDeleteRenderbuffersEXTFunPtr"></a><span class='hs-definition'>glDeleteRenderbuffersEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-159"></a><span class='hs-definition'>glDeleteRenderbuffersEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeleteRenderbuffersEXT"</span><span class='hs-layout'>)</span>
-<a name="line-160"></a>
-<a name="line-161"></a><span class='hs-comment'>{-# NOINLINE glDeleteRenderbuffersEXTFunPtr #-}</span>
-<a name="line-162"></a>
-<a name="line-163"></a><span class='hs-comment'>-- | Usage: @'glFramebufferRenderbufferEXT' target attachment renderbuffertarget renderbuffer@</span>
-<a name="line-164"></a><span class='hs-comment'>--</span>
-<a name="line-165"></a><span class='hs-comment'>-- The parameter @target@ is a @FramebufferTarget@.</span>
-<a name="line-166"></a><span class='hs-comment'>--</span>
-<a name="line-167"></a><span class='hs-comment'>-- The parameter @attachment@ is a @FramebufferAttachment@.</span>
-<a name="line-168"></a><span class='hs-comment'>--</span>
-<a name="line-169"></a><span class='hs-comment'>-- The parameter @renderbuffertarget@ is a @RenderbufferTarget@.</span>
-<a name="line-170"></a><span class='hs-comment'>--</span>
-<a name="line-171"></a><span class='hs-comment'>-- This command is an alias for 'glFramebufferRenderbuffer'.</span>
-<a name="line-172"></a>
+<a name="line-155"></a>
+<a name="line-156"></a><a name="glDeleteRenderbuffersEXT"></a><span class='hs-definition'>glDeleteRenderbuffersEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-157"></a><span class='hs-definition'>glDeleteRenderbuffersEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glDeleteRenderbuffersEXTFunPtr</span>
+<a name="line-158"></a>
+<a name="line-159"></a><a name="glDeleteRenderbuffersEXTFunPtr"></a><span class='hs-definition'>glDeleteRenderbuffersEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-160"></a><span class='hs-definition'>glDeleteRenderbuffersEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeleteRenderbuffersEXT"</span><span class='hs-layout'>)</span>
+<a name="line-161"></a>
+<a name="line-162"></a><span class='hs-comment'>{-# NOINLINE glDeleteRenderbuffersEXTFunPtr #-}</span>
+<a name="line-163"></a>
+<a name="line-164"></a><span class='hs-comment'>-- | Usage: @'glFramebufferRenderbufferEXT' target attachment renderbuffertarget renderbuffer@</span>
+<a name="line-165"></a><span class='hs-comment'>--</span>
+<a name="line-166"></a><span class='hs-comment'>-- The parameter @target@ is a @FramebufferTarget@.</span>
+<a name="line-167"></a><span class='hs-comment'>--</span>
+<a name="line-168"></a><span class='hs-comment'>-- The parameter @attachment@ is a @FramebufferAttachment@.</span>
+<a name="line-169"></a><span class='hs-comment'>--</span>
+<a name="line-170"></a><span class='hs-comment'>-- The parameter @renderbuffertarget@ is a @RenderbufferTarget@.</span>
+<a name="line-171"></a><span class='hs-comment'>--</span>
+<a name="line-172"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glFramebufferRenderbuffer'.</span>
 <a name="line-173"></a>
-<a name="line-174"></a><a name="glFramebufferRenderbufferEXT"></a><span class='hs-definition'>glFramebufferRenderbufferEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-175"></a><span class='hs-definition'>glFramebufferRenderbufferEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumenumuintIOV</span> <span class='hs-varid'>glFramebufferRenderbufferEXTFunPtr</span>
-<a name="line-176"></a>
-<a name="line-177"></a><a name="glFramebufferRenderbufferEXTFunPtr"></a><span class='hs-definition'>glFramebufferRenderbufferEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-178"></a><span class='hs-definition'>glFramebufferRenderbufferEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFramebufferRenderbufferEXT"</span><span class='hs-layout'>)</span>
-<a name="line-179"></a>
-<a name="line-180"></a><span class='hs-comment'>{-# NOINLINE glFramebufferRenderbufferEXTFunPtr #-}</span>
-<a name="line-181"></a>
-<a name="line-182"></a><span class='hs-comment'>-- | Usage: @'glFramebufferTexture1DEXT' target attachment textarget texture level@</span>
-<a name="line-183"></a><span class='hs-comment'>--</span>
-<a name="line-184"></a><span class='hs-comment'>-- The parameter @target@ is a @FramebufferTarget@.</span>
-<a name="line-185"></a><span class='hs-comment'>--</span>
-<a name="line-186"></a><span class='hs-comment'>-- The parameter @attachment@ is a @FramebufferAttachment@.</span>
-<a name="line-187"></a><span class='hs-comment'>--</span>
-<a name="line-188"></a><span class='hs-comment'>-- This command is an alias for 'glFramebufferTexture1D'.</span>
-<a name="line-189"></a>
+<a name="line-174"></a>
+<a name="line-175"></a><a name="glFramebufferRenderbufferEXT"></a><span class='hs-definition'>glFramebufferRenderbufferEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-176"></a><span class='hs-definition'>glFramebufferRenderbufferEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumenumuintIOV</span> <span class='hs-varid'>glFramebufferRenderbufferEXTFunPtr</span>
+<a name="line-177"></a>
+<a name="line-178"></a><a name="glFramebufferRenderbufferEXTFunPtr"></a><span class='hs-definition'>glFramebufferRenderbufferEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-179"></a><span class='hs-definition'>glFramebufferRenderbufferEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFramebufferRenderbufferEXT"</span><span class='hs-layout'>)</span>
+<a name="line-180"></a>
+<a name="line-181"></a><span class='hs-comment'>{-# NOINLINE glFramebufferRenderbufferEXTFunPtr #-}</span>
+<a name="line-182"></a>
+<a name="line-183"></a><span class='hs-comment'>-- | Usage: @'glFramebufferTexture1DEXT' target attachment textarget texture level@</span>
+<a name="line-184"></a><span class='hs-comment'>--</span>
+<a name="line-185"></a><span class='hs-comment'>-- The parameter @target@ is a @FramebufferTarget@.</span>
+<a name="line-186"></a><span class='hs-comment'>--</span>
+<a name="line-187"></a><span class='hs-comment'>-- The parameter @attachment@ is a @FramebufferAttachment@.</span>
+<a name="line-188"></a><span class='hs-comment'>--</span>
+<a name="line-189"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glFramebufferTexture1D'.</span>
 <a name="line-190"></a>
-<a name="line-191"></a><a name="glFramebufferTexture1DEXT"></a><span class='hs-definition'>glFramebufferTexture1DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-192"></a><span class='hs-definition'>glFramebufferTexture1DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumenumuintintIOV</span> <span class='hs-varid'>glFramebufferTexture1DEXTFunPtr</span>
-<a name="line-193"></a>
-<a name="line-194"></a><a name="glFramebufferTexture1DEXTFunPtr"></a><span class='hs-definition'>glFramebufferTexture1DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-195"></a><span class='hs-definition'>glFramebufferTexture1DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFramebufferTexture1DEXT"</span><span class='hs-layout'>)</span>
-<a name="line-196"></a>
-<a name="line-197"></a><span class='hs-comment'>{-# NOINLINE glFramebufferTexture1DEXTFunPtr #-}</span>
-<a name="line-198"></a>
-<a name="line-199"></a><span class='hs-comment'>-- | Usage: @'glFramebufferTexture2DEXT' target attachment textarget texture level@</span>
-<a name="line-200"></a><span class='hs-comment'>--</span>
-<a name="line-201"></a><span class='hs-comment'>-- The parameter @target@ is a @FramebufferTarget@.</span>
-<a name="line-202"></a><span class='hs-comment'>--</span>
-<a name="line-203"></a><span class='hs-comment'>-- The parameter @attachment@ is a @FramebufferAttachment@.</span>
-<a name="line-204"></a><span class='hs-comment'>--</span>
-<a name="line-205"></a><span class='hs-comment'>-- This command is an alias for 'glFramebufferTexture2D'.</span>
-<a name="line-206"></a>
+<a name="line-191"></a>
+<a name="line-192"></a><a name="glFramebufferTexture1DEXT"></a><span class='hs-definition'>glFramebufferTexture1DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-193"></a><span class='hs-definition'>glFramebufferTexture1DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumenumuintintIOV</span> <span class='hs-varid'>glFramebufferTexture1DEXTFunPtr</span>
+<a name="line-194"></a>
+<a name="line-195"></a><a name="glFramebufferTexture1DEXTFunPtr"></a><span class='hs-definition'>glFramebufferTexture1DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-196"></a><span class='hs-definition'>glFramebufferTexture1DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFramebufferTexture1DEXT"</span><span class='hs-layout'>)</span>
+<a name="line-197"></a>
+<a name="line-198"></a><span class='hs-comment'>{-# NOINLINE glFramebufferTexture1DEXTFunPtr #-}</span>
+<a name="line-199"></a>
+<a name="line-200"></a><span class='hs-comment'>-- | Usage: @'glFramebufferTexture2DEXT' target attachment textarget texture level@</span>
+<a name="line-201"></a><span class='hs-comment'>--</span>
+<a name="line-202"></a><span class='hs-comment'>-- The parameter @target@ is a @FramebufferTarget@.</span>
+<a name="line-203"></a><span class='hs-comment'>--</span>
+<a name="line-204"></a><span class='hs-comment'>-- The parameter @attachment@ is a @FramebufferAttachment@.</span>
+<a name="line-205"></a><span class='hs-comment'>--</span>
+<a name="line-206"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glFramebufferTexture2D'.</span>
 <a name="line-207"></a>
-<a name="line-208"></a><a name="glFramebufferTexture2DEXT"></a><span class='hs-definition'>glFramebufferTexture2DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-209"></a><span class='hs-definition'>glFramebufferTexture2DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumenumuintintIOV</span> <span class='hs-varid'>glFramebufferTexture2DEXTFunPtr</span>
-<a name="line-210"></a>
-<a name="line-211"></a><a name="glFramebufferTexture2DEXTFunPtr"></a><span class='hs-definition'>glFramebufferTexture2DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-212"></a><span class='hs-definition'>glFramebufferTexture2DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFramebufferTexture2DEXT"</span><span class='hs-layout'>)</span>
-<a name="line-213"></a>
-<a name="line-214"></a><span class='hs-comment'>{-# NOINLINE glFramebufferTexture2DEXTFunPtr #-}</span>
-<a name="line-215"></a>
-<a name="line-216"></a><span class='hs-comment'>-- | Usage: @'glFramebufferTexture3DEXT' target attachment textarget texture level zoffset@</span>
-<a name="line-217"></a><span class='hs-comment'>--</span>
-<a name="line-218"></a><span class='hs-comment'>-- The parameter @target@ is a @FramebufferTarget@.</span>
-<a name="line-219"></a><span class='hs-comment'>--</span>
-<a name="line-220"></a><span class='hs-comment'>-- The parameter @attachment@ is a @FramebufferAttachment@.</span>
-<a name="line-221"></a><span class='hs-comment'>--</span>
-<a name="line-222"></a><span class='hs-comment'>-- This command is an alias for 'glFramebufferTexture3D'.</span>
-<a name="line-223"></a>
+<a name="line-208"></a>
+<a name="line-209"></a><a name="glFramebufferTexture2DEXT"></a><span class='hs-definition'>glFramebufferTexture2DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-210"></a><span class='hs-definition'>glFramebufferTexture2DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumenumuintintIOV</span> <span class='hs-varid'>glFramebufferTexture2DEXTFunPtr</span>
+<a name="line-211"></a>
+<a name="line-212"></a><a name="glFramebufferTexture2DEXTFunPtr"></a><span class='hs-definition'>glFramebufferTexture2DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-213"></a><span class='hs-definition'>glFramebufferTexture2DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFramebufferTexture2DEXT"</span><span class='hs-layout'>)</span>
+<a name="line-214"></a>
+<a name="line-215"></a><span class='hs-comment'>{-# NOINLINE glFramebufferTexture2DEXTFunPtr #-}</span>
+<a name="line-216"></a>
+<a name="line-217"></a><span class='hs-comment'>-- | Usage: @'glFramebufferTexture3DEXT' target attachment textarget texture level zoffset@</span>
+<a name="line-218"></a><span class='hs-comment'>--</span>
+<a name="line-219"></a><span class='hs-comment'>-- The parameter @target@ is a @FramebufferTarget@.</span>
+<a name="line-220"></a><span class='hs-comment'>--</span>
+<a name="line-221"></a><span class='hs-comment'>-- The parameter @attachment@ is a @FramebufferAttachment@.</span>
+<a name="line-222"></a><span class='hs-comment'>--</span>
+<a name="line-223"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glFramebufferTexture3D'.</span>
 <a name="line-224"></a>
-<a name="line-225"></a><a name="glFramebufferTexture3DEXT"></a><span class='hs-definition'>glFramebufferTexture3DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-226"></a><span class='hs-definition'>glFramebufferTexture3DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumenumuintintintIOV</span> <span class='hs-varid'>glFramebufferTexture3DEXTFunPtr</span>
-<a name="line-227"></a>
-<a name="line-228"></a><a name="glFramebufferTexture3DEXTFunPtr"></a><span class='hs-definition'>glFramebufferTexture3DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-229"></a><span class='hs-definition'>glFramebufferTexture3DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFramebufferTexture3DEXT"</span><span class='hs-layout'>)</span>
-<a name="line-230"></a>
-<a name="line-231"></a><span class='hs-comment'>{-# NOINLINE glFramebufferTexture3DEXTFunPtr #-}</span>
-<a name="line-232"></a>
-<a name="line-233"></a><span class='hs-comment'>-- | Usage: @'glGenFramebuffersEXT' n framebuffers@</span>
-<a name="line-234"></a><span class='hs-comment'>--</span>
-<a name="line-235"></a><span class='hs-comment'>-- The length of @framebuffers@ should be @n@.</span>
-<a name="line-236"></a><span class='hs-comment'>--</span>
-<a name="line-237"></a><span class='hs-comment'>-- This command is an alias for 'glGenFramebuffers'.</span>
-<a name="line-238"></a>
+<a name="line-225"></a>
+<a name="line-226"></a><a name="glFramebufferTexture3DEXT"></a><span class='hs-definition'>glFramebufferTexture3DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-227"></a><span class='hs-definition'>glFramebufferTexture3DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumenumuintintintIOV</span> <span class='hs-varid'>glFramebufferTexture3DEXTFunPtr</span>
+<a name="line-228"></a>
+<a name="line-229"></a><a name="glFramebufferTexture3DEXTFunPtr"></a><span class='hs-definition'>glFramebufferTexture3DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-230"></a><span class='hs-definition'>glFramebufferTexture3DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFramebufferTexture3DEXT"</span><span class='hs-layout'>)</span>
+<a name="line-231"></a>
+<a name="line-232"></a><span class='hs-comment'>{-# NOINLINE glFramebufferTexture3DEXTFunPtr #-}</span>
+<a name="line-233"></a>
+<a name="line-234"></a><span class='hs-comment'>-- | Usage: @'glGenFramebuffersEXT' n framebuffers@</span>
+<a name="line-235"></a><span class='hs-comment'>--</span>
+<a name="line-236"></a><span class='hs-comment'>-- The length of @framebuffers@ should be @n@.</span>
+<a name="line-237"></a><span class='hs-comment'>--</span>
+<a name="line-238"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glGenFramebuffers'.</span>
 <a name="line-239"></a>
-<a name="line-240"></a><a name="glGenFramebuffersEXT"></a><span class='hs-definition'>glGenFramebuffersEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-241"></a><span class='hs-definition'>glGenFramebuffersEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glGenFramebuffersEXTFunPtr</span>
-<a name="line-242"></a>
-<a name="line-243"></a><a name="glGenFramebuffersEXTFunPtr"></a><span class='hs-definition'>glGenFramebuffersEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-244"></a><span class='hs-definition'>glGenFramebuffersEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGenFramebuffersEXT"</span><span class='hs-layout'>)</span>
-<a name="line-245"></a>
-<a name="line-246"></a><span class='hs-comment'>{-# NOINLINE glGenFramebuffersEXTFunPtr #-}</span>
-<a name="line-247"></a>
-<a name="line-248"></a><span class='hs-comment'>-- | Usage: @'glGenRenderbuffersEXT' n renderbuffers@</span>
-<a name="line-249"></a><span class='hs-comment'>--</span>
-<a name="line-250"></a><span class='hs-comment'>-- The length of @renderbuffers@ should be @n@.</span>
-<a name="line-251"></a><span class='hs-comment'>--</span>
-<a name="line-252"></a><span class='hs-comment'>-- This command is an alias for 'glGenRenderbuffers'.</span>
-<a name="line-253"></a>
+<a name="line-240"></a>
+<a name="line-241"></a><a name="glGenFramebuffersEXT"></a><span class='hs-definition'>glGenFramebuffersEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-242"></a><span class='hs-definition'>glGenFramebuffersEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glGenFramebuffersEXTFunPtr</span>
+<a name="line-243"></a>
+<a name="line-244"></a><a name="glGenFramebuffersEXTFunPtr"></a><span class='hs-definition'>glGenFramebuffersEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-245"></a><span class='hs-definition'>glGenFramebuffersEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGenFramebuffersEXT"</span><span class='hs-layout'>)</span>
+<a name="line-246"></a>
+<a name="line-247"></a><span class='hs-comment'>{-# NOINLINE glGenFramebuffersEXTFunPtr #-}</span>
+<a name="line-248"></a>
+<a name="line-249"></a><span class='hs-comment'>-- | Usage: @'glGenRenderbuffersEXT' n renderbuffers@</span>
+<a name="line-250"></a><span class='hs-comment'>--</span>
+<a name="line-251"></a><span class='hs-comment'>-- The length of @renderbuffers@ should be @n@.</span>
+<a name="line-252"></a><span class='hs-comment'>--</span>
+<a name="line-253"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glGenRenderbuffers'.</span>
 <a name="line-254"></a>
-<a name="line-255"></a><a name="glGenRenderbuffersEXT"></a><span class='hs-definition'>glGenRenderbuffersEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-256"></a><span class='hs-definition'>glGenRenderbuffersEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glGenRenderbuffersEXTFunPtr</span>
-<a name="line-257"></a>
-<a name="line-258"></a><a name="glGenRenderbuffersEXTFunPtr"></a><span class='hs-definition'>glGenRenderbuffersEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-259"></a><span class='hs-definition'>glGenRenderbuffersEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGenRenderbuffersEXT"</span><span class='hs-layout'>)</span>
-<a name="line-260"></a>
-<a name="line-261"></a><span class='hs-comment'>{-# NOINLINE glGenRenderbuffersEXTFunPtr #-}</span>
-<a name="line-262"></a>
-<a name="line-263"></a><span class='hs-comment'>-- | Usage: @'glGenerateMipmapEXT' target@</span>
-<a name="line-264"></a><span class='hs-comment'>--</span>
-<a name="line-265"></a><span class='hs-comment'>-- This command is an alias for 'glGenerateMipmap'.</span>
-<a name="line-266"></a>
+<a name="line-255"></a>
+<a name="line-256"></a><a name="glGenRenderbuffersEXT"></a><span class='hs-definition'>glGenRenderbuffersEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-257"></a><span class='hs-definition'>glGenRenderbuffersEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtruintIOV</span> <span class='hs-varid'>glGenRenderbuffersEXTFunPtr</span>
+<a name="line-258"></a>
+<a name="line-259"></a><a name="glGenRenderbuffersEXTFunPtr"></a><span class='hs-definition'>glGenRenderbuffersEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-260"></a><span class='hs-definition'>glGenRenderbuffersEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGenRenderbuffersEXT"</span><span class='hs-layout'>)</span>
+<a name="line-261"></a>
+<a name="line-262"></a><span class='hs-comment'>{-# NOINLINE glGenRenderbuffersEXTFunPtr #-}</span>
+<a name="line-263"></a>
+<a name="line-264"></a><span class='hs-comment'>-- | Usage: @'glGenerateMipmapEXT' target@</span>
+<a name="line-265"></a><span class='hs-comment'>--</span>
+<a name="line-266"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glGenerateMipmap'.</span>
 <a name="line-267"></a>
-<a name="line-268"></a><a name="glGenerateMipmapEXT"></a><span class='hs-definition'>glGenerateMipmapEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-269"></a><span class='hs-definition'>glGenerateMipmapEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOV</span> <span class='hs-varid'>glGenerateMipmapEXTFunPtr</span>
-<a name="line-270"></a>
-<a name="line-271"></a><a name="glGenerateMipmapEXTFunPtr"></a><span class='hs-definition'>glGenerateMipmapEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-272"></a><span class='hs-definition'>glGenerateMipmapEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGenerateMipmapEXT"</span><span class='hs-layout'>)</span>
-<a name="line-273"></a>
-<a name="line-274"></a><span class='hs-comment'>{-# NOINLINE glGenerateMipmapEXTFunPtr #-}</span>
-<a name="line-275"></a>
-<a name="line-276"></a><span class='hs-comment'>-- | Usage: @'glGetFramebufferAttachmentParameterivEXT' target attachment pname params@</span>
-<a name="line-277"></a><span class='hs-comment'>--</span>
-<a name="line-278"></a><span class='hs-comment'>-- The parameter @target@ is a @FramebufferTarget@.</span>
-<a name="line-279"></a><span class='hs-comment'>--</span>
-<a name="line-280"></a><span class='hs-comment'>-- The parameter @attachment@ is a @FramebufferAttachment@.</span>
-<a name="line-281"></a><span class='hs-comment'>--</span>
-<a name="line-282"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
-<a name="line-283"></a><span class='hs-comment'>--</span>
-<a name="line-284"></a><span class='hs-comment'>-- This command is an alias for 'glGetFramebufferAttachmentParameteriv'.</span>
-<a name="line-285"></a>
+<a name="line-268"></a>
+<a name="line-269"></a><a name="glGenerateMipmapEXT"></a><span class='hs-definition'>glGenerateMipmapEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-270"></a><span class='hs-definition'>glGenerateMipmapEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOV</span> <span class='hs-varid'>glGenerateMipmapEXTFunPtr</span>
+<a name="line-271"></a>
+<a name="line-272"></a><a name="glGenerateMipmapEXTFunPtr"></a><span class='hs-definition'>glGenerateMipmapEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-273"></a><span class='hs-definition'>glGenerateMipmapEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGenerateMipmapEXT"</span><span class='hs-layout'>)</span>
+<a name="line-274"></a>
+<a name="line-275"></a><span class='hs-comment'>{-# NOINLINE glGenerateMipmapEXTFunPtr #-}</span>
+<a name="line-276"></a>
+<a name="line-277"></a><span class='hs-comment'>-- | Usage: @'glGetFramebufferAttachmentParameterivEXT' target attachment pname params@</span>
+<a name="line-278"></a><span class='hs-comment'>--</span>
+<a name="line-279"></a><span class='hs-comment'>-- The parameter @target@ is a @FramebufferTarget@.</span>
+<a name="line-280"></a><span class='hs-comment'>--</span>
+<a name="line-281"></a><span class='hs-comment'>-- The parameter @attachment@ is a @FramebufferAttachment@.</span>
+<a name="line-282"></a><span class='hs-comment'>--</span>
+<a name="line-283"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-284"></a><span class='hs-comment'>--</span>
+<a name="line-285"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glGetFramebufferAttachmentParameteriv'.</span>
 <a name="line-286"></a>
-<a name="line-287"></a><a name="glGetFramebufferAttachmentParameterivEXT"></a><span class='hs-definition'>glGetFramebufferAttachmentParameterivEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-288"></a><span class='hs-definition'>glGetFramebufferAttachmentParameterivEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumenumPtrintIOV</span> <span class='hs-varid'>glGetFramebufferAttachmentParameterivEXTFunPtr</span>
-<a name="line-289"></a>
-<a name="line-290"></a><a name="glGetFramebufferAttachmentParameterivEXTFunPtr"></a><span class='hs-definition'>glGetFramebufferAttachmentParameterivEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-291"></a><span class='hs-definition'>glGetFramebufferAttachmentParameterivEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetFramebufferAttachmentParameterivEXT"</span><span class='hs-layout'>)</span>
-<a name="line-292"></a>
-<a name="line-293"></a><span class='hs-comment'>{-# NOINLINE glGetFramebufferAttachmentParameterivEXTFunPtr #-}</span>
-<a name="line-294"></a>
-<a name="line-295"></a><span class='hs-comment'>-- | Usage: @'glGetRenderbufferParameterivEXT' target pname params@</span>
-<a name="line-296"></a><span class='hs-comment'>--</span>
-<a name="line-297"></a><span class='hs-comment'>-- The parameter @target@ is a @RenderbufferTarget@.</span>
-<a name="line-298"></a><span class='hs-comment'>--</span>
-<a name="line-299"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
-<a name="line-300"></a><span class='hs-comment'>--</span>
-<a name="line-301"></a><span class='hs-comment'>-- This command is an alias for 'glGetRenderbufferParameteriv'.</span>
-<a name="line-302"></a>
+<a name="line-287"></a>
+<a name="line-288"></a><a name="glGetFramebufferAttachmentParameterivEXT"></a><span class='hs-definition'>glGetFramebufferAttachmentParameterivEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-289"></a><span class='hs-definition'>glGetFramebufferAttachmentParameterivEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumenumPtrintIOV</span> <span class='hs-varid'>glGetFramebufferAttachmentParameterivEXTFunPtr</span>
+<a name="line-290"></a>
+<a name="line-291"></a><a name="glGetFramebufferAttachmentParameterivEXTFunPtr"></a><span class='hs-definition'>glGetFramebufferAttachmentParameterivEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-292"></a><span class='hs-definition'>glGetFramebufferAttachmentParameterivEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetFramebufferAttachmentParameterivEXT"</span><span class='hs-layout'>)</span>
+<a name="line-293"></a>
+<a name="line-294"></a><span class='hs-comment'>{-# NOINLINE glGetFramebufferAttachmentParameterivEXTFunPtr #-}</span>
+<a name="line-295"></a>
+<a name="line-296"></a><span class='hs-comment'>-- | Usage: @'glGetRenderbufferParameterivEXT' target pname params@</span>
+<a name="line-297"></a><span class='hs-comment'>--</span>
+<a name="line-298"></a><span class='hs-comment'>-- The parameter @target@ is a @RenderbufferTarget@.</span>
+<a name="line-299"></a><span class='hs-comment'>--</span>
+<a name="line-300"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-301"></a><span class='hs-comment'>--</span>
+<a name="line-302"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glGetRenderbufferParameteriv'.</span>
 <a name="line-303"></a>
-<a name="line-304"></a><a name="glGetRenderbufferParameterivEXT"></a><span class='hs-definition'>glGetRenderbufferParameterivEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-305"></a><span class='hs-definition'>glGetRenderbufferParameterivEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumPtrintIOV</span> <span class='hs-varid'>glGetRenderbufferParameterivEXTFunPtr</span>
-<a name="line-306"></a>
-<a name="line-307"></a><a name="glGetRenderbufferParameterivEXTFunPtr"></a><span class='hs-definition'>glGetRenderbufferParameterivEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-308"></a><span class='hs-definition'>glGetRenderbufferParameterivEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetRenderbufferParameterivEXT"</span><span class='hs-layout'>)</span>
-<a name="line-309"></a>
-<a name="line-310"></a><span class='hs-comment'>{-# NOINLINE glGetRenderbufferParameterivEXTFunPtr #-}</span>
-<a name="line-311"></a>
-<a name="line-312"></a><span class='hs-comment'>-- | Usage: @'glIsFramebufferEXT' framebuffer@</span>
-<a name="line-313"></a><span class='hs-comment'>--</span>
-<a name="line-314"></a><span class='hs-comment'>-- This command is an alias for 'glIsFramebuffer'.</span>
-<a name="line-315"></a>
+<a name="line-304"></a>
+<a name="line-305"></a><a name="glGetRenderbufferParameterivEXT"></a><span class='hs-definition'>glGetRenderbufferParameterivEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-306"></a><span class='hs-definition'>glGetRenderbufferParameterivEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumPtrintIOV</span> <span class='hs-varid'>glGetRenderbufferParameterivEXTFunPtr</span>
+<a name="line-307"></a>
+<a name="line-308"></a><a name="glGetRenderbufferParameterivEXTFunPtr"></a><span class='hs-definition'>glGetRenderbufferParameterivEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-309"></a><span class='hs-definition'>glGetRenderbufferParameterivEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetRenderbufferParameterivEXT"</span><span class='hs-layout'>)</span>
+<a name="line-310"></a>
+<a name="line-311"></a><span class='hs-comment'>{-# NOINLINE glGetRenderbufferParameterivEXTFunPtr #-}</span>
+<a name="line-312"></a>
+<a name="line-313"></a><span class='hs-comment'>-- | Usage: @'glIsFramebufferEXT' framebuffer@</span>
+<a name="line-314"></a><span class='hs-comment'>--</span>
+<a name="line-315"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glIsFramebuffer'.</span>
 <a name="line-316"></a>
-<a name="line-317"></a><a name="glIsFramebufferEXT"></a><span class='hs-definition'>glIsFramebufferEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLboolean</span>
-<a name="line-318"></a><span class='hs-definition'>glIsFramebufferEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOboolean</span> <span class='hs-varid'>glIsFramebufferEXTFunPtr</span>
-<a name="line-319"></a>
-<a name="line-320"></a><a name="glIsFramebufferEXTFunPtr"></a><span class='hs-definition'>glIsFramebufferEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLboolean</span><span class='hs-layout'>)</span>
-<a name="line-321"></a><span class='hs-definition'>glIsFramebufferEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glIsFramebufferEXT"</span><span class='hs-layout'>)</span>
-<a name="line-322"></a>
-<a name="line-323"></a><span class='hs-comment'>{-# NOINLINE glIsFramebufferEXTFunPtr #-}</span>
-<a name="line-324"></a>
-<a name="line-325"></a><span class='hs-comment'>-- | Usage: @'glIsRenderbufferEXT' renderbuffer@</span>
-<a name="line-326"></a><span class='hs-comment'>--</span>
-<a name="line-327"></a><span class='hs-comment'>-- This command is an alias for 'glIsRenderbuffer'.</span>
-<a name="line-328"></a>
+<a name="line-317"></a>
+<a name="line-318"></a><a name="glIsFramebufferEXT"></a><span class='hs-definition'>glIsFramebufferEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLboolean</span>
+<a name="line-319"></a><span class='hs-definition'>glIsFramebufferEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOboolean</span> <span class='hs-varid'>glIsFramebufferEXTFunPtr</span>
+<a name="line-320"></a>
+<a name="line-321"></a><a name="glIsFramebufferEXTFunPtr"></a><span class='hs-definition'>glIsFramebufferEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLboolean</span><span class='hs-layout'>)</span>
+<a name="line-322"></a><span class='hs-definition'>glIsFramebufferEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glIsFramebufferEXT"</span><span class='hs-layout'>)</span>
+<a name="line-323"></a>
+<a name="line-324"></a><span class='hs-comment'>{-# NOINLINE glIsFramebufferEXTFunPtr #-}</span>
+<a name="line-325"></a>
+<a name="line-326"></a><span class='hs-comment'>-- | Usage: @'glIsRenderbufferEXT' renderbuffer@</span>
+<a name="line-327"></a><span class='hs-comment'>--</span>
+<a name="line-328"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glIsRenderbuffer'.</span>
 <a name="line-329"></a>
-<a name="line-330"></a><a name="glIsRenderbufferEXT"></a><span class='hs-definition'>glIsRenderbufferEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLboolean</span>
-<a name="line-331"></a><span class='hs-definition'>glIsRenderbufferEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOboolean</span> <span class='hs-varid'>glIsRenderbufferEXTFunPtr</span>
-<a name="line-332"></a>
-<a name="line-333"></a><a name="glIsRenderbufferEXTFunPtr"></a><span class='hs-definition'>glIsRenderbufferEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLboolean</span><span class='hs-layout'>)</span>
-<a name="line-334"></a><span class='hs-definition'>glIsRenderbufferEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glIsRenderbufferEXT"</span><span class='hs-layout'>)</span>
-<a name="line-335"></a>
-<a name="line-336"></a><span class='hs-comment'>{-# NOINLINE glIsRenderbufferEXTFunPtr #-}</span>
-<a name="line-337"></a>
-<a name="line-338"></a><span class='hs-comment'>-- | Usage: @'glRenderbufferStorageEXT' target internalformat width height@</span>
-<a name="line-339"></a><span class='hs-comment'>--</span>
-<a name="line-340"></a><span class='hs-comment'>-- The parameter @target@ is a @RenderbufferTarget@.</span>
-<a name="line-341"></a><span class='hs-comment'>--</span>
-<a name="line-342"></a><span class='hs-comment'>-- This command is an alias for 'glRenderbufferStorage'.</span>
-<a name="line-343"></a>
+<a name="line-330"></a>
+<a name="line-331"></a><a name="glIsRenderbufferEXT"></a><span class='hs-definition'>glIsRenderbufferEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLboolean</span>
+<a name="line-332"></a><span class='hs-definition'>glIsRenderbufferEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOboolean</span> <span class='hs-varid'>glIsRenderbufferEXTFunPtr</span>
+<a name="line-333"></a>
+<a name="line-334"></a><a name="glIsRenderbufferEXTFunPtr"></a><span class='hs-definition'>glIsRenderbufferEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLboolean</span><span class='hs-layout'>)</span>
+<a name="line-335"></a><span class='hs-definition'>glIsRenderbufferEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glIsRenderbufferEXT"</span><span class='hs-layout'>)</span>
+<a name="line-336"></a>
+<a name="line-337"></a><span class='hs-comment'>{-# NOINLINE glIsRenderbufferEXTFunPtr #-}</span>
+<a name="line-338"></a>
+<a name="line-339"></a><span class='hs-comment'>-- | Usage: @'glRenderbufferStorageEXT' target internalformat width height@</span>
+<a name="line-340"></a><span class='hs-comment'>--</span>
+<a name="line-341"></a><span class='hs-comment'>-- The parameter @target@ is a @RenderbufferTarget@.</span>
+<a name="line-342"></a><span class='hs-comment'>--</span>
+<a name="line-343"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glRenderbufferStorage'.</span>
 <a name="line-344"></a>
-<a name="line-345"></a><a name="glRenderbufferStorageEXT"></a><span class='hs-definition'>glRenderbufferStorageEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-346"></a><span class='hs-definition'>glRenderbufferStorageEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumsizeisizeiIOV</span> <span class='hs-varid'>glRenderbufferStorageEXTFunPtr</span>
-<a name="line-347"></a>
-<a name="line-348"></a><a name="glRenderbufferStorageEXTFunPtr"></a><span class='hs-definition'>glRenderbufferStorageEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-349"></a><span class='hs-definition'>glRenderbufferStorageEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glRenderbufferStorageEXT"</span><span class='hs-layout'>)</span>
-<a name="line-350"></a>
-<a name="line-351"></a><span class='hs-comment'>{-# NOINLINE glRenderbufferStorageEXTFunPtr #-}</span>
-<a name="line-352"></a>
-<a name="line-353"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DEPTH_ATTACHMENT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D00</span>
-<a name="line-354"></a>
-<a name="line-355"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD1</span>
-<a name="line-356"></a>
-<a name="line-357"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD0</span>
-<a name="line-358"></a>
-<a name="line-359"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD4</span>
-<a name="line-360"></a>
-<a name="line-361"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD3</span>
-<a name="line-362"></a>
-<a name="line-363"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD2</span>
-<a name="line-364"></a>
-<a name="line-365"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_BINDING_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CA6</span>
-<a name="line-366"></a>
-<a name="line-367"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_COMPLETE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD5</span>
-<a name="line-368"></a>
-<a name="line-369"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D40</span>
-<a name="line-370"></a>
-<a name="line-371"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD6</span>
-<a name="line-372"></a>
-<a name="line-373"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD9</span>
-<a name="line-374"></a>
-<a name="line-375"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CDB</span>
-<a name="line-376"></a>
-<a name="line-377"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_INCOMPLETE_FORMATS_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CDA</span>
-<a name="line-378"></a>
-<a name="line-379"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD7</span>
-<a name="line-380"></a>
-<a name="line-381"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CDC</span>
-<a name="line-382"></a>
-<a name="line-383"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_UNSUPPORTED_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CDD</span>
-<a name="line-384"></a>
-<a name="line-385"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INVALID_FRAMEBUFFER_OPERATION_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x0506</span>
-<a name="line-386"></a>
-<a name="line-387"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_RENDERBUFFER_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x84E8</span>
-<a name="line-388"></a>
-<a name="line-389"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_ALPHA_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D53</span>
-<a name="line-390"></a>
-<a name="line-391"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_BINDING_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CA7</span>
-<a name="line-392"></a>
-<a name="line-393"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_BLUE_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D52</span>
-<a name="line-394"></a>
-<a name="line-395"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_DEPTH_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D54</span>
-<a name="line-396"></a>
-<a name="line-397"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D41</span>
-<a name="line-398"></a>
-<a name="line-399"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_GREEN_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D51</span>
-<a name="line-400"></a>
-<a name="line-401"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_HEIGHT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D43</span>
-<a name="line-402"></a>
-<a name="line-403"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_INTERNAL_FORMAT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D44</span>
-<a name="line-404"></a>
-<a name="line-405"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_RED_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D50</span>
-<a name="line-406"></a>
-<a name="line-407"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_STENCIL_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D55</span>
-<a name="line-408"></a>
-<a name="line-409"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_WIDTH_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D42</span>
-<a name="line-410"></a>
-<a name="line-411"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_STENCIL_ATTACHMENT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D20</span>
-<a name="line-412"></a>
-<a name="line-413"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_STENCIL_INDEX16_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D49</span>
-<a name="line-414"></a>
-<a name="line-415"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_STENCIL_INDEX1_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D46</span>
-<a name="line-416"></a>
-<a name="line-417"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_STENCIL_INDEX4_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D47</span>
-<a name="line-418"></a>
-<a name="line-419"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_STENCIL_INDEX8_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D48</span>
+<a name="line-345"></a>
+<a name="line-346"></a><a name="glRenderbufferStorageEXT"></a><span class='hs-definition'>glRenderbufferStorageEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-347"></a><span class='hs-definition'>glRenderbufferStorageEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumsizeisizeiIOV</span> <span class='hs-varid'>glRenderbufferStorageEXTFunPtr</span>
+<a name="line-348"></a>
+<a name="line-349"></a><a name="glRenderbufferStorageEXTFunPtr"></a><span class='hs-definition'>glRenderbufferStorageEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-350"></a><span class='hs-definition'>glRenderbufferStorageEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glRenderbufferStorageEXT"</span><span class='hs-layout'>)</span>
+<a name="line-351"></a>
+<a name="line-352"></a><span class='hs-comment'>{-# NOINLINE glRenderbufferStorageEXTFunPtr #-}</span>
+<a name="line-353"></a>
+<a name="line-354"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DEPTH_ATTACHMENT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D00</span>
+<a name="line-355"></a>
+<a name="line-356"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD1</span>
+<a name="line-357"></a>
+<a name="line-358"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD0</span>
+<a name="line-359"></a>
+<a name="line-360"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD4</span>
+<a name="line-361"></a>
+<a name="line-362"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD3</span>
+<a name="line-363"></a>
+<a name="line-364"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD2</span>
+<a name="line-365"></a>
+<a name="line-366"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_BINDING_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CA6</span>
+<a name="line-367"></a>
+<a name="line-368"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_COMPLETE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD5</span>
+<a name="line-369"></a>
+<a name="line-370"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D40</span>
+<a name="line-371"></a>
+<a name="line-372"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD6</span>
+<a name="line-373"></a>
+<a name="line-374"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD9</span>
+<a name="line-375"></a>
+<a name="line-376"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CDB</span>
+<a name="line-377"></a>
+<a name="line-378"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_INCOMPLETE_FORMATS_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CDA</span>
+<a name="line-379"></a>
+<a name="line-380"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CD7</span>
+<a name="line-381"></a>
+<a name="line-382"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CDC</span>
+<a name="line-383"></a>
+<a name="line-384"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAMEBUFFER_UNSUPPORTED_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CDD</span>
+<a name="line-385"></a>
+<a name="line-386"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INVALID_FRAMEBUFFER_OPERATION_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x0506</span>
+<a name="line-387"></a>
+<a name="line-388"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_RENDERBUFFER_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x84E8</span>
+<a name="line-389"></a>
+<a name="line-390"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_ALPHA_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D53</span>
+<a name="line-391"></a>
+<a name="line-392"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_BINDING_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8CA7</span>
+<a name="line-393"></a>
+<a name="line-394"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_BLUE_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D52</span>
+<a name="line-395"></a>
+<a name="line-396"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_DEPTH_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D54</span>
+<a name="line-397"></a>
+<a name="line-398"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D41</span>
+<a name="line-399"></a>
+<a name="line-400"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_GREEN_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D51</span>
+<a name="line-401"></a>
+<a name="line-402"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_HEIGHT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D43</span>
+<a name="line-403"></a>
+<a name="line-404"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_INTERNAL_FORMAT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D44</span>
+<a name="line-405"></a>
+<a name="line-406"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_RED_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D50</span>
+<a name="line-407"></a>
+<a name="line-408"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_STENCIL_SIZE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D55</span>
+<a name="line-409"></a>
+<a name="line-410"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RENDERBUFFER_WIDTH_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D42</span>
+<a name="line-411"></a>
+<a name="line-412"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_STENCIL_ATTACHMENT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D20</span>
+<a name="line-413"></a>
+<a name="line-414"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_STENCIL_INDEX16_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D49</span>
+<a name="line-415"></a>
+<a name="line-416"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_STENCIL_INDEX1_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D46</span>
+<a name="line-417"></a>
+<a name="line-418"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_STENCIL_INDEX4_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D47</span>
+<a name="line-419"></a>
+<a name="line-420"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_STENCIL_INDEX8_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8D48</span>
 </pre></body>
 </html>

@@ -40,81 +40,82 @@
 <a name="line-31"></a>
 <a name="line-32"></a><a name="gl_ATI_envmap_bumpmap"></a><span class='hs-definition'>gl_ATI_envmap_bumpmap</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-33"></a><span class='hs-definition'>gl_ATI_envmap_bumpmap</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ATI_envmap_bumpmap"</span> <span class='hs-varid'>extensions</span>
-<a name="line-34"></a>
-<a name="line-35"></a><span class='hs-comment'>-- | Usage: @'glGetTexBumpParameterfvATI' pname param@</span>
-<a name="line-36"></a><span class='hs-comment'>--</span>
-<a name="line-37"></a><span class='hs-comment'>-- The parameter @pname@ is a @GetTexBumpParameterATI@.</span>
-<a name="line-38"></a><span class='hs-comment'>--</span>
-<a name="line-39"></a><span class='hs-comment'>-- The length of @param@ should be @COMPSIZE(pname)@.</span>
-<a name="line-40"></a>
+<a name="line-34"></a><span class='hs-comment'>{-# NOINLINE gl_ATI_envmap_bumpmap #-}</span>
+<a name="line-35"></a>
+<a name="line-36"></a><span class='hs-comment'>-- | Usage: @'glGetTexBumpParameterfvATI' pname param@</span>
+<a name="line-37"></a><span class='hs-comment'>--</span>
+<a name="line-38"></a><span class='hs-comment'>-- The parameter @pname@ is a @GetTexBumpParameterATI@.</span>
+<a name="line-39"></a><span class='hs-comment'>--</span>
+<a name="line-40"></a><span class='hs-comment'>-- The length of @param@ should be @COMPSIZE(pname)@.</span>
 <a name="line-41"></a>
-<a name="line-42"></a><a name="glGetTexBumpParameterfvATI"></a><span class='hs-definition'>glGetTexBumpParameterfvATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-43"></a><span class='hs-definition'>glGetTexBumpParameterfvATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrfloatIOV</span> <span class='hs-varid'>glGetTexBumpParameterfvATIFunPtr</span>
-<a name="line-44"></a>
-<a name="line-45"></a><a name="glGetTexBumpParameterfvATIFunPtr"></a><span class='hs-definition'>glGetTexBumpParameterfvATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-46"></a><span class='hs-definition'>glGetTexBumpParameterfvATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetTexBumpParameterfvATI"</span><span class='hs-layout'>)</span>
-<a name="line-47"></a>
-<a name="line-48"></a><span class='hs-comment'>{-# NOINLINE glGetTexBumpParameterfvATIFunPtr #-}</span>
-<a name="line-49"></a>
-<a name="line-50"></a><span class='hs-comment'>-- | Usage: @'glGetTexBumpParameterivATI' pname param@</span>
-<a name="line-51"></a><span class='hs-comment'>--</span>
-<a name="line-52"></a><span class='hs-comment'>-- The parameter @pname@ is a @GetTexBumpParameterATI@.</span>
-<a name="line-53"></a><span class='hs-comment'>--</span>
-<a name="line-54"></a><span class='hs-comment'>-- The length of @param@ should be @COMPSIZE(pname)@.</span>
-<a name="line-55"></a>
+<a name="line-42"></a>
+<a name="line-43"></a><a name="glGetTexBumpParameterfvATI"></a><span class='hs-definition'>glGetTexBumpParameterfvATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-44"></a><span class='hs-definition'>glGetTexBumpParameterfvATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrfloatIOV</span> <span class='hs-varid'>glGetTexBumpParameterfvATIFunPtr</span>
+<a name="line-45"></a>
+<a name="line-46"></a><a name="glGetTexBumpParameterfvATIFunPtr"></a><span class='hs-definition'>glGetTexBumpParameterfvATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-47"></a><span class='hs-definition'>glGetTexBumpParameterfvATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetTexBumpParameterfvATI"</span><span class='hs-layout'>)</span>
+<a name="line-48"></a>
+<a name="line-49"></a><span class='hs-comment'>{-# NOINLINE glGetTexBumpParameterfvATIFunPtr #-}</span>
+<a name="line-50"></a>
+<a name="line-51"></a><span class='hs-comment'>-- | Usage: @'glGetTexBumpParameterivATI' pname param@</span>
+<a name="line-52"></a><span class='hs-comment'>--</span>
+<a name="line-53"></a><span class='hs-comment'>-- The parameter @pname@ is a @GetTexBumpParameterATI@.</span>
+<a name="line-54"></a><span class='hs-comment'>--</span>
+<a name="line-55"></a><span class='hs-comment'>-- The length of @param@ should be @COMPSIZE(pname)@.</span>
 <a name="line-56"></a>
-<a name="line-57"></a><a name="glGetTexBumpParameterivATI"></a><span class='hs-definition'>glGetTexBumpParameterivATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-58"></a><span class='hs-definition'>glGetTexBumpParameterivATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrintIOV</span> <span class='hs-varid'>glGetTexBumpParameterivATIFunPtr</span>
-<a name="line-59"></a>
-<a name="line-60"></a><a name="glGetTexBumpParameterivATIFunPtr"></a><span class='hs-definition'>glGetTexBumpParameterivATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-61"></a><span class='hs-definition'>glGetTexBumpParameterivATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetTexBumpParameterivATI"</span><span class='hs-layout'>)</span>
-<a name="line-62"></a>
-<a name="line-63"></a><span class='hs-comment'>{-# NOINLINE glGetTexBumpParameterivATIFunPtr #-}</span>
-<a name="line-64"></a>
-<a name="line-65"></a><span class='hs-comment'>-- | Usage: @'glTexBumpParameterfvATI' pname param@</span>
-<a name="line-66"></a><span class='hs-comment'>--</span>
-<a name="line-67"></a><span class='hs-comment'>-- The parameter @pname@ is a @TexBumpParameterATI@.</span>
-<a name="line-68"></a><span class='hs-comment'>--</span>
-<a name="line-69"></a><span class='hs-comment'>-- The length of @param@ should be @COMPSIZE(pname)@.</span>
-<a name="line-70"></a>
+<a name="line-57"></a>
+<a name="line-58"></a><a name="glGetTexBumpParameterivATI"></a><span class='hs-definition'>glGetTexBumpParameterivATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-59"></a><span class='hs-definition'>glGetTexBumpParameterivATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrintIOV</span> <span class='hs-varid'>glGetTexBumpParameterivATIFunPtr</span>
+<a name="line-60"></a>
+<a name="line-61"></a><a name="glGetTexBumpParameterivATIFunPtr"></a><span class='hs-definition'>glGetTexBumpParameterivATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-62"></a><span class='hs-definition'>glGetTexBumpParameterivATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetTexBumpParameterivATI"</span><span class='hs-layout'>)</span>
+<a name="line-63"></a>
+<a name="line-64"></a><span class='hs-comment'>{-# NOINLINE glGetTexBumpParameterivATIFunPtr #-}</span>
+<a name="line-65"></a>
+<a name="line-66"></a><span class='hs-comment'>-- | Usage: @'glTexBumpParameterfvATI' pname param@</span>
+<a name="line-67"></a><span class='hs-comment'>--</span>
+<a name="line-68"></a><span class='hs-comment'>-- The parameter @pname@ is a @TexBumpParameterATI@.</span>
+<a name="line-69"></a><span class='hs-comment'>--</span>
+<a name="line-70"></a><span class='hs-comment'>-- The length of @param@ should be @COMPSIZE(pname)@.</span>
 <a name="line-71"></a>
-<a name="line-72"></a><a name="glTexBumpParameterfvATI"></a><span class='hs-definition'>glTexBumpParameterfvATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-73"></a><span class='hs-definition'>glTexBumpParameterfvATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrfloatIOV</span> <span class='hs-varid'>glTexBumpParameterfvATIFunPtr</span>
-<a name="line-74"></a>
-<a name="line-75"></a><a name="glTexBumpParameterfvATIFunPtr"></a><span class='hs-definition'>glTexBumpParameterfvATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-76"></a><span class='hs-definition'>glTexBumpParameterfvATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexBumpParameterfvATI"</span><span class='hs-layout'>)</span>
-<a name="line-77"></a>
-<a name="line-78"></a><span class='hs-comment'>{-# NOINLINE glTexBumpParameterfvATIFunPtr #-}</span>
-<a name="line-79"></a>
-<a name="line-80"></a><span class='hs-comment'>-- | Usage: @'glTexBumpParameterivATI' pname param@</span>
-<a name="line-81"></a><span class='hs-comment'>--</span>
-<a name="line-82"></a><span class='hs-comment'>-- The parameter @pname@ is a @TexBumpParameterATI@.</span>
-<a name="line-83"></a><span class='hs-comment'>--</span>
-<a name="line-84"></a><span class='hs-comment'>-- The length of @param@ should be @COMPSIZE(pname)@.</span>
-<a name="line-85"></a>
+<a name="line-72"></a>
+<a name="line-73"></a><a name="glTexBumpParameterfvATI"></a><span class='hs-definition'>glTexBumpParameterfvATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-74"></a><span class='hs-definition'>glTexBumpParameterfvATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrfloatIOV</span> <span class='hs-varid'>glTexBumpParameterfvATIFunPtr</span>
+<a name="line-75"></a>
+<a name="line-76"></a><a name="glTexBumpParameterfvATIFunPtr"></a><span class='hs-definition'>glTexBumpParameterfvATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-77"></a><span class='hs-definition'>glTexBumpParameterfvATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexBumpParameterfvATI"</span><span class='hs-layout'>)</span>
+<a name="line-78"></a>
+<a name="line-79"></a><span class='hs-comment'>{-# NOINLINE glTexBumpParameterfvATIFunPtr #-}</span>
+<a name="line-80"></a>
+<a name="line-81"></a><span class='hs-comment'>-- | Usage: @'glTexBumpParameterivATI' pname param@</span>
+<a name="line-82"></a><span class='hs-comment'>--</span>
+<a name="line-83"></a><span class='hs-comment'>-- The parameter @pname@ is a @TexBumpParameterATI@.</span>
+<a name="line-84"></a><span class='hs-comment'>--</span>
+<a name="line-85"></a><span class='hs-comment'>-- The length of @param@ should be @COMPSIZE(pname)@.</span>
 <a name="line-86"></a>
-<a name="line-87"></a><a name="glTexBumpParameterivATI"></a><span class='hs-definition'>glTexBumpParameterivATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-88"></a><span class='hs-definition'>glTexBumpParameterivATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrintIOV</span> <span class='hs-varid'>glTexBumpParameterivATIFunPtr</span>
-<a name="line-89"></a>
-<a name="line-90"></a><a name="glTexBumpParameterivATIFunPtr"></a><span class='hs-definition'>glTexBumpParameterivATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-91"></a><span class='hs-definition'>glTexBumpParameterivATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexBumpParameterivATI"</span><span class='hs-layout'>)</span>
-<a name="line-92"></a>
-<a name="line-93"></a><span class='hs-comment'>{-# NOINLINE glTexBumpParameterivATIFunPtr #-}</span>
-<a name="line-94"></a>
-<a name="line-95"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BUMP_ENVMAP_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x877B</span>
-<a name="line-96"></a>
-<a name="line-97"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BUMP_NUM_TEX_UNITS_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8777</span>
-<a name="line-98"></a>
-<a name="line-99"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BUMP_ROT_MATRIX_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8775</span>
-<a name="line-100"></a>
-<a name="line-101"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BUMP_ROT_MATRIX_SIZE_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8776</span>
-<a name="line-102"></a>
-<a name="line-103"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BUMP_TARGET_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x877C</span>
-<a name="line-104"></a>
-<a name="line-105"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BUMP_TEX_UNITS_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8778</span>
-<a name="line-106"></a>
-<a name="line-107"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DU8DV8_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x877A</span>
-<a name="line-108"></a>
-<a name="line-109"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DUDV_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8779</span>
+<a name="line-87"></a>
+<a name="line-88"></a><a name="glTexBumpParameterivATI"></a><span class='hs-definition'>glTexBumpParameterivATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-89"></a><span class='hs-definition'>glTexBumpParameterivATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrintIOV</span> <span class='hs-varid'>glTexBumpParameterivATIFunPtr</span>
+<a name="line-90"></a>
+<a name="line-91"></a><a name="glTexBumpParameterivATIFunPtr"></a><span class='hs-definition'>glTexBumpParameterivATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-92"></a><span class='hs-definition'>glTexBumpParameterivATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexBumpParameterivATI"</span><span class='hs-layout'>)</span>
+<a name="line-93"></a>
+<a name="line-94"></a><span class='hs-comment'>{-# NOINLINE glTexBumpParameterivATIFunPtr #-}</span>
+<a name="line-95"></a>
+<a name="line-96"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BUMP_ENVMAP_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x877B</span>
+<a name="line-97"></a>
+<a name="line-98"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BUMP_NUM_TEX_UNITS_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8777</span>
+<a name="line-99"></a>
+<a name="line-100"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BUMP_ROT_MATRIX_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8775</span>
+<a name="line-101"></a>
+<a name="line-102"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BUMP_ROT_MATRIX_SIZE_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8776</span>
+<a name="line-103"></a>
+<a name="line-104"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BUMP_TARGET_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x877C</span>
+<a name="line-105"></a>
+<a name="line-106"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BUMP_TEX_UNITS_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8778</span>
+<a name="line-107"></a>
+<a name="line-108"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DU8DV8_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x877A</span>
+<a name="line-109"></a>
+<a name="line-110"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DUDV_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8779</span>
 </pre></body>
 </html>

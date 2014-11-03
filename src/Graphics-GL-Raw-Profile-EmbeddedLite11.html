@@ -10,7 +10,919 @@
 <pre><a name="line-1"></a><span class='hs-comment'>-- This file was automatically generated.</span>
 <a name="line-2"></a><span class='hs-comment'>{-# LANGUAGE ScopedTypeVariables, PatternSynonyms #-}</span>
 <a name="line-3"></a><span class='hs-keyword'>module</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Profile</span><span class='hs-varop'>.</span><span class='hs-conid'>EmbeddedLite11</span> <span class='hs-layout'>(</span>
-<a name="line-4"></a><span class='hs-layout'>)</span> <span class='hs-keyword'>where</span>
-<a name="line-5"></a>
+<a name="line-4"></a>  <span class='hs-comment'>-- * Graphics.GL.Raw.Profile.EmbeddedLite11</span>
+<a name="line-5"></a>    <span class='hs-varid'>glActiveTexture</span>
+<a name="line-6"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glAlphaFuncx</span>
+<a name="line-7"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glBindBuffer</span>
+<a name="line-8"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glBindTexture</span>
+<a name="line-9"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glBlendFunc</span>
+<a name="line-10"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glBufferData</span>
+<a name="line-11"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glBufferSubData</span>
+<a name="line-12"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glClear</span>
+<a name="line-13"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glClearColorx</span>
+<a name="line-14"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glClearDepthx</span>
+<a name="line-15"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glClearStencil</span>
+<a name="line-16"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glClientActiveTexture</span>
+<a name="line-17"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glClipPlanex</span>
+<a name="line-18"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glColor4ub</span>
+<a name="line-19"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glColor4x</span>
+<a name="line-20"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glColorMask</span>
+<a name="line-21"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glColorPointer</span>
+<a name="line-22"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glCompressedTexImage2D</span>
+<a name="line-23"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glCompressedTexSubImage2D</span>
+<a name="line-24"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glCopyTexImage2D</span>
+<a name="line-25"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glCopyTexSubImage2D</span>
+<a name="line-26"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glCullFace</span>
+<a name="line-27"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glDeleteBuffers</span>
+<a name="line-28"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glDeleteTextures</span>
+<a name="line-29"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glDepthFunc</span>
+<a name="line-30"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glDepthMask</span>
+<a name="line-31"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glDepthRangex</span>
+<a name="line-32"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glDisable</span>
+<a name="line-33"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glDisableClientState</span>
+<a name="line-34"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glDrawArrays</span>
+<a name="line-35"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glDrawElements</span>
+<a name="line-36"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glEnable</span>
+<a name="line-37"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glEnableClientState</span>
+<a name="line-38"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glFinish</span>
+<a name="line-39"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glFlush</span>
+<a name="line-40"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glFogx</span>
+<a name="line-41"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glFogxv</span>
+<a name="line-42"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glFrontFace</span>
+<a name="line-43"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glFrustumx</span>
+<a name="line-44"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGenBuffers</span>
+<a name="line-45"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGenTextures</span>
+<a name="line-46"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGetBooleanv</span>
+<a name="line-47"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGetBufferParameteriv</span>
+<a name="line-48"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGetClipPlanex</span>
+<a name="line-49"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGetError</span>
+<a name="line-50"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGetFixedv</span>
+<a name="line-51"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGetIntegerv</span>
+<a name="line-52"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGetLightxv</span>
+<a name="line-53"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGetMaterialxv</span>
+<a name="line-54"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGetPointerv</span>
+<a name="line-55"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGetString</span>
+<a name="line-56"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGetTexEnviv</span>
+<a name="line-57"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGetTexEnvxv</span>
+<a name="line-58"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGetTexParameteriv</span>
+<a name="line-59"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glGetTexParameterxv</span>
+<a name="line-60"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glHint</span>
+<a name="line-61"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glIsBuffer</span>
+<a name="line-62"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glIsEnabled</span>
+<a name="line-63"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glIsTexture</span>
+<a name="line-64"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glLightModelx</span>
+<a name="line-65"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glLightModelxv</span>
+<a name="line-66"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glLightx</span>
+<a name="line-67"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glLightxv</span>
+<a name="line-68"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glLineWidthx</span>
+<a name="line-69"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glLoadIdentity</span>
+<a name="line-70"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glLoadMatrixx</span>
+<a name="line-71"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glLogicOp</span>
+<a name="line-72"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glMaterialx</span>
+<a name="line-73"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glMaterialxv</span>
+<a name="line-74"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glMatrixMode</span>
+<a name="line-75"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glMultMatrixx</span>
+<a name="line-76"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glMultiTexCoord4x</span>
+<a name="line-77"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glNormal3x</span>
+<a name="line-78"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glNormalPointer</span>
+<a name="line-79"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glOrthox</span>
+<a name="line-80"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glPixelStorei</span>
+<a name="line-81"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glPointParameterx</span>
+<a name="line-82"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glPointParameterxv</span>
+<a name="line-83"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glPointSizex</span>
+<a name="line-84"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glPolygonOffsetx</span>
+<a name="line-85"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glPopMatrix</span>
+<a name="line-86"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glPushMatrix</span>
+<a name="line-87"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glReadPixels</span>
+<a name="line-88"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glRotatex</span>
+<a name="line-89"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glSampleCoverage</span>
+<a name="line-90"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glSampleCoveragex</span>
+<a name="line-91"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glScalex</span>
+<a name="line-92"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glScissor</span>
+<a name="line-93"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glShadeModel</span>
+<a name="line-94"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glStencilFunc</span>
+<a name="line-95"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glStencilMask</span>
+<a name="line-96"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glStencilOp</span>
+<a name="line-97"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glTexCoordPointer</span>
+<a name="line-98"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glTexEnvi</span>
+<a name="line-99"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glTexEnviv</span>
+<a name="line-100"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glTexEnvx</span>
+<a name="line-101"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glTexEnvxv</span>
+<a name="line-102"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glTexImage2D</span>
+<a name="line-103"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glTexParameteri</span>
+<a name="line-104"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glTexParameteriv</span>
+<a name="line-105"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glTexParameterx</span>
+<a name="line-106"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glTexParameterxv</span>
+<a name="line-107"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glTexSubImage2D</span>
+<a name="line-108"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glTranslatex</span>
+<a name="line-109"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glVertexPointer</span>
+<a name="line-110"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>glViewport</span>
+<a name="line-111"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ACTIVE_TEXTURE</span>
+<a name="line-112"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ADD</span>
+<a name="line-113"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ADD_SIGNED</span>
+<a name="line-114"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ALIASED_LINE_WIDTH_RANGE</span>
+<a name="line-115"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ALIASED_POINT_SIZE_RANGE</span>
+<a name="line-116"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ALPHA</span>
+<a name="line-117"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ALPHA_BITS</span>
+<a name="line-118"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ALPHA_SCALE</span>
+<a name="line-119"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ALPHA_TEST</span>
+<a name="line-120"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ALPHA_TEST_FUNC</span>
+<a name="line-121"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ALPHA_TEST_REF</span>
+<a name="line-122"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ALWAYS</span>
+<a name="line-123"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_AMBIENT</span>
+<a name="line-124"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_AMBIENT_AND_DIFFUSE</span>
+<a name="line-125"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_AND</span>
+<a name="line-126"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_AND_INVERTED</span>
+<a name="line-127"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_AND_REVERSE</span>
+<a name="line-128"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ARRAY_BUFFER</span>
+<a name="line-129"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ARRAY_BUFFER_BINDING</span>
+<a name="line-130"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_BACK</span>
+<a name="line-131"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_BLEND</span>
+<a name="line-132"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_BLEND_DST</span>
+<a name="line-133"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_BLEND_SRC</span>
+<a name="line-134"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_BLUE_BITS</span>
+<a name="line-135"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_BUFFER_SIZE</span>
+<a name="line-136"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_BUFFER_USAGE</span>
+<a name="line-137"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_BYTE</span>
+<a name="line-138"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CCW</span>
+<a name="line-139"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CLAMP_TO_EDGE</span>
+<a name="line-140"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CLEAR</span>
+<a name="line-141"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CLIENT_ACTIVE_TEXTURE</span>
+<a name="line-142"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CLIP_PLANE0</span>
+<a name="line-143"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CLIP_PLANE1</span>
+<a name="line-144"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CLIP_PLANE2</span>
+<a name="line-145"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CLIP_PLANE3</span>
+<a name="line-146"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CLIP_PLANE4</span>
+<a name="line-147"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CLIP_PLANE5</span>
+<a name="line-148"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COLOR_ARRAY</span>
+<a name="line-149"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COLOR_ARRAY_BUFFER_BINDING</span>
+<a name="line-150"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COLOR_ARRAY_POINTER</span>
+<a name="line-151"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COLOR_ARRAY_SIZE</span>
+<a name="line-152"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COLOR_ARRAY_STRIDE</span>
+<a name="line-153"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COLOR_ARRAY_TYPE</span>
+<a name="line-154"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COLOR_BUFFER_BIT</span>
+<a name="line-155"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COLOR_CLEAR_VALUE</span>
+<a name="line-156"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COLOR_LOGIC_OP</span>
+<a name="line-157"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COLOR_MATERIAL</span>
+<a name="line-158"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COLOR_WRITEMASK</span>
+<a name="line-159"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COMBINE</span>
+<a name="line-160"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COMBINE_ALPHA</span>
+<a name="line-161"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COMBINE_RGB</span>
+<a name="line-162"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COMPRESSED_TEXTURE_FORMATS</span>
+<a name="line-163"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CONSTANT</span>
+<a name="line-164"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CONSTANT_ATTENUATION</span>
+<a name="line-165"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COPY</span>
+<a name="line-166"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_COPY_INVERTED</span>
+<a name="line-167"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CULL_FACE</span>
+<a name="line-168"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CULL_FACE_MODE</span>
+<a name="line-169"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CURRENT_COLOR</span>
+<a name="line-170"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CURRENT_NORMAL</span>
+<a name="line-171"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CURRENT_TEXTURE_COORDS</span>
+<a name="line-172"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_CW</span>
+<a name="line-173"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DECAL</span>
+<a name="line-174"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DECR</span>
+<a name="line-175"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DEPTH_BITS</span>
+<a name="line-176"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DEPTH_BUFFER_BIT</span>
+<a name="line-177"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DEPTH_CLEAR_VALUE</span>
+<a name="line-178"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DEPTH_FUNC</span>
+<a name="line-179"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DEPTH_RANGE</span>
+<a name="line-180"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DEPTH_TEST</span>
+<a name="line-181"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DEPTH_WRITEMASK</span>
+<a name="line-182"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DIFFUSE</span>
+<a name="line-183"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DITHER</span>
+<a name="line-184"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DONT_CARE</span>
+<a name="line-185"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DOT3_RGB</span>
+<a name="line-186"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DOT3_RGBA</span>
+<a name="line-187"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DST_ALPHA</span>
+<a name="line-188"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DST_COLOR</span>
+<a name="line-189"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_DYNAMIC_DRAW</span>
+<a name="line-190"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ELEMENT_ARRAY_BUFFER</span>
+<a name="line-191"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ELEMENT_ARRAY_BUFFER_BINDING</span>
+<a name="line-192"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_EMISSION</span>
+<a name="line-193"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_EQUAL</span>
+<a name="line-194"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_EQUIV</span>
+<a name="line-195"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_EXP</span>
+<a name="line-196"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_EXP2</span>
+<a name="line-197"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_EXTENSIONS</span>
+<a name="line-198"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FALSE</span>
+<a name="line-199"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FASTEST</span>
+<a name="line-200"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FIXED</span>
+<a name="line-201"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FLAT</span>
+<a name="line-202"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FLOAT</span>
+<a name="line-203"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FOG</span>
+<a name="line-204"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FOG_COLOR</span>
+<a name="line-205"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FOG_DENSITY</span>
+<a name="line-206"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FOG_END</span>
+<a name="line-207"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FOG_HINT</span>
+<a name="line-208"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FOG_MODE</span>
+<a name="line-209"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FOG_START</span>
+<a name="line-210"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FRONT</span>
+<a name="line-211"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FRONT_AND_BACK</span>
+<a name="line-212"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_FRONT_FACE</span>
+<a name="line-213"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_GENERATE_MIPMAP</span>
+<a name="line-214"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_GENERATE_MIPMAP_HINT</span>
+<a name="line-215"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_GEQUAL</span>
+<a name="line-216"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_GREATER</span>
+<a name="line-217"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_GREEN_BITS</span>
+<a name="line-218"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_INCR</span>
+<a name="line-219"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_INTERPOLATE</span>
+<a name="line-220"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_INVALID_ENUM</span>
+<a name="line-221"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_INVALID_OPERATION</span>
+<a name="line-222"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_INVALID_VALUE</span>
+<a name="line-223"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_INVERT</span>
+<a name="line-224"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_KEEP</span>
+<a name="line-225"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LEQUAL</span>
+<a name="line-226"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LESS</span>
+<a name="line-227"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LIGHT0</span>
+<a name="line-228"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LIGHT1</span>
+<a name="line-229"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LIGHT2</span>
+<a name="line-230"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LIGHT3</span>
+<a name="line-231"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LIGHT4</span>
+<a name="line-232"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LIGHT5</span>
+<a name="line-233"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LIGHT6</span>
+<a name="line-234"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LIGHT7</span>
+<a name="line-235"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LIGHTING</span>
+<a name="line-236"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LIGHT_MODEL_AMBIENT</span>
+<a name="line-237"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LIGHT_MODEL_TWO_SIDE</span>
+<a name="line-238"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LINEAR</span>
+<a name="line-239"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LINEAR_ATTENUATION</span>
+<a name="line-240"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LINEAR_MIPMAP_LINEAR</span>
+<a name="line-241"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LINEAR_MIPMAP_NEAREST</span>
+<a name="line-242"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LINES</span>
+<a name="line-243"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LINE_LOOP</span>
+<a name="line-244"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LINE_SMOOTH</span>
+<a name="line-245"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LINE_SMOOTH_HINT</span>
+<a name="line-246"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LINE_STRIP</span>
+<a name="line-247"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LINE_WIDTH</span>
+<a name="line-248"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LOGIC_OP_MODE</span>
+<a name="line-249"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LUMINANCE</span>
+<a name="line-250"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_LUMINANCE_ALPHA</span>
+<a name="line-251"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_MATRIX_MODE</span>
+<a name="line-252"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_MAX_CLIP_PLANES</span>
+<a name="line-253"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_MAX_LIGHTS</span>
+<a name="line-254"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_MAX_MODELVIEW_STACK_DEPTH</span>
+<a name="line-255"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_MAX_PROJECTION_STACK_DEPTH</span>
+<a name="line-256"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_MAX_TEXTURE_SIZE</span>
+<a name="line-257"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_MAX_TEXTURE_STACK_DEPTH</span>
+<a name="line-258"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_MAX_TEXTURE_UNITS</span>
+<a name="line-259"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_MAX_VIEWPORT_DIMS</span>
+<a name="line-260"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_MODELVIEW</span>
+<a name="line-261"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_MODELVIEW_MATRIX</span>
+<a name="line-262"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_MODELVIEW_STACK_DEPTH</span>
+<a name="line-263"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_MODULATE</span>
+<a name="line-264"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_MULTISAMPLE</span>
+<a name="line-265"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NAND</span>
+<a name="line-266"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NEAREST</span>
+<a name="line-267"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NEAREST_MIPMAP_LINEAR</span>
+<a name="line-268"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NEAREST_MIPMAP_NEAREST</span>
+<a name="line-269"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NEVER</span>
+<a name="line-270"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NICEST</span>
+<a name="line-271"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NOOP</span>
+<a name="line-272"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NOR</span>
+<a name="line-273"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NORMALIZE</span>
+<a name="line-274"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NORMAL_ARRAY</span>
+<a name="line-275"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NORMAL_ARRAY_BUFFER_BINDING</span>
+<a name="line-276"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NORMAL_ARRAY_POINTER</span>
+<a name="line-277"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NORMAL_ARRAY_STRIDE</span>
+<a name="line-278"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NORMAL_ARRAY_TYPE</span>
+<a name="line-279"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NOTEQUAL</span>
+<a name="line-280"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NO_ERROR</span>
+<a name="line-281"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_NUM_COMPRESSED_TEXTURE_FORMATS</span>
+<a name="line-282"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ONE</span>
+<a name="line-283"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ONE_MINUS_DST_ALPHA</span>
+<a name="line-284"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ONE_MINUS_DST_COLOR</span>
+<a name="line-285"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ONE_MINUS_SRC_ALPHA</span>
+<a name="line-286"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ONE_MINUS_SRC_COLOR</span>
+<a name="line-287"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_OPERAND0_ALPHA</span>
+<a name="line-288"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_OPERAND0_RGB</span>
+<a name="line-289"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_OPERAND1_ALPHA</span>
+<a name="line-290"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_OPERAND1_RGB</span>
+<a name="line-291"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_OPERAND2_ALPHA</span>
+<a name="line-292"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_OPERAND2_RGB</span>
+<a name="line-293"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_OR</span>
+<a name="line-294"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_OR_INVERTED</span>
+<a name="line-295"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_OR_REVERSE</span>
+<a name="line-296"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_OUT_OF_MEMORY</span>
+<a name="line-297"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_PACK_ALIGNMENT</span>
+<a name="line-298"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_PERSPECTIVE_CORRECTION_HINT</span>
+<a name="line-299"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_POINTS</span>
+<a name="line-300"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_POINT_DISTANCE_ATTENUATION</span>
+<a name="line-301"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_POINT_FADE_THRESHOLD_SIZE</span>
+<a name="line-302"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_POINT_SIZE</span>
+<a name="line-303"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_POINT_SIZE_MAX</span>
+<a name="line-304"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_POINT_SIZE_MIN</span>
+<a name="line-305"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_POINT_SMOOTH</span>
+<a name="line-306"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_POINT_SMOOTH_HINT</span>
+<a name="line-307"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_POLYGON_OFFSET_FACTOR</span>
+<a name="line-308"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_POLYGON_OFFSET_FILL</span>
+<a name="line-309"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_POLYGON_OFFSET_UNITS</span>
+<a name="line-310"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_POSITION</span>
+<a name="line-311"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_PREVIOUS</span>
+<a name="line-312"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_PRIMARY_COLOR</span>
+<a name="line-313"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_PROJECTION</span>
+<a name="line-314"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_PROJECTION_MATRIX</span>
+<a name="line-315"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_PROJECTION_STACK_DEPTH</span>
+<a name="line-316"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_QUADRATIC_ATTENUATION</span>
+<a name="line-317"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_RED_BITS</span>
+<a name="line-318"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_RENDERER</span>
+<a name="line-319"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_REPEAT</span>
+<a name="line-320"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_REPLACE</span>
+<a name="line-321"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_RESCALE_NORMAL</span>
+<a name="line-322"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_RGB</span>
+<a name="line-323"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_RGBA</span>
+<a name="line-324"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_RGB_SCALE</span>
+<a name="line-325"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SAMPLES</span>
+<a name="line-326"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SAMPLE_ALPHA_TO_COVERAGE</span>
+<a name="line-327"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SAMPLE_ALPHA_TO_ONE</span>
+<a name="line-328"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SAMPLE_BUFFERS</span>
+<a name="line-329"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SAMPLE_COVERAGE</span>
+<a name="line-330"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SAMPLE_COVERAGE_INVERT</span>
+<a name="line-331"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SAMPLE_COVERAGE_VALUE</span>
+<a name="line-332"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SCISSOR_BOX</span>
+<a name="line-333"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SCISSOR_TEST</span>
+<a name="line-334"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SET</span>
+<a name="line-335"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SHADE_MODEL</span>
+<a name="line-336"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SHININESS</span>
+<a name="line-337"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SHORT</span>
+<a name="line-338"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SMOOTH</span>
+<a name="line-339"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SMOOTH_LINE_WIDTH_RANGE</span>
+<a name="line-340"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SMOOTH_POINT_SIZE_RANGE</span>
+<a name="line-341"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SPECULAR</span>
+<a name="line-342"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SPOT_CUTOFF</span>
+<a name="line-343"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SPOT_DIRECTION</span>
+<a name="line-344"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SPOT_EXPONENT</span>
+<a name="line-345"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SRC0_ALPHA</span>
+<a name="line-346"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SRC0_RGB</span>
+<a name="line-347"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SRC1_ALPHA</span>
+<a name="line-348"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SRC1_RGB</span>
+<a name="line-349"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SRC2_ALPHA</span>
+<a name="line-350"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SRC2_RGB</span>
+<a name="line-351"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SRC_ALPHA</span>
+<a name="line-352"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SRC_ALPHA_SATURATE</span>
+<a name="line-353"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SRC_COLOR</span>
+<a name="line-354"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_STACK_OVERFLOW</span>
+<a name="line-355"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_STACK_UNDERFLOW</span>
+<a name="line-356"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_STATIC_DRAW</span>
+<a name="line-357"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_STENCIL_BITS</span>
+<a name="line-358"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_STENCIL_BUFFER_BIT</span>
+<a name="line-359"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_STENCIL_CLEAR_VALUE</span>
+<a name="line-360"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_STENCIL_FAIL</span>
+<a name="line-361"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_STENCIL_FUNC</span>
+<a name="line-362"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_STENCIL_PASS_DEPTH_FAIL</span>
+<a name="line-363"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_STENCIL_PASS_DEPTH_PASS</span>
+<a name="line-364"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_STENCIL_REF</span>
+<a name="line-365"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_STENCIL_TEST</span>
+<a name="line-366"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_STENCIL_VALUE_MASK</span>
+<a name="line-367"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_STENCIL_WRITEMASK</span>
+<a name="line-368"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SUBPIXEL_BITS</span>
+<a name="line-369"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_SUBTRACT</span>
+<a name="line-370"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE</span>
+<a name="line-371"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE0</span>
+<a name="line-372"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE1</span>
+<a name="line-373"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE10</span>
+<a name="line-374"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE11</span>
+<a name="line-375"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE12</span>
+<a name="line-376"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE13</span>
+<a name="line-377"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE14</span>
+<a name="line-378"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE15</span>
+<a name="line-379"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE16</span>
+<a name="line-380"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE17</span>
+<a name="line-381"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE18</span>
+<a name="line-382"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE19</span>
+<a name="line-383"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE2</span>
+<a name="line-384"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE20</span>
+<a name="line-385"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE21</span>
+<a name="line-386"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE22</span>
+<a name="line-387"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE23</span>
+<a name="line-388"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE24</span>
+<a name="line-389"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE25</span>
+<a name="line-390"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE26</span>
+<a name="line-391"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE27</span>
+<a name="line-392"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE28</span>
+<a name="line-393"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE29</span>
+<a name="line-394"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE3</span>
+<a name="line-395"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE30</span>
+<a name="line-396"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE31</span>
+<a name="line-397"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE4</span>
+<a name="line-398"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE5</span>
+<a name="line-399"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE6</span>
+<a name="line-400"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE7</span>
+<a name="line-401"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE8</span>
+<a name="line-402"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE9</span>
+<a name="line-403"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_2D</span>
+<a name="line-404"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_BINDING_2D</span>
+<a name="line-405"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_COORD_ARRAY</span>
+<a name="line-406"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING</span>
+<a name="line-407"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_COORD_ARRAY_POINTER</span>
+<a name="line-408"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_COORD_ARRAY_SIZE</span>
+<a name="line-409"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_COORD_ARRAY_STRIDE</span>
+<a name="line-410"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_COORD_ARRAY_TYPE</span>
+<a name="line-411"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_ENV</span>
+<a name="line-412"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_ENV_COLOR</span>
+<a name="line-413"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_ENV_MODE</span>
+<a name="line-414"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_MAG_FILTER</span>
+<a name="line-415"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_MATRIX</span>
+<a name="line-416"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_MIN_FILTER</span>
+<a name="line-417"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_STACK_DEPTH</span>
+<a name="line-418"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_WRAP_S</span>
+<a name="line-419"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TEXTURE_WRAP_T</span>
+<a name="line-420"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TRIANGLES</span>
+<a name="line-421"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TRIANGLE_FAN</span>
+<a name="line-422"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TRIANGLE_STRIP</span>
+<a name="line-423"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_TRUE</span>
+<a name="line-424"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_UNPACK_ALIGNMENT</span>
+<a name="line-425"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_BYTE</span>
+<a name="line-426"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_SHORT</span>
+<a name="line-427"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_SHORT_4_4_4_4</span>
+<a name="line-428"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_SHORT_5_5_5_1</span>
+<a name="line-429"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_SHORT_5_6_5</span>
+<a name="line-430"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_VENDOR</span>
+<a name="line-431"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_VERSION</span>
+<a name="line-432"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_VERSION_ES_CL_1_0</span>
+<a name="line-433"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_VERSION_ES_CL_1_1</span>
+<a name="line-434"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_VERSION_ES_CM_1_1</span>
+<a name="line-435"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_VERTEX_ARRAY</span>
+<a name="line-436"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_VERTEX_ARRAY_BUFFER_BINDING</span>
+<a name="line-437"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_VERTEX_ARRAY_POINTER</span>
+<a name="line-438"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_VERTEX_ARRAY_SIZE</span>
+<a name="line-439"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_VERTEX_ARRAY_STRIDE</span>
+<a name="line-440"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_VERTEX_ARRAY_TYPE</span>
+<a name="line-441"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_VIEWPORT</span>
+<a name="line-442"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_XOR</span>
+<a name="line-443"></a>  <span class='hs-layout'>,</span> <span class='hs-varid'>pattern</span> <span class='hs-conid'>GL_ZERO</span>
+<a name="line-444"></a><span class='hs-layout'>)</span> <span class='hs-keyword'>where</span>
+<a name="line-445"></a>
+<a name="line-446"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Control</span><span class='hs-varop'>.</span><span class='hs-conid'>Monad</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Class</span>
+<a name="line-447"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Foreign</span><span class='hs-varop'>.</span><span class='hs-conid'>Ptr</span>
+<a name="line-448"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Internal</span><span class='hs-varop'>.</span><span class='hs-conid'>FFI</span>
+<a name="line-449"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Internal</span><span class='hs-varop'>.</span><span class='hs-conid'>Proc</span>
+<a name="line-450"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Internal</span><span class='hs-varop'>.</span><span class='hs-conid'>Shared</span>
+<a name="line-451"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>Graphics</span><span class='hs-varop'>.</span><span class='hs-conid'>GL</span><span class='hs-varop'>.</span><span class='hs-conid'>Raw</span><span class='hs-varop'>.</span><span class='hs-conid'>Types</span>
+<a name="line-452"></a><span class='hs-keyword'>import</span> <span class='hs-conid'>System</span><span class='hs-varop'>.</span><span class='hs-conid'>IO</span><span class='hs-varop'>.</span><span class='hs-conid'>Unsafe</span>
+<a name="line-453"></a>
+<a name="line-454"></a><span class='hs-comment'>-- | Usage: @'glAlphaFuncx' func ref@</span>
+<a name="line-455"></a>
+<a name="line-456"></a>
+<a name="line-457"></a><a name="glAlphaFuncx"></a><span class='hs-definition'>glAlphaFuncx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-458"></a><span class='hs-definition'>glAlphaFuncx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumfixedIOV</span> <span class='hs-varid'>glAlphaFuncxFunPtr</span>
+<a name="line-459"></a>
+<a name="line-460"></a><a name="glAlphaFuncxFunPtr"></a><span class='hs-definition'>glAlphaFuncxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-461"></a><span class='hs-definition'>glAlphaFuncxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glAlphaFuncx"</span><span class='hs-layout'>)</span>
+<a name="line-462"></a>
+<a name="line-463"></a><span class='hs-comment'>{-# NOINLINE glAlphaFuncxFunPtr #-}</span>
+<a name="line-464"></a>
+<a name="line-465"></a><span class='hs-comment'>-- | Usage: @'glClearColorx' red green blue alpha@</span>
+<a name="line-466"></a>
+<a name="line-467"></a>
+<a name="line-468"></a><a name="glClearColorx"></a><span class='hs-definition'>glClearColorx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-469"></a><span class='hs-definition'>glClearColorx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifixedfixedfixedfixedIOV</span> <span class='hs-varid'>glClearColorxFunPtr</span>
+<a name="line-470"></a>
+<a name="line-471"></a><a name="glClearColorxFunPtr"></a><span class='hs-definition'>glClearColorxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-472"></a><span class='hs-definition'>glClearColorxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glClearColorx"</span><span class='hs-layout'>)</span>
+<a name="line-473"></a>
+<a name="line-474"></a><span class='hs-comment'>{-# NOINLINE glClearColorxFunPtr #-}</span>
+<a name="line-475"></a>
+<a name="line-476"></a><span class='hs-comment'>-- | Usage: @'glClearDepthx' depth@</span>
+<a name="line-477"></a>
+<a name="line-478"></a>
+<a name="line-479"></a><a name="glClearDepthx"></a><span class='hs-definition'>glClearDepthx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-480"></a><span class='hs-definition'>glClearDepthx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifixedIOV</span> <span class='hs-varid'>glClearDepthxFunPtr</span>
+<a name="line-481"></a>
+<a name="line-482"></a><a name="glClearDepthxFunPtr"></a><span class='hs-definition'>glClearDepthxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-483"></a><span class='hs-definition'>glClearDepthxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glClearDepthx"</span><span class='hs-layout'>)</span>
+<a name="line-484"></a>
+<a name="line-485"></a><span class='hs-comment'>{-# NOINLINE glClearDepthxFunPtr #-}</span>
+<a name="line-486"></a>
+<a name="line-487"></a><span class='hs-comment'>-- | Usage: @'glClipPlanex' plane equation@</span>
+<a name="line-488"></a><span class='hs-comment'>--</span>
+<a name="line-489"></a><span class='hs-comment'>-- The length of @equation@ should be @4@.</span>
+<a name="line-490"></a>
+<a name="line-491"></a>
+<a name="line-492"></a><a name="glClipPlanex"></a><span class='hs-definition'>glClipPlanex</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-493"></a><span class='hs-definition'>glClipPlanex</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrfixedIOV</span> <span class='hs-varid'>glClipPlanexFunPtr</span>
+<a name="line-494"></a>
+<a name="line-495"></a><a name="glClipPlanexFunPtr"></a><span class='hs-definition'>glClipPlanexFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-496"></a><span class='hs-definition'>glClipPlanexFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glClipPlanex"</span><span class='hs-layout'>)</span>
+<a name="line-497"></a>
+<a name="line-498"></a><span class='hs-comment'>{-# NOINLINE glClipPlanexFunPtr #-}</span>
+<a name="line-499"></a>
+<a name="line-500"></a><span class='hs-comment'>-- | Usage: @'glColor4x' red green blue alpha@</span>
+<a name="line-501"></a>
+<a name="line-502"></a>
+<a name="line-503"></a><a name="glColor4x"></a><span class='hs-definition'>glColor4x</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-504"></a><span class='hs-definition'>glColor4x</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifixedfixedfixedfixedIOV</span> <span class='hs-varid'>glColor4xFunPtr</span>
+<a name="line-505"></a>
+<a name="line-506"></a><a name="glColor4xFunPtr"></a><span class='hs-definition'>glColor4xFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-507"></a><span class='hs-definition'>glColor4xFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glColor4x"</span><span class='hs-layout'>)</span>
+<a name="line-508"></a>
+<a name="line-509"></a><span class='hs-comment'>{-# NOINLINE glColor4xFunPtr #-}</span>
+<a name="line-510"></a>
+<a name="line-511"></a><span class='hs-comment'>-- | Usage: @'glDepthRangex' n f@</span>
+<a name="line-512"></a>
+<a name="line-513"></a>
+<a name="line-514"></a><a name="glDepthRangex"></a><span class='hs-definition'>glDepthRangex</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-515"></a><span class='hs-definition'>glDepthRangex</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifixedfixedIOV</span> <span class='hs-varid'>glDepthRangexFunPtr</span>
+<a name="line-516"></a>
+<a name="line-517"></a><a name="glDepthRangexFunPtr"></a><span class='hs-definition'>glDepthRangexFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-518"></a><span class='hs-definition'>glDepthRangexFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDepthRangex"</span><span class='hs-layout'>)</span>
+<a name="line-519"></a>
+<a name="line-520"></a><span class='hs-comment'>{-# NOINLINE glDepthRangexFunPtr #-}</span>
+<a name="line-521"></a>
+<a name="line-522"></a><span class='hs-comment'>-- | Usage: @'glFogx' pname param@</span>
+<a name="line-523"></a>
+<a name="line-524"></a>
+<a name="line-525"></a><a name="glFogx"></a><span class='hs-definition'>glFogx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-526"></a><span class='hs-definition'>glFogx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumfixedIOV</span> <span class='hs-varid'>glFogxFunPtr</span>
+<a name="line-527"></a>
+<a name="line-528"></a><a name="glFogxFunPtr"></a><span class='hs-definition'>glFogxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-529"></a><span class='hs-definition'>glFogxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFogx"</span><span class='hs-layout'>)</span>
+<a name="line-530"></a>
+<a name="line-531"></a><span class='hs-comment'>{-# NOINLINE glFogxFunPtr #-}</span>
+<a name="line-532"></a>
+<a name="line-533"></a><span class='hs-comment'>-- | Usage: @'glFogxv' pname param@</span>
+<a name="line-534"></a><span class='hs-comment'>--</span>
+<a name="line-535"></a><span class='hs-comment'>-- The length of @param@ should be @COMPSIZE(pname)@.</span>
+<a name="line-536"></a>
+<a name="line-537"></a>
+<a name="line-538"></a><a name="glFogxv"></a><span class='hs-definition'>glFogxv</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-539"></a><span class='hs-definition'>glFogxv</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrfixedIOV</span> <span class='hs-varid'>glFogxvFunPtr</span>
+<a name="line-540"></a>
+<a name="line-541"></a><a name="glFogxvFunPtr"></a><span class='hs-definition'>glFogxvFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-542"></a><span class='hs-definition'>glFogxvFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFogxv"</span><span class='hs-layout'>)</span>
+<a name="line-543"></a>
+<a name="line-544"></a><span class='hs-comment'>{-# NOINLINE glFogxvFunPtr #-}</span>
+<a name="line-545"></a>
+<a name="line-546"></a><span class='hs-comment'>-- | Usage: @'glFrustumx' l r b t n f@</span>
+<a name="line-547"></a>
+<a name="line-548"></a>
+<a name="line-549"></a><a name="glFrustumx"></a><span class='hs-definition'>glFrustumx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-550"></a><span class='hs-definition'>glFrustumx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifixedfixedfixedfixedfixedfixedIOV</span> <span class='hs-varid'>glFrustumxFunPtr</span>
+<a name="line-551"></a>
+<a name="line-552"></a><a name="glFrustumxFunPtr"></a><span class='hs-definition'>glFrustumxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-553"></a><span class='hs-definition'>glFrustumxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glFrustumx"</span><span class='hs-layout'>)</span>
+<a name="line-554"></a>
+<a name="line-555"></a><span class='hs-comment'>{-# NOINLINE glFrustumxFunPtr #-}</span>
+<a name="line-556"></a>
+<a name="line-557"></a><span class='hs-comment'>-- | Usage: @'glGetClipPlanex' plane equation@</span>
+<a name="line-558"></a><span class='hs-comment'>--</span>
+<a name="line-559"></a><span class='hs-comment'>-- The length of @equation@ should be @4@.</span>
+<a name="line-560"></a>
+<a name="line-561"></a>
+<a name="line-562"></a><a name="glGetClipPlanex"></a><span class='hs-definition'>glGetClipPlanex</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-563"></a><span class='hs-definition'>glGetClipPlanex</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrfixedIOV</span> <span class='hs-varid'>glGetClipPlanexFunPtr</span>
+<a name="line-564"></a>
+<a name="line-565"></a><a name="glGetClipPlanexFunPtr"></a><span class='hs-definition'>glGetClipPlanexFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-566"></a><span class='hs-definition'>glGetClipPlanexFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetClipPlanex"</span><span class='hs-layout'>)</span>
+<a name="line-567"></a>
+<a name="line-568"></a><span class='hs-comment'>{-# NOINLINE glGetClipPlanexFunPtr #-}</span>
+<a name="line-569"></a>
+<a name="line-570"></a><span class='hs-comment'>-- | Usage: @'glGetFixedv' pname params@</span>
+<a name="line-571"></a>
+<a name="line-572"></a>
+<a name="line-573"></a><a name="glGetFixedv"></a><span class='hs-definition'>glGetFixedv</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-574"></a><span class='hs-definition'>glGetFixedv</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrfixedIOV</span> <span class='hs-varid'>glGetFixedvFunPtr</span>
+<a name="line-575"></a>
+<a name="line-576"></a><a name="glGetFixedvFunPtr"></a><span class='hs-definition'>glGetFixedvFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-577"></a><span class='hs-definition'>glGetFixedvFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetFixedv"</span><span class='hs-layout'>)</span>
+<a name="line-578"></a>
+<a name="line-579"></a><span class='hs-comment'>{-# NOINLINE glGetFixedvFunPtr #-}</span>
+<a name="line-580"></a>
+<a name="line-581"></a><span class='hs-comment'>-- | Usage: @'glGetLightxv' light pname params@</span>
+<a name="line-582"></a><span class='hs-comment'>--</span>
+<a name="line-583"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-584"></a>
+<a name="line-585"></a>
+<a name="line-586"></a><a name="glGetLightxv"></a><span class='hs-definition'>glGetLightxv</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-587"></a><span class='hs-definition'>glGetLightxv</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumPtrfixedIOV</span> <span class='hs-varid'>glGetLightxvFunPtr</span>
+<a name="line-588"></a>
+<a name="line-589"></a><a name="glGetLightxvFunPtr"></a><span class='hs-definition'>glGetLightxvFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-590"></a><span class='hs-definition'>glGetLightxvFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetLightxv"</span><span class='hs-layout'>)</span>
+<a name="line-591"></a>
+<a name="line-592"></a><span class='hs-comment'>{-# NOINLINE glGetLightxvFunPtr #-}</span>
+<a name="line-593"></a>
+<a name="line-594"></a><span class='hs-comment'>-- | Usage: @'glGetMaterialxv' face pname params@</span>
+<a name="line-595"></a><span class='hs-comment'>--</span>
+<a name="line-596"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-597"></a>
+<a name="line-598"></a>
+<a name="line-599"></a><a name="glGetMaterialxv"></a><span class='hs-definition'>glGetMaterialxv</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-600"></a><span class='hs-definition'>glGetMaterialxv</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumPtrfixedIOV</span> <span class='hs-varid'>glGetMaterialxvFunPtr</span>
+<a name="line-601"></a>
+<a name="line-602"></a><a name="glGetMaterialxvFunPtr"></a><span class='hs-definition'>glGetMaterialxvFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-603"></a><span class='hs-definition'>glGetMaterialxvFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetMaterialxv"</span><span class='hs-layout'>)</span>
+<a name="line-604"></a>
+<a name="line-605"></a><span class='hs-comment'>{-# NOINLINE glGetMaterialxvFunPtr #-}</span>
+<a name="line-606"></a>
+<a name="line-607"></a><span class='hs-comment'>-- | Usage: @'glGetTexEnvxv' target pname params@</span>
+<a name="line-608"></a><span class='hs-comment'>--</span>
+<a name="line-609"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-610"></a>
+<a name="line-611"></a>
+<a name="line-612"></a><a name="glGetTexEnvxv"></a><span class='hs-definition'>glGetTexEnvxv</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-613"></a><span class='hs-definition'>glGetTexEnvxv</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumPtrfixedIOV</span> <span class='hs-varid'>glGetTexEnvxvFunPtr</span>
+<a name="line-614"></a>
+<a name="line-615"></a><a name="glGetTexEnvxvFunPtr"></a><span class='hs-definition'>glGetTexEnvxvFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-616"></a><span class='hs-definition'>glGetTexEnvxvFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetTexEnvxv"</span><span class='hs-layout'>)</span>
+<a name="line-617"></a>
+<a name="line-618"></a><span class='hs-comment'>{-# NOINLINE glGetTexEnvxvFunPtr #-}</span>
+<a name="line-619"></a>
+<a name="line-620"></a><span class='hs-comment'>-- | Usage: @'glGetTexParameterxv' target pname params@</span>
+<a name="line-621"></a><span class='hs-comment'>--</span>
+<a name="line-622"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-623"></a>
+<a name="line-624"></a>
+<a name="line-625"></a><a name="glGetTexParameterxv"></a><span class='hs-definition'>glGetTexParameterxv</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-626"></a><span class='hs-definition'>glGetTexParameterxv</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumPtrfixedIOV</span> <span class='hs-varid'>glGetTexParameterxvFunPtr</span>
+<a name="line-627"></a>
+<a name="line-628"></a><a name="glGetTexParameterxvFunPtr"></a><span class='hs-definition'>glGetTexParameterxvFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-629"></a><span class='hs-definition'>glGetTexParameterxvFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetTexParameterxv"</span><span class='hs-layout'>)</span>
+<a name="line-630"></a>
+<a name="line-631"></a><span class='hs-comment'>{-# NOINLINE glGetTexParameterxvFunPtr #-}</span>
+<a name="line-632"></a>
+<a name="line-633"></a><span class='hs-comment'>-- | Usage: @'glLightModelx' pname param@</span>
+<a name="line-634"></a>
+<a name="line-635"></a>
+<a name="line-636"></a><a name="glLightModelx"></a><span class='hs-definition'>glLightModelx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-637"></a><span class='hs-definition'>glLightModelx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumfixedIOV</span> <span class='hs-varid'>glLightModelxFunPtr</span>
+<a name="line-638"></a>
+<a name="line-639"></a><a name="glLightModelxFunPtr"></a><span class='hs-definition'>glLightModelxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-640"></a><span class='hs-definition'>glLightModelxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glLightModelx"</span><span class='hs-layout'>)</span>
+<a name="line-641"></a>
+<a name="line-642"></a><span class='hs-comment'>{-# NOINLINE glLightModelxFunPtr #-}</span>
+<a name="line-643"></a>
+<a name="line-644"></a><span class='hs-comment'>-- | Usage: @'glLightModelxv' pname param@</span>
+<a name="line-645"></a><span class='hs-comment'>--</span>
+<a name="line-646"></a><span class='hs-comment'>-- The length of @param@ should be @COMPSIZE(pname)@.</span>
+<a name="line-647"></a>
+<a name="line-648"></a>
+<a name="line-649"></a><a name="glLightModelxv"></a><span class='hs-definition'>glLightModelxv</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-650"></a><span class='hs-definition'>glLightModelxv</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrfixedIOV</span> <span class='hs-varid'>glLightModelxvFunPtr</span>
+<a name="line-651"></a>
+<a name="line-652"></a><a name="glLightModelxvFunPtr"></a><span class='hs-definition'>glLightModelxvFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-653"></a><span class='hs-definition'>glLightModelxvFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glLightModelxv"</span><span class='hs-layout'>)</span>
+<a name="line-654"></a>
+<a name="line-655"></a><span class='hs-comment'>{-# NOINLINE glLightModelxvFunPtr #-}</span>
+<a name="line-656"></a>
+<a name="line-657"></a><span class='hs-comment'>-- | Usage: @'glLightx' light pname param@</span>
+<a name="line-658"></a>
+<a name="line-659"></a>
+<a name="line-660"></a><a name="glLightx"></a><span class='hs-definition'>glLightx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-661"></a><span class='hs-definition'>glLightx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumfixedIOV</span> <span class='hs-varid'>glLightxFunPtr</span>
+<a name="line-662"></a>
+<a name="line-663"></a><a name="glLightxFunPtr"></a><span class='hs-definition'>glLightxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-664"></a><span class='hs-definition'>glLightxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glLightx"</span><span class='hs-layout'>)</span>
+<a name="line-665"></a>
+<a name="line-666"></a><span class='hs-comment'>{-# NOINLINE glLightxFunPtr #-}</span>
+<a name="line-667"></a>
+<a name="line-668"></a><span class='hs-comment'>-- | Usage: @'glLightxv' light pname params@</span>
+<a name="line-669"></a><span class='hs-comment'>--</span>
+<a name="line-670"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-671"></a>
+<a name="line-672"></a>
+<a name="line-673"></a><a name="glLightxv"></a><span class='hs-definition'>glLightxv</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-674"></a><span class='hs-definition'>glLightxv</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumPtrfixedIOV</span> <span class='hs-varid'>glLightxvFunPtr</span>
+<a name="line-675"></a>
+<a name="line-676"></a><a name="glLightxvFunPtr"></a><span class='hs-definition'>glLightxvFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-677"></a><span class='hs-definition'>glLightxvFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glLightxv"</span><span class='hs-layout'>)</span>
+<a name="line-678"></a>
+<a name="line-679"></a><span class='hs-comment'>{-# NOINLINE glLightxvFunPtr #-}</span>
+<a name="line-680"></a>
+<a name="line-681"></a><span class='hs-comment'>-- | Usage: @'glLineWidthx' width@</span>
+<a name="line-682"></a>
+<a name="line-683"></a>
+<a name="line-684"></a><a name="glLineWidthx"></a><span class='hs-definition'>glLineWidthx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-685"></a><span class='hs-definition'>glLineWidthx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifixedIOV</span> <span class='hs-varid'>glLineWidthxFunPtr</span>
+<a name="line-686"></a>
+<a name="line-687"></a><a name="glLineWidthxFunPtr"></a><span class='hs-definition'>glLineWidthxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-688"></a><span class='hs-definition'>glLineWidthxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glLineWidthx"</span><span class='hs-layout'>)</span>
+<a name="line-689"></a>
+<a name="line-690"></a><span class='hs-comment'>{-# NOINLINE glLineWidthxFunPtr #-}</span>
+<a name="line-691"></a>
+<a name="line-692"></a><span class='hs-comment'>-- | Usage: @'glLoadMatrixx' m@</span>
+<a name="line-693"></a><span class='hs-comment'>--</span>
+<a name="line-694"></a><span class='hs-comment'>-- The length of @m@ should be @16@.</span>
+<a name="line-695"></a>
+<a name="line-696"></a>
+<a name="line-697"></a><a name="glLoadMatrixx"></a><span class='hs-definition'>glLoadMatrixx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-698"></a><span class='hs-definition'>glLoadMatrixx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrfixedIOV</span> <span class='hs-varid'>glLoadMatrixxFunPtr</span>
+<a name="line-699"></a>
+<a name="line-700"></a><a name="glLoadMatrixxFunPtr"></a><span class='hs-definition'>glLoadMatrixxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-701"></a><span class='hs-definition'>glLoadMatrixxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glLoadMatrixx"</span><span class='hs-layout'>)</span>
+<a name="line-702"></a>
+<a name="line-703"></a><span class='hs-comment'>{-# NOINLINE glLoadMatrixxFunPtr #-}</span>
+<a name="line-704"></a>
+<a name="line-705"></a><span class='hs-comment'>-- | Usage: @'glMaterialx' face pname param@</span>
+<a name="line-706"></a>
+<a name="line-707"></a>
+<a name="line-708"></a><a name="glMaterialx"></a><span class='hs-definition'>glMaterialx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-709"></a><span class='hs-definition'>glMaterialx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumfixedIOV</span> <span class='hs-varid'>glMaterialxFunPtr</span>
+<a name="line-710"></a>
+<a name="line-711"></a><a name="glMaterialxFunPtr"></a><span class='hs-definition'>glMaterialxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-712"></a><span class='hs-definition'>glMaterialxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMaterialx"</span><span class='hs-layout'>)</span>
+<a name="line-713"></a>
+<a name="line-714"></a><span class='hs-comment'>{-# NOINLINE glMaterialxFunPtr #-}</span>
+<a name="line-715"></a>
+<a name="line-716"></a><span class='hs-comment'>-- | Usage: @'glMaterialxv' face pname param@</span>
+<a name="line-717"></a><span class='hs-comment'>--</span>
+<a name="line-718"></a><span class='hs-comment'>-- The length of @param@ should be @COMPSIZE(pname)@.</span>
+<a name="line-719"></a>
+<a name="line-720"></a>
+<a name="line-721"></a><a name="glMaterialxv"></a><span class='hs-definition'>glMaterialxv</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-722"></a><span class='hs-definition'>glMaterialxv</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumPtrfixedIOV</span> <span class='hs-varid'>glMaterialxvFunPtr</span>
+<a name="line-723"></a>
+<a name="line-724"></a><a name="glMaterialxvFunPtr"></a><span class='hs-definition'>glMaterialxvFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-725"></a><span class='hs-definition'>glMaterialxvFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMaterialxv"</span><span class='hs-layout'>)</span>
+<a name="line-726"></a>
+<a name="line-727"></a><span class='hs-comment'>{-# NOINLINE glMaterialxvFunPtr #-}</span>
+<a name="line-728"></a>
+<a name="line-729"></a><span class='hs-comment'>-- | Usage: @'glMultMatrixx' m@</span>
+<a name="line-730"></a><span class='hs-comment'>--</span>
+<a name="line-731"></a><span class='hs-comment'>-- The length of @m@ should be @16@.</span>
+<a name="line-732"></a>
+<a name="line-733"></a>
+<a name="line-734"></a><a name="glMultMatrixx"></a><span class='hs-definition'>glMultMatrixx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-735"></a><span class='hs-definition'>glMultMatrixx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrfixedIOV</span> <span class='hs-varid'>glMultMatrixxFunPtr</span>
+<a name="line-736"></a>
+<a name="line-737"></a><a name="glMultMatrixxFunPtr"></a><span class='hs-definition'>glMultMatrixxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-738"></a><span class='hs-definition'>glMultMatrixxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultMatrixx"</span><span class='hs-layout'>)</span>
+<a name="line-739"></a>
+<a name="line-740"></a><span class='hs-comment'>{-# NOINLINE glMultMatrixxFunPtr #-}</span>
+<a name="line-741"></a>
+<a name="line-742"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord4x' texture s t r q@</span>
+<a name="line-743"></a>
+<a name="line-744"></a>
+<a name="line-745"></a><a name="glMultiTexCoord4x"></a><span class='hs-definition'>glMultiTexCoord4x</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-746"></a><span class='hs-definition'>glMultiTexCoord4x</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumfixedfixedfixedfixedIOV</span> <span class='hs-varid'>glMultiTexCoord4xFunPtr</span>
+<a name="line-747"></a>
+<a name="line-748"></a><a name="glMultiTexCoord4xFunPtr"></a><span class='hs-definition'>glMultiTexCoord4xFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-749"></a><span class='hs-definition'>glMultiTexCoord4xFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord4x"</span><span class='hs-layout'>)</span>
+<a name="line-750"></a>
+<a name="line-751"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord4xFunPtr #-}</span>
+<a name="line-752"></a>
+<a name="line-753"></a><span class='hs-comment'>-- | Usage: @'glNormal3x' nx ny nz@</span>
+<a name="line-754"></a>
+<a name="line-755"></a>
+<a name="line-756"></a><a name="glNormal3x"></a><span class='hs-definition'>glNormal3x</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-757"></a><span class='hs-definition'>glNormal3x</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifixedfixedfixedIOV</span> <span class='hs-varid'>glNormal3xFunPtr</span>
+<a name="line-758"></a>
+<a name="line-759"></a><a name="glNormal3xFunPtr"></a><span class='hs-definition'>glNormal3xFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-760"></a><span class='hs-definition'>glNormal3xFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glNormal3x"</span><span class='hs-layout'>)</span>
+<a name="line-761"></a>
+<a name="line-762"></a><span class='hs-comment'>{-# NOINLINE glNormal3xFunPtr #-}</span>
+<a name="line-763"></a>
+<a name="line-764"></a><span class='hs-comment'>-- | Usage: @'glOrthox' l r b t n f@</span>
+<a name="line-765"></a>
+<a name="line-766"></a>
+<a name="line-767"></a><a name="glOrthox"></a><span class='hs-definition'>glOrthox</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-768"></a><span class='hs-definition'>glOrthox</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifixedfixedfixedfixedfixedfixedIOV</span> <span class='hs-varid'>glOrthoxFunPtr</span>
+<a name="line-769"></a>
+<a name="line-770"></a><a name="glOrthoxFunPtr"></a><span class='hs-definition'>glOrthoxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-771"></a><span class='hs-definition'>glOrthoxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glOrthox"</span><span class='hs-layout'>)</span>
+<a name="line-772"></a>
+<a name="line-773"></a><span class='hs-comment'>{-# NOINLINE glOrthoxFunPtr #-}</span>
+<a name="line-774"></a>
+<a name="line-775"></a><span class='hs-comment'>-- | Usage: @'glPointParameterx' pname param@</span>
+<a name="line-776"></a>
+<a name="line-777"></a>
+<a name="line-778"></a><a name="glPointParameterx"></a><span class='hs-definition'>glPointParameterx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-779"></a><span class='hs-definition'>glPointParameterx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumfixedIOV</span> <span class='hs-varid'>glPointParameterxFunPtr</span>
+<a name="line-780"></a>
+<a name="line-781"></a><a name="glPointParameterxFunPtr"></a><span class='hs-definition'>glPointParameterxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-782"></a><span class='hs-definition'>glPointParameterxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glPointParameterx"</span><span class='hs-layout'>)</span>
+<a name="line-783"></a>
+<a name="line-784"></a><span class='hs-comment'>{-# NOINLINE glPointParameterxFunPtr #-}</span>
+<a name="line-785"></a>
+<a name="line-786"></a><span class='hs-comment'>-- | Usage: @'glPointParameterxv' pname params@</span>
+<a name="line-787"></a><span class='hs-comment'>--</span>
+<a name="line-788"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-789"></a>
+<a name="line-790"></a>
+<a name="line-791"></a><a name="glPointParameterxv"></a><span class='hs-definition'>glPointParameterxv</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-792"></a><span class='hs-definition'>glPointParameterxv</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrfixedIOV</span> <span class='hs-varid'>glPointParameterxvFunPtr</span>
+<a name="line-793"></a>
+<a name="line-794"></a><a name="glPointParameterxvFunPtr"></a><span class='hs-definition'>glPointParameterxvFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-795"></a><span class='hs-definition'>glPointParameterxvFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glPointParameterxv"</span><span class='hs-layout'>)</span>
+<a name="line-796"></a>
+<a name="line-797"></a><span class='hs-comment'>{-# NOINLINE glPointParameterxvFunPtr #-}</span>
+<a name="line-798"></a>
+<a name="line-799"></a><span class='hs-comment'>-- | Usage: @'glPointSizex' size@</span>
+<a name="line-800"></a>
+<a name="line-801"></a>
+<a name="line-802"></a><a name="glPointSizex"></a><span class='hs-definition'>glPointSizex</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-803"></a><span class='hs-definition'>glPointSizex</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifixedIOV</span> <span class='hs-varid'>glPointSizexFunPtr</span>
+<a name="line-804"></a>
+<a name="line-805"></a><a name="glPointSizexFunPtr"></a><span class='hs-definition'>glPointSizexFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-806"></a><span class='hs-definition'>glPointSizexFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glPointSizex"</span><span class='hs-layout'>)</span>
+<a name="line-807"></a>
+<a name="line-808"></a><span class='hs-comment'>{-# NOINLINE glPointSizexFunPtr #-}</span>
+<a name="line-809"></a>
+<a name="line-810"></a><span class='hs-comment'>-- | Usage: @'glPolygonOffsetx' factor units@</span>
+<a name="line-811"></a>
+<a name="line-812"></a>
+<a name="line-813"></a><a name="glPolygonOffsetx"></a><span class='hs-definition'>glPolygonOffsetx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-814"></a><span class='hs-definition'>glPolygonOffsetx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifixedfixedIOV</span> <span class='hs-varid'>glPolygonOffsetxFunPtr</span>
+<a name="line-815"></a>
+<a name="line-816"></a><a name="glPolygonOffsetxFunPtr"></a><span class='hs-definition'>glPolygonOffsetxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-817"></a><span class='hs-definition'>glPolygonOffsetxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glPolygonOffsetx"</span><span class='hs-layout'>)</span>
+<a name="line-818"></a>
+<a name="line-819"></a><span class='hs-comment'>{-# NOINLINE glPolygonOffsetxFunPtr #-}</span>
+<a name="line-820"></a>
+<a name="line-821"></a><span class='hs-comment'>-- | Usage: @'glRotatex' angle x y z@</span>
+<a name="line-822"></a>
+<a name="line-823"></a>
+<a name="line-824"></a><a name="glRotatex"></a><span class='hs-definition'>glRotatex</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-825"></a><span class='hs-definition'>glRotatex</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifixedfixedfixedfixedIOV</span> <span class='hs-varid'>glRotatexFunPtr</span>
+<a name="line-826"></a>
+<a name="line-827"></a><a name="glRotatexFunPtr"></a><span class='hs-definition'>glRotatexFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-828"></a><span class='hs-definition'>glRotatexFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glRotatex"</span><span class='hs-layout'>)</span>
+<a name="line-829"></a>
+<a name="line-830"></a><span class='hs-comment'>{-# NOINLINE glRotatexFunPtr #-}</span>
+<a name="line-831"></a>
+<a name="line-832"></a><span class='hs-comment'>-- | Usage: @'glSampleCoveragex' value invert@</span>
+<a name="line-833"></a>
+<a name="line-834"></a>
+<a name="line-835"></a><a name="glSampleCoveragex"></a><span class='hs-definition'>glSampleCoveragex</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLclampx</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-836"></a><span class='hs-definition'>glSampleCoveragex</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>fficlampxbooleanIOV</span> <span class='hs-varid'>glSampleCoveragexFunPtr</span>
+<a name="line-837"></a>
+<a name="line-838"></a><a name="glSampleCoveragexFunPtr"></a><span class='hs-definition'>glSampleCoveragexFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLclampx</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLboolean</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-839"></a><span class='hs-definition'>glSampleCoveragexFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSampleCoveragex"</span><span class='hs-layout'>)</span>
+<a name="line-840"></a>
+<a name="line-841"></a><span class='hs-comment'>{-# NOINLINE glSampleCoveragexFunPtr #-}</span>
+<a name="line-842"></a>
+<a name="line-843"></a><span class='hs-comment'>-- | Usage: @'glScalex' x y z@</span>
+<a name="line-844"></a>
+<a name="line-845"></a>
+<a name="line-846"></a><a name="glScalex"></a><span class='hs-definition'>glScalex</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-847"></a><span class='hs-definition'>glScalex</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifixedfixedfixedIOV</span> <span class='hs-varid'>glScalexFunPtr</span>
+<a name="line-848"></a>
+<a name="line-849"></a><a name="glScalexFunPtr"></a><span class='hs-definition'>glScalexFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-850"></a><span class='hs-definition'>glScalexFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glScalex"</span><span class='hs-layout'>)</span>
+<a name="line-851"></a>
+<a name="line-852"></a><span class='hs-comment'>{-# NOINLINE glScalexFunPtr #-}</span>
+<a name="line-853"></a>
+<a name="line-854"></a><span class='hs-comment'>-- | Usage: @'glTexEnvx' target pname param@</span>
+<a name="line-855"></a>
+<a name="line-856"></a>
+<a name="line-857"></a><a name="glTexEnvx"></a><span class='hs-definition'>glTexEnvx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-858"></a><span class='hs-definition'>glTexEnvx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumfixedIOV</span> <span class='hs-varid'>glTexEnvxFunPtr</span>
+<a name="line-859"></a>
+<a name="line-860"></a><a name="glTexEnvxFunPtr"></a><span class='hs-definition'>glTexEnvxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-861"></a><span class='hs-definition'>glTexEnvxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexEnvx"</span><span class='hs-layout'>)</span>
+<a name="line-862"></a>
+<a name="line-863"></a><span class='hs-comment'>{-# NOINLINE glTexEnvxFunPtr #-}</span>
+<a name="line-864"></a>
+<a name="line-865"></a><span class='hs-comment'>-- | Usage: @'glTexEnvxv' target pname params@</span>
+<a name="line-866"></a><span class='hs-comment'>--</span>
+<a name="line-867"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-868"></a>
+<a name="line-869"></a>
+<a name="line-870"></a><a name="glTexEnvxv"></a><span class='hs-definition'>glTexEnvxv</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-871"></a><span class='hs-definition'>glTexEnvxv</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumPtrfixedIOV</span> <span class='hs-varid'>glTexEnvxvFunPtr</span>
+<a name="line-872"></a>
+<a name="line-873"></a><a name="glTexEnvxvFunPtr"></a><span class='hs-definition'>glTexEnvxvFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-874"></a><span class='hs-definition'>glTexEnvxvFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexEnvxv"</span><span class='hs-layout'>)</span>
+<a name="line-875"></a>
+<a name="line-876"></a><span class='hs-comment'>{-# NOINLINE glTexEnvxvFunPtr #-}</span>
+<a name="line-877"></a>
+<a name="line-878"></a><span class='hs-comment'>-- | Usage: @'glTexParameterx' target pname param@</span>
+<a name="line-879"></a>
+<a name="line-880"></a>
+<a name="line-881"></a><a name="glTexParameterx"></a><span class='hs-definition'>glTexParameterx</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-882"></a><span class='hs-definition'>glTexParameterx</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumfixedIOV</span> <span class='hs-varid'>glTexParameterxFunPtr</span>
+<a name="line-883"></a>
+<a name="line-884"></a><a name="glTexParameterxFunPtr"></a><span class='hs-definition'>glTexParameterxFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-885"></a><span class='hs-definition'>glTexParameterxFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexParameterx"</span><span class='hs-layout'>)</span>
+<a name="line-886"></a>
+<a name="line-887"></a><span class='hs-comment'>{-# NOINLINE glTexParameterxFunPtr #-}</span>
+<a name="line-888"></a>
+<a name="line-889"></a><span class='hs-comment'>-- | Usage: @'glTexParameterxv' target pname params@</span>
+<a name="line-890"></a><span class='hs-comment'>--</span>
+<a name="line-891"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-892"></a>
+<a name="line-893"></a>
+<a name="line-894"></a><a name="glTexParameterxv"></a><span class='hs-definition'>glTexParameterxv</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-895"></a><span class='hs-definition'>glTexParameterxv</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumPtrfixedIOV</span> <span class='hs-varid'>glTexParameterxvFunPtr</span>
+<a name="line-896"></a>
+<a name="line-897"></a><a name="glTexParameterxvFunPtr"></a><span class='hs-definition'>glTexParameterxvFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-898"></a><span class='hs-definition'>glTexParameterxvFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexParameterxv"</span><span class='hs-layout'>)</span>
+<a name="line-899"></a>
+<a name="line-900"></a><span class='hs-comment'>{-# NOINLINE glTexParameterxvFunPtr #-}</span>
+<a name="line-901"></a>
+<a name="line-902"></a><span class='hs-comment'>-- | Usage: @'glTranslatex' x y z@</span>
+<a name="line-903"></a>
+<a name="line-904"></a>
+<a name="line-905"></a><a name="glTranslatex"></a><span class='hs-definition'>glTranslatex</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-906"></a><span class='hs-definition'>glTranslatex</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifixedfixedfixedIOV</span> <span class='hs-varid'>glTranslatexFunPtr</span>
+<a name="line-907"></a>
+<a name="line-908"></a><a name="glTranslatexFunPtr"></a><span class='hs-definition'>glTranslatexFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfixed</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-909"></a><span class='hs-definition'>glTranslatexFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTranslatex"</span><span class='hs-layout'>)</span>
+<a name="line-910"></a>
+<a name="line-911"></a><span class='hs-comment'>{-# NOINLINE glTranslatexFunPtr #-}</span>
+<a name="line-912"></a>
+<a name="line-913"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VERSION_ES_CL_1_0</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>1</span>
+<a name="line-914"></a>
+<a name="line-915"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VERSION_ES_CL_1_1</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>1</span>
+<a name="line-916"></a>
+<a name="line-917"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VERSION_ES_CM_1_1</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>1</span>
 </pre></body>
 </html>

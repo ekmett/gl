@@ -36,52 +36,53 @@
 <a name="line-27"></a>
 <a name="line-28"></a><a name="gl_AMD_name_gen_delete"></a><span class='hs-definition'>gl_AMD_name_gen_delete</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-29"></a><span class='hs-definition'>gl_AMD_name_gen_delete</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_AMD_name_gen_delete"</span> <span class='hs-varid'>extensions</span>
-<a name="line-30"></a>
-<a name="line-31"></a><span class='hs-comment'>-- | Usage: @'glDeleteNamesAMD' identifier num names@</span>
-<a name="line-32"></a><span class='hs-comment'>--</span>
-<a name="line-33"></a><span class='hs-comment'>-- The length of @names@ should be @num@.</span>
-<a name="line-34"></a>
+<a name="line-30"></a><span class='hs-comment'>{-# NOINLINE gl_AMD_name_gen_delete #-}</span>
+<a name="line-31"></a>
+<a name="line-32"></a><span class='hs-comment'>-- | Usage: @'glDeleteNamesAMD' identifier num names@</span>
+<a name="line-33"></a><span class='hs-comment'>--</span>
+<a name="line-34"></a><span class='hs-comment'>-- The length of @names@ should be @num@.</span>
 <a name="line-35"></a>
-<a name="line-36"></a><a name="glDeleteNamesAMD"></a><span class='hs-definition'>glDeleteNamesAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-37"></a><span class='hs-definition'>glDeleteNamesAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintPtruintIOV</span> <span class='hs-varid'>glDeleteNamesAMDFunPtr</span>
-<a name="line-38"></a>
-<a name="line-39"></a><a name="glDeleteNamesAMDFunPtr"></a><span class='hs-definition'>glDeleteNamesAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-40"></a><span class='hs-definition'>glDeleteNamesAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeleteNamesAMD"</span><span class='hs-layout'>)</span>
-<a name="line-41"></a>
-<a name="line-42"></a><span class='hs-comment'>{-# NOINLINE glDeleteNamesAMDFunPtr #-}</span>
-<a name="line-43"></a>
-<a name="line-44"></a><span class='hs-comment'>-- | Usage: @'glGenNamesAMD' identifier num names@</span>
-<a name="line-45"></a><span class='hs-comment'>--</span>
-<a name="line-46"></a><span class='hs-comment'>-- The length of @names@ should be @num@.</span>
-<a name="line-47"></a>
+<a name="line-36"></a>
+<a name="line-37"></a><a name="glDeleteNamesAMD"></a><span class='hs-definition'>glDeleteNamesAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-38"></a><span class='hs-definition'>glDeleteNamesAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintPtruintIOV</span> <span class='hs-varid'>glDeleteNamesAMDFunPtr</span>
+<a name="line-39"></a>
+<a name="line-40"></a><a name="glDeleteNamesAMDFunPtr"></a><span class='hs-definition'>glDeleteNamesAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-41"></a><span class='hs-definition'>glDeleteNamesAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeleteNamesAMD"</span><span class='hs-layout'>)</span>
+<a name="line-42"></a>
+<a name="line-43"></a><span class='hs-comment'>{-# NOINLINE glDeleteNamesAMDFunPtr #-}</span>
+<a name="line-44"></a>
+<a name="line-45"></a><span class='hs-comment'>-- | Usage: @'glGenNamesAMD' identifier num names@</span>
+<a name="line-46"></a><span class='hs-comment'>--</span>
+<a name="line-47"></a><span class='hs-comment'>-- The length of @names@ should be @num@.</span>
 <a name="line-48"></a>
-<a name="line-49"></a><a name="glGenNamesAMD"></a><span class='hs-definition'>glGenNamesAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-50"></a><span class='hs-definition'>glGenNamesAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintPtruintIOV</span> <span class='hs-varid'>glGenNamesAMDFunPtr</span>
-<a name="line-51"></a>
-<a name="line-52"></a><a name="glGenNamesAMDFunPtr"></a><span class='hs-definition'>glGenNamesAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-53"></a><span class='hs-definition'>glGenNamesAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGenNamesAMD"</span><span class='hs-layout'>)</span>
-<a name="line-54"></a>
-<a name="line-55"></a><span class='hs-comment'>{-# NOINLINE glGenNamesAMDFunPtr #-}</span>
-<a name="line-56"></a>
-<a name="line-57"></a><span class='hs-comment'>-- | Usage: @'glIsNameAMD' identifier name@</span>
-<a name="line-58"></a>
+<a name="line-49"></a>
+<a name="line-50"></a><a name="glGenNamesAMD"></a><span class='hs-definition'>glGenNamesAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-51"></a><span class='hs-definition'>glGenNamesAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintPtruintIOV</span> <span class='hs-varid'>glGenNamesAMDFunPtr</span>
+<a name="line-52"></a>
+<a name="line-53"></a><a name="glGenNamesAMDFunPtr"></a><span class='hs-definition'>glGenNamesAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-54"></a><span class='hs-definition'>glGenNamesAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGenNamesAMD"</span><span class='hs-layout'>)</span>
+<a name="line-55"></a>
+<a name="line-56"></a><span class='hs-comment'>{-# NOINLINE glGenNamesAMDFunPtr #-}</span>
+<a name="line-57"></a>
+<a name="line-58"></a><span class='hs-comment'>-- | Usage: @'glIsNameAMD' identifier name@</span>
 <a name="line-59"></a>
-<a name="line-60"></a><a name="glIsNameAMD"></a><span class='hs-definition'>glIsNameAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLboolean</span>
-<a name="line-61"></a><span class='hs-definition'>glIsNameAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintIOboolean</span> <span class='hs-varid'>glIsNameAMDFunPtr</span>
-<a name="line-62"></a>
-<a name="line-63"></a><a name="glIsNameAMDFunPtr"></a><span class='hs-definition'>glIsNameAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLboolean</span><span class='hs-layout'>)</span>
-<a name="line-64"></a><span class='hs-definition'>glIsNameAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glIsNameAMD"</span><span class='hs-layout'>)</span>
-<a name="line-65"></a>
-<a name="line-66"></a><span class='hs-comment'>{-# NOINLINE glIsNameAMDFunPtr #-}</span>
-<a name="line-67"></a>
-<a name="line-68"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DATA_BUFFER_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9151</span>
-<a name="line-69"></a>
-<a name="line-70"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PERFORMANCE_MONITOR_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9152</span>
-<a name="line-71"></a>
-<a name="line-72"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_QUERY_OBJECT_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9153</span>
-<a name="line-73"></a>
-<a name="line-74"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLER_OBJECT_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9155</span>
-<a name="line-75"></a>
-<a name="line-76"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VERTEX_ARRAY_OBJECT_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9154</span>
+<a name="line-60"></a>
+<a name="line-61"></a><a name="glIsNameAMD"></a><span class='hs-definition'>glIsNameAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLboolean</span>
+<a name="line-62"></a><span class='hs-definition'>glIsNameAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintIOboolean</span> <span class='hs-varid'>glIsNameAMDFunPtr</span>
+<a name="line-63"></a>
+<a name="line-64"></a><a name="glIsNameAMDFunPtr"></a><span class='hs-definition'>glIsNameAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLboolean</span><span class='hs-layout'>)</span>
+<a name="line-65"></a><span class='hs-definition'>glIsNameAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glIsNameAMD"</span><span class='hs-layout'>)</span>
+<a name="line-66"></a>
+<a name="line-67"></a><span class='hs-comment'>{-# NOINLINE glIsNameAMDFunPtr #-}</span>
+<a name="line-68"></a>
+<a name="line-69"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DATA_BUFFER_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9151</span>
+<a name="line-70"></a>
+<a name="line-71"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PERFORMANCE_MONITOR_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9152</span>
+<a name="line-72"></a>
+<a name="line-73"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_QUERY_OBJECT_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9153</span>
+<a name="line-74"></a>
+<a name="line-75"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLER_OBJECT_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9155</span>
+<a name="line-76"></a>
+<a name="line-77"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_VERTEX_ARRAY_OBJECT_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9154</span>
 </pre></body>
 </html>

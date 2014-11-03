@@ -33,130 +33,131 @@
 <a name="line-24"></a>
 <a name="line-25"></a><a name="gl_EXT_copy_texture"></a><span class='hs-definition'>gl_EXT_copy_texture</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-26"></a><span class='hs-definition'>gl_EXT_copy_texture</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_EXT_copy_texture"</span> <span class='hs-varid'>extensions</span>
-<a name="line-27"></a>
-<a name="line-28"></a><span class='hs-comment'>-- | Usage: @'glCopyTexImage1DEXT' target level internalformat x y width border@</span>
-<a name="line-29"></a><span class='hs-comment'>--</span>
-<a name="line-30"></a><span class='hs-comment'>-- The parameter @target@ is a @TextureTarget@, one of: 'GL_DETAIL_TEXTURE_2D_SGIS', 'GL_PROXY_TEXTURE_1D', 'GL_PROXY_TEXTURE_1D_EXT', 'GL_PROXY_TEXTURE_2D', 'GL_PROXY_TEXTURE_2D_EXT', 'GL_PROXY_TEXTURE_3D', 'GL_PROXY_TEXTURE_3D_EXT', 'GL_PROXY_TEXTURE_4D_SGIS', 'GL_TEXTURE_1D', 'GL_TEXTURE_2D', 'GL_TEXTURE_3D', 'GL_TEXTURE_3D_EXT', 'GL_TEXTURE_3D_OES', 'GL_TEXTURE_4D_SGIS', 'GL_TEXTURE_BASE_LEVEL', 'GL_TEXTURE_BASE_LEVEL_SGIS', 'GL_TEXTURE_MAX_LEVEL', 'GL_TEXTURE_MAX_LEVEL_SGIS', 'GL_TEXTURE_MAX_LOD', 'GL_TEXTURE_MAX_LOD_SGIS', 'GL_TEXTURE_MIN_LOD', 'GL_TEXTURE_MIN_LOD_SGIS'.</span>
-<a name="line-31"></a><span class='hs-comment'>--</span>
-<a name="line-32"></a><span class='hs-comment'>-- The parameter @level@ is a @CheckedInt32@.</span>
-<a name="line-33"></a><span class='hs-comment'>--</span>
-<a name="line-34"></a><span class='hs-comment'>-- The parameter @internalformat@ is a @PixelInternalFormat@.</span>
-<a name="line-35"></a><span class='hs-comment'>--</span>
-<a name="line-36"></a><span class='hs-comment'>-- The parameter @x@ is a @WinCoord@.</span>
-<a name="line-37"></a><span class='hs-comment'>--</span>
-<a name="line-38"></a><span class='hs-comment'>-- The parameter @y@ is a @WinCoord@.</span>
-<a name="line-39"></a><span class='hs-comment'>--</span>
-<a name="line-40"></a><span class='hs-comment'>-- The parameter @border@ is a @CheckedInt32@.</span>
-<a name="line-41"></a><span class='hs-comment'>--</span>
-<a name="line-42"></a><span class='hs-comment'>-- This command is an alias for 'glCopyTexImage1D'.</span>
-<a name="line-43"></a>
+<a name="line-27"></a><span class='hs-comment'>{-# NOINLINE gl_EXT_copy_texture #-}</span>
+<a name="line-28"></a>
+<a name="line-29"></a><span class='hs-comment'>-- | Usage: @'glCopyTexImage1DEXT' target level internalformat x y width border@</span>
+<a name="line-30"></a><span class='hs-comment'>--</span>
+<a name="line-31"></a><span class='hs-comment'>-- The parameter @target@ is a @TextureTarget@, one of: Graphics.GL.Raw.Extension.SGIS.DetailTexture.GL_DETAIL_TEXTURE_2D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_1D', Graphics.GL.Raw.Extension.EXT.Texture.GL_PROXY_TEXTURE_1D_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_2D', Graphics.GL.Raw.Extension.EXT.Texture.GL_PROXY_TEXTURE_2D_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_3D', Graphics.GL.Raw.Extension.EXT.Texture3D.GL_PROXY_TEXTURE_3D_EXT', Graphics.GL.Raw.Extension.SGIS.Texture4D.GL_PROXY_TEXTURE_4D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_1D', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_2D', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_3D', Graphics.GL.Raw.Extension.EXT.Texture3D.GL_TEXTURE_3D_EXT', Graphics.GL.Raw.Extension.OES.Texture3D.GL_TEXTURE_3D_OES', Graphics.GL.Raw.Extension.SGIS.Texture4D.GL_TEXTURE_4D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_BASE_LEVEL', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_BASE_LEVEL_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MAX_LEVEL', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MAX_LEVEL_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MAX_LOD', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MAX_LOD_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MIN_LOD', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MIN_LOD_SGIS'.</span>
+<a name="line-32"></a><span class='hs-comment'>--</span>
+<a name="line-33"></a><span class='hs-comment'>-- The parameter @level@ is a @CheckedInt32@.</span>
+<a name="line-34"></a><span class='hs-comment'>--</span>
+<a name="line-35"></a><span class='hs-comment'>-- The parameter @internalformat@ is a @PixelInternalFormat@.</span>
+<a name="line-36"></a><span class='hs-comment'>--</span>
+<a name="line-37"></a><span class='hs-comment'>-- The parameter @x@ is a @WinCoord@.</span>
+<a name="line-38"></a><span class='hs-comment'>--</span>
+<a name="line-39"></a><span class='hs-comment'>-- The parameter @y@ is a @WinCoord@.</span>
+<a name="line-40"></a><span class='hs-comment'>--</span>
+<a name="line-41"></a><span class='hs-comment'>-- The parameter @border@ is a @CheckedInt32@.</span>
+<a name="line-42"></a><span class='hs-comment'>--</span>
+<a name="line-43"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glCopyTexImage1D'.</span>
 <a name="line-44"></a>
-<a name="line-45"></a><a name="glCopyTexImage1DEXT"></a><span class='hs-definition'>glCopyTexImage1DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-46"></a><span class='hs-definition'>glCopyTexImage1DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintenumintintsizeiintIOV</span> <span class='hs-varid'>glCopyTexImage1DEXTFunPtr</span>
-<a name="line-47"></a>
-<a name="line-48"></a><a name="glCopyTexImage1DEXTFunPtr"></a><span class='hs-definition'>glCopyTexImage1DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-49"></a><span class='hs-definition'>glCopyTexImage1DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glCopyTexImage1DEXT"</span><span class='hs-layout'>)</span>
-<a name="line-50"></a>
-<a name="line-51"></a><span class='hs-comment'>{-# NOINLINE glCopyTexImage1DEXTFunPtr #-}</span>
-<a name="line-52"></a>
-<a name="line-53"></a><span class='hs-comment'>-- | Usage: @'glCopyTexImage2DEXT' target level internalformat x y width height border@</span>
-<a name="line-54"></a><span class='hs-comment'>--</span>
-<a name="line-55"></a><span class='hs-comment'>-- The parameter @target@ is a @TextureTarget@, one of: 'GL_DETAIL_TEXTURE_2D_SGIS', 'GL_PROXY_TEXTURE_1D', 'GL_PROXY_TEXTURE_1D_EXT', 'GL_PROXY_TEXTURE_2D', 'GL_PROXY_TEXTURE_2D_EXT', 'GL_PROXY_TEXTURE_3D', 'GL_PROXY_TEXTURE_3D_EXT', 'GL_PROXY_TEXTURE_4D_SGIS', 'GL_TEXTURE_1D', 'GL_TEXTURE_2D', 'GL_TEXTURE_3D', 'GL_TEXTURE_3D_EXT', 'GL_TEXTURE_3D_OES', 'GL_TEXTURE_4D_SGIS', 'GL_TEXTURE_BASE_LEVEL', 'GL_TEXTURE_BASE_LEVEL_SGIS', 'GL_TEXTURE_MAX_LEVEL', 'GL_TEXTURE_MAX_LEVEL_SGIS', 'GL_TEXTURE_MAX_LOD', 'GL_TEXTURE_MAX_LOD_SGIS', 'GL_TEXTURE_MIN_LOD', 'GL_TEXTURE_MIN_LOD_SGIS'.</span>
-<a name="line-56"></a><span class='hs-comment'>--</span>
-<a name="line-57"></a><span class='hs-comment'>-- The parameter @level@ is a @CheckedInt32@.</span>
-<a name="line-58"></a><span class='hs-comment'>--</span>
-<a name="line-59"></a><span class='hs-comment'>-- The parameter @internalformat@ is a @PixelInternalFormat@.</span>
-<a name="line-60"></a><span class='hs-comment'>--</span>
-<a name="line-61"></a><span class='hs-comment'>-- The parameter @x@ is a @WinCoord@.</span>
-<a name="line-62"></a><span class='hs-comment'>--</span>
-<a name="line-63"></a><span class='hs-comment'>-- The parameter @y@ is a @WinCoord@.</span>
-<a name="line-64"></a><span class='hs-comment'>--</span>
-<a name="line-65"></a><span class='hs-comment'>-- The parameter @border@ is a @CheckedInt32@.</span>
-<a name="line-66"></a><span class='hs-comment'>--</span>
-<a name="line-67"></a><span class='hs-comment'>-- This command is an alias for 'glCopyTexImage2D'.</span>
-<a name="line-68"></a>
+<a name="line-45"></a>
+<a name="line-46"></a><a name="glCopyTexImage1DEXT"></a><span class='hs-definition'>glCopyTexImage1DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-47"></a><span class='hs-definition'>glCopyTexImage1DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintenumintintsizeiintIOV</span> <span class='hs-varid'>glCopyTexImage1DEXTFunPtr</span>
+<a name="line-48"></a>
+<a name="line-49"></a><a name="glCopyTexImage1DEXTFunPtr"></a><span class='hs-definition'>glCopyTexImage1DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-50"></a><span class='hs-definition'>glCopyTexImage1DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glCopyTexImage1DEXT"</span><span class='hs-layout'>)</span>
+<a name="line-51"></a>
+<a name="line-52"></a><span class='hs-comment'>{-# NOINLINE glCopyTexImage1DEXTFunPtr #-}</span>
+<a name="line-53"></a>
+<a name="line-54"></a><span class='hs-comment'>-- | Usage: @'glCopyTexImage2DEXT' target level internalformat x y width height border@</span>
+<a name="line-55"></a><span class='hs-comment'>--</span>
+<a name="line-56"></a><span class='hs-comment'>-- The parameter @target@ is a @TextureTarget@, one of: Graphics.GL.Raw.Extension.SGIS.DetailTexture.GL_DETAIL_TEXTURE_2D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_1D', Graphics.GL.Raw.Extension.EXT.Texture.GL_PROXY_TEXTURE_1D_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_2D', Graphics.GL.Raw.Extension.EXT.Texture.GL_PROXY_TEXTURE_2D_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_3D', Graphics.GL.Raw.Extension.EXT.Texture3D.GL_PROXY_TEXTURE_3D_EXT', Graphics.GL.Raw.Extension.SGIS.Texture4D.GL_PROXY_TEXTURE_4D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_1D', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_2D', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_3D', Graphics.GL.Raw.Extension.EXT.Texture3D.GL_TEXTURE_3D_EXT', Graphics.GL.Raw.Extension.OES.Texture3D.GL_TEXTURE_3D_OES', Graphics.GL.Raw.Extension.SGIS.Texture4D.GL_TEXTURE_4D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_BASE_LEVEL', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_BASE_LEVEL_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MAX_LEVEL', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MAX_LEVEL_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MAX_LOD', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MAX_LOD_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MIN_LOD', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MIN_LOD_SGIS'.</span>
+<a name="line-57"></a><span class='hs-comment'>--</span>
+<a name="line-58"></a><span class='hs-comment'>-- The parameter @level@ is a @CheckedInt32@.</span>
+<a name="line-59"></a><span class='hs-comment'>--</span>
+<a name="line-60"></a><span class='hs-comment'>-- The parameter @internalformat@ is a @PixelInternalFormat@.</span>
+<a name="line-61"></a><span class='hs-comment'>--</span>
+<a name="line-62"></a><span class='hs-comment'>-- The parameter @x@ is a @WinCoord@.</span>
+<a name="line-63"></a><span class='hs-comment'>--</span>
+<a name="line-64"></a><span class='hs-comment'>-- The parameter @y@ is a @WinCoord@.</span>
+<a name="line-65"></a><span class='hs-comment'>--</span>
+<a name="line-66"></a><span class='hs-comment'>-- The parameter @border@ is a @CheckedInt32@.</span>
+<a name="line-67"></a><span class='hs-comment'>--</span>
+<a name="line-68"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glCopyTexImage2D'.</span>
 <a name="line-69"></a>
-<a name="line-70"></a><a name="glCopyTexImage2DEXT"></a><span class='hs-definition'>glCopyTexImage2DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-71"></a><span class='hs-definition'>glCopyTexImage2DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintenumintintsizeisizeiintIOV</span> <span class='hs-varid'>glCopyTexImage2DEXTFunPtr</span>
-<a name="line-72"></a>
-<a name="line-73"></a><a name="glCopyTexImage2DEXTFunPtr"></a><span class='hs-definition'>glCopyTexImage2DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-74"></a><span class='hs-definition'>glCopyTexImage2DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glCopyTexImage2DEXT"</span><span class='hs-layout'>)</span>
-<a name="line-75"></a>
-<a name="line-76"></a><span class='hs-comment'>{-# NOINLINE glCopyTexImage2DEXTFunPtr #-}</span>
-<a name="line-77"></a>
-<a name="line-78"></a><span class='hs-comment'>-- | Usage: @'glCopyTexSubImage1DEXT' target level xoffset x y width@</span>
-<a name="line-79"></a><span class='hs-comment'>--</span>
-<a name="line-80"></a><span class='hs-comment'>-- The parameter @target@ is a @TextureTarget@, one of: 'GL_DETAIL_TEXTURE_2D_SGIS', 'GL_PROXY_TEXTURE_1D', 'GL_PROXY_TEXTURE_1D_EXT', 'GL_PROXY_TEXTURE_2D', 'GL_PROXY_TEXTURE_2D_EXT', 'GL_PROXY_TEXTURE_3D', 'GL_PROXY_TEXTURE_3D_EXT', 'GL_PROXY_TEXTURE_4D_SGIS', 'GL_TEXTURE_1D', 'GL_TEXTURE_2D', 'GL_TEXTURE_3D', 'GL_TEXTURE_3D_EXT', 'GL_TEXTURE_3D_OES', 'GL_TEXTURE_4D_SGIS', 'GL_TEXTURE_BASE_LEVEL', 'GL_TEXTURE_BASE_LEVEL_SGIS', 'GL_TEXTURE_MAX_LEVEL', 'GL_TEXTURE_MAX_LEVEL_SGIS', 'GL_TEXTURE_MAX_LOD', 'GL_TEXTURE_MAX_LOD_SGIS', 'GL_TEXTURE_MIN_LOD', 'GL_TEXTURE_MIN_LOD_SGIS'.</span>
-<a name="line-81"></a><span class='hs-comment'>--</span>
-<a name="line-82"></a><span class='hs-comment'>-- The parameter @level@ is a @CheckedInt32@.</span>
-<a name="line-83"></a><span class='hs-comment'>--</span>
-<a name="line-84"></a><span class='hs-comment'>-- The parameter @xoffset@ is a @CheckedInt32@.</span>
-<a name="line-85"></a><span class='hs-comment'>--</span>
-<a name="line-86"></a><span class='hs-comment'>-- The parameter @x@ is a @WinCoord@.</span>
-<a name="line-87"></a><span class='hs-comment'>--</span>
-<a name="line-88"></a><span class='hs-comment'>-- The parameter @y@ is a @WinCoord@.</span>
-<a name="line-89"></a><span class='hs-comment'>--</span>
-<a name="line-90"></a><span class='hs-comment'>-- This command is an alias for 'glCopyTexSubImage1D'.</span>
-<a name="line-91"></a>
+<a name="line-70"></a>
+<a name="line-71"></a><a name="glCopyTexImage2DEXT"></a><span class='hs-definition'>glCopyTexImage2DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-72"></a><span class='hs-definition'>glCopyTexImage2DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintenumintintsizeisizeiintIOV</span> <span class='hs-varid'>glCopyTexImage2DEXTFunPtr</span>
+<a name="line-73"></a>
+<a name="line-74"></a><a name="glCopyTexImage2DEXTFunPtr"></a><span class='hs-definition'>glCopyTexImage2DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-75"></a><span class='hs-definition'>glCopyTexImage2DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glCopyTexImage2DEXT"</span><span class='hs-layout'>)</span>
+<a name="line-76"></a>
+<a name="line-77"></a><span class='hs-comment'>{-# NOINLINE glCopyTexImage2DEXTFunPtr #-}</span>
+<a name="line-78"></a>
+<a name="line-79"></a><span class='hs-comment'>-- | Usage: @'glCopyTexSubImage1DEXT' target level xoffset x y width@</span>
+<a name="line-80"></a><span class='hs-comment'>--</span>
+<a name="line-81"></a><span class='hs-comment'>-- The parameter @target@ is a @TextureTarget@, one of: Graphics.GL.Raw.Extension.SGIS.DetailTexture.GL_DETAIL_TEXTURE_2D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_1D', Graphics.GL.Raw.Extension.EXT.Texture.GL_PROXY_TEXTURE_1D_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_2D', Graphics.GL.Raw.Extension.EXT.Texture.GL_PROXY_TEXTURE_2D_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_3D', Graphics.GL.Raw.Extension.EXT.Texture3D.GL_PROXY_TEXTURE_3D_EXT', Graphics.GL.Raw.Extension.SGIS.Texture4D.GL_PROXY_TEXTURE_4D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_1D', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_2D', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_3D', Graphics.GL.Raw.Extension.EXT.Texture3D.GL_TEXTURE_3D_EXT', Graphics.GL.Raw.Extension.OES.Texture3D.GL_TEXTURE_3D_OES', Graphics.GL.Raw.Extension.SGIS.Texture4D.GL_TEXTURE_4D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_BASE_LEVEL', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_BASE_LEVEL_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MAX_LEVEL', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MAX_LEVEL_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MAX_LOD', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MAX_LOD_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MIN_LOD', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MIN_LOD_SGIS'.</span>
+<a name="line-82"></a><span class='hs-comment'>--</span>
+<a name="line-83"></a><span class='hs-comment'>-- The parameter @level@ is a @CheckedInt32@.</span>
+<a name="line-84"></a><span class='hs-comment'>--</span>
+<a name="line-85"></a><span class='hs-comment'>-- The parameter @xoffset@ is a @CheckedInt32@.</span>
+<a name="line-86"></a><span class='hs-comment'>--</span>
+<a name="line-87"></a><span class='hs-comment'>-- The parameter @x@ is a @WinCoord@.</span>
+<a name="line-88"></a><span class='hs-comment'>--</span>
+<a name="line-89"></a><span class='hs-comment'>-- The parameter @y@ is a @WinCoord@.</span>
+<a name="line-90"></a><span class='hs-comment'>--</span>
+<a name="line-91"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glCopyTexSubImage1D'.</span>
 <a name="line-92"></a>
-<a name="line-93"></a><a name="glCopyTexSubImage1DEXT"></a><span class='hs-definition'>glCopyTexSubImage1DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-94"></a><span class='hs-definition'>glCopyTexSubImage1DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintintintintsizeiIOV</span> <span class='hs-varid'>glCopyTexSubImage1DEXTFunPtr</span>
-<a name="line-95"></a>
-<a name="line-96"></a><a name="glCopyTexSubImage1DEXTFunPtr"></a><span class='hs-definition'>glCopyTexSubImage1DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-97"></a><span class='hs-definition'>glCopyTexSubImage1DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glCopyTexSubImage1DEXT"</span><span class='hs-layout'>)</span>
-<a name="line-98"></a>
-<a name="line-99"></a><span class='hs-comment'>{-# NOINLINE glCopyTexSubImage1DEXTFunPtr #-}</span>
-<a name="line-100"></a>
-<a name="line-101"></a><span class='hs-comment'>-- | Usage: @'glCopyTexSubImage2DEXT' target level xoffset yoffset x y width height@</span>
-<a name="line-102"></a><span class='hs-comment'>--</span>
-<a name="line-103"></a><span class='hs-comment'>-- The parameter @target@ is a @TextureTarget@, one of: 'GL_DETAIL_TEXTURE_2D_SGIS', 'GL_PROXY_TEXTURE_1D', 'GL_PROXY_TEXTURE_1D_EXT', 'GL_PROXY_TEXTURE_2D', 'GL_PROXY_TEXTURE_2D_EXT', 'GL_PROXY_TEXTURE_3D', 'GL_PROXY_TEXTURE_3D_EXT', 'GL_PROXY_TEXTURE_4D_SGIS', 'GL_TEXTURE_1D', 'GL_TEXTURE_2D', 'GL_TEXTURE_3D', 'GL_TEXTURE_3D_EXT', 'GL_TEXTURE_3D_OES', 'GL_TEXTURE_4D_SGIS', 'GL_TEXTURE_BASE_LEVEL', 'GL_TEXTURE_BASE_LEVEL_SGIS', 'GL_TEXTURE_MAX_LEVEL', 'GL_TEXTURE_MAX_LEVEL_SGIS', 'GL_TEXTURE_MAX_LOD', 'GL_TEXTURE_MAX_LOD_SGIS', 'GL_TEXTURE_MIN_LOD', 'GL_TEXTURE_MIN_LOD_SGIS'.</span>
-<a name="line-104"></a><span class='hs-comment'>--</span>
-<a name="line-105"></a><span class='hs-comment'>-- The parameter @level@ is a @CheckedInt32@.</span>
-<a name="line-106"></a><span class='hs-comment'>--</span>
-<a name="line-107"></a><span class='hs-comment'>-- The parameter @xoffset@ is a @CheckedInt32@.</span>
-<a name="line-108"></a><span class='hs-comment'>--</span>
-<a name="line-109"></a><span class='hs-comment'>-- The parameter @yoffset@ is a @CheckedInt32@.</span>
-<a name="line-110"></a><span class='hs-comment'>--</span>
-<a name="line-111"></a><span class='hs-comment'>-- The parameter @x@ is a @WinCoord@.</span>
-<a name="line-112"></a><span class='hs-comment'>--</span>
-<a name="line-113"></a><span class='hs-comment'>-- The parameter @y@ is a @WinCoord@.</span>
-<a name="line-114"></a><span class='hs-comment'>--</span>
-<a name="line-115"></a><span class='hs-comment'>-- This command is an alias for 'glCopyTexSubImage2D'.</span>
-<a name="line-116"></a>
+<a name="line-93"></a>
+<a name="line-94"></a><a name="glCopyTexSubImage1DEXT"></a><span class='hs-definition'>glCopyTexSubImage1DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-95"></a><span class='hs-definition'>glCopyTexSubImage1DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintintintintsizeiIOV</span> <span class='hs-varid'>glCopyTexSubImage1DEXTFunPtr</span>
+<a name="line-96"></a>
+<a name="line-97"></a><a name="glCopyTexSubImage1DEXTFunPtr"></a><span class='hs-definition'>glCopyTexSubImage1DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-98"></a><span class='hs-definition'>glCopyTexSubImage1DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glCopyTexSubImage1DEXT"</span><span class='hs-layout'>)</span>
+<a name="line-99"></a>
+<a name="line-100"></a><span class='hs-comment'>{-# NOINLINE glCopyTexSubImage1DEXTFunPtr #-}</span>
+<a name="line-101"></a>
+<a name="line-102"></a><span class='hs-comment'>-- | Usage: @'glCopyTexSubImage2DEXT' target level xoffset yoffset x y width height@</span>
+<a name="line-103"></a><span class='hs-comment'>--</span>
+<a name="line-104"></a><span class='hs-comment'>-- The parameter @target@ is a @TextureTarget@, one of: Graphics.GL.Raw.Extension.SGIS.DetailTexture.GL_DETAIL_TEXTURE_2D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_1D', Graphics.GL.Raw.Extension.EXT.Texture.GL_PROXY_TEXTURE_1D_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_2D', Graphics.GL.Raw.Extension.EXT.Texture.GL_PROXY_TEXTURE_2D_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_3D', Graphics.GL.Raw.Extension.EXT.Texture3D.GL_PROXY_TEXTURE_3D_EXT', Graphics.GL.Raw.Extension.SGIS.Texture4D.GL_PROXY_TEXTURE_4D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_1D', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_2D', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_3D', Graphics.GL.Raw.Extension.EXT.Texture3D.GL_TEXTURE_3D_EXT', Graphics.GL.Raw.Extension.OES.Texture3D.GL_TEXTURE_3D_OES', Graphics.GL.Raw.Extension.SGIS.Texture4D.GL_TEXTURE_4D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_BASE_LEVEL', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_BASE_LEVEL_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MAX_LEVEL', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MAX_LEVEL_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MAX_LOD', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MAX_LOD_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MIN_LOD', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MIN_LOD_SGIS'.</span>
+<a name="line-105"></a><span class='hs-comment'>--</span>
+<a name="line-106"></a><span class='hs-comment'>-- The parameter @level@ is a @CheckedInt32@.</span>
+<a name="line-107"></a><span class='hs-comment'>--</span>
+<a name="line-108"></a><span class='hs-comment'>-- The parameter @xoffset@ is a @CheckedInt32@.</span>
+<a name="line-109"></a><span class='hs-comment'>--</span>
+<a name="line-110"></a><span class='hs-comment'>-- The parameter @yoffset@ is a @CheckedInt32@.</span>
+<a name="line-111"></a><span class='hs-comment'>--</span>
+<a name="line-112"></a><span class='hs-comment'>-- The parameter @x@ is a @WinCoord@.</span>
+<a name="line-113"></a><span class='hs-comment'>--</span>
+<a name="line-114"></a><span class='hs-comment'>-- The parameter @y@ is a @WinCoord@.</span>
+<a name="line-115"></a><span class='hs-comment'>--</span>
+<a name="line-116"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glCopyTexSubImage2D'.</span>
 <a name="line-117"></a>
-<a name="line-118"></a><a name="glCopyTexSubImage2DEXT"></a><span class='hs-definition'>glCopyTexSubImage2DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-119"></a><span class='hs-definition'>glCopyTexSubImage2DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintintintintintsizeisizeiIOV</span> <span class='hs-varid'>glCopyTexSubImage2DEXTFunPtr</span>
-<a name="line-120"></a>
-<a name="line-121"></a><a name="glCopyTexSubImage2DEXTFunPtr"></a><span class='hs-definition'>glCopyTexSubImage2DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-122"></a><span class='hs-definition'>glCopyTexSubImage2DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glCopyTexSubImage2DEXT"</span><span class='hs-layout'>)</span>
-<a name="line-123"></a>
-<a name="line-124"></a><span class='hs-comment'>{-# NOINLINE glCopyTexSubImage2DEXTFunPtr #-}</span>
-<a name="line-125"></a>
-<a name="line-126"></a><span class='hs-comment'>-- | Usage: @'glCopyTexSubImage3DEXT' target level xoffset yoffset zoffset x y width height@</span>
-<a name="line-127"></a><span class='hs-comment'>--</span>
-<a name="line-128"></a><span class='hs-comment'>-- The parameter @target@ is a @TextureTarget@, one of: 'GL_DETAIL_TEXTURE_2D_SGIS', 'GL_PROXY_TEXTURE_1D', 'GL_PROXY_TEXTURE_1D_EXT', 'GL_PROXY_TEXTURE_2D', 'GL_PROXY_TEXTURE_2D_EXT', 'GL_PROXY_TEXTURE_3D', 'GL_PROXY_TEXTURE_3D_EXT', 'GL_PROXY_TEXTURE_4D_SGIS', 'GL_TEXTURE_1D', 'GL_TEXTURE_2D', 'GL_TEXTURE_3D', 'GL_TEXTURE_3D_EXT', 'GL_TEXTURE_3D_OES', 'GL_TEXTURE_4D_SGIS', 'GL_TEXTURE_BASE_LEVEL', 'GL_TEXTURE_BASE_LEVEL_SGIS', 'GL_TEXTURE_MAX_LEVEL', 'GL_TEXTURE_MAX_LEVEL_SGIS', 'GL_TEXTURE_MAX_LOD', 'GL_TEXTURE_MAX_LOD_SGIS', 'GL_TEXTURE_MIN_LOD', 'GL_TEXTURE_MIN_LOD_SGIS'.</span>
-<a name="line-129"></a><span class='hs-comment'>--</span>
-<a name="line-130"></a><span class='hs-comment'>-- The parameter @level@ is a @CheckedInt32@.</span>
-<a name="line-131"></a><span class='hs-comment'>--</span>
-<a name="line-132"></a><span class='hs-comment'>-- The parameter @xoffset@ is a @CheckedInt32@.</span>
-<a name="line-133"></a><span class='hs-comment'>--</span>
-<a name="line-134"></a><span class='hs-comment'>-- The parameter @yoffset@ is a @CheckedInt32@.</span>
-<a name="line-135"></a><span class='hs-comment'>--</span>
-<a name="line-136"></a><span class='hs-comment'>-- The parameter @zoffset@ is a @CheckedInt32@.</span>
-<a name="line-137"></a><span class='hs-comment'>--</span>
-<a name="line-138"></a><span class='hs-comment'>-- The parameter @x@ is a @WinCoord@.</span>
-<a name="line-139"></a><span class='hs-comment'>--</span>
-<a name="line-140"></a><span class='hs-comment'>-- The parameter @y@ is a @WinCoord@.</span>
-<a name="line-141"></a><span class='hs-comment'>--</span>
-<a name="line-142"></a><span class='hs-comment'>-- This command is an alias for 'glCopyTexSubImage3D'.</span>
-<a name="line-143"></a>
+<a name="line-118"></a>
+<a name="line-119"></a><a name="glCopyTexSubImage2DEXT"></a><span class='hs-definition'>glCopyTexSubImage2DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-120"></a><span class='hs-definition'>glCopyTexSubImage2DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintintintintintsizeisizeiIOV</span> <span class='hs-varid'>glCopyTexSubImage2DEXTFunPtr</span>
+<a name="line-121"></a>
+<a name="line-122"></a><a name="glCopyTexSubImage2DEXTFunPtr"></a><span class='hs-definition'>glCopyTexSubImage2DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-123"></a><span class='hs-definition'>glCopyTexSubImage2DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glCopyTexSubImage2DEXT"</span><span class='hs-layout'>)</span>
+<a name="line-124"></a>
+<a name="line-125"></a><span class='hs-comment'>{-# NOINLINE glCopyTexSubImage2DEXTFunPtr #-}</span>
+<a name="line-126"></a>
+<a name="line-127"></a><span class='hs-comment'>-- | Usage: @'glCopyTexSubImage3DEXT' target level xoffset yoffset zoffset x y width height@</span>
+<a name="line-128"></a><span class='hs-comment'>--</span>
+<a name="line-129"></a><span class='hs-comment'>-- The parameter @target@ is a @TextureTarget@, one of: Graphics.GL.Raw.Extension.SGIS.DetailTexture.GL_DETAIL_TEXTURE_2D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_1D', Graphics.GL.Raw.Extension.EXT.Texture.GL_PROXY_TEXTURE_1D_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_2D', Graphics.GL.Raw.Extension.EXT.Texture.GL_PROXY_TEXTURE_2D_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_PROXY_TEXTURE_3D', Graphics.GL.Raw.Extension.EXT.Texture3D.GL_PROXY_TEXTURE_3D_EXT', Graphics.GL.Raw.Extension.SGIS.Texture4D.GL_PROXY_TEXTURE_4D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_1D', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_2D', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_3D', Graphics.GL.Raw.Extension.EXT.Texture3D.GL_TEXTURE_3D_EXT', Graphics.GL.Raw.Extension.OES.Texture3D.GL_TEXTURE_3D_OES', Graphics.GL.Raw.Extension.SGIS.Texture4D.GL_TEXTURE_4D_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_BASE_LEVEL', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_BASE_LEVEL_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MAX_LEVEL', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MAX_LEVEL_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MAX_LOD', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MAX_LOD_SGIS', 'Graphics.GL.Raw.Internal.Shared.GL_TEXTURE_MIN_LOD', Graphics.GL.Raw.Extension.SGIS.TextureLod.GL_TEXTURE_MIN_LOD_SGIS'.</span>
+<a name="line-130"></a><span class='hs-comment'>--</span>
+<a name="line-131"></a><span class='hs-comment'>-- The parameter @level@ is a @CheckedInt32@.</span>
+<a name="line-132"></a><span class='hs-comment'>--</span>
+<a name="line-133"></a><span class='hs-comment'>-- The parameter @xoffset@ is a @CheckedInt32@.</span>
+<a name="line-134"></a><span class='hs-comment'>--</span>
+<a name="line-135"></a><span class='hs-comment'>-- The parameter @yoffset@ is a @CheckedInt32@.</span>
+<a name="line-136"></a><span class='hs-comment'>--</span>
+<a name="line-137"></a><span class='hs-comment'>-- The parameter @zoffset@ is a @CheckedInt32@.</span>
+<a name="line-138"></a><span class='hs-comment'>--</span>
+<a name="line-139"></a><span class='hs-comment'>-- The parameter @x@ is a @WinCoord@.</span>
+<a name="line-140"></a><span class='hs-comment'>--</span>
+<a name="line-141"></a><span class='hs-comment'>-- The parameter @y@ is a @WinCoord@.</span>
+<a name="line-142"></a><span class='hs-comment'>--</span>
+<a name="line-143"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glCopyTexSubImage3D'.</span>
 <a name="line-144"></a>
-<a name="line-145"></a><a name="glCopyTexSubImage3DEXT"></a><span class='hs-definition'>glCopyTexSubImage3DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-146"></a><span class='hs-definition'>glCopyTexSubImage3DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintintintintintintsizeisizeiIOV</span> <span class='hs-varid'>glCopyTexSubImage3DEXTFunPtr</span>
-<a name="line-147"></a>
-<a name="line-148"></a><a name="glCopyTexSubImage3DEXTFunPtr"></a><span class='hs-definition'>glCopyTexSubImage3DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-149"></a><span class='hs-definition'>glCopyTexSubImage3DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glCopyTexSubImage3DEXT"</span><span class='hs-layout'>)</span>
-<a name="line-150"></a>
-<a name="line-151"></a><span class='hs-comment'>{-# NOINLINE glCopyTexSubImage3DEXTFunPtr #-}</span>
+<a name="line-145"></a>
+<a name="line-146"></a><a name="glCopyTexSubImage3DEXT"></a><span class='hs-definition'>glCopyTexSubImage3DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-147"></a><span class='hs-definition'>glCopyTexSubImage3DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumintintintintintintsizeisizeiIOV</span> <span class='hs-varid'>glCopyTexSubImage3DEXTFunPtr</span>
+<a name="line-148"></a>
+<a name="line-149"></a><a name="glCopyTexSubImage3DEXTFunPtr"></a><span class='hs-definition'>glCopyTexSubImage3DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-150"></a><span class='hs-definition'>glCopyTexSubImage3DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glCopyTexSubImage3DEXT"</span><span class='hs-layout'>)</span>
+<a name="line-151"></a>
+<a name="line-152"></a><span class='hs-comment'>{-# NOINLINE glCopyTexSubImage3DEXTFunPtr #-}</span>
 </pre></body>
 </html>

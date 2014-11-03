@@ -52,171 +52,172 @@
 <a name="line-43"></a>
 <a name="line-44"></a><a name="gl_EXT_vertex_attrib_64bit"></a><span class='hs-definition'>gl_EXT_vertex_attrib_64bit</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-45"></a><span class='hs-definition'>gl_EXT_vertex_attrib_64bit</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_EXT_vertex_attrib_64bit"</span> <span class='hs-varid'>extensions</span>
-<a name="line-46"></a>
-<a name="line-47"></a><span class='hs-comment'>-- | Usage: @'glGetVertexAttribLdvEXT' index pname params@</span>
-<a name="line-48"></a><span class='hs-comment'>--</span>
-<a name="line-49"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
-<a name="line-50"></a><span class='hs-comment'>--</span>
-<a name="line-51"></a><span class='hs-comment'>-- This command is an alias for 'glGetVertexAttribLdv'.</span>
-<a name="line-52"></a>
+<a name="line-46"></a><span class='hs-comment'>{-# NOINLINE gl_EXT_vertex_attrib_64bit #-}</span>
+<a name="line-47"></a>
+<a name="line-48"></a><span class='hs-comment'>-- | Usage: @'glGetVertexAttribLdvEXT' index pname params@</span>
+<a name="line-49"></a><span class='hs-comment'>--</span>
+<a name="line-50"></a><span class='hs-comment'>-- The length of @params@ should be @COMPSIZE(pname)@.</span>
+<a name="line-51"></a><span class='hs-comment'>--</span>
+<a name="line-52"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glGetVertexAttribLdv'.</span>
 <a name="line-53"></a>
-<a name="line-54"></a><a name="glGetVertexAttribLdvEXT"></a><span class='hs-definition'>glGetVertexAttribLdvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-55"></a><span class='hs-definition'>glGetVertexAttribLdvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumPtrdoubleIOV</span> <span class='hs-varid'>glGetVertexAttribLdvEXTFunPtr</span>
-<a name="line-56"></a>
-<a name="line-57"></a><a name="glGetVertexAttribLdvEXTFunPtr"></a><span class='hs-definition'>glGetVertexAttribLdvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-58"></a><span class='hs-definition'>glGetVertexAttribLdvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetVertexAttribLdvEXT"</span><span class='hs-layout'>)</span>
-<a name="line-59"></a>
-<a name="line-60"></a><span class='hs-comment'>{-# NOINLINE glGetVertexAttribLdvEXTFunPtr #-}</span>
-<a name="line-61"></a>
-<a name="line-62"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL1dEXT' index x@</span>
-<a name="line-63"></a><span class='hs-comment'>--</span>
-<a name="line-64"></a><span class='hs-comment'>-- This command is an alias for 'glVertexAttribL1d'.</span>
-<a name="line-65"></a>
+<a name="line-54"></a>
+<a name="line-55"></a><a name="glGetVertexAttribLdvEXT"></a><span class='hs-definition'>glGetVertexAttribLdvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-56"></a><span class='hs-definition'>glGetVertexAttribLdvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumPtrdoubleIOV</span> <span class='hs-varid'>glGetVertexAttribLdvEXTFunPtr</span>
+<a name="line-57"></a>
+<a name="line-58"></a><a name="glGetVertexAttribLdvEXTFunPtr"></a><span class='hs-definition'>glGetVertexAttribLdvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-59"></a><span class='hs-definition'>glGetVertexAttribLdvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGetVertexAttribLdvEXT"</span><span class='hs-layout'>)</span>
+<a name="line-60"></a>
+<a name="line-61"></a><span class='hs-comment'>{-# NOINLINE glGetVertexAttribLdvEXTFunPtr #-}</span>
+<a name="line-62"></a>
+<a name="line-63"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL1dEXT' index x@</span>
+<a name="line-64"></a><span class='hs-comment'>--</span>
+<a name="line-65"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glVertexAttribL1d'.</span>
 <a name="line-66"></a>
-<a name="line-67"></a><a name="glVertexAttribL1dEXT"></a><span class='hs-definition'>glVertexAttribL1dEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-68"></a><span class='hs-definition'>glVertexAttribL1dEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintdoubleIOV</span> <span class='hs-varid'>glVertexAttribL1dEXTFunPtr</span>
-<a name="line-69"></a>
-<a name="line-70"></a><a name="glVertexAttribL1dEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL1dEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-71"></a><span class='hs-definition'>glVertexAttribL1dEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL1dEXT"</span><span class='hs-layout'>)</span>
-<a name="line-72"></a>
-<a name="line-73"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL1dEXTFunPtr #-}</span>
-<a name="line-74"></a>
-<a name="line-75"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL1dvEXT' index v@</span>
-<a name="line-76"></a><span class='hs-comment'>--</span>
-<a name="line-77"></a><span class='hs-comment'>-- The length of @v@ should be @1@.</span>
-<a name="line-78"></a><span class='hs-comment'>--</span>
-<a name="line-79"></a><span class='hs-comment'>-- This command is an alias for 'glVertexAttribL1dv'.</span>
-<a name="line-80"></a>
+<a name="line-67"></a>
+<a name="line-68"></a><a name="glVertexAttribL1dEXT"></a><span class='hs-definition'>glVertexAttribL1dEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-69"></a><span class='hs-definition'>glVertexAttribL1dEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintdoubleIOV</span> <span class='hs-varid'>glVertexAttribL1dEXTFunPtr</span>
+<a name="line-70"></a>
+<a name="line-71"></a><a name="glVertexAttribL1dEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL1dEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-72"></a><span class='hs-definition'>glVertexAttribL1dEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL1dEXT"</span><span class='hs-layout'>)</span>
+<a name="line-73"></a>
+<a name="line-74"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL1dEXTFunPtr #-}</span>
+<a name="line-75"></a>
+<a name="line-76"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL1dvEXT' index v@</span>
+<a name="line-77"></a><span class='hs-comment'>--</span>
+<a name="line-78"></a><span class='hs-comment'>-- The length of @v@ should be @1@.</span>
+<a name="line-79"></a><span class='hs-comment'>--</span>
+<a name="line-80"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glVertexAttribL1dv'.</span>
 <a name="line-81"></a>
-<a name="line-82"></a><a name="glVertexAttribL1dvEXT"></a><span class='hs-definition'>glVertexAttribL1dvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-83"></a><span class='hs-definition'>glVertexAttribL1dvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrdoubleIOV</span> <span class='hs-varid'>glVertexAttribL1dvEXTFunPtr</span>
-<a name="line-84"></a>
-<a name="line-85"></a><a name="glVertexAttribL1dvEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL1dvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-86"></a><span class='hs-definition'>glVertexAttribL1dvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL1dvEXT"</span><span class='hs-layout'>)</span>
-<a name="line-87"></a>
-<a name="line-88"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL1dvEXTFunPtr #-}</span>
-<a name="line-89"></a>
-<a name="line-90"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL2dEXT' index x y@</span>
-<a name="line-91"></a><span class='hs-comment'>--</span>
-<a name="line-92"></a><span class='hs-comment'>-- This command is an alias for 'glVertexAttribL2d'.</span>
-<a name="line-93"></a>
+<a name="line-82"></a>
+<a name="line-83"></a><a name="glVertexAttribL1dvEXT"></a><span class='hs-definition'>glVertexAttribL1dvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-84"></a><span class='hs-definition'>glVertexAttribL1dvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrdoubleIOV</span> <span class='hs-varid'>glVertexAttribL1dvEXTFunPtr</span>
+<a name="line-85"></a>
+<a name="line-86"></a><a name="glVertexAttribL1dvEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL1dvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-87"></a><span class='hs-definition'>glVertexAttribL1dvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL1dvEXT"</span><span class='hs-layout'>)</span>
+<a name="line-88"></a>
+<a name="line-89"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL1dvEXTFunPtr #-}</span>
+<a name="line-90"></a>
+<a name="line-91"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL2dEXT' index x y@</span>
+<a name="line-92"></a><span class='hs-comment'>--</span>
+<a name="line-93"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glVertexAttribL2d'.</span>
 <a name="line-94"></a>
-<a name="line-95"></a><a name="glVertexAttribL2dEXT"></a><span class='hs-definition'>glVertexAttribL2dEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-96"></a><span class='hs-definition'>glVertexAttribL2dEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintdoubledoubleIOV</span> <span class='hs-varid'>glVertexAttribL2dEXTFunPtr</span>
-<a name="line-97"></a>
-<a name="line-98"></a><a name="glVertexAttribL2dEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL2dEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-99"></a><span class='hs-definition'>glVertexAttribL2dEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL2dEXT"</span><span class='hs-layout'>)</span>
-<a name="line-100"></a>
-<a name="line-101"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL2dEXTFunPtr #-}</span>
-<a name="line-102"></a>
-<a name="line-103"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL2dvEXT' index v@</span>
-<a name="line-104"></a><span class='hs-comment'>--</span>
-<a name="line-105"></a><span class='hs-comment'>-- The length of @v@ should be @2@.</span>
-<a name="line-106"></a><span class='hs-comment'>--</span>
-<a name="line-107"></a><span class='hs-comment'>-- This command is an alias for 'glVertexAttribL2dv'.</span>
-<a name="line-108"></a>
+<a name="line-95"></a>
+<a name="line-96"></a><a name="glVertexAttribL2dEXT"></a><span class='hs-definition'>glVertexAttribL2dEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-97"></a><span class='hs-definition'>glVertexAttribL2dEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintdoubledoubleIOV</span> <span class='hs-varid'>glVertexAttribL2dEXTFunPtr</span>
+<a name="line-98"></a>
+<a name="line-99"></a><a name="glVertexAttribL2dEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL2dEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-100"></a><span class='hs-definition'>glVertexAttribL2dEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL2dEXT"</span><span class='hs-layout'>)</span>
+<a name="line-101"></a>
+<a name="line-102"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL2dEXTFunPtr #-}</span>
+<a name="line-103"></a>
+<a name="line-104"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL2dvEXT' index v@</span>
+<a name="line-105"></a><span class='hs-comment'>--</span>
+<a name="line-106"></a><span class='hs-comment'>-- The length of @v@ should be @2@.</span>
+<a name="line-107"></a><span class='hs-comment'>--</span>
+<a name="line-108"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glVertexAttribL2dv'.</span>
 <a name="line-109"></a>
-<a name="line-110"></a><a name="glVertexAttribL2dvEXT"></a><span class='hs-definition'>glVertexAttribL2dvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-111"></a><span class='hs-definition'>glVertexAttribL2dvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrdoubleIOV</span> <span class='hs-varid'>glVertexAttribL2dvEXTFunPtr</span>
-<a name="line-112"></a>
-<a name="line-113"></a><a name="glVertexAttribL2dvEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL2dvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-114"></a><span class='hs-definition'>glVertexAttribL2dvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL2dvEXT"</span><span class='hs-layout'>)</span>
-<a name="line-115"></a>
-<a name="line-116"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL2dvEXTFunPtr #-}</span>
-<a name="line-117"></a>
-<a name="line-118"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL3dEXT' index x y z@</span>
-<a name="line-119"></a><span class='hs-comment'>--</span>
-<a name="line-120"></a><span class='hs-comment'>-- This command is an alias for 'glVertexAttribL3d'.</span>
-<a name="line-121"></a>
+<a name="line-110"></a>
+<a name="line-111"></a><a name="glVertexAttribL2dvEXT"></a><span class='hs-definition'>glVertexAttribL2dvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-112"></a><span class='hs-definition'>glVertexAttribL2dvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrdoubleIOV</span> <span class='hs-varid'>glVertexAttribL2dvEXTFunPtr</span>
+<a name="line-113"></a>
+<a name="line-114"></a><a name="glVertexAttribL2dvEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL2dvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-115"></a><span class='hs-definition'>glVertexAttribL2dvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL2dvEXT"</span><span class='hs-layout'>)</span>
+<a name="line-116"></a>
+<a name="line-117"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL2dvEXTFunPtr #-}</span>
+<a name="line-118"></a>
+<a name="line-119"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL3dEXT' index x y z@</span>
+<a name="line-120"></a><span class='hs-comment'>--</span>
+<a name="line-121"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glVertexAttribL3d'.</span>
 <a name="line-122"></a>
-<a name="line-123"></a><a name="glVertexAttribL3dEXT"></a><span class='hs-definition'>glVertexAttribL3dEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-124"></a><span class='hs-definition'>glVertexAttribL3dEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintdoubledoubledoubleIOV</span> <span class='hs-varid'>glVertexAttribL3dEXTFunPtr</span>
-<a name="line-125"></a>
-<a name="line-126"></a><a name="glVertexAttribL3dEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL3dEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-127"></a><span class='hs-definition'>glVertexAttribL3dEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL3dEXT"</span><span class='hs-layout'>)</span>
-<a name="line-128"></a>
-<a name="line-129"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL3dEXTFunPtr #-}</span>
-<a name="line-130"></a>
-<a name="line-131"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL3dvEXT' index v@</span>
-<a name="line-132"></a><span class='hs-comment'>--</span>
-<a name="line-133"></a><span class='hs-comment'>-- The length of @v@ should be @3@.</span>
-<a name="line-134"></a><span class='hs-comment'>--</span>
-<a name="line-135"></a><span class='hs-comment'>-- This command is an alias for 'glVertexAttribL3dv'.</span>
-<a name="line-136"></a>
+<a name="line-123"></a>
+<a name="line-124"></a><a name="glVertexAttribL3dEXT"></a><span class='hs-definition'>glVertexAttribL3dEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-125"></a><span class='hs-definition'>glVertexAttribL3dEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintdoubledoubledoubleIOV</span> <span class='hs-varid'>glVertexAttribL3dEXTFunPtr</span>
+<a name="line-126"></a>
+<a name="line-127"></a><a name="glVertexAttribL3dEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL3dEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-128"></a><span class='hs-definition'>glVertexAttribL3dEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL3dEXT"</span><span class='hs-layout'>)</span>
+<a name="line-129"></a>
+<a name="line-130"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL3dEXTFunPtr #-}</span>
+<a name="line-131"></a>
+<a name="line-132"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL3dvEXT' index v@</span>
+<a name="line-133"></a><span class='hs-comment'>--</span>
+<a name="line-134"></a><span class='hs-comment'>-- The length of @v@ should be @3@.</span>
+<a name="line-135"></a><span class='hs-comment'>--</span>
+<a name="line-136"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glVertexAttribL3dv'.</span>
 <a name="line-137"></a>
-<a name="line-138"></a><a name="glVertexAttribL3dvEXT"></a><span class='hs-definition'>glVertexAttribL3dvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-139"></a><span class='hs-definition'>glVertexAttribL3dvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrdoubleIOV</span> <span class='hs-varid'>glVertexAttribL3dvEXTFunPtr</span>
-<a name="line-140"></a>
-<a name="line-141"></a><a name="glVertexAttribL3dvEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL3dvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-142"></a><span class='hs-definition'>glVertexAttribL3dvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL3dvEXT"</span><span class='hs-layout'>)</span>
-<a name="line-143"></a>
-<a name="line-144"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL3dvEXTFunPtr #-}</span>
-<a name="line-145"></a>
-<a name="line-146"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL4dEXT' index x y z w@</span>
-<a name="line-147"></a><span class='hs-comment'>--</span>
-<a name="line-148"></a><span class='hs-comment'>-- This command is an alias for 'glVertexAttribL4d'.</span>
-<a name="line-149"></a>
+<a name="line-138"></a>
+<a name="line-139"></a><a name="glVertexAttribL3dvEXT"></a><span class='hs-definition'>glVertexAttribL3dvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-140"></a><span class='hs-definition'>glVertexAttribL3dvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrdoubleIOV</span> <span class='hs-varid'>glVertexAttribL3dvEXTFunPtr</span>
+<a name="line-141"></a>
+<a name="line-142"></a><a name="glVertexAttribL3dvEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL3dvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-143"></a><span class='hs-definition'>glVertexAttribL3dvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL3dvEXT"</span><span class='hs-layout'>)</span>
+<a name="line-144"></a>
+<a name="line-145"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL3dvEXTFunPtr #-}</span>
+<a name="line-146"></a>
+<a name="line-147"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL4dEXT' index x y z w@</span>
+<a name="line-148"></a><span class='hs-comment'>--</span>
+<a name="line-149"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glVertexAttribL4d'.</span>
 <a name="line-150"></a>
-<a name="line-151"></a><a name="glVertexAttribL4dEXT"></a><span class='hs-definition'>glVertexAttribL4dEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-152"></a><span class='hs-definition'>glVertexAttribL4dEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintdoubledoubledoubledoubleIOV</span> <span class='hs-varid'>glVertexAttribL4dEXTFunPtr</span>
-<a name="line-153"></a>
-<a name="line-154"></a><a name="glVertexAttribL4dEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL4dEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-155"></a><span class='hs-definition'>glVertexAttribL4dEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL4dEXT"</span><span class='hs-layout'>)</span>
-<a name="line-156"></a>
-<a name="line-157"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL4dEXTFunPtr #-}</span>
-<a name="line-158"></a>
-<a name="line-159"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL4dvEXT' index v@</span>
-<a name="line-160"></a><span class='hs-comment'>--</span>
-<a name="line-161"></a><span class='hs-comment'>-- The length of @v@ should be @4@.</span>
-<a name="line-162"></a><span class='hs-comment'>--</span>
-<a name="line-163"></a><span class='hs-comment'>-- This command is an alias for 'glVertexAttribL4dv'.</span>
-<a name="line-164"></a>
+<a name="line-151"></a>
+<a name="line-152"></a><a name="glVertexAttribL4dEXT"></a><span class='hs-definition'>glVertexAttribL4dEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-153"></a><span class='hs-definition'>glVertexAttribL4dEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintdoubledoubledoubledoubleIOV</span> <span class='hs-varid'>glVertexAttribL4dEXTFunPtr</span>
+<a name="line-154"></a>
+<a name="line-155"></a><a name="glVertexAttribL4dEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL4dEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-156"></a><span class='hs-definition'>glVertexAttribL4dEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL4dEXT"</span><span class='hs-layout'>)</span>
+<a name="line-157"></a>
+<a name="line-158"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL4dEXTFunPtr #-}</span>
+<a name="line-159"></a>
+<a name="line-160"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribL4dvEXT' index v@</span>
+<a name="line-161"></a><span class='hs-comment'>--</span>
+<a name="line-162"></a><span class='hs-comment'>-- The length of @v@ should be @4@.</span>
+<a name="line-163"></a><span class='hs-comment'>--</span>
+<a name="line-164"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glVertexAttribL4dv'.</span>
 <a name="line-165"></a>
-<a name="line-166"></a><a name="glVertexAttribL4dvEXT"></a><span class='hs-definition'>glVertexAttribL4dvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-167"></a><span class='hs-definition'>glVertexAttribL4dvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrdoubleIOV</span> <span class='hs-varid'>glVertexAttribL4dvEXTFunPtr</span>
-<a name="line-168"></a>
-<a name="line-169"></a><a name="glVertexAttribL4dvEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL4dvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-170"></a><span class='hs-definition'>glVertexAttribL4dvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL4dvEXT"</span><span class='hs-layout'>)</span>
-<a name="line-171"></a>
-<a name="line-172"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL4dvEXTFunPtr #-}</span>
-<a name="line-173"></a>
-<a name="line-174"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribLPointerEXT' index size type stride pointer@</span>
-<a name="line-175"></a><span class='hs-comment'>--</span>
-<a name="line-176"></a><span class='hs-comment'>-- The length of @pointer@ should be @size@.</span>
-<a name="line-177"></a><span class='hs-comment'>--</span>
-<a name="line-178"></a><span class='hs-comment'>-- This command is an alias for 'glVertexAttribLPointer'.</span>
-<a name="line-179"></a>
+<a name="line-166"></a>
+<a name="line-167"></a><a name="glVertexAttribL4dvEXT"></a><span class='hs-definition'>glVertexAttribL4dvEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-168"></a><span class='hs-definition'>glVertexAttribL4dvEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrdoubleIOV</span> <span class='hs-varid'>glVertexAttribL4dvEXTFunPtr</span>
+<a name="line-169"></a>
+<a name="line-170"></a><a name="glVertexAttribL4dvEXTFunPtr"></a><span class='hs-definition'>glVertexAttribL4dvEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-171"></a><span class='hs-definition'>glVertexAttribL4dvEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribL4dvEXT"</span><span class='hs-layout'>)</span>
+<a name="line-172"></a>
+<a name="line-173"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribL4dvEXTFunPtr #-}</span>
+<a name="line-174"></a>
+<a name="line-175"></a><span class='hs-comment'>-- | Usage: @'glVertexAttribLPointerEXT' index size type stride pointer@</span>
+<a name="line-176"></a><span class='hs-comment'>--</span>
+<a name="line-177"></a><span class='hs-comment'>-- The length of @pointer@ should be @size@.</span>
+<a name="line-178"></a><span class='hs-comment'>--</span>
+<a name="line-179"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glVertexAttribLPointer'.</span>
 <a name="line-180"></a>
-<a name="line-181"></a><a name="glVertexAttribLPointerEXT"></a><span class='hs-definition'>glVertexAttribLPointerEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-182"></a><span class='hs-definition'>glVertexAttribLPointerEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintintenumsizeiPtrVIOV</span> <span class='hs-varid'>glVertexAttribLPointerEXTFunPtr</span>
-<a name="line-183"></a>
-<a name="line-184"></a><a name="glVertexAttribLPointerEXTFunPtr"></a><span class='hs-definition'>glVertexAttribLPointerEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-185"></a><span class='hs-definition'>glVertexAttribLPointerEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribLPointerEXT"</span><span class='hs-layout'>)</span>
-<a name="line-186"></a>
-<a name="line-187"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribLPointerEXTFunPtr #-}</span>
-<a name="line-188"></a>
-<a name="line-189"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT2_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F46</span>
-<a name="line-190"></a>
-<a name="line-191"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT2x3_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F49</span>
-<a name="line-192"></a>
-<a name="line-193"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT2x4_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F4A</span>
-<a name="line-194"></a>
-<a name="line-195"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT3_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F47</span>
-<a name="line-196"></a>
-<a name="line-197"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT3x2_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F4B</span>
-<a name="line-198"></a>
-<a name="line-199"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT3x4_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F4C</span>
-<a name="line-200"></a>
-<a name="line-201"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT4_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F48</span>
-<a name="line-202"></a>
-<a name="line-203"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT4x2_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F4D</span>
-<a name="line-204"></a>
-<a name="line-205"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT4x3_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F4E</span>
-<a name="line-206"></a>
-<a name="line-207"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_VEC2_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8FFC</span>
-<a name="line-208"></a>
-<a name="line-209"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_VEC3_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8FFD</span>
-<a name="line-210"></a>
-<a name="line-211"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_VEC4_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8FFE</span>
+<a name="line-181"></a>
+<a name="line-182"></a><a name="glVertexAttribLPointerEXT"></a><span class='hs-definition'>glVertexAttribLPointerEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-183"></a><span class='hs-definition'>glVertexAttribLPointerEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintintenumsizeiPtrVIOV</span> <span class='hs-varid'>glVertexAttribLPointerEXTFunPtr</span>
+<a name="line-184"></a>
+<a name="line-185"></a><a name="glVertexAttribLPointerEXTFunPtr"></a><span class='hs-definition'>glVertexAttribLPointerEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-186"></a><span class='hs-definition'>glVertexAttribLPointerEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertexAttribLPointerEXT"</span><span class='hs-layout'>)</span>
+<a name="line-187"></a>
+<a name="line-188"></a><span class='hs-comment'>{-# NOINLINE glVertexAttribLPointerEXTFunPtr #-}</span>
+<a name="line-189"></a>
+<a name="line-190"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT2_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F46</span>
+<a name="line-191"></a>
+<a name="line-192"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT2x3_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F49</span>
+<a name="line-193"></a>
+<a name="line-194"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT2x4_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F4A</span>
+<a name="line-195"></a>
+<a name="line-196"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT3_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F47</span>
+<a name="line-197"></a>
+<a name="line-198"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT3x2_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F4B</span>
+<a name="line-199"></a>
+<a name="line-200"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT3x4_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F4C</span>
+<a name="line-201"></a>
+<a name="line-202"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT4_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F48</span>
+<a name="line-203"></a>
+<a name="line-204"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT4x2_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F4D</span>
+<a name="line-205"></a>
+<a name="line-206"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_MAT4x3_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8F4E</span>
+<a name="line-207"></a>
+<a name="line-208"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_VEC2_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8FFC</span>
+<a name="line-209"></a>
+<a name="line-210"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_VEC3_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8FFD</span>
+<a name="line-211"></a>
+<a name="line-212"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOUBLE_VEC4_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8FFE</span>
 </pre></body>
 </html>

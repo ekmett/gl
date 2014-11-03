@@ -42,145 +42,146 @@
 <a name="line-33"></a>
 <a name="line-34"></a><a name="gl_NV_vdpau_interop"></a><span class='hs-definition'>gl_NV_vdpau_interop</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-35"></a><span class='hs-definition'>gl_NV_vdpau_interop</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_NV_vdpau_interop"</span> <span class='hs-varid'>extensions</span>
-<a name="line-36"></a>
-<a name="line-37"></a><span class='hs-comment'>-- | Usage: @'glVDPAUFiniNV'@</span>
-<a name="line-38"></a>
+<a name="line-36"></a><span class='hs-comment'>{-# NOINLINE gl_NV_vdpau_interop #-}</span>
+<a name="line-37"></a>
+<a name="line-38"></a><span class='hs-comment'>-- | Usage: @'glVDPAUFiniNV'@</span>
 <a name="line-39"></a>
-<a name="line-40"></a><a name="glVDPAUFiniNV"></a><span class='hs-definition'>glVDPAUFiniNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-41"></a><span class='hs-definition'>glVDPAUFiniNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiIOV</span> <span class='hs-varid'>glVDPAUFiniNVFunPtr</span>
-<a name="line-42"></a>
-<a name="line-43"></a><a name="glVDPAUFiniNVFunPtr"></a><span class='hs-definition'>glVDPAUFiniNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-44"></a><span class='hs-definition'>glVDPAUFiniNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUFiniNV"</span><span class='hs-layout'>)</span>
-<a name="line-45"></a>
-<a name="line-46"></a><span class='hs-comment'>{-# NOINLINE glVDPAUFiniNVFunPtr #-}</span>
-<a name="line-47"></a>
-<a name="line-48"></a><span class='hs-comment'>-- | Usage: @'glVDPAUGetSurfaceivNV' surface pname bufSize length values@</span>
-<a name="line-49"></a><span class='hs-comment'>--</span>
-<a name="line-50"></a><span class='hs-comment'>-- The parameter @surface@ is a @vdpauSurfaceNV@.</span>
-<a name="line-51"></a><span class='hs-comment'>--</span>
-<a name="line-52"></a><span class='hs-comment'>-- The length of @values@ should be @bufSize@.</span>
-<a name="line-53"></a>
+<a name="line-40"></a>
+<a name="line-41"></a><a name="glVDPAUFiniNV"></a><span class='hs-definition'>glVDPAUFiniNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-42"></a><span class='hs-definition'>glVDPAUFiniNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiIOV</span> <span class='hs-varid'>glVDPAUFiniNVFunPtr</span>
+<a name="line-43"></a>
+<a name="line-44"></a><a name="glVDPAUFiniNVFunPtr"></a><span class='hs-definition'>glVDPAUFiniNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-45"></a><span class='hs-definition'>glVDPAUFiniNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUFiniNV"</span><span class='hs-layout'>)</span>
+<a name="line-46"></a>
+<a name="line-47"></a><span class='hs-comment'>{-# NOINLINE glVDPAUFiniNVFunPtr #-}</span>
+<a name="line-48"></a>
+<a name="line-49"></a><span class='hs-comment'>-- | Usage: @'glVDPAUGetSurfaceivNV' surface pname bufSize length values@</span>
+<a name="line-50"></a><span class='hs-comment'>--</span>
+<a name="line-51"></a><span class='hs-comment'>-- The parameter @surface@ is a @vdpauSurfaceNV@.</span>
+<a name="line-52"></a><span class='hs-comment'>--</span>
+<a name="line-53"></a><span class='hs-comment'>-- The length of @values@ should be @bufSize@.</span>
 <a name="line-54"></a>
-<a name="line-55"></a><a name="glVDPAUGetSurfaceivNV"></a><span class='hs-definition'>glVDPAUGetSurfaceivNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-56"></a><span class='hs-definition'>glVDPAUGetSurfaceivNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffivdpauSurfaceNVenumsizeiPtrsizeiPtrintIOV</span> <span class='hs-varid'>glVDPAUGetSurfaceivNVFunPtr</span>
-<a name="line-57"></a>
-<a name="line-58"></a><a name="glVDPAUGetSurfaceivNVFunPtr"></a><span class='hs-definition'>glVDPAUGetSurfaceivNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-59"></a><span class='hs-definition'>glVDPAUGetSurfaceivNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUGetSurfaceivNV"</span><span class='hs-layout'>)</span>
-<a name="line-60"></a>
-<a name="line-61"></a><span class='hs-comment'>{-# NOINLINE glVDPAUGetSurfaceivNVFunPtr #-}</span>
-<a name="line-62"></a>
-<a name="line-63"></a><span class='hs-comment'>-- | Usage: @'glVDPAUInitNV' vdpDevice getProcAddress@</span>
-<a name="line-64"></a>
+<a name="line-55"></a>
+<a name="line-56"></a><a name="glVDPAUGetSurfaceivNV"></a><span class='hs-definition'>glVDPAUGetSurfaceivNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-57"></a><span class='hs-definition'>glVDPAUGetSurfaceivNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffivdpauSurfaceNVenumsizeiPtrsizeiPtrintIOV</span> <span class='hs-varid'>glVDPAUGetSurfaceivNVFunPtr</span>
+<a name="line-58"></a>
+<a name="line-59"></a><a name="glVDPAUGetSurfaceivNVFunPtr"></a><span class='hs-definition'>glVDPAUGetSurfaceivNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-60"></a><span class='hs-definition'>glVDPAUGetSurfaceivNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUGetSurfaceivNV"</span><span class='hs-layout'>)</span>
+<a name="line-61"></a>
+<a name="line-62"></a><span class='hs-comment'>{-# NOINLINE glVDPAUGetSurfaceivNVFunPtr #-}</span>
+<a name="line-63"></a>
+<a name="line-64"></a><span class='hs-comment'>-- | Usage: @'glVDPAUInitNV' vdpDevice getProcAddress@</span>
 <a name="line-65"></a>
-<a name="line-66"></a><a name="glVDPAUInitNV"></a><span class='hs-definition'>glVDPAUInitNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-67"></a><span class='hs-definition'>glVDPAUInitNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrVPtrVIOV</span> <span class='hs-varid'>glVDPAUInitNVFunPtr</span>
-<a name="line-68"></a>
-<a name="line-69"></a><a name="glVDPAUInitNVFunPtr"></a><span class='hs-definition'>glVDPAUInitNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-70"></a><span class='hs-definition'>glVDPAUInitNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUInitNV"</span><span class='hs-layout'>)</span>
-<a name="line-71"></a>
-<a name="line-72"></a><span class='hs-comment'>{-# NOINLINE glVDPAUInitNVFunPtr #-}</span>
-<a name="line-73"></a>
-<a name="line-74"></a><span class='hs-comment'>-- | Usage: @'glVDPAUIsSurfaceNV' surface@</span>
-<a name="line-75"></a><span class='hs-comment'>--</span>
-<a name="line-76"></a><span class='hs-comment'>-- The parameter @surface@ is a @vdpauSurfaceNV@.</span>
-<a name="line-77"></a>
+<a name="line-66"></a>
+<a name="line-67"></a><a name="glVDPAUInitNV"></a><span class='hs-definition'>glVDPAUInitNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-68"></a><span class='hs-definition'>glVDPAUInitNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrVPtrVIOV</span> <span class='hs-varid'>glVDPAUInitNVFunPtr</span>
+<a name="line-69"></a>
+<a name="line-70"></a><a name="glVDPAUInitNVFunPtr"></a><span class='hs-definition'>glVDPAUInitNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-71"></a><span class='hs-definition'>glVDPAUInitNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUInitNV"</span><span class='hs-layout'>)</span>
+<a name="line-72"></a>
+<a name="line-73"></a><span class='hs-comment'>{-# NOINLINE glVDPAUInitNVFunPtr #-}</span>
+<a name="line-74"></a>
+<a name="line-75"></a><span class='hs-comment'>-- | Usage: @'glVDPAUIsSurfaceNV' surface@</span>
+<a name="line-76"></a><span class='hs-comment'>--</span>
+<a name="line-77"></a><span class='hs-comment'>-- The parameter @surface@ is a @vdpauSurfaceNV@.</span>
 <a name="line-78"></a>
-<a name="line-79"></a><a name="glVDPAUIsSurfaceNV"></a><span class='hs-definition'>glVDPAUIsSurfaceNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLboolean</span>
-<a name="line-80"></a><span class='hs-definition'>glVDPAUIsSurfaceNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffivdpauSurfaceNVIOboolean</span> <span class='hs-varid'>glVDPAUIsSurfaceNVFunPtr</span>
-<a name="line-81"></a>
-<a name="line-82"></a><a name="glVDPAUIsSurfaceNVFunPtr"></a><span class='hs-definition'>glVDPAUIsSurfaceNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLboolean</span><span class='hs-layout'>)</span>
-<a name="line-83"></a><span class='hs-definition'>glVDPAUIsSurfaceNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUIsSurfaceNV"</span><span class='hs-layout'>)</span>
-<a name="line-84"></a>
-<a name="line-85"></a><span class='hs-comment'>{-# NOINLINE glVDPAUIsSurfaceNVFunPtr #-}</span>
-<a name="line-86"></a>
-<a name="line-87"></a><span class='hs-comment'>-- | Usage: @'glVDPAUMapSurfacesNV' numSurfaces surfaces@</span>
-<a name="line-88"></a><span class='hs-comment'>--</span>
-<a name="line-89"></a><span class='hs-comment'>-- The parameter @surfaces@ is a @vdpauSurfaceNV@.</span>
-<a name="line-90"></a><span class='hs-comment'>--</span>
-<a name="line-91"></a><span class='hs-comment'>-- The length of @surfaces@ should be @numSurfaces@.</span>
-<a name="line-92"></a>
+<a name="line-79"></a>
+<a name="line-80"></a><a name="glVDPAUIsSurfaceNV"></a><span class='hs-definition'>glVDPAUIsSurfaceNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLboolean</span>
+<a name="line-81"></a><span class='hs-definition'>glVDPAUIsSurfaceNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffivdpauSurfaceNVIOboolean</span> <span class='hs-varid'>glVDPAUIsSurfaceNVFunPtr</span>
+<a name="line-82"></a>
+<a name="line-83"></a><a name="glVDPAUIsSurfaceNVFunPtr"></a><span class='hs-definition'>glVDPAUIsSurfaceNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLboolean</span><span class='hs-layout'>)</span>
+<a name="line-84"></a><span class='hs-definition'>glVDPAUIsSurfaceNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUIsSurfaceNV"</span><span class='hs-layout'>)</span>
+<a name="line-85"></a>
+<a name="line-86"></a><span class='hs-comment'>{-# NOINLINE glVDPAUIsSurfaceNVFunPtr #-}</span>
+<a name="line-87"></a>
+<a name="line-88"></a><span class='hs-comment'>-- | Usage: @'glVDPAUMapSurfacesNV' numSurfaces surfaces@</span>
+<a name="line-89"></a><span class='hs-comment'>--</span>
+<a name="line-90"></a><span class='hs-comment'>-- The parameter @surfaces@ is a @vdpauSurfaceNV@.</span>
+<a name="line-91"></a><span class='hs-comment'>--</span>
+<a name="line-92"></a><span class='hs-comment'>-- The length of @surfaces@ should be @numSurfaces@.</span>
 <a name="line-93"></a>
-<a name="line-94"></a><a name="glVDPAUMapSurfacesNV"></a><span class='hs-definition'>glVDPAUMapSurfacesNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-95"></a><span class='hs-definition'>glVDPAUMapSurfacesNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtrvdpauSurfaceNVIOV</span> <span class='hs-varid'>glVDPAUMapSurfacesNVFunPtr</span>
-<a name="line-96"></a>
-<a name="line-97"></a><a name="glVDPAUMapSurfacesNVFunPtr"></a><span class='hs-definition'>glVDPAUMapSurfacesNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-98"></a><span class='hs-definition'>glVDPAUMapSurfacesNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUMapSurfacesNV"</span><span class='hs-layout'>)</span>
-<a name="line-99"></a>
-<a name="line-100"></a><span class='hs-comment'>{-# NOINLINE glVDPAUMapSurfacesNVFunPtr #-}</span>
-<a name="line-101"></a>
-<a name="line-102"></a><span class='hs-comment'>-- | Usage: @'glVDPAURegisterOutputSurfaceNV' vdpSurface target numTextureNames textureNames@</span>
-<a name="line-103"></a><span class='hs-comment'>--</span>
-<a name="line-104"></a><span class='hs-comment'>-- The length of @textureNames@ should be @numTextureNames@.</span>
-<a name="line-105"></a>
+<a name="line-94"></a>
+<a name="line-95"></a><a name="glVDPAUMapSurfacesNV"></a><span class='hs-definition'>glVDPAUMapSurfacesNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-96"></a><span class='hs-definition'>glVDPAUMapSurfacesNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtrvdpauSurfaceNVIOV</span> <span class='hs-varid'>glVDPAUMapSurfacesNVFunPtr</span>
+<a name="line-97"></a>
+<a name="line-98"></a><a name="glVDPAUMapSurfacesNVFunPtr"></a><span class='hs-definition'>glVDPAUMapSurfacesNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-99"></a><span class='hs-definition'>glVDPAUMapSurfacesNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUMapSurfacesNV"</span><span class='hs-layout'>)</span>
+<a name="line-100"></a>
+<a name="line-101"></a><span class='hs-comment'>{-# NOINLINE glVDPAUMapSurfacesNVFunPtr #-}</span>
+<a name="line-102"></a>
+<a name="line-103"></a><span class='hs-comment'>-- | Usage: @'glVDPAURegisterOutputSurfaceNV' vdpSurface target numTextureNames textureNames@</span>
+<a name="line-104"></a><span class='hs-comment'>--</span>
+<a name="line-105"></a><span class='hs-comment'>-- The length of @textureNames@ should be @numTextureNames@.</span>
 <a name="line-106"></a>
-<a name="line-107"></a><a name="glVDPAURegisterOutputSurfaceNV"></a><span class='hs-definition'>glVDPAURegisterOutputSurfaceNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLvdpauSurfaceNV</span>
-<a name="line-108"></a><span class='hs-definition'>glVDPAURegisterOutputSurfaceNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrVenumsizeiPtruintIOvdpauSurfaceNV</span> <span class='hs-varid'>glVDPAURegisterOutputSurfaceNVFunPtr</span>
-<a name="line-109"></a>
-<a name="line-110"></a><a name="glVDPAURegisterOutputSurfaceNVFunPtr"></a><span class='hs-definition'>glVDPAURegisterOutputSurfaceNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLvdpauSurfaceNV</span><span class='hs-layout'>)</span>
-<a name="line-111"></a><span class='hs-definition'>glVDPAURegisterOutputSurfaceNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAURegisterOutputSurfaceNV"</span><span class='hs-layout'>)</span>
-<a name="line-112"></a>
-<a name="line-113"></a><span class='hs-comment'>{-# NOINLINE glVDPAURegisterOutputSurfaceNVFunPtr #-}</span>
-<a name="line-114"></a>
-<a name="line-115"></a><span class='hs-comment'>-- | Usage: @'glVDPAURegisterVideoSurfaceNV' vdpSurface target numTextureNames textureNames@</span>
-<a name="line-116"></a><span class='hs-comment'>--</span>
-<a name="line-117"></a><span class='hs-comment'>-- The length of @textureNames@ should be @numTextureNames@.</span>
-<a name="line-118"></a>
+<a name="line-107"></a>
+<a name="line-108"></a><a name="glVDPAURegisterOutputSurfaceNV"></a><span class='hs-definition'>glVDPAURegisterOutputSurfaceNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLvdpauSurfaceNV</span>
+<a name="line-109"></a><span class='hs-definition'>glVDPAURegisterOutputSurfaceNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrVenumsizeiPtruintIOvdpauSurfaceNV</span> <span class='hs-varid'>glVDPAURegisterOutputSurfaceNVFunPtr</span>
+<a name="line-110"></a>
+<a name="line-111"></a><a name="glVDPAURegisterOutputSurfaceNVFunPtr"></a><span class='hs-definition'>glVDPAURegisterOutputSurfaceNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLvdpauSurfaceNV</span><span class='hs-layout'>)</span>
+<a name="line-112"></a><span class='hs-definition'>glVDPAURegisterOutputSurfaceNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAURegisterOutputSurfaceNV"</span><span class='hs-layout'>)</span>
+<a name="line-113"></a>
+<a name="line-114"></a><span class='hs-comment'>{-# NOINLINE glVDPAURegisterOutputSurfaceNVFunPtr #-}</span>
+<a name="line-115"></a>
+<a name="line-116"></a><span class='hs-comment'>-- | Usage: @'glVDPAURegisterVideoSurfaceNV' vdpSurface target numTextureNames textureNames@</span>
+<a name="line-117"></a><span class='hs-comment'>--</span>
+<a name="line-118"></a><span class='hs-comment'>-- The length of @textureNames@ should be @numTextureNames@.</span>
 <a name="line-119"></a>
-<a name="line-120"></a><a name="glVDPAURegisterVideoSurfaceNV"></a><span class='hs-definition'>glVDPAURegisterVideoSurfaceNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLvdpauSurfaceNV</span>
-<a name="line-121"></a><span class='hs-definition'>glVDPAURegisterVideoSurfaceNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrVenumsizeiPtruintIOvdpauSurfaceNV</span> <span class='hs-varid'>glVDPAURegisterVideoSurfaceNVFunPtr</span>
-<a name="line-122"></a>
-<a name="line-123"></a><a name="glVDPAURegisterVideoSurfaceNVFunPtr"></a><span class='hs-definition'>glVDPAURegisterVideoSurfaceNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLvdpauSurfaceNV</span><span class='hs-layout'>)</span>
-<a name="line-124"></a><span class='hs-definition'>glVDPAURegisterVideoSurfaceNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAURegisterVideoSurfaceNV"</span><span class='hs-layout'>)</span>
-<a name="line-125"></a>
-<a name="line-126"></a><span class='hs-comment'>{-# NOINLINE glVDPAURegisterVideoSurfaceNVFunPtr #-}</span>
-<a name="line-127"></a>
-<a name="line-128"></a><span class='hs-comment'>-- | Usage: @'glVDPAUSurfaceAccessNV' surface access@</span>
-<a name="line-129"></a><span class='hs-comment'>--</span>
-<a name="line-130"></a><span class='hs-comment'>-- The parameter @surface@ is a @vdpauSurfaceNV@.</span>
-<a name="line-131"></a>
+<a name="line-120"></a>
+<a name="line-121"></a><a name="glVDPAURegisterVideoSurfaceNV"></a><span class='hs-definition'>glVDPAURegisterVideoSurfaceNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLvdpauSurfaceNV</span>
+<a name="line-122"></a><span class='hs-definition'>glVDPAURegisterVideoSurfaceNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrVenumsizeiPtruintIOvdpauSurfaceNV</span> <span class='hs-varid'>glVDPAURegisterVideoSurfaceNVFunPtr</span>
+<a name="line-123"></a>
+<a name="line-124"></a><a name="glVDPAURegisterVideoSurfaceNVFunPtr"></a><span class='hs-definition'>glVDPAURegisterVideoSurfaceNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLvdpauSurfaceNV</span><span class='hs-layout'>)</span>
+<a name="line-125"></a><span class='hs-definition'>glVDPAURegisterVideoSurfaceNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAURegisterVideoSurfaceNV"</span><span class='hs-layout'>)</span>
+<a name="line-126"></a>
+<a name="line-127"></a><span class='hs-comment'>{-# NOINLINE glVDPAURegisterVideoSurfaceNVFunPtr #-}</span>
+<a name="line-128"></a>
+<a name="line-129"></a><span class='hs-comment'>-- | Usage: @'glVDPAUSurfaceAccessNV' surface access@</span>
+<a name="line-130"></a><span class='hs-comment'>--</span>
+<a name="line-131"></a><span class='hs-comment'>-- The parameter @surface@ is a @vdpauSurfaceNV@.</span>
 <a name="line-132"></a>
-<a name="line-133"></a><a name="glVDPAUSurfaceAccessNV"></a><span class='hs-definition'>glVDPAUSurfaceAccessNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-134"></a><span class='hs-definition'>glVDPAUSurfaceAccessNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffivdpauSurfaceNVenumIOV</span> <span class='hs-varid'>glVDPAUSurfaceAccessNVFunPtr</span>
-<a name="line-135"></a>
-<a name="line-136"></a><a name="glVDPAUSurfaceAccessNVFunPtr"></a><span class='hs-definition'>glVDPAUSurfaceAccessNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-137"></a><span class='hs-definition'>glVDPAUSurfaceAccessNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUSurfaceAccessNV"</span><span class='hs-layout'>)</span>
-<a name="line-138"></a>
-<a name="line-139"></a><span class='hs-comment'>{-# NOINLINE glVDPAUSurfaceAccessNVFunPtr #-}</span>
-<a name="line-140"></a>
-<a name="line-141"></a><span class='hs-comment'>-- | Usage: @'glVDPAUUnmapSurfacesNV' numSurface surfaces@</span>
-<a name="line-142"></a><span class='hs-comment'>--</span>
-<a name="line-143"></a><span class='hs-comment'>-- The parameter @surfaces@ is a @vdpauSurfaceNV@.</span>
-<a name="line-144"></a><span class='hs-comment'>--</span>
-<a name="line-145"></a><span class='hs-comment'>-- The length of @surfaces@ should be @numSurface@.</span>
-<a name="line-146"></a>
+<a name="line-133"></a>
+<a name="line-134"></a><a name="glVDPAUSurfaceAccessNV"></a><span class='hs-definition'>glVDPAUSurfaceAccessNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-135"></a><span class='hs-definition'>glVDPAUSurfaceAccessNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffivdpauSurfaceNVenumIOV</span> <span class='hs-varid'>glVDPAUSurfaceAccessNVFunPtr</span>
+<a name="line-136"></a>
+<a name="line-137"></a><a name="glVDPAUSurfaceAccessNVFunPtr"></a><span class='hs-definition'>glVDPAUSurfaceAccessNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-138"></a><span class='hs-definition'>glVDPAUSurfaceAccessNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUSurfaceAccessNV"</span><span class='hs-layout'>)</span>
+<a name="line-139"></a>
+<a name="line-140"></a><span class='hs-comment'>{-# NOINLINE glVDPAUSurfaceAccessNVFunPtr #-}</span>
+<a name="line-141"></a>
+<a name="line-142"></a><span class='hs-comment'>-- | Usage: @'glVDPAUUnmapSurfacesNV' numSurface surfaces@</span>
+<a name="line-143"></a><span class='hs-comment'>--</span>
+<a name="line-144"></a><span class='hs-comment'>-- The parameter @surfaces@ is a @vdpauSurfaceNV@.</span>
+<a name="line-145"></a><span class='hs-comment'>--</span>
+<a name="line-146"></a><span class='hs-comment'>-- The length of @surfaces@ should be @numSurface@.</span>
 <a name="line-147"></a>
-<a name="line-148"></a><a name="glVDPAUUnmapSurfacesNV"></a><span class='hs-definition'>glVDPAUUnmapSurfacesNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-149"></a><span class='hs-definition'>glVDPAUUnmapSurfacesNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtrvdpauSurfaceNVIOV</span> <span class='hs-varid'>glVDPAUUnmapSurfacesNVFunPtr</span>
-<a name="line-150"></a>
-<a name="line-151"></a><a name="glVDPAUUnmapSurfacesNVFunPtr"></a><span class='hs-definition'>glVDPAUUnmapSurfacesNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-152"></a><span class='hs-definition'>glVDPAUUnmapSurfacesNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUUnmapSurfacesNV"</span><span class='hs-layout'>)</span>
-<a name="line-153"></a>
-<a name="line-154"></a><span class='hs-comment'>{-# NOINLINE glVDPAUUnmapSurfacesNVFunPtr #-}</span>
-<a name="line-155"></a>
-<a name="line-156"></a><span class='hs-comment'>-- | Usage: @'glVDPAUUnregisterSurfaceNV' surface@</span>
-<a name="line-157"></a><span class='hs-comment'>--</span>
-<a name="line-158"></a><span class='hs-comment'>-- The parameter @surface@ is a @vdpauSurfaceNV@.</span>
-<a name="line-159"></a>
+<a name="line-148"></a>
+<a name="line-149"></a><a name="glVDPAUUnmapSurfacesNV"></a><span class='hs-definition'>glVDPAUUnmapSurfacesNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-150"></a><span class='hs-definition'>glVDPAUUnmapSurfacesNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtrvdpauSurfaceNVIOV</span> <span class='hs-varid'>glVDPAUUnmapSurfacesNVFunPtr</span>
+<a name="line-151"></a>
+<a name="line-152"></a><a name="glVDPAUUnmapSurfacesNVFunPtr"></a><span class='hs-definition'>glVDPAUUnmapSurfacesNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-153"></a><span class='hs-definition'>glVDPAUUnmapSurfacesNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUUnmapSurfacesNV"</span><span class='hs-layout'>)</span>
+<a name="line-154"></a>
+<a name="line-155"></a><span class='hs-comment'>{-# NOINLINE glVDPAUUnmapSurfacesNVFunPtr #-}</span>
+<a name="line-156"></a>
+<a name="line-157"></a><span class='hs-comment'>-- | Usage: @'glVDPAUUnregisterSurfaceNV' surface@</span>
+<a name="line-158"></a><span class='hs-comment'>--</span>
+<a name="line-159"></a><span class='hs-comment'>-- The parameter @surface@ is a @vdpauSurfaceNV@.</span>
 <a name="line-160"></a>
-<a name="line-161"></a><a name="glVDPAUUnregisterSurfaceNV"></a><span class='hs-definition'>glVDPAUUnregisterSurfaceNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-162"></a><span class='hs-definition'>glVDPAUUnregisterSurfaceNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffivdpauSurfaceNVIOV</span> <span class='hs-varid'>glVDPAUUnregisterSurfaceNVFunPtr</span>
-<a name="line-163"></a>
-<a name="line-164"></a><a name="glVDPAUUnregisterSurfaceNVFunPtr"></a><span class='hs-definition'>glVDPAUUnregisterSurfaceNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-165"></a><span class='hs-definition'>glVDPAUUnregisterSurfaceNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUUnregisterSurfaceNV"</span><span class='hs-layout'>)</span>
-<a name="line-166"></a>
-<a name="line-167"></a><span class='hs-comment'>{-# NOINLINE glVDPAUUnregisterSurfaceNVFunPtr #-}</span>
-<a name="line-168"></a>
-<a name="line-169"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SURFACE_MAPPED_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8700</span>
-<a name="line-170"></a>
-<a name="line-171"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SURFACE_REGISTERED_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x86FD</span>
-<a name="line-172"></a>
-<a name="line-173"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SURFACE_STATE_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x86EB</span>
-<a name="line-174"></a>
-<a name="line-175"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_WRITE_DISCARD_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x88BE</span>
+<a name="line-161"></a>
+<a name="line-162"></a><a name="glVDPAUUnregisterSurfaceNV"></a><span class='hs-definition'>glVDPAUUnregisterSurfaceNV</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-163"></a><span class='hs-definition'>glVDPAUUnregisterSurfaceNV</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffivdpauSurfaceNVIOV</span> <span class='hs-varid'>glVDPAUUnregisterSurfaceNVFunPtr</span>
+<a name="line-164"></a>
+<a name="line-165"></a><a name="glVDPAUUnregisterSurfaceNVFunPtr"></a><span class='hs-definition'>glVDPAUUnregisterSurfaceNVFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLvdpauSurfaceNV</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-166"></a><span class='hs-definition'>glVDPAUUnregisterSurfaceNVFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVDPAUUnregisterSurfaceNV"</span><span class='hs-layout'>)</span>
+<a name="line-167"></a>
+<a name="line-168"></a><span class='hs-comment'>{-# NOINLINE glVDPAUUnregisterSurfaceNVFunPtr #-}</span>
+<a name="line-169"></a>
+<a name="line-170"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SURFACE_MAPPED_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8700</span>
+<a name="line-171"></a>
+<a name="line-172"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SURFACE_REGISTERED_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x86FD</span>
+<a name="line-173"></a>
+<a name="line-174"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SURFACE_STATE_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x86EB</span>
+<a name="line-175"></a>
+<a name="line-176"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_WRITE_DISCARD_NV</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x88BE</span>
 </pre></body>
 </html>

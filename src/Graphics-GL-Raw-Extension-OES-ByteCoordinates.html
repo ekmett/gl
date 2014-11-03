@@ -52,269 +52,270 @@
 <a name="line-43"></a>
 <a name="line-44"></a><a name="gl_OES_byte_coordinates"></a><span class='hs-definition'>gl_OES_byte_coordinates</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-45"></a><span class='hs-definition'>gl_OES_byte_coordinates</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_OES_byte_coordinates"</span> <span class='hs-varid'>extensions</span>
-<a name="line-46"></a>
-<a name="line-47"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord1bOES' texture s@</span>
-<a name="line-48"></a>
+<a name="line-46"></a><span class='hs-comment'>{-# NOINLINE gl_OES_byte_coordinates #-}</span>
+<a name="line-47"></a>
+<a name="line-48"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord1bOES' texture s@</span>
 <a name="line-49"></a>
-<a name="line-50"></a><a name="glMultiTexCoord1bOES"></a><span class='hs-definition'>glMultiTexCoord1bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-51"></a><span class='hs-definition'>glMultiTexCoord1bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumbyteIOV</span> <span class='hs-varid'>glMultiTexCoord1bOESFunPtr</span>
-<a name="line-52"></a>
-<a name="line-53"></a><a name="glMultiTexCoord1bOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord1bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-54"></a><span class='hs-definition'>glMultiTexCoord1bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord1bOES"</span><span class='hs-layout'>)</span>
-<a name="line-55"></a>
-<a name="line-56"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord1bOESFunPtr #-}</span>
-<a name="line-57"></a>
-<a name="line-58"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord1bvOES' texture coords@</span>
-<a name="line-59"></a><span class='hs-comment'>--</span>
-<a name="line-60"></a><span class='hs-comment'>-- The length of @coords@ should be @1@.</span>
-<a name="line-61"></a>
+<a name="line-50"></a>
+<a name="line-51"></a><a name="glMultiTexCoord1bOES"></a><span class='hs-definition'>glMultiTexCoord1bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-52"></a><span class='hs-definition'>glMultiTexCoord1bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumbyteIOV</span> <span class='hs-varid'>glMultiTexCoord1bOESFunPtr</span>
+<a name="line-53"></a>
+<a name="line-54"></a><a name="glMultiTexCoord1bOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord1bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-55"></a><span class='hs-definition'>glMultiTexCoord1bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord1bOES"</span><span class='hs-layout'>)</span>
+<a name="line-56"></a>
+<a name="line-57"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord1bOESFunPtr #-}</span>
+<a name="line-58"></a>
+<a name="line-59"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord1bvOES' texture coords@</span>
+<a name="line-60"></a><span class='hs-comment'>--</span>
+<a name="line-61"></a><span class='hs-comment'>-- The length of @coords@ should be @1@.</span>
 <a name="line-62"></a>
-<a name="line-63"></a><a name="glMultiTexCoord1bvOES"></a><span class='hs-definition'>glMultiTexCoord1bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-64"></a><span class='hs-definition'>glMultiTexCoord1bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrbyteIOV</span> <span class='hs-varid'>glMultiTexCoord1bvOESFunPtr</span>
-<a name="line-65"></a>
-<a name="line-66"></a><a name="glMultiTexCoord1bvOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord1bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-67"></a><span class='hs-definition'>glMultiTexCoord1bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord1bvOES"</span><span class='hs-layout'>)</span>
-<a name="line-68"></a>
-<a name="line-69"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord1bvOESFunPtr #-}</span>
-<a name="line-70"></a>
-<a name="line-71"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord2bOES' texture s t@</span>
-<a name="line-72"></a>
+<a name="line-63"></a>
+<a name="line-64"></a><a name="glMultiTexCoord1bvOES"></a><span class='hs-definition'>glMultiTexCoord1bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-65"></a><span class='hs-definition'>glMultiTexCoord1bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrbyteIOV</span> <span class='hs-varid'>glMultiTexCoord1bvOESFunPtr</span>
+<a name="line-66"></a>
+<a name="line-67"></a><a name="glMultiTexCoord1bvOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord1bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-68"></a><span class='hs-definition'>glMultiTexCoord1bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord1bvOES"</span><span class='hs-layout'>)</span>
+<a name="line-69"></a>
+<a name="line-70"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord1bvOESFunPtr #-}</span>
+<a name="line-71"></a>
+<a name="line-72"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord2bOES' texture s t@</span>
 <a name="line-73"></a>
-<a name="line-74"></a><a name="glMultiTexCoord2bOES"></a><span class='hs-definition'>glMultiTexCoord2bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-75"></a><span class='hs-definition'>glMultiTexCoord2bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumbytebyteIOV</span> <span class='hs-varid'>glMultiTexCoord2bOESFunPtr</span>
-<a name="line-76"></a>
-<a name="line-77"></a><a name="glMultiTexCoord2bOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord2bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-78"></a><span class='hs-definition'>glMultiTexCoord2bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord2bOES"</span><span class='hs-layout'>)</span>
-<a name="line-79"></a>
-<a name="line-80"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord2bOESFunPtr #-}</span>
-<a name="line-81"></a>
-<a name="line-82"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord2bvOES' texture coords@</span>
-<a name="line-83"></a><span class='hs-comment'>--</span>
-<a name="line-84"></a><span class='hs-comment'>-- The length of @coords@ should be @2@.</span>
-<a name="line-85"></a>
+<a name="line-74"></a>
+<a name="line-75"></a><a name="glMultiTexCoord2bOES"></a><span class='hs-definition'>glMultiTexCoord2bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-76"></a><span class='hs-definition'>glMultiTexCoord2bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumbytebyteIOV</span> <span class='hs-varid'>glMultiTexCoord2bOESFunPtr</span>
+<a name="line-77"></a>
+<a name="line-78"></a><a name="glMultiTexCoord2bOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord2bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-79"></a><span class='hs-definition'>glMultiTexCoord2bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord2bOES"</span><span class='hs-layout'>)</span>
+<a name="line-80"></a>
+<a name="line-81"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord2bOESFunPtr #-}</span>
+<a name="line-82"></a>
+<a name="line-83"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord2bvOES' texture coords@</span>
+<a name="line-84"></a><span class='hs-comment'>--</span>
+<a name="line-85"></a><span class='hs-comment'>-- The length of @coords@ should be @2@.</span>
 <a name="line-86"></a>
-<a name="line-87"></a><a name="glMultiTexCoord2bvOES"></a><span class='hs-definition'>glMultiTexCoord2bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-88"></a><span class='hs-definition'>glMultiTexCoord2bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrbyteIOV</span> <span class='hs-varid'>glMultiTexCoord2bvOESFunPtr</span>
-<a name="line-89"></a>
-<a name="line-90"></a><a name="glMultiTexCoord2bvOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord2bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-91"></a><span class='hs-definition'>glMultiTexCoord2bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord2bvOES"</span><span class='hs-layout'>)</span>
-<a name="line-92"></a>
-<a name="line-93"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord2bvOESFunPtr #-}</span>
-<a name="line-94"></a>
-<a name="line-95"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord3bOES' texture s t r@</span>
-<a name="line-96"></a>
+<a name="line-87"></a>
+<a name="line-88"></a><a name="glMultiTexCoord2bvOES"></a><span class='hs-definition'>glMultiTexCoord2bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-89"></a><span class='hs-definition'>glMultiTexCoord2bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrbyteIOV</span> <span class='hs-varid'>glMultiTexCoord2bvOESFunPtr</span>
+<a name="line-90"></a>
+<a name="line-91"></a><a name="glMultiTexCoord2bvOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord2bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-92"></a><span class='hs-definition'>glMultiTexCoord2bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord2bvOES"</span><span class='hs-layout'>)</span>
+<a name="line-93"></a>
+<a name="line-94"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord2bvOESFunPtr #-}</span>
+<a name="line-95"></a>
+<a name="line-96"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord3bOES' texture s t r@</span>
 <a name="line-97"></a>
-<a name="line-98"></a><a name="glMultiTexCoord3bOES"></a><span class='hs-definition'>glMultiTexCoord3bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-99"></a><span class='hs-definition'>glMultiTexCoord3bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumbytebytebyteIOV</span> <span class='hs-varid'>glMultiTexCoord3bOESFunPtr</span>
-<a name="line-100"></a>
-<a name="line-101"></a><a name="glMultiTexCoord3bOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord3bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-102"></a><span class='hs-definition'>glMultiTexCoord3bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord3bOES"</span><span class='hs-layout'>)</span>
-<a name="line-103"></a>
-<a name="line-104"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord3bOESFunPtr #-}</span>
-<a name="line-105"></a>
-<a name="line-106"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord3bvOES' texture coords@</span>
-<a name="line-107"></a><span class='hs-comment'>--</span>
-<a name="line-108"></a><span class='hs-comment'>-- The length of @coords@ should be @3@.</span>
-<a name="line-109"></a>
+<a name="line-98"></a>
+<a name="line-99"></a><a name="glMultiTexCoord3bOES"></a><span class='hs-definition'>glMultiTexCoord3bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-100"></a><span class='hs-definition'>glMultiTexCoord3bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumbytebytebyteIOV</span> <span class='hs-varid'>glMultiTexCoord3bOESFunPtr</span>
+<a name="line-101"></a>
+<a name="line-102"></a><a name="glMultiTexCoord3bOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord3bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-103"></a><span class='hs-definition'>glMultiTexCoord3bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord3bOES"</span><span class='hs-layout'>)</span>
+<a name="line-104"></a>
+<a name="line-105"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord3bOESFunPtr #-}</span>
+<a name="line-106"></a>
+<a name="line-107"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord3bvOES' texture coords@</span>
+<a name="line-108"></a><span class='hs-comment'>--</span>
+<a name="line-109"></a><span class='hs-comment'>-- The length of @coords@ should be @3@.</span>
 <a name="line-110"></a>
-<a name="line-111"></a><a name="glMultiTexCoord3bvOES"></a><span class='hs-definition'>glMultiTexCoord3bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-112"></a><span class='hs-definition'>glMultiTexCoord3bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrbyteIOV</span> <span class='hs-varid'>glMultiTexCoord3bvOESFunPtr</span>
-<a name="line-113"></a>
-<a name="line-114"></a><a name="glMultiTexCoord3bvOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord3bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-115"></a><span class='hs-definition'>glMultiTexCoord3bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord3bvOES"</span><span class='hs-layout'>)</span>
-<a name="line-116"></a>
-<a name="line-117"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord3bvOESFunPtr #-}</span>
-<a name="line-118"></a>
-<a name="line-119"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord4bOES' texture s t r q@</span>
-<a name="line-120"></a>
+<a name="line-111"></a>
+<a name="line-112"></a><a name="glMultiTexCoord3bvOES"></a><span class='hs-definition'>glMultiTexCoord3bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-113"></a><span class='hs-definition'>glMultiTexCoord3bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrbyteIOV</span> <span class='hs-varid'>glMultiTexCoord3bvOESFunPtr</span>
+<a name="line-114"></a>
+<a name="line-115"></a><a name="glMultiTexCoord3bvOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord3bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-116"></a><span class='hs-definition'>glMultiTexCoord3bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord3bvOES"</span><span class='hs-layout'>)</span>
+<a name="line-117"></a>
+<a name="line-118"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord3bvOESFunPtr #-}</span>
+<a name="line-119"></a>
+<a name="line-120"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord4bOES' texture s t r q@</span>
 <a name="line-121"></a>
-<a name="line-122"></a><a name="glMultiTexCoord4bOES"></a><span class='hs-definition'>glMultiTexCoord4bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-123"></a><span class='hs-definition'>glMultiTexCoord4bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumbytebytebytebyteIOV</span> <span class='hs-varid'>glMultiTexCoord4bOESFunPtr</span>
-<a name="line-124"></a>
-<a name="line-125"></a><a name="glMultiTexCoord4bOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord4bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-126"></a><span class='hs-definition'>glMultiTexCoord4bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord4bOES"</span><span class='hs-layout'>)</span>
-<a name="line-127"></a>
-<a name="line-128"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord4bOESFunPtr #-}</span>
-<a name="line-129"></a>
-<a name="line-130"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord4bvOES' texture coords@</span>
-<a name="line-131"></a><span class='hs-comment'>--</span>
-<a name="line-132"></a><span class='hs-comment'>-- The length of @coords@ should be @4@.</span>
-<a name="line-133"></a>
+<a name="line-122"></a>
+<a name="line-123"></a><a name="glMultiTexCoord4bOES"></a><span class='hs-definition'>glMultiTexCoord4bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-124"></a><span class='hs-definition'>glMultiTexCoord4bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumbytebytebytebyteIOV</span> <span class='hs-varid'>glMultiTexCoord4bOESFunPtr</span>
+<a name="line-125"></a>
+<a name="line-126"></a><a name="glMultiTexCoord4bOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord4bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-127"></a><span class='hs-definition'>glMultiTexCoord4bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord4bOES"</span><span class='hs-layout'>)</span>
+<a name="line-128"></a>
+<a name="line-129"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord4bOESFunPtr #-}</span>
+<a name="line-130"></a>
+<a name="line-131"></a><span class='hs-comment'>-- | Usage: @'glMultiTexCoord4bvOES' texture coords@</span>
+<a name="line-132"></a><span class='hs-comment'>--</span>
+<a name="line-133"></a><span class='hs-comment'>-- The length of @coords@ should be @4@.</span>
 <a name="line-134"></a>
-<a name="line-135"></a><a name="glMultiTexCoord4bvOES"></a><span class='hs-definition'>glMultiTexCoord4bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-136"></a><span class='hs-definition'>glMultiTexCoord4bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrbyteIOV</span> <span class='hs-varid'>glMultiTexCoord4bvOESFunPtr</span>
-<a name="line-137"></a>
-<a name="line-138"></a><a name="glMultiTexCoord4bvOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord4bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-139"></a><span class='hs-definition'>glMultiTexCoord4bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord4bvOES"</span><span class='hs-layout'>)</span>
-<a name="line-140"></a>
-<a name="line-141"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord4bvOESFunPtr #-}</span>
-<a name="line-142"></a>
-<a name="line-143"></a><span class='hs-comment'>-- | Usage: @'glTexCoord1bOES' s@</span>
-<a name="line-144"></a>
+<a name="line-135"></a>
+<a name="line-136"></a><a name="glMultiTexCoord4bvOES"></a><span class='hs-definition'>glMultiTexCoord4bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-137"></a><span class='hs-definition'>glMultiTexCoord4bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumPtrbyteIOV</span> <span class='hs-varid'>glMultiTexCoord4bvOESFunPtr</span>
+<a name="line-138"></a>
+<a name="line-139"></a><a name="glMultiTexCoord4bvOESFunPtr"></a><span class='hs-definition'>glMultiTexCoord4bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-140"></a><span class='hs-definition'>glMultiTexCoord4bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glMultiTexCoord4bvOES"</span><span class='hs-layout'>)</span>
+<a name="line-141"></a>
+<a name="line-142"></a><span class='hs-comment'>{-# NOINLINE glMultiTexCoord4bvOESFunPtr #-}</span>
+<a name="line-143"></a>
+<a name="line-144"></a><span class='hs-comment'>-- | Usage: @'glTexCoord1bOES' s@</span>
 <a name="line-145"></a>
-<a name="line-146"></a><a name="glTexCoord1bOES"></a><span class='hs-definition'>glTexCoord1bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-147"></a><span class='hs-definition'>glTexCoord1bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibyteIOV</span> <span class='hs-varid'>glTexCoord1bOESFunPtr</span>
-<a name="line-148"></a>
-<a name="line-149"></a><a name="glTexCoord1bOESFunPtr"></a><span class='hs-definition'>glTexCoord1bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-150"></a><span class='hs-definition'>glTexCoord1bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord1bOES"</span><span class='hs-layout'>)</span>
-<a name="line-151"></a>
-<a name="line-152"></a><span class='hs-comment'>{-# NOINLINE glTexCoord1bOESFunPtr #-}</span>
-<a name="line-153"></a>
-<a name="line-154"></a><span class='hs-comment'>-- | Usage: @'glTexCoord1bvOES' coords@</span>
-<a name="line-155"></a><span class='hs-comment'>--</span>
-<a name="line-156"></a><span class='hs-comment'>-- The length of @coords@ should be @1@.</span>
-<a name="line-157"></a>
+<a name="line-146"></a>
+<a name="line-147"></a><a name="glTexCoord1bOES"></a><span class='hs-definition'>glTexCoord1bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-148"></a><span class='hs-definition'>glTexCoord1bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibyteIOV</span> <span class='hs-varid'>glTexCoord1bOESFunPtr</span>
+<a name="line-149"></a>
+<a name="line-150"></a><a name="glTexCoord1bOESFunPtr"></a><span class='hs-definition'>glTexCoord1bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-151"></a><span class='hs-definition'>glTexCoord1bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord1bOES"</span><span class='hs-layout'>)</span>
+<a name="line-152"></a>
+<a name="line-153"></a><span class='hs-comment'>{-# NOINLINE glTexCoord1bOESFunPtr #-}</span>
+<a name="line-154"></a>
+<a name="line-155"></a><span class='hs-comment'>-- | Usage: @'glTexCoord1bvOES' coords@</span>
+<a name="line-156"></a><span class='hs-comment'>--</span>
+<a name="line-157"></a><span class='hs-comment'>-- The length of @coords@ should be @1@.</span>
 <a name="line-158"></a>
-<a name="line-159"></a><a name="glTexCoord1bvOES"></a><span class='hs-definition'>glTexCoord1bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-160"></a><span class='hs-definition'>glTexCoord1bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glTexCoord1bvOESFunPtr</span>
-<a name="line-161"></a>
-<a name="line-162"></a><a name="glTexCoord1bvOESFunPtr"></a><span class='hs-definition'>glTexCoord1bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-163"></a><span class='hs-definition'>glTexCoord1bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord1bvOES"</span><span class='hs-layout'>)</span>
-<a name="line-164"></a>
-<a name="line-165"></a><span class='hs-comment'>{-# NOINLINE glTexCoord1bvOESFunPtr #-}</span>
-<a name="line-166"></a>
-<a name="line-167"></a><span class='hs-comment'>-- | Usage: @'glTexCoord2bOES' s t@</span>
-<a name="line-168"></a>
+<a name="line-159"></a>
+<a name="line-160"></a><a name="glTexCoord1bvOES"></a><span class='hs-definition'>glTexCoord1bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-161"></a><span class='hs-definition'>glTexCoord1bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glTexCoord1bvOESFunPtr</span>
+<a name="line-162"></a>
+<a name="line-163"></a><a name="glTexCoord1bvOESFunPtr"></a><span class='hs-definition'>glTexCoord1bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-164"></a><span class='hs-definition'>glTexCoord1bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord1bvOES"</span><span class='hs-layout'>)</span>
+<a name="line-165"></a>
+<a name="line-166"></a><span class='hs-comment'>{-# NOINLINE glTexCoord1bvOESFunPtr #-}</span>
+<a name="line-167"></a>
+<a name="line-168"></a><span class='hs-comment'>-- | Usage: @'glTexCoord2bOES' s t@</span>
 <a name="line-169"></a>
-<a name="line-170"></a><a name="glTexCoord2bOES"></a><span class='hs-definition'>glTexCoord2bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-171"></a><span class='hs-definition'>glTexCoord2bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibytebyteIOV</span> <span class='hs-varid'>glTexCoord2bOESFunPtr</span>
-<a name="line-172"></a>
-<a name="line-173"></a><a name="glTexCoord2bOESFunPtr"></a><span class='hs-definition'>glTexCoord2bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-174"></a><span class='hs-definition'>glTexCoord2bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord2bOES"</span><span class='hs-layout'>)</span>
-<a name="line-175"></a>
-<a name="line-176"></a><span class='hs-comment'>{-# NOINLINE glTexCoord2bOESFunPtr #-}</span>
-<a name="line-177"></a>
-<a name="line-178"></a><span class='hs-comment'>-- | Usage: @'glTexCoord2bvOES' coords@</span>
-<a name="line-179"></a><span class='hs-comment'>--</span>
-<a name="line-180"></a><span class='hs-comment'>-- The length of @coords@ should be @2@.</span>
-<a name="line-181"></a>
+<a name="line-170"></a>
+<a name="line-171"></a><a name="glTexCoord2bOES"></a><span class='hs-definition'>glTexCoord2bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-172"></a><span class='hs-definition'>glTexCoord2bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibytebyteIOV</span> <span class='hs-varid'>glTexCoord2bOESFunPtr</span>
+<a name="line-173"></a>
+<a name="line-174"></a><a name="glTexCoord2bOESFunPtr"></a><span class='hs-definition'>glTexCoord2bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-175"></a><span class='hs-definition'>glTexCoord2bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord2bOES"</span><span class='hs-layout'>)</span>
+<a name="line-176"></a>
+<a name="line-177"></a><span class='hs-comment'>{-# NOINLINE glTexCoord2bOESFunPtr #-}</span>
+<a name="line-178"></a>
+<a name="line-179"></a><span class='hs-comment'>-- | Usage: @'glTexCoord2bvOES' coords@</span>
+<a name="line-180"></a><span class='hs-comment'>--</span>
+<a name="line-181"></a><span class='hs-comment'>-- The length of @coords@ should be @2@.</span>
 <a name="line-182"></a>
-<a name="line-183"></a><a name="glTexCoord2bvOES"></a><span class='hs-definition'>glTexCoord2bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-184"></a><span class='hs-definition'>glTexCoord2bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glTexCoord2bvOESFunPtr</span>
-<a name="line-185"></a>
-<a name="line-186"></a><a name="glTexCoord2bvOESFunPtr"></a><span class='hs-definition'>glTexCoord2bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-187"></a><span class='hs-definition'>glTexCoord2bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord2bvOES"</span><span class='hs-layout'>)</span>
-<a name="line-188"></a>
-<a name="line-189"></a><span class='hs-comment'>{-# NOINLINE glTexCoord2bvOESFunPtr #-}</span>
-<a name="line-190"></a>
-<a name="line-191"></a><span class='hs-comment'>-- | Usage: @'glTexCoord3bOES' s t r@</span>
-<a name="line-192"></a>
+<a name="line-183"></a>
+<a name="line-184"></a><a name="glTexCoord2bvOES"></a><span class='hs-definition'>glTexCoord2bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-185"></a><span class='hs-definition'>glTexCoord2bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glTexCoord2bvOESFunPtr</span>
+<a name="line-186"></a>
+<a name="line-187"></a><a name="glTexCoord2bvOESFunPtr"></a><span class='hs-definition'>glTexCoord2bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-188"></a><span class='hs-definition'>glTexCoord2bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord2bvOES"</span><span class='hs-layout'>)</span>
+<a name="line-189"></a>
+<a name="line-190"></a><span class='hs-comment'>{-# NOINLINE glTexCoord2bvOESFunPtr #-}</span>
+<a name="line-191"></a>
+<a name="line-192"></a><span class='hs-comment'>-- | Usage: @'glTexCoord3bOES' s t r@</span>
 <a name="line-193"></a>
-<a name="line-194"></a><a name="glTexCoord3bOES"></a><span class='hs-definition'>glTexCoord3bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-195"></a><span class='hs-definition'>glTexCoord3bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibytebytebyteIOV</span> <span class='hs-varid'>glTexCoord3bOESFunPtr</span>
-<a name="line-196"></a>
-<a name="line-197"></a><a name="glTexCoord3bOESFunPtr"></a><span class='hs-definition'>glTexCoord3bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-198"></a><span class='hs-definition'>glTexCoord3bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord3bOES"</span><span class='hs-layout'>)</span>
-<a name="line-199"></a>
-<a name="line-200"></a><span class='hs-comment'>{-# NOINLINE glTexCoord3bOESFunPtr #-}</span>
-<a name="line-201"></a>
-<a name="line-202"></a><span class='hs-comment'>-- | Usage: @'glTexCoord3bvOES' coords@</span>
-<a name="line-203"></a><span class='hs-comment'>--</span>
-<a name="line-204"></a><span class='hs-comment'>-- The length of @coords@ should be @3@.</span>
-<a name="line-205"></a>
+<a name="line-194"></a>
+<a name="line-195"></a><a name="glTexCoord3bOES"></a><span class='hs-definition'>glTexCoord3bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-196"></a><span class='hs-definition'>glTexCoord3bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibytebytebyteIOV</span> <span class='hs-varid'>glTexCoord3bOESFunPtr</span>
+<a name="line-197"></a>
+<a name="line-198"></a><a name="glTexCoord3bOESFunPtr"></a><span class='hs-definition'>glTexCoord3bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-199"></a><span class='hs-definition'>glTexCoord3bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord3bOES"</span><span class='hs-layout'>)</span>
+<a name="line-200"></a>
+<a name="line-201"></a><span class='hs-comment'>{-# NOINLINE glTexCoord3bOESFunPtr #-}</span>
+<a name="line-202"></a>
+<a name="line-203"></a><span class='hs-comment'>-- | Usage: @'glTexCoord3bvOES' coords@</span>
+<a name="line-204"></a><span class='hs-comment'>--</span>
+<a name="line-205"></a><span class='hs-comment'>-- The length of @coords@ should be @3@.</span>
 <a name="line-206"></a>
-<a name="line-207"></a><a name="glTexCoord3bvOES"></a><span class='hs-definition'>glTexCoord3bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-208"></a><span class='hs-definition'>glTexCoord3bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glTexCoord3bvOESFunPtr</span>
-<a name="line-209"></a>
-<a name="line-210"></a><a name="glTexCoord3bvOESFunPtr"></a><span class='hs-definition'>glTexCoord3bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-211"></a><span class='hs-definition'>glTexCoord3bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord3bvOES"</span><span class='hs-layout'>)</span>
-<a name="line-212"></a>
-<a name="line-213"></a><span class='hs-comment'>{-# NOINLINE glTexCoord3bvOESFunPtr #-}</span>
-<a name="line-214"></a>
-<a name="line-215"></a><span class='hs-comment'>-- | Usage: @'glTexCoord4bOES' s t r q@</span>
-<a name="line-216"></a>
+<a name="line-207"></a>
+<a name="line-208"></a><a name="glTexCoord3bvOES"></a><span class='hs-definition'>glTexCoord3bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-209"></a><span class='hs-definition'>glTexCoord3bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glTexCoord3bvOESFunPtr</span>
+<a name="line-210"></a>
+<a name="line-211"></a><a name="glTexCoord3bvOESFunPtr"></a><span class='hs-definition'>glTexCoord3bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-212"></a><span class='hs-definition'>glTexCoord3bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord3bvOES"</span><span class='hs-layout'>)</span>
+<a name="line-213"></a>
+<a name="line-214"></a><span class='hs-comment'>{-# NOINLINE glTexCoord3bvOESFunPtr #-}</span>
+<a name="line-215"></a>
+<a name="line-216"></a><span class='hs-comment'>-- | Usage: @'glTexCoord4bOES' s t r q@</span>
 <a name="line-217"></a>
-<a name="line-218"></a><a name="glTexCoord4bOES"></a><span class='hs-definition'>glTexCoord4bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-219"></a><span class='hs-definition'>glTexCoord4bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibytebytebytebyteIOV</span> <span class='hs-varid'>glTexCoord4bOESFunPtr</span>
-<a name="line-220"></a>
-<a name="line-221"></a><a name="glTexCoord4bOESFunPtr"></a><span class='hs-definition'>glTexCoord4bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-222"></a><span class='hs-definition'>glTexCoord4bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord4bOES"</span><span class='hs-layout'>)</span>
-<a name="line-223"></a>
-<a name="line-224"></a><span class='hs-comment'>{-# NOINLINE glTexCoord4bOESFunPtr #-}</span>
-<a name="line-225"></a>
-<a name="line-226"></a><span class='hs-comment'>-- | Usage: @'glTexCoord4bvOES' coords@</span>
-<a name="line-227"></a><span class='hs-comment'>--</span>
-<a name="line-228"></a><span class='hs-comment'>-- The length of @coords@ should be @4@.</span>
-<a name="line-229"></a>
+<a name="line-218"></a>
+<a name="line-219"></a><a name="glTexCoord4bOES"></a><span class='hs-definition'>glTexCoord4bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-220"></a><span class='hs-definition'>glTexCoord4bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibytebytebytebyteIOV</span> <span class='hs-varid'>glTexCoord4bOESFunPtr</span>
+<a name="line-221"></a>
+<a name="line-222"></a><a name="glTexCoord4bOESFunPtr"></a><span class='hs-definition'>glTexCoord4bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-223"></a><span class='hs-definition'>glTexCoord4bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord4bOES"</span><span class='hs-layout'>)</span>
+<a name="line-224"></a>
+<a name="line-225"></a><span class='hs-comment'>{-# NOINLINE glTexCoord4bOESFunPtr #-}</span>
+<a name="line-226"></a>
+<a name="line-227"></a><span class='hs-comment'>-- | Usage: @'glTexCoord4bvOES' coords@</span>
+<a name="line-228"></a><span class='hs-comment'>--</span>
+<a name="line-229"></a><span class='hs-comment'>-- The length of @coords@ should be @4@.</span>
 <a name="line-230"></a>
-<a name="line-231"></a><a name="glTexCoord4bvOES"></a><span class='hs-definition'>glTexCoord4bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-232"></a><span class='hs-definition'>glTexCoord4bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glTexCoord4bvOESFunPtr</span>
-<a name="line-233"></a>
-<a name="line-234"></a><a name="glTexCoord4bvOESFunPtr"></a><span class='hs-definition'>glTexCoord4bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-235"></a><span class='hs-definition'>glTexCoord4bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord4bvOES"</span><span class='hs-layout'>)</span>
-<a name="line-236"></a>
-<a name="line-237"></a><span class='hs-comment'>{-# NOINLINE glTexCoord4bvOESFunPtr #-}</span>
-<a name="line-238"></a>
-<a name="line-239"></a><span class='hs-comment'>-- | Usage: @'glVertex2bOES' x y@</span>
-<a name="line-240"></a>
+<a name="line-231"></a>
+<a name="line-232"></a><a name="glTexCoord4bvOES"></a><span class='hs-definition'>glTexCoord4bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-233"></a><span class='hs-definition'>glTexCoord4bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glTexCoord4bvOESFunPtr</span>
+<a name="line-234"></a>
+<a name="line-235"></a><a name="glTexCoord4bvOESFunPtr"></a><span class='hs-definition'>glTexCoord4bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-236"></a><span class='hs-definition'>glTexCoord4bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexCoord4bvOES"</span><span class='hs-layout'>)</span>
+<a name="line-237"></a>
+<a name="line-238"></a><span class='hs-comment'>{-# NOINLINE glTexCoord4bvOESFunPtr #-}</span>
+<a name="line-239"></a>
+<a name="line-240"></a><span class='hs-comment'>-- | Usage: @'glVertex2bOES' x y@</span>
 <a name="line-241"></a>
-<a name="line-242"></a><a name="glVertex2bOES"></a><span class='hs-definition'>glVertex2bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-243"></a><span class='hs-definition'>glVertex2bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibytebyteIOV</span> <span class='hs-varid'>glVertex2bOESFunPtr</span>
-<a name="line-244"></a>
-<a name="line-245"></a><a name="glVertex2bOESFunPtr"></a><span class='hs-definition'>glVertex2bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-246"></a><span class='hs-definition'>glVertex2bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertex2bOES"</span><span class='hs-layout'>)</span>
-<a name="line-247"></a>
-<a name="line-248"></a><span class='hs-comment'>{-# NOINLINE glVertex2bOESFunPtr #-}</span>
-<a name="line-249"></a>
-<a name="line-250"></a><span class='hs-comment'>-- | Usage: @'glVertex2bvOES' coords@</span>
-<a name="line-251"></a><span class='hs-comment'>--</span>
-<a name="line-252"></a><span class='hs-comment'>-- The length of @coords@ should be @2@.</span>
-<a name="line-253"></a>
+<a name="line-242"></a>
+<a name="line-243"></a><a name="glVertex2bOES"></a><span class='hs-definition'>glVertex2bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-244"></a><span class='hs-definition'>glVertex2bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibytebyteIOV</span> <span class='hs-varid'>glVertex2bOESFunPtr</span>
+<a name="line-245"></a>
+<a name="line-246"></a><a name="glVertex2bOESFunPtr"></a><span class='hs-definition'>glVertex2bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-247"></a><span class='hs-definition'>glVertex2bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertex2bOES"</span><span class='hs-layout'>)</span>
+<a name="line-248"></a>
+<a name="line-249"></a><span class='hs-comment'>{-# NOINLINE glVertex2bOESFunPtr #-}</span>
+<a name="line-250"></a>
+<a name="line-251"></a><span class='hs-comment'>-- | Usage: @'glVertex2bvOES' coords@</span>
+<a name="line-252"></a><span class='hs-comment'>--</span>
+<a name="line-253"></a><span class='hs-comment'>-- The length of @coords@ should be @2@.</span>
 <a name="line-254"></a>
-<a name="line-255"></a><a name="glVertex2bvOES"></a><span class='hs-definition'>glVertex2bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-256"></a><span class='hs-definition'>glVertex2bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glVertex2bvOESFunPtr</span>
-<a name="line-257"></a>
-<a name="line-258"></a><a name="glVertex2bvOESFunPtr"></a><span class='hs-definition'>glVertex2bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-259"></a><span class='hs-definition'>glVertex2bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertex2bvOES"</span><span class='hs-layout'>)</span>
-<a name="line-260"></a>
-<a name="line-261"></a><span class='hs-comment'>{-# NOINLINE glVertex2bvOESFunPtr #-}</span>
-<a name="line-262"></a>
-<a name="line-263"></a><span class='hs-comment'>-- | Usage: @'glVertex3bOES' x y z@</span>
-<a name="line-264"></a>
+<a name="line-255"></a>
+<a name="line-256"></a><a name="glVertex2bvOES"></a><span class='hs-definition'>glVertex2bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-257"></a><span class='hs-definition'>glVertex2bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glVertex2bvOESFunPtr</span>
+<a name="line-258"></a>
+<a name="line-259"></a><a name="glVertex2bvOESFunPtr"></a><span class='hs-definition'>glVertex2bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-260"></a><span class='hs-definition'>glVertex2bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertex2bvOES"</span><span class='hs-layout'>)</span>
+<a name="line-261"></a>
+<a name="line-262"></a><span class='hs-comment'>{-# NOINLINE glVertex2bvOESFunPtr #-}</span>
+<a name="line-263"></a>
+<a name="line-264"></a><span class='hs-comment'>-- | Usage: @'glVertex3bOES' x y z@</span>
 <a name="line-265"></a>
-<a name="line-266"></a><a name="glVertex3bOES"></a><span class='hs-definition'>glVertex3bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-267"></a><span class='hs-definition'>glVertex3bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibytebytebyteIOV</span> <span class='hs-varid'>glVertex3bOESFunPtr</span>
-<a name="line-268"></a>
-<a name="line-269"></a><a name="glVertex3bOESFunPtr"></a><span class='hs-definition'>glVertex3bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-270"></a><span class='hs-definition'>glVertex3bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertex3bOES"</span><span class='hs-layout'>)</span>
-<a name="line-271"></a>
-<a name="line-272"></a><span class='hs-comment'>{-# NOINLINE glVertex3bOESFunPtr #-}</span>
-<a name="line-273"></a>
-<a name="line-274"></a><span class='hs-comment'>-- | Usage: @'glVertex3bvOES' coords@</span>
-<a name="line-275"></a><span class='hs-comment'>--</span>
-<a name="line-276"></a><span class='hs-comment'>-- The length of @coords@ should be @3@.</span>
-<a name="line-277"></a>
+<a name="line-266"></a>
+<a name="line-267"></a><a name="glVertex3bOES"></a><span class='hs-definition'>glVertex3bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-268"></a><span class='hs-definition'>glVertex3bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibytebytebyteIOV</span> <span class='hs-varid'>glVertex3bOESFunPtr</span>
+<a name="line-269"></a>
+<a name="line-270"></a><a name="glVertex3bOESFunPtr"></a><span class='hs-definition'>glVertex3bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-271"></a><span class='hs-definition'>glVertex3bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertex3bOES"</span><span class='hs-layout'>)</span>
+<a name="line-272"></a>
+<a name="line-273"></a><span class='hs-comment'>{-# NOINLINE glVertex3bOESFunPtr #-}</span>
+<a name="line-274"></a>
+<a name="line-275"></a><span class='hs-comment'>-- | Usage: @'glVertex3bvOES' coords@</span>
+<a name="line-276"></a><span class='hs-comment'>--</span>
+<a name="line-277"></a><span class='hs-comment'>-- The length of @coords@ should be @3@.</span>
 <a name="line-278"></a>
-<a name="line-279"></a><a name="glVertex3bvOES"></a><span class='hs-definition'>glVertex3bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-280"></a><span class='hs-definition'>glVertex3bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glVertex3bvOESFunPtr</span>
-<a name="line-281"></a>
-<a name="line-282"></a><a name="glVertex3bvOESFunPtr"></a><span class='hs-definition'>glVertex3bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-283"></a><span class='hs-definition'>glVertex3bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertex3bvOES"</span><span class='hs-layout'>)</span>
-<a name="line-284"></a>
-<a name="line-285"></a><span class='hs-comment'>{-# NOINLINE glVertex3bvOESFunPtr #-}</span>
-<a name="line-286"></a>
-<a name="line-287"></a><span class='hs-comment'>-- | Usage: @'glVertex4bOES' x y z w@</span>
-<a name="line-288"></a>
+<a name="line-279"></a>
+<a name="line-280"></a><a name="glVertex3bvOES"></a><span class='hs-definition'>glVertex3bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-281"></a><span class='hs-definition'>glVertex3bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glVertex3bvOESFunPtr</span>
+<a name="line-282"></a>
+<a name="line-283"></a><a name="glVertex3bvOESFunPtr"></a><span class='hs-definition'>glVertex3bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-284"></a><span class='hs-definition'>glVertex3bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertex3bvOES"</span><span class='hs-layout'>)</span>
+<a name="line-285"></a>
+<a name="line-286"></a><span class='hs-comment'>{-# NOINLINE glVertex3bvOESFunPtr #-}</span>
+<a name="line-287"></a>
+<a name="line-288"></a><span class='hs-comment'>-- | Usage: @'glVertex4bOES' x y z w@</span>
 <a name="line-289"></a>
-<a name="line-290"></a><a name="glVertex4bOES"></a><span class='hs-definition'>glVertex4bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-291"></a><span class='hs-definition'>glVertex4bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibytebytebytebyteIOV</span> <span class='hs-varid'>glVertex4bOESFunPtr</span>
-<a name="line-292"></a>
-<a name="line-293"></a><a name="glVertex4bOESFunPtr"></a><span class='hs-definition'>glVertex4bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-294"></a><span class='hs-definition'>glVertex4bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertex4bOES"</span><span class='hs-layout'>)</span>
-<a name="line-295"></a>
-<a name="line-296"></a><span class='hs-comment'>{-# NOINLINE glVertex4bOESFunPtr #-}</span>
-<a name="line-297"></a>
-<a name="line-298"></a><span class='hs-comment'>-- | Usage: @'glVertex4bvOES' coords@</span>
-<a name="line-299"></a><span class='hs-comment'>--</span>
-<a name="line-300"></a><span class='hs-comment'>-- The length of @coords@ should be @4@.</span>
-<a name="line-301"></a>
+<a name="line-290"></a>
+<a name="line-291"></a><a name="glVertex4bOES"></a><span class='hs-definition'>glVertex4bOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-292"></a><span class='hs-definition'>glVertex4bOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibytebytebytebyteIOV</span> <span class='hs-varid'>glVertex4bOESFunPtr</span>
+<a name="line-293"></a>
+<a name="line-294"></a><a name="glVertex4bOESFunPtr"></a><span class='hs-definition'>glVertex4bOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-295"></a><span class='hs-definition'>glVertex4bOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertex4bOES"</span><span class='hs-layout'>)</span>
+<a name="line-296"></a>
+<a name="line-297"></a><span class='hs-comment'>{-# NOINLINE glVertex4bOESFunPtr #-}</span>
+<a name="line-298"></a>
+<a name="line-299"></a><span class='hs-comment'>-- | Usage: @'glVertex4bvOES' coords@</span>
+<a name="line-300"></a><span class='hs-comment'>--</span>
+<a name="line-301"></a><span class='hs-comment'>-- The length of @coords@ should be @4@.</span>
 <a name="line-302"></a>
-<a name="line-303"></a><a name="glVertex4bvOES"></a><span class='hs-definition'>glVertex4bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-304"></a><span class='hs-definition'>glVertex4bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glVertex4bvOESFunPtr</span>
-<a name="line-305"></a>
-<a name="line-306"></a><a name="glVertex4bvOESFunPtr"></a><span class='hs-definition'>glVertex4bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-307"></a><span class='hs-definition'>glVertex4bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertex4bvOES"</span><span class='hs-layout'>)</span>
-<a name="line-308"></a>
-<a name="line-309"></a><span class='hs-comment'>{-# NOINLINE glVertex4bvOESFunPtr #-}</span>
+<a name="line-303"></a>
+<a name="line-304"></a><a name="glVertex4bvOES"></a><span class='hs-definition'>glVertex4bvOES</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-305"></a><span class='hs-definition'>glVertex4bvOES</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiPtrbyteIOV</span> <span class='hs-varid'>glVertex4bvOESFunPtr</span>
+<a name="line-306"></a>
+<a name="line-307"></a><a name="glVertex4bvOESFunPtr"></a><span class='hs-definition'>glVertex4bvOESFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLbyte</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-308"></a><span class='hs-definition'>glVertex4bvOESFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glVertex4bvOES"</span><span class='hs-layout'>)</span>
+<a name="line-309"></a>
+<a name="line-310"></a><span class='hs-comment'>{-# NOINLINE glVertex4bvOESFunPtr #-}</span>
 </pre></body>
 </html>

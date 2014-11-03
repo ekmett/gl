@@ -29,18 +29,19 @@
 <a name="line-20"></a>
 <a name="line-21"></a><a name="gl_GREMEDY_string_marker"></a><span class='hs-definition'>gl_GREMEDY_string_marker</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-22"></a><span class='hs-definition'>gl_GREMEDY_string_marker</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_GREMEDY_string_marker"</span> <span class='hs-varid'>extensions</span>
-<a name="line-23"></a>
-<a name="line-24"></a><span class='hs-comment'>-- | Usage: @'glStringMarkerGREMEDY' len string@</span>
-<a name="line-25"></a><span class='hs-comment'>--</span>
-<a name="line-26"></a><span class='hs-comment'>-- The length of @string@ should be @len@.</span>
-<a name="line-27"></a>
+<a name="line-23"></a><span class='hs-comment'>{-# NOINLINE gl_GREMEDY_string_marker #-}</span>
+<a name="line-24"></a>
+<a name="line-25"></a><span class='hs-comment'>-- | Usage: @'glStringMarkerGREMEDY' len string@</span>
+<a name="line-26"></a><span class='hs-comment'>--</span>
+<a name="line-27"></a><span class='hs-comment'>-- The length of @string@ should be @len@.</span>
 <a name="line-28"></a>
-<a name="line-29"></a><a name="glStringMarkerGREMEDY"></a><span class='hs-definition'>glStringMarkerGREMEDY</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-30"></a><span class='hs-definition'>glStringMarkerGREMEDY</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtrVIOV</span> <span class='hs-varid'>glStringMarkerGREMEDYFunPtr</span>
-<a name="line-31"></a>
-<a name="line-32"></a><a name="glStringMarkerGREMEDYFunPtr"></a><span class='hs-definition'>glStringMarkerGREMEDYFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-33"></a><span class='hs-definition'>glStringMarkerGREMEDYFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glStringMarkerGREMEDY"</span><span class='hs-layout'>)</span>
-<a name="line-34"></a>
-<a name="line-35"></a><span class='hs-comment'>{-# NOINLINE glStringMarkerGREMEDYFunPtr #-}</span>
+<a name="line-29"></a>
+<a name="line-30"></a><a name="glStringMarkerGREMEDY"></a><span class='hs-definition'>glStringMarkerGREMEDY</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-31"></a><span class='hs-definition'>glStringMarkerGREMEDY</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffisizeiPtrVIOV</span> <span class='hs-varid'>glStringMarkerGREMEDYFunPtr</span>
+<a name="line-32"></a>
+<a name="line-33"></a><a name="glStringMarkerGREMEDYFunPtr"></a><span class='hs-definition'>glStringMarkerGREMEDYFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>()</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-34"></a><span class='hs-definition'>glStringMarkerGREMEDYFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glStringMarkerGREMEDY"</span><span class='hs-layout'>)</span>
+<a name="line-35"></a>
+<a name="line-36"></a><span class='hs-comment'>{-# NOINLINE glStringMarkerGREMEDYFunPtr #-}</span>
 </pre></body>
 </html>

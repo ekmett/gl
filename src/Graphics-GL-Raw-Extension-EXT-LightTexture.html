@@ -42,64 +42,65 @@
 <a name="line-33"></a>
 <a name="line-34"></a><a name="gl_EXT_light_texture"></a><span class='hs-definition'>gl_EXT_light_texture</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-35"></a><span class='hs-definition'>gl_EXT_light_texture</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_EXT_light_texture"</span> <span class='hs-varid'>extensions</span>
-<a name="line-36"></a>
-<a name="line-37"></a><span class='hs-comment'>-- | Usage: @'glApplyTextureEXT' mode@</span>
-<a name="line-38"></a><span class='hs-comment'>--</span>
-<a name="line-39"></a><span class='hs-comment'>-- The parameter @mode@ is a @LightTextureModeEXT@.</span>
-<a name="line-40"></a>
+<a name="line-36"></a><span class='hs-comment'>{-# NOINLINE gl_EXT_light_texture #-}</span>
+<a name="line-37"></a>
+<a name="line-38"></a><span class='hs-comment'>-- | Usage: @'glApplyTextureEXT' mode@</span>
+<a name="line-39"></a><span class='hs-comment'>--</span>
+<a name="line-40"></a><span class='hs-comment'>-- The parameter @mode@ is a @LightTextureModeEXT@.</span>
 <a name="line-41"></a>
-<a name="line-42"></a><a name="glApplyTextureEXT"></a><span class='hs-definition'>glApplyTextureEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-43"></a><span class='hs-definition'>glApplyTextureEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOV</span> <span class='hs-varid'>glApplyTextureEXTFunPtr</span>
-<a name="line-44"></a>
-<a name="line-45"></a><a name="glApplyTextureEXTFunPtr"></a><span class='hs-definition'>glApplyTextureEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-46"></a><span class='hs-definition'>glApplyTextureEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glApplyTextureEXT"</span><span class='hs-layout'>)</span>
-<a name="line-47"></a>
-<a name="line-48"></a><span class='hs-comment'>{-# NOINLINE glApplyTextureEXTFunPtr #-}</span>
-<a name="line-49"></a>
-<a name="line-50"></a><span class='hs-comment'>-- | Usage: @'glTextureLightEXT' pname@</span>
-<a name="line-51"></a><span class='hs-comment'>--</span>
-<a name="line-52"></a><span class='hs-comment'>-- The parameter @pname@ is a @LightTexturePNameEXT@.</span>
-<a name="line-53"></a>
+<a name="line-42"></a>
+<a name="line-43"></a><a name="glApplyTextureEXT"></a><span class='hs-definition'>glApplyTextureEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-44"></a><span class='hs-definition'>glApplyTextureEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOV</span> <span class='hs-varid'>glApplyTextureEXTFunPtr</span>
+<a name="line-45"></a>
+<a name="line-46"></a><a name="glApplyTextureEXTFunPtr"></a><span class='hs-definition'>glApplyTextureEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-47"></a><span class='hs-definition'>glApplyTextureEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glApplyTextureEXT"</span><span class='hs-layout'>)</span>
+<a name="line-48"></a>
+<a name="line-49"></a><span class='hs-comment'>{-# NOINLINE glApplyTextureEXTFunPtr #-}</span>
+<a name="line-50"></a>
+<a name="line-51"></a><span class='hs-comment'>-- | Usage: @'glTextureLightEXT' pname@</span>
+<a name="line-52"></a><span class='hs-comment'>--</span>
+<a name="line-53"></a><span class='hs-comment'>-- The parameter @pname@ is a @LightTexturePNameEXT@.</span>
 <a name="line-54"></a>
-<a name="line-55"></a><a name="glTextureLightEXT"></a><span class='hs-definition'>glTextureLightEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-56"></a><span class='hs-definition'>glTextureLightEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOV</span> <span class='hs-varid'>glTextureLightEXTFunPtr</span>
-<a name="line-57"></a>
-<a name="line-58"></a><a name="glTextureLightEXTFunPtr"></a><span class='hs-definition'>glTextureLightEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-59"></a><span class='hs-definition'>glTextureLightEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTextureLightEXT"</span><span class='hs-layout'>)</span>
-<a name="line-60"></a>
-<a name="line-61"></a><span class='hs-comment'>{-# NOINLINE glTextureLightEXTFunPtr #-}</span>
-<a name="line-62"></a>
-<a name="line-63"></a><span class='hs-comment'>-- | Usage: @'glTextureMaterialEXT' face mode@</span>
-<a name="line-64"></a><span class='hs-comment'>--</span>
-<a name="line-65"></a><span class='hs-comment'>-- The parameter @face@ is a @MaterialFace@, one of: 'GL_BACK', 'GL_FRONT', 'GL_FRONT_AND_BACK'.</span>
-<a name="line-66"></a><span class='hs-comment'>--</span>
-<a name="line-67"></a><span class='hs-comment'>-- The parameter @mode@ is a @MaterialParameter@, one of: 'GL_AMBIENT', 'GL_AMBIENT_AND_DIFFUSE', 'GL_COLOR_INDEXES', 'GL_DIFFUSE', 'GL_EMISSION', 'GL_SHININESS', 'GL_SPECULAR'.</span>
-<a name="line-68"></a>
+<a name="line-55"></a>
+<a name="line-56"></a><a name="glTextureLightEXT"></a><span class='hs-definition'>glTextureLightEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-57"></a><span class='hs-definition'>glTextureLightEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOV</span> <span class='hs-varid'>glTextureLightEXTFunPtr</span>
+<a name="line-58"></a>
+<a name="line-59"></a><a name="glTextureLightEXTFunPtr"></a><span class='hs-definition'>glTextureLightEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-60"></a><span class='hs-definition'>glTextureLightEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTextureLightEXT"</span><span class='hs-layout'>)</span>
+<a name="line-61"></a>
+<a name="line-62"></a><span class='hs-comment'>{-# NOINLINE glTextureLightEXTFunPtr #-}</span>
+<a name="line-63"></a>
+<a name="line-64"></a><span class='hs-comment'>-- | Usage: @'glTextureMaterialEXT' face mode@</span>
+<a name="line-65"></a><span class='hs-comment'>--</span>
+<a name="line-66"></a><span class='hs-comment'>-- The parameter @face@ is a @MaterialFace@, one of: 'Graphics.GL.Raw.Internal.Shared.GL_BACK', 'Graphics.GL.Raw.Internal.Shared.GL_FRONT', 'Graphics.GL.Raw.Internal.Shared.GL_FRONT_AND_BACK'.</span>
+<a name="line-67"></a><span class='hs-comment'>--</span>
+<a name="line-68"></a><span class='hs-comment'>-- The parameter @mode@ is a @MaterialParameter@, one of: 'Graphics.GL.Raw.Internal.Shared.GL_AMBIENT', 'Graphics.GL.Raw.Internal.Shared.GL_AMBIENT_AND_DIFFUSE', 'Graphics.GL.Raw.Internal.Shared.GL_COLOR_INDEXES', 'Graphics.GL.Raw.Internal.Shared.GL_DIFFUSE', 'Graphics.GL.Raw.Internal.Shared.GL_EMISSION', 'Graphics.GL.Raw.Internal.Shared.GL_SHININESS', 'Graphics.GL.Raw.Internal.Shared.GL_SPECULAR'.</span>
 <a name="line-69"></a>
-<a name="line-70"></a><a name="glTextureMaterialEXT"></a><span class='hs-definition'>glTextureMaterialEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-71"></a><span class='hs-definition'>glTextureMaterialEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumIOV</span> <span class='hs-varid'>glTextureMaterialEXTFunPtr</span>
-<a name="line-72"></a>
-<a name="line-73"></a><a name="glTextureMaterialEXTFunPtr"></a><span class='hs-definition'>glTextureMaterialEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-74"></a><span class='hs-definition'>glTextureMaterialEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTextureMaterialEXT"</span><span class='hs-layout'>)</span>
-<a name="line-75"></a>
-<a name="line-76"></a><span class='hs-comment'>{-# NOINLINE glTextureMaterialEXTFunPtr #-}</span>
-<a name="line-77"></a>
-<a name="line-78"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ATTENUATION_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x834D</span>
-<a name="line-79"></a>
-<a name="line-80"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAGMENT_COLOR_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x834C</span>
-<a name="line-81"></a>
-<a name="line-82"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAGMENT_MATERIAL_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8349</span>
-<a name="line-83"></a>
-<a name="line-84"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAGMENT_NORMAL_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x834A</span>
-<a name="line-85"></a>
-<a name="line-86"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SHADOW_ATTENUATION_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x834E</span>
-<a name="line-87"></a>
-<a name="line-88"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_APPLICATION_MODE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x834F</span>
-<a name="line-89"></a>
-<a name="line-90"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_LIGHT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8350</span>
-<a name="line-91"></a>
-<a name="line-92"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_MATERIAL_FACE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8351</span>
-<a name="line-93"></a>
-<a name="line-94"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_MATERIAL_PARAMETER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8352</span>
+<a name="line-70"></a>
+<a name="line-71"></a><a name="glTextureMaterialEXT"></a><span class='hs-definition'>glTextureMaterialEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-72"></a><span class='hs-definition'>glTextureMaterialEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumenumIOV</span> <span class='hs-varid'>glTextureMaterialEXTFunPtr</span>
+<a name="line-73"></a>
+<a name="line-74"></a><a name="glTextureMaterialEXTFunPtr"></a><span class='hs-definition'>glTextureMaterialEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-75"></a><span class='hs-definition'>glTextureMaterialEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTextureMaterialEXT"</span><span class='hs-layout'>)</span>
+<a name="line-76"></a>
+<a name="line-77"></a><span class='hs-comment'>{-# NOINLINE glTextureMaterialEXTFunPtr #-}</span>
+<a name="line-78"></a>
+<a name="line-79"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ATTENUATION_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x834D</span>
+<a name="line-80"></a>
+<a name="line-81"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAGMENT_COLOR_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x834C</span>
+<a name="line-82"></a>
+<a name="line-83"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAGMENT_MATERIAL_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8349</span>
+<a name="line-84"></a>
+<a name="line-85"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAGMENT_NORMAL_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x834A</span>
+<a name="line-86"></a>
+<a name="line-87"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SHADOW_ATTENUATION_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x834E</span>
+<a name="line-88"></a>
+<a name="line-89"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_APPLICATION_MODE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x834F</span>
+<a name="line-90"></a>
+<a name="line-91"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_LIGHT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8350</span>
+<a name="line-92"></a>
+<a name="line-93"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_MATERIAL_FACE_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8351</span>
+<a name="line-94"></a>
+<a name="line-95"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_MATERIAL_PARAMETER_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8352</span>
 </pre></body>
 </html>

@@ -146,385 +146,386 @@
 <a name="line-137"></a>
 <a name="line-138"></a><a name="gl_ATI_fragment_shader"></a><span class='hs-definition'>gl_ATI_fragment_shader</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-139"></a><span class='hs-definition'>gl_ATI_fragment_shader</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ATI_fragment_shader"</span> <span class='hs-varid'>extensions</span>
-<a name="line-140"></a>
-<a name="line-141"></a><span class='hs-comment'>-- | Usage: @'glAlphaFragmentOp1ATI' op dst dstMod arg1 arg1Rep arg1Mod@</span>
-<a name="line-142"></a><span class='hs-comment'>--</span>
-<a name="line-143"></a><span class='hs-comment'>-- The parameter @op@ is a @FragmentOpATI@.</span>
-<a name="line-144"></a>
+<a name="line-140"></a><span class='hs-comment'>{-# NOINLINE gl_ATI_fragment_shader #-}</span>
+<a name="line-141"></a>
+<a name="line-142"></a><span class='hs-comment'>-- | Usage: @'glAlphaFragmentOp1ATI' op dst dstMod arg1 arg1Rep arg1Mod@</span>
+<a name="line-143"></a><span class='hs-comment'>--</span>
+<a name="line-144"></a><span class='hs-comment'>-- The parameter @op@ is a @FragmentOpATI@.</span>
 <a name="line-145"></a>
-<a name="line-146"></a><a name="glAlphaFragmentOp1ATI"></a><span class='hs-definition'>glAlphaFragmentOp1ATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-147"></a><span class='hs-definition'>glAlphaFragmentOp1ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintuintuintuintIOV</span> <span class='hs-varid'>glAlphaFragmentOp1ATIFunPtr</span>
-<a name="line-148"></a>
-<a name="line-149"></a><a name="glAlphaFragmentOp1ATIFunPtr"></a><span class='hs-definition'>glAlphaFragmentOp1ATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-150"></a><span class='hs-definition'>glAlphaFragmentOp1ATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glAlphaFragmentOp1ATI"</span><span class='hs-layout'>)</span>
-<a name="line-151"></a>
-<a name="line-152"></a><span class='hs-comment'>{-# NOINLINE glAlphaFragmentOp1ATIFunPtr #-}</span>
-<a name="line-153"></a>
-<a name="line-154"></a><span class='hs-comment'>-- | Usage: @'glAlphaFragmentOp2ATI' op dst dstMod arg1 arg1Rep arg1Mod arg2 arg2Rep arg2Mod@</span>
-<a name="line-155"></a><span class='hs-comment'>--</span>
-<a name="line-156"></a><span class='hs-comment'>-- The parameter @op@ is a @FragmentOpATI@.</span>
-<a name="line-157"></a>
+<a name="line-146"></a>
+<a name="line-147"></a><a name="glAlphaFragmentOp1ATI"></a><span class='hs-definition'>glAlphaFragmentOp1ATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-148"></a><span class='hs-definition'>glAlphaFragmentOp1ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintuintuintuintIOV</span> <span class='hs-varid'>glAlphaFragmentOp1ATIFunPtr</span>
+<a name="line-149"></a>
+<a name="line-150"></a><a name="glAlphaFragmentOp1ATIFunPtr"></a><span class='hs-definition'>glAlphaFragmentOp1ATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-151"></a><span class='hs-definition'>glAlphaFragmentOp1ATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glAlphaFragmentOp1ATI"</span><span class='hs-layout'>)</span>
+<a name="line-152"></a>
+<a name="line-153"></a><span class='hs-comment'>{-# NOINLINE glAlphaFragmentOp1ATIFunPtr #-}</span>
+<a name="line-154"></a>
+<a name="line-155"></a><span class='hs-comment'>-- | Usage: @'glAlphaFragmentOp2ATI' op dst dstMod arg1 arg1Rep arg1Mod arg2 arg2Rep arg2Mod@</span>
+<a name="line-156"></a><span class='hs-comment'>--</span>
+<a name="line-157"></a><span class='hs-comment'>-- The parameter @op@ is a @FragmentOpATI@.</span>
 <a name="line-158"></a>
-<a name="line-159"></a><a name="glAlphaFragmentOp2ATI"></a><span class='hs-definition'>glAlphaFragmentOp2ATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-160"></a><span class='hs-definition'>glAlphaFragmentOp2ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintuintuintuintuintuintuintIOV</span> <span class='hs-varid'>glAlphaFragmentOp2ATIFunPtr</span>
-<a name="line-161"></a>
-<a name="line-162"></a><a name="glAlphaFragmentOp2ATIFunPtr"></a><span class='hs-definition'>glAlphaFragmentOp2ATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-163"></a><span class='hs-definition'>glAlphaFragmentOp2ATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glAlphaFragmentOp2ATI"</span><span class='hs-layout'>)</span>
-<a name="line-164"></a>
-<a name="line-165"></a><span class='hs-comment'>{-# NOINLINE glAlphaFragmentOp2ATIFunPtr #-}</span>
-<a name="line-166"></a>
-<a name="line-167"></a><span class='hs-comment'>-- | Usage: @'glAlphaFragmentOp3ATI' op dst dstMod arg1 arg1Rep arg1Mod arg2 arg2Rep arg2Mod arg3 arg3Rep arg3Mod@</span>
-<a name="line-168"></a><span class='hs-comment'>--</span>
-<a name="line-169"></a><span class='hs-comment'>-- The parameter @op@ is a @FragmentOpATI@.</span>
-<a name="line-170"></a>
+<a name="line-159"></a>
+<a name="line-160"></a><a name="glAlphaFragmentOp2ATI"></a><span class='hs-definition'>glAlphaFragmentOp2ATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-161"></a><span class='hs-definition'>glAlphaFragmentOp2ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintuintuintuintuintuintuintIOV</span> <span class='hs-varid'>glAlphaFragmentOp2ATIFunPtr</span>
+<a name="line-162"></a>
+<a name="line-163"></a><a name="glAlphaFragmentOp2ATIFunPtr"></a><span class='hs-definition'>glAlphaFragmentOp2ATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-164"></a><span class='hs-definition'>glAlphaFragmentOp2ATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glAlphaFragmentOp2ATI"</span><span class='hs-layout'>)</span>
+<a name="line-165"></a>
+<a name="line-166"></a><span class='hs-comment'>{-# NOINLINE glAlphaFragmentOp2ATIFunPtr #-}</span>
+<a name="line-167"></a>
+<a name="line-168"></a><span class='hs-comment'>-- | Usage: @'glAlphaFragmentOp3ATI' op dst dstMod arg1 arg1Rep arg1Mod arg2 arg2Rep arg2Mod arg3 arg3Rep arg3Mod@</span>
+<a name="line-169"></a><span class='hs-comment'>--</span>
+<a name="line-170"></a><span class='hs-comment'>-- The parameter @op@ is a @FragmentOpATI@.</span>
 <a name="line-171"></a>
-<a name="line-172"></a><a name="glAlphaFragmentOp3ATI"></a><span class='hs-definition'>glAlphaFragmentOp3ATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-173"></a><span class='hs-definition'>glAlphaFragmentOp3ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintuintuintuintuintuintuintuintuintuintIOV</span> <span class='hs-varid'>glAlphaFragmentOp3ATIFunPtr</span>
-<a name="line-174"></a>
-<a name="line-175"></a><a name="glAlphaFragmentOp3ATIFunPtr"></a><span class='hs-definition'>glAlphaFragmentOp3ATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-176"></a><span class='hs-definition'>glAlphaFragmentOp3ATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glAlphaFragmentOp3ATI"</span><span class='hs-layout'>)</span>
-<a name="line-177"></a>
-<a name="line-178"></a><span class='hs-comment'>{-# NOINLINE glAlphaFragmentOp3ATIFunPtr #-}</span>
-<a name="line-179"></a>
-<a name="line-180"></a><span class='hs-comment'>-- | Usage: @'glBeginFragmentShaderATI'@</span>
-<a name="line-181"></a>
+<a name="line-172"></a>
+<a name="line-173"></a><a name="glAlphaFragmentOp3ATI"></a><span class='hs-definition'>glAlphaFragmentOp3ATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-174"></a><span class='hs-definition'>glAlphaFragmentOp3ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintuintuintuintuintuintuintuintuintuintIOV</span> <span class='hs-varid'>glAlphaFragmentOp3ATIFunPtr</span>
+<a name="line-175"></a>
+<a name="line-176"></a><a name="glAlphaFragmentOp3ATIFunPtr"></a><span class='hs-definition'>glAlphaFragmentOp3ATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-177"></a><span class='hs-definition'>glAlphaFragmentOp3ATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glAlphaFragmentOp3ATI"</span><span class='hs-layout'>)</span>
+<a name="line-178"></a>
+<a name="line-179"></a><span class='hs-comment'>{-# NOINLINE glAlphaFragmentOp3ATIFunPtr #-}</span>
+<a name="line-180"></a>
+<a name="line-181"></a><span class='hs-comment'>-- | Usage: @'glBeginFragmentShaderATI'@</span>
 <a name="line-182"></a>
-<a name="line-183"></a><a name="glBeginFragmentShaderATI"></a><span class='hs-definition'>glBeginFragmentShaderATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-184"></a><span class='hs-definition'>glBeginFragmentShaderATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiIOV</span> <span class='hs-varid'>glBeginFragmentShaderATIFunPtr</span>
-<a name="line-185"></a>
-<a name="line-186"></a><a name="glBeginFragmentShaderATIFunPtr"></a><span class='hs-definition'>glBeginFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-187"></a><span class='hs-definition'>glBeginFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBeginFragmentShaderATI"</span><span class='hs-layout'>)</span>
-<a name="line-188"></a>
-<a name="line-189"></a><span class='hs-comment'>{-# NOINLINE glBeginFragmentShaderATIFunPtr #-}</span>
-<a name="line-190"></a>
-<a name="line-191"></a><span class='hs-comment'>-- | Usage: @'glBindFragmentShaderATI' id@</span>
-<a name="line-192"></a>
+<a name="line-183"></a>
+<a name="line-184"></a><a name="glBeginFragmentShaderATI"></a><span class='hs-definition'>glBeginFragmentShaderATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-185"></a><span class='hs-definition'>glBeginFragmentShaderATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiIOV</span> <span class='hs-varid'>glBeginFragmentShaderATIFunPtr</span>
+<a name="line-186"></a>
+<a name="line-187"></a><a name="glBeginFragmentShaderATIFunPtr"></a><span class='hs-definition'>glBeginFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-188"></a><span class='hs-definition'>glBeginFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBeginFragmentShaderATI"</span><span class='hs-layout'>)</span>
+<a name="line-189"></a>
+<a name="line-190"></a><span class='hs-comment'>{-# NOINLINE glBeginFragmentShaderATIFunPtr #-}</span>
+<a name="line-191"></a>
+<a name="line-192"></a><span class='hs-comment'>-- | Usage: @'glBindFragmentShaderATI' id@</span>
 <a name="line-193"></a>
-<a name="line-194"></a><a name="glBindFragmentShaderATI"></a><span class='hs-definition'>glBindFragmentShaderATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-195"></a><span class='hs-definition'>glBindFragmentShaderATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOV</span> <span class='hs-varid'>glBindFragmentShaderATIFunPtr</span>
-<a name="line-196"></a>
-<a name="line-197"></a><a name="glBindFragmentShaderATIFunPtr"></a><span class='hs-definition'>glBindFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-198"></a><span class='hs-definition'>glBindFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindFragmentShaderATI"</span><span class='hs-layout'>)</span>
-<a name="line-199"></a>
-<a name="line-200"></a><span class='hs-comment'>{-# NOINLINE glBindFragmentShaderATIFunPtr #-}</span>
-<a name="line-201"></a>
-<a name="line-202"></a><span class='hs-comment'>-- | Usage: @'glColorFragmentOp1ATI' op dst dstMask dstMod arg1 arg1Rep arg1Mod@</span>
-<a name="line-203"></a><span class='hs-comment'>--</span>
-<a name="line-204"></a><span class='hs-comment'>-- The parameter @op@ is a @FragmentOpATI@.</span>
-<a name="line-205"></a>
+<a name="line-194"></a>
+<a name="line-195"></a><a name="glBindFragmentShaderATI"></a><span class='hs-definition'>glBindFragmentShaderATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-196"></a><span class='hs-definition'>glBindFragmentShaderATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOV</span> <span class='hs-varid'>glBindFragmentShaderATIFunPtr</span>
+<a name="line-197"></a>
+<a name="line-198"></a><a name="glBindFragmentShaderATIFunPtr"></a><span class='hs-definition'>glBindFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-199"></a><span class='hs-definition'>glBindFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBindFragmentShaderATI"</span><span class='hs-layout'>)</span>
+<a name="line-200"></a>
+<a name="line-201"></a><span class='hs-comment'>{-# NOINLINE glBindFragmentShaderATIFunPtr #-}</span>
+<a name="line-202"></a>
+<a name="line-203"></a><span class='hs-comment'>-- | Usage: @'glColorFragmentOp1ATI' op dst dstMask dstMod arg1 arg1Rep arg1Mod@</span>
+<a name="line-204"></a><span class='hs-comment'>--</span>
+<a name="line-205"></a><span class='hs-comment'>-- The parameter @op@ is a @FragmentOpATI@.</span>
 <a name="line-206"></a>
-<a name="line-207"></a><a name="glColorFragmentOp1ATI"></a><span class='hs-definition'>glColorFragmentOp1ATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-208"></a><span class='hs-definition'>glColorFragmentOp1ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintuintuintuintuintIOV</span> <span class='hs-varid'>glColorFragmentOp1ATIFunPtr</span>
-<a name="line-209"></a>
-<a name="line-210"></a><a name="glColorFragmentOp1ATIFunPtr"></a><span class='hs-definition'>glColorFragmentOp1ATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-211"></a><span class='hs-definition'>glColorFragmentOp1ATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glColorFragmentOp1ATI"</span><span class='hs-layout'>)</span>
-<a name="line-212"></a>
-<a name="line-213"></a><span class='hs-comment'>{-# NOINLINE glColorFragmentOp1ATIFunPtr #-}</span>
-<a name="line-214"></a>
-<a name="line-215"></a><span class='hs-comment'>-- | Usage: @'glColorFragmentOp2ATI' op dst dstMask dstMod arg1 arg1Rep arg1Mod arg2 arg2Rep arg2Mod@</span>
-<a name="line-216"></a><span class='hs-comment'>--</span>
-<a name="line-217"></a><span class='hs-comment'>-- The parameter @op@ is a @FragmentOpATI@.</span>
-<a name="line-218"></a>
+<a name="line-207"></a>
+<a name="line-208"></a><a name="glColorFragmentOp1ATI"></a><span class='hs-definition'>glColorFragmentOp1ATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-209"></a><span class='hs-definition'>glColorFragmentOp1ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintuintuintuintuintIOV</span> <span class='hs-varid'>glColorFragmentOp1ATIFunPtr</span>
+<a name="line-210"></a>
+<a name="line-211"></a><a name="glColorFragmentOp1ATIFunPtr"></a><span class='hs-definition'>glColorFragmentOp1ATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-212"></a><span class='hs-definition'>glColorFragmentOp1ATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glColorFragmentOp1ATI"</span><span class='hs-layout'>)</span>
+<a name="line-213"></a>
+<a name="line-214"></a><span class='hs-comment'>{-# NOINLINE glColorFragmentOp1ATIFunPtr #-}</span>
+<a name="line-215"></a>
+<a name="line-216"></a><span class='hs-comment'>-- | Usage: @'glColorFragmentOp2ATI' op dst dstMask dstMod arg1 arg1Rep arg1Mod arg2 arg2Rep arg2Mod@</span>
+<a name="line-217"></a><span class='hs-comment'>--</span>
+<a name="line-218"></a><span class='hs-comment'>-- The parameter @op@ is a @FragmentOpATI@.</span>
 <a name="line-219"></a>
-<a name="line-220"></a><a name="glColorFragmentOp2ATI"></a><span class='hs-definition'>glColorFragmentOp2ATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-221"></a><span class='hs-definition'>glColorFragmentOp2ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintuintuintuintuintuintuintuintIOV</span> <span class='hs-varid'>glColorFragmentOp2ATIFunPtr</span>
-<a name="line-222"></a>
-<a name="line-223"></a><a name="glColorFragmentOp2ATIFunPtr"></a><span class='hs-definition'>glColorFragmentOp2ATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-224"></a><span class='hs-definition'>glColorFragmentOp2ATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glColorFragmentOp2ATI"</span><span class='hs-layout'>)</span>
-<a name="line-225"></a>
-<a name="line-226"></a><span class='hs-comment'>{-# NOINLINE glColorFragmentOp2ATIFunPtr #-}</span>
-<a name="line-227"></a>
-<a name="line-228"></a><span class='hs-comment'>-- | Usage: @'glColorFragmentOp3ATI' op dst dstMask dstMod arg1 arg1Rep arg1Mod arg2 arg2Rep arg2Mod arg3 arg3Rep arg3Mod@</span>
-<a name="line-229"></a><span class='hs-comment'>--</span>
-<a name="line-230"></a><span class='hs-comment'>-- The parameter @op@ is a @FragmentOpATI@.</span>
-<a name="line-231"></a>
+<a name="line-220"></a>
+<a name="line-221"></a><a name="glColorFragmentOp2ATI"></a><span class='hs-definition'>glColorFragmentOp2ATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-222"></a><span class='hs-definition'>glColorFragmentOp2ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintuintuintuintuintuintuintuintIOV</span> <span class='hs-varid'>glColorFragmentOp2ATIFunPtr</span>
+<a name="line-223"></a>
+<a name="line-224"></a><a name="glColorFragmentOp2ATIFunPtr"></a><span class='hs-definition'>glColorFragmentOp2ATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-225"></a><span class='hs-definition'>glColorFragmentOp2ATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glColorFragmentOp2ATI"</span><span class='hs-layout'>)</span>
+<a name="line-226"></a>
+<a name="line-227"></a><span class='hs-comment'>{-# NOINLINE glColorFragmentOp2ATIFunPtr #-}</span>
+<a name="line-228"></a>
+<a name="line-229"></a><span class='hs-comment'>-- | Usage: @'glColorFragmentOp3ATI' op dst dstMask dstMod arg1 arg1Rep arg1Mod arg2 arg2Rep arg2Mod arg3 arg3Rep arg3Mod@</span>
+<a name="line-230"></a><span class='hs-comment'>--</span>
+<a name="line-231"></a><span class='hs-comment'>-- The parameter @op@ is a @FragmentOpATI@.</span>
 <a name="line-232"></a>
-<a name="line-233"></a><a name="glColorFragmentOp3ATI"></a><span class='hs-definition'>glColorFragmentOp3ATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-234"></a><span class='hs-definition'>glColorFragmentOp3ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintuintuintuintuintuintuintuintuintuintuintIOV</span> <span class='hs-varid'>glColorFragmentOp3ATIFunPtr</span>
-<a name="line-235"></a>
-<a name="line-236"></a><a name="glColorFragmentOp3ATIFunPtr"></a><span class='hs-definition'>glColorFragmentOp3ATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-237"></a><span class='hs-definition'>glColorFragmentOp3ATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glColorFragmentOp3ATI"</span><span class='hs-layout'>)</span>
-<a name="line-238"></a>
-<a name="line-239"></a><span class='hs-comment'>{-# NOINLINE glColorFragmentOp3ATIFunPtr #-}</span>
-<a name="line-240"></a>
-<a name="line-241"></a><span class='hs-comment'>-- | Usage: @'glDeleteFragmentShaderATI' id@</span>
-<a name="line-242"></a>
+<a name="line-233"></a>
+<a name="line-234"></a><a name="glColorFragmentOp3ATI"></a><span class='hs-definition'>glColorFragmentOp3ATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-235"></a><span class='hs-definition'>glColorFragmentOp3ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumuintuintuintuintuintuintuintuintuintuintuintuintIOV</span> <span class='hs-varid'>glColorFragmentOp3ATIFunPtr</span>
+<a name="line-236"></a>
+<a name="line-237"></a><a name="glColorFragmentOp3ATIFunPtr"></a><span class='hs-definition'>glColorFragmentOp3ATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-238"></a><span class='hs-definition'>glColorFragmentOp3ATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glColorFragmentOp3ATI"</span><span class='hs-layout'>)</span>
+<a name="line-239"></a>
+<a name="line-240"></a><span class='hs-comment'>{-# NOINLINE glColorFragmentOp3ATIFunPtr #-}</span>
+<a name="line-241"></a>
+<a name="line-242"></a><span class='hs-comment'>-- | Usage: @'glDeleteFragmentShaderATI' id@</span>
 <a name="line-243"></a>
-<a name="line-244"></a><a name="glDeleteFragmentShaderATI"></a><span class='hs-definition'>glDeleteFragmentShaderATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-245"></a><span class='hs-definition'>glDeleteFragmentShaderATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOV</span> <span class='hs-varid'>glDeleteFragmentShaderATIFunPtr</span>
-<a name="line-246"></a>
-<a name="line-247"></a><a name="glDeleteFragmentShaderATIFunPtr"></a><span class='hs-definition'>glDeleteFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-248"></a><span class='hs-definition'>glDeleteFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeleteFragmentShaderATI"</span><span class='hs-layout'>)</span>
-<a name="line-249"></a>
-<a name="line-250"></a><span class='hs-comment'>{-# NOINLINE glDeleteFragmentShaderATIFunPtr #-}</span>
-<a name="line-251"></a>
-<a name="line-252"></a><span class='hs-comment'>-- | Usage: @'glEndFragmentShaderATI'@</span>
-<a name="line-253"></a>
+<a name="line-244"></a>
+<a name="line-245"></a><a name="glDeleteFragmentShaderATI"></a><span class='hs-definition'>glDeleteFragmentShaderATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-246"></a><span class='hs-definition'>glDeleteFragmentShaderATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOV</span> <span class='hs-varid'>glDeleteFragmentShaderATIFunPtr</span>
+<a name="line-247"></a>
+<a name="line-248"></a><a name="glDeleteFragmentShaderATIFunPtr"></a><span class='hs-definition'>glDeleteFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-249"></a><span class='hs-definition'>glDeleteFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeleteFragmentShaderATI"</span><span class='hs-layout'>)</span>
+<a name="line-250"></a>
+<a name="line-251"></a><span class='hs-comment'>{-# NOINLINE glDeleteFragmentShaderATIFunPtr #-}</span>
+<a name="line-252"></a>
+<a name="line-253"></a><span class='hs-comment'>-- | Usage: @'glEndFragmentShaderATI'@</span>
 <a name="line-254"></a>
-<a name="line-255"></a><a name="glEndFragmentShaderATI"></a><span class='hs-definition'>glEndFragmentShaderATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-256"></a><span class='hs-definition'>glEndFragmentShaderATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiIOV</span> <span class='hs-varid'>glEndFragmentShaderATIFunPtr</span>
-<a name="line-257"></a>
-<a name="line-258"></a><a name="glEndFragmentShaderATIFunPtr"></a><span class='hs-definition'>glEndFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-259"></a><span class='hs-definition'>glEndFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glEndFragmentShaderATI"</span><span class='hs-layout'>)</span>
-<a name="line-260"></a>
-<a name="line-261"></a><span class='hs-comment'>{-# NOINLINE glEndFragmentShaderATIFunPtr #-}</span>
-<a name="line-262"></a>
-<a name="line-263"></a><span class='hs-comment'>-- | Usage: @'glGenFragmentShadersATI' range@</span>
-<a name="line-264"></a>
+<a name="line-255"></a>
+<a name="line-256"></a><a name="glEndFragmentShaderATI"></a><span class='hs-definition'>glEndFragmentShaderATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-257"></a><span class='hs-definition'>glEndFragmentShaderATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiIOV</span> <span class='hs-varid'>glEndFragmentShaderATIFunPtr</span>
+<a name="line-258"></a>
+<a name="line-259"></a><a name="glEndFragmentShaderATIFunPtr"></a><span class='hs-definition'>glEndFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-260"></a><span class='hs-definition'>glEndFragmentShaderATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glEndFragmentShaderATI"</span><span class='hs-layout'>)</span>
+<a name="line-261"></a>
+<a name="line-262"></a><span class='hs-comment'>{-# NOINLINE glEndFragmentShaderATIFunPtr #-}</span>
+<a name="line-263"></a>
+<a name="line-264"></a><span class='hs-comment'>-- | Usage: @'glGenFragmentShadersATI' range@</span>
 <a name="line-265"></a>
-<a name="line-266"></a><a name="glGenFragmentShadersATI"></a><span class='hs-definition'>glGenFragmentShadersATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLuint</span>
-<a name="line-267"></a><span class='hs-definition'>glGenFragmentShadersATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOuint</span> <span class='hs-varid'>glGenFragmentShadersATIFunPtr</span>
-<a name="line-268"></a>
-<a name="line-269"></a><a name="glGenFragmentShadersATIFunPtr"></a><span class='hs-definition'>glGenFragmentShadersATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLuint</span><span class='hs-layout'>)</span>
-<a name="line-270"></a><span class='hs-definition'>glGenFragmentShadersATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGenFragmentShadersATI"</span><span class='hs-layout'>)</span>
-<a name="line-271"></a>
-<a name="line-272"></a><span class='hs-comment'>{-# NOINLINE glGenFragmentShadersATIFunPtr #-}</span>
-<a name="line-273"></a>
-<a name="line-274"></a><span class='hs-comment'>-- | Usage: @'glPassTexCoordATI' dst coord swizzle@</span>
-<a name="line-275"></a><span class='hs-comment'>--</span>
-<a name="line-276"></a><span class='hs-comment'>-- The parameter @swizzle@ is a @SwizzleOpATI@.</span>
-<a name="line-277"></a>
+<a name="line-266"></a>
+<a name="line-267"></a><a name="glGenFragmentShadersATI"></a><span class='hs-definition'>glGenFragmentShadersATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>GLuint</span>
+<a name="line-268"></a><span class='hs-definition'>glGenFragmentShadersATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintIOuint</span> <span class='hs-varid'>glGenFragmentShadersATIFunPtr</span>
+<a name="line-269"></a>
+<a name="line-270"></a><a name="glGenFragmentShadersATIFunPtr"></a><span class='hs-definition'>glGenFragmentShadersATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>GLuint</span><span class='hs-layout'>)</span>
+<a name="line-271"></a><span class='hs-definition'>glGenFragmentShadersATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glGenFragmentShadersATI"</span><span class='hs-layout'>)</span>
+<a name="line-272"></a>
+<a name="line-273"></a><span class='hs-comment'>{-# NOINLINE glGenFragmentShadersATIFunPtr #-}</span>
+<a name="line-274"></a>
+<a name="line-275"></a><span class='hs-comment'>-- | Usage: @'glPassTexCoordATI' dst coord swizzle@</span>
+<a name="line-276"></a><span class='hs-comment'>--</span>
+<a name="line-277"></a><span class='hs-comment'>-- The parameter @swizzle@ is a @SwizzleOpATI@.</span>
 <a name="line-278"></a>
-<a name="line-279"></a><a name="glPassTexCoordATI"></a><span class='hs-definition'>glPassTexCoordATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-280"></a><span class='hs-definition'>glPassTexCoordATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintenumIOV</span> <span class='hs-varid'>glPassTexCoordATIFunPtr</span>
-<a name="line-281"></a>
-<a name="line-282"></a><a name="glPassTexCoordATIFunPtr"></a><span class='hs-definition'>glPassTexCoordATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-283"></a><span class='hs-definition'>glPassTexCoordATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glPassTexCoordATI"</span><span class='hs-layout'>)</span>
-<a name="line-284"></a>
-<a name="line-285"></a><span class='hs-comment'>{-# NOINLINE glPassTexCoordATIFunPtr #-}</span>
-<a name="line-286"></a>
-<a name="line-287"></a><span class='hs-comment'>-- | Usage: @'glSampleMapATI' dst interp swizzle@</span>
-<a name="line-288"></a><span class='hs-comment'>--</span>
-<a name="line-289"></a><span class='hs-comment'>-- The parameter @swizzle@ is a @SwizzleOpATI@.</span>
-<a name="line-290"></a>
+<a name="line-279"></a>
+<a name="line-280"></a><a name="glPassTexCoordATI"></a><span class='hs-definition'>glPassTexCoordATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-281"></a><span class='hs-definition'>glPassTexCoordATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintenumIOV</span> <span class='hs-varid'>glPassTexCoordATIFunPtr</span>
+<a name="line-282"></a>
+<a name="line-283"></a><a name="glPassTexCoordATIFunPtr"></a><span class='hs-definition'>glPassTexCoordATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-284"></a><span class='hs-definition'>glPassTexCoordATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glPassTexCoordATI"</span><span class='hs-layout'>)</span>
+<a name="line-285"></a>
+<a name="line-286"></a><span class='hs-comment'>{-# NOINLINE glPassTexCoordATIFunPtr #-}</span>
+<a name="line-287"></a>
+<a name="line-288"></a><span class='hs-comment'>-- | Usage: @'glSampleMapATI' dst interp swizzle@</span>
+<a name="line-289"></a><span class='hs-comment'>--</span>
+<a name="line-290"></a><span class='hs-comment'>-- The parameter @swizzle@ is a @SwizzleOpATI@.</span>
 <a name="line-291"></a>
-<a name="line-292"></a><a name="glSampleMapATI"></a><span class='hs-definition'>glSampleMapATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-293"></a><span class='hs-definition'>glSampleMapATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintenumIOV</span> <span class='hs-varid'>glSampleMapATIFunPtr</span>
-<a name="line-294"></a>
-<a name="line-295"></a><a name="glSampleMapATIFunPtr"></a><span class='hs-definition'>glSampleMapATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-296"></a><span class='hs-definition'>glSampleMapATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSampleMapATI"</span><span class='hs-layout'>)</span>
-<a name="line-297"></a>
-<a name="line-298"></a><span class='hs-comment'>{-# NOINLINE glSampleMapATIFunPtr #-}</span>
-<a name="line-299"></a>
-<a name="line-300"></a><span class='hs-comment'>-- | Usage: @'glSetFragmentShaderConstantATI' dst value@</span>
-<a name="line-301"></a><span class='hs-comment'>--</span>
-<a name="line-302"></a><span class='hs-comment'>-- The length of @value@ should be @4@.</span>
-<a name="line-303"></a>
+<a name="line-292"></a>
+<a name="line-293"></a><a name="glSampleMapATI"></a><span class='hs-definition'>glSampleMapATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-294"></a><span class='hs-definition'>glSampleMapATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintuintenumIOV</span> <span class='hs-varid'>glSampleMapATIFunPtr</span>
+<a name="line-295"></a>
+<a name="line-296"></a><a name="glSampleMapATIFunPtr"></a><span class='hs-definition'>glSampleMapATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-297"></a><span class='hs-definition'>glSampleMapATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSampleMapATI"</span><span class='hs-layout'>)</span>
+<a name="line-298"></a>
+<a name="line-299"></a><span class='hs-comment'>{-# NOINLINE glSampleMapATIFunPtr #-}</span>
+<a name="line-300"></a>
+<a name="line-301"></a><span class='hs-comment'>-- | Usage: @'glSetFragmentShaderConstantATI' dst value@</span>
+<a name="line-302"></a><span class='hs-comment'>--</span>
+<a name="line-303"></a><span class='hs-comment'>-- The length of @value@ should be @4@.</span>
 <a name="line-304"></a>
-<a name="line-305"></a><a name="glSetFragmentShaderConstantATI"></a><span class='hs-definition'>glSetFragmentShaderConstantATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-306"></a><span class='hs-definition'>glSetFragmentShaderConstantATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrfloatIOV</span> <span class='hs-varid'>glSetFragmentShaderConstantATIFunPtr</span>
-<a name="line-307"></a>
-<a name="line-308"></a><a name="glSetFragmentShaderConstantATIFunPtr"></a><span class='hs-definition'>glSetFragmentShaderConstantATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-309"></a><span class='hs-definition'>glSetFragmentShaderConstantATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSetFragmentShaderConstantATI"</span><span class='hs-layout'>)</span>
-<a name="line-310"></a>
-<a name="line-311"></a><span class='hs-comment'>{-# NOINLINE glSetFragmentShaderConstantATIFunPtr #-}</span>
-<a name="line-312"></a>
-<a name="line-313"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_2X_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000001</span>
-<a name="line-314"></a>
-<a name="line-315"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_4X_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000002</span>
-<a name="line-316"></a>
-<a name="line-317"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_8X_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000004</span>
-<a name="line-318"></a>
-<a name="line-319"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ADD_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8963</span>
-<a name="line-320"></a>
-<a name="line-321"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BIAS_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000008</span>
-<a name="line-322"></a>
-<a name="line-323"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BLUE_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000004</span>
-<a name="line-324"></a>
-<a name="line-325"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CND0_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x896B</span>
-<a name="line-326"></a>
-<a name="line-327"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CND_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x896A</span>
-<a name="line-328"></a>
-<a name="line-329"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_ALPHA_PAIRING_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8975</span>
-<a name="line-330"></a>
-<a name="line-331"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COMP_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000002</span>
-<a name="line-332"></a>
-<a name="line-333"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_0_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8941</span>
-<a name="line-334"></a>
-<a name="line-335"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_10_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x894B</span>
-<a name="line-336"></a>
-<a name="line-337"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_11_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x894C</span>
-<a name="line-338"></a>
-<a name="line-339"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_12_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x894D</span>
-<a name="line-340"></a>
-<a name="line-341"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_13_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x894E</span>
-<a name="line-342"></a>
-<a name="line-343"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_14_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x894F</span>
-<a name="line-344"></a>
-<a name="line-345"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_15_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8950</span>
-<a name="line-346"></a>
-<a name="line-347"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_16_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8951</span>
-<a name="line-348"></a>
-<a name="line-349"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_17_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8952</span>
-<a name="line-350"></a>
-<a name="line-351"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_18_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8953</span>
-<a name="line-352"></a>
-<a name="line-353"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_19_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8954</span>
-<a name="line-354"></a>
-<a name="line-355"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_1_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8942</span>
-<a name="line-356"></a>
-<a name="line-357"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_20_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8955</span>
-<a name="line-358"></a>
-<a name="line-359"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_21_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8956</span>
-<a name="line-360"></a>
-<a name="line-361"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_22_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8957</span>
-<a name="line-362"></a>
-<a name="line-363"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_23_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8958</span>
-<a name="line-364"></a>
-<a name="line-365"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_24_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8959</span>
-<a name="line-366"></a>
-<a name="line-367"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_25_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x895A</span>
-<a name="line-368"></a>
-<a name="line-369"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_26_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x895B</span>
-<a name="line-370"></a>
-<a name="line-371"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_27_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x895C</span>
-<a name="line-372"></a>
-<a name="line-373"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_28_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x895D</span>
-<a name="line-374"></a>
-<a name="line-375"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_29_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x895E</span>
-<a name="line-376"></a>
-<a name="line-377"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_2_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8943</span>
-<a name="line-378"></a>
-<a name="line-379"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_30_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x895F</span>
-<a name="line-380"></a>
-<a name="line-381"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_31_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8960</span>
-<a name="line-382"></a>
-<a name="line-383"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_3_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8944</span>
-<a name="line-384"></a>
-<a name="line-385"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_4_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8945</span>
-<a name="line-386"></a>
-<a name="line-387"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_5_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8946</span>
-<a name="line-388"></a>
-<a name="line-389"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_6_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8947</span>
-<a name="line-390"></a>
-<a name="line-391"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_7_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8948</span>
-<a name="line-392"></a>
-<a name="line-393"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_8_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8949</span>
-<a name="line-394"></a>
-<a name="line-395"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_9_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x894A</span>
-<a name="line-396"></a>
-<a name="line-397"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOT2_ADD_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x896C</span>
-<a name="line-398"></a>
-<a name="line-399"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOT3_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8966</span>
-<a name="line-400"></a>
-<a name="line-401"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOT4_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8967</span>
-<a name="line-402"></a>
-<a name="line-403"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_EIGHTH_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000020</span>
-<a name="line-404"></a>
-<a name="line-405"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAGMENT_SHADER_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8920</span>
-<a name="line-406"></a>
-<a name="line-407"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GREEN_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000002</span>
-<a name="line-408"></a>
-<a name="line-409"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_HALF_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000008</span>
-<a name="line-410"></a>
-<a name="line-411"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LERP_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8969</span>
-<a name="line-412"></a>
-<a name="line-413"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAD_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8968</span>
-<a name="line-414"></a>
-<a name="line-415"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MOV_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8961</span>
-<a name="line-416"></a>
-<a name="line-417"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MUL_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8964</span>
-<a name="line-418"></a>
-<a name="line-419"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NEGATE_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000004</span>
-<a name="line-420"></a>
-<a name="line-421"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_FRAGMENT_CONSTANTS_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x896F</span>
-<a name="line-422"></a>
-<a name="line-423"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_FRAGMENT_REGISTERS_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x896E</span>
-<a name="line-424"></a>
-<a name="line-425"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_INPUT_INTERPOLATOR_COMPONENTS_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8973</span>
-<a name="line-426"></a>
-<a name="line-427"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_INSTRUCTIONS_PER_PASS_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8971</span>
-<a name="line-428"></a>
-<a name="line-429"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_INSTRUCTIONS_TOTAL_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8972</span>
-<a name="line-430"></a>
-<a name="line-431"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_LOOPBACK_COMPONENTS_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8974</span>
-<a name="line-432"></a>
-<a name="line-433"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_PASSES_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8970</span>
-<a name="line-434"></a>
-<a name="line-435"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_QUARTER_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000010</span>
-<a name="line-436"></a>
-<a name="line-437"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RED_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000001</span>
-<a name="line-438"></a>
-<a name="line-439"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_0_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8921</span>
-<a name="line-440"></a>
-<a name="line-441"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_10_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x892B</span>
-<a name="line-442"></a>
-<a name="line-443"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_11_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x892C</span>
-<a name="line-444"></a>
-<a name="line-445"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_12_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x892D</span>
-<a name="line-446"></a>
-<a name="line-447"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_13_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x892E</span>
-<a name="line-448"></a>
-<a name="line-449"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_14_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x892F</span>
-<a name="line-450"></a>
-<a name="line-451"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_15_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8930</span>
-<a name="line-452"></a>
-<a name="line-453"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_16_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8931</span>
-<a name="line-454"></a>
-<a name="line-455"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_17_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8932</span>
-<a name="line-456"></a>
-<a name="line-457"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_18_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8933</span>
-<a name="line-458"></a>
-<a name="line-459"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_19_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8934</span>
-<a name="line-460"></a>
-<a name="line-461"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_1_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8922</span>
-<a name="line-462"></a>
-<a name="line-463"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_20_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8935</span>
-<a name="line-464"></a>
-<a name="line-465"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_21_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8936</span>
-<a name="line-466"></a>
-<a name="line-467"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_22_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8937</span>
-<a name="line-468"></a>
-<a name="line-469"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_23_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8938</span>
-<a name="line-470"></a>
-<a name="line-471"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_24_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8939</span>
-<a name="line-472"></a>
-<a name="line-473"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_25_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x893A</span>
-<a name="line-474"></a>
-<a name="line-475"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_26_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x893B</span>
-<a name="line-476"></a>
-<a name="line-477"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_27_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x893C</span>
-<a name="line-478"></a>
-<a name="line-479"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_28_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x893D</span>
-<a name="line-480"></a>
-<a name="line-481"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_29_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x893E</span>
-<a name="line-482"></a>
-<a name="line-483"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_2_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8923</span>
-<a name="line-484"></a>
-<a name="line-485"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_30_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x893F</span>
-<a name="line-486"></a>
-<a name="line-487"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_31_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8940</span>
-<a name="line-488"></a>
-<a name="line-489"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_3_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8924</span>
-<a name="line-490"></a>
-<a name="line-491"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_4_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8925</span>
-<a name="line-492"></a>
-<a name="line-493"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_5_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8926</span>
-<a name="line-494"></a>
-<a name="line-495"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_6_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8927</span>
-<a name="line-496"></a>
-<a name="line-497"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_7_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8928</span>
-<a name="line-498"></a>
-<a name="line-499"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_8_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8929</span>
-<a name="line-500"></a>
-<a name="line-501"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_9_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x892A</span>
-<a name="line-502"></a>
-<a name="line-503"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SATURATE_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000040</span>
-<a name="line-504"></a>
-<a name="line-505"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SECONDARY_INTERPOLATOR_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x896D</span>
-<a name="line-506"></a>
-<a name="line-507"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SUB_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8965</span>
-<a name="line-508"></a>
-<a name="line-509"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SWIZZLE_STQ_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8977</span>
-<a name="line-510"></a>
-<a name="line-511"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SWIZZLE_STQ_DQ_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8979</span>
-<a name="line-512"></a>
-<a name="line-513"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SWIZZLE_STRQ_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x897A</span>
-<a name="line-514"></a>
-<a name="line-515"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SWIZZLE_STRQ_DQ_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x897B</span>
-<a name="line-516"></a>
-<a name="line-517"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SWIZZLE_STR_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8976</span>
-<a name="line-518"></a>
-<a name="line-519"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SWIZZLE_STR_DR_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8978</span>
+<a name="line-305"></a>
+<a name="line-306"></a><a name="glSetFragmentShaderConstantATI"></a><span class='hs-definition'>glSetFragmentShaderConstantATI</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-307"></a><span class='hs-definition'>glSetFragmentShaderConstantATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintPtrfloatIOV</span> <span class='hs-varid'>glSetFragmentShaderConstantATIFunPtr</span>
+<a name="line-308"></a>
+<a name="line-309"></a><a name="glSetFragmentShaderConstantATIFunPtr"></a><span class='hs-definition'>glSetFragmentShaderConstantATIFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-310"></a><span class='hs-definition'>glSetFragmentShaderConstantATIFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glSetFragmentShaderConstantATI"</span><span class='hs-layout'>)</span>
+<a name="line-311"></a>
+<a name="line-312"></a><span class='hs-comment'>{-# NOINLINE glSetFragmentShaderConstantATIFunPtr #-}</span>
+<a name="line-313"></a>
+<a name="line-314"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_2X_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000001</span>
+<a name="line-315"></a>
+<a name="line-316"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_4X_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000002</span>
+<a name="line-317"></a>
+<a name="line-318"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_8X_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000004</span>
+<a name="line-319"></a>
+<a name="line-320"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ADD_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8963</span>
+<a name="line-321"></a>
+<a name="line-322"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BIAS_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000008</span>
+<a name="line-323"></a>
+<a name="line-324"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BLUE_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000004</span>
+<a name="line-325"></a>
+<a name="line-326"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CND0_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x896B</span>
+<a name="line-327"></a>
+<a name="line-328"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CND_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x896A</span>
+<a name="line-329"></a>
+<a name="line-330"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COLOR_ALPHA_PAIRING_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8975</span>
+<a name="line-331"></a>
+<a name="line-332"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_COMP_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000002</span>
+<a name="line-333"></a>
+<a name="line-334"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_0_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8941</span>
+<a name="line-335"></a>
+<a name="line-336"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_10_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x894B</span>
+<a name="line-337"></a>
+<a name="line-338"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_11_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x894C</span>
+<a name="line-339"></a>
+<a name="line-340"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_12_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x894D</span>
+<a name="line-341"></a>
+<a name="line-342"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_13_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x894E</span>
+<a name="line-343"></a>
+<a name="line-344"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_14_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x894F</span>
+<a name="line-345"></a>
+<a name="line-346"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_15_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8950</span>
+<a name="line-347"></a>
+<a name="line-348"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_16_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8951</span>
+<a name="line-349"></a>
+<a name="line-350"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_17_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8952</span>
+<a name="line-351"></a>
+<a name="line-352"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_18_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8953</span>
+<a name="line-353"></a>
+<a name="line-354"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_19_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8954</span>
+<a name="line-355"></a>
+<a name="line-356"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_1_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8942</span>
+<a name="line-357"></a>
+<a name="line-358"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_20_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8955</span>
+<a name="line-359"></a>
+<a name="line-360"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_21_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8956</span>
+<a name="line-361"></a>
+<a name="line-362"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_22_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8957</span>
+<a name="line-363"></a>
+<a name="line-364"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_23_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8958</span>
+<a name="line-365"></a>
+<a name="line-366"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_24_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8959</span>
+<a name="line-367"></a>
+<a name="line-368"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_25_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x895A</span>
+<a name="line-369"></a>
+<a name="line-370"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_26_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x895B</span>
+<a name="line-371"></a>
+<a name="line-372"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_27_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x895C</span>
+<a name="line-373"></a>
+<a name="line-374"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_28_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x895D</span>
+<a name="line-375"></a>
+<a name="line-376"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_29_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x895E</span>
+<a name="line-377"></a>
+<a name="line-378"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_2_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8943</span>
+<a name="line-379"></a>
+<a name="line-380"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_30_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x895F</span>
+<a name="line-381"></a>
+<a name="line-382"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_31_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8960</span>
+<a name="line-383"></a>
+<a name="line-384"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_3_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8944</span>
+<a name="line-385"></a>
+<a name="line-386"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_4_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8945</span>
+<a name="line-387"></a>
+<a name="line-388"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_5_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8946</span>
+<a name="line-389"></a>
+<a name="line-390"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_6_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8947</span>
+<a name="line-391"></a>
+<a name="line-392"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_7_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8948</span>
+<a name="line-393"></a>
+<a name="line-394"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_8_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8949</span>
+<a name="line-395"></a>
+<a name="line-396"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CON_9_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x894A</span>
+<a name="line-397"></a>
+<a name="line-398"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOT2_ADD_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x896C</span>
+<a name="line-399"></a>
+<a name="line-400"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOT3_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8966</span>
+<a name="line-401"></a>
+<a name="line-402"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DOT4_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8967</span>
+<a name="line-403"></a>
+<a name="line-404"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_EIGHTH_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000020</span>
+<a name="line-405"></a>
+<a name="line-406"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAGMENT_SHADER_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8920</span>
+<a name="line-407"></a>
+<a name="line-408"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GREEN_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000002</span>
+<a name="line-409"></a>
+<a name="line-410"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_HALF_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000008</span>
+<a name="line-411"></a>
+<a name="line-412"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LERP_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8969</span>
+<a name="line-413"></a>
+<a name="line-414"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAD_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8968</span>
+<a name="line-415"></a>
+<a name="line-416"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MOV_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8961</span>
+<a name="line-417"></a>
+<a name="line-418"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MUL_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8964</span>
+<a name="line-419"></a>
+<a name="line-420"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NEGATE_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000004</span>
+<a name="line-421"></a>
+<a name="line-422"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_FRAGMENT_CONSTANTS_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x896F</span>
+<a name="line-423"></a>
+<a name="line-424"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_FRAGMENT_REGISTERS_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x896E</span>
+<a name="line-425"></a>
+<a name="line-426"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_INPUT_INTERPOLATOR_COMPONENTS_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8973</span>
+<a name="line-427"></a>
+<a name="line-428"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_INSTRUCTIONS_PER_PASS_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8971</span>
+<a name="line-429"></a>
+<a name="line-430"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_INSTRUCTIONS_TOTAL_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8972</span>
+<a name="line-431"></a>
+<a name="line-432"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_LOOPBACK_COMPONENTS_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8974</span>
+<a name="line-433"></a>
+<a name="line-434"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_NUM_PASSES_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8970</span>
+<a name="line-435"></a>
+<a name="line-436"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_QUARTER_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000010</span>
+<a name="line-437"></a>
+<a name="line-438"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RED_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000001</span>
+<a name="line-439"></a>
+<a name="line-440"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_0_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8921</span>
+<a name="line-441"></a>
+<a name="line-442"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_10_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x892B</span>
+<a name="line-443"></a>
+<a name="line-444"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_11_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x892C</span>
+<a name="line-445"></a>
+<a name="line-446"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_12_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x892D</span>
+<a name="line-447"></a>
+<a name="line-448"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_13_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x892E</span>
+<a name="line-449"></a>
+<a name="line-450"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_14_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x892F</span>
+<a name="line-451"></a>
+<a name="line-452"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_15_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8930</span>
+<a name="line-453"></a>
+<a name="line-454"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_16_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8931</span>
+<a name="line-455"></a>
+<a name="line-456"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_17_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8932</span>
+<a name="line-457"></a>
+<a name="line-458"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_18_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8933</span>
+<a name="line-459"></a>
+<a name="line-460"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_19_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8934</span>
+<a name="line-461"></a>
+<a name="line-462"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_1_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8922</span>
+<a name="line-463"></a>
+<a name="line-464"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_20_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8935</span>
+<a name="line-465"></a>
+<a name="line-466"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_21_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8936</span>
+<a name="line-467"></a>
+<a name="line-468"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_22_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8937</span>
+<a name="line-469"></a>
+<a name="line-470"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_23_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8938</span>
+<a name="line-471"></a>
+<a name="line-472"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_24_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8939</span>
+<a name="line-473"></a>
+<a name="line-474"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_25_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x893A</span>
+<a name="line-475"></a>
+<a name="line-476"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_26_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x893B</span>
+<a name="line-477"></a>
+<a name="line-478"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_27_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x893C</span>
+<a name="line-479"></a>
+<a name="line-480"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_28_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x893D</span>
+<a name="line-481"></a>
+<a name="line-482"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_29_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x893E</span>
+<a name="line-483"></a>
+<a name="line-484"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_2_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8923</span>
+<a name="line-485"></a>
+<a name="line-486"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_30_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x893F</span>
+<a name="line-487"></a>
+<a name="line-488"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_31_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8940</span>
+<a name="line-489"></a>
+<a name="line-490"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_3_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8924</span>
+<a name="line-491"></a>
+<a name="line-492"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_4_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8925</span>
+<a name="line-493"></a>
+<a name="line-494"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_5_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8926</span>
+<a name="line-495"></a>
+<a name="line-496"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_6_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8927</span>
+<a name="line-497"></a>
+<a name="line-498"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_7_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8928</span>
+<a name="line-499"></a>
+<a name="line-500"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_8_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8929</span>
+<a name="line-501"></a>
+<a name="line-502"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_REG_9_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x892A</span>
+<a name="line-503"></a>
+<a name="line-504"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SATURATE_BIT_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000040</span>
+<a name="line-505"></a>
+<a name="line-506"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SECONDARY_INTERPOLATOR_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x896D</span>
+<a name="line-507"></a>
+<a name="line-508"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SUB_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8965</span>
+<a name="line-509"></a>
+<a name="line-510"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SWIZZLE_STQ_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8977</span>
+<a name="line-511"></a>
+<a name="line-512"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SWIZZLE_STQ_DQ_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8979</span>
+<a name="line-513"></a>
+<a name="line-514"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SWIZZLE_STRQ_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x897A</span>
+<a name="line-515"></a>
+<a name="line-516"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SWIZZLE_STRQ_DQ_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x897B</span>
+<a name="line-517"></a>
+<a name="line-518"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SWIZZLE_STR_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8976</span>
+<a name="line-519"></a>
+<a name="line-520"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SWIZZLE_STR_DR_ATI</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8978</span>
 </pre></body>
 </html>

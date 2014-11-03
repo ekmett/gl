@@ -38,113 +38,114 @@
 <a name="line-29"></a>
 <a name="line-30"></a><a name="gl_SGIX_polynomial_ffd"></a><span class='hs-definition'>gl_SGIX_polynomial_ffd</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-31"></a><span class='hs-definition'>gl_SGIX_polynomial_ffd</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_SGIX_polynomial_ffd"</span> <span class='hs-varid'>extensions</span>
-<a name="line-32"></a>
-<a name="line-33"></a><span class='hs-comment'>-- | Usage: @'glDeformSGIX' mask@</span>
-<a name="line-34"></a><span class='hs-comment'>--</span>
-<a name="line-35"></a><span class='hs-comment'>-- The parameter @mask@ is a @FfdMaskSGIX@, one of: .</span>
-<a name="line-36"></a>
+<a name="line-32"></a><span class='hs-comment'>{-# NOINLINE gl_SGIX_polynomial_ffd #-}</span>
+<a name="line-33"></a>
+<a name="line-34"></a><span class='hs-comment'>-- | Usage: @'glDeformSGIX' mask@</span>
+<a name="line-35"></a><span class='hs-comment'>--</span>
+<a name="line-36"></a><span class='hs-comment'>-- The parameter @mask@ is a @FfdMaskSGIX@, one of: .</span>
 <a name="line-37"></a>
-<a name="line-38"></a><a name="glDeformSGIX"></a><span class='hs-definition'>glDeformSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbitfield</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-39"></a><span class='hs-definition'>glDeformSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibitfieldIOV</span> <span class='hs-varid'>glDeformSGIXFunPtr</span>
-<a name="line-40"></a>
-<a name="line-41"></a><a name="glDeformSGIXFunPtr"></a><span class='hs-definition'>glDeformSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbitfield</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-42"></a><span class='hs-definition'>glDeformSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeformSGIX"</span><span class='hs-layout'>)</span>
-<a name="line-43"></a>
-<a name="line-44"></a><span class='hs-comment'>{-# NOINLINE glDeformSGIXFunPtr #-}</span>
-<a name="line-45"></a>
-<a name="line-46"></a><span class='hs-comment'>-- | Usage: @'glDeformationMap3dSGIX' target u1 u2 ustride uorder v1 v2 vstride vorder w1 w2 wstride worder points@</span>
-<a name="line-47"></a><span class='hs-comment'>--</span>
-<a name="line-48"></a><span class='hs-comment'>-- The parameter @target@ is a @FfdTargetSGIX@, one of: 'GL_GEOMETRY_DEFORMATION_SGIX', 'GL_TEXTURE_DEFORMATION_SGIX'.</span>
-<a name="line-49"></a><span class='hs-comment'>--</span>
-<a name="line-50"></a><span class='hs-comment'>-- The parameter @u1@ is a @CoordD@.</span>
-<a name="line-51"></a><span class='hs-comment'>--</span>
-<a name="line-52"></a><span class='hs-comment'>-- The parameter @u2@ is a @CoordD@.</span>
-<a name="line-53"></a><span class='hs-comment'>--</span>
-<a name="line-54"></a><span class='hs-comment'>-- The parameter @uorder@ is a @CheckedInt32@.</span>
-<a name="line-55"></a><span class='hs-comment'>--</span>
-<a name="line-56"></a><span class='hs-comment'>-- The parameter @v1@ is a @CoordD@.</span>
-<a name="line-57"></a><span class='hs-comment'>--</span>
-<a name="line-58"></a><span class='hs-comment'>-- The parameter @v2@ is a @CoordD@.</span>
-<a name="line-59"></a><span class='hs-comment'>--</span>
-<a name="line-60"></a><span class='hs-comment'>-- The parameter @vorder@ is a @CheckedInt32@.</span>
-<a name="line-61"></a><span class='hs-comment'>--</span>
-<a name="line-62"></a><span class='hs-comment'>-- The parameter @w1@ is a @CoordD@.</span>
-<a name="line-63"></a><span class='hs-comment'>--</span>
-<a name="line-64"></a><span class='hs-comment'>-- The parameter @w2@ is a @CoordD@.</span>
-<a name="line-65"></a><span class='hs-comment'>--</span>
-<a name="line-66"></a><span class='hs-comment'>-- The parameter @worder@ is a @CheckedInt32@.</span>
-<a name="line-67"></a><span class='hs-comment'>--</span>
-<a name="line-68"></a><span class='hs-comment'>-- The parameter @points@ is a @CoordD@.</span>
-<a name="line-69"></a><span class='hs-comment'>--</span>
-<a name="line-70"></a><span class='hs-comment'>-- The length of @points@ should be @COMPSIZE(target,ustride,uorder,vstride,vorder,wstride,worder)@.</span>
-<a name="line-71"></a>
+<a name="line-38"></a>
+<a name="line-39"></a><a name="glDeformSGIX"></a><span class='hs-definition'>glDeformSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbitfield</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-40"></a><span class='hs-definition'>glDeformSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibitfieldIOV</span> <span class='hs-varid'>glDeformSGIXFunPtr</span>
+<a name="line-41"></a>
+<a name="line-42"></a><a name="glDeformSGIXFunPtr"></a><span class='hs-definition'>glDeformSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbitfield</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-43"></a><span class='hs-definition'>glDeformSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeformSGIX"</span><span class='hs-layout'>)</span>
+<a name="line-44"></a>
+<a name="line-45"></a><span class='hs-comment'>{-# NOINLINE glDeformSGIXFunPtr #-}</span>
+<a name="line-46"></a>
+<a name="line-47"></a><span class='hs-comment'>-- | Usage: @'glDeformationMap3dSGIX' target u1 u2 ustride uorder v1 v2 vstride vorder w1 w2 wstride worder points@</span>
+<a name="line-48"></a><span class='hs-comment'>--</span>
+<a name="line-49"></a><span class='hs-comment'>-- The parameter @target@ is a @FfdTargetSGIX@, one of: Graphics.GL.Raw.Extension.SGIX.PolynomialFfd.GL_GEOMETRY_DEFORMATION_SGIX', Graphics.GL.Raw.Extension.SGIX.PolynomialFfd.GL_TEXTURE_DEFORMATION_SGIX'.</span>
+<a name="line-50"></a><span class='hs-comment'>--</span>
+<a name="line-51"></a><span class='hs-comment'>-- The parameter @u1@ is a @CoordD@.</span>
+<a name="line-52"></a><span class='hs-comment'>--</span>
+<a name="line-53"></a><span class='hs-comment'>-- The parameter @u2@ is a @CoordD@.</span>
+<a name="line-54"></a><span class='hs-comment'>--</span>
+<a name="line-55"></a><span class='hs-comment'>-- The parameter @uorder@ is a @CheckedInt32@.</span>
+<a name="line-56"></a><span class='hs-comment'>--</span>
+<a name="line-57"></a><span class='hs-comment'>-- The parameter @v1@ is a @CoordD@.</span>
+<a name="line-58"></a><span class='hs-comment'>--</span>
+<a name="line-59"></a><span class='hs-comment'>-- The parameter @v2@ is a @CoordD@.</span>
+<a name="line-60"></a><span class='hs-comment'>--</span>
+<a name="line-61"></a><span class='hs-comment'>-- The parameter @vorder@ is a @CheckedInt32@.</span>
+<a name="line-62"></a><span class='hs-comment'>--</span>
+<a name="line-63"></a><span class='hs-comment'>-- The parameter @w1@ is a @CoordD@.</span>
+<a name="line-64"></a><span class='hs-comment'>--</span>
+<a name="line-65"></a><span class='hs-comment'>-- The parameter @w2@ is a @CoordD@.</span>
+<a name="line-66"></a><span class='hs-comment'>--</span>
+<a name="line-67"></a><span class='hs-comment'>-- The parameter @worder@ is a @CheckedInt32@.</span>
+<a name="line-68"></a><span class='hs-comment'>--</span>
+<a name="line-69"></a><span class='hs-comment'>-- The parameter @points@ is a @CoordD@.</span>
+<a name="line-70"></a><span class='hs-comment'>--</span>
+<a name="line-71"></a><span class='hs-comment'>-- The length of @points@ should be @COMPSIZE(target,ustride,uorder,vstride,vorder,wstride,worder)@.</span>
 <a name="line-72"></a>
-<a name="line-73"></a><a name="glDeformationMap3dSGIX"></a><span class='hs-definition'>glDeformationMap3dSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-74"></a><span class='hs-definition'>glDeformationMap3dSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumdoubledoubleintintdoubledoubleintintdoubledoubleintintPtrdoubleIOV</span> <span class='hs-varid'>glDeformationMap3dSGIXFunPtr</span>
-<a name="line-75"></a>
-<a name="line-76"></a><a name="glDeformationMap3dSGIXFunPtr"></a><span class='hs-definition'>glDeformationMap3dSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-77"></a><span class='hs-definition'>glDeformationMap3dSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeformationMap3dSGIX"</span><span class='hs-layout'>)</span>
-<a name="line-78"></a>
-<a name="line-79"></a><span class='hs-comment'>{-# NOINLINE glDeformationMap3dSGIXFunPtr #-}</span>
-<a name="line-80"></a>
-<a name="line-81"></a><span class='hs-comment'>-- | Usage: @'glDeformationMap3fSGIX' target u1 u2 ustride uorder v1 v2 vstride vorder w1 w2 wstride worder points@</span>
-<a name="line-82"></a><span class='hs-comment'>--</span>
-<a name="line-83"></a><span class='hs-comment'>-- The parameter @target@ is a @FfdTargetSGIX@, one of: 'GL_GEOMETRY_DEFORMATION_SGIX', 'GL_TEXTURE_DEFORMATION_SGIX'.</span>
-<a name="line-84"></a><span class='hs-comment'>--</span>
-<a name="line-85"></a><span class='hs-comment'>-- The parameter @u1@ is a @CoordF@.</span>
-<a name="line-86"></a><span class='hs-comment'>--</span>
-<a name="line-87"></a><span class='hs-comment'>-- The parameter @u2@ is a @CoordF@.</span>
-<a name="line-88"></a><span class='hs-comment'>--</span>
-<a name="line-89"></a><span class='hs-comment'>-- The parameter @uorder@ is a @CheckedInt32@.</span>
-<a name="line-90"></a><span class='hs-comment'>--</span>
-<a name="line-91"></a><span class='hs-comment'>-- The parameter @v1@ is a @CoordF@.</span>
-<a name="line-92"></a><span class='hs-comment'>--</span>
-<a name="line-93"></a><span class='hs-comment'>-- The parameter @v2@ is a @CoordF@.</span>
-<a name="line-94"></a><span class='hs-comment'>--</span>
-<a name="line-95"></a><span class='hs-comment'>-- The parameter @vorder@ is a @CheckedInt32@.</span>
-<a name="line-96"></a><span class='hs-comment'>--</span>
-<a name="line-97"></a><span class='hs-comment'>-- The parameter @w1@ is a @CoordF@.</span>
-<a name="line-98"></a><span class='hs-comment'>--</span>
-<a name="line-99"></a><span class='hs-comment'>-- The parameter @w2@ is a @CoordF@.</span>
-<a name="line-100"></a><span class='hs-comment'>--</span>
-<a name="line-101"></a><span class='hs-comment'>-- The parameter @worder@ is a @CheckedInt32@.</span>
-<a name="line-102"></a><span class='hs-comment'>--</span>
-<a name="line-103"></a><span class='hs-comment'>-- The parameter @points@ is a @CoordF@.</span>
-<a name="line-104"></a><span class='hs-comment'>--</span>
-<a name="line-105"></a><span class='hs-comment'>-- The length of @points@ should be @COMPSIZE(target,ustride,uorder,vstride,vorder,wstride,worder)@.</span>
-<a name="line-106"></a>
+<a name="line-73"></a>
+<a name="line-74"></a><a name="glDeformationMap3dSGIX"></a><span class='hs-definition'>glDeformationMap3dSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-75"></a><span class='hs-definition'>glDeformationMap3dSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumdoubledoubleintintdoubledoubleintintdoubledoubleintintPtrdoubleIOV</span> <span class='hs-varid'>glDeformationMap3dSGIXFunPtr</span>
+<a name="line-76"></a>
+<a name="line-77"></a><a name="glDeformationMap3dSGIXFunPtr"></a><span class='hs-definition'>glDeformationMap3dSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLdouble</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-78"></a><span class='hs-definition'>glDeformationMap3dSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeformationMap3dSGIX"</span><span class='hs-layout'>)</span>
+<a name="line-79"></a>
+<a name="line-80"></a><span class='hs-comment'>{-# NOINLINE glDeformationMap3dSGIXFunPtr #-}</span>
+<a name="line-81"></a>
+<a name="line-82"></a><span class='hs-comment'>-- | Usage: @'glDeformationMap3fSGIX' target u1 u2 ustride uorder v1 v2 vstride vorder w1 w2 wstride worder points@</span>
+<a name="line-83"></a><span class='hs-comment'>--</span>
+<a name="line-84"></a><span class='hs-comment'>-- The parameter @target@ is a @FfdTargetSGIX@, one of: Graphics.GL.Raw.Extension.SGIX.PolynomialFfd.GL_GEOMETRY_DEFORMATION_SGIX', Graphics.GL.Raw.Extension.SGIX.PolynomialFfd.GL_TEXTURE_DEFORMATION_SGIX'.</span>
+<a name="line-85"></a><span class='hs-comment'>--</span>
+<a name="line-86"></a><span class='hs-comment'>-- The parameter @u1@ is a @CoordF@.</span>
+<a name="line-87"></a><span class='hs-comment'>--</span>
+<a name="line-88"></a><span class='hs-comment'>-- The parameter @u2@ is a @CoordF@.</span>
+<a name="line-89"></a><span class='hs-comment'>--</span>
+<a name="line-90"></a><span class='hs-comment'>-- The parameter @uorder@ is a @CheckedInt32@.</span>
+<a name="line-91"></a><span class='hs-comment'>--</span>
+<a name="line-92"></a><span class='hs-comment'>-- The parameter @v1@ is a @CoordF@.</span>
+<a name="line-93"></a><span class='hs-comment'>--</span>
+<a name="line-94"></a><span class='hs-comment'>-- The parameter @v2@ is a @CoordF@.</span>
+<a name="line-95"></a><span class='hs-comment'>--</span>
+<a name="line-96"></a><span class='hs-comment'>-- The parameter @vorder@ is a @CheckedInt32@.</span>
+<a name="line-97"></a><span class='hs-comment'>--</span>
+<a name="line-98"></a><span class='hs-comment'>-- The parameter @w1@ is a @CoordF@.</span>
+<a name="line-99"></a><span class='hs-comment'>--</span>
+<a name="line-100"></a><span class='hs-comment'>-- The parameter @w2@ is a @CoordF@.</span>
+<a name="line-101"></a><span class='hs-comment'>--</span>
+<a name="line-102"></a><span class='hs-comment'>-- The parameter @worder@ is a @CheckedInt32@.</span>
+<a name="line-103"></a><span class='hs-comment'>--</span>
+<a name="line-104"></a><span class='hs-comment'>-- The parameter @points@ is a @CoordF@.</span>
+<a name="line-105"></a><span class='hs-comment'>--</span>
+<a name="line-106"></a><span class='hs-comment'>-- The length of @points@ should be @COMPSIZE(target,ustride,uorder,vstride,vorder,wstride,worder)@.</span>
 <a name="line-107"></a>
-<a name="line-108"></a><a name="glDeformationMap3fSGIX"></a><span class='hs-definition'>glDeformationMap3fSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-109"></a><span class='hs-definition'>glDeformationMap3fSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumfloatfloatintintfloatfloatintintfloatfloatintintPtrfloatIOV</span> <span class='hs-varid'>glDeformationMap3fSGIXFunPtr</span>
-<a name="line-110"></a>
-<a name="line-111"></a><a name="glDeformationMap3fSGIXFunPtr"></a><span class='hs-definition'>glDeformationMap3fSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-112"></a><span class='hs-definition'>glDeformationMap3fSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeformationMap3fSGIX"</span><span class='hs-layout'>)</span>
-<a name="line-113"></a>
-<a name="line-114"></a><span class='hs-comment'>{-# NOINLINE glDeformationMap3fSGIXFunPtr #-}</span>
-<a name="line-115"></a>
-<a name="line-116"></a><span class='hs-comment'>-- | Usage: @'glLoadIdentityDeformationMapSGIX' mask@</span>
-<a name="line-117"></a><span class='hs-comment'>--</span>
-<a name="line-118"></a><span class='hs-comment'>-- The parameter @mask@ is a @FfdMaskSGIX@, one of: .</span>
-<a name="line-119"></a>
+<a name="line-108"></a>
+<a name="line-109"></a><a name="glDeformationMap3fSGIX"></a><span class='hs-definition'>glDeformationMap3fSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-110"></a><span class='hs-definition'>glDeformationMap3fSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumfloatfloatintintfloatfloatintintfloatfloatintintPtrfloatIOV</span> <span class='hs-varid'>glDeformationMap3fSGIXFunPtr</span>
+<a name="line-111"></a>
+<a name="line-112"></a><a name="glDeformationMap3fSGIXFunPtr"></a><span class='hs-definition'>glDeformationMap3fSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Ptr</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-113"></a><span class='hs-definition'>glDeformationMap3fSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glDeformationMap3fSGIX"</span><span class='hs-layout'>)</span>
+<a name="line-114"></a>
+<a name="line-115"></a><span class='hs-comment'>{-# NOINLINE glDeformationMap3fSGIXFunPtr #-}</span>
+<a name="line-116"></a>
+<a name="line-117"></a><span class='hs-comment'>-- | Usage: @'glLoadIdentityDeformationMapSGIX' mask@</span>
+<a name="line-118"></a><span class='hs-comment'>--</span>
+<a name="line-119"></a><span class='hs-comment'>-- The parameter @mask@ is a @FfdMaskSGIX@, one of: .</span>
 <a name="line-120"></a>
-<a name="line-121"></a><a name="glLoadIdentityDeformationMapSGIX"></a><span class='hs-definition'>glLoadIdentityDeformationMapSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbitfield</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-122"></a><span class='hs-definition'>glLoadIdentityDeformationMapSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibitfieldIOV</span> <span class='hs-varid'>glLoadIdentityDeformationMapSGIXFunPtr</span>
-<a name="line-123"></a>
-<a name="line-124"></a><a name="glLoadIdentityDeformationMapSGIXFunPtr"></a><span class='hs-definition'>glLoadIdentityDeformationMapSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbitfield</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-125"></a><span class='hs-definition'>glLoadIdentityDeformationMapSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glLoadIdentityDeformationMapSGIX"</span><span class='hs-layout'>)</span>
-<a name="line-126"></a>
-<a name="line-127"></a><span class='hs-comment'>{-# NOINLINE glLoadIdentityDeformationMapSGIXFunPtr #-}</span>
-<a name="line-128"></a>
-<a name="line-129"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DEFORMATIONS_MASK_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8196</span>
-<a name="line-130"></a>
-<a name="line-131"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GEOMETRY_DEFORMATION_BIT_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000002</span>
-<a name="line-132"></a>
-<a name="line-133"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GEOMETRY_DEFORMATION_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8194</span>
-<a name="line-134"></a>
-<a name="line-135"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_DEFORMATION_ORDER_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8197</span>
-<a name="line-136"></a>
-<a name="line-137"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_DEFORMATION_BIT_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000001</span>
-<a name="line-138"></a>
-<a name="line-139"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_DEFORMATION_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8195</span>
+<a name="line-121"></a>
+<a name="line-122"></a><a name="glLoadIdentityDeformationMapSGIX"></a><span class='hs-definition'>glLoadIdentityDeformationMapSGIX</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLbitfield</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-123"></a><span class='hs-definition'>glLoadIdentityDeformationMapSGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffibitfieldIOV</span> <span class='hs-varid'>glLoadIdentityDeformationMapSGIXFunPtr</span>
+<a name="line-124"></a>
+<a name="line-125"></a><a name="glLoadIdentityDeformationMapSGIXFunPtr"></a><span class='hs-definition'>glLoadIdentityDeformationMapSGIXFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLbitfield</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-126"></a><span class='hs-definition'>glLoadIdentityDeformationMapSGIXFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glLoadIdentityDeformationMapSGIX"</span><span class='hs-layout'>)</span>
+<a name="line-127"></a>
+<a name="line-128"></a><span class='hs-comment'>{-# NOINLINE glLoadIdentityDeformationMapSGIXFunPtr #-}</span>
+<a name="line-129"></a>
+<a name="line-130"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DEFORMATIONS_MASK_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8196</span>
+<a name="line-131"></a>
+<a name="line-132"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GEOMETRY_DEFORMATION_BIT_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000002</span>
+<a name="line-133"></a>
+<a name="line-134"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_GEOMETRY_DEFORMATION_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8194</span>
+<a name="line-135"></a>
+<a name="line-136"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_DEFORMATION_ORDER_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8197</span>
+<a name="line-137"></a>
+<a name="line-138"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_DEFORMATION_BIT_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x00000001</span>
+<a name="line-139"></a>
+<a name="line-140"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_DEFORMATION_SGIX</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8195</span>
 </pre></body>
 </html>

@@ -33,28 +33,29 @@
 <a name="line-24"></a>
 <a name="line-25"></a><a name="gl_EXT_blend_minmax"></a><span class='hs-definition'>gl_EXT_blend_minmax</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-26"></a><span class='hs-definition'>gl_EXT_blend_minmax</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_EXT_blend_minmax"</span> <span class='hs-varid'>extensions</span>
-<a name="line-27"></a>
-<a name="line-28"></a><span class='hs-comment'>-- | Usage: @'glBlendEquationEXT' mode@</span>
-<a name="line-29"></a><span class='hs-comment'>--</span>
-<a name="line-30"></a><span class='hs-comment'>-- The parameter @mode@ is a @BlendEquationModeEXT@, one of: 'GL_ALPHA_MAX_SGIX', 'GL_ALPHA_MIN_SGIX', 'GL_FUNC_ADD_EXT', 'GL_FUNC_REVERSE_SUBTRACT_EXT', 'GL_FUNC_SUBTRACT_EXT', 'GL_LOGIC_OP', 'GL_MAX_EXT', 'GL_MIN_EXT'.</span>
-<a name="line-31"></a><span class='hs-comment'>--</span>
-<a name="line-32"></a><span class='hs-comment'>-- This command is an alias for 'glBlendEquation'.</span>
-<a name="line-33"></a>
+<a name="line-27"></a><span class='hs-comment'>{-# NOINLINE gl_EXT_blend_minmax #-}</span>
+<a name="line-28"></a>
+<a name="line-29"></a><span class='hs-comment'>-- | Usage: @'glBlendEquationEXT' mode@</span>
+<a name="line-30"></a><span class='hs-comment'>--</span>
+<a name="line-31"></a><span class='hs-comment'>-- The parameter @mode@ is a @BlendEquationModeEXT@, one of: Graphics.GL.Raw.Extension.SGIX.BlendAlphaMinmax.GL_ALPHA_MAX_SGIX', Graphics.GL.Raw.Extension.SGIX.BlendAlphaMinmax.GL_ALPHA_MIN_SGIX', Graphics.GL.Raw.Extension.EXT.BlendMinmax.GL_FUNC_ADD_EXT', Graphics.GL.Raw.Extension.EXT.BlendSubtract.GL_FUNC_REVERSE_SUBTRACT_EXT', Graphics.GL.Raw.Extension.EXT.BlendSubtract.GL_FUNC_SUBTRACT_EXT', 'Graphics.GL.Raw.Internal.Shared.GL_LOGIC_OP', Graphics.GL.Raw.Extension.EXT.BlendMinmax.GL_MAX_EXT', Graphics.GL.Raw.Extension.EXT.BlendMinmax.GL_MIN_EXT'.</span>
+<a name="line-32"></a><span class='hs-comment'>--</span>
+<a name="line-33"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glBlendEquation'.</span>
 <a name="line-34"></a>
-<a name="line-35"></a><a name="glBlendEquationEXT"></a><span class='hs-definition'>glBlendEquationEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-36"></a><span class='hs-definition'>glBlendEquationEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOV</span> <span class='hs-varid'>glBlendEquationEXTFunPtr</span>
-<a name="line-37"></a>
-<a name="line-38"></a><a name="glBlendEquationEXTFunPtr"></a><span class='hs-definition'>glBlendEquationEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-39"></a><span class='hs-definition'>glBlendEquationEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBlendEquationEXT"</span><span class='hs-layout'>)</span>
-<a name="line-40"></a>
-<a name="line-41"></a><span class='hs-comment'>{-# NOINLINE glBlendEquationEXTFunPtr #-}</span>
-<a name="line-42"></a>
-<a name="line-43"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BLEND_EQUATION_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8009</span>
-<a name="line-44"></a>
-<a name="line-45"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FUNC_ADD_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8006</span>
-<a name="line-46"></a>
-<a name="line-47"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8008</span>
-<a name="line-48"></a>
-<a name="line-49"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MIN_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8007</span>
+<a name="line-35"></a>
+<a name="line-36"></a><a name="glBlendEquationEXT"></a><span class='hs-definition'>glBlendEquationEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-37"></a><span class='hs-definition'>glBlendEquationEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOV</span> <span class='hs-varid'>glBlendEquationEXTFunPtr</span>
+<a name="line-38"></a>
+<a name="line-39"></a><a name="glBlendEquationEXTFunPtr"></a><span class='hs-definition'>glBlendEquationEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-40"></a><span class='hs-definition'>glBlendEquationEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBlendEquationEXT"</span><span class='hs-layout'>)</span>
+<a name="line-41"></a>
+<a name="line-42"></a><span class='hs-comment'>{-# NOINLINE glBlendEquationEXTFunPtr #-}</span>
+<a name="line-43"></a>
+<a name="line-44"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_BLEND_EQUATION_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8009</span>
+<a name="line-45"></a>
+<a name="line-46"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FUNC_ADD_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8006</span>
+<a name="line-47"></a>
+<a name="line-48"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8008</span>
+<a name="line-49"></a>
+<a name="line-50"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MIN_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8007</span>
 </pre></body>
 </html>

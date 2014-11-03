@@ -37,41 +37,42 @@
 <a name="line-28"></a>
 <a name="line-29"></a><a name="gl_AMD_vertex_shader_tessellator"></a><span class='hs-definition'>gl_AMD_vertex_shader_tessellator</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-30"></a><span class='hs-definition'>gl_AMD_vertex_shader_tessellator</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_AMD_vertex_shader_tessellator"</span> <span class='hs-varid'>extensions</span>
-<a name="line-31"></a>
-<a name="line-32"></a><span class='hs-comment'>-- | Usage: @'glTessellationFactorAMD' factor@</span>
-<a name="line-33"></a>
+<a name="line-31"></a><span class='hs-comment'>{-# NOINLINE gl_AMD_vertex_shader_tessellator #-}</span>
+<a name="line-32"></a>
+<a name="line-33"></a><span class='hs-comment'>-- | Usage: @'glTessellationFactorAMD' factor@</span>
 <a name="line-34"></a>
-<a name="line-35"></a><a name="glTessellationFactorAMD"></a><span class='hs-definition'>glTessellationFactorAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-36"></a><span class='hs-definition'>glTessellationFactorAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifloatIOV</span> <span class='hs-varid'>glTessellationFactorAMDFunPtr</span>
-<a name="line-37"></a>
-<a name="line-38"></a><a name="glTessellationFactorAMDFunPtr"></a><span class='hs-definition'>glTessellationFactorAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-39"></a><span class='hs-definition'>glTessellationFactorAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTessellationFactorAMD"</span><span class='hs-layout'>)</span>
-<a name="line-40"></a>
-<a name="line-41"></a><span class='hs-comment'>{-# NOINLINE glTessellationFactorAMDFunPtr #-}</span>
-<a name="line-42"></a>
-<a name="line-43"></a><span class='hs-comment'>-- | Usage: @'glTessellationModeAMD' mode@</span>
-<a name="line-44"></a>
+<a name="line-35"></a>
+<a name="line-36"></a><a name="glTessellationFactorAMD"></a><span class='hs-definition'>glTessellationFactorAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-37"></a><span class='hs-definition'>glTessellationFactorAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffifloatIOV</span> <span class='hs-varid'>glTessellationFactorAMDFunPtr</span>
+<a name="line-38"></a>
+<a name="line-39"></a><a name="glTessellationFactorAMDFunPtr"></a><span class='hs-definition'>glTessellationFactorAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLfloat</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-40"></a><span class='hs-definition'>glTessellationFactorAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTessellationFactorAMD"</span><span class='hs-layout'>)</span>
+<a name="line-41"></a>
+<a name="line-42"></a><span class='hs-comment'>{-# NOINLINE glTessellationFactorAMDFunPtr #-}</span>
+<a name="line-43"></a>
+<a name="line-44"></a><span class='hs-comment'>-- | Usage: @'glTessellationModeAMD' mode@</span>
 <a name="line-45"></a>
-<a name="line-46"></a><a name="glTessellationModeAMD"></a><span class='hs-definition'>glTessellationModeAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-47"></a><span class='hs-definition'>glTessellationModeAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOV</span> <span class='hs-varid'>glTessellationModeAMDFunPtr</span>
-<a name="line-48"></a>
-<a name="line-49"></a><a name="glTessellationModeAMDFunPtr"></a><span class='hs-definition'>glTessellationModeAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-50"></a><span class='hs-definition'>glTessellationModeAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTessellationModeAMD"</span><span class='hs-layout'>)</span>
-<a name="line-51"></a>
-<a name="line-52"></a><span class='hs-comment'>{-# NOINLINE glTessellationModeAMDFunPtr #-}</span>
-<a name="line-53"></a>
-<a name="line-54"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CONTINUOUS_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9007</span>
-<a name="line-55"></a>
-<a name="line-56"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DISCRETE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9006</span>
-<a name="line-57"></a>
-<a name="line-58"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_SAMPLER_BUFFER_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9002</span>
-<a name="line-59"></a>
-<a name="line-60"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLER_BUFFER_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9001</span>
-<a name="line-61"></a>
-<a name="line-62"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TESSELLATION_FACTOR_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9005</span>
-<a name="line-63"></a>
-<a name="line-64"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TESSELLATION_MODE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9004</span>
-<a name="line-65"></a>
-<a name="line-66"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_SAMPLER_BUFFER_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9003</span>
+<a name="line-46"></a>
+<a name="line-47"></a><a name="glTessellationModeAMD"></a><span class='hs-definition'>glTessellationModeAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-48"></a><span class='hs-definition'>glTessellationModeAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumIOV</span> <span class='hs-varid'>glTessellationModeAMDFunPtr</span>
+<a name="line-49"></a>
+<a name="line-50"></a><a name="glTessellationModeAMDFunPtr"></a><span class='hs-definition'>glTessellationModeAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-51"></a><span class='hs-definition'>glTessellationModeAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTessellationModeAMD"</span><span class='hs-layout'>)</span>
+<a name="line-52"></a>
+<a name="line-53"></a><span class='hs-comment'>{-# NOINLINE glTessellationModeAMDFunPtr #-}</span>
+<a name="line-54"></a>
+<a name="line-55"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_CONTINUOUS_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9007</span>
+<a name="line-56"></a>
+<a name="line-57"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_DISCRETE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9006</span>
+<a name="line-58"></a>
+<a name="line-59"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_INT_SAMPLER_BUFFER_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9002</span>
+<a name="line-60"></a>
+<a name="line-61"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_SAMPLER_BUFFER_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9001</span>
+<a name="line-62"></a>
+<a name="line-63"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TESSELLATION_FACTOR_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9005</span>
+<a name="line-64"></a>
+<a name="line-65"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TESSELLATION_MODE_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9004</span>
+<a name="line-66"></a>
+<a name="line-67"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_UNSIGNED_INT_SAMPLER_BUFFER_AMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x9003</span>
 </pre></body>
 </html>

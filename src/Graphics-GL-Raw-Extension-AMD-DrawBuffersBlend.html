@@ -32,57 +32,58 @@
 <a name="line-23"></a>
 <a name="line-24"></a><a name="gl_AMD_draw_buffers_blend"></a><span class='hs-definition'>gl_AMD_draw_buffers_blend</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-25"></a><span class='hs-definition'>gl_AMD_draw_buffers_blend</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_AMD_draw_buffers_blend"</span> <span class='hs-varid'>extensions</span>
-<a name="line-26"></a>
-<a name="line-27"></a><span class='hs-comment'>-- | Usage: @'glBlendEquationIndexedAMD' buf mode@</span>
-<a name="line-28"></a><span class='hs-comment'>--</span>
-<a name="line-29"></a><span class='hs-comment'>-- This command is an alias for 'glBlendEquationi'.</span>
-<a name="line-30"></a>
+<a name="line-26"></a><span class='hs-comment'>{-# NOINLINE gl_AMD_draw_buffers_blend #-}</span>
+<a name="line-27"></a>
+<a name="line-28"></a><span class='hs-comment'>-- | Usage: @'glBlendEquationIndexedAMD' buf mode@</span>
+<a name="line-29"></a><span class='hs-comment'>--</span>
+<a name="line-30"></a><span class='hs-comment'>-- This command is an alias for Graphics.GL.Raw.Profile.Core40.glBlendEquationi'.</span>
 <a name="line-31"></a>
-<a name="line-32"></a><a name="glBlendEquationIndexedAMD"></a><span class='hs-definition'>glBlendEquationIndexedAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-33"></a><span class='hs-definition'>glBlendEquationIndexedAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumIOV</span> <span class='hs-varid'>glBlendEquationIndexedAMDFunPtr</span>
-<a name="line-34"></a>
-<a name="line-35"></a><a name="glBlendEquationIndexedAMDFunPtr"></a><span class='hs-definition'>glBlendEquationIndexedAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-36"></a><span class='hs-definition'>glBlendEquationIndexedAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBlendEquationIndexedAMD"</span><span class='hs-layout'>)</span>
-<a name="line-37"></a>
-<a name="line-38"></a><span class='hs-comment'>{-# NOINLINE glBlendEquationIndexedAMDFunPtr #-}</span>
-<a name="line-39"></a>
-<a name="line-40"></a><span class='hs-comment'>-- | Usage: @'glBlendEquationSeparateIndexedAMD' buf modeRGB modeAlpha@</span>
-<a name="line-41"></a><span class='hs-comment'>--</span>
-<a name="line-42"></a><span class='hs-comment'>-- This command is an alias for 'glBlendEquationSeparatei'.</span>
-<a name="line-43"></a>
+<a name="line-32"></a>
+<a name="line-33"></a><a name="glBlendEquationIndexedAMD"></a><span class='hs-definition'>glBlendEquationIndexedAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-34"></a><span class='hs-definition'>glBlendEquationIndexedAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumIOV</span> <span class='hs-varid'>glBlendEquationIndexedAMDFunPtr</span>
+<a name="line-35"></a>
+<a name="line-36"></a><a name="glBlendEquationIndexedAMDFunPtr"></a><span class='hs-definition'>glBlendEquationIndexedAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-37"></a><span class='hs-definition'>glBlendEquationIndexedAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBlendEquationIndexedAMD"</span><span class='hs-layout'>)</span>
+<a name="line-38"></a>
+<a name="line-39"></a><span class='hs-comment'>{-# NOINLINE glBlendEquationIndexedAMDFunPtr #-}</span>
+<a name="line-40"></a>
+<a name="line-41"></a><span class='hs-comment'>-- | Usage: @'glBlendEquationSeparateIndexedAMD' buf modeRGB modeAlpha@</span>
+<a name="line-42"></a><span class='hs-comment'>--</span>
+<a name="line-43"></a><span class='hs-comment'>-- This command is an alias for Graphics.GL.Raw.Profile.Core40.glBlendEquationSeparatei'.</span>
 <a name="line-44"></a>
-<a name="line-45"></a><a name="glBlendEquationSeparateIndexedAMD"></a><span class='hs-definition'>glBlendEquationSeparateIndexedAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-46"></a><span class='hs-definition'>glBlendEquationSeparateIndexedAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumenumIOV</span> <span class='hs-varid'>glBlendEquationSeparateIndexedAMDFunPtr</span>
-<a name="line-47"></a>
-<a name="line-48"></a><a name="glBlendEquationSeparateIndexedAMDFunPtr"></a><span class='hs-definition'>glBlendEquationSeparateIndexedAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-49"></a><span class='hs-definition'>glBlendEquationSeparateIndexedAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBlendEquationSeparateIndexedAMD"</span><span class='hs-layout'>)</span>
-<a name="line-50"></a>
-<a name="line-51"></a><span class='hs-comment'>{-# NOINLINE glBlendEquationSeparateIndexedAMDFunPtr #-}</span>
-<a name="line-52"></a>
-<a name="line-53"></a><span class='hs-comment'>-- | Usage: @'glBlendFuncIndexedAMD' buf src dst@</span>
-<a name="line-54"></a><span class='hs-comment'>--</span>
-<a name="line-55"></a><span class='hs-comment'>-- This command is an alias for 'glBlendFunci'.</span>
-<a name="line-56"></a>
+<a name="line-45"></a>
+<a name="line-46"></a><a name="glBlendEquationSeparateIndexedAMD"></a><span class='hs-definition'>glBlendEquationSeparateIndexedAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-47"></a><span class='hs-definition'>glBlendEquationSeparateIndexedAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumenumIOV</span> <span class='hs-varid'>glBlendEquationSeparateIndexedAMDFunPtr</span>
+<a name="line-48"></a>
+<a name="line-49"></a><a name="glBlendEquationSeparateIndexedAMDFunPtr"></a><span class='hs-definition'>glBlendEquationSeparateIndexedAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-50"></a><span class='hs-definition'>glBlendEquationSeparateIndexedAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBlendEquationSeparateIndexedAMD"</span><span class='hs-layout'>)</span>
+<a name="line-51"></a>
+<a name="line-52"></a><span class='hs-comment'>{-# NOINLINE glBlendEquationSeparateIndexedAMDFunPtr #-}</span>
+<a name="line-53"></a>
+<a name="line-54"></a><span class='hs-comment'>-- | Usage: @'glBlendFuncIndexedAMD' buf src dst@</span>
+<a name="line-55"></a><span class='hs-comment'>--</span>
+<a name="line-56"></a><span class='hs-comment'>-- This command is an alias for Graphics.GL.Raw.Profile.Core40.glBlendFunci'.</span>
 <a name="line-57"></a>
-<a name="line-58"></a><a name="glBlendFuncIndexedAMD"></a><span class='hs-definition'>glBlendFuncIndexedAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-59"></a><span class='hs-definition'>glBlendFuncIndexedAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumenumIOV</span> <span class='hs-varid'>glBlendFuncIndexedAMDFunPtr</span>
-<a name="line-60"></a>
-<a name="line-61"></a><a name="glBlendFuncIndexedAMDFunPtr"></a><span class='hs-definition'>glBlendFuncIndexedAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-62"></a><span class='hs-definition'>glBlendFuncIndexedAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBlendFuncIndexedAMD"</span><span class='hs-layout'>)</span>
-<a name="line-63"></a>
-<a name="line-64"></a><span class='hs-comment'>{-# NOINLINE glBlendFuncIndexedAMDFunPtr #-}</span>
-<a name="line-65"></a>
-<a name="line-66"></a><span class='hs-comment'>-- | Usage: @'glBlendFuncSeparateIndexedAMD' buf srcRGB dstRGB srcAlpha dstAlpha@</span>
-<a name="line-67"></a><span class='hs-comment'>--</span>
-<a name="line-68"></a><span class='hs-comment'>-- This command is an alias for 'glBlendFuncSeparatei'.</span>
-<a name="line-69"></a>
+<a name="line-58"></a>
+<a name="line-59"></a><a name="glBlendFuncIndexedAMD"></a><span class='hs-definition'>glBlendFuncIndexedAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-60"></a><span class='hs-definition'>glBlendFuncIndexedAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumenumIOV</span> <span class='hs-varid'>glBlendFuncIndexedAMDFunPtr</span>
+<a name="line-61"></a>
+<a name="line-62"></a><a name="glBlendFuncIndexedAMDFunPtr"></a><span class='hs-definition'>glBlendFuncIndexedAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-63"></a><span class='hs-definition'>glBlendFuncIndexedAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBlendFuncIndexedAMD"</span><span class='hs-layout'>)</span>
+<a name="line-64"></a>
+<a name="line-65"></a><span class='hs-comment'>{-# NOINLINE glBlendFuncIndexedAMDFunPtr #-}</span>
+<a name="line-66"></a>
+<a name="line-67"></a><span class='hs-comment'>-- | Usage: @'glBlendFuncSeparateIndexedAMD' buf srcRGB dstRGB srcAlpha dstAlpha@</span>
+<a name="line-68"></a><span class='hs-comment'>--</span>
+<a name="line-69"></a><span class='hs-comment'>-- This command is an alias for Graphics.GL.Raw.Profile.Core40.glBlendFuncSeparatei'.</span>
 <a name="line-70"></a>
-<a name="line-71"></a><a name="glBlendFuncSeparateIndexedAMD"></a><span class='hs-definition'>glBlendFuncSeparateIndexedAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-72"></a><span class='hs-definition'>glBlendFuncSeparateIndexedAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumenumenumenumIOV</span> <span class='hs-varid'>glBlendFuncSeparateIndexedAMDFunPtr</span>
-<a name="line-73"></a>
-<a name="line-74"></a><a name="glBlendFuncSeparateIndexedAMDFunPtr"></a><span class='hs-definition'>glBlendFuncSeparateIndexedAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-75"></a><span class='hs-definition'>glBlendFuncSeparateIndexedAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBlendFuncSeparateIndexedAMD"</span><span class='hs-layout'>)</span>
-<a name="line-76"></a>
-<a name="line-77"></a><span class='hs-comment'>{-# NOINLINE glBlendFuncSeparateIndexedAMDFunPtr #-}</span>
+<a name="line-71"></a>
+<a name="line-72"></a><a name="glBlendFuncSeparateIndexedAMD"></a><span class='hs-definition'>glBlendFuncSeparateIndexedAMD</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-73"></a><span class='hs-definition'>glBlendFuncSeparateIndexedAMD</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffiuintenumenumenumenumIOV</span> <span class='hs-varid'>glBlendFuncSeparateIndexedAMDFunPtr</span>
+<a name="line-74"></a>
+<a name="line-75"></a><a name="glBlendFuncSeparateIndexedAMDFunPtr"></a><span class='hs-definition'>glBlendFuncSeparateIndexedAMDFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLuint</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-76"></a><span class='hs-definition'>glBlendFuncSeparateIndexedAMDFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glBlendFuncSeparateIndexedAMD"</span><span class='hs-layout'>)</span>
+<a name="line-77"></a>
+<a name="line-78"></a><span class='hs-comment'>{-# NOINLINE glBlendFuncSeparateIndexedAMDFunPtr #-}</span>
 </pre></body>
 </html>

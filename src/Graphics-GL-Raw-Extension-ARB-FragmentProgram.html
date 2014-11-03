@@ -121,31 +121,32 @@
 <a name="line-112"></a>
 <a name="line-113"></a><a name="gl_ARB_fragment_program"></a><span class='hs-definition'>gl_ARB_fragment_program</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-114"></a><span class='hs-definition'>gl_ARB_fragment_program</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_ARB_fragment_program"</span> <span class='hs-varid'>extensions</span>
-<a name="line-115"></a>
-<a name="line-116"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAGMENT_PROGRAM_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8804</span>
-<a name="line-117"></a>
-<a name="line-118"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_ALU_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x880B</span>
-<a name="line-119"></a>
-<a name="line-120"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_NATIVE_ALU_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x880E</span>
-<a name="line-121"></a>
-<a name="line-122"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8810</span>
-<a name="line-123"></a>
-<a name="line-124"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_NATIVE_TEX_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x880F</span>
-<a name="line-125"></a>
-<a name="line-126"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_TEX_INDIRECTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x880D</span>
-<a name="line-127"></a>
-<a name="line-128"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_TEX_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x880C</span>
-<a name="line-129"></a>
-<a name="line-130"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_ALU_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8805</span>
-<a name="line-131"></a>
-<a name="line-132"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_NATIVE_ALU_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8808</span>
-<a name="line-133"></a>
-<a name="line-134"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x880A</span>
-<a name="line-135"></a>
-<a name="line-136"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_NATIVE_TEX_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8809</span>
-<a name="line-137"></a>
-<a name="line-138"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_TEX_INDIRECTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8807</span>
-<a name="line-139"></a>
-<a name="line-140"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_TEX_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8806</span>
+<a name="line-115"></a><span class='hs-comment'>{-# NOINLINE gl_ARB_fragment_program #-}</span>
+<a name="line-116"></a>
+<a name="line-117"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_FRAGMENT_PROGRAM_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8804</span>
+<a name="line-118"></a>
+<a name="line-119"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_ALU_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x880B</span>
+<a name="line-120"></a>
+<a name="line-121"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_NATIVE_ALU_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x880E</span>
+<a name="line-122"></a>
+<a name="line-123"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8810</span>
+<a name="line-124"></a>
+<a name="line-125"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_NATIVE_TEX_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x880F</span>
+<a name="line-126"></a>
+<a name="line-127"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_TEX_INDIRECTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x880D</span>
+<a name="line-128"></a>
+<a name="line-129"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_MAX_PROGRAM_TEX_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x880C</span>
+<a name="line-130"></a>
+<a name="line-131"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_ALU_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8805</span>
+<a name="line-132"></a>
+<a name="line-133"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_NATIVE_ALU_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8808</span>
+<a name="line-134"></a>
+<a name="line-135"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x880A</span>
+<a name="line-136"></a>
+<a name="line-137"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_NATIVE_TEX_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8809</span>
+<a name="line-138"></a>
+<a name="line-139"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_TEX_INDIRECTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8807</span>
+<a name="line-140"></a>
+<a name="line-141"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_PROGRAM_TEX_INSTRUCTIONS_ARB</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8806</span>
 </pre></body>
 </html>

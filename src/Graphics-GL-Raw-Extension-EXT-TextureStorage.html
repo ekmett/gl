@@ -58,66 +58,67 @@
 <a name="line-49"></a>
 <a name="line-50"></a><a name="gl_EXT_texture_storage"></a><span class='hs-definition'>gl_EXT_texture_storage</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>Bool</span>
 <a name="line-51"></a><span class='hs-definition'>gl_EXT_texture_storage</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>member</span> <span class='hs-str'>"GL_EXT_texture_storage"</span> <span class='hs-varid'>extensions</span>
-<a name="line-52"></a>
-<a name="line-53"></a><span class='hs-comment'>-- | Usage: @'glTexStorage1DEXT' target levels internalformat width@</span>
-<a name="line-54"></a><span class='hs-comment'>--</span>
-<a name="line-55"></a><span class='hs-comment'>-- This command is an alias for 'glTexStorage1D'.</span>
-<a name="line-56"></a>
+<a name="line-52"></a><span class='hs-comment'>{-# NOINLINE gl_EXT_texture_storage #-}</span>
+<a name="line-53"></a>
+<a name="line-54"></a><span class='hs-comment'>-- | Usage: @'glTexStorage1DEXT' target levels internalformat width@</span>
+<a name="line-55"></a><span class='hs-comment'>--</span>
+<a name="line-56"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glTexStorage1D'.</span>
 <a name="line-57"></a>
-<a name="line-58"></a><a name="glTexStorage1DEXT"></a><span class='hs-definition'>glTexStorage1DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-59"></a><span class='hs-definition'>glTexStorage1DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumsizeienumsizeiIOV</span> <span class='hs-varid'>glTexStorage1DEXTFunPtr</span>
-<a name="line-60"></a>
-<a name="line-61"></a><a name="glTexStorage1DEXTFunPtr"></a><span class='hs-definition'>glTexStorage1DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-62"></a><span class='hs-definition'>glTexStorage1DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexStorage1DEXT"</span><span class='hs-layout'>)</span>
-<a name="line-63"></a>
-<a name="line-64"></a><span class='hs-comment'>{-# NOINLINE glTexStorage1DEXTFunPtr #-}</span>
-<a name="line-65"></a>
-<a name="line-66"></a><span class='hs-comment'>-- | Usage: @'glTexStorage2DEXT' target levels internalformat width height@</span>
-<a name="line-67"></a><span class='hs-comment'>--</span>
-<a name="line-68"></a><span class='hs-comment'>-- This command is an alias for 'glTexStorage2D'.</span>
-<a name="line-69"></a>
+<a name="line-58"></a>
+<a name="line-59"></a><a name="glTexStorage1DEXT"></a><span class='hs-definition'>glTexStorage1DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-60"></a><span class='hs-definition'>glTexStorage1DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumsizeienumsizeiIOV</span> <span class='hs-varid'>glTexStorage1DEXTFunPtr</span>
+<a name="line-61"></a>
+<a name="line-62"></a><a name="glTexStorage1DEXTFunPtr"></a><span class='hs-definition'>glTexStorage1DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-63"></a><span class='hs-definition'>glTexStorage1DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexStorage1DEXT"</span><span class='hs-layout'>)</span>
+<a name="line-64"></a>
+<a name="line-65"></a><span class='hs-comment'>{-# NOINLINE glTexStorage1DEXTFunPtr #-}</span>
+<a name="line-66"></a>
+<a name="line-67"></a><span class='hs-comment'>-- | Usage: @'glTexStorage2DEXT' target levels internalformat width height@</span>
+<a name="line-68"></a><span class='hs-comment'>--</span>
+<a name="line-69"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glTexStorage2D'.</span>
 <a name="line-70"></a>
-<a name="line-71"></a><a name="glTexStorage2DEXT"></a><span class='hs-definition'>glTexStorage2DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-72"></a><span class='hs-definition'>glTexStorage2DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumsizeienumsizeisizeiIOV</span> <span class='hs-varid'>glTexStorage2DEXTFunPtr</span>
-<a name="line-73"></a>
-<a name="line-74"></a><a name="glTexStorage2DEXTFunPtr"></a><span class='hs-definition'>glTexStorage2DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-75"></a><span class='hs-definition'>glTexStorage2DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexStorage2DEXT"</span><span class='hs-layout'>)</span>
-<a name="line-76"></a>
-<a name="line-77"></a><span class='hs-comment'>{-# NOINLINE glTexStorage2DEXTFunPtr #-}</span>
-<a name="line-78"></a>
-<a name="line-79"></a><span class='hs-comment'>-- | Usage: @'glTexStorage3DEXT' target levels internalformat width height depth@</span>
-<a name="line-80"></a><span class='hs-comment'>--</span>
-<a name="line-81"></a><span class='hs-comment'>-- This command is an alias for 'glTexStorage3D'.</span>
-<a name="line-82"></a>
+<a name="line-71"></a>
+<a name="line-72"></a><a name="glTexStorage2DEXT"></a><span class='hs-definition'>glTexStorage2DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-73"></a><span class='hs-definition'>glTexStorage2DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumsizeienumsizeisizeiIOV</span> <span class='hs-varid'>glTexStorage2DEXTFunPtr</span>
+<a name="line-74"></a>
+<a name="line-75"></a><a name="glTexStorage2DEXTFunPtr"></a><span class='hs-definition'>glTexStorage2DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-76"></a><span class='hs-definition'>glTexStorage2DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexStorage2DEXT"</span><span class='hs-layout'>)</span>
+<a name="line-77"></a>
+<a name="line-78"></a><span class='hs-comment'>{-# NOINLINE glTexStorage2DEXTFunPtr #-}</span>
+<a name="line-79"></a>
+<a name="line-80"></a><span class='hs-comment'>-- | Usage: @'glTexStorage3DEXT' target levels internalformat width height depth@</span>
+<a name="line-81"></a><span class='hs-comment'>--</span>
+<a name="line-82"></a><span class='hs-comment'>-- This command is an alias for 'Graphics.GL.Raw.Internal.Shared.glTexStorage3D'.</span>
 <a name="line-83"></a>
-<a name="line-84"></a><a name="glTexStorage3DEXT"></a><span class='hs-definition'>glTexStorage3DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
-<a name="line-85"></a><span class='hs-definition'>glTexStorage3DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumsizeienumsizeisizeisizeiIOV</span> <span class='hs-varid'>glTexStorage3DEXTFunPtr</span>
-<a name="line-86"></a>
-<a name="line-87"></a><a name="glTexStorage3DEXTFunPtr"></a><span class='hs-definition'>glTexStorage3DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
-<a name="line-88"></a><span class='hs-definition'>glTexStorage3DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexStorage3DEXT"</span><span class='hs-layout'>)</span>
-<a name="line-89"></a>
-<a name="line-90"></a><span class='hs-comment'>{-# NOINLINE glTexStorage3DEXTFunPtr #-}</span>
-<a name="line-91"></a>
-<a name="line-92"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALPHA16F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881C</span>
-<a name="line-93"></a>
-<a name="line-94"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALPHA32F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8816</span>
-<a name="line-95"></a>
-<a name="line-96"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE16F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881E</span>
-<a name="line-97"></a>
-<a name="line-98"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE32F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8818</span>
-<a name="line-99"></a>
-<a name="line-100"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE_ALPHA16F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881F</span>
-<a name="line-101"></a>
-<a name="line-102"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE_ALPHA32F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8819</span>
-<a name="line-103"></a>
-<a name="line-104"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_R32F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x822E</span>
-<a name="line-105"></a>
-<a name="line-106"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RG32F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8230</span>
-<a name="line-107"></a>
-<a name="line-108"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RGB32F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8815</span>
-<a name="line-109"></a>
-<a name="line-110"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RGBA32F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8814</span>
-<a name="line-111"></a>
-<a name="line-112"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_IMMUTABLE_FORMAT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x912F</span>
+<a name="line-84"></a>
+<a name="line-85"></a><a name="glTexStorage3DEXT"></a><span class='hs-definition'>glTexStorage3DEXT</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>MonadIO</span> <span class='hs-varid'>m</span> <span class='hs-keyglyph'>=&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>m</span> <span class='hs-conid'>()</span>
+<a name="line-86"></a><span class='hs-definition'>glTexStorage3DEXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>ffienumsizeienumsizeisizeisizeiIOV</span> <span class='hs-varid'>glTexStorage3DEXTFunPtr</span>
+<a name="line-87"></a>
+<a name="line-88"></a><a name="glTexStorage3DEXTFunPtr"></a><span class='hs-definition'>glTexStorage3DEXTFunPtr</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>FunPtr</span> <span class='hs-layout'>(</span><span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLenum</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>GLsizei</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>IO</span> <span class='hs-conid'>()</span><span class='hs-layout'>)</span>
+<a name="line-89"></a><span class='hs-definition'>glTexStorage3DEXTFunPtr</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>unsafePerformIO</span> <span class='hs-layout'>(</span><span class='hs-varid'>getProcAddress</span> <span class='hs-str'>"glTexStorage3DEXT"</span><span class='hs-layout'>)</span>
+<a name="line-90"></a>
+<a name="line-91"></a><span class='hs-comment'>{-# NOINLINE glTexStorage3DEXTFunPtr #-}</span>
+<a name="line-92"></a>
+<a name="line-93"></a><a name="pattern"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALPHA16F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881C</span>
+<a name="line-94"></a>
+<a name="line-95"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_ALPHA32F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8816</span>
+<a name="line-96"></a>
+<a name="line-97"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE16F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881E</span>
+<a name="line-98"></a>
+<a name="line-99"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE32F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8818</span>
+<a name="line-100"></a>
+<a name="line-101"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE_ALPHA16F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x881F</span>
+<a name="line-102"></a>
+<a name="line-103"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_LUMINANCE_ALPHA32F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8819</span>
+<a name="line-104"></a>
+<a name="line-105"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_R32F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x822E</span>
+<a name="line-106"></a>
+<a name="line-107"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RG32F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8230</span>
+<a name="line-108"></a>
+<a name="line-109"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RGB32F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8815</span>
+<a name="line-110"></a>
+<a name="line-111"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_RGBA32F_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x8814</span>
+<a name="line-112"></a>
+<a name="line-113"></a><span class='hs-definition'>pattern</span> <span class='hs-conid'>GL_TEXTURE_IMMUTABLE_FORMAT_EXT</span> <span class='hs-keyglyph'>=</span> <span class='hs-num'>0x912F</span>
 </pre></body>
 </html>
