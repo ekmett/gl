@@ -72,12 +72,10 @@ library
       else
         extra-libraries: GL
 
-  other-modules:
-    Graphics.GL.Raw.Internal.Shared
-
   exposed-modules:
     Graphics.GL.Raw.Internal.FFI
     Graphics.GL.Raw.Internal.Proc
+    Graphics.GL.Raw.Internal.Shared
     Graphics.GL.Raw.Types
     Graphics.GL.Raw.Extension
     Graphics.GL.Raw.Extension.ThreeDFX
