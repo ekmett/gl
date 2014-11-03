@@ -25,7 +25,6 @@ module Graphics.GL.Raw.Internal.Proc
 
 import Control.Monad
 import Data.Functor
-import Data.List.Split (splitOn)
 import Data.Set as Set
 import Foreign.C.String
 import Foreign.Marshal.Alloc
