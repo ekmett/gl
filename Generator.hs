@@ -64,10 +64,10 @@ commandDescription fm (Command cmdName _cmdType cmdParameters vecEquiv alias) = 
   [ case Map.lookup grp fm of
       Just xs -> printf "--\n-- The parameter @%s@ is a @%s@, one of: %s\n"
          (parameterName param) grp $ intercalate ", " (map link xs)
-      Nothing -> printf "--\n-- The parameter @%s@ is a @%s@" (parameterName param) grp
+      Nothing -> printf "--\n-- The parameter @%s@ is a @%s@\n" (parameterName param) grp
   | param <- cmdParameters, Just grp <- [parameterGroup param] 
   ] ++
-  [ "--\n-- The length of @" ++ parameterName param ++ "@ should be " ++ describeLength x
+  [ "--\n-- The length of @" ++ parameterName param ++ "@ should be " ++ describeLength x ++ "\n"
   | param <- cmdParameters, Just x <- [parameterLen param]
   ] ++
   [ "--\n-- This command is an alias for " ++ link a ++ "\n" | Just a <- [alias] ] ++
