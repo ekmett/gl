@@ -532,7 +532,10 @@ mkModule fm re m entr = Module m export body
         | parts@(vendor:rest) <- tail (splitOn "_" en)
         , e <- vendor ++ "/" ++ intercalate "_" rest ->
           [ Code $ "-- | Checks that the " ++ tryLink e en ++ " extension is available."
-          , Function ("gl_" ++ intercalate "_" parts) "Bool" ("= member " ++ show en ++ " extensions")
+          , Function ("gl_" ++ intercalate "_" parts) "Bool"
+            (printf "= member %s extensions\n{-# NOINLINE %s #-}"
+              (show en)
+              ("gl_" ++ intercalate "_" parts))
           ]
         | otherwise -> error $ "malformed extension: " ++ en
       Nothing -> []
