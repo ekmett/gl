@@ -102,7 +102,19 @@ lookupEnum registry enum =
 deshenaniganize :: Registry -> Registry
 deshenaniganize registry = registry
   { registryFeatures = clean44feature . clean45feature <$> registryFeatures registry
+  , registryCommands = cleanCommand <$> registryCommands registry
   }
+
+cleanCommand :: Command -> Command
+cleanCommand cmd = cmd { commandParameters = cleanParameter <$> commandParameters cmd }
+
+cleanParameter :: Parameter -> Parameter
+cleanParameter param = param { parameterGroup = cleanParameterGroup <$> parameterGroup param }
+
+cleanParameterGroup :: String -> String
+cleanParameterGroup "PixelInternalFormat" = "InternalFormat"
+cleanParameterGroup "SGIXFfdMask" = "FfdMaskSGIX"
+cleanParameterGroup xs = xs
 
 clean44feature :: Feature -> Feature
 clean44feature feature
