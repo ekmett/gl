@@ -5,3 +5,4 @@ Things that would be nice to have
 * Some of the manual pages are for multiple functions, link by prefix?
 * Fix issues on Windows caused by the large number of modules
 * Fix distribution issues caused by having a custom `Setup.hs` with non-trivial content.
+* Change Ptr () to use `Ptr a`, `Ptr b`, etc.
