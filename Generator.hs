@@ -200,7 +200,7 @@ implicitPrelude m = case m of
     , "Graphics.GL.Raw.Profile.Core33"
     ]
   "Graphics.GL.Raw.Profile.Compatibility40" -> mk [
-      "Graphics.GL.Raw.Profile.Compatibility32"
+      "Graphics.GL.Raw.Profile.Compatibility33"
     , "Graphics.GL.Raw.Profile.Core40"
     ]
   "Graphics.GL.Raw.Profile.Compatibility41" -> mk [
