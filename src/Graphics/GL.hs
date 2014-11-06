@@ -1,4 +1,3 @@
-{-# LANGUAGE CPP #-}
 -----------------------------------------------------------------------------
 -- |
 -- Copyright   :  (C) 2014 Edward Kmett and Gabríel Arthúr Pétursson
@@ -9,9 +8,9 @@
 --
 ----------------------------------------------------------------------------
 module Graphics.GL (
-  , module Graphics.GL.Core45
+    module Graphics.GL.Core45
   , module Graphics.GL.Extension
-    module Graphics.GL.Types
+  , module Graphics.GL.Types
 ) where
 
 import Graphics.GL.Core45
