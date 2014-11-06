@@ -1,3 +1,13 @@
+0.5
+---
+* Haddock links to the OpenGL ES 2 registry
+* `Compatibility40` depends on `Compatibility33`
+
+0.4
+---
+* Haddocks!
+* Fixed a major issue where pointers to pointers in the API were getting the wrong types.
+
 0.3
 ---
 * Switched to non-C style types for the most part. `Word32`, etc. have better understood support within the Haskell ecosystem. `CPtrdiff` remains as it varies across viable target platforms.
