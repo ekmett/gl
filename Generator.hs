@@ -125,7 +125,7 @@ invokerName xs = "ffi" ++ commonName xs
 
 extensionModuleName :: ExtensionName -> ModuleName
 extensionModuleName name =
-  printf "Graphics.GL.Raw.%s.%s"
+  printf "Graphics.GL.Ext.%s.%s"
     (sanePrefix prefix) (saneModule $ camelCase (intercalate "_" rest))
   where
     (_:prefix:rest) = splitOn "_" name
@@ -135,7 +135,7 @@ extensionModuleName name =
 
 profileModuleName :: String -> String -> (ModuleName, Maybe ModuleName)
 profileModuleName feature profile =
-  (printf "Graphics.GL.Profile.%s" *** liftM (printf "Graphics.GL.Profile.%s")) submodule
+  (printf "Graphics.GL.%s" *** liftM (printf "Graphics.GL.%s")) submodule
   where
     submodule = case (feature, profile) of
       ("GL_VERSION_1_0", _) -> ("Standard10", Nothing)
@@ -192,115 +192,115 @@ profileModuleName feature profile =
 
 implicitPrelude :: String -> ([String], [Body])
 implicitPrelude m = case m of
-  "Graphics.GL.Profile.Compatibility32" -> mk [
-      "Graphics.GL.Profile.Core32"
+  "Graphics.GL.Compatibility32" -> mk [
+      "Graphics.GL.Core32"
     ]
-  "Graphics.GL.Profile.Compatibility33" -> mk [
-      "Graphics.GL.Profile.Compatibility32"
-    , "Graphics.GL.Profile.Core33"
+  "Graphics.GL.Compatibility33" -> mk [
+      "Graphics.GL.Compatibility32"
+    , "Graphics.GL.Core33"
     ]
-  "Graphics.GL.Profile.Compatibility40" -> mk [
-      "Graphics.GL.Profile.Compatibility33"
-    , "Graphics.GL.Profile.Core40"
+  "Graphics.GL.Compatibility40" -> mk [
+      "Graphics.GL.Compatibility33"
+    , "Graphics.GL.Core40"
     ]
-  "Graphics.GL.Profile.Compatibility41" -> mk [
-      "Graphics.GL.Profile.Compatibility40"
-    , "Graphics.GL.Profile.Core41"
+  "Graphics.GL.Compatibility41" -> mk [
+      "Graphics.GL.Compatibility40"
+    , "Graphics.GL.Core41"
     ]
-  "Graphics.GL.Profile.Compatibility42" -> mk [
-      "Graphics.GL.Profile.Compatibility41"
-    , "Graphics.GL.Profile.Core42"
+  "Graphics.GL.Compatibility42" -> mk [
+      "Graphics.GL.Compatibility41"
+    , "Graphics.GL.Core42"
     ]
-  "Graphics.GL.Profile.Compatibility43" -> mk [
-      "Graphics.GL.Profile.Compatibility42"
-    , "Graphics.GL.Profile.Core43"
+  "Graphics.GL.Compatibility43" -> mk [
+      "Graphics.GL.Compatibility42"
+    , "Graphics.GL.Core43"
     ]
-  "Graphics.GL.Profile.Compatibility44" -> mk [
-      "Graphics.GL.Profile.Compatibility43"
-    , "Graphics.GL.Profile.Core44"
+  "Graphics.GL.Compatibility44" -> mk [
+      "Graphics.GL.Compatibility43"
+    , "Graphics.GL.Core44"
     ]
-  "Graphics.GL.Profile.Compatibility45" -> mk [
-      "Graphics.GL.Profile.Compatibility44"
-    , "Graphics.GL.Profile.Core45"
+  "Graphics.GL.Compatibility45" -> mk [
+      "Graphics.GL.Compatibility44"
+    , "Graphics.GL.Core45"
     ]
-  "Graphics.GL.Profile.Core33" -> mk [
-      "Graphics.GL.Profile.Core32"
+  "Graphics.GL.Core33" -> mk [
+      "Graphics.GL.Core32"
     ]
-  "Graphics.GL.Profile.Core40" -> mk [
-      "Graphics.GL.Profile.Core33"
+  "Graphics.GL.Core40" -> mk [
+      "Graphics.GL.Core33"
     ]
-  "Graphics.GL.Profile.Core41" -> mk [
-      "Graphics.GL.Profile.Core40"
+  "Graphics.GL.Core41" -> mk [
+      "Graphics.GL.Core40"
     ]
-  "Graphics.GL.Profile.Core42" -> mk [
-      "Graphics.GL.Profile.Core41"
+  "Graphics.GL.Core42" -> mk [
+      "Graphics.GL.Core41"
     ]
-  "Graphics.GL.Profile.Core43" -> mk [
-      "Graphics.GL.Profile.Core42"
+  "Graphics.GL.Core43" -> mk [
+      "Graphics.GL.Core42"
     ]
-  "Graphics.GL.Profile.Core44" -> mk [
-      "Graphics.GL.Profile.Core43"
+  "Graphics.GL.Core44" -> mk [
+      "Graphics.GL.Core43"
     ]
-  "Graphics.GL.Profile.Core45" -> mk [
-      "Graphics.GL.Profile.Core44"
+  "Graphics.GL.Core45" -> mk [
+      "Graphics.GL.Core44"
     ]
-  "Graphics.GL.Profile.EmbeddedCommon11" -> mk [
-      "Graphics.GL.Profile.EmbeddedLite11"
+  "Graphics.GL.EmbeddedCommon11" -> mk [
+      "Graphics.GL.EmbeddedLite11"
     ]
-  "Graphics.GL.Profile.Embedded30" -> mk [
-      "Graphics.GL.Profile.Embedded20"
+  "Graphics.GL.Embedded30" -> mk [
+      "Graphics.GL.Embedded20"
     ]
-  "Graphics.GL.Profile.Embedded31" -> mk [
-      "Graphics.GL.Profile.Embedded30"
+  "Graphics.GL.Embedded31" -> mk [
+      "Graphics.GL.Embedded30"
     ]
-  "Graphics.GL.Profile.Standard11" -> mk [
-      "Graphics.GL.Profile.Standard10"
+  "Graphics.GL.Standard11" -> mk [
+      "Graphics.GL.Standard10"
     ]
-  "Graphics.GL.Profile.Standard12" -> mk [
-      "Graphics.GL.Profile.Standard11"
+  "Graphics.GL.Standard12" -> mk [
+      "Graphics.GL.Standard11"
     ]
-  "Graphics.GL.Profile.Standard13" -> mk [
-      "Graphics.GL.Profile.Standard12"
+  "Graphics.GL.Standard13" -> mk [
+      "Graphics.GL.Standard12"
     ]
-  "Graphics.GL.Profile.Standard14" -> mk [
-      "Graphics.GL.Profile.Standard13"
+  "Graphics.GL.Standard14" -> mk [
+      "Graphics.GL.Standard13"
     ]
-  "Graphics.GL.Profile.Standard15" -> mk [
-      "Graphics.GL.Profile.Standard14"
+  "Graphics.GL.Standard15" -> mk [
+      "Graphics.GL.Standard14"
     ]
-  "Graphics.GL.Profile.Standard20" -> mk [
-      "Graphics.GL.Profile.Standard15"
+  "Graphics.GL.Standard20" -> mk [
+      "Graphics.GL.Standard15"
     ]
-  "Graphics.GL.Profile.Standard21" -> mk [
-      "Graphics.GL.Profile.Standard20"
+  "Graphics.GL.Standard21" -> mk [
+      "Graphics.GL.Standard20"
     ]
-  "Graphics.GL.Profile.Standard30" -> mk [
-      "Graphics.GL.Profile.Standard21"
+  "Graphics.GL.Standard30" -> mk [
+      "Graphics.GL.Standard21"
     ]
-  "Graphics.GL.Profile.Standard31" -> mk [
-      "Graphics.GL.Profile.Standard30"
+  "Graphics.GL.Standard31" -> mk [
+      "Graphics.GL.Standard30"
     ]
-  "Graphics.GL.Raw.Extension.ANDROID.ExtensionPackEs31a" -> mk [
-      "Graphics.GL.Raw.Extension.KHR.Debug"
-    , "Graphics.GL.Raw.Extension.KHR.TextureCompressionAstcLdr"
-    , "Graphics.GL.Raw.Extension.KHR.BlendEquationAdvanced"
-    , "Graphics.GL.Raw.Extension.OES.SampleShading"
-    , "Graphics.GL.Raw.Extension.OES.SampleVariables"
-    , "Graphics.GL.Raw.Extension.OES.ShaderImageAtomic"
-    , "Graphics.GL.Raw.Extension.OES.ShaderMultisampleInterpolation"
-    , "Graphics.GL.Raw.Extension.OES.TextureStencil8"
-    , "Graphics.GL.Raw.Extension.OES.TextureStorageMultisample2dArray"
-    , "Graphics.GL.Raw.Extension.EXT.CopyImage"
-    , "Graphics.GL.Raw.Extension.EXT.DrawBuffersIndexed"
-    , "Graphics.GL.Raw.Extension.EXT.GeometryShader"
-    , "Graphics.GL.Raw.Extension.EXT.GpuShader5"
-    , "Graphics.GL.Raw.Extension.EXT.PrimitiveBoundingBox"
-    , "Graphics.GL.Raw.Extension.EXT.ShaderIoBlocks"
-    , "Graphics.GL.Raw.Extension.EXT.TessellationShader"
-    , "Graphics.GL.Raw.Extension.EXT.TextureBorderClamp"
-    , "Graphics.GL.Raw.Extension.EXT.TextureBuffer"
-    , "Graphics.GL.Raw.Extension.EXT.TextureCubeMapArray"
-    , "Graphics.GL.Raw.Extension.EXT.TextureSRGBDecode"
+  "Graphics.GL.Ext.Extension.ANDROID.ExtensionPackEs31a" -> mk [
+      "Graphics.GL.Ext.Extension.KHR.Debug"
+    , "Graphics.GL.Ext.Extension.KHR.TextureCompressionAstcLdr"
+    , "Graphics.GL.Ext.Extension.KHR.BlendEquationAdvanced"
+    , "Graphics.GL.Ext.Extension.OES.SampleShading"
+    , "Graphics.GL.Ext.Extension.OES.SampleVariables"
+    , "Graphics.GL.Ext.Extension.OES.ShaderImageAtomic"
+    , "Graphics.GL.Ext.Extension.OES.ShaderMultisampleInterpolation"
+    , "Graphics.GL.Ext.Extension.OES.TextureStencil8"
+    , "Graphics.GL.Ext.Extension.OES.TextureStorageMultisample2dArray"
+    , "Graphics.GL.Ext.Extension.EXT.CopyImage"
+    , "Graphics.GL.Ext.Extension.EXT.DrawBuffersIndexed"
+    , "Graphics.GL.Ext.Extension.EXT.GeometryShader"
+    , "Graphics.GL.Ext.Extension.EXT.GpuShader5"
+    , "Graphics.GL.Ext.Extension.EXT.PrimitiveBoundingBox"
+    , "Graphics.GL.Ext.Extension.EXT.ShaderIoBlocks"
+    , "Graphics.GL.Ext.Extension.EXT.TessellationShader"
+    , "Graphics.GL.Ext.Extension.EXT.TextureBorderClamp"
+    , "Graphics.GL.Ext.Extension.EXT.TextureBuffer"
+    , "Graphics.GL.Ext.Extension.EXT.TextureCubeMapArray"
+    , "Graphics.GL.Ext.Extension.EXT.TextureSRGBDecode"
     ]
   _ -> ([], [])
   where
@@ -337,8 +337,8 @@ entries registry = do
       let name = fst . profileModuleName feature $ requireProfile req
       requires name req
 
-      when ("Graphics.GL.Profile.Standard" `isPrefixOf` name) $
-        requires "Graphics.GL.Profile.Core32" req
+      when ("Graphics.GL.Standard" `isPrefixOf` name) $
+        requires "Graphics.GL.Core32" req
 
     forM_ (featureRemoves fe) $ \rm -> do
       let profile = removeProfile rm
@@ -372,7 +372,7 @@ modules registry entr = do
     modify $ Map.insert (extensionModuleName $ extensionName ext) []
 
   forM_ profiles $ \profile ->
-    modify $ Map.insert (printf "Graphics.GL.Profile.%s" profile) []
+    modify $ Map.insert (printf "Graphics.GL.%s" profile) []
 
   forM_ (Map.toList entr) $ \(k, C v ms) ->
     forM_ (Set.toList ms) $ \m ->
@@ -551,7 +551,7 @@ mkModule fm re m entr = Module m export body
 
 mkExtensionGather :: FunMap -> [Module]
 mkExtensionGather fm = flip map extensionGroups $
-  \x -> Module (printf "Graphics.GL.Raw.%s" $ sanePrefix x)
+  \x -> Module (printf "Graphics.GL.Ext.%s" $ sanePrefix x)
     [Section (printf "%s Extensions" x) $ map ("module "++) $ extInGroup x]
     [Import $ extInGroup x]
   where
