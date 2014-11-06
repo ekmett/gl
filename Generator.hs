@@ -486,7 +486,7 @@ mkShared fm entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
     bodyF (_, E n, v) = [Pattern n Nothing ("= " ++ v)]
     bodyF (_, F n, v) = funBody fm n v
 
-mkModule :: FunMap -> Set String -> String -> [(Bool, Entry, String)] -> Module
+mkModule :: FunMap -> Map String String -> String -> [(Bool, Entry, String)] -> Module
 mkModule fm re m entr = Module m export body
   where
     entryName (E n) = "pattern " ++ n
@@ -529,15 +529,14 @@ mkModule fm re m entr = Module m export body
       extCheck ++
       concatMap bodyF entr
 
-    tryLink e en 
-      | Set.member e re = "<https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/" ++ e ++ ".txt "++ en ++ ">"
-      | otherwise = en
+    tryLink en = case Map.lookup en re of
+      Just uri -> "<" ++ uri ++ " " ++ en ++ ">"
+      Nothing -> en
 
     extCheck = case Map.lookup m (funExtensions fm) of
       Just en 
-        | parts@(vendor:rest) <- tail (splitOn "_" en)
-        , e <- vendor ++ "/" ++ intercalate "_" rest ->
-          [ Code $ "-- | Checks that the " ++ tryLink e en ++ " extension is available."
+        | parts@(vendor:rest) <- tail (splitOn "_" en) ->
+          [ Code $ "-- | Checks that the " ++ tryLink en ++ " extension is available."
           , Function ("gl_" ++ intercalate "_" parts) "Bool"
             (printf "= member %s extensions\n{-# NOINLINE %s #-}"
               (show en)
@@ -575,11 +574,11 @@ mkExtensionGroupGather ms = Module "Graphics.GL.Raw.Extension"
   [Section "Extensions" $ map (("module "++) . moduleName) ms]
   [Import $ map moduleName ms]
 
-generateSource :: FilePath -> Registry -> [String] -> [String] -> IO ()
+generateSource :: FilePath -> Registry -> [String] -> [(String, String)] -> IO ()
 generateSource fp registry man extensions = do
   let s = execState (entries registry) Map.empty
   let m = execState (modules registry s) Map.empty
-  let re = Set.fromList extensions
+  let re = Map.fromList extensions
   let fm' = Foldable.concat m
   let s' = Map.fromList $ first entryName <$> Map.toList s
   let fm = funMap registry s' fm' man

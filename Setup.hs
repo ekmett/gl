@@ -27,7 +27,7 @@ generateAPI l = do
   man <- lines <$> readFile "man.txt"
   extensions <- lines <$> readFile "extensions.txt"
   putStr "Generating API..."
-  generateSource (buildDir l </> "autogen") (deshenaniganize registry) man extensions
+  generateSource (buildDir l </> "autogen") (deshenaniganize registry) man [ (x,y) | [x,y] <- map words extensions ]
   putStrLn "done"
 
 main :: IO ()

@@ -6,3 +6,4 @@ Things that would be nice to have
 * Fix issues on Windows caused by the large number of modules
 * Fix distribution issues caused by having a custom `Setup.hs` with non-trivial content.
 * Change Ptr () to use `Ptr a`, `Ptr b`, etc.
+* Add other extension links to go to https://www.khronos.org/registry/gles/extensions/ for opengl es extensions
