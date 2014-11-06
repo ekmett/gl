@@ -86,8 +86,6 @@ GL_ARB_clear_buffer_object https://cvs.khronos.org/svn/repos/ogl/trunk/doc/regis
 GL_ARB_clear_texture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/clear_texture.txt
 GL_ARB_clip_control https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/clip_control.txt
 GL_ARB_color_buffer_float https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/color_buffer_float.txt
-GL_ARB_color_buffer_float https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/color_buffer_float.txt
-GL_ARB_color_buffer_float https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/color_buffer_float.txt
 GL_ARB_compatibility https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/compatibility.txt
 GL_ARB_compressed_texture_pixel_storage https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/compressed_texture_pixel_storage.txt
 GL_ARB_compute_shader https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/compute_shader.txt
@@ -119,16 +117,12 @@ GL_ARB_fragment_shader https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/
 GL_ARB_framebuffer_no_attachments https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/framebuffer_no_attachments.txt
 GL_ARB_framebuffer_object https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/framebuffer_object.txt
 GL_ARB_framebuffer_sRGB https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/framebuffer_sRGB.txt
-GL_ARB_framebuffer_sRGB https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/framebuffer_sRGB.txt
-GL_ARB_framebuffer_sRGB https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/framebuffer_sRGB.txt
 GL_ARB_geometry_shader4 https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/geometry_shader4.txt
 GL_ARB_get_proc_address https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/get_proc_address.txt
 GL_ARB_get_program_binary https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/get_program_binary.txt
 GL_ARB_get_texture_sub_image https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/get_texture_sub_image.txt
 GL_ARB_glx_create_context https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/glx_create_context.txt
-GL_ARB_glx_create_context https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/glx_create_context.txt
 GL_ARB_glx_create_context_robustness https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/glx_create_context_robustness.txt
-GL_ARB_glx_robustness_isolation https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/glx_robustness_isolation.txt
 GL_ARB_glx_robustness_isolation https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/glx_robustness_isolation.txt
 GL_ARB_gpu_shader5 https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/gpu_shader5.txt
 GL_ARB_gpu_shader_fp64 https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/gpu_shader_fp64.txt
@@ -144,8 +138,6 @@ GL_ARB_map_buffer_range https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry
 GL_ARB_matrix_palette https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/matrix_palette.txt
 GL_ARB_multi_bind https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/multi_bind.txt
 GL_ARB_multi_draw_indirect https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/multi_draw_indirect.txt
-GL_ARB_multisample https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/multisample.txt
-GL_ARB_multisample https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/multisample.txt
 GL_ARB_multisample https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/multisample.txt
 GL_ARB_multitexture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/multitexture.txt
 GL_ARB_occlusion_query https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/occlusion_query.txt
@@ -232,7 +224,6 @@ GL_ARB_vertex_attrib_64bit https://cvs.khronos.org/svn/repos/ogl/trunk/doc/regis
 GL_ARB_vertex_attrib_binding https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/vertex_attrib_binding.txt
 GL_ARB_vertex_blend https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/vertex_blend.txt
 GL_ARB_vertex_buffer_object https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/vertex_buffer_object.txt
-GL_ARB_vertex_buffer_object https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/vertex_buffer_object.txt
 GL_ARB_vertex_program https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/vertex_program.txt
 GL_ARB_vertex_shader https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/vertex_shader.txt
 GL_ARB_vertex_type_10f_11f_11f_rev https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/vertex_type_10f_11f_11f_rev.txt
@@ -240,14 +231,12 @@ GL_ARB_vertex_type_2_10_10_10_rev https://cvs.khronos.org/svn/repos/ogl/trunk/do
 GL_ARB_viewport_array https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/viewport_array.txt
 GL_ARB_wgl_buffer_region https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/wgl_buffer_region.txt
 GL_ARB_wgl_create_context https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/wgl_create_context.txt
-GL_ARB_wgl_create_context https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/wgl_create_context.txt
 GL_ARB_wgl_create_context_robustness https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/wgl_create_context_robustness.txt
 GL_ARB_wgl_extensions_string https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/wgl_extensions_string.txt
 GL_ARB_wgl_make_current_read https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/wgl_make_current_read.txt
 GL_ARB_wgl_pbuffer https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/wgl_pbuffer.txt
 GL_ARB_wgl_pixel_format https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/wgl_pixel_format.txt
 GL_ARB_wgl_render_texture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/wgl_render_texture.txt
-GL_ARB_wgl_robustness_isolation https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/wgl_robustness_isolation.txt
 GL_ARB_wgl_robustness_isolation https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/wgl_robustness_isolation.txt
 GL_ARB_window_pos https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/ARB/window_pos.txt
 GL_ARM_mali_program_binary https://www.khronos.org/registry/gles/extensions/ARM/ARM_mali_program_binary.txt
@@ -318,13 +307,10 @@ GL_EXT_framebuffer_multisample https://cvs.khronos.org/svn/repos/ogl/trunk/doc/r
 GL_EXT_framebuffer_multisample_blit_scaled https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/framebuffer_multisample_blit_scaled.txt
 GL_EXT_framebuffer_object https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/framebuffer_object.txt
 GL_EXT_framebuffer_sRGB https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/framebuffer_sRGB.txt
-GL_EXT_framebuffer_sRGB https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/framebuffer_sRGB.txt
-GL_EXT_framebuffer_sRGB https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/framebuffer_sRGB.txt
 GL_EXT_geometry_point_size https://www.khronos.org/registry/gles/extensions/EXT/EXT_geometry_point_size.txt
 GL_EXT_geometry_shader  https://www.khronos.org/registry/gles/extensions/EXT/EXT_geometry_shader .txt
 GL_EXT_geometry_shader4 https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/geometry_shader4.txt
 GL_EXT_glx_buffer_age https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/glx_buffer_age.txt
-GL_EXT_glx_create_context_es2_profile https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/glx_create_context_es2_profile.txt
 GL_EXT_glx_create_context_es2_profile https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/glx_create_context_es2_profile.txt
 GL_EXT_glx_stereo_tree https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/glx_stereo_tree.txt
 GL_EXT_glx_swap_control_tear https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/glx_swap_control_tear.txt
@@ -343,15 +329,12 @@ GL_EXT_map_buffer_range https://www.khronos.org/registry/gles/extensions/EXT/EXT
 GL_EXT_misc_attribute https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/misc_attribute.txt
 GL_EXT_multi_draw_arrays  https://www.khronos.org/registry/gles/extensions/EXT/EXT_multi_draw_arrays .txt
 GL_EXT_multi_draw_arrays https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/multi_draw_arrays.txt
-GL_EXT_multi_draw_arrays https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/multi_draw_arrays.txt
 GL_EXT_multisampled_render_to_texture https://www.khronos.org/registry/gles/extensions/EXT/EXT_multisampled_render_to_texture.txt
 GL_EXT_multiview_draw_buffers https://www.khronos.org/registry/gles/extensions/EXT/EXT_multiview_draw_buffers.txt
 GL_EXT_nurbs_tessellator https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/nurbs_tessellator.txt
 GL_EXT_object_space_tess https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/object_space_tess.txt
 GL_EXT_occlusion_query_boolean https://www.khronos.org/registry/gles/extensions/EXT/EXT_occlusion_query_boolean.txt
 GL_EXT_packed_depth_stencil https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/packed_depth_stencil.txt
-GL_EXT_packed_float https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/packed_float.txt
-GL_EXT_packed_float https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/packed_float.txt
 GL_EXT_packed_float https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/packed_float.txt
 GL_EXT_packed_pixels https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/packed_pixels.txt
 GL_EXT_paletted_texture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/paletted_texture.txt
@@ -371,7 +354,6 @@ GL_EXT_rescale_normal https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/p
 GL_EXT_robustness https://www.khronos.org/registry/gles/extensions/EXT/EXT_robustness.txt
 GL_EXT_sRGB https://www.khronos.org/registry/gles/extensions/EXT/EXT_sRGB.txt
 GL_EXT_sRGB_write_control https://www.khronos.org/registry/gles/extensions/EXT/EXT_sRGB_write_control.txt
-GL_EXT_scene_marker https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/scene_marker.txt
 GL_EXT_scene_marker https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/scene_marker.txt
 GL_EXT_secondary_color https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/secondary_color.txt
 GL_EXT_separate_shader_objects https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/separate_shader_objects.txt
@@ -449,12 +431,10 @@ GL_EXT_vertex_weighting https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry
 GL_EXT_visual_info https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/visual_info.txt
 GL_EXT_visual_rating https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/visual_rating.txt
 GL_EXT_wgl_create_context_es2_profile https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/wgl_create_context_es2_profile.txt
-GL_EXT_wgl_create_context_es2_profile https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/wgl_create_context_es2_profile.txt
 GL_EXT_wgl_depth_float https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/wgl_depth_float.txt
 GL_EXT_wgl_display_color_table https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/wgl_display_color_table.txt
 GL_EXT_wgl_extensions_string https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/wgl_extensions_string.txt
 GL_EXT_wgl_make_current_read https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/wgl_make_current_read.txt
-GL_EXT_wgl_multisample https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/wgl_multisample.txt
 GL_EXT_wgl_multisample https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/wgl_multisample.txt
 GL_EXT_wgl_pbuffer https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/wgl_pbuffer.txt
 GL_EXT_wgl_pixel_format https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/wgl_pixel_format.txt
@@ -499,10 +479,7 @@ GL_INTEL_swap_event https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/pub
 GL_INTEL_texture_scissor https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/INTEL/texture_scissor.txt
 GL_KHR_blend_equation_advanced  https://www.khronos.org/registry/gles/extensions/KHR/KHR_blend_equation_advanced .txt
 GL_KHR_blend_equation_advanced https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/blend_equation_advanced.txt
-GL_KHR_blend_equation_advanced https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/blend_equation_advanced.txt
 GL_KHR_blend_equation_advanced_coherent https://www.khronos.org/registry/gles/extensions/KHR/KHR_blend_equation_advanced_coherent.txt
-GL_KHR_context_flush_control https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/context_flush_control.txt
-GL_KHR_context_flush_control https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/context_flush_control.txt
 GL_KHR_context_flush_control https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/context_flush_control.txt
 GL_KHR_context_flush_control https://www.khronos.org/registry/gles/extensions/KHR/KHR_context_flush_control.txt
 GL_KHR_debug https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/debug.txt
@@ -512,7 +489,6 @@ GL_KHR_robust_buffer_access_behavior https://www.khronos.org/registry/gles/exten
 GL_KHR_robustness https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/robustness.txt
 GL_KHR_robustness https://www.khronos.org/registry/gles/extensions/KHR/KHR_robustness.txt
 GL_KHR_texture_compression_astc_hdr  https://www.khronos.org/registry/gles/extensions/KHR/KHR_texture_compression_astc_hdr .txt
-GL_KHR_texture_compression_astc_hdr https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/texture_compression_astc_hdr.txt
 GL_KHR_texture_compression_astc_hdr https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/texture_compression_astc_hdr.txt
 GL_KHR_texture_compression_astc_ldr https://www.khronos.org/registry/gles/extensions/KHR/KHR_texture_compression_astc_ldr.txt
 GL_MESAX_texture_stack https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/MESAX/texture_stack.txt
@@ -538,7 +514,6 @@ GL_NV_bindless_multi_draw_indirect_count https://cvs.khronos.org/svn/repos/ogl/t
 GL_NV_bindless_texture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/bindless_texture.txt
 GL_NV_blend_equation_advanced  https://www.khronos.org/registry/gles/extensions/NV/NV_blend_equation_advanced .txt
 GL_NV_blend_equation_advanced https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/blend_equation_advanced.txt
-GL_NV_blend_equation_advanced https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/blend_equation_advanced.txt
 GL_NV_blend_equation_advanced_coherent https://www.khronos.org/registry/gles/extensions/NV/NV_blend_equation_advanced_coherent.txt
 GL_NV_blend_square https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/blend_square.txt
 GL_NV_compute_program5 https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/compute_program5.txt
@@ -546,8 +521,6 @@ GL_NV_conditional_render https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registr
 GL_NV_conservative_raster https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/conservative_raster.txt
 GL_NV_copy_buffer https://www.khronos.org/registry/gles/extensions/NV/NV_copy_buffer.txt
 GL_NV_copy_depth_to_color https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/copy_depth_to_color.txt
-GL_NV_copy_image https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/copy_image.txt
-GL_NV_copy_image https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/copy_image.txt
 GL_NV_copy_image https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/copy_image.txt
 GL_NV_coverage_sample https://www.khronos.org/registry/gles/extensions/NV/NV_coverage_sample.txt
 GL_NV_deep_texture3D https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/deep_texture3D.txt
@@ -565,7 +538,6 @@ GL_NV_fbo_color_attachments https://www.khronos.org/registry/gles/extensions/NV/
 GL_NV_fence https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/fence.txt
 GL_NV_fence https://www.khronos.org/registry/gles/extensions/NV/NV_fence.txt
 GL_NV_fill_rectangle https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/fill_rectangle.txt
-GL_NV_float_buffer https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/float_buffer.txt
 GL_NV_float_buffer https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/float_buffer.txt
 GL_NV_fog_distance https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/fog_distance.txt
 GL_NV_fragment_coverage_to_color https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/fragment_coverage_to_color.txt
@@ -611,8 +583,6 @@ GL_NV_pixel_buffer_object https://www.khronos.org/registry/gles/extensions/NV/NV
 GL_NV_pixel_data_range https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/pixel_data_range.txt
 GL_NV_platform_binary https://www.khronos.org/registry/gles/extensions/NV/NV_platform_binary.txt
 GL_NV_point_sprite https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/point_sprite.txt
-GL_NV_present_video https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/present_video.txt
-GL_NV_present_video https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/present_video.txt
 GL_NV_present_video https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/present_video.txt
 GL_NV_primitive_restart https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/primitive_restart.txt
 GL_NV_read_buffer https://www.khronos.org/registry/gles/extensions/NV/NV_read_buffer.txt
@@ -667,8 +637,6 @@ GL_NV_vertex_program2 https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/p
 GL_NV_vertex_program2_option https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/vertex_program2_option.txt
 GL_NV_vertex_program3 https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/vertex_program3.txt
 GL_NV_vertex_program4 https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/vertex_program4.txt
-GL_NV_video_capture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/video_capture.txt
-GL_NV_video_capture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/video_capture.txt
 GL_NV_video_capture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/video_capture.txt
 GL_NV_wgl_delay_before_swap https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/wgl_delay_before_swap.txt
 GL_NV_wgl_swap_group https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/wgl_swap_group.txt
@@ -756,11 +724,9 @@ GL_REND_screen_coordinates https://cvs.khronos.org/svn/repos/ogl/trunk/doc/regis
 GL_S3_s3tc https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/S3/s3tc.txt
 GL_SGIS_blended_overlay https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIS/blended_overlay.txt
 GL_SGIS_color_range https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIS/color_range.txt
-GL_SGIS_color_range https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIS/color_range.txt
 GL_SGIS_detail_texture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIS/detail_texture.txt
 GL_SGIS_fog_func https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIS/fog_func.txt
 GL_SGIS_generate_mipmap https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIS/generate_mipmap.txt
-GL_SGIS_multisample https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIS/multisample.txt
 GL_SGIS_multisample https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIS/multisample.txt
 GL_SGIS_pixel_texture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIS/pixel_texture.txt
 GL_SGIS_point_line_texgen https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIS/point_line_texgen.txt
@@ -808,7 +774,6 @@ GL_SGIX_texture_lod_bias https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registr
 GL_SGIX_texture_multi_buffer https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIX/texture_multi_buffer.txt
 GL_SGIX_texture_range https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIX/texture_range.txt
 GL_SGIX_texture_scale_bias https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIX/texture_scale_bias.txt
-GL_SGIX_vertex_preclip https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIX/vertex_preclip.txt
 GL_SGIX_vertex_preclip https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIX/vertex_preclip.txt
 GL_SGIX_video_resize https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIX/video_resize.txt
 GL_SGIX_video_source https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/SGIX/video_source.txt
