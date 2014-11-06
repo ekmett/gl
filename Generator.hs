@@ -125,7 +125,7 @@ invokerName xs = "ffi" ++ commonName xs
 
 extensionModuleName :: ExtensionName -> ModuleName
 extensionModuleName name =
-  printf "Graphics.GL.Extension.%s.%s"
+  printf "Graphics.GL.Ext.%s.%s"
     (sanePrefix prefix) (saneModule $ camelCase (intercalate "_" rest))
   where
     (_:prefix:rest) = splitOn "_" name
@@ -280,27 +280,27 @@ implicitPrelude m = case m of
   "Graphics.GL.Standard31" -> mk [
       "Graphics.GL.Standard30"
     ]
-  "Graphics.GL.Extension.ANDROID.ExtensionPackEs31a" -> mk [
-      "Graphics.GL.Extension.KHR.Debug"
-    , "Graphics.GL.Extension.KHR.TextureCompressionAstcLdr"
-    , "Graphics.GL.Extension.KHR.BlendEquationAdvanced"
-    , "Graphics.GL.Extension.OES.SampleShading"
-    , "Graphics.GL.Extension.OES.SampleVariables"
-    , "Graphics.GL.Extension.OES.ShaderImageAtomic"
-    , "Graphics.GL.Extension.OES.ShaderMultisampleInterpolation"
-    , "Graphics.GL.Extension.OES.TextureStencil8"
-    , "Graphics.GL.Extension.OES.TextureStorageMultisample2dArray"
-    , "Graphics.GL.Extension.EXT.CopyImage"
-    , "Graphics.GL.Extension.EXT.DrawBuffersIndexed"
-    , "Graphics.GL.Extension.EXT.GeometryShader"
-    , "Graphics.GL.Extension.EXT.GpuShader5"
-    , "Graphics.GL.Extension.EXT.PrimitiveBoundingBox"
-    , "Graphics.GL.Extension.EXT.ShaderIoBlocks"
-    , "Graphics.GL.Extension.EXT.TessellationShader"
-    , "Graphics.GL.Extension.EXT.TextureBorderClamp"
-    , "Graphics.GL.Extension.EXT.TextureBuffer"
-    , "Graphics.GL.Extension.EXT.TextureCubeMapArray"
-    , "Graphics.GL.Extension.EXT.TextureSRGBDecode"
+  "Graphics.GL.Ext.ANDROID.ExtensionPackEs31a" -> mk [
+      "Graphics.GL.Ext.KHR.Debug"
+    , "Graphics.GL.Ext.KHR.TextureCompressionAstcLdr"
+    , "Graphics.GL.Ext.KHR.BlendEquationAdvanced"
+    , "Graphics.GL.Ext.OES.SampleShading"
+    , "Graphics.GL.Ext.OES.SampleVariables"
+    , "Graphics.GL.Ext.OES.ShaderImageAtomic"
+    , "Graphics.GL.Ext.OES.ShaderMultisampleInterpolation"
+    , "Graphics.GL.Ext.OES.TextureStencil8"
+    , "Graphics.GL.Ext.OES.TextureStorageMultisample2dArray"
+    , "Graphics.GL.Ext.EXT.CopyImage"
+    , "Graphics.GL.Ext.EXT.DrawBuffersIndexed"
+    , "Graphics.GL.Ext.EXT.GeometryShader"
+    , "Graphics.GL.Ext.EXT.GpuShader5"
+    , "Graphics.GL.Ext.EXT.PrimitiveBoundingBox"
+    , "Graphics.GL.Ext.EXT.ShaderIoBlocks"
+    , "Graphics.GL.Ext.EXT.TessellationShader"
+    , "Graphics.GL.Ext.EXT.TextureBorderClamp"
+    , "Graphics.GL.Ext.EXT.TextureBuffer"
+    , "Graphics.GL.Ext.EXT.TextureCubeMapArray"
+    , "Graphics.GL.Ext.EXT.TextureSRGBDecode"
     ]
   _ -> ([], [])
   where
@@ -551,7 +551,7 @@ mkModule fm re m entr = Module m export body
 
 mkExtensionGather :: FunMap -> [Module]
 mkExtensionGather fm = flip map extensionGroups $
-  \x -> Module (printf "Graphics.GL.Extension.%s" $ sanePrefix x)
+  \x -> Module (printf "Graphics.GL.Ext.%s" $ sanePrefix x)
     [Section (printf "%s Extensions" x) $ map ("module "++) $ extInGroup x]
     [Import $ extInGroup x]
   where
@@ -570,7 +570,7 @@ mkExtensionGather fm = flip map extensionGroups $
     $ funExtensions fm
 
 mkExtensionGroupGather :: [Module] -> Module
-mkExtensionGroupGather ms = Module "Graphics.GL.Extension"
+mkExtensionGroupGather ms = Module "Graphics.GL.Ext"
   [Section "Extensions" $ map (("module "++) . moduleName) ms]
   [Import $ map moduleName ms]
 

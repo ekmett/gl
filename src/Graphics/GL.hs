@@ -10,11 +10,11 @@
 module Graphics.GL (
     module Graphics.GL.Core45
   , module Graphics.GL.Embedded31
-  , module Graphics.GL.Extension
+  , module Graphics.GL.Ext
   , module Graphics.GL.Types
 ) where
 
 import Graphics.GL.Core45
 import Graphics.GL.Embedded31
-import Graphics.GL.Extension
+import Graphics.GL.Ext
 import Graphics.GL.Types
