@@ -17,7 +17,7 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.GL.Raw.Internal.Proc
+module Graphics.GL.Internal.Proc
   ( getProcAddress
   , Invoker
   , extensions
@@ -30,7 +30,7 @@ import Foreign.C.String
 import Foreign.Marshal.Alloc
 import Foreign.Ptr
 import Foreign.Storable
-import Graphics.GL.Raw.Internal.FFI
+import Graphics.GL.Internal.FFI
   ( ffienumIOPtrubyte
   , ffienumuintIOPtrubyte
   , ffienumPtrintIOV

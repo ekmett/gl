@@ -8,7 +8,7 @@
 -- Portability :  portable
 --
 ----------------------------------------------------------------------------
-module Graphics.GL.Raw.Types (
+module Graphics.GL.Types (
   -- * Types
   -- ** Function Types
     GLDEBUGPROC

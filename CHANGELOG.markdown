@@ -2,6 +2,7 @@
 ---
 * Haddock links to the OpenGL ES 2 registry
 * `Compatibility40` depends on `Compatibility33`
+* Shorter modules names to try to eke out a successful windows build.
 
 0.4
 ---

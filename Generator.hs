@@ -63,7 +63,7 @@ wrap _ Nothing s = s
 link :: Map Name Category -> Name -> String
 link cs n = case Map.lookup n cs of
   Just (C _ ss) -> case compare (Set.size ss) 1 of
-    GT -> "'Graphics.GL.Raw.Internal.Shared." ++ n ++ "'"
+    GT -> "'Graphics.GL.Internal.Shared." ++ n ++ "'"
     EQ -> "'" ++ Set.findMin ss ++ "." ++ n ++ "'"
     LT -> "@" ++ n ++ "@"
   _ -> "@" ++ n ++ "@"
@@ -125,7 +125,7 @@ invokerName xs = "ffi" ++ commonName xs
 
 extensionModuleName :: ExtensionName -> ModuleName
 extensionModuleName name =
-  printf "Graphics.GL.Raw.Extension.%s.%s"
+  printf "Graphics.GL.Raw.%s.%s"
     (sanePrefix prefix) (saneModule $ camelCase (intercalate "_" rest))
   where
     (_:prefix:rest) = splitOn "_" name
@@ -135,7 +135,7 @@ extensionModuleName name =
 
 profileModuleName :: String -> String -> (ModuleName, Maybe ModuleName)
 profileModuleName feature profile =
-  (printf "Graphics.GL.Raw.Profile.%s" *** liftM (printf "Graphics.GL.Raw.Profile.%s")) submodule
+  (printf "Graphics.GL.Profile.%s" *** liftM (printf "Graphics.GL.Profile.%s")) submodule
   where
     submodule = case (feature, profile) of
       ("GL_VERSION_1_0", _) -> ("Standard10", Nothing)
@@ -192,93 +192,93 @@ profileModuleName feature profile =
 
 implicitPrelude :: String -> ([String], [Body])
 implicitPrelude m = case m of
-  "Graphics.GL.Raw.Profile.Compatibility32" -> mk [
-      "Graphics.GL.Raw.Profile.Core32"
+  "Graphics.GL.Profile.Compatibility32" -> mk [
+      "Graphics.GL.Profile.Core32"
     ]
-  "Graphics.GL.Raw.Profile.Compatibility33" -> mk [
-      "Graphics.GL.Raw.Profile.Compatibility32"
-    , "Graphics.GL.Raw.Profile.Core33"
+  "Graphics.GL.Profile.Compatibility33" -> mk [
+      "Graphics.GL.Profile.Compatibility32"
+    , "Graphics.GL.Profile.Core33"
     ]
-  "Graphics.GL.Raw.Profile.Compatibility40" -> mk [
-      "Graphics.GL.Raw.Profile.Compatibility33"
-    , "Graphics.GL.Raw.Profile.Core40"
+  "Graphics.GL.Profile.Compatibility40" -> mk [
+      "Graphics.GL.Profile.Compatibility33"
+    , "Graphics.GL.Profile.Core40"
     ]
-  "Graphics.GL.Raw.Profile.Compatibility41" -> mk [
-      "Graphics.GL.Raw.Profile.Compatibility40"
-    , "Graphics.GL.Raw.Profile.Core41"
+  "Graphics.GL.Profile.Compatibility41" -> mk [
+      "Graphics.GL.Profile.Compatibility40"
+    , "Graphics.GL.Profile.Core41"
     ]
-  "Graphics.GL.Raw.Profile.Compatibility42" -> mk [
-      "Graphics.GL.Raw.Profile.Compatibility41"
-    , "Graphics.GL.Raw.Profile.Core42"
+  "Graphics.GL.Profile.Compatibility42" -> mk [
+      "Graphics.GL.Profile.Compatibility41"
+    , "Graphics.GL.Profile.Core42"
     ]
-  "Graphics.GL.Raw.Profile.Compatibility43" -> mk [
-      "Graphics.GL.Raw.Profile.Compatibility42"
-    , "Graphics.GL.Raw.Profile.Core43"
+  "Graphics.GL.Profile.Compatibility43" -> mk [
+      "Graphics.GL.Profile.Compatibility42"
+    , "Graphics.GL.Profile.Core43"
     ]
-  "Graphics.GL.Raw.Profile.Compatibility44" -> mk [
-      "Graphics.GL.Raw.Profile.Compatibility43"
-    , "Graphics.GL.Raw.Profile.Core44"
+  "Graphics.GL.Profile.Compatibility44" -> mk [
+      "Graphics.GL.Profile.Compatibility43"
+    , "Graphics.GL.Profile.Core44"
     ]
-  "Graphics.GL.Raw.Profile.Compatibility45" -> mk [
-      "Graphics.GL.Raw.Profile.Compatibility44"
-    , "Graphics.GL.Raw.Profile.Core45"
+  "Graphics.GL.Profile.Compatibility45" -> mk [
+      "Graphics.GL.Profile.Compatibility44"
+    , "Graphics.GL.Profile.Core45"
     ]
-  "Graphics.GL.Raw.Profile.Core33" -> mk [
-      "Graphics.GL.Raw.Profile.Core32"
+  "Graphics.GL.Profile.Core33" -> mk [
+      "Graphics.GL.Profile.Core32"
     ]
-  "Graphics.GL.Raw.Profile.Core40" -> mk [
-      "Graphics.GL.Raw.Profile.Core33"
+  "Graphics.GL.Profile.Core40" -> mk [
+      "Graphics.GL.Profile.Core33"
     ]
-  "Graphics.GL.Raw.Profile.Core41" -> mk [
-      "Graphics.GL.Raw.Profile.Core40"
+  "Graphics.GL.Profile.Core41" -> mk [
+      "Graphics.GL.Profile.Core40"
     ]
-  "Graphics.GL.Raw.Profile.Core42" -> mk [
-      "Graphics.GL.Raw.Profile.Core41"
+  "Graphics.GL.Profile.Core42" -> mk [
+      "Graphics.GL.Profile.Core41"
     ]
-  "Graphics.GL.Raw.Profile.Core43" -> mk [
-      "Graphics.GL.Raw.Profile.Core42"
+  "Graphics.GL.Profile.Core43" -> mk [
+      "Graphics.GL.Profile.Core42"
     ]
-  "Graphics.GL.Raw.Profile.Core44" -> mk [
-      "Graphics.GL.Raw.Profile.Core43"
+  "Graphics.GL.Profile.Core44" -> mk [
+      "Graphics.GL.Profile.Core43"
     ]
-  "Graphics.GL.Raw.Profile.Core45" -> mk [
-      "Graphics.GL.Raw.Profile.Core44"
+  "Graphics.GL.Profile.Core45" -> mk [
+      "Graphics.GL.Profile.Core44"
     ]
-  "Graphics.GL.Raw.Profile.EmbeddedCommon11" -> mk [
-      "Graphics.GL.Raw.Profile.EmbeddedLite11"
+  "Graphics.GL.Profile.EmbeddedCommon11" -> mk [
+      "Graphics.GL.Profile.EmbeddedLite11"
     ]
-  "Graphics.GL.Raw.Profile.Embedded30" -> mk [
-      "Graphics.GL.Raw.Profile.Embedded20"
+  "Graphics.GL.Profile.Embedded30" -> mk [
+      "Graphics.GL.Profile.Embedded20"
     ]
-  "Graphics.GL.Raw.Profile.Embedded31" -> mk [
-      "Graphics.GL.Raw.Profile.Embedded30"
+  "Graphics.GL.Profile.Embedded31" -> mk [
+      "Graphics.GL.Profile.Embedded30"
     ]
-  "Graphics.GL.Raw.Profile.Standard11" -> mk [
-      "Graphics.GL.Raw.Profile.Standard10"
+  "Graphics.GL.Profile.Standard11" -> mk [
+      "Graphics.GL.Profile.Standard10"
     ]
-  "Graphics.GL.Raw.Profile.Standard12" -> mk [
-      "Graphics.GL.Raw.Profile.Standard11"
+  "Graphics.GL.Profile.Standard12" -> mk [
+      "Graphics.GL.Profile.Standard11"
     ]
-  "Graphics.GL.Raw.Profile.Standard13" -> mk [
-      "Graphics.GL.Raw.Profile.Standard12"
+  "Graphics.GL.Profile.Standard13" -> mk [
+      "Graphics.GL.Profile.Standard12"
     ]
-  "Graphics.GL.Raw.Profile.Standard14" -> mk [
-      "Graphics.GL.Raw.Profile.Standard13"
+  "Graphics.GL.Profile.Standard14" -> mk [
+      "Graphics.GL.Profile.Standard13"
     ]
-  "Graphics.GL.Raw.Profile.Standard15" -> mk [
-      "Graphics.GL.Raw.Profile.Standard14"
+  "Graphics.GL.Profile.Standard15" -> mk [
+      "Graphics.GL.Profile.Standard14"
     ]
-  "Graphics.GL.Raw.Profile.Standard20" -> mk [
-      "Graphics.GL.Raw.Profile.Standard15"
+  "Graphics.GL.Profile.Standard20" -> mk [
+      "Graphics.GL.Profile.Standard15"
     ]
-  "Graphics.GL.Raw.Profile.Standard21" -> mk [
-      "Graphics.GL.Raw.Profile.Standard20"
+  "Graphics.GL.Profile.Standard21" -> mk [
+      "Graphics.GL.Profile.Standard20"
     ]
-  "Graphics.GL.Raw.Profile.Standard30" -> mk [
-      "Graphics.GL.Raw.Profile.Standard21"
+  "Graphics.GL.Profile.Standard30" -> mk [
+      "Graphics.GL.Profile.Standard21"
     ]
-  "Graphics.GL.Raw.Profile.Standard31" -> mk [
-      "Graphics.GL.Raw.Profile.Standard30"
+  "Graphics.GL.Profile.Standard31" -> mk [
+      "Graphics.GL.Profile.Standard30"
     ]
   "Graphics.GL.Raw.Extension.ANDROID.ExtensionPackEs31a" -> mk [
       "Graphics.GL.Raw.Extension.KHR.Debug"
@@ -337,8 +337,8 @@ entries registry = do
       let name = fst . profileModuleName feature $ requireProfile req
       requires name req
 
-      when ("Graphics.GL.Raw.Profile.Standard" `isPrefixOf` name) $
-        requires "Graphics.GL.Raw.Profile.Core32" req
+      when ("Graphics.GL.Profile.Standard" `isPrefixOf` name) $
+        requires "Graphics.GL.Profile.Core32" req
 
     forM_ (featureRemoves fe) $ \rm -> do
       let profile = removeProfile rm
@@ -372,7 +372,7 @@ modules registry entr = do
     modify $ Map.insert (extensionModuleName $ extensionName ext) []
 
   forM_ profiles $ \profile ->
-    modify $ Map.insert (printf "Graphics.GL.Raw.Profile.%s" profile) []
+    modify $ Map.insert (printf "Graphics.GL.Profile.%s" profile) []
 
   forM_ (Map.toList entr) $ \(k, C v ms) ->
     forM_ (Set.toList ms) $ \m ->
@@ -443,13 +443,13 @@ funBody fm n v =
   v' = ioish v
 
 mkFFI :: FunMap -> Module
-mkFFI fm = Module "Graphics.GL.Raw.Internal.FFI" export body where
+mkFFI fm = Module "Graphics.GL.Internal.FFI" export body where
   export = [ Section "Invokers" (nub $ invokerName <$> Foldable.toList (funSignatures fm)) ]
   body = Import
     [ "Control.Monad.IO.Class"
     , "Foreign.C.Types"
     , "Foreign.Ptr"
-    , "Graphics.GL.Raw.Types"
+    , "Graphics.GL.Types"
     , "Numeric.Fixed"
     , "Numeric.Half"
     ] : nub (Foldable.concatMap invokers $ funSignatures fm)
@@ -468,15 +468,15 @@ invokers v =
   ni = invokerName v
 
 mkShared :: FunMap -> [(Bool, Entry, String)] -> Module
-mkShared fm entr = Module "Graphics.GL.Raw.Internal.Shared" [] body
+mkShared fm entr = Module "Graphics.GL.Internal.Shared" [] body
   where
     imp =
       [ Import
         [ "Control.Monad.IO.Class"
         , "Foreign.Ptr"
-        , "Graphics.GL.Raw.Types"
-        , "Graphics.GL.Raw.Internal.FFI"
-        , "Graphics.GL.Raw.Internal.Proc"
+        , "Graphics.GL.Types"
+        , "Graphics.GL.Internal.FFI"
+        , "Graphics.GL.Internal.Proc"
         , "System.IO.Unsafe"
         ]
       ]
@@ -513,14 +513,14 @@ mkModule fm re m entr = Module m export body
 
     body =
       [ Import $ sort $ concat
-        [ [ "Graphics.GL.Raw.Internal.Shared" | any (\(s, _, _) -> s) entr ]
-        , [ "Graphics.GL.Raw.Types"           | any needsTypes entr ]
+        [ [ "Graphics.GL.Internal.Shared" | any (\(s, _, _) -> s) entr ]
+        , [ "Graphics.GL.Types"           | any needsTypes entr ]
         , [ "Data.Set"                        | hasExt ]
-        , [ "Graphics.GL.Raw.Internal.Proc"   | hasExt || hasUnsharedFunctions ]
+        , [ "Graphics.GL.Internal.Proc"   | hasExt || hasUnsharedFunctions ]
         , guard hasUnsharedFunctions >>
           [ "Control.Monad.IO.Class"
           , "Foreign.Ptr"
-          , "Graphics.GL.Raw.Internal.FFI"
+          , "Graphics.GL.Internal.FFI"
           , "System.IO.Unsafe"
           ]
         ]
@@ -535,7 +535,7 @@ mkModule fm re m entr = Module m export body
 
     extCheck = case Map.lookup m (funExtensions fm) of
       Just en 
-        | parts@(vendor:rest) <- tail (splitOn "_" en) ->
+        | parts@(_:_) <- tail (splitOn "_" en) ->
           [ Code $ "-- | Checks that the " ++ tryLink en ++ " extension is available."
           , Function ("gl_" ++ intercalate "_" parts) "Bool"
             (printf "= member %s extensions\n{-# NOINLINE %s #-}"
@@ -551,7 +551,7 @@ mkModule fm re m entr = Module m export body
 
 mkExtensionGather :: FunMap -> [Module]
 mkExtensionGather fm = flip map extensionGroups $
-  \x -> Module (printf "Graphics.GL.Raw.Extension.%s" $ sanePrefix x)
+  \x -> Module (printf "Graphics.GL.Raw.%s" $ sanePrefix x)
     [Section (printf "%s Extensions" x) $ map ("module "++) $ extInGroup x]
     [Import $ extInGroup x]
   where
@@ -570,7 +570,7 @@ mkExtensionGather fm = flip map extensionGroups $
     $ funExtensions fm
 
 mkExtensionGroupGather :: [Module] -> Module
-mkExtensionGroupGather ms = Module "Graphics.GL.Raw.Extension"
+mkExtensionGroupGather ms = Module "Graphics.GL.Raw"
   [Section "Extensions" $ map (("module "++) . moduleName) ms]
   [Import $ map moduleName ms]
 
