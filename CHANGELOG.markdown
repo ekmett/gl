@@ -1,6 +1,6 @@
 0.6
 ---
-* Stopped exporting all extensions from `Graphics.GL`. You'll need to import `Graphics.GL.Extensions` as well.
+* Stopped exporting all extensions from `Graphics.GL`. You'll need to import `Graphics.GL.Ext` as well.
 * Added exports for `GLhalf` and `GLhalfARB`
 
 0.5
