@@ -35,6 +35,8 @@ module Graphics.GL.Types (
   , GLenum
   , GLfixed
   , GLfloat
+  , GLhalf
+  , GLhalfARB
   , GLhalfNV
   , GLhandleARB
   , GLint
@@ -134,6 +136,8 @@ type GLeglImageOES    = Ptr ()
 type GLenum           = Word32
 type GLfixed          = Fixed
 type GLfloat          = Float
+type GLhalf           = Half
+type GLhalfARB        = Half
 type GLhalfNV         = Half
 type GLint            = Int32
 type GLint64          = Int64
