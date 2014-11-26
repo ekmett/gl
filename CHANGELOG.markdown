@@ -1,5 +1,5 @@
-Next Release
-------------
+0.6.1
+-----
 * Added support for eight new extensions:
   * EXT_base_instance
   * EXT_draw_elements_base_vertex
