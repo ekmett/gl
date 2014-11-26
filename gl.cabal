@@ -349,6 +349,7 @@ library
     Graphics.GL.Ext.DMP.ShaderBinary
     Graphics.GL.Ext.EXT
     Graphics.GL.Ext.EXT.Abgr
+    Graphics.GL.Ext.EXT.BaseInstance
     Graphics.GL.Ext.EXT.Bgra
     Graphics.GL.Ext.EXT.BindableUniform
     Graphics.GL.Ext.EXT.BlendColor
@@ -376,6 +377,7 @@ library
     Graphics.GL.Ext.EXT.DrawBuffers
     Graphics.GL.Ext.EXT.DrawBuffers2
     Graphics.GL.Ext.EXT.DrawBuffersIndexed
+    Graphics.GL.Ext.EXT.DrawElementsBaseVertex
     Graphics.GL.Ext.EXT.DrawInstanced
     Graphics.GL.Ext.EXT.DrawRangeElements
     Graphics.GL.Ext.EXT.FogCoord
@@ -401,6 +403,7 @@ library
     Graphics.GL.Ext.EXT.MapBufferRange
     Graphics.GL.Ext.EXT.MiscAttribute
     Graphics.GL.Ext.EXT.MultiDrawArrays
+    Graphics.GL.Ext.EXT.MultiDrawIndirect
     Graphics.GL.Ext.EXT.Multisample
     Graphics.GL.Ext.EXT.MultisampledRenderToTexture
     Graphics.GL.Ext.EXT.MultiviewDrawBuffers
@@ -421,6 +424,7 @@ library
     Graphics.GL.Ext.EXT.PvrtcSRGB
     Graphics.GL.Ext.EXT.RasterMultisample
     Graphics.GL.Ext.EXT.ReadFormatBgra
+    Graphics.GL.Ext.EXT.RenderSnorm
     Graphics.GL.Ext.EXT.RescaleNormal
     Graphics.GL.Ext.EXT.Robustness
     Graphics.GL.Ext.EXT.SRGB
@@ -467,6 +471,7 @@ library
     Graphics.GL.Ext.EXT.TextureInteger
     Graphics.GL.Ext.EXT.TextureLodBias
     Graphics.GL.Ext.EXT.TextureMirrorClamp
+    Graphics.GL.Ext.EXT.TextureNorm16
     Graphics.GL.Ext.EXT.TextureObject
     Graphics.GL.Ext.EXT.TexturePerturbNormal
     Graphics.GL.Ext.EXT.TextureRg
@@ -586,6 +591,7 @@ library
     Graphics.GL.Ext.NV.GpuProgram5MemExtended
     Graphics.GL.Ext.NV.GpuShader5
     Graphics.GL.Ext.NV.HalfFloat
+    Graphics.GL.Ext.NV.ImageFormats
     Graphics.GL.Ext.NV.InstancedArrays
     Graphics.GL.Ext.NV.InternalformatSampleQuery
     Graphics.GL.Ext.NV.LightMaxExponent
@@ -618,6 +624,7 @@ library
     Graphics.GL.Ext.NV.ShaderAtomicInt64
     Graphics.GL.Ext.NV.ShaderBufferLoad
     Graphics.GL.Ext.NV.ShaderBufferStore
+    Graphics.GL.Ext.NV.ShaderNoperspectiveInterpolation
     Graphics.GL.Ext.NV.ShaderStorageBufferObject
     Graphics.GL.Ext.NV.ShaderThreadGroup
     Graphics.GL.Ext.NV.ShaderThreadShuffle
@@ -653,6 +660,7 @@ library
     Graphics.GL.Ext.NV.VertexProgram3
     Graphics.GL.Ext.NV.VertexProgram4
     Graphics.GL.Ext.NV.VideoCapture
+    Graphics.GL.Ext.NV.ViewportArray
     Graphics.GL.Ext.NVX
     Graphics.GL.Ext.NVX.ConditionalRender
     Graphics.GL.Ext.NVX.GpuMemoryInfo
