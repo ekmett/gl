@@ -1,3 +1,15 @@
+Next Release
+------------
+* Added support for eight new extensions:
+  * EXT_base_instance
+  * EXT_draw_elements_base_vertex
+  * EXT_multi_draw_indirect
+  * EXT_render_snorm
+  * EXT_render_norm16
+  * NV_image_formats
+  * NV_shader_noperspective_interpolation
+  * NV_viewport_array
+
 0.6
 ---
 * Stopped exporting all extensions from `Graphics.GL`. You'll need to import `Graphics.GL.Ext` as well.
