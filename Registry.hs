@@ -101,7 +101,9 @@ lookupEnum registry enum =
 -- | Resolve shenanigans in the OpenGL Registry
 deshenaniganize :: Registry -> Registry
 deshenaniganize registry = registry
-  { registryFeatures = clean44feature . clean45feature <$> registryFeatures registry
+  { registryFeatures =
+     cleanFeature "GL_VERSION_4_4" clean44require .
+     cleanFeature "GL_VERSION_4_5" clean45require <$> registryFeatures registry
   , registryCommands = cleanCommand <$> registryCommands registry
   }
 
@@ -116,9 +118,9 @@ cleanParameterGroup "PixelInternalFormat" = "InternalFormat"
 cleanParameterGroup "SGIXFfdMask" = "FfdMaskSGIX"
 cleanParameterGroup xs = xs
 
-clean44feature :: Feature -> Feature
-clean44feature feature
-  | featureName feature == "GL_VERSION_4_4" = feature { featureRequires = clean44require <$> featureRequires feature }
+cleanFeature :: String -> (Require -> Require) -> Feature -> Feature
+cleanFeature name f feature
+  | featureName feature == name = feature { featureRequires = f <$> featureRequires feature }
   | otherwise = feature
 
 clean44require :: Require -> Require
@@ -134,11 +136,6 @@ clean44require require = require
     , "GL_TRANSFORM_FEEDBACK_BUFFER"
     , "GL_UNSIGNED_INT_10F_11F_11F_REV"
     ]
-
-clean45feature :: Feature -> Feature
-clean45feature feature 
-  | featureName feature == "GL_VERSION_4_5" = feature { featureRequires = clean45require <$> featureRequires feature }
-  | otherwise = feature
 
 clean45require :: Require -> Require
 clean45require require = require
