@@ -1,3 +1,7 @@
+0.6.2
+-----
+* Added `GL_BLEND_COLOR` enumeration for OpenGL versions 3.1 and up. See https://khronos.org/bugzilla/show_bug.cgi?id=1249 for more information.
+
 0.6.1
 -----
 * Added support for eight new extensions:

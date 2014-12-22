@@ -102,6 +102,7 @@ lookupEnum registry enum =
 deshenaniganize :: Registry -> Registry
 deshenaniganize registry = registry
   { registryFeatures =
+     cleanFeature "GL_VERSION_3_1" clean31require .
      cleanFeature "GL_VERSION_4_4" clean44require .
      cleanFeature "GL_VERSION_4_5" clean45require <$> registryFeatures registry
   , registryCommands = cleanCommand <$> registryCommands registry
@@ -122,6 +123,11 @@ cleanFeature :: String -> (Require -> Require) -> Feature -> Feature
 cleanFeature name f feature
   | featureName feature == name = feature { featureRequires = f <$> featureRequires feature }
   | otherwise = feature
+
+clean31require :: Require -> Require
+clean31require require = require
+  { requireEnums = "GL_BLEND_COLOR" : requireEnums require
+  }
 
 clean44require :: Require -> Require
 clean44require require = require
