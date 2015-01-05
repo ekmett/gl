@@ -481,13 +481,13 @@ GL_KHR_blend_equation_advanced  https://www.khronos.org/registry/gles/extensions
 GL_KHR_blend_equation_advanced https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/blend_equation_advanced.txt
 GL_KHR_blend_equation_advanced_coherent https://www.khronos.org/registry/gles/extensions/KHR/KHR_blend_equation_advanced_coherent.txt
 GL_KHR_context_flush_control https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/context_flush_control.txt
-GL_KHR_context_flush_control https://www.khronos.org/registry/gles/extensions/KHR/KHR_context_flush_control.txt
+GL_KHR_context_flush_control https://www.khronos.org/registry/gles/extensions/KHR/context_flush_control.txt
 GL_KHR_debug https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/debug.txt
-GL_KHR_debug https://www.khronos.org/registry/gles/extensions/KHR/KHR_debug.txt
+GL_KHR_debug https://www.khronos.org/registry/gles/extensions/KHR/debug.txt
 GL_KHR_robust_buffer_access_behavior https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/robust_buffer_access_behavior.txt
-GL_KHR_robust_buffer_access_behavior https://www.khronos.org/registry/gles/extensions/KHR/KHR_robust_buffer_access_behavior.txt
+GL_KHR_robust_buffer_access_behavior https://www.khronos.org/registry/gles/extensions/KHR/robust_buffer_access_behavior.txt
 GL_KHR_robustness https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/robustness.txt
-GL_KHR_robustness https://www.khronos.org/registry/gles/extensions/KHR/KHR_robustness.txt
+GL_KHR_robustness https://www.khronos.org/registry/gles/extensions/KHR/robustness.txt
 GL_KHR_texture_compression_astc_hdr  https://www.khronos.org/registry/gles/extensions/KHR/KHR_texture_compression_astc_hdr .txt
 GL_KHR_texture_compression_astc_hdr https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/texture_compression_astc_hdr.txt
 GL_KHR_texture_compression_astc_ldr https://www.khronos.org/registry/gles/extensions/KHR/KHR_texture_compression_astc_ldr.txt
