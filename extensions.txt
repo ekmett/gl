@@ -638,6 +638,8 @@ GL_NV_vertex_program2_option https://cvs.khronos.org/svn/repos/ogl/trunk/doc/reg
 GL_NV_vertex_program3 https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/vertex_program3.txt
 GL_NV_vertex_program4 https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/vertex_program4.txt
 GL_NV_video_capture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/video_capture.txt
+GL_NV_viewport_array2
+https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/viewport_array2.txt
 GL_NV_wgl_delay_before_swap https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/wgl_delay_before_swap.txt
 GL_NV_wgl_swap_group https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/wgl_swap_group.txt
 GL_NV_wgl_video_output https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/wgl_video_output.txt

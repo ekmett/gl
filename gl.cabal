@@ -1,5 +1,5 @@
 name:          gl
-version:       0.6.2
+version:       0.6.3
 synopsis:      Complete OpenGL raw bindings
 description:   Complete OpenGL raw bindings
 license:       BSD3
@@ -661,6 +661,7 @@ library
     Graphics.GL.Ext.NV.VertexProgram4
     Graphics.GL.Ext.NV.VideoCapture
     Graphics.GL.Ext.NV.ViewportArray
+    Graphics.GL.Ext.NV.ViewportArray2
     Graphics.GL.Ext.NVX
     Graphics.GL.Ext.NVX.ConditionalRender
     Graphics.GL.Ext.NVX.GpuMemoryInfo

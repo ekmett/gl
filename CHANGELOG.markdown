@@ -1,3 +1,8 @@
+0.6.3
+-----
+* Added support for a new extension:
+  * NV_viewport_array2
+
 0.6.2
 -----
 * Added `GL_BLEND_COLOR` enumeration for OpenGL versions 3.1 and up. See https://khronos.org/bugzilla/show_bug.cgi?id=1249 for more information.
