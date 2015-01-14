@@ -1,3 +1,21 @@
+0.6.4
+-----
+* Added support for fourteen new extensions:
+  * OES_copy_image
+  * OES_draw_buffers_indexed
+  * OES_draw_elements_base_vertex
+  * OES_geometry_point_size
+  * OES_geometry_shader
+  * OES_gpu_shader5
+  * OES_primitive_bounding_box
+  * OES_shader_io_blocks
+  * OES_tessellation_point_size
+  * OES_tessellation_shader
+  * OES_texture_border_clamp
+  * OES_texture_buffer
+  * OES_texture_cube_map_array
+  * OES_texture_view
+
 0.6.3
 -----
 * Added support for a new extension:

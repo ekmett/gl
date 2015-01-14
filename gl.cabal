@@ -1,5 +1,5 @@
 name:          gl
-version:       0.6.3
+version:       0.6.4
 synopsis:      Complete OpenGL raw bindings
 description:   Complete OpenGL raw bindings
 license:       BSD3
@@ -673,9 +673,12 @@ library
     Graphics.GL.Ext.OES.CompressedETC1RGB8SubTexture
     Graphics.GL.Ext.OES.CompressedETC1RGB8Texture
     Graphics.GL.Ext.OES.CompressedPalettedTexture
+    Graphics.GL.Ext.OES.CopyImage
     Graphics.GL.Ext.OES.Depth24
     Graphics.GL.Ext.OES.Depth32
     Graphics.GL.Ext.OES.DepthTexture
+    Graphics.GL.Ext.OES.DrawBuffersIndexed
+    Graphics.GL.Ext.OES.DrawElementsBaseVertex
     Graphics.GL.Ext.OES.DrawTexture
     Graphics.GL.Ext.OES.EGLImage
     Graphics.GL.Ext.OES.EGLImageExternal
@@ -685,13 +688,17 @@ library
     Graphics.GL.Ext.OES.FixedPoint
     Graphics.GL.Ext.OES.FragmentPrecisionHigh
     Graphics.GL.Ext.OES.FramebufferObject
+    Graphics.GL.Ext.OES.GeometryPointSize
+    Graphics.GL.Ext.OES.GeometryShader
     Graphics.GL.Ext.OES.GetProgramBinary
+    Graphics.GL.Ext.OES.GpuShader5
     Graphics.GL.Ext.OES.Mapbuffer
     Graphics.GL.Ext.OES.MatrixGet
     Graphics.GL.Ext.OES.MatrixPalette
     Graphics.GL.Ext.OES.PackedDepthStencil
     Graphics.GL.Ext.OES.PointSizeArray
     Graphics.GL.Ext.OES.PointSprite
+    Graphics.GL.Ext.OES.PrimitiveBoundingBox
     Graphics.GL.Ext.OES.QueryMatrix
     Graphics.GL.Ext.OES.ReadFormat
     Graphics.GL.Ext.OES.RequiredInternalformat
@@ -699,6 +706,7 @@ library
     Graphics.GL.Ext.OES.SampleShading
     Graphics.GL.Ext.OES.SampleVariables
     Graphics.GL.Ext.OES.ShaderImageAtomic
+    Graphics.GL.Ext.OES.ShaderIoBlocks
     Graphics.GL.Ext.OES.ShaderMultisampleInterpolation
     Graphics.GL.Ext.OES.SinglePrecision
     Graphics.GL.Ext.OES.StandardDerivatives
@@ -707,9 +715,14 @@ library
     Graphics.GL.Ext.OES.Stencil8
     Graphics.GL.Ext.OES.StencilWrap
     Graphics.GL.Ext.OES.SurfacelessContext
+    Graphics.GL.Ext.OES.TessellationPointSize
+    Graphics.GL.Ext.OES.TessellationShader
     Graphics.GL.Ext.OES.Texture3D
+    Graphics.GL.Ext.OES.TextureBorderClamp
+    Graphics.GL.Ext.OES.TextureBuffer
     Graphics.GL.Ext.OES.TextureCompressionAstc
     Graphics.GL.Ext.OES.TextureCubeMap
+    Graphics.GL.Ext.OES.TextureCubeMapArray
     Graphics.GL.Ext.OES.TextureEnvCrossbar
     Graphics.GL.Ext.OES.TextureFloat
     Graphics.GL.Ext.OES.TextureFloatLinear
@@ -719,6 +732,7 @@ library
     Graphics.GL.Ext.OES.TextureNpot
     Graphics.GL.Ext.OES.TextureStencil8
     Graphics.GL.Ext.OES.TextureStorageMultisample2dArray
+    Graphics.GL.Ext.OES.TextureView
     Graphics.GL.Ext.OES.VertexArrayObject
     Graphics.GL.Ext.OES.VertexHalfFloat
     Graphics.GL.Ext.OES.VertexType1010102

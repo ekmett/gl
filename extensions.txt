@@ -43,7 +43,7 @@ GL_ANGLE_framebuffer_multisample https://www.khronos.org/registry/gles/extension
 GL_ANGLE_instanced_arrays https://www.khronos.org/registry/gles/extensions/ANGLE/ANGLE_instanced_arrays.txt
 GL_ANGLE_pack_reverse_row_order https://www.khronos.org/registry/gles/extensions/ANGLE/ANGLE_pack_reverse_row_order.txt
 GL_ANGLE_program_binary https://www.khronos.org/registry/gles/extensions/ANGLE/ANGLE_program_binary.txt
-GL_ANGLE_texture_compression_dxt3  https://www.khronos.org/registry/gles/extensions/ANGLE/ANGLE_texture_compression_dxt3 .txt
+GL_ANGLE_texture_compression_dxt3 https://www.khronos.org/registry/gles/extensions/ANGLE/ANGLE_texture_compression_dxt3.txt
 GL_ANGLE_texture_compression_dxt5 https://www.khronos.org/registry/gles/extensions/ANGLE/ANGLE_texture_compression_dxt5.txt
 GL_ANGLE_texture_usage https://www.khronos.org/registry/gles/extensions/ANGLE/ANGLE_texture_usage.txt
 GL_ANGLE_translated_shader_source https://www.khronos.org/registry/gles/extensions/ANGLE/ANGLE_translated_shader_source.txt
@@ -308,7 +308,7 @@ GL_EXT_framebuffer_multisample_blit_scaled https://cvs.khronos.org/svn/repos/ogl
 GL_EXT_framebuffer_object https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/framebuffer_object.txt
 GL_EXT_framebuffer_sRGB https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/framebuffer_sRGB.txt
 GL_EXT_geometry_point_size https://www.khronos.org/registry/gles/extensions/EXT/EXT_geometry_point_size.txt
-GL_EXT_geometry_shader  https://www.khronos.org/registry/gles/extensions/EXT/EXT_geometry_shader .txt
+GL_EXT_geometry_shader https://www.khronos.org/registry/gles/extensions/EXT/EXT_geometry_shader.txt
 GL_EXT_geometry_shader4 https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/geometry_shader4.txt
 GL_EXT_glx_buffer_age https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/glx_buffer_age.txt
 GL_EXT_glx_create_context_es2_profile https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/glx_create_context_es2_profile.txt
@@ -327,7 +327,7 @@ GL_EXT_instanced_arrays https://www.khronos.org/registry/gles/extensions/EXT/EXT
 GL_EXT_light_texture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/light_texture.txt
 GL_EXT_map_buffer_range https://www.khronos.org/registry/gles/extensions/EXT/EXT_map_buffer_range.txt
 GL_EXT_misc_attribute https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/misc_attribute.txt
-GL_EXT_multi_draw_arrays  https://www.khronos.org/registry/gles/extensions/EXT/EXT_multi_draw_arrays .txt
+GL_EXT_multi_draw_arrays https://www.khronos.org/registry/gles/extensions/EXT/EXT_multi_draw_arrays.txt
 GL_EXT_multi_draw_arrays https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/multi_draw_arrays.txt
 GL_EXT_multisampled_render_to_texture https://www.khronos.org/registry/gles/extensions/EXT/EXT_multisampled_render_to_texture.txt
 GL_EXT_multiview_draw_buffers https://www.khronos.org/registry/gles/extensions/EXT/EXT_multiview_draw_buffers.txt
@@ -379,7 +379,7 @@ GL_EXT_stencil_wrap https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/pub
 GL_EXT_subtexture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/subtexture.txt
 GL_EXT_swap_control https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/swap_control.txt
 GL_EXT_tessellation_point_size https://www.khronos.org/registry/gles/extensions/EXT/EXT_tessellation_point_size.txt
-GL_EXT_tessellation_shader  https://www.khronos.org/registry/gles/extensions/EXT/EXT_tessellation_shader .txt
+GL_EXT_tessellation_shader https://www.khronos.org/registry/gles/extensions/EXT/EXT_tessellation_shader.txt
 GL_EXT_texture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/texture.txt
 GL_EXT_texture3D https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/texture3D.txt
 GL_EXT_texture_array https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/texture_array.txt
@@ -477,7 +477,7 @@ GL_INTEL_performance_query https://cvs.khronos.org/svn/repos/ogl/trunk/doc/regis
 GL_INTEL_performance_query https://www.khronos.org/registry/gles/extensions/INTEL/INTEL_performance_query.txt
 GL_INTEL_swap_event https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/INTEL/swap_event.txt
 GL_INTEL_texture_scissor https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/INTEL/texture_scissor.txt
-GL_KHR_blend_equation_advanced  https://www.khronos.org/registry/gles/extensions/KHR/KHR_blend_equation_advanced .txt
+GL_KHR_blend_equation_advanced https://www.khronos.org/registry/gles/extensions/KHR/KHR_blend_equation_advanced.txt
 GL_KHR_blend_equation_advanced https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/blend_equation_advanced.txt
 GL_KHR_blend_equation_advanced_coherent https://www.khronos.org/registry/gles/extensions/KHR/KHR_blend_equation_advanced_coherent.txt
 GL_KHR_context_flush_control https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/context_flush_control.txt
@@ -488,7 +488,7 @@ GL_KHR_robust_buffer_access_behavior https://cvs.khronos.org/svn/repos/ogl/trunk
 GL_KHR_robust_buffer_access_behavior https://www.khronos.org/registry/gles/extensions/KHR/robust_buffer_access_behavior.txt
 GL_KHR_robustness https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/robustness.txt
 GL_KHR_robustness https://www.khronos.org/registry/gles/extensions/KHR/robustness.txt
-GL_KHR_texture_compression_astc_hdr  https://www.khronos.org/registry/gles/extensions/KHR/KHR_texture_compression_astc_hdr .txt
+GL_KHR_texture_compression_astc_hdr https://www.khronos.org/registry/gles/extensions/KHR/KHR_texture_compression_astc_hdr.txt
 GL_KHR_texture_compression_astc_hdr https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/texture_compression_astc_hdr.txt
 GL_KHR_texture_compression_astc_ldr https://www.khronos.org/registry/gles/extensions/KHR/KHR_texture_compression_astc_ldr.txt
 GL_MESAX_texture_stack https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/MESAX/texture_stack.txt
@@ -512,7 +512,7 @@ GL_NV_bgr https://www.khronos.org/registry/gles/extensions/NV/NV_bgr.txt
 GL_NV_bindless_multi_draw_indirect https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/bindless_multi_draw_indirect.txt
 GL_NV_bindless_multi_draw_indirect_count https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/bindless_multi_draw_indirect_count.txt
 GL_NV_bindless_texture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/bindless_texture.txt
-GL_NV_blend_equation_advanced  https://www.khronos.org/registry/gles/extensions/NV/NV_blend_equation_advanced .txt
+GL_NV_blend_equation_advanced https://www.khronos.org/registry/gles/extensions/NV/NV_blend_equation_advanced.txt
 GL_NV_blend_equation_advanced https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/blend_equation_advanced.txt
 GL_NV_blend_equation_advanced_coherent https://www.khronos.org/registry/gles/extensions/NV/NV_blend_equation_advanced_coherent.txt
 GL_NV_blend_square https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/blend_square.txt
@@ -645,22 +645,19 @@ GL_NV_wgl_video_output https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/
 GL_OES_EGL_image https://www.khronos.org/registry/gles/extensions/OES/OES_EGL_image.txt
 GL_OES_EGL_image_external https://www.khronos.org/registry/gles/extensions/OES/OES_EGL_image_external.txt
 GL_OES_EGL_sync https://www.khronos.org/registry/gles/extensions/OES/OES_EGL_sync.txt
-GL_OES_OES_byte_coordinates https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/OES/OES_byte_coordinates.txt
-GL_OES_OES_compressed_paletted_texture https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/OES/OES_compressed_paletted_texture.txt
-GL_OES_OES_fixed_point https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/OES/OES_fixed_point.txt
-GL_OES_OES_query_matrix https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/OES/OES_query_matrix.txt
-GL_OES_OES_read_format https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/OES/OES_read_format.txt
-GL_OES_OES_single_precision https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/OES/OES_single_precision.txt
 GL_OES_blend_equation_separate https://www.khronos.org/registry/gles/extensions/OES/OES_blend_equation_separate.txt
 GL_OES_blend_func_separate https://www.khronos.org/registry/gles/extensions/OES/OES_blend_func_separate.txt
 GL_OES_blend_subtract https://www.khronos.org/registry/gles/extensions/OES/OES_blend_subtract.txt
 GL_OES_byte_coordinates https://www.khronos.org/registry/gles/extensions/OES/OES_byte_coordinates.txt
 GL_OES_compressed_ETC1_RGB8_texture https://www.khronos.org/registry/gles/extensions/OES/OES_compressed_ETC1_RGB8_texture.txt
 GL_OES_compressed_paletted_texture https://www.khronos.org/registry/gles/extensions/OES/OES_compressed_paletted_texture.txt
+GL_OES_copy_image https://www.khronos.org/registry/gles/extensions/OES/OES_copy_image.txt
 GL_OES_depth24 https://www.khronos.org/registry/gles/extensions/OES/OES_depth24.txt
 GL_OES_depth32 https://www.khronos.org/registry/gles/extensions/OES/OES_depth32.txt
 GL_OES_depth_texture https://www.khronos.org/registry/gles/extensions/OES/OES_depth_texture.txt
 GL_OES_depth_texture_cube_map https://www.khronos.org/registry/gles/extensions/OES/OES_depth_texture_cube_map.txt
+GL_OES_draw_buffers_indexed https://www.khronos.org/registry/gles/extensions/OES/OES_draw_buffers_indexed.txt
+GL_OES_draw_elements_base_vertex https://www.khronos.org/registry/gles/extensions/OES/OES_draw_elements_base_vertex.txt
 GL_OES_draw_texture https://www.khronos.org/registry/gles/extensions/OES/OES_draw_texture.txt
 GL_OES_element_index_uint https://www.khronos.org/registry/gles/extensions/OES/OES_element_index_uint.txt
 GL_OES_extended_matrix_palette https://www.khronos.org/registry/gles/extensions/OES/OES_extended_matrix_palette.txt
@@ -668,13 +665,17 @@ GL_OES_fbo_render_mipmap https://www.khronos.org/registry/gles/extensions/OES/OE
 GL_OES_fixed_point https://www.khronos.org/registry/gles/extensions/OES/OES_fixed_point.txt
 GL_OES_fragment_precision_high https://www.khronos.org/registry/gles/extensions/OES/OES_fragment_precision_high.txt
 GL_OES_framebuffer_object https://www.khronos.org/registry/gles/extensions/OES/OES_framebuffer_object.txt
+GL_OES_geometry_point_size https://www.khronos.org/registry/gles/extensions/OES/OES_geometry_shader.txt
+GL_OES_geometry_shader https://www.khronos.org/registry/gles/extensions/OES/OES_geometry_shader.txt
 GL_OES_get_program_binary https://www.khronos.org/registry/gles/extensions/OES/OES_get_program_binary.txt
+GL_OES_gpu_shader5 https://www.khronos.org/registry/gles/extensions/OES/OES_gpu_shader5.txt
 GL_OES_mapbuffer https://www.khronos.org/registry/gles/extensions/OES/OES_mapbuffer.txt
 GL_OES_matrix_get https://www.khronos.org/registry/gles/extensions/OES/OES_matrix_get.txt
 GL_OES_matrix_palette https://www.khronos.org/registry/gles/extensions/OES/OES_matrix_palette.txt
 GL_OES_packed_depth_stencil https://www.khronos.org/registry/gles/extensions/OES/OES_packed_depth_stencil.txt
 GL_OES_point_size_array https://www.khronos.org/registry/gles/extensions/OES/OES_point_size_array.txt
 GL_OES_point_sprite https://www.khronos.org/registry/gles/extensions/OES/OES_point_sprite.txt
+GL_OES_primitive_bounding_box https://www.khronos.org/registry/gles/extensions/OES/OES_primitive_bounding_box.txt
 GL_OES_query_matrix https://www.khronos.org/registry/gles/extensions/OES/OES_query_matrix.txt
 GL_OES_read_format https://www.khronos.org/registry/gles/extensions/OES/OES_read_format.txt
 GL_OES_required_internalformat https://www.khronos.org/registry/gles/extensions/OES/OES_required_internalformat.txt
@@ -682,6 +683,7 @@ GL_OES_rgb8_rgba8 https://www.khronos.org/registry/gles/extensions/OES/OES_rgb8_
 GL_OES_sample_shading https://www.khronos.org/registry/gles/extensions/OES/OES_sample_shading.txt
 GL_OES_sample_variables https://www.khronos.org/registry/gles/extensions/OES/OES_sample_variables.txt
 GL_OES_shader_image_atomic https://www.khronos.org/registry/gles/extensions/OES/OES_shader_image_atomic.txt
+GL_OES_shader_io_blocks https://www.khronos.org/registry/gles/extensions/OES/OES_shader_io_blocks.txt
 GL_OES_shader_multisample_interpolation https://www.khronos.org/registry/gles/extensions/OES/OES_shader_multisample_interpolation.txt
 GL_OES_single_precision https://www.khronos.org/registry/gles/extensions/OES/OES_single_precision.txt
 GL_OES_standard_derivatives https://www.khronos.org/registry/gles/extensions/OES/OES_standard_derivatives.txt
@@ -690,18 +692,24 @@ GL_OES_stencil4 https://www.khronos.org/registry/gles/extensions/OES/OES_stencil
 GL_OES_stencil8 https://www.khronos.org/registry/gles/extensions/OES/OES_stencil8.txt
 GL_OES_stencil_wrap https://www.khronos.org/registry/gles/extensions/OES/OES_stencil_wrap.txt
 GL_OES_surfaceless_context https://www.khronos.org/registry/gles/extensions/OES/OES_surfaceless_context.txt
+GL_OES_tessellation_point_size https://www.khronos.org/registry/gles/extensions/OES/OES_tessellation_shader.txt
+GL_OES_tessellation_shader https://www.khronos.org/registry/gles/extensions/OES/OES_tessellation_shader.txt
 GL_OES_texture_3D https://www.khronos.org/registry/gles/extensions/OES/OES_texture_3D.txt
+GL_OES_texture_border_clamp https://www.khronos.org/registry/gles/extensions/OES/OES_texture_border_clamp.txt
+GL_OES_texture_buffer https://www.khronos.org/registry/gles/extensions/OES/OES_texture_buffer.txt
 GL_OES_texture_compression_astc https://www.khronos.org/registry/gles/extensions/OES/OES_texture_compression_astc.txt
 GL_OES_texture_cube_map https://www.khronos.org/registry/gles/extensions/OES/OES_texture_cube_map.txt
+GL_OES_texture_cube_map_array https://www.khronos.org/registry/gles/extensions/OES/OES_texture_cube_map_array.txt
 GL_OES_texture_env_crossbar https://www.khronos.org/registry/gles/extensions/OES/OES_texture_env_crossbar.txt
-GL_OES_texture_float  https://www.khronos.org/registry/gles/extensions/OES/OES_texture_float .txt
-GL_OES_texture_float_linear  https://www.khronos.org/registry/gles/extensions/OES/OES_texture_float_linear .txt
+GL_OES_texture_float https://www.khronos.org/registry/gles/extensions/OES/OES_texture_float.txt
+GL_OES_texture_float_linear https://www.khronos.org/registry/gles/extensions/OES/OES_texture_float_linear.txt
 GL_OES_texture_half_float https://www.khronos.org/registry/gles/extensions/OES/OES_texture_half_float.txt
 GL_OES_texture_half_float_linear https://www.khronos.org/registry/gles/extensions/OES/OES_texture_half_float_linear.txt
 GL_OES_texture_mirrored_repeat https://www.khronos.org/registry/gles/extensions/OES/OES_texture_mirrored_repeat.txt
 GL_OES_texture_npot https://www.khronos.org/registry/gles/extensions/OES/OES_texture_npot.txt
 GL_OES_texture_stencil8 https://www.khronos.org/registry/gles/extensions/OES/OES_texture_stencil8.txt
 GL_OES_texture_storage_multisample_2d_array https://www.khronos.org/registry/gles/extensions/OES/OES_texture_storage_multisample_2d_array.txt
+GL_OES_texture_view https://www.khronos.org/registry/gles/extensions/OES/OES_texture_view.txt
 GL_OES_vertex_array_object https://www.khronos.org/registry/gles/extensions/OES/OES_vertex_array_object.txt
 GL_OES_vertex_half_float https://www.khronos.org/registry/gles/extensions/OES/OES_vertex_half_float.txt
 GL_OES_vertex_type_10_10_10_2 https://www.khronos.org/registry/gles/extensions/OES/OES_vertex_type_10_10_10_2.txt
