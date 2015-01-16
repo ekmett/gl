@@ -112,7 +112,9 @@ cleanCommand :: Command -> Command
 cleanCommand cmd = cmd { commandParameters = cleanParameter <$> commandParameters cmd }
 
 cleanParameter :: Parameter -> Parameter
-cleanParameter param = param { parameterGroup = cleanParameterGroup <$> parameterGroup param }
+cleanParameter param
+  | parameterName param == "baseAndCount" = param { parameterType = (parameterType param) { typePointer = 1 }}
+  | otherwise = param { parameterGroup = cleanParameterGroup <$> parameterGroup param }
 
 cleanParameterGroup :: String -> String
 cleanParameterGroup "PixelInternalFormat" = "InternalFormat"

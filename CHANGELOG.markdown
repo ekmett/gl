@@ -1,3 +1,7 @@
+0.7
+---
+* Fixed the type of `glPathGlyphIndexRangeNV`. (issue #6)
+
 0.6.4
 -----
 * Added support for fourteen new extensions:
