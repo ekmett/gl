@@ -644,6 +644,7 @@ GL_NV_wgl_swap_group https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/pu
 GL_NV_wgl_video_output https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/wgl_video_output.txt
 GL_OES_EGL_image https://www.khronos.org/registry/gles/extensions/OES/OES_EGL_image.txt
 GL_OES_EGL_image_external https://www.khronos.org/registry/gles/extensions/OES/OES_EGL_image_external.txt
+GL_OES_EGL_image_external_essl3 https://www.khronos.org/registry/gles/extensions/OES/OES_EGL_image_external_essl3.txt
 GL_OES_EGL_sync https://www.khronos.org/registry/gles/extensions/OES/OES_EGL_sync.txt
 GL_OES_blend_equation_separate https://www.khronos.org/registry/gles/extensions/OES/OES_blend_equation_separate.txt
 GL_OES_blend_func_separate https://www.khronos.org/registry/gles/extensions/OES/OES_blend_func_separate.txt

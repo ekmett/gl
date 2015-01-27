@@ -1,5 +1,5 @@
 name:          gl
-version:       0.7
+version:       0.7.1
 synopsis:      Complete OpenGL raw bindings
 description:   Complete OpenGL raw bindings
 license:       BSD3
@@ -682,6 +682,7 @@ library
     Graphics.GL.Ext.OES.DrawTexture
     Graphics.GL.Ext.OES.EGLImage
     Graphics.GL.Ext.OES.EGLImageExternal
+    Graphics.GL.Ext.OES.EGLImageExternalEssl3
     Graphics.GL.Ext.OES.ElementIndexUint
     Graphics.GL.Ext.OES.ExtendedMatrixPalette
     Graphics.GL.Ext.OES.FboRenderMipmap

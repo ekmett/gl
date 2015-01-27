@@ -1,3 +1,8 @@
+0.7.1
+-----
+* Added support for a new extension:
+  * OES_EGL_image_external_essl3
+
 0.7
 ---
 * Fixed the type of `glPathGlyphIndexRangeNV`. (issue #6)
