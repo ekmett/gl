@@ -6,9 +6,6 @@
 0.7
 ---
 * Fixed the type of `glPathGlyphIndexRangeNV`. (issue #6)
-
-0.6.4
------
 * Added support for fourteen new extensions:
   * OES_copy_image
   * OES_draw_buffers_indexed
