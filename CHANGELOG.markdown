@@ -1,3 +1,7 @@
+0.7.2
+-----
+* Remove `GL_TEXTURE_BINDING` from OpenGL 4.5 and ARB_direct_state_access due to changes made to their specifications.
+
 0.7.1
 -----
 * Fix enumeration constants for the SGIX_resample extension to their correct values.
