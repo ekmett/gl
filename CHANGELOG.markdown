@@ -1,36 +1,36 @@
 0.7.2
 -----
-* Remove `GL_TEXTURE_BINDING` from OpenGL 4.5 and ARB_direct_state_access due to changes made to their specifications.
+* Remove `GL_TEXTURE_BINDING` from OpenGL 4.5 and `ARB_direct_state_access` due to changes made to their specifications.
 
 0.7.1
 -----
 * Fix enumeration constants for the SGIX_resample extension to their correct values.
 * Added support for a new extension:
-  * OES_EGL_image_external_essl3
+  * `OES_EGL_image_external_essl3`
 
 0.7
 ---
 * Fixed the type of `glPathGlyphIndexRangeNV`. (issue #6)
 * Added support for fourteen new extensions:
-  * OES_copy_image
-  * OES_draw_buffers_indexed
-  * OES_draw_elements_base_vertex
-  * OES_geometry_point_size
-  * OES_geometry_shader
-  * OES_gpu_shader5
-  * OES_primitive_bounding_box
-  * OES_shader_io_blocks
-  * OES_tessellation_point_size
-  * OES_tessellation_shader
-  * OES_texture_border_clamp
-  * OES_texture_buffer
-  * OES_texture_cube_map_array
-  * OES_texture_view
+  * `OES_copy_image`
+  * `OES_draw_buffers_indexed`
+  * `OES_draw_elements_base_vertex`
+  * `OES_geometry_point_size`
+  * `OES_geometry_shader`
+  * `OES_gpu_shader5`
+  * `OES_primitive_bounding_box`
+  * `OES_shader_io_blocks`
+  * `OES_tessellation_point_size`
+  * `OES_tessellation_shader`
+  * `OES_texture_border_clamp`
+  * `OES_texture_buffer`
+  * `OES_texture_cube_map_array`
+  * `OES_texture_view`
 
 0.6.3
 -----
 * Added support for a new extension:
-  * NV_viewport_array2
+  * `NV_viewport_array2`
 
 0.6.2
 -----
@@ -39,14 +39,14 @@
 0.6.1
 -----
 * Added support for eight new extensions:
-  * EXT_base_instance
-  * EXT_draw_elements_base_vertex
-  * EXT_multi_draw_indirect
-  * EXT_render_snorm
-  * EXT_render_norm16
-  * NV_image_formats
-  * NV_shader_noperspective_interpolation
-  * NV_viewport_array
+  * `EXT_base_instance`
+  * `EXT_draw_elements_base_vertex`
+  * `EXT_multi_draw_indirect`
+  * `EXT_render_snorm`
+  * `EXT_render_norm16`
+  * `NV_image_formats`
+  * `NV_shader_noperspective_interpolation`
+  * `NV_viewport_array`
 
 0.6
 ---
