@@ -1,6 +1,6 @@
-0.7.2.1
+0.7.2.2
 -------
-* Switched to `stdcall` to make Windows happy.
+* Switch to `stdcall` on 32-bit Windows, per the OpenGL ABI.
 
 0.7.2
 -----

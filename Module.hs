@@ -49,7 +49,7 @@ renderModule :: Module -> String
 renderModule m =
   printf 
     ("-- This file was automatically generated.\n" ++
-    "{-# LANGUAGE ScopedTypeVariables, PatternSynonyms #-}\n" ++
+    "{-# LANGUAGE CPP, ScopedTypeVariables, PatternSynonyms #-}\n" ++
     "module %s%s where\n\n%s")
      (moduleName m) (renderExports $ moduleExport m) (intercalate "\n\n" . map renderBody $ moduleBody m)
 

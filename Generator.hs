@@ -456,7 +456,7 @@ mkFFI fm = Module "Graphics.GL.Internal.FFI" export body where
 
 invokers :: Signature -> [Body]
 invokers v =
-  [ Code $ printf "foreign import ccall \"dynamic\" %s :: FunPtr (%s) -> %s" nd v' v'
+  [ Code $ printf "foreign import CALLCONV \"dynamic\" %s :: FunPtr (%s) -> %s" nd v' v'
   , Function ni (printf "MonadIO m => FunPtr (%s) -> %s" v' v) $
       printf "fp %s = liftIO (%s fp %s)" params nd params
   ] where
