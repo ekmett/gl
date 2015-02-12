@@ -1,4 +1,4 @@
-0.7.2.2
+0.7.2.3
 -------
 * Switch to `stdcall` on 32-bit Windows, per the OpenGL ABI.
 
@@ -8,7 +8,7 @@
 
 0.7.1
 -----
-* Fix enumeration constants for the SGIX_resample extension to their correct values.
+* Fix enumeration constants for the `SGIX_resample` extension to their correct values.
 * Added support for a new extension:
   * `OES_EGL_image_external_essl3`
 
