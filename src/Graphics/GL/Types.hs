@@ -105,22 +105,22 @@ type GLDEBUGPROCKHR =
 
 -- | The storage associated with the resulting 'FunPtr' has to be released with
 -- 'freeHaskellFunPtr' when it is no longer required.
-foreign import ccall "wrapper"
+foreign import CALLCONV "wrapper"
   mkGLDEBUGPROC :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROC
 
 -- | The storage associated with the resulting 'FunPtr' has to be released with
 -- 'freeHaskellFunPtr' when it is no longer required.
-foreign import ccall "wrapper"
+foreign import CALLCONV "wrapper"
   mkGLDEBUGPROCAMD :: (GLuint -> GLenum -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCAMD
 
 -- | The storage associated with the resulting 'FunPtr' has to be released with
 -- 'freeHaskellFunPtr' when it is no longer required.
-foreign import ccall "wrapper"
+foreign import CALLCONV "wrapper"
   mkGLDEBUGPROCARB :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCARB
 
 -- | The storage associated with the resulting 'FunPtr' has to be released with
 -- 'freeHaskellFunPtr' when it is no longer required.
-foreign import ccall "wrapper"
+foreign import CALLCONV "wrapper"
   mkGLDEBUGPROCKHR :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCKHR
 
 type GLbitfield       = Word32
