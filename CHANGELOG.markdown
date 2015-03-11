@@ -1,3 +1,7 @@
+0.7.2.4
+-------
+* `filepath` 1.4 support
+
 0.7.2.3
 -------
 * Switch to `stdcall` on 32-bit Windows, per the OpenGL ABI.
