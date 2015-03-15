@@ -1,3 +1,10 @@
+0.7.3
+-----
+* Added support for three new extensions:
+  * `EXT_texture_sRGB_R8`
+  * `EXT_texture_sRGB_RG8`
+  * `EXT_YUV_target`
+
 0.7.2.4
 -------
 * `filepath` 1.4 support

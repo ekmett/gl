@@ -1,5 +1,5 @@
 name:          gl
-version:       0.7.2.4
+version:       0.7.3
 synopsis:      Complete OpenGL raw bindings
 description:   Complete OpenGL raw bindings
 license:       BSD3
@@ -477,6 +477,8 @@ library
     Graphics.GL.Ext.EXT.TextureRg
     Graphics.GL.Ext.EXT.TextureSRGB
     Graphics.GL.Ext.EXT.TextureSRGBDecode
+    Graphics.GL.Ext.EXT.TextureSRGBR8
+    Graphics.GL.Ext.EXT.TextureSRGBRG8
     Graphics.GL.Ext.EXT.TextureSharedExponent
     Graphics.GL.Ext.EXT.TextureSnorm
     Graphics.GL.Ext.EXT.TextureStorage
@@ -492,6 +494,7 @@ library
     Graphics.GL.Ext.EXT.VertexShader
     Graphics.GL.Ext.EXT.VertexWeighting
     Graphics.GL.Ext.EXT.X11SyncObject
+    Graphics.GL.Ext.EXT.YUVTarget
     Graphics.GL.Ext.FJ
     Graphics.GL.Ext.FJ.ShaderBinaryGCCSO
     Graphics.GL.Ext.GREMEDY
