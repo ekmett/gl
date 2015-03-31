@@ -299,6 +299,7 @@ GL_EXT_draw_buffers_indexed https://www.khronos.org/registry/gles/extensions/EXT
 GL_EXT_draw_instanced https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/draw_instanced.txt
 GL_EXT_draw_instanced https://www.khronos.org/registry/gles/extensions/EXT/EXT_draw_instanced.txt
 GL_EXT_draw_range_elements https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/draw_range_elements.txt
+GL_EXT_float_blend https://www.khronos.org/registry/gles/extensions/EXT/EXT_float_blend.txt
 GL_EXT_fog_coord https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/fog_coord.txt
 GL_EXT_frag_depth https://www.khronos.org/registry/gles/extensions/EXT/EXT_frag_depth.txt
 GL_EXT_fragment_lighting https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/fragment_lighting.txt
@@ -518,6 +519,7 @@ GL_NV_blend_equation_advanced https://www.khronos.org/registry/gles/extensions/N
 GL_NV_blend_equation_advanced https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/blend_equation_advanced.txt
 GL_NV_blend_equation_advanced_coherent https://www.khronos.org/registry/gles/extensions/NV/NV_blend_equation_advanced_coherent.txt
 GL_NV_blend_square https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/blend_square.txt
+GL_NV_command_list https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/command_list.txt
 GL_NV_compute_program5 https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/compute_program5.txt
 GL_NV_conditional_render https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/conditional_render.txt
 GL_NV_conservative_raster https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/conservative_raster.txt
@@ -585,6 +587,7 @@ GL_NV_pixel_buffer_object https://www.khronos.org/registry/gles/extensions/NV/NV
 GL_NV_pixel_data_range https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/pixel_data_range.txt
 GL_NV_platform_binary https://www.khronos.org/registry/gles/extensions/NV/NV_platform_binary.txt
 GL_NV_point_sprite https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/point_sprite.txt
+GL_NV_polygon_mode https://www.khronos.org/registry/gles/extensions/NV/NV_polygon_mode.txt
 GL_NV_present_video https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/present_video.txt
 GL_NV_primitive_restart https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/NV/primitive_restart.txt
 GL_NV_read_buffer https://www.khronos.org/registry/gles/extensions/NV/NV_read_buffer.txt

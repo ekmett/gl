@@ -1,5 +1,5 @@
 name:          gl
-version:       0.7.3
+version:       0.7.4
 synopsis:      Complete OpenGL raw bindings
 description:   Complete OpenGL raw bindings
 license:       BSD3
@@ -382,6 +382,7 @@ library
     Graphics.GL.Ext.EXT.DrawRangeElements
     Graphics.GL.Ext.EXT.FogCoord
     Graphics.GL.Ext.EXT.FourTwoTwoPixels
+    Graphics.GL.Ext.EXT.FloatBlend
     Graphics.GL.Ext.EXT.FramebufferBlit
     Graphics.GL.Ext.EXT.FramebufferMultisample
     Graphics.GL.Ext.EXT.FramebufferMultisampleBlitScaled
@@ -553,6 +554,7 @@ library
     Graphics.GL.Ext.NV.BlendEquationAdvanced
     Graphics.GL.Ext.NV.BlendEquationAdvancedCoherent
     Graphics.GL.Ext.NV.BlendSquare
+    Graphics.GL.Ext.NV.CommandList
     Graphics.GL.Ext.NV.ComputeProgram5
     Graphics.GL.Ext.NV.ConditionalRender
     Graphics.GL.Ext.NV.ConservativeRaster
@@ -609,6 +611,7 @@ library
     Graphics.GL.Ext.NV.PathRenderingSharedEdge
     Graphics.GL.Ext.NV.PixelDataRange
     Graphics.GL.Ext.NV.PointSprite
+    Graphics.GL.Ext.NV.PolygonMode
     Graphics.GL.Ext.NV.PresentVideo
     Graphics.GL.Ext.NV.PrimitiveRestart
     Graphics.GL.Ext.NV.ReadBuffer

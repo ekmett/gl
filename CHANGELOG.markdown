@@ -1,3 +1,10 @@
+0.7.4
+-----
+* Added support for three new extensions:
+  * `EXT_float_blend`
+  * `NV_command_list`
+  * `NV_polygon_mode`
+
 0.7.3
 -----
 * Added support for three new extensions:
