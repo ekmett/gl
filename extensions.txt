@@ -275,6 +275,7 @@ GL_EXT_blend_logic_op https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/p
 GL_EXT_blend_minmax https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/blend_minmax.txt
 GL_EXT_blend_minmax https://www.khronos.org/registry/gles/extensions/EXT/EXT_blend_minmax.txt
 GL_EXT_blend_subtract https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/blend_subtract.txt
+GL_EXT_buffer_storage https://www.khronos.org/registry/gles/extensions/EXT/EXT_buffer_storage.txt
 GL_EXT_clip_volume_hint https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/clip_volume_hint.txt
 GL_EXT_cmyka https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/cmyka.txt
 GL_EXT_color_buffer_float https://www.khronos.org/registry/gles/extensions/EXT/EXT_color_buffer_float.txt
@@ -372,6 +373,7 @@ GL_EXT_shader_texture_lod https://www.khronos.org/registry/gles/extensions/EXT/E
 GL_EXT_shadow_funcs https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/shadow_funcs.txt
 GL_EXT_shadow_samplers https://www.khronos.org/registry/gles/extensions/EXT/EXT_shadow_samplers.txt
 GL_EXT_shared_texture_palette https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/shared_texture_palette.txt
+GL_EXT_sparse_texture https://www.khronos.org/registry/gles/extensions/EXT/EXT_sparse_texture.txt
 GL_EXT_sparse_texture2 https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/sparse_texture2.txt
 GL_EXT_static_vertex_array https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/static_vertex_array.txt
 GL_EXT_stencil_clear_tag https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/EXT/stencil_clear_tag.txt

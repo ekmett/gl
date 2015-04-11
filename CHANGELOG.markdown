@@ -1,3 +1,9 @@
+0.7.5
+-----
+* Added support for two new extensions:
+  * `EXT_buffer_storage`
+  * `EXT_sparse_texture`
+
 0.7.4
 -----
 * Added support for three new extensions:
