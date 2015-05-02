@@ -1,5 +1,5 @@
 name:          gl
-version:       0.7.5
+version:       0.7.6
 synopsis:      Complete OpenGL raw bindings
 description:   Complete OpenGL raw bindings
 license:       BSD3
@@ -749,6 +749,9 @@ library
     Graphics.GL.Ext.OML.Interlace
     Graphics.GL.Ext.OML.Resample
     Graphics.GL.Ext.OML.Subsample
+    Graphics.GL.Ext.OVR
+    Graphics.GL.Ext.OVR.Multiview
+    Graphics.GL.Ext.OVR.Multiview2
     Graphics.GL.Ext.PGI
     Graphics.GL.Ext.PGI.MiscHints
     Graphics.GL.Ext.PGI.VertexHints

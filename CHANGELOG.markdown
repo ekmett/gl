@@ -1,3 +1,11 @@
+0.7.6
+-----
+* Correct the type signature of `glListDrawCommandsStatesClientNV`.
+* Remove `glSampleCoverageOES` from `OES_fixed_point` extension due to changes made to its specification.
+* Added support for two new extensions:
+  * `OVR_multiview`
+  * `OVR_multiview2`
+
 0.7.5
 -----
 * Added support for two new extensions:

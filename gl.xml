@@ -8370,7 +8370,10 @@ typedef unsigned int GLhandleARB;
     </enums>
 
     <enums namespace="GL" start="0x9630" end="0x963F" vendor="Oculus" comment="Email from Cass Everitt">
-            <unused start="0x9630" end="0x963F" vendor="Oculus"/>
+        <enum value="0x9630" name="GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR"/>
+        <enum value="0x9631" name="GL_MAX_VIEWS_OVR"/>
+        <enum value="0x9632" name="GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR"/>
+            <unused start="0x9633" end="0x963F" vendor="Oculus"/>
     </enums>
 
 <!-- Enums reservable for future use. To reserve a new range, allocate one
@@ -13586,6 +13589,15 @@ typedef unsigned int GLhandleARB;
             <param group="CheckedInt32"><ptype>GLint</ptype> <name>level</name></param>
             <param group="CheckedInt32"><ptype>GLint</ptype> <name>layer</name></param>
             <alias name="glFramebufferTextureLayer"/>
+        </command>
+        <command>
+            <proto>void <name>glFramebufferTextureMultiviewOVR</name></proto>
+            <param group="FramebufferTarget"><ptype>GLenum</ptype> <name>target</name></param>
+            <param group="FramebufferAttachment"><ptype>GLenum</ptype> <name>attachment</name></param>
+            <param group="Texture"><ptype>GLuint</ptype> <name>texture</name></param>
+            <param group="CheckedInt32"><ptype>GLint</ptype> <name>level</name></param>
+            <param><ptype>GLint</ptype> <name>baseViewIndex</name></param>
+            <param><ptype>GLsizei</ptype> <name>numViews</name></param>
         </command>
         <command>
             <proto>void <name>glFreeObjectBufferATI</name></proto>
@@ -22987,11 +22999,6 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLfloat</ptype> <name>value</name></param>
             <param group="Boolean"><ptype>GLboolean</ptype> <name>invert</name></param>
             <alias name="glSampleCoverage"/>
-        </command>
-        <command>
-            <proto>void <name>glSampleCoverageOES</name></proto>
-            <param group="ClampedFixed"><ptype>GLfixed</ptype> <name>value</name></param>
-            <param group="Boolean"><ptype>GLboolean</ptype> <name>invert</name></param>
         </command>
         <command>
             <proto>void <name>glSampleCoveragex</name></proto>
@@ -43805,7 +43812,6 @@ typedef unsigned int GLhandleARB;
                 <command name="glPointSizexOES"/>
                 <command name="glPolygonOffsetxOES"/>
                 <command name="glRotatexOES"/>
-                <command name="glSampleCoverageOES"/>
                 <command name="glScalexOES"/>
                 <command name="glTexEnvxOES"/>
                 <command name="glTexEnvxvOES"/>
@@ -44441,6 +44447,15 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_FORMAT_SUBSAMPLE_244_244_OML"/>
             </require>
         </extension>
+        <extension name="GL_OVR_multiview" supported="gl|gles2">
+            <require>
+                <enum name="GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR"/>
+                <enum name="GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR"/>
+                <enum name="GL_MAX_VIEWS_OVR"/>
+                <command name="glFramebufferTextureMultiviewOVR"/>
+            </require>
+        </extension>
+        <extension name="GL_OVR_multiview2" supported="gl|gles2"/>
         <extension name="GL_PGI_misc_hints" supported="gl">
             <require>
                 <enum name="GL_PREFER_DOUBLEBUFFER_HINT_PGI"/>

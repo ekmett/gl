@@ -727,6 +727,8 @@ GL_OML_interlace https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public
 GL_OML_resample https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/OML/resample.txt
 GL_OML_subsample https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/OML/subsample.txt
 GL_OML_wgl_sync_control https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/OML/wgl_sync_control.txt
+GL_OVR_multiview https://www.khronos.org/registry/gles/extensions/OVR/multiview.txt
+GL_OVR_multiview2 https://www.khronos.org/registry/gles/extensions/OVR/multiview2.txt
 GL_PGI_misc_hints https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/PGI/misc_hints.txt
 GL_PGI_vertex_hints https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/PGI/vertex_hints.txt
 GL_QCOM_alpha_test https://www.khronos.org/registry/gles/extensions/QCOM/QCOM_alpha_test.txt
