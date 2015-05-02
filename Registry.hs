@@ -128,8 +128,14 @@ cleanFeature name f feature
 
 clean31require :: Require -> Require
 clean31require require = require
-  { requireEnums = "GL_BLEND_COLOR" : requireEnums require
-  }
+  { requireCommands = filter (`notElem` removed) $ requireCommands require
+  , requireEnums = "GL_BLEND_COLOR" : requireEnums require
+  } where
+  removed =
+    [ "glBindBufferBase"
+    , "glBindBufferRange"
+    , "glGetIntegeri_v"
+    ]
 
 clean44require :: Require -> Require
 clean44require require = require
