@@ -1,5 +1,5 @@
 name:          gl
-version:       0.7.6
+version:       0.7.7
 synopsis:      Complete OpenGL raw bindings
 description:   Complete OpenGL raw bindings
 license:       BSD3
@@ -538,6 +538,7 @@ library
     Graphics.GL.Ext.KHR.BlendEquationAdvancedCoherent
     Graphics.GL.Ext.KHR.ContextFlushControl
     Graphics.GL.Ext.KHR.Debug
+    Graphics.GL.Ext.KHR.NoError
     Graphics.GL.Ext.KHR.RobustBufferAccessBehavior
     Graphics.GL.Ext.KHR.Robustness
     Graphics.GL.Ext.KHR.TextureCompressionAstcHdr

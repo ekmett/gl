@@ -1,3 +1,8 @@
+0.7.7
+-----
+* Added suuport for a new extension:
+  * `KHR_no_error`
+
 0.7.6
 -----
 * Correct the type signature of `glListDrawCommandsStatesClientNV`.

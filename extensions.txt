@@ -489,6 +489,7 @@ GL_KHR_context_flush_control https://cvs.khronos.org/svn/repos/ogl/trunk/doc/reg
 GL_KHR_context_flush_control https://www.khronos.org/registry/gles/extensions/KHR/context_flush_control.txt
 GL_KHR_debug https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/debug.txt
 GL_KHR_debug https://www.khronos.org/registry/gles/extensions/KHR/debug.txt
+GL_KHR_no_error https://www.khronos.org/registry/gles/extensions/KHR/no_error.txt
 GL_KHR_robust_buffer_access_behavior https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/robust_buffer_access_behavior.txt
 GL_KHR_robust_buffer_access_behavior https://www.khronos.org/registry/gles/extensions/KHR/robust_buffer_access_behavior.txt
 GL_KHR_robustness https://cvs.khronos.org/svn/repos/ogl/trunk/doc/registry/public/specs/KHR/robustness.txt
