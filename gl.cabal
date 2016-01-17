@@ -1,13 +1,13 @@
 name:          gl
-version:       0.7.7
+version:       0.7.7.1
 synopsis:      Complete OpenGL raw bindings
 description:   Complete OpenGL raw bindings
 license:       BSD3
 license-file:  LICENSE
 author:        Edward A. Kmett, Gabríel Arthúr Pétursson, Sven Panne
 maintainer:    ekmett@gmail.com
-copyright:     Copyright © 2014-2015 Edward A. Kmett,
-               Copyright © 2014-2015 Gabríel Arthúr Pétursson,
+copyright:     Copyright © 2014-2016 Edward A. Kmett,
+               Copyright © 2014-2016 Gabríel Arthúr Pétursson,
                Copyright © 2013 Sven Panne
 category:      Graphics
 build-type:    Custom
