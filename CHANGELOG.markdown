@@ -1,3 +1,7 @@
+0.7.8
+-----
+* Build clean on GHC 8
+
 0.7.7
 -----
 * Added suuport for a new extension:
