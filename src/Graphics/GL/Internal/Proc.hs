@@ -1,7 +1,7 @@
 {-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
--- Copyright   :  (c) Edward Kmett and Gabríel Arthúr Pétursson 2014-2015, (c) Sven Panne 2013
+-- Copyright   :  (c) Edward Kmett and Gabríel Arthúr Pétursson 2014-2016, (c) Sven Panne 2013
 -- License     :  BSD3
 --
 -- Maintainer  :  Edward Kmett <ekmett@gmail.com>
