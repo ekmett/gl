@@ -1,5 +1,5 @@
 name:          gl
-version:       0.7.8
+version:       0.7.8.1
 synopsis:      Complete OpenGL raw bindings
 description:   Complete OpenGL raw bindings
 license:       BSD3

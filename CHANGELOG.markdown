@@ -1,3 +1,7 @@
+0.7.8.1
+-------
+* Cleaned up the remaining unused import warnings
+
 0.7.8
 -----
 * Build clean on GHC 8
