@@ -20,6 +20,7 @@ import System.FilePath
 import Generator (generateSource)
 import Parser (parseFile)
 import Registry (deshenaniganize)
+import Prelude
 
 generateAPI :: LocalBuildInfo -> IO ()
 generateAPI l = do

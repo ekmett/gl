@@ -25,6 +25,7 @@ module Registry
   ) where
 
 import Data.Functor
+import Prelude
 
 data Registry = Registry
   { registryCommands :: [Command]

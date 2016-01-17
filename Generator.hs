@@ -26,6 +26,7 @@ import Text.Printf
 import Module
 import Registry
 import Utils
+import Prelude
 
 data Entry
   = F String
