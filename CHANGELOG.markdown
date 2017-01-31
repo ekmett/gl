@@ -1,3 +1,56 @@
+0.8.0
+-----
+* Added support for OpenGL ES 3.2
+* Added support for OpenGL SC 2.0
+* Added missing `_EXT` suffix to pattern synonyms for `EXT_buffer_storage`
+* Fixed incorrect export of the `ARB` variant of `glTexPageCommitment` in `EXT_sparse_texture`
+* Added missing pattern synonym `GL_FRAMEBUFFER_INCOMPLETE_VIEW_TARGETS_OVR` for `OVR_multiview`
+* Added suuport for fourty-four new extensions:
+  * `AMD_framebuffer_sample_positions`
+  * `AMD_gpu_shader_half_float`
+  * `AMD_shader_ballot`
+  * `AMD_shader_explicit_vertex_parameter`
+  * `ARB_ES3_2_compatibility`
+  * `ARB_fragment_shader_interlock`
+  * `ARB_gpu_shader_int64`
+  * `ARB_parallel_shader_compile`
+  * `ARB_post_depth_coverage`
+  * `ARB_sample_locations`
+  * `ARB_shader_atomic_counter_ops`
+  * `ARB_shader_ballot`
+  * `ARB_shader_clock`
+  * `ARB_shader_viewport_layer_array`
+  * `ARB_sparse_texture2`
+  * `ARB_sparse_texture_clamp`
+  * `ARB_texture_filter_minmax`
+  * `EXT_blend_func_extended`
+  * `EXT_clear_texture`
+  * `EXT_clip_cull_distance`
+  * `EXT_color_buffer_float`
+  * `EXT_conservative_depth`
+  * `EXT_draw_transform_feedback`
+  * `EXT_multisample_compatibility`
+  * `EXT_protected_textures`
+  * `EXT_shader_group_vote`
+  * `EXT_shader_non_constant_global_initializers`
+  * `EXT_shader_pixel_local_storage2`
+  * `EXT_window_rectangles`
+  * `IMG_bindless_texture`
+  * `IMG_framebuffer_downsample`
+  * `IMG_texture_filter_cubic`
+  * `INTEL_conservative_rasterization`
+  * `INTEL_framebufer_CMAA`
+  * `KHR_texture_compression_astc_sliced_3d`
+  * `NV_clip_space_w_scaling`
+  * `NV_conservative_raster_dilate`
+  * `NV_conservative_raster_pre_snap_triangles`
+  * `NV_robustness_video_memory_purge`
+  * `NV_shader_atomic_float64`
+  * `NV_stereo_view_rendering`
+  * `NV_viewport_swizzle`
+  * `OES_viewport_array`
+  * `OVR_multiview_multisampled_render_to_texture`
+
 0.7.8.1
 -------
 * Cleaned up the remaining unused import warnings

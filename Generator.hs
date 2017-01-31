@@ -188,6 +188,9 @@ profileModuleName feature profile =
       ("GL_ES_VERSION_2_0", _) -> ("Embedded20", Nothing)
       ("GL_ES_VERSION_3_0", _) -> ("Embedded30", Nothing)
       ("GL_ES_VERSION_3_1", _) -> ("Embedded31", Nothing)
+      ("GL_ES_VERSION_3_2", _) -> ("Embedded32", Nothing)
+
+      ("GL_SC_VERSION_2_0", _) -> ("SafetyCritical20", Nothing)
 
       a -> error $ show a
 
@@ -253,6 +256,9 @@ implicitPrelude m = case m of
     ]
   "Graphics.GL.Embedded31" -> mk [
       "Graphics.GL.Embedded30"
+    ]
+  "Graphics.GL.Embedded32" -> mk [
+      "Graphics.GL.Embedded31"
     ]
   "Graphics.GL.Standard11" -> mk [
       "Graphics.GL.Standard10"
@@ -404,6 +410,8 @@ modules registry entr = do
       , "Embedded20"
       , "Embedded30"
       , "Embedded31"
+      , "Embedded32"
+      , "SafetyCritical20"
       , "Standard10"
       , "Standard11"
       , "Standard12"

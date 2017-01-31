@@ -105,12 +105,20 @@ deshenaniganize registry = registry
   { registryFeatures =
      cleanFeature "GL_VERSION_3_1" clean31require .
      cleanFeature "GL_VERSION_4_4" clean44require .
-     cleanFeature "GL_VERSION_4_5" clean45require <$> registryFeatures registry
+     cleanFeature "GL_VERSION_4_5" clean45require .
+     cleanFeature "GL_ES_VERSION_3_2" cleanES32require <$> registryFeatures registry
   , registryCommands = cleanCommand <$> registryCommands registry
+  , registryExtensions = cleanExtensions <$> registryExtensions registry
   }
 
 cleanCommand :: Command -> Command
 cleanCommand cmd = cmd { commandParameters = cleanParameter <$> commandParameters cmd }
+
+cleanExtensions :: Extension -> Extension
+cleanExtensions ext
+  | extensionName ext == "GL_EXT_multisampled_compatibility" =
+      ext { extensionName = "GL_EXT_multisample_compatibility" }
+  | otherwise = ext
 
 cleanParameter :: Parameter -> Parameter
 cleanParameter param
@@ -174,4 +182,19 @@ clean45require require = require
     , "GL_TEXTURE_BINDING_CUBE_MAP_ARRAY"
     , "GL_TEXTURE_BINDING_RECTANGLE"
     , "GL_UPPER_LEFT"
+    ]
+
+cleanES32require :: Require -> Require
+cleanES32require require = require
+  { requireEnums = filter (`notElem` removed) $
+    requireEnums require
+  } where
+  removed =
+    [ "GL_CCW"
+    , "GL_CW"
+    , "GL_EQUAL"
+    , "GL_NO_ERROR"
+    , "GL_STENCIL_INDEX"
+    , "GL_STENCIL_INDEX8"
+    , "GL_TRIANGLES"
     ]
