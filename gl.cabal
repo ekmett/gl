@@ -30,6 +30,14 @@ flag UseGlXGetProcAddress
    description:
       Use glXGetProcAddress instead of dlsym on non-Windows/-Darwin platforms.
 
+custom-setup
+  setup-depends:
+      base == 4.*
+    , Cabal
+    , directory >= 1.2 && <1.4
+    , filepath >= 1.3 && < 1.5
+    , hxt == 9.3.*
+
 library
   hs-source-dirs: src
   c-sources: cbits/gl.c
@@ -44,7 +52,7 @@ library
 
   -- for Setup.hs
   build-depends:
-      directory == 1.2.*
+      directory >= 1.2 && <1.4
     , filepath >= 1.3 && < 1.5
     , hxt == 9.3.*
 
