@@ -1,7 +1,7 @@
 language: haskell
 
 env:
-  - GHCVER=8.0.1
+  - GHCVER=8.0.2
   - GHCVER=head
 
 matrix:
