@@ -1,5 +1,6 @@
 0.8.0
 -----
+* Added support for cabal setup dependencies. This should ensure we build correctly in more environments going forward.
 * Added support for OpenGL ES 3.2
 * Added support for OpenGL SC 2.0
 * Added missing `_EXT` suffix to pattern synonyms for `EXT_buffer_storage`
