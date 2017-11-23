@@ -58,7 +58,7 @@ install:
    fi
  - travis_retry cabal update
  - "sed -i  's/^jobs:.*$/jobs: 2/' $HOME/.cabal/config"
- - cabal install --only-dependencies --enable-tests --dry -v structs.cabal > installplan.txt
+ - cabal install --only-dependencies --enable-tests --dry -v gl.cabal > installplan.txt
  - sed -i -e '1,/^Resolving /d' installplan.txt; cat installplan.txt
 
 # check whether current requested install-plan matches cached package-db snapshot
@@ -72,7 +72,7 @@ install:
      echo "cabal build-cache MISS";
      rm -rf $HOME/.cabsnap;
      mkdir -p $HOME/.ghc $HOME/.cabal/lib $HOME/.cabal/share $HOME/.cabal/bin;
-     cabal install -j --only-dependencies --enable-tests structs.cabal;
+     cabal install -j --only-dependencies --enable-tests gl.cabal;
    fi
 
 # snapshot package-db on cache miss
