@@ -28,6 +28,9 @@ matrix:
     - env: CABALVER=2.2 GHCVER=8.4.3
       compiler: ": #GHC 8.4.3"
       addons: {apt: {packages: [cabal-install-2.2,ghc-8.4.3,alex-3.1.4,happy-1.19.5], sources: [hvr-ghc]}}
+    - env: CABALVER=2.4 GHCVER=8.6.1
+      compiler: ": #GHC 8.6.1"
+      addons: {apt: {packages: [cabal-install-2.4,ghc-8.6.1,alex-3.1.4,happy-1.19.5], sources: [hvr-ghc]}}
 
   allow_failures:
     - env: CABALVER=1.18 GHCVER=7.0.4
