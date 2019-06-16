@@ -1,9 +1,24 @@
-gl
-==
+glgen
+=====
 
 [![Hackage](https://img.shields.io/hackage/v/gl.svg)](https://hackage.haskell.org/package/gl) [![Build Status](https://secure.travis-ci.org/ekmett/gl.png?branch=master)](http://travis-ci.org/ekmett/gl)
 
-This package supplies low level bindings to all of the OpenGL specification for Haskell.
+The `gl` package supplies low level bindings to all of the OpenGL specification for Haskell.
+
+This package, `glgen`, is used to build the `gl` package.
+
+Usage
+-----
+
+1. Download the latest and greatest xml specification for OpenGL from Khronos.
+
+2. Replace the copy in this directory.
+
+3. `cabal new-run glgen`
+
+4. `cabal new-build gl`
+
+
 
 Contact Information
 -------------------

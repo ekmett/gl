@@ -12,17 +12,29 @@
 --
 -- Local hooks are provided to generate the API on build, producing haddocks and to enable @cabal sdist@
 ----------------------------------------------------------------------------
+import Control.Monad
 import Data.Functor
 import Generator (generateSource)
 import Parser (parseFile)
 import Registry (deshenaniganize)
 import Prelude
+import System.Directory
+
+src :: FilePath
+src = "gl/generated-src"
 
 main :: IO ()
 main = do
   registry <- parseFile "gl.xml"
   man <- lines <$> readFile "man.txt"
   extensions <- lines <$> readFile "extensions.txt"
+
+  b <- doesDirectoryExist src
+  when b $ do
+    putStr "Deleting old source..."
+    removeDirectoryRecursive src
+    putStrLn "done"
+
   putStr "Generating API..."
-  generateSource ("gl/generated-src") (deshenaniganize registry) man [ (x,y) | [x,y] <- map words extensions ]
+  generateSource src (deshenaniganize registry) man [ (x,y) | [x,y] <- map words extensions ]
   putStrLn "done"
