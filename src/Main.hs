@@ -13,7 +13,6 @@
 -- Local hooks are provided to generate the API on build, producing haddocks and to enable @cabal sdist@
 ----------------------------------------------------------------------------
 import Data.Functor
-import System.FilePath
 import Generator (generateSource)
 import Parser (parseFile)
 import Registry (deshenaniganize)
