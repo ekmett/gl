@@ -1,3 +1,7 @@
+0.9 [revision 1]
+--- 
+* Allow `fixed` 0.3
+
 0.9
 ---
 * Moved to a staged build. Users no longer incur an 'hxt' dependency. Builds should also be faster. This was necessary for compatibility with `Cabal` 3
