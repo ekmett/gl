@@ -1,3 +1,7 @@
+0.9
+---
+* Moved to a staged build. Users no longer incur an 'hxt' dependency. Builds should also be faster. This was necessary for compatibility with `Cabal` 3
+
 0.8.0
 -----
 * Added support for cabal setup dependencies. This should ensure we build correctly in more environments going forward.
