@@ -1,7 +1,7 @@
 name:          gl
 version:       0.9
 synopsis:      Complete OpenGL raw bindings
-description:   Complete OpenGL raw bindings
+description:   Complete OpenGL raw bindings.
 license:       BSD3
 license-file:  LICENSE
 author:        Edward A. Kmett, Gabríel Arthúr Pétursson, Sven Panne
@@ -16,6 +16,13 @@ extra-source-files:
   CHANGELOG.markdown
   README.markdown
   TODO.markdown
+tested-with:   GHC == 7.8.4
+             , GHC == 7.10.3
+             , GHC == 8.0.2
+             , GHC == 8.2.2
+             , GHC == 8.4.4
+             , GHC == 8.6.5
+             , GHC == 8.8.1
 
 source-repository head
   type:     git
