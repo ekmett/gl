@@ -1,0 +1,13 @@
+diff --git a/.travis.yml b/.travis.yml
+index 1d50d4e..b630111 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -148,6 +148,8 @@ install:
+   - "cat cabal.project.freeze | sed -E 's/^(constraints: *| *)//' | sed 's/any.//'"
+   - rm  cabal.project.freeze
+   - ${CABAL} v2-build $WITHCOMPILER ${TEST} ${BENCH} --dep -j2 all | color_cabal_output
++before_script:
++  - ${CABAL} v2-run $WITHCOMPILER ${TEST} ${BENCH} glgen | color_cabal_output
+ script:
+   - DISTDIR=$(mktemp -d /tmp/dist-test.XXXX)
+   # Packaging...

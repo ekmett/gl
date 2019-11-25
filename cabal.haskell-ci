@@ -1,0 +1,6 @@
+ghc-head:               True
+no-tests-no-benchmarks: False
+unconstrained:          False
+irc-channels:           irc.freenode.org#haskell-lens
+travis-patches:         travis.yml.patch
+apt:                    freeglut3-dev
