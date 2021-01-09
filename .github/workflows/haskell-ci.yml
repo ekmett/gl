@@ -141,6 +141,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: source
+      - name: run glgen
+        run: |
+          # Make sure to run glgen before sdist, as glgen is responsible for
+          # generating several of the modules declared in gl.cabal.
+          $CABAL v2-run $ARG_COMPILER $ARG_TESTS $ARG_BENCH glgen
       - name: sdist
         run: |
           mkdir -p sdist
@@ -183,9 +188,6 @@ jobs:
         run: |
           $CABAL v2-build $ARG_COMPILER --disable-tests --disable-benchmarks --dependencies-only -j2 all
           $CABAL v2-build $ARG_COMPILER $ARG_TESTS $ARG_BENCH --dependencies-only -j2 all
-      - name: run glgen
-        run: |
-          $CABAL v2-run $ARG_COMPILER $ARG_TESTS $ARG_BENCH glgen
       - name: build
         run: |
           $CABAL v2-build $ARG_COMPILER $ARG_TESTS $ARG_BENCH all --write-ghc-environment-files=always
