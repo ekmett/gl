@@ -1,5 +1,6 @@
 no-tests-no-benchmarks: False
 unconstrained:          False
 irc-channels:           irc.freenode.org#haskell-lens
-travis-patches:         travis.yml.patch
+irc-if-in-origin-repo:  True
+github-patches:         github.yml.patch
 apt:                    freeglut3-dev

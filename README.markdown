@@ -1,7 +1,7 @@
 glgen
 =====
 
-[![Hackage](https://img.shields.io/hackage/v/gl.svg)](https://hackage.haskell.org/package/gl) [![Build Status](https://secure.travis-ci.org/ekmett/gl.png?branch=master)](http://travis-ci.org/ekmett/gl)
+[![Hackage](https://img.shields.io/hackage/v/gl.svg)](https://hackage.haskell.org/package/gl) [![Build Status](https://github.com/ekmett/gl/workflows/Haskell-CI/badge.svg)](https://github.com/ekmett/gl/actions?query=workflow%3AHaskell-CI)
 
 The `gl` package supplies low level bindings to all of the OpenGL specification for Haskell.
 
