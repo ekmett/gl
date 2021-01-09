@@ -1,8 +1,8 @@
 diff --git a/.github/workflows/haskell-ci.yml b/.github/workflows/haskell-ci.yml
-index a4c49bd..350e133 100644
+index a4c49bd..9ea9559 100644
 --- a/.github/workflows/haskell-ci.yml
 +++ b/.github/workflows/haskell-ci.yml
-@@ -141,6 +141,11 @@ jobs:
+@@ -141,6 +141,12 @@ jobs:
          uses: actions/checkout@v2
          with:
            path: source
@@ -10,6 +10,7 @@ index a4c49bd..350e133 100644
 +        run: |
 +          # Make sure to run glgen before sdist, as glgen is responsible for
 +          # generating several of the modules declared in gl.cabal.
++          cd source || false
 +          $CABAL v2-run $ARG_COMPILER $ARG_TESTS $ARG_BENCH glgen
        - name: sdist
          run: |
