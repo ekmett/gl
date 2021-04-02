@@ -156,6 +156,9 @@ jobs:
         run: |
           # Make sure to run glgen before sdist, as glgen is responsible for
           # generating several of the modules declared in gl.cabal.
+          # Moreover, glgen needs to run in the `source` directory, where the
+          # gl repo lives.
+          cd source || false
           $CABAL v2-run $ARG_COMPILER $ARG_TESTS $ARG_BENCH glgen
       - name: sdist
         run: |
