@@ -17,7 +17,7 @@ import Control.Monad.Trans.State
 import Data.Char
 import qualified Data.Foldable as Foldable
 import Data.Functor
-import Data.List
+import qualified Data.List as List
 import qualified Data.Map as Map
 import Data.Map (Map)
 import qualified Data.Set as Set
@@ -44,7 +44,7 @@ data Category = C SectionName (Set ExportItem)
   deriving (Eq, Ord, Show)
 
 saneEnum :: Name -> Name
-saneEnum = ("GL_"++) . intercalate "_" . tail . splitOn "_"
+saneEnum = ("GL_"++) . List.intercalate "_" . tail . splitOn "_"
 
 saneModule :: Name -> Name
 saneModule "422Pixels" = "FourTwoTwoPixels"
@@ -74,9 +74,9 @@ commandDescription fm cs (Command cmdName _cmdType cmdParameters vecEquiv alias)
   [ "-- | Usage: @" ++ unwords (("'" ++ cmdName ++ "'") : map parameterName cmdParameters) ++ "@\n" ] ++
   [ case Map.lookup grp fm of
       Just xs -> printf "--\n-- The parameter @%s@ is a @%s@, one of: %s.\n"
-         (parameterName param) grp $ intercalate ", " (map (link cs) xs)
+         (parameterName param) grp $ List.intercalate ", " (map (link cs) xs)
       Nothing -> printf "--\n-- The parameter @%s@ is a @%s@.\n" (parameterName param) grp
-  | param <- cmdParameters, Just grp <- [parameterGroup param] 
+  | param <- cmdParameters, Just grp <- [parameterGroup param]
   ] ++
   [ "--\n-- The length of @" ++ parameterName param ++ "@ should be " ++ describeLength x ++ ".\n"
   | param <- cmdParameters, Just x <- [parameterLen param]
@@ -89,7 +89,7 @@ commandDescription fm cs (Command cmdName _cmdType cmdParameters vecEquiv alias)
 
 commandSignature :: Maybe Name -> Command -> Signature
 commandSignature monad command =
-  intercalate " -> " $ parameterSignature (commandParameters command) ++ [returnSignature $ commandType command]
+  List.intercalate " -> " $ parameterSignature (commandParameters command) ++ [returnSignature $ commandType command]
   where
     parameterSignature :: [Parameter] -> [String]
     parameterSignature = map (typeSignature . parameterType)
@@ -127,7 +127,7 @@ invokerName xs = "ffi" ++ commonName xs
 extensionModuleName :: ExtensionName -> ModuleName
 extensionModuleName name =
   printf "Graphics.GL.Ext.%s.%s"
-    (sanePrefix prefix) (saneModule $ camelCase (intercalate "_" rest))
+    (sanePrefix prefix) (saneModule $ camelCase (List.intercalate "_" rest))
   where
     (_:prefix:rest) = splitOn "_" name
 
@@ -344,7 +344,7 @@ entries registry = do
       let name = fst . profileModuleName feature $ requireProfile req
       requires name req
 
-      when ("Graphics.GL.Standard" `isPrefixOf` name) $
+      when ("Graphics.GL.Standard" `List.isPrefixOf` name) $
         requires "Graphics.GL.Core32" req
 
     forM_ (featureRemoves fe) $ \rm -> do
@@ -453,7 +453,7 @@ funBody fm n v =
 
 mkFFI :: FunMap -> Module
 mkFFI fm = Module "Graphics.GL.Internal.FFI" export body where
-  export = [ Section "Invokers" (nub $ invokerName <$> Foldable.toList (funSignatures fm)) ]
+  export = [ Section "Invokers" (List.nub $ invokerName <$> Foldable.toList (funSignatures fm)) ]
   body = Import
     [ "Control.Monad.IO.Class"
     , "Foreign.C.Types"
@@ -461,7 +461,7 @@ mkFFI fm = Module "Graphics.GL.Internal.FFI" export body where
     , "Graphics.GL.Types"
     , "Numeric.Fixed"
     , "Numeric.Half"
-    ] : nub (Foldable.concatMap invokers $ funSignatures fm)
+    ] : List.nub (Foldable.concatMap invokers $ funSignatures fm)
 
 invokers :: Signature -> [Body]
 invokers v =
@@ -490,7 +490,7 @@ mkShared fm entr = Module "Graphics.GL.Internal.Shared" [] body
         ]
       ]
 
-    body = imp ++ concatMap bodyF (nub entr)
+    body = imp ++ concatMap bodyF (List.nub entr)
     bodyF (False, _, _) = []
     bodyF (_, E n, v) = [Pattern n Nothing ("= " ++ v)]
     bodyF (_, F n, v) = funBody fm n v
@@ -508,7 +508,7 @@ mkModule fm re m entr = Module m export body
     export = case Map.lookup m (funExtensions fm) of
       Just en ->
         [ Section "Extension Support"
-          [ "gl_" ++ (intercalate "_" . tail $ splitOn "_" en)
+          [ "gl_" ++ (List.intercalate "_" . tail $ splitOn "_" en)
           ]
         , Section en $ ie ++ map (\(_, e, _) -> entryName e) entr
         ]
@@ -518,10 +518,10 @@ mkModule fm re m entr = Module m export body
 
     needsTypes (True, _, _) = False
     needsTypes (_ , E _, _) = False
-    needsTypes (_ , F _, t) = "GL" `isInfixOf` t
+    needsTypes (_ , F _, t) = "GL" `List.isInfixOf` t
 
     body =
-      [ Import $ sort $ concat
+      [ Import $ List.sort $ concat
         [ [ "Graphics.GL.Internal.Shared" | any (\(s, _, _) -> s) entr ]
         , [ "Graphics.GL.Internal.Proc"   | hasExt || hasUnsharedFunctions ]
         , [ "Graphics.GL.Types"           | any needsTypes entr ]
@@ -543,13 +543,13 @@ mkModule fm re m entr = Module m export body
       Nothing -> en
 
     extCheck = case Map.lookup m (funExtensions fm) of
-      Just en 
+      Just en
         | parts@(_:_) <- tail (splitOn "_" en) ->
           [ Code $ "-- | Checks that the " ++ tryLink en ++ " extension is available."
-          , Function ("gl_" ++ intercalate "_" parts) "Bool"
+          , Function ("gl_" ++ List.intercalate "_" parts) "Bool"
             (printf "= member %s extensions\n{-# NOINLINE %s #-}"
               (show en)
-              ("gl_" ++ intercalate "_" parts))
+              ("gl_" ++ List.intercalate "_" parts))
           ]
         | otherwise -> error $ "malformed extension: " ++ en
       Nothing -> []
@@ -566,14 +566,14 @@ mkExtensionGather fm = flip map extensionGroups $
   where
   extInGroup grp
     = map fst
-    . sort
+    . List.sort
     . filter (\x -> grp == (head . tail . splitOn "_" $ snd x))
     . Map.toList
     $ funExtensions fm
 
   extensionGroups
-    = sort
-    . nub
+    = List.sort
+    . List.nub
     . map (head . tail . splitOn "_" . snd)
     . Map.toList
     $ funExtensions fm
