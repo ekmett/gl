@@ -129,10 +129,15 @@ extensionModuleName name =
   printf "Graphics.GL.Ext.%s.%s"
     (sanePrefix prefix) (saneModule $ camelCase (List.intercalate "_" rest))
   where
-    (_:prefix:rest) = splitOn "_" name
+    (prefix, rest) = case splitOn "_" name of
+      (_:prefix':rest') -> (prefix', rest')
+      _                 -> error $ "extensionModuleName: Unexpected name: " ++ name
 
     camelCase :: String -> String
-    camelCase str = concatMap (\(x:xs) -> toUpper x : xs) $ splitOn "_" str
+    camelCase str = concatMap (\s -> case s of
+                                       (x:xs) -> toUpper x : xs
+                                       []      -> error "extensionModuleName.camelCase: Unexpected empty list")
+                            $ splitOn "_" str
 
 profileModuleName :: String -> String -> (ModuleName, Maybe ModuleName)
 profileModuleName feature profile =
