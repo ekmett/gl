@@ -169,7 +169,7 @@ jobs:
           # Moreover, glgen needs to run in the `source` directory, where the
           # gl repo lives.
           cd source || false
-          $CABAL v2-run $ARG_COMPILER $ARG_TESTS $ARG_BENCH glgen
+          $CABAL v2-run $ARG_COMPILER $ARG_TESTS $ARG_BENCH -j2 glgen
       - name: sdist
         run: |
           mkdir -p sdist

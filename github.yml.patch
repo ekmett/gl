@@ -1,5 +1,5 @@
 diff --git a/.github/workflows/haskell-ci.yml b/.github/workflows/haskell-ci.yml
-index 85b7be5..7808425 100644
+index 85b7be5..158e4f7 100644
 --- a/.github/workflows/haskell-ci.yml
 +++ b/.github/workflows/haskell-ci.yml
 @@ -152,6 +152,24 @@ jobs:
@@ -23,7 +23,7 @@ index 85b7be5..7808425 100644
 +          # Moreover, glgen needs to run in the `source` directory, where the
 +          # gl repo lives.
 +          cd source || false
-+          $CABAL v2-run $ARG_COMPILER $ARG_TESTS $ARG_BENCH glgen
++          $CABAL v2-run $ARG_COMPILER $ARG_TESTS $ARG_BENCH -j2 glgen
        - name: sdist
          run: |
            mkdir -p sdist
