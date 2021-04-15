@@ -1,4 +1,5 @@
 {-# OPTIONS_GHC -Wall #-}
+{-# LANGUAGE CPP #-}
 {-# LANGUAGE PatternGuards #-}
 -----------------------------------------------------------------------------
 -- |
@@ -497,7 +498,7 @@ mkShared fm entr = Module "Graphics.GL.Internal.Shared" [] body
 
     body = imp ++ concatMap bodyF (List.nub entr)
     bodyF (False, _, _) = []
-    bodyF (_, E n, v) = [Pattern n Nothing ("= " ++ v)]
+    bodyF (_, E n, v) = patSynBody n v
     bodyF (_, F n, v) = funBody fm n v
 
 mkModule :: FunMap -> Map String String -> String -> [(Bool, Entry, String)] -> Module
@@ -560,7 +561,7 @@ mkModule fm re m entr = Module m export body
       Nothing -> []
 
     bodyF (True, _, _) = []
-    bodyF (_, E n, v) = [Pattern n Nothing ("= " ++ v)]
+    bodyF (_, E n, v) = patSynBody n v
     bodyF (_, F n, v) = funBody fm n v
 
 mkExtensionGather :: FunMap -> [Module]
@@ -606,3 +607,12 @@ generateSource fp registry man extensions = do
     entryName :: Entry -> String
     entryName (F s) = s
     entryName (E s) = s
+
+patSynBody :: String -> String -> [Body]
+patSynBody n v =
+  [
+#if __GLASGOW_HASKELL__ >= 800
+    Pattern n (Just "(Eq a, Num a) => a") ""
+#endif
+  , Pattern n Nothing ("= " ++ v)
+  ]
