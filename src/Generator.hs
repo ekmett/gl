@@ -611,7 +611,7 @@ generateSource fp registry man extensions = do
 patSynBody :: String -> String -> [Body]
 patSynBody n v =
   [
-#if __GLASGOW_HASKELL__ >= 800
+#if __GLASGOW_HASKELL__ >= 710
     Pattern n (Just "(Eq a, Num a) => a") "",
 #endif
     Pattern n Nothing ("= " ++ v)
