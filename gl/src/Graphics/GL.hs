@@ -8,11 +8,11 @@
 --
 ----------------------------------------------------------------------------
 module Graphics.GL (
-    module Graphics.GL.Core45
+    module Graphics.GL.Core46
   , module Graphics.GL.Embedded32
   , module Graphics.GL.Types
 ) where
 
-import Graphics.GL.Core45
+import Graphics.GL.Core46
 import Graphics.GL.Embedded32
 import Graphics.GL.Types
