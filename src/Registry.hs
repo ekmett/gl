@@ -106,6 +106,7 @@ deshenaniganize registry = registry
      cleanFeature "GL_VERSION_3_1" clean31require .
      cleanFeature "GL_VERSION_4_4" clean44require .
      cleanFeature "GL_VERSION_4_5" clean45require .
+     cleanFeature "GL_VERSION_4_6" clean46require .
      cleanFeature "GL_ES_VERSION_3_2" cleanES32require <$> registryFeatures registry
   , registryCommands = cleanCommand <$> registryCommands registry
   , registryExtensions = cleanExtensions <$> registryExtensions registry
@@ -138,7 +139,6 @@ cleanFeature name f feature
 clean31require :: Require -> Require
 clean31require require = require
   { requireCommands = filter (`notElem` removed) $ requireCommands require
-  , requireEnums = "GL_BLEND_COLOR" : requireEnums require
   } where
   removed =
     [ "glBindBufferBase"
@@ -182,6 +182,18 @@ clean45require require = require
     , "GL_TEXTURE_BINDING_CUBE_MAP_ARRAY"
     , "GL_TEXTURE_BINDING_RECTANGLE"
     , "GL_UPPER_LEFT"
+    ]
+
+clean46require :: Require -> Require
+clean46require require = require
+  { requireEnums = filter (`notElem` removed) $
+    requireEnums require
+  } where
+  removed =
+    [ "GL_CONTEXT_RELEASE_BEHAVIOR"
+    , "GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH"
+    , "GL_GEOMETRY_SHADER_INVOCATIONS"
+    , "GL_NONE"
     ]
 
 cleanES32require :: Require -> Require
