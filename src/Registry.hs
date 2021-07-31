@@ -15,7 +15,6 @@ module Registry
   , Enumeratee(..)
   , Extension(..)
   , Feature(..)
-  , Group(..)
   , Remove(..)
   , Require(..)
   , Type(..)
@@ -32,7 +31,6 @@ data Registry = Registry
   , registryEnums :: [Enumeratee]
   , registryExtensions :: [Extension]
   , registryFeatures :: [Feature]
-  , registryGroups :: [Group]
   } deriving (Eq, Show)
 
 data Parameter = Parameter
@@ -53,6 +51,7 @@ data Command = Command
 data Enumeratee = Enumeratee
   { enumName :: String
   , enumValue :: String
+  , enumGroups :: [String]
   } deriving (Eq, Show)
 
 data Extension = Extension
@@ -65,11 +64,6 @@ data Feature = Feature
   { featureName :: String
   , featureRequires :: [Require]
   , featureRemoves :: [Remove]
-  } deriving (Eq, Show)
-
-data Group = Group
-  { groupName :: String
-  , groupEnum :: [String]
   } deriving (Eq, Show)
 
 data Remove = Remove

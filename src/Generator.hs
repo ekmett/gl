@@ -452,13 +452,12 @@ data FunMap = FunMap
 ioish :: Signature -> Signature
 ioish = replace "m (" "IO (" . replace "m GL" "IO GL"
 
-funMap :: Registry -> Map Name Category -> [(Bool, Entry, String)] -> [String] -> FunMap
-funMap registry cs es man = FunMap
+funMap :: Registry -> Map Name Category -> [(Bool, Entry, String)] -> Map String [String] -> [String] -> FunMap
+funMap registry cs es rgs man = FunMap
   (Map.fromList [ (n, s) | (_, F n, s) <- es ])
   (Map.fromList [ (commandName cmd, commandDescription rgs cs cmd manset) | cmd <- registryCommands registry ])
   (Map.fromList $ map ((extensionModuleName&&&id).extensionName) $ registryExtensions registry)
-  where rgs = Map.fromList [ (n, s) | Group n s <- registryGroups registry ]
-        manset = Set.fromList man
+  where manset = Set.fromList man
 
 funBody :: FunMap -> Name -> Signature -> [Body]
 funBody fm n v =
@@ -609,7 +608,10 @@ generateSource fp registry man extensions = do
   let re = Map.fromList extensions
   let fm' = Foldable.concat m
   let s' = Map.fromList $ first entryName <$> Map.toList s
-  let fm = funMap registry s' fm' man
+  let rgs = Map.map List.sort
+          . Foldable.foldl' (\a (g, n) -> Map.insertWith (++) g [n] a) Map.empty
+          . concatMap (\(Enumeratee n _ gs) -> map (flip (,) n) gs) $ registryEnums registry
+  let fm = funMap registry s' fm' rgs man
   saveModule fp $ mkFFI fm
   saveModule fp $ mkShared fm fm'
   forM_ (Map.toList m) $ \(k,v) -> saveModule fp $ mkModule fm re k v

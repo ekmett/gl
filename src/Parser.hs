@@ -16,6 +16,7 @@ module Parser
 
 import Registry
 import Text.XML.HXT.Core
+import Utils
 
 #ifdef HLINT
 {-# ANN module "HLint: ignore Reduce duplication" #-}
@@ -51,7 +52,8 @@ parseEnum = proc x -> do
   enum <- to "enum" -< x
   name <- getAttrValue0 "name" -< enum
   value <- getAttrValue0 "value" -< enum
-  returnA -< Enumeratee name value
+  grps <- perhaps (getAttrValue0 "group") -< enum
+  returnA -< Enumeratee name value (maybe [] (splitOn ",") grps)
 
 parseExtension :: ArrowXml a => a XmlTree Extension
 parseExtension = proc x -> do
@@ -67,13 +69,6 @@ parseFeature = proc x -> do
   require <- listA $ parseRequire <<< to "require" -< x
   remove <- listA $ parseRemove <<< to "remove" -< x
   returnA -< Feature name require remove
-
-parseGroup :: ArrowXml a => a XmlTree Group
-parseGroup = proc x -> do
-  group <- to "group" -< x
-  name <- getAttrValue0 "name" -< group
-  enum <- listA $ getAttrValue0 "name" <<< to "enum" -< group
-  returnA -< Group name enum
 
 parseRemove :: ArrowXml a => a XmlTree Remove
 parseRemove = proc x -> do
@@ -103,7 +98,6 @@ parseType = proc x -> do
 parse :: IOSLA (XIOState ()) XmlTree Registry
 parse = proc x -> do
   registry <- to "registry" -< x
-  groups <- listA $ parseGroup <<< to "groups" -< registry
   enums <- listA $ parseEnum <<< to "enums" -< registry
   extensions <- listA $ parseExtension <<< to "extensions" -< registry
   commands <- listA $ parseCommand <<< to "commands" -< registry
@@ -113,7 +107,6 @@ parse = proc x -> do
     , registryEnums = enums
     , registryExtensions = extensions
     , registryFeatures = features
-    , registryGroups = groups
     }
 
 parseFile :: String -> IO Registry
