@@ -96,6 +96,7 @@ library
     Graphics.GL.Core43
     Graphics.GL.Core44
     Graphics.GL.Core45
+    Graphics.GL.Core46
     Graphics.GL.Embedded20
     Graphics.GL.Embedded30
     Graphics.GL.Embedded31
@@ -111,9 +112,11 @@ library
     Graphics.GL.Ext.AMD.DebugOutput
     Graphics.GL.Ext.AMD.DepthClampSeparate
     Graphics.GL.Ext.AMD.DrawBuffersBlend
+    Graphics.GL.Ext.AMD.FramebufferMultisampleAdvanced
     Graphics.GL.Ext.AMD.FramebufferSamplePositions
     Graphics.GL.Ext.AMD.GcnShader
     Graphics.GL.Ext.AMD.GpuShaderHalfFloat
+    Graphics.GL.Ext.AMD.GpuShaderInt16
     Graphics.GL.Ext.AMD.GpuShaderInt64
     Graphics.GL.Ext.AMD.InterleavedElements
     Graphics.GL.Ext.AMD.MultiDrawIndirect
@@ -128,10 +131,13 @@ library
     Graphics.GL.Ext.AMD.ShaderAtomicCounterOps
     Graphics.GL.Ext.AMD.ShaderBallot
     Graphics.GL.Ext.AMD.ShaderExplicitVertexParameter
+    Graphics.GL.Ext.AMD.ShaderGpuShaderHalfFloatFetch
+    Graphics.GL.Ext.AMD.ShaderImageLoadStoreLod
     Graphics.GL.Ext.AMD.ShaderStencilExport
     Graphics.GL.Ext.AMD.ShaderTrinaryMinmax
     Graphics.GL.Ext.AMD.SparseTexture
     Graphics.GL.Ext.AMD.StencilOperationExtended
+    Graphics.GL.Ext.AMD.TextureGatherBiasLod
     Graphics.GL.Ext.AMD.TextureTexture4
     Graphics.GL.Ext.AMD.TransformFeedback3LinesTriangles
     Graphics.GL.Ext.AMD.TransformFeedback4
@@ -227,6 +233,7 @@ library
     Graphics.GL.Ext.ARB.GeometryShader4
     Graphics.GL.Ext.ARB.GetProgramBinary
     Graphics.GL.Ext.ARB.GetTextureSubImage
+    Graphics.GL.Ext.ARB.GlSpirv
     Graphics.GL.Ext.ARB.GpuShader5
     Graphics.GL.Ext.ARB.GpuShaderFp64
     Graphics.GL.Ext.ARB.GpuShaderInt64
@@ -252,6 +259,7 @@ library
     Graphics.GL.Ext.ARB.PixelBufferObject
     Graphics.GL.Ext.ARB.PointParameters
     Graphics.GL.Ext.ARB.PointSprite
+    Graphics.GL.Ext.ARB.PolygonOffsetClamp
     Graphics.GL.Ext.ARB.PostDepthCoverage
     Graphics.GL.Ext.ARB.ProgramInterfaceQuery
     Graphics.GL.Ext.ARB.ProvokingVertex
@@ -265,8 +273,8 @@ library
     Graphics.GL.Ext.ARB.SeamlessCubeMap
     Graphics.GL.Ext.ARB.SeamlessCubemapPerTexture
     Graphics.GL.Ext.ARB.SeparateShaderObjects
-    Graphics.GL.Ext.ARB.ShaderAtomicCounters
     Graphics.GL.Ext.ARB.ShaderAtomicCounterOps
+    Graphics.GL.Ext.ARB.ShaderAtomicCounters
     Graphics.GL.Ext.ARB.ShaderBallot
     Graphics.GL.Ext.ARB.ShaderBitEncoding
     Graphics.GL.Ext.ARB.ShaderClock
@@ -292,6 +300,7 @@ library
     Graphics.GL.Ext.ARB.SparseTexture
     Graphics.GL.Ext.ARB.SparseTexture2
     Graphics.GL.Ext.ARB.SparseTextureClamp
+    Graphics.GL.Ext.ARB.SpirvExtensions
     Graphics.GL.Ext.ARB.StencilTexturing
     Graphics.GL.Ext.ARB.Sync
     Graphics.GL.Ext.ARB.TessellationShader
@@ -309,6 +318,7 @@ library
     Graphics.GL.Ext.ARB.TextureEnvCombine
     Graphics.GL.Ext.ARB.TextureEnvCrossbar
     Graphics.GL.Ext.ARB.TextureEnvDot3
+    Graphics.GL.Ext.ARB.TextureFilterAnisotropic
     Graphics.GL.Ext.ARB.TextureFilterMinmax
     Graphics.GL.Ext.ARB.TextureFloat
     Graphics.GL.Ext.ARB.TextureGather
@@ -351,6 +361,7 @@ library
     Graphics.GL.Ext.ARM.Rgba8
     Graphics.GL.Ext.ARM.ShaderFramebufferFetch
     Graphics.GL.Ext.ARM.ShaderFramebufferFetchDepthStencil
+    Graphics.GL.Ext.ARM.TextureUnnormalizedCoordinates
     Graphics.GL.Ext.ATI
     Graphics.GL.Ext.ATI.DrawBuffers
     Graphics.GL.Ext.ATI.ElementArray
@@ -385,6 +396,7 @@ library
     Graphics.GL.Ext.EXT.BlendSubtract
     Graphics.GL.Ext.EXT.BufferStorage
     Graphics.GL.Ext.EXT.ClearTexture
+    Graphics.GL.Ext.EXT.ClipControl
     Graphics.GL.Ext.EXT.ClipCullDistance
     Graphics.GL.Ext.EXT.ClipVolumeHint
     Graphics.GL.Ext.EXT.Cmyka
@@ -401,6 +413,7 @@ library
     Graphics.GL.Ext.EXT.DebugLabel
     Graphics.GL.Ext.EXT.DebugMarker
     Graphics.GL.Ext.EXT.DepthBoundsTest
+    Graphics.GL.Ext.EXT.DepthClamp
     Graphics.GL.Ext.EXT.DirectStateAccess
     Graphics.GL.Ext.EXT.DiscardFramebuffer
     Graphics.GL.Ext.EXT.DisjointTimerQuery
@@ -411,9 +424,13 @@ library
     Graphics.GL.Ext.EXT.DrawInstanced
     Graphics.GL.Ext.EXT.DrawRangeElements
     Graphics.GL.Ext.EXT.DrawTransformFeedback
+    Graphics.GL.Ext.EXT.EGLImageArray
+    Graphics.GL.Ext.EXT.EGLImageStorage
+    Graphics.GL.Ext.EXT.EGLSync
+    Graphics.GL.Ext.EXT.ExternalBuffer
+    Graphics.GL.Ext.EXT.FloatBlend
     Graphics.GL.Ext.EXT.FogCoord
     Graphics.GL.Ext.EXT.FourTwoTwoPixels
-    Graphics.GL.Ext.EXT.FloatBlend
     Graphics.GL.Ext.EXT.FramebufferBlit
     Graphics.GL.Ext.EXT.FramebufferMultisample
     Graphics.GL.Ext.EXT.FramebufferMultisampleBlitScaled
@@ -433,13 +450,20 @@ library
     Graphics.GL.Ext.EXT.InstancedArrays
     Graphics.GL.Ext.EXT.LightTexture
     Graphics.GL.Ext.EXT.MapBufferRange
+    Graphics.GL.Ext.EXT.MemoryObject
+    Graphics.GL.Ext.EXT.MemoryObjectFd
+    Graphics.GL.Ext.EXT.MemoryObjectWin32
     Graphics.GL.Ext.EXT.MiscAttribute
     Graphics.GL.Ext.EXT.MultiDrawArrays
     Graphics.GL.Ext.EXT.MultiDrawIndirect
     Graphics.GL.Ext.EXT.Multisample
     Graphics.GL.Ext.EXT.MultisampleCompatibility
     Graphics.GL.Ext.EXT.MultisampledRenderToTexture
+    Graphics.GL.Ext.EXT.MultisampledRenderToTexture2
     Graphics.GL.Ext.EXT.MultiviewDrawBuffers
+    Graphics.GL.Ext.EXT.MultiviewTessellationGeometryShader
+    Graphics.GL.Ext.EXT.MultiviewTextureMultisample
+    Graphics.GL.Ext.EXT.MultiviewTimerQuery
     Graphics.GL.Ext.EXT.OcclusionQueryBoolean
     Graphics.GL.Ext.EXT.PackedDepthStencil
     Graphics.GL.Ext.EXT.PackedFloat
@@ -464,9 +488,13 @@ library
     Graphics.GL.Ext.EXT.SRGB
     Graphics.GL.Ext.EXT.SRGBWriteControl
     Graphics.GL.Ext.EXT.SecondaryColor
+    Graphics.GL.Ext.EXT.Semaphore
+    Graphics.GL.Ext.EXT.SemaphoreFd
+    Graphics.GL.Ext.EXT.SemaphoreWin32
     Graphics.GL.Ext.EXT.SeparateShaderObjects
     Graphics.GL.Ext.EXT.SeparateSpecularColor
     Graphics.GL.Ext.EXT.ShaderFramebufferFetch
+    Graphics.GL.Ext.EXT.ShaderFramebufferFetchNonCoherent
     Graphics.GL.Ext.EXT.ShaderGroupVote
     Graphics.GL.Ext.EXT.ShaderImageLoadFormatted
     Graphics.GL.Ext.EXT.ShaderImageLoadStore
@@ -494,10 +522,13 @@ library
     Graphics.GL.Ext.EXT.TextureBorderClamp
     Graphics.GL.Ext.EXT.TextureBuffer
     Graphics.GL.Ext.EXT.TextureBufferObject
+    Graphics.GL.Ext.EXT.TextureCompressionAstcDecodeMode
+    Graphics.GL.Ext.EXT.TextureCompressionBptc
     Graphics.GL.Ext.EXT.TextureCompressionDxt1
     Graphics.GL.Ext.EXT.TextureCompressionLatc
     Graphics.GL.Ext.EXT.TextureCompressionRgtc
     Graphics.GL.Ext.EXT.TextureCompressionS3tc
+    Graphics.GL.Ext.EXT.TextureCompressionS3tcSrgb
     Graphics.GL.Ext.EXT.TextureCubeMap
     Graphics.GL.Ext.EXT.TextureCubeMapArray
     Graphics.GL.Ext.EXT.TextureEnvAdd
@@ -506,17 +537,21 @@ library
     Graphics.GL.Ext.EXT.TextureFilterAnisotropic
     Graphics.GL.Ext.EXT.TextureFilterMinmax
     Graphics.GL.Ext.EXT.TextureFormatBGRA8888
+    Graphics.GL.Ext.EXT.TextureFormatSRGBOverride
     Graphics.GL.Ext.EXT.TextureInteger
     Graphics.GL.Ext.EXT.TextureLodBias
     Graphics.GL.Ext.EXT.TextureMirrorClamp
+    Graphics.GL.Ext.EXT.TextureMirrorClampToEdge
     Graphics.GL.Ext.EXT.TextureNorm16
     Graphics.GL.Ext.EXT.TextureObject
     Graphics.GL.Ext.EXT.TexturePerturbNormal
+    Graphics.GL.Ext.EXT.TextureQueryLod
     Graphics.GL.Ext.EXT.TextureRg
     Graphics.GL.Ext.EXT.TextureSRGB
     Graphics.GL.Ext.EXT.TextureSRGBDecode
     Graphics.GL.Ext.EXT.TextureSRGBR8
     Graphics.GL.Ext.EXT.TextureSRGBRG8
+    Graphics.GL.Ext.EXT.TextureShadowLod
     Graphics.GL.Ext.EXT.TextureSharedExponent
     Graphics.GL.Ext.EXT.TextureSnorm
     Graphics.GL.Ext.EXT.TextureStorage
@@ -531,6 +566,7 @@ library
     Graphics.GL.Ext.EXT.VertexAttrib64bit
     Graphics.GL.Ext.EXT.VertexShader
     Graphics.GL.Ext.EXT.VertexWeighting
+    Graphics.GL.Ext.EXT.Win32KeyedMutex
     Graphics.GL.Ext.EXT.WindowRectangles
     Graphics.GL.Ext.EXT.X11SyncObject
     Graphics.GL.Ext.EXT.YUVTarget
@@ -568,6 +604,7 @@ library
     Graphics.GL.Ext.INGR.ColorClamp
     Graphics.GL.Ext.INGR.InterlaceRead
     Graphics.GL.Ext.INTEL
+    Graphics.GL.Ext.INTEL.BlackholeRender
     Graphics.GL.Ext.INTEL.ConservativeRasterization
     Graphics.GL.Ext.INTEL.FragmentShaderOrdering
     Graphics.GL.Ext.INTEL.FramebufferCMAA
@@ -580,32 +617,46 @@ library
     Graphics.GL.Ext.KHR.ContextFlushControl
     Graphics.GL.Ext.KHR.Debug
     Graphics.GL.Ext.KHR.NoError
+    Graphics.GL.Ext.KHR.ParallelShaderCompile
     Graphics.GL.Ext.KHR.RobustBufferAccessBehavior
     Graphics.GL.Ext.KHR.Robustness
+    Graphics.GL.Ext.KHR.ShaderSubgroup
     Graphics.GL.Ext.KHR.TextureCompressionAstcHdr
     Graphics.GL.Ext.KHR.TextureCompressionAstcLdr
     Graphics.GL.Ext.KHR.TextureCompressionAstcSliced3d
     Graphics.GL.Ext.MESA
+    Graphics.GL.Ext.MESA.Bgra
+    Graphics.GL.Ext.MESA.FramebufferFlipX
+    Graphics.GL.Ext.MESA.FramebufferFlipY
+    Graphics.GL.Ext.MESA.FramebufferSwapXy
     Graphics.GL.Ext.MESA.PackInvert
+    Graphics.GL.Ext.MESA.ProgramBinaryFormats
     Graphics.GL.Ext.MESA.ResizeBuffers
+    Graphics.GL.Ext.MESA.ShaderIntegerFunctions
+    Graphics.GL.Ext.MESA.TileRasterOrder
     Graphics.GL.Ext.MESA.WindowPos
     Graphics.GL.Ext.MESA.YcbcrTexture
     Graphics.GL.Ext.MESAX
     Graphics.GL.Ext.MESAX.TextureStack
     Graphics.GL.Ext.NV
+    Graphics.GL.Ext.NV.AlphaToCoverageDitherControl
     Graphics.GL.Ext.NV.BindlessMultiDrawIndirect
     Graphics.GL.Ext.NV.BindlessMultiDrawIndirectCount
     Graphics.GL.Ext.NV.BindlessTexture
     Graphics.GL.Ext.NV.BlendEquationAdvanced
     Graphics.GL.Ext.NV.BlendEquationAdvancedCoherent
+    Graphics.GL.Ext.NV.BlendMinmaxFactor
     Graphics.GL.Ext.NV.BlendSquare
     Graphics.GL.Ext.NV.ClipSpaceWScaling
     Graphics.GL.Ext.NV.CommandList
     Graphics.GL.Ext.NV.ComputeProgram5
+    Graphics.GL.Ext.NV.ComputeShaderDerivatives
     Graphics.GL.Ext.NV.ConditionalRender
     Graphics.GL.Ext.NV.ConservativeRaster
     Graphics.GL.Ext.NV.ConservativeRasterDilate
+    Graphics.GL.Ext.NV.ConservativeRasterPreSnap
     Graphics.GL.Ext.NV.ConservativeRasterPreSnapTriangles
+    Graphics.GL.Ext.NV.ConservativeRasterUnderestimation
     Graphics.GL.Ext.NV.CopyBuffer
     Graphics.GL.Ext.NV.CopyDepthToColor
     Graphics.GL.Ext.NV.CopyImage
@@ -617,6 +668,7 @@ library
     Graphics.GL.Ext.NV.DrawBuffers
     Graphics.GL.Ext.NV.DrawInstanced
     Graphics.GL.Ext.NV.DrawTexture
+    Graphics.GL.Ext.NV.DrawVulkanImage
     Graphics.GL.Ext.NV.Evaluators
     Graphics.GL.Ext.NV.ExplicitAttribLocation
     Graphics.GL.Ext.NV.ExplicitMultisample
@@ -630,6 +682,7 @@ library
     Graphics.GL.Ext.NV.FragmentProgram2
     Graphics.GL.Ext.NV.FragmentProgram4
     Graphics.GL.Ext.NV.FragmentProgramOption
+    Graphics.GL.Ext.NV.FragmentShaderBarycentric
     Graphics.GL.Ext.NV.FragmentShaderInterlock
     Graphics.GL.Ext.NV.FramebufferBlit
     Graphics.GL.Ext.NV.FramebufferMixedSamples
@@ -639,6 +692,7 @@ library
     Graphics.GL.Ext.NV.GeometryProgram4
     Graphics.GL.Ext.NV.GeometryShader4
     Graphics.GL.Ext.NV.GeometryShaderPassthrough
+    Graphics.GL.Ext.NV.GpuMulticast
     Graphics.GL.Ext.NV.GpuProgram4
     Graphics.GL.Ext.NV.GpuProgram5
     Graphics.GL.Ext.NV.GpuProgram5MemExtended
@@ -648,6 +702,9 @@ library
     Graphics.GL.Ext.NV.InstancedArrays
     Graphics.GL.Ext.NV.InternalformatSampleQuery
     Graphics.GL.Ext.NV.LightMaxExponent
+    Graphics.GL.Ext.NV.MemoryAttachment
+    Graphics.GL.Ext.NV.MemoryObjectSparse
+    Graphics.GL.Ext.NV.MeshShader
     Graphics.GL.Ext.NV.MultisampleCoverage
     Graphics.GL.Ext.NV.MultisampleFilterHint
     Graphics.GL.Ext.NV.NonSquareMatrices
@@ -657,11 +714,15 @@ library
     Graphics.GL.Ext.NV.ParameterBufferObject2
     Graphics.GL.Ext.NV.PathRendering
     Graphics.GL.Ext.NV.PathRenderingSharedEdge
+    Graphics.GL.Ext.NV.PixelBufferObject
     Graphics.GL.Ext.NV.PixelDataRange
     Graphics.GL.Ext.NV.PointSprite
     Graphics.GL.Ext.NV.PolygonMode
     Graphics.GL.Ext.NV.PresentVideo
     Graphics.GL.Ext.NV.PrimitiveRestart
+    Graphics.GL.Ext.NV.PrimitiveShadingRate
+    Graphics.GL.Ext.NV.QueryResource
+    Graphics.GL.Ext.NV.QueryResourceTag
     Graphics.GL.Ext.NV.ReadBuffer
     Graphics.GL.Ext.NV.ReadBufferFront
     Graphics.GL.Ext.NV.ReadDepth
@@ -669,10 +730,12 @@ library
     Graphics.GL.Ext.NV.ReadStencil
     Graphics.GL.Ext.NV.RegisterCombiners
     Graphics.GL.Ext.NV.RegisterCombiners2
+    Graphics.GL.Ext.NV.RepresentativeFragmentTest
     Graphics.GL.Ext.NV.RobustnessVideoMemoryPurge
     Graphics.GL.Ext.NV.SRGBFormats
     Graphics.GL.Ext.NV.SampleLocations
     Graphics.GL.Ext.NV.SampleMaskOverrideCoverage
+    Graphics.GL.Ext.NV.ScissorExclusive
     Graphics.GL.Ext.NV.ShaderAtomicCounters
     Graphics.GL.Ext.NV.ShaderAtomicFloat
     Graphics.GL.Ext.NV.ShaderAtomicFloat64
@@ -682,8 +745,11 @@ library
     Graphics.GL.Ext.NV.ShaderBufferStore
     Graphics.GL.Ext.NV.ShaderNoperspectiveInterpolation
     Graphics.GL.Ext.NV.ShaderStorageBufferObject
+    Graphics.GL.Ext.NV.ShaderSubgroupPartitioned
+    Graphics.GL.Ext.NV.ShaderTextureFootprint
     Graphics.GL.Ext.NV.ShaderThreadGroup
     Graphics.GL.Ext.NV.ShaderThreadShuffle
+    Graphics.GL.Ext.NV.ShadingRateImage
     Graphics.GL.Ext.NV.ShadowSamplersArray
     Graphics.GL.Ext.NV.ShadowSamplersCube
     Graphics.GL.Ext.NV.StereoViewRendering
@@ -699,13 +765,16 @@ library
     Graphics.GL.Ext.NV.TextureMultisample
     Graphics.GL.Ext.NV.TextureNpot2DMipmap
     Graphics.GL.Ext.NV.TextureRectangle
+    Graphics.GL.Ext.NV.TextureRectangleCompressed
     Graphics.GL.Ext.NV.TextureShader
     Graphics.GL.Ext.NV.TextureShader2
     Graphics.GL.Ext.NV.TextureShader3
+    Graphics.GL.Ext.NV.TimelineSemaphore
     Graphics.GL.Ext.NV.TransformFeedback
     Graphics.GL.Ext.NV.TransformFeedback2
     Graphics.GL.Ext.NV.UniformBufferUnifiedMemory
     Graphics.GL.Ext.NV.VdpauInterop
+    Graphics.GL.Ext.NV.VdpauInterop2
     Graphics.GL.Ext.NV.VertexArrayRange
     Graphics.GL.Ext.NV.VertexArrayRange2
     Graphics.GL.Ext.NV.VertexAttribInteger64bit
@@ -721,8 +790,13 @@ library
     Graphics.GL.Ext.NV.ViewportArray2
     Graphics.GL.Ext.NV.ViewportSwizzle
     Graphics.GL.Ext.NVX
+    Graphics.GL.Ext.NVX.BlendEquationAdvancedMultiDrawBuffers
     Graphics.GL.Ext.NVX.ConditionalRender
+    Graphics.GL.Ext.NVX.CrossProcessInterop
     Graphics.GL.Ext.NVX.GpuMemoryInfo
+    Graphics.GL.Ext.NVX.GpuMulticast2
+    Graphics.GL.Ext.NVX.LinkedGpuMulticast
+    Graphics.GL.Ext.NVX.ProgressFence
     Graphics.GL.Ext.OES
     Graphics.GL.Ext.OES.BlendEquationSeparate
     Graphics.GL.Ext.OES.BlendFuncSeparate
@@ -813,9 +887,20 @@ library
     Graphics.GL.Ext.QCOM.DriverControl
     Graphics.GL.Ext.QCOM.ExtendedGet
     Graphics.GL.Ext.QCOM.ExtendedGet2
+    Graphics.GL.Ext.QCOM.FrameExtrapolation
+    Graphics.GL.Ext.QCOM.FramebufferFoveated
+    Graphics.GL.Ext.QCOM.MotionEstimation
     Graphics.GL.Ext.QCOM.PerfmonGlobalMode
+    Graphics.GL.Ext.QCOM.RenderSharedExponent
+    Graphics.GL.Ext.QCOM.ShaderFramebufferFetchNoncoherent
+    Graphics.GL.Ext.QCOM.ShaderFramebufferFetchRate
+    Graphics.GL.Ext.QCOM.ShadingRate
+    Graphics.GL.Ext.QCOM.TextureFoveated
+    Graphics.GL.Ext.QCOM.TextureFoveated2
+    Graphics.GL.Ext.QCOM.TextureFoveatedSubsampledLayout
     Graphics.GL.Ext.QCOM.TiledRendering
     Graphics.GL.Ext.QCOM.WriteonlyRendering
+    Graphics.GL.Ext.QCOM.YUVTextureGather
     Graphics.GL.Ext.REND
     Graphics.GL.Ext.REND.ScreenCoordinates
     Graphics.GL.Ext.S3
