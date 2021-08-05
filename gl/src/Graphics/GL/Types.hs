@@ -21,6 +21,7 @@ module Graphics.GL.Types (
   , mkGLDEBUGPROCAMD
   , mkGLDEBUGPROCARB
   , mkGLDEBUGPROCKHR
+  , mkGLVULKANPROCNV
 
   -- ** Common Types
   , GLbitfield
@@ -126,6 +127,11 @@ foreign import CALLCONV "wrapper"
 -- 'freeHaskellFunPtr' when it is no longer required.
 foreign import CALLCONV "wrapper"
   mkGLDEBUGPROCKHR :: (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ()) -> IO GLDEBUGPROCKHR
+
+-- | The storage associated with the resulting 'FunPtr' has to be released with
+-- 'freeHaskellFunPtr' when it is no longer required.
+foreign import CALLCONV "wrapper"
+  mkGLVULKANPROCNV :: IO () -> IO GLVULKANPROCNV
 
 type GLbitfield           = Word32
 type GLboolean            = Word8
