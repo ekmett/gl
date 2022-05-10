@@ -50,7 +50,7 @@ library
     , containers >= 0.5 && < 0.7
     , fixed >= 0.2.1 && < 0.4
     , half >= 0.2 && < 0.4
-    , transformers >= 0.2 && < 0.6
+    , transformers >= 0.2 && < 0.7
 
   default-language: Haskell2010
 
