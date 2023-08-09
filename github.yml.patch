@@ -1,8 +1,8 @@
 diff --git a/.github/workflows/haskell-ci.yml b/.github/workflows/haskell-ci.yml
-index 85b7be5..158e4f7 100644
+index 1b7c983..16fe263 100644
 --- a/.github/workflows/haskell-ci.yml
 +++ b/.github/workflows/haskell-ci.yml
-@@ -152,6 +152,24 @@ jobs:
+@@ -201,6 +201,24 @@ jobs:
            echo "packages: $GITHUB_WORKSPACE/source/." >> cabal.project
            echo "packages: $GITHUB_WORKSPACE/source/gl" >> cabal.project
            cat cabal.project
@@ -10,8 +10,8 @@ index 85b7be5..158e4f7 100644
 +        run: |
 +          $CABAL v2-build $ARG_COMPILER $ARG_TESTS $ARG_BENCH --dry-run all
 +          cabal-plan
-+      - name: cache
-+        uses: actions/cache@v2
++      - name: restore cache
++        uses: actions/cache/restore@v3
 +        with:
 +          key: ${{ runner.os }}-${{ matrix.compiler }}-${{ github.sha }}
 +          path: ~/.cabal/store
@@ -27,7 +27,7 @@ index 85b7be5..158e4f7 100644
        - name: sdist
          run: |
            mkdir -p sdist
-@@ -179,16 +197,6 @@ jobs:
+@@ -229,16 +247,6 @@ jobs:
            $HCPKG list --simple-output --names-only | perl -ne 'for (split /\s+/) { print "constraints: $_ installed\n" unless /^(gl|glgen)$/; }' >> cabal.project.local
            cat cabal.project
            cat cabal.project.local
@@ -35,8 +35,8 @@ index 85b7be5..158e4f7 100644
 -        run: |
 -          $CABAL v2-build $ARG_COMPILER $ARG_TESTS $ARG_BENCH --dry-run all
 -          cabal-plan
--      - name: cache
--        uses: actions/cache@v2
+-      - name: restore cache
+-        uses: actions/cache/restore@v3
 -        with:
 -          key: ${{ runner.os }}-${{ matrix.compiler }}-${{ github.sha }}
 -          path: ~/.cabal/store
