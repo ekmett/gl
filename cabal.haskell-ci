@@ -5,3 +5,6 @@ unconstrained:          False
 irc-if-in-origin-repo:  True
 github-patches:         github.yml.patch
 apt:                    freeglut3-dev
+-- For reasons that I don't understand, the Haddock that is bundled with pre-9.0
+-- versions of GHC will fail to parse src/Main.hs.
+haddock:                >=9.0
