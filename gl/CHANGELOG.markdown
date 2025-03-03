@@ -1,5 +1,9 @@
+next [????.??.??]
+-----------------
+* Drop support for pre-8.0 versions of GHC.
+
 0.9 [revision 1]
---- 
+---
 * Allow `fixed` 0.3
 
 0.9

@@ -16,9 +16,7 @@ extra-source-files:
   CHANGELOG.markdown
   README.markdown
   TODO.markdown
-tested-with:   GHC == 7.8.4
-             , GHC == 7.10.3
-             , GHC == 8.0.2
+tested-with:   GHC == 8.0.2
              , GHC == 8.2.2
              , GHC == 8.4.4
              , GHC == 8.6.5
@@ -26,8 +24,11 @@ tested-with:   GHC == 7.8.4
              , GHC == 8.10.7
              , GHC == 9.0.2
              , GHC == 9.2.8
-             , GHC == 9.4.5
-             , GHC == 9.6.2
+             , GHC == 9.4.8
+             , GHC == 9.6.6
+             , GHC == 9.8.4
+             , GHC == 9.10.1
+             , GHC == 9.12.1
 
 source-repository head
   type:     git
@@ -49,7 +50,7 @@ library
   ghc-options: -Wall -O2
 
   build-depends:
-      base == 4.*
+      base >= 4.9 && < 5
     , containers >= 0.5 && < 0.9
     , fixed >= 0.2.1 && < 0.4
     , half >= 0.2 && < 0.4

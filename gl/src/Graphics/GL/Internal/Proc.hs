@@ -24,9 +24,6 @@ module Graphics.GL.Internal.Proc
   ) where
 
 import Control.Monad
-#if __GLASGOW_HASKELL__ < 710
-import Data.Functor
-#endif
 import Data.Set as Set
 import Foreign.C.String
 import Foreign.Marshal.Alloc
