@@ -1,5 +1,5 @@
-next [????.??.??]
------------------
+0.9.1 [2025.03.03]
+------------------
 * Drop support for pre-8.0 versions of GHC.
 
 0.9 [revision 1]

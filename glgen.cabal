@@ -1,5 +1,5 @@
 name:          glgen
-version:       0.9
+version:       0.9.1
 synopsis:      Complete OpenGL raw bindings
 description:   Complete OpenGL raw bindings.
 license:       BSD3
