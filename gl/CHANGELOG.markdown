@@ -1,3 +1,11 @@
+Unreleased
+----------
+* Update `gl.xml` to the latest Khronos registry and regenerate bindings.
+* Add OpenGL 4.6 core/compatibility modules and generator mappings.
+* Add missing types for `GLeglClientBufferEXT` and `GLVULKANPROCNV`.
+* Silence GHC partial-function warnings for GHC >= 9.8; suppress duplicate-export warnings from generated modules.
+* Include newly generated extension modules in the cabal file.
+
 0.9.1 [2025.03.03]
 ------------------
 * Drop support for pre-8.0 versions of GHC.
