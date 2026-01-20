@@ -19,6 +19,7 @@ extra-source-files:
   CHANGELOG.markdown
   README.markdown
   TODO.markdown
+  AGENTS.md
   Setup.hs
   gl/gl.cabal
   gl/CHANGELOG.markdown

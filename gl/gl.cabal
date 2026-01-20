@@ -47,7 +47,7 @@ flag UseGlXGetProcAddress
 library
   hs-source-dirs: src generated-src
   c-sources: cbits/gl.c
-  ghc-options: -Wall -O2
+  ghc-options: -Wall -O2 -Wno-duplicate-exports
 
   build-depends:
       base >= 4.9 && < 5
@@ -60,6 +60,9 @@ library
 
   if impl(ghc >= 8)
     ghc-options: -Wno-missing-pattern-synonym-signatures
+
+  if impl(ghc >= 9.8)
+    ghc-options: -Wno-x-partial
 
   if os(windows) && flag(UseNativeWindowsLibraries)
     if arch(i386)
@@ -92,6 +95,7 @@ library
     Graphics.GL.Compatibility43
     Graphics.GL.Compatibility44
     Graphics.GL.Compatibility45
+    Graphics.GL.Compatibility46
     Graphics.GL.Core32
     Graphics.GL.Core33
     Graphics.GL.Core40
@@ -100,6 +104,7 @@ library
     Graphics.GL.Core43
     Graphics.GL.Core44
     Graphics.GL.Core45
+    Graphics.GL.Core46
     Graphics.GL.Embedded20
     Graphics.GL.Embedded30
     Graphics.GL.Embedded31
@@ -916,3 +921,108 @@ library
     Graphics.GL.Standard30
     Graphics.GL.Standard31
     Graphics.GL.Types
+    Graphics.GL.Ext.AMD.FramebufferMultisampleAdvanced
+    Graphics.GL.Ext.AMD.GpuShaderInt16
+    Graphics.GL.Ext.AMD.ShaderGpuShaderHalfFloatFetch
+    Graphics.GL.Ext.AMD.ShaderImageLoadStoreLod
+    Graphics.GL.Ext.AMD.TextureGatherBiasLod
+    Graphics.GL.Ext.ARB.GlSpirv
+    Graphics.GL.Ext.ARB.PolygonOffsetClamp
+    Graphics.GL.Ext.ARB.SpirvExtensions
+    Graphics.GL.Ext.ARB.TextureFilterAnisotropic
+    Graphics.GL.Ext.ARM.ShaderCoreProperties
+    Graphics.GL.Ext.ARM.TextureUnnormalizedCoordinates
+    Graphics.GL.Ext.EXT.ClipControl
+    Graphics.GL.Ext.EXT.DepthClamp
+    Graphics.GL.Ext.EXT.EGLImageArray
+    Graphics.GL.Ext.EXT.EGLImageStorage
+    Graphics.GL.Ext.EXT.EGLImageStorageCompression
+    Graphics.GL.Ext.EXT.EGLSync
+    Graphics.GL.Ext.EXT.ExternalBuffer
+    Graphics.GL.Ext.EXT.FragmentShadingRate
+    Graphics.GL.Ext.EXT.FramebufferBlitLayers
+    Graphics.GL.Ext.EXT.MemoryObject
+    Graphics.GL.Ext.EXT.MemoryObjectFd
+    Graphics.GL.Ext.EXT.MemoryObjectWin32
+    Graphics.GL.Ext.EXT.MeshShader
+    Graphics.GL.Ext.EXT.MultisampledRenderToTexture2
+    Graphics.GL.Ext.EXT.MultiviewTessellationGeometryShader
+    Graphics.GL.Ext.EXT.MultiviewTextureMultisample
+    Graphics.GL.Ext.EXT.MultiviewTimerQuery
+    Graphics.GL.Ext.EXT.Semaphore
+    Graphics.GL.Ext.EXT.SemaphoreFd
+    Graphics.GL.Ext.EXT.SemaphoreWin32
+    Graphics.GL.Ext.EXT.SeparateDepthStencil
+    Graphics.GL.Ext.EXT.ShaderFramebufferFetchNonCoherent
+    Graphics.GL.Ext.EXT.ShaderSamplesIdentical
+    Graphics.GL.Ext.EXT.ShaderTextureSamples
+    Graphics.GL.Ext.EXT.TextureCompressionAstcDecodeMode
+    Graphics.GL.Ext.EXT.TextureCompressionBptc
+    Graphics.GL.Ext.EXT.TextureCompressionS3tcSrgb
+    Graphics.GL.Ext.EXT.TextureFormatSRGBOverride
+    Graphics.GL.Ext.EXT.TextureMirrorClampToEdge
+    Graphics.GL.Ext.EXT.TextureQueryLod
+    Graphics.GL.Ext.EXT.TextureShadowLod
+    Graphics.GL.Ext.EXT.TextureStorageCompression
+    Graphics.GL.Ext.EXT.Win32KeyedMutex
+    Graphics.GL.Ext.HUAWEI
+    Graphics.GL.Ext.HUAWEI.ProgramBinary
+    Graphics.GL.Ext.HUAWEI.ShaderBinary
+    Graphics.GL.Ext.IMG.PvricEndToEndSignature
+    Graphics.GL.Ext.IMG.TileRegionProtection
+    Graphics.GL.Ext.INTEL.BlackholeRender
+    Graphics.GL.Ext.KHR.ParallelShaderCompile
+    Graphics.GL.Ext.KHR.ShaderSubgroup
+    Graphics.GL.Ext.MESA.Bgra
+    Graphics.GL.Ext.MESA.FramebufferFlipX
+    Graphics.GL.Ext.MESA.FramebufferFlipY
+    Graphics.GL.Ext.MESA.FramebufferSwapXy
+    Graphics.GL.Ext.MESA.ProgramBinaryFormats
+    Graphics.GL.Ext.MESA.SamplerObjects
+    Graphics.GL.Ext.MESA.ShaderIntegerFunctions
+    Graphics.GL.Ext.MESA.TextureConstBandwidth
+    Graphics.GL.Ext.MESA.TileRasterOrder
+    Graphics.GL.Ext.NV.AlphaToCoverageDitherControl
+    Graphics.GL.Ext.NV.BlendMinmaxFactor
+    Graphics.GL.Ext.NV.ComputeShaderDerivatives
+    Graphics.GL.Ext.NV.ConservativeRasterPreSnap
+    Graphics.GL.Ext.NV.ConservativeRasterUnderestimation
+    Graphics.GL.Ext.NV.DrawVulkanImage
+    Graphics.GL.Ext.NV.FragmentShaderBarycentric
+    Graphics.GL.Ext.NV.GpuMulticast
+    Graphics.GL.Ext.NV.MemoryAttachment
+    Graphics.GL.Ext.NV.MemoryObjectSparse
+    Graphics.GL.Ext.NV.MeshShader
+    Graphics.GL.Ext.NV.PackSubimage
+    Graphics.GL.Ext.NV.PixelBufferObject
+    Graphics.GL.Ext.NV.PrimitiveShadingRate
+    Graphics.GL.Ext.NV.QueryResource
+    Graphics.GL.Ext.NV.QueryResourceTag
+    Graphics.GL.Ext.NV.RepresentativeFragmentTest
+    Graphics.GL.Ext.NV.ScissorExclusive
+    Graphics.GL.Ext.NV.ShaderSubgroupPartitioned
+    Graphics.GL.Ext.NV.ShaderTextureFootprint
+    Graphics.GL.Ext.NV.ShadingRateImage
+    Graphics.GL.Ext.NV.TextureRectangleCompressed
+    Graphics.GL.Ext.NV.TimelineSemaphore
+    Graphics.GL.Ext.NV.UniformBufferStd430Layout
+    Graphics.GL.Ext.NV.VdpauInterop2
+    Graphics.GL.Ext.NVX.BlendEquationAdvancedMultiDrawBuffers
+    Graphics.GL.Ext.NVX.CrossProcessInterop
+    Graphics.GL.Ext.NVX.GpuMulticast2
+    Graphics.GL.Ext.NVX.LinkedGpuMulticast
+    Graphics.GL.Ext.NVX.ProgressFence
+    Graphics.GL.Ext.QCOM.FrameExtrapolation
+    Graphics.GL.Ext.QCOM.FramebufferFoveated
+    Graphics.GL.Ext.QCOM.MotionEstimation
+    Graphics.GL.Ext.QCOM.RenderSRGBR8RG8
+    Graphics.GL.Ext.QCOM.RenderSharedExponent
+    Graphics.GL.Ext.QCOM.ShaderFramebufferFetchNoncoherent
+    Graphics.GL.Ext.QCOM.ShaderFramebufferFetchRate
+    Graphics.GL.Ext.QCOM.ShadingRate
+    Graphics.GL.Ext.QCOM.TextureFoveated
+    Graphics.GL.Ext.QCOM.TextureFoveated2
+    Graphics.GL.Ext.QCOM.TextureFoveatedSubsampledLayout
+    Graphics.GL.Ext.QCOM.TextureLodBias
+    Graphics.GL.Ext.QCOM.YUVTextureGather
+    Graphics.GL.Ext.QCOM.YcbcrDegamma

@@ -31,6 +31,7 @@ module Graphics.GL.Types (
   , GLclampf
   , GLclampx
   , GLdouble
+  , GLeglClientBufferEXT
   , GLeglImageOES
   , GLenum
   , GLfixed
@@ -54,6 +55,7 @@ module Graphics.GL.Types (
   , GLuint64
   , GLuint64EXT
   , GLushort
+  , GLVULKANPROCNV
   , GLvdpauSurfaceNV
 ) where
 
@@ -132,6 +134,7 @@ type GLclampd         = Double
 type GLclampf         = Float
 type GLclampx         = Int32
 type GLdouble         = Double
+type GLeglClientBufferEXT = Ptr ()
 type GLeglImageOES    = Ptr ()
 type GLenum           = Word32
 type GLfixed          = Fixed
@@ -154,6 +157,7 @@ type GLuint           = Word32
 type GLuint64         = Word64
 type GLuint64EXT      = Word64
 type GLushort         = Word16
+type GLVULKANPROCNV   = FunPtr (IO ())
 type GLvdpauSurfaceNV = CPtrdiff
 
 #if __APPLE__
